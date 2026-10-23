@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cfnaxmacfqrnm"
+path="res://.godot/imported/first_week.dialogue-9e4253aa3ca0b4509e8ca796e0b6587a.tres"
+
+[deps]
+
+source_file="res://story/first_week.dialogue"
+dest_files=["res://.godot/imported/first_week.dialogue-9e4253aa3ca0b4509e8ca796e0b6587a.tres"]
+
+[params]
+
+defaults=true

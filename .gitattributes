@@ -1,0 +1,4 @@
+*.cmd text eol=crlf
+*.sh text eol=lf
+*.gd text eol=lf
+*.dialogue text eol=lf

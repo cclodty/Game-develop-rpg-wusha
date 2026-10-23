@@ -1,0 +1,687 @@
+# 江湖未遠 · 入山之前
+# Read-only dialogue. Time, eligibility, rewards and settlement belong to WeiyuanRun.
+# Fixed translation IDs must remain unchanged when editing existing lines.
+
+~ intro_herbalist
+旁白: 望溪鎮的牌樓下，晾著一排還沒乾的招徒告示。你行囊裡最響的不是劍，是碰在一起的藥瓶。 [ID:JW_INTRO_HERBALIST_001]
+陶半夏: 站住。左邊那瓶綠的，是擦傷用的；右邊那瓶綠的，才是喝的。 [#portrait=tao] [ID:JW_INTRO_HERBALIST_002]
+你: 師父一路上已經叮囑過七回。 [#portrait=hero] [ID:JW_INTRO_HERBALIST_003]
+陶半夏: 他託我再說第八回。學武之前，先別把自己的舌頭擦得太乾淨。 [#portrait=tao] [ID:JW_INTRO_HERBALIST_004]
+旁白: 她收下藥鋪的介紹信，在你的行囊邊繫了一小包乾藥草。 [ID:JW_INTRO_HERBALIST_005]
+陶半夏: 鎮上七日後封榜，第八日選拔。你認得草藥，走溪谷時會比旁人多看見一些東西。 [#portrait=tao] [ID:JW_INTRO_HERBALIST_006]
+你: 可我連握劍都不穩，藥鋪的手藝能幫上什麼？ [#portrait=hero] [ID:JW_INTRO_HERBALIST_007]
+陶半夏: 能認出一個人是在逞強，已經比許多只看劍的人早一步了。至於握劍，去找沈師傅。 [#portrait=tao] [ID:JW_INTRO_HERBALIST_008]
+旁白: 一陣山風吹落了告示。你伸手去接，紙角卻先被一枚銅錢壓住。 [ID:JW_INTRO_HERBALIST_009]
+=> arrival
+
+~ intro_courier
+旁白: 你抵達望溪鎮時，驛站門前掛著三盞寫了地名的燈。你認得其中兩處，第三盞倒掛著。 [ID:JW_INTRO_COURIER_001]
+周望山: 那不是掛反。有人把「風嶺」送成「嶺風」，我掛在這裡，提醒自己看清楚。 [#portrait=zhou] [ID:JW_INTRO_COURIER_002]
+你: 我一路送來的，是招徒名冊。這回地名、姓名、數目都核過了。 [#portrait=hero] [ID:JW_INTRO_COURIER_003]
+周望山: 好。最後一頁呢？ [#portrait=zhou] [ID:JW_INTRO_COURIER_004]
+旁白: 你翻出最後一頁。那裡不是姓名，是一張沒有人願意認領的飯錢單。 [ID:JW_INTRO_COURIER_005]
+周望山: 陸行雲又把帳夾進公文裡。這位大俠的輕功，一到付錢時尤其了得。 [#portrait=zhou] [ID:JW_INTRO_COURIER_006]
+你: 我想留下，試試七日後的招徒選拔。 [#portrait=hero] [ID:JW_INTRO_COURIER_007]
+周望山: 那就把行囊放下。你會認路，也會記得答應過什麼；這兩樣都能帶進江湖。 [#portrait=zhou] [ID:JW_INTRO_COURIER_008]
+周望山: 第八日才上場，眼下有七天。驛站有活可接，但別把每一天都拿來替別人趕路。 [#portrait=zhou] [ID:JW_INTRO_COURIER_009]
+旁白: 你走回牌樓，一陣山風吹落了告示。紙角將要落地時，被一枚銅錢穩穩壓住。 [ID:JW_INTRO_COURIER_010]
+=> arrival
+
+~ intro_performer
+旁白: 戲班在望溪鎮落腳，你先落下來的是一隻靴子。它從行囊頂滾到招徒告示前，剛好擺得像在報名。 [ID:JW_INTRO_PERFORMER_001]
+蕭小滿: 看來你的靴子比你有出息，已經決定拜哪一派了。 [#portrait=xiao] [ID:JW_INTRO_PERFORMER_002]
+你: 它想學輕功，省得下回又從車上掉下來。 [#portrait=hero] [ID:JW_INTRO_PERFORMER_003]
+蕭小滿: 那你呢？別再說替它看路。 [#portrait=xiao] [ID:JW_INTRO_PERFORMER_004]
+你: 我也想試。我在台上扮過那麼多回小俠，總想知道真的江湖是什麼樣子。 [#portrait=hero] [ID:JW_INTRO_PERFORMER_005]
+旁白: 小滿沒有笑。她把戲服上那根搶眼的紅綢解下，替你束好歪掉的行囊。 [ID:JW_INTRO_PERFORMER_006]
+蕭小滿: 台上的人出劍前，鑼鼓會提醒你。外頭沒有，所以更要看清對方的肩和腳。 [#portrait=xiao] [ID:JW_INTRO_PERFORMER_007]
+蕭小滿: 七日準備，第八日選拔。戲班還在這裡，你缺盤纏可以回來搭把手。 [#portrait=xiao] [ID:JW_INTRO_PERFORMER_008]
+你: 如果沒選上呢？ [#portrait=hero] [ID:JW_INTRO_PERFORMER_009]
+蕭小滿: 那就自己走一段。你總不能因為沒唱到最後一折，就說前面的戲都不算數。 [#portrait=xiao] [ID:JW_INTRO_PERFORMER_010]
+旁白: 牌樓下一陣風起，吹落了告示。一枚銅錢擦過你的靴尖，壓住將落地的紙角。 [ID:JW_INTRO_PERFORMER_011]
+=> arrival
+
+~ arrival
+陸行雲: 接到了。這一招叫「別踩著我的飯錢」。 [#portrait=lu] [ID:JW_ARRIVAL_001]
+沈照嶺: 你先前若肯把告示釘牢，便不必想招名。 [#portrait=shen] [ID:JW_ARRIVAL_002]
+旁白: 一位短衣青年收回銅錢，一位持木劍的師傅重新把告示貼正。兩人各佔一邊，誰也沒讓誰。 [ID:JW_ARRIVAL_003]
+沈照嶺: 照嶺門重基本功，也重一件事能不能做完。第八日，讓我們看看你準備了什麼。 [#portrait=shen] [ID:JW_ARRIVAL_004]
+陸行雲: 渡雲社看你的眼睛和腳。眼睛肯看人，腳肯走新路，招式可以慢慢教。 [#portrait=lu] [ID:JW_ARRIVAL_005]
+你: 兩邊都能先去看看？ [#portrait=hero] [ID:JW_ARRIVAL_006]
+沈照嶺: 還未拜師，自然能問。想清楚了再決定，勝過穿上門服才問它為何這樣裁。 [#portrait=shen] [ID:JW_ARRIVAL_007]
+陸行雲: 七天不長，也夠遇上幾件好事。先逛逛鎮子，別把江湖都想在屋裡。 [#portrait=lu] [ID:JW_ARRIVAL_008]
+旁白: 告示的空白處，留著剛好能寫下你姓名的位置。你提筆寫好，墨色在陽光下慢慢乾了。 [ID:JW_ARRIVAL_009]
+你: 那就從今天開始。 [#portrait=hero] [ID:JW_ARRIVAL_010]
+=> END
+
+~ npc_shen
+if day >= 7
+	沈照嶺: 明日上場。今天練得再急，也別把已會的東西丟掉。 [#portrait=shen] [ID:JW_NPC_SHEN_001]
+elif day >= 4
+	沈照嶺: 你走路時開始知道把重心收回來了。不要急著問像不像大俠，先問自己站不站得住。 [#portrait=shen] [ID:JW_NPC_SHEN_002]
+else
+	沈照嶺: 木劍在架上。先選一把握得住的，漂亮那把未必適合你的手。 [#portrait=shen] [ID:JW_NPC_SHEN_003]
+if origin == "herbalist"
+	沈照嶺: 藥鋪教你分輕重，拿劍也要分。不是每次出手都該用盡力氣。 [#portrait=shen] [ID:JW_NPC_SHEN_004]
+elif origin == "courier"
+	沈照嶺: 趕路的人容易總往前傾。腳下留一點，才有退讓和再進的餘地。 [#portrait=shen] [ID:JW_NPC_SHEN_005]
+else
+	沈照嶺: 戲台上那個漂亮轉身，我看見了。很好看，等你知道什麼時候不轉，就更好了。 [#portrait=shen] [ID:JW_NPC_SHEN_006]
+=> shen_questions
+
+~ shen_questions
+沈照嶺: 有不明白的就問。問清楚，再安排今天要練的事。 [#portrait=shen] [ID:JW_SHEN_QUESTIONS_001]
+- 照嶺門究竟想收怎樣的弟子？ [ID:JW_SHEN_QUESTIONS_002]
+	=> shen_school
+- 劍氣要怎樣才能學會？ [ID:JW_SHEN_QUESTIONS_003]
+	=> shen_sword
+- 考核失手，就沒有機會了嗎？ [ID:JW_SHEN_QUESTIONS_004]
+	=> shen_exam
+- 我想看看可以安排哪些修習。 [ID:JW_SHEN_QUESTIONS_005]
+	=> END
+
+~ shen_school
+沈照嶺: 會把劍收好的人。 [#portrait=shen] [ID:JW_SHEN_SCHOOL_001]
+你: 只是收劍？ [#portrait=hero] [ID:JW_SHEN_SCHOOL_002]
+沈照嶺: 出劍之前，人人都說自己想清楚了。等贏了、累了，甚至丟了面子，還記得不傷旁人，才不容易。 [#portrait=shen] [ID:JW_SHEN_SCHOOL_003]
+旁白: 他把一把木劍遞給旁邊的孩子。劍尖被磨得很圓，握柄卻修補過好幾次。 [ID:JW_SHEN_SCHOOL_004]
+沈照嶺: 基本功練得紮實，我們自然看見。替人送完一封難送的信、守住一趟護送，也能看出你的骨頭。 [#portrait=shen] [ID:JW_SHEN_SCHOOL_005]
+你: 所以只贏一場，還不夠？ [#portrait=hero] [ID:JW_SHEN_SCHOOL_006]
+沈照嶺: 夠讓我記住你的劍。不一定夠讓我放心把後背交給你。 [#portrait=shen] [ID:JW_SHEN_SCHOOL_007]
+=> shen_questions
+
+~ shen_sword
+沈照嶺: 先學破雲劍氣。名字聽著遠，第一步只是把呼吸送到手腕，不要半路憋住。 [#portrait=shen] [ID:JW_SHEN_SWORD_001]
+你: 一劍就能把雲分開？ [#portrait=hero] [ID:JW_SHEN_SWORD_002]
+沈照嶺: 真有那種本事，曬穀子的鄉親會天天來請你。今天先劈準眼前這道劍痕。 [#portrait=shen] [ID:JW_SHEN_SWORD_003]
+沈照嶺: 正式授課要留出兩個時段，也要付木劍與場地的錢。你可以先練基本功，備齊了再來。 [#portrait=shen] [ID:JW_SHEN_SWORD_004]
+沈照嶺: 學會以後，氣勁向前直出。敵人準備迎面撲來時，先看站位，別只盯著招式亮不亮。 [#portrait=shen] [ID:JW_SHEN_SWORD_005]
+=> shen_questions
+
+~ shen_exam
+沈照嶺: 上場可以重試，也可以認輸。輸一回只說明這一回沒處理好，不替你決定以後的路。 [#portrait=shen] [ID:JW_SHEN_EXAM_001]
+你: 可名冊上總得寫結果。 [#portrait=hero] [ID:JW_SHEN_EXAM_002]
+沈照嶺: 是。照嶺門要看修為，也看這些天做過的事。我不會用一句「再努力些」假裝人人都能錄取。 [#portrait=shen] [ID:JW_SHEN_EXAM_003]
+沈照嶺: 但真沒錄取，鎮子還在，木劍也還在。留下來練，不丟人。 [#portrait=shen] [ID:JW_SHEN_EXAM_004]
+旁白: 他說完，低頭把自己的鞋帶重新繫了一次。那動作慢而仔細，像他教的第一式。 [ID:JW_SHEN_EXAM_005]
+=> shen_questions
+
+~ npc_lu
+if day >= 7
+	陸行雲: 明天到了台上，記得看看邊上。江湖有時只剩半步空位，偏偏那半步最要緊。 [#portrait=lu] [ID:JW_NPC_LU_001]
+elif day >= 4
+	陸行雲: 這幾天看過溪谷，也看過人了？哪一樣比你想得難懂？ [#portrait=lu] [ID:JW_NPC_LU_002]
+else
+	陸行雲: 想學輕功？先別跳屋頂。周掌櫃把瓦錢算得很清楚，還分新瓦舊瓦。 [#portrait=lu] [ID:JW_NPC_LU_003]
+if origin == "performer"
+	陸行雲: 戲班的？那太好了。我最缺一個能看穿我把戲，卻不當場拆台的人。 [#portrait=lu] [ID:JW_NPC_LU_004]
+elif origin == "courier"
+	陸行雲: 你認得路，正好。今天教你找一條不必拼命趕，仍然能走到的路。 [#portrait=lu] [ID:JW_NPC_LU_005]
+else
+	陸行雲: 採藥的人看得見石縫裡的路。你若肯抬頭，也會看見人心裡的路。 [#portrait=lu] [ID:JW_NPC_LU_006]
+=> lu_questions
+
+~ lu_questions
+陸行雲: 說吧。我要是真不知道，就陪你去看。 [#portrait=lu] [ID:JW_LU_QUESTIONS_001]
+- 渡雲社和照嶺門有什麼不同？ [ID:JW_LU_QUESTIONS_002]
+	=> lu_school
+- 掠影突進，是不是跑得越快越好？ [ID:JW_LU_QUESTIONS_003]
+	=> lu_step
+- 到外頭走走，對選拔真的有用？ [ID:JW_LU_QUESTIONS_004]
+	=> lu_outside
+- 看看今天有哪些事能做。 [ID:JW_LU_QUESTIONS_005]
+	=> END
+
+~ lu_school
+陸行雲: 沈師傅先教你把一件事做對，我先問你，有沒有第二種做法。兩邊都得下功夫。 [#portrait=lu] [ID:JW_LU_SCHOOL_001]
+你: 那你們為什麼老在告示旁邊拌嘴？ [#portrait=hero] [ID:JW_LU_SCHOOL_002]
+陸行雲: 因為他每回都釘四枚釘子。我認為三枚足夠。 [#portrait=lu] [ID:JW_LU_SCHOOL_003]
+旁白: 你望向牌樓。第四枚釘子旁，掛著陸行雲晾乾的手巾。 [ID:JW_LU_SCHOOL_004]
+陸行雲: 好吧，今天四枚也有用。渡雲社不把改主意當作丟臉，前提是你真看見了新的事情。 [#portrait=lu] [ID:JW_LU_SCHOOL_005]
+陸行雲: 我們看見識、看你我是否能共事，也看你是否親自走過幾條路。只在鎮裡聽傳聞，不算。 [#portrait=lu] [ID:JW_LU_SCHOOL_006]
+=> lu_questions
+
+~ lu_step
+陸行雲: 若只比快，雨水每回都贏。掠影突進要你先看出口，再決定往哪裡去。 [#portrait=lu] [ID:JW_LU_STEP_001]
+你: 就像穿過戲台上移動的布景？ [#portrait=hero] [ID:JW_LU_STEP_002]
+陸行雲: 對。人會動，劍也會動。出手後若只剩一條退路，你就已經走窄了。 [#portrait=lu] [ID:JW_LU_STEP_003]
+陸行雲: 望風古道有一段舊步痕。願意留出一趟工夫去看，我會教你讀它。 [#portrait=lu] [ID:JW_LU_STEP_004]
+陸行雲: 學會後，它會帶著劍勢向前掠出。你要替落腳的地方負責，不能把輕功當作閉眼逃跑。 [#portrait=lu] [ID:JW_LU_STEP_005]
+=> lu_questions
+
+~ lu_outside
+陸行雲: 青篁溪谷的石頭會滑，古道的風會改。你在屋裡想得再漂亮，也得出去看一眼。 [#portrait=lu] [ID:JW_LU_OUTSIDE_001]
+你: 如果出去一趟，只撿回一籃藥呢？ [#portrait=hero] [ID:JW_LU_OUTSIDE_002]
+陸行雲: 看你為什麼帶它回來。知道給誰、怎麼保鮮、路上遇見什麼，都比說自己「行俠仗義」清楚。 [#portrait=lu] [ID:JW_LU_OUTSIDE_003]
+陸行雲: 一趟外出已把來回算在行程裡。路上多看看，不會因為停下來喘口氣，就忽然天黑。 [#portrait=lu] [ID:JW_LU_OUTSIDE_004]
+你: 我還以為你要催我趕路。 [#portrait=hero] [ID:JW_LU_OUTSIDE_005]
+陸行雲: 七天不是七場追逐。該趕的是承諾，該慢的是眼睛。 [#portrait=lu] [ID:JW_LU_OUTSIDE_006]
+=> lu_questions
+
+~ npc_tao
+if day >= 7
+	陶半夏: 明天上場，今天別試來路不明的補藥。隔壁說那瓶能讓人飛起來，我看只是喝了跑得急。 [#portrait=tao] [ID:JW_NPC_TAO_001]
+elif day >= 4
+	陶半夏: 你衣角多了草籽。好事，至少這幾天不是只坐著想江湖。 [#portrait=tao] [ID:JW_NPC_TAO_002]
+else
+	陶半夏: 藥箱在左，蜜餞在右。若是擦傷，先別把手伸向右邊。 [#portrait=tao] [ID:JW_NPC_TAO_003]
+if origin == "herbalist"
+	陶半夏: 同行的規矩你懂：認不清的藥，寧可問兩次，不要猜一次。 [#portrait=tao] [ID:JW_NPC_TAO_004]
+elif origin == "courier"
+	陶半夏: 跑腿的腳底最容易藏傷。你可以記不住我的名字，別記不住換藥。 [#portrait=tao] [ID:JW_NPC_TAO_005]
+else
+	陶半夏: 小滿說你練過台上的跌撲。這裡不用演得那麼真，疼就說疼。 [#portrait=tao] [ID:JW_NPC_TAO_006]
+=> tao_questions
+
+~ tao_questions
+陶半夏: 先把話說清楚，再動藥箱。 [#portrait=tao] [ID:JW_TAO_QUESTIONS_001]
+- 你為什麼留在望溪鎮開藥鋪？ [ID:JW_TAO_QUESTIONS_002]
+	=> tao_home
+- 溪谷的藥草有什麼要注意？ [ID:JW_TAO_QUESTIONS_003]
+	=> tao_herbs
+- 受傷時，怎樣才算沒有逞強？ [ID:JW_TAO_QUESTIONS_004]
+	=> tao_heal
+- 看看藥鋪有哪些事情需要幫忙。 [ID:JW_TAO_QUESTIONS_005]
+	=> END
+
+~ tao_home
+陶半夏: 小時候我也想一路走到海邊。後來我師父傷了腿，鎮裡又只有這間藥鋪，我就多留了半年。 [#portrait=tao] [ID:JW_TAO_HOME_001]
+你: 然後半年變成很多年？ [#portrait=hero] [ID:JW_TAO_HOME_002]
+陶半夏: 然後我發現，每個來買藥的人，都會帶來一小段外頭的事。海沒有走過來，趕海的人倒來過不少。 [#portrait=tao] [ID:JW_TAO_HOME_003]
+你: 你還想去嗎？ [#portrait=hero] [ID:JW_TAO_HOME_004]
+陶半夏: 想。所以正在教人認藥，總有一天能安心關幾天門。留下來，也可以是在準備下一趟路。 [#portrait=tao] [ID:JW_TAO_HOME_005]
+=> tao_questions
+
+~ tao_herbs
+陶半夏: 青篁溪谷有細葉青和幾種長得很像的雜草。別只看葉形，捻一點莖，聞過再收。 [#portrait=tao] [ID:JW_TAO_HERBS_001]
+你: 多採一些，總不會錯吧？ [#portrait=hero] [ID:JW_TAO_HERBS_002]
+陶半夏: 根還留著，明年才有。竹籃裝得滿不滿，和把事情做好，是兩回事。 [#portrait=tao] [ID:JW_TAO_HERBS_003]
+陶半夏: 若要正式替藥鋪跑一趟，我會把清單和行程先寫清楚。遇上攔路的人，先保住自己再談藥。 [#portrait=tao] [ID:JW_TAO_HERBS_004]
+=> tao_questions
+
+~ tao_heal
+陶半夏: 能分清「還能再試」和「現在該退」。痛不是證明勇敢的收據，不必每一張都留著。 [#portrait=tao] [ID:JW_TAO_HEAL_001]
+你: 那在台上認輸呢？ [#portrait=hero] [ID:JW_TAO_HEAL_002]
+陶半夏: 活著回來，告訴我哪一步不對。我能替你處理傷口，招式要靠你下回記住。 [#portrait=tao] [ID:JW_TAO_HEAL_003]
+陶半夏: 真進了場，藥要在有空隙時用。你往藥瓶裡找答案，對面的劍可不會等。 [#portrait=tao] [ID:JW_TAO_HEAL_004]
+=> tao_questions
+
+~ npc_zhou
+if day >= 7
+	周望山: 明日名冊送上去，就按上頭的名字點。你今天若還接活，我會把趕不上的先攔下。 [#portrait=zhou] [ID:JW_NPC_ZHOU_001]
+elif day >= 4
+	周望山: 最近鎮上想當大俠的人多，願意送一封普通家書的人反而少。你若有空，來看看。 [#portrait=zhou] [ID:JW_NPC_ZHOU_002]
+else
+	周望山: 名字寫大一點，地址寫清楚一點。寫得像武功祕笈，信可不會自己飛到人家。 [#portrait=zhou] [ID:JW_NPC_ZHOU_003]
+if origin == "courier"
+	周望山: 你做過這行，我就不把山路吹成平路了。順路賺錢可以，別順便忘了自己的行程。 [#portrait=zhou] [ID:JW_NPC_ZHOU_004]
+else
+	周望山: 沒做過跑腿也無妨。把收件人的名字念一遍，比點頭十次有用。 [#portrait=zhou] [ID:JW_NPC_ZHOU_005]
+=> zhou_questions
+
+~ zhou_questions
+周望山: 驛站的事都記在簿上，你想先問哪一件？ [#portrait=zhou] [ID:JW_ZHOU_QUESTIONS_001]
+- 小小一封信，有那麼要緊嗎？ [ID:JW_ZHOU_QUESTIONS_002]
+	=> zhou_letters
+- 那封沒送到的信怎麼回事？ [ID:JW_ZHOU_QUESTIONS_003]
+	=> zhou_missing
+- 為什麼護送要先做過跑腿？ [ID:JW_ZHOU_QUESTIONS_004]
+	=> zhou_escort
+- 看看今天可以接哪些差事。 [ID:JW_ZHOU_QUESTIONS_005]
+	=> END
+
+~ zhou_letters
+周望山: 你看這封，只寫了「今年桂花很香」。送信的人騎了兩日，收信的人看了半個晚上。 [#portrait=zhou] [ID:JW_ZHOU_LETTERS_001]
+你: 就這一句？ [#portrait=hero] [ID:JW_ZHOU_LETTERS_002]
+周望山: 嗯。他母親手不靈便，寫不長。這句話的意思是：院子還在，我也還在。 [#portrait=zhou] [ID:JW_ZHOU_LETTERS_003]
+旁白: 他把信收回信袋，用的那根繩比綁帳簿的還新。 [ID:JW_ZHOU_LETTERS_004]
+周望山: 江湖上有些事，遠看很小。你肯送到跟前，才知道多重。 [#portrait=zhou] [ID:JW_ZHOU_LETTERS_005]
+=> zhou_questions
+
+~ zhou_missing
+周望山: 信上只寫「木劍先生」，已退回兩次。這稱呼在戲班舊節目單裡出現過，偏偏沒寫本名。 [#portrait=zhou] [ID:JW_ZHOU_MISSING_001]
+你: 你們為什麼不一起去找？ [#portrait=hero] [ID:JW_ZHOU_MISSING_002]
+周望山: 我去過。剛走到台邊，她就喊「周掌櫃來演負心人了」，底下全是熟客，我只好先退。 [#portrait=zhou] [ID:JW_ZHOU_MISSING_003]
+你: 所以需要一個還沒被編進戲裡的人。 [#portrait=hero] [ID:JW_ZHOU_MISSING_004]
+周望山: 也需要一個肯把信送完的人。寄件人說是給舊師傅的問候，不是什麼祕笈，別讓傳聞把它弄重了。 [#portrait=zhou] [ID:JW_ZHOU_MISSING_005]
+=> zhou_questions
+
+~ zhou_escort
+周望山: 先讓我知道，你會不會核數、問路、按約定回來。護送不只是在車前揮劍。 [#portrait=zhou] [ID:JW_ZHOU_ESCORT_001]
+你: 如果有更快的路呢？ [#portrait=hero] [ID:JW_ZHOU_ESCORT_002]
+周望山: 可以改。但先告訴同行的人。自己跑到終點，不叫帶大家走到終點。 [#portrait=zhou] [ID:JW_ZHOU_ESCORT_003]
+周望山: 望風古道這趟，出發前把行程看明白。有打算就來，我不拿一句「江湖義氣」替你作主。 [#portrait=zhou] [ID:JW_ZHOU_ESCORT_004]
+=> zhou_questions
+
+~ npc_xiao
+if day >= 7
+	蕭小滿: 明天你在台上，我在台下。這次不用替你打鑼，倒是能替你看著衣角別翻進腰帶裡。 [#portrait=xiao] [ID:JW_NPC_XIAO_001]
+elif day >= 4
+	蕭小滿: 新一折的名字想好了，叫《七日小俠》。放心，還沒把結局寫死。 [#portrait=xiao] [ID:JW_NPC_XIAO_002]
+else
+	蕭小滿: 戲台正缺一位不怕被小孩指著笑的人。做得到的話，比扮大俠還難得。 [#portrait=xiao] [ID:JW_NPC_XIAO_003]
+if origin == "performer"
+	蕭小滿: 自家人就不客套。你上台，我會把鼓點打穩；你上路，自己的腳步得自己聽。 [#portrait=xiao] [ID:JW_NPC_XIAO_004]
+else
+	蕭小滿: 不會唱也能幫忙。有人扶著布景，台上的人才有地方出風頭。 [#portrait=xiao] [ID:JW_NPC_XIAO_005]
+=> xiao_questions
+
+~ xiao_questions
+蕭小滿: 想聽正經事，還是我努力說得像正經事的事？ [#portrait=xiao] [ID:JW_XIAO_QUESTIONS_001]
+- 演過很多大俠，就知道俠義是什麼？ [ID:JW_XIAO_QUESTIONS_002]
+	=> xiao_hero
+- 你唱的古道小調，藏著什麼？ [ID:JW_XIAO_QUESTIONS_003]
+	=> xiao_song
+- 我怕選拔時讓人失望。 [ID:JW_XIAO_QUESTIONS_004]
+	=> xiao_stage
+- 看看戲班今天需要什麼幫手。 [ID:JW_XIAO_QUESTIONS_005]
+	=> END
+
+~ xiao_hero
+蕭小滿: 我演過三回。第一回救人忘了放下糖葫蘆，第二回被披風絆倒，第三回倒是順利，台下說像個壞人。 [#portrait=xiao] [ID:JW_XIAO_HERO_001]
+你: 那怎麼辦？ [#portrait=hero] [ID:JW_XIAO_HERO_002]
+蕭小滿: 少想自己像不像，先把人拉起來。觀眾愛不愛看，往後再說。 [#portrait=xiao] [ID:JW_XIAO_HERO_003]
+旁白: 一個孩子追著紙鳶撞上戲台。小滿停下話，把台角那枚翹釘重新敲平，才又轉過身。 [ID:JW_XIAO_HERO_004]
+蕭小滿: 看，這就不用披風。 [#portrait=xiao] [ID:JW_XIAO_HERO_005]
+=> xiao_questions
+
+~ xiao_song
+蕭小滿: 「山風過雙耳，石影落三更；莫尋高處月，回首有歸程。」老人家說，從前走古道的人都會唱。 [#portrait=xiao] [ID:JW_XIAO_SONG_001]
+你: 聽起來像在叫人別往高處走。 [#portrait=hero] [ID:JW_XIAO_SONG_002]
+蕭小滿: 也可能是叫人別只盯著高處。我照著唱了很多年，還沒真正走過那條路。 [#portrait=xiao] [ID:JW_XIAO_SONG_003]
+蕭小滿: 你願意花工夫一起琢磨，我就把幾種唱法都翻出來。不是每一個被傳下來的字，都還在原來的位置。 [#portrait=xiao] [ID:JW_XIAO_SONG_004]
+=> xiao_questions
+
+~ xiao_stage
+蕭小滿: 台下有一百個人，就有一百種想看的戲。你若全想照顧，一出場先得長出一百張臉。 [#portrait=xiao] [ID:JW_XIAO_STAGE_001]
+你: 可沈師傅和陸大哥都在看。 [#portrait=hero] [ID:JW_XIAO_STAGE_002]
+蕭小滿: 他們要看你這幾天走了什麼路。不是看你能不能假裝成他們年輕時的樣子。 [#portrait=xiao] [ID:JW_XIAO_STAGE_003]
+蕭小滿: 真慌了，就先站穩，找眼前那一步。等你做完，再找下一步。 [#portrait=xiao] [ID:JW_XIAO_STAGE_004]
+=> xiao_questions
+
+~ npc_lin
+if day >= 7
+	林知微: 我把你這幾天問過的路圈在圖上了。選拔前再看一眼，會發現自己已經走過不少地方。 [#portrait=lin] [ID:JW_NPC_LIN_001]
+elif day >= 4
+	林知微: 你帶回來的消息，和舊圖有幾處對不上。很好，終於有機會讓這張圖變準一點。 [#portrait=lin] [ID:JW_NPC_LIN_002]
+else
+	林知微: 看圖嗎？先別信右下角那句「一刻可達」。寫它的人走得快，還愛面子。 [#portrait=lin] [ID:JW_NPC_LIN_003]
+if origin == "herbalist"
+	林知微: 圖上的藥草記號，有幾個是我照著葉子畫的。你若看不懂，十有八九是我畫錯。 [#portrait=lin] [ID:JW_NPC_LIN_004]
+elif origin == "courier"
+	林知微: 你從驛站來，正好。紙上的近路和腳下的近路不一樣，請幫我把這兩種分開。 [#portrait=lin] [ID:JW_NPC_LIN_005]
+else
+	林知微: 戲班的曲子常記著舊地名。我查不到的路，有時你們唱得出來。 [#portrait=lin] [ID:JW_NPC_LIN_006]
+=> lin_questions
+
+~ lin_questions
+林知微: 地圖只是起點。你想先知道哪一段？ [#portrait=lin] [ID:JW_LIN_QUESTIONS_001]
+- 青篁溪谷和望風古道有什麼不同？ [ID:JW_LIN_QUESTIONS_002]
+	=> lin_places
+- 為什麼要修那座小橋？ [ID:JW_LIN_QUESTIONS_003]
+	=> lin_bridge
+- 懂得多，真的能幫上戰鬥嗎？ [ID:JW_LIN_QUESTIONS_004]
+	=> lin_insight
+- 看看可以安排的調查與準備。 [ID:JW_LIN_QUESTIONS_005]
+	=> END
+
+~ lin_places
+林知微: 溪谷低，草木多，先看水邊的足印和石頭上的苔。古道高，風向會改，先看旗穗和舊路標。 [#portrait=lin] [ID:JW_LIN_PLACES_001]
+你: 看完呢？ [#portrait=hero] [ID:JW_LIN_PLACES_002]
+林知微: 把你確定的和猜的分開。回來時若只說「那裡很危險」，下一個人還是不知道要留心什麼。 [#portrait=lin] [ID:JW_LIN_PLACES_003]
+林知微: 調查不是把每塊石頭都翻一次。找到能回答這趟問題的線索，記清楚，平安帶回來。 [#portrait=lin] [ID:JW_LIN_PLACES_004]
+=> lin_questions
+
+~ lin_bridge
+林知微: 橋還能過人，但挑著藥籃的人會踩在同一塊鬆板上。每個人都以為，反正下一個人會小心。 [#portrait=lin] [ID:JW_LIN_BRIDGE_001]
+你: 找師傅換掉不就好了？ [#portrait=hero] [ID:JW_LIN_BRIDGE_002]
+林知微: 木料、工錢、誰來核尺寸，都得有人張羅。我會看圖，卻總把開口求人拖到最後。 [#portrait=lin] [ID:JW_LIN_BRIDGE_003]
+林知微: 你若願意，咱們一起把事情拆開做。花的錢和時間會先說清楚，不能把你的好意當成沒有底的口袋。 [#portrait=lin] [ID:JW_LIN_BRIDGE_004]
+=> lin_questions
+
+~ lin_insight
+林知微: 你看對方肩膀提起、後腳踏實，便知道這一招未必只朝眼前。這也是見識。 [#portrait=lin] [ID:JW_LIN_INSIGHT_001]
+你: 所以不是把書背熟就好。 [#portrait=hero] [ID:JW_LIN_INSIGHT_002]
+林知微: 書把前人的眼睛借給你，腳還得自己走。你親自看過兩處地方，再回頭讀一句話，意思可能就變了。 [#portrait=lin] [ID:JW_LIN_INSIGHT_003]
+林知微: 有空可以來整理見聞。紙不會替你變強，但能讓你想起，自己為什麼往那裡站。 [#portrait=lin] [ID:JW_LIN_INSIGHT_004]
+=> lin_questions
+
+~ exam_intro
+旁白: 第八日的鐘聲落下，望溪鎮沒有忽然變成另一座城。藥鋪照常開門，驛站照常核信，戲台旁多掛了一條紅綢。 [ID:JW_EXAM_INTRO_001]
+蕭小滿: 昨夜特地把它繫牢了。今天誰要耍帥，都別拿我的布景練輕功。 [#portrait=xiao] [ID:JW_EXAM_INTRO_002]
+沈照嶺: 這些天的修習與承諾，我們都有記錄。上場時，拿出你真正會的，不必裝出還不會的樣子。 [#portrait=shen] [ID:JW_EXAM_INTRO_003]
+陸行雲: 外出的路、幫過的人，也都算數。看清台上那位教頭的起手，別被一個大嗓門騙了腳步。 [#portrait=lu] [ID:JW_EXAM_INTRO_004]
+if training >= 6
+	沈照嶺: 你的基本功已能支撐一場完整的交鋒。現在要做的是把它用在對的時候。 [#portrait=shen] [ID:JW_EXAM_INTRO_005]
+else
+	沈照嶺: 還有不穩的地方，就更要留心站位。承認自己的空隙，才知道該把哪裡守好。 [#portrait=shen] [ID:JW_EXAM_INTRO_006]
+if insight >= 6
+	陸行雲: 你的眼睛已經比初來時快些了。相信你看見的東西，也記得隨時再看一眼。 [#portrait=lu] [ID:JW_EXAM_INTRO_007]
+else
+	陸行雲: 第一次看不清，便先閃開。急著答題，不一定比晚半步想明白更好。 [#portrait=lu] [ID:JW_EXAM_INTRO_008]
+陶半夏: 藥放在順手的地方。我要提醒的話，就這一句。 [#portrait=tao] [ID:JW_EXAM_INTRO_009]
+周望山: 今日沒有替別人趕的路，只有你自己選的路。 [#portrait=zhou] [ID:JW_EXAM_INTRO_010]
+你: 我準備好了。 [#portrait=hero] [ID:JW_EXAM_INTRO_011]
+旁白: 你踏進場中。風掠過衣角，木劍輕輕相碰，發出一聲清楚的響。 [ID:JW_EXAM_INTRO_012]
+=> END
+
+~ ending_zhaoling
+旁白: 沈照嶺翻過名冊，將一枚刻著山紋的木牌放在你手邊。他沒有立刻鬆手。 [ID:JW_ENDING_ZHAOLING_001]
+沈照嶺: 照嶺門願意收你。這塊牌子管不了你往後每一次出劍，也不能替你把承諾做完。 [#portrait=shen] [ID:JW_ENDING_ZHAOLING_002]
+你: 那它管什麼？ [#portrait=hero] [ID:JW_ENDING_ZHAOLING_003]
+沈照嶺: 管你想回來問一件不明白的事時，有一扇門可以敲。 [#portrait=shen] [ID:JW_ENDING_ZHAOLING_004]
+旁白: 你接住木牌，發現它的邊角已被磨圓，和鎮上那幾把木劍一樣。 [ID:JW_ENDING_ZHAOLING_005]
+陸行雲: 恭喜。以後跟他練得悶了，可以來找我走走。我會把人好好送回去。 [#portrait=lu] [ID:JW_ENDING_ZHAOLING_006]
+沈照嶺: 先把上回的飯錢送回去。 [#portrait=shen] [ID:JW_ENDING_ZHAOLING_007]
+蕭小滿: 我就知道，入門第一日總得有人被教訓。幸好不是你。 [#portrait=xiao] [ID:JW_ENDING_ZHAOLING_008]
+旁白: 回到牌樓下，七日前寫下的姓名還在。旁邊新添了一筆，墨色也在慢慢乾。 [ID:JW_ENDING_ZHAOLING_009]
+你: 路比我想得長。不過，已經知道第一步怎麼走了。 [#portrait=hero] [ID:JW_ENDING_ZHAOLING_010]
+旁白: 「入山之前」至此落幕。你帶著七日的見聞，踏上照嶺門的山階；更遠的門派生活，留待下一篇。 [ID:JW_ENDING_ZHAOLING_011]
+=> END
+
+~ ending_duyun
+旁白: 陸行雲沒有遞給你厚重的門規，只把一段青色繩結繫在你的劍鞘上。 [ID:JW_ENDING_DUYUN_001]
+陸行雲: 渡雲社的第一件事：記得自己從哪裡出發。第二件事，別以為路只有眼前這一條。 [#portrait=lu] [ID:JW_ENDING_DUYUN_002]
+你: 第三件呢？ [#portrait=hero] [ID:JW_ENDING_DUYUN_003]
+陸行雲: 到了飯館，先看看袋裡有沒有錢。這一條我學得比較慢。 [#portrait=lu] [ID:JW_ENDING_DUYUN_004]
+林知微: 我抄了一張新圖。你帶回來的路標也畫上去了，右下角那句「一刻可達」已經刪掉。 [#portrait=lin] [ID:JW_ENDING_DUYUN_005]
+旁白: 地圖折起來，剛好能塞進行囊最容易拿到的那一格。紙邊仍留著幾處空白。 [ID:JW_ENDING_DUYUN_006]
+沈照嶺: 腳步可以活，心裡的分寸不能散。下回經過，來比一場。 [#portrait=shen] [ID:JW_ENDING_DUYUN_007]
+你: 好。我會帶著新見聞回來。 [#portrait=hero] [ID:JW_ENDING_DUYUN_008]
+陶半夏: 也記得把傷口處理好再回來。我很樂意聽故事，不想每段都從換藥開始。 [#portrait=tao] [ID:JW_ENDING_DUYUN_009]
+旁白: 山風吹動劍鞘上的繩結。你忽然覺得，江湖並不在地圖的盡頭，就在下一次願意看清楚的轉彎。 [ID:JW_ENDING_DUYUN_010]
+旁白: 「入山之前」至此落幕。渡雲社的同行邀約已落在你手中；更遠的自由遊歷，留待下一篇。 [ID:JW_ENDING_DUYUN_011]
+=> END
+
+~ ending_stay
+旁白: 名冊翻到最後，你把行囊重新收好，沒有把門牌繫到腰間。牌樓下安靜了一小會兒，卻沒有誰催你離開。 [ID:JW_ENDING_STAY_001]
+沈照嶺: 這次就先停在這裡。若還願意練，明早木劍照樣擺在架上。 [#portrait=shen] [ID:JW_ENDING_STAY_002]
+你: 暫時不進山，這七天就白走了嗎？ [#portrait=hero] [ID:JW_ENDING_STAY_003]
+陸行雲: 門牌不能替你走路，也不能讓走過的路消失。哪裡值得再走、哪裡想換一條，你比第一天知道得多。 [#portrait=lu] [ID:JW_ENDING_STAY_004]
+周望山: 驛站留得下一張床。幫忙把晚上的信核完，明天自己的事，明天再安排。 [#portrait=zhou] [ID:JW_ENDING_STAY_005]
+蕭小滿: 《七日小俠》得換個名字了。不是不好聽，是你的故事看來不只七天。 [#portrait=xiao] [ID:JW_ENDING_STAY_006]
+你: 那就先叫「還在路上」。 [#portrait=hero] [ID:JW_ENDING_STAY_007]
+旁白: 你替戲台收好最後一條紅綢。鎮外的山還在原處，望過去時，卻已不像七日前那樣陌生。 [ID:JW_ENDING_STAY_008]
+陶半夏: 晚飯要涼了。大俠的事明天再說，先回來吃飯。 [#portrait=tao] [ID:JW_ENDING_STAY_009]
+旁白: 「入山之前」至此落幕。你選擇留鎮續修，並非失去這段經歷；下一篇的生活，從另一個起點展開。 [ID:JW_ENDING_STAY_010]
+=> END
+
+~ activity_sword_lesson
+旁白: 沈照嶺把場上的木樁移成一線，沒有先替你擺出威風的起手式。 [ID:JW_ACTIVITY_SWORD_LESSON_001]
+沈照嶺: 看第一根，不是看最後一根。想著一次劈到底，肩先緊了，氣就走不出去。 [#portrait=shen] [ID:JW_ACTIVITY_SWORD_LESSON_002]
+你: 那破雲劍氣的「破」，究竟破的是什麼？ [#portrait=hero] [ID:JW_ACTIVITY_SWORD_LESSON_003]
+沈照嶺: 先破你自己憋住的那口氣。 [#portrait=shen] [ID:JW_ACTIVITY_SWORD_LESSON_004]
+旁白: 他示範一遍。木劍向前，細窄的氣勁掠過樁面，最後一縷才散進院邊的竹葉裡。 [ID:JW_ACTIVITY_SWORD_LESSON_005]
+沈照嶺: 不是把全身的力扔出去，是把該用的那一段送到。你來。 [#portrait=shen] [ID:JW_ACTIVITY_SWORD_LESSON_006]
+- 我總怕力氣不夠，所以越握越緊。 [ID:JW_ACTIVITY_SWORD_LESSON_007]
+	你: 手一鬆，就覺得劍會飛出去。 [#portrait=hero] [ID:JW_ACTIVITY_SWORD_LESSON_008]
+	沈照嶺: 握得住，和握得死，中間還有很長一段。現在把小指收穩，其餘慢慢試。 [#portrait=shen] [ID:JW_ACTIVITY_SWORD_LESSON_009]
+- 我總盯著對方，忘記自己的呼吸。 [ID:JW_ACTIVITY_SWORD_LESSON_010]
+	你: 怕一眨眼就錯過出手的機會。 [#portrait=hero] [ID:JW_ACTIVITY_SWORD_LESSON_011]
+	沈照嶺: 你可以看著對方，也能聽見自己。兩件事一起做，才不會被別人的節奏牽走。 [#portrait=shen] [ID:JW_ACTIVITY_SWORD_LESSON_012]
+旁白: 你試過幾次，氣勁終於不再撞在自己腳邊。院角的竹葉輕輕翻起，露出較淡的葉背。 [ID:JW_ACTIVITY_SWORD_LESSON_013]
+沈照嶺: 記住這一次的感覺。它不華麗，但是真的。 [#portrait=shen] [ID:JW_ACTIVITY_SWORD_LESSON_014]
+你: 下一回交手，我能把它放在普攻之後，補上對方後退留下的空隙。 [#portrait=hero] [ID:JW_ACTIVITY_SWORD_LESSON_015]
+沈照嶺: 可以。也可以先逼他改路，再用劍接上。招式教給你了，時機由你判斷。 [#portrait=shen] [ID:JW_ACTIVITY_SWORD_LESSON_016]
+旁白: 你把劍收回鞘中，第一次覺得，呼吸和劍鋒可以朝同一個地方走。 [ID:JW_ACTIVITY_SWORD_LESSON_017]
+=> END
+
+~ activity_practice
+沈照嶺: 今天把基本功放進走動裡。別站在原地等對方替你把距離算好。 [#portrait=shen] [ID:JW_ACTIVITY_PRACTICE_001]
+你: 先靠近，出劍，再離開危險的位置。 [#portrait=hero] [ID:JW_ACTIVITY_PRACTICE_002]
+沈照嶺: 對。看到對方準備重擊，就留一點體力閃開。招式沒落到身上，才算你看明白了。 [#portrait=shen] [ID:JW_ACTIVITY_PRACTICE_003]
+旁白: 練場上的木樁與陪練已準備好。你活動一下手腕，走進劃好的界線。 [ID:JW_ACTIVITY_PRACTICE_004]
+=> END
+
+~ complete_practice
+旁白: 最後一輪練習結束，握柄上的汗留下了清楚的指印。 [ID:JW_COMPLETE_PRACTICE_001]
+沈照嶺: 這次有幾步走得比出劍更好。記住，能重新站到舒服的位置，就還有下一招。 [#portrait=shen] [ID:JW_COMPLETE_PRACTICE_002]
+你: 我以前只想多打一下，沒想過少挨一下能留下多少餘地。 [#portrait=hero] [ID:JW_COMPLETE_PRACTICE_003]
+沈照嶺: 今日練到這裡。長進不必每回都很響，明天用得出來就好。 [#portrait=shen] [ID:JW_COMPLETE_PRACTICE_004]
+=> END
+
+~ activity_spar
+沈照嶺: 你已有些根基，可以把招式接起來試。這一回，對手會追著你的破綻走。 [#portrait=shen] [ID:JW_ACTIVITY_SPAR_001]
+你: 那我該先守，還是先進？ [#portrait=hero] [ID:JW_ACTIVITY_SPAR_002]
+沈照嶺: 先看。對方肩膀一沉，未必是要退；腳步一停，也未必是沒有力氣。 [#portrait=shen] [ID:JW_ACTIVITY_SPAR_003]
+旁白: 你與陪練抱拳。院裡的風正好，木劍相觸的聲音，比方才近了許多。 [ID:JW_ACTIVITY_SPAR_004]
+=> END
+
+~ complete_spar
+旁白: 切磋告一段落，你的袖口沾了灰，劍卻握得比開始時穩。 [ID:JW_COMPLETE_SPAR_001]
+if training >= 6
+	沈照嶺: 你已不是只會照著口令出手了。很好，往後要防的，是太相信自己猜中的那一次。 [#portrait=shen] [ID:JW_COMPLETE_SPAR_002]
+else
+	沈照嶺: 你開始能把第一招和第二招放在一起想了。再把退路也算進去，便更完整。 [#portrait=shen] [ID:JW_COMPLETE_SPAR_003]
+你: 剛才有一回，我本來想追，後來看見對方的腳還沒動，就先停住了。 [#portrait=hero] [ID:JW_COMPLETE_SPAR_004]
+沈照嶺: 我看見了。能停住一把已想出去的劍，也是本事。 [#portrait=shen] [ID:JW_COMPLETE_SPAR_005]
+=> END
+
+~ activity_courier_work
+周望山: 這一趟照單送到鎮上幾處地方，收好回執再回來。不必跑得像後頭有人追。 [#portrait=zhou] [ID:JW_ACTIVITY_COURIER_WORK_001]
+你: 要我帶口信嗎？ [#portrait=hero] [ID:JW_ACTIVITY_COURIER_WORK_002]
+周望山: 給藥鋪那份添一句，竹籃已經補好。給戲班那份……只送信，別替我念飯錢。 [#portrait=zhou] [ID:JW_ACTIVITY_COURIER_WORK_003]
+if origin == "courier"
+	周望山: 你熟手，核信和整理回執一併交給你，工錢也照熟手算。 [#portrait=zhou] [ID:JW_ACTIVITY_COURIER_WORK_004]
+else
+	周望山: 第一次走，沿路把門牌看清楚。把事情送對，比把腳步催快要緊。 [#portrait=zhou] [ID:JW_ACTIVITY_COURIER_WORK_005]
+旁白: 你將信袋斜挎好。布袋不重，裡頭裝的事卻各不相同。 [ID:JW_ACTIVITY_COURIER_WORK_006]
+=> END
+
+~ complete_courier_work
+周望山: 回執齊了，字也看得清。這趟可以劃掉。 [#portrait=zhou] [ID:JW_COMPLETE_COURIER_WORK_001]
+你: 送去藥鋪的竹籃消息，陶姑娘聽了比收到信還高興。 [#portrait=hero] [ID:JW_COMPLETE_COURIER_WORK_002]
+周望山: 因為她今天就用得上。說得剛好，是另一種準時。 [#portrait=zhou] [ID:JW_COMPLETE_COURIER_WORK_003]
+旁白: 他照約定數出工錢，又把空信袋拍平，留給下一個願意上路的人。 [ID:JW_COMPLETE_COURIER_WORK_004]
+=> END
+
+~ activity_stage_work
+蕭小滿: 今天替戲班整理戲台和道具，台下坐的多是熟客，眼睛比台上的劍尖還利。 [#portrait=xiao] [ID:JW_ACTIVITY_STAGE_WORK_001]
+你: 搬錯東西會怎樣？ [#portrait=hero] [ID:JW_ACTIVITY_STAGE_WORK_002]
+蕭小滿: 一代大俠拔出來的是掃帚。要是演得夠真，也不是不能唱下去。 [#portrait=xiao] [ID:JW_ACTIVITY_STAGE_WORK_003]
+if origin == "performer"
+	蕭小滿: 你認得鼓點，收尾時一起幫著帶場，我另把這份工錢算給你。 [#portrait=xiao] [ID:JW_ACTIVITY_STAGE_WORK_004]
+else
+	蕭小滿: 先把道具擺在伸手就拿得到的地方。台上哪怕只少慌一回，底下也看得見。 [#portrait=xiao] [ID:JW_ACTIVITY_STAGE_WORK_005]
+=> END
+
+~ complete_stage_work
+旁白: 最後一聲鑼響落下，台下的孩子還不肯走。你把散落的紅綢一條條捲好。 [ID:JW_COMPLETE_STAGE_WORK_001]
+蕭小滿: 今天沒有人拔錯劍。以我們戲班的規矩，這就值得多笑一下。 [#portrait=xiao] [ID:JW_COMPLETE_STAGE_WORK_002]
+你: 剛才有個孩子問，我是不是明日也會上台。 [#portrait=hero] [ID:JW_COMPLETE_STAGE_WORK_003]
+蕭小滿: 告訴他，你還有自己的事要做。替人撐場很好，也要替自己留一段路。 [#portrait=xiao] [ID:JW_COMPLETE_STAGE_WORK_004]
+旁白: 她把工錢放進你掌心，順手替你撣掉肩上那片亮紙。 [ID:JW_COMPLETE_STAGE_WORK_005]
+=> END
+
+~ activity_herb_errand
+陶半夏: 溪谷這趟，找藥、核對採集處、把藥籃帶回來。路上看清腳印，別被一塊乾石頭騙得踩進滑苔。 [#portrait=tao] [ID:JW_ACTIVITY_HERB_ERRAND_001]
+你: 有人一直走那條路？ [#portrait=hero] [ID:JW_ACTIVITY_HERB_ERRAND_002]
+陶半夏: 採藥的、挑水的，最近也有幾個攔路討錢的。能避就避，真要交手，先找站得穩的地方。 [#portrait=tao] [ID:JW_ACTIVITY_HERB_ERRAND_003]
+if origin == "herbalist"
+	陶半夏: 你帶回來的我會再核一次，不是信不過你，是藥鋪從來不省這一步。 [#portrait=tao] [ID:JW_ACTIVITY_HERB_ERRAND_004]
+else
+	陶半夏: 清單上畫了葉與莖，遇到不確定的，先記位置，別把一片不認識的綠全塞進籃裡。 [#portrait=tao] [ID:JW_ACTIVITY_HERB_ERRAND_005]
+旁白: 她把備用的空籃交給你，裡頭墊著透氣的薄布，好讓溪邊新採的藥與找回的舊籃分開收好。 [ID:JW_ACTIVITY_HERB_ERRAND_006]
+=> END
+
+~ complete_herb_errand
+旁白: 陶半夏沒有先數藥草，而是把你和竹籃一起轉著看了一圈。 [ID:JW_COMPLETE_HERB_ERRAND_001]
+你: 藥在籃裡，人也回來了。 [#portrait=hero] [ID:JW_COMPLETE_HERB_ERRAND_002]
+陶半夏: 我知道，我在看你有沒有把「沒事」說得太快。 [#portrait=tao] [ID:JW_COMPLETE_HERB_ERRAND_003]
+旁白: 她核好藥材，把留下的根與採集位置記進小冊，又替你配了幾份隨身用藥。 [ID:JW_COMPLETE_HERB_ERRAND_004]
+陶半夏: 下回有人要走那裡，這幾個位置能幫上忙。你帶回來的不只是藥。 [#portrait=tao] [ID:JW_COMPLETE_HERB_ERRAND_005]
+你: 原來留下一點，也能算收穫。 [#portrait=hero] [ID:JW_COMPLETE_HERB_ERRAND_006]
+陶半夏: 能讓下一個人還有得採，就是好收穫。 [#portrait=tao] [ID:JW_COMPLETE_HERB_ERRAND_007]
+=> END
+
+~ activity_grove_survey
+林知微: 青篁溪谷這一頁，我畫了三回，三回都只在鎮裡問人。今天該換一種辦法了。 [#portrait=lin] [ID:JW_ACTIVITY_GROVE_SURVEY_001]
+你: 我去看，你來畫？ [#portrait=hero] [ID:JW_ACTIVITY_GROVE_SURVEY_002]
+林知微: 你記下藥路、舊標和能落腳的位置。能確定的畫實線，拿不準的留著，回來一起問。 [#portrait=lin] [ID:JW_ACTIVITY_GROVE_SURVEY_003]
+旁白: 他給你的不是一張畫滿的圖，而是一張保留了許多空白的圖。 [ID:JW_ACTIVITY_GROVE_SURVEY_004]
+林知微: 空著沒關係。錯得太滿，才最難改。 [#portrait=lin] [ID:JW_ACTIVITY_GROVE_SURVEY_005]
+=> END
+
+~ complete_grove_survey
+旁白: 你把沿路記下的位置攤在桌上。林知微拿出舊圖，最先擦掉的是一條畫得極整齊的直線。 [ID:JW_COMPLETE_GROVE_SURVEY_001]
+你: 你不心疼？ [#portrait=hero] [ID:JW_COMPLETE_GROVE_SURVEY_002]
+林知微: 心疼。但留著它，下個人就得替我多走一段冤路。 [#portrait=lin] [ID:JW_COMPLETE_GROVE_SURVEY_003]
+旁白: 溪邊的採藥路和舊石標之間，多了一段彎彎的線。它不漂亮，卻終於接得上。 [ID:JW_COMPLETE_GROVE_SURVEY_004]
+林知微: 你看這裡，石標沒有指山頂，是提醒人回頭看水岸。 [#portrait=lin] [ID:JW_COMPLETE_GROVE_SURVEY_005]
+你: 有些線索不是告訴我往哪走，是叫我看看剛才漏了什麼。 [#portrait=hero] [ID:JW_COMPLETE_GROVE_SURVEY_006]
+林知微: 這句可以寫在圖背面。署你的名字，省得下回又變成我說的。 [#portrait=lin] [ID:JW_COMPLETE_GROVE_SURVEY_007]
+=> END
+
+~ activity_ridge_tracks
+陸行雲: 望風古道的步痕，不在最平的石面上。願意抬頭的人看山，願意低頭的人才看得見怎麼走。 [#portrait=lu] [ID:JW_ACTIVITY_RIDGE_TRACKS_001]
+你: 前人把輕功刻在地上？ [#portrait=hero] [ID:JW_ACTIVITY_RIDGE_TRACKS_002]
+陸行雲: 刻的是轉身和落腳的習慣。你若只照著踩，一陣風就能把你教會的全吹走。 [#portrait=lu] [ID:JW_ACTIVITY_RIDGE_TRACKS_003]
+旁白: 他用樹枝在地上劃了兩道線，中間留著足夠讓一個人側身通過的空隙。 [ID:JW_ACTIVITY_RIDGE_TRACKS_004]
+陸行雲: 看路標、查步痕，也看哪些地方容得下你落腳。攔路的人一動，路也跟著變。 [#portrait=lu] [ID:JW_ACTIVITY_RIDGE_TRACKS_005]
+你: 先看出口，再決定出手的方向。 [#portrait=hero] [ID:JW_ACTIVITY_RIDGE_TRACKS_006]
+陸行雲: 對。這趟帶回來的若只是一個招名，就太可惜了。 [#portrait=lu] [ID:JW_ACTIVITY_RIDGE_TRACKS_007]
+=> END
+
+~ complete_ridge_tracks
+旁白: 你照著古道的步痕走了一遍，第二遍卻換了落腳的位置。陸行雲一直站在旁邊，這時才點頭。 [ID:JW_COMPLETE_RIDGE_TRACKS_001]
+陸行雲: 為什麼改？ [#portrait=lu] [ID:JW_COMPLETE_RIDGE_TRACKS_002]
+你: 風不一樣，旁邊的草也長過來了。前人的腳印不能替我踩今天的地。 [#portrait=hero] [ID:JW_COMPLETE_RIDGE_TRACKS_003]
+陸行雲: 很好。掠影突進就從這裡開始：不是追著影子跑，是知道下一個影子會落在哪裡。 [#portrait=lu] [ID:JW_COMPLETE_RIDGE_TRACKS_004]
+旁白: 他讓你把呼吸收短半拍，身形前掠，劍鋒順勢劃出一道輕快的弧。 [ID:JW_COMPLETE_RIDGE_TRACKS_005]
+你: 原來出招和移位可以是同一步。 [#portrait=hero] [ID:JW_COMPLETE_RIDGE_TRACKS_006]
+陸行雲: 可以，也要記得何時不用。後面沒有落腳處，招式再快也只是撞得更響。 [#portrait=lu] [ID:JW_COMPLETE_RIDGE_TRACKS_007]
+旁白: 回鎮時，你把最清楚的一處步痕記下，又在旁邊添了一句：「到時再看。」 [ID:JW_COMPLETE_RIDGE_TRACKS_008]
+=> END
+
+~ activity_escort_promise
+周望山: 你做過跑腿，我知道你會核對回執。這回護送走古道，還要多記一件事：回頭看看同行的人。 [#portrait=zhou] [ID:JW_ACTIVITY_ESCORT_PROMISE_001]
+你: 貨物、路線、歸程，都在這張單上？ [#portrait=hero] [ID:JW_ACTIVITY_ESCORT_PROMISE_002]
+周望山: 都在。這趟留出的工夫較長，別急著省。路上有攔路的人，也有車輪容易卡住的地方。 [#portrait=zhou] [ID:JW_ACTIVITY_ESCORT_PROMISE_003]
+旁白: 他把待送的藥箱逐一點過，最後又在一只順道帶回鎮裡的小木匣上放了一塊舊布。 [ID:JW_ACTIVITY_ESCORT_PROMISE_004]
+周望山: 裡頭是剛修好的木偶，送回戲班。別讓人家的小將軍還沒登台，就先在路上折了腿。 [#portrait=zhou] [ID:JW_ACTIVITY_ESCORT_PROMISE_005]
+=> END
+
+~ complete_escort_promise
+旁白: 你帶著回執回到驛站時，周望山先看了歸程記錄，又問同行的人是否都平安。 [ID:JW_COMPLETE_ESCORT_PROMISE_001]
+你: 遇到攔路的，也有一段得換落腳處。我把停下來的原因都記了。 [#portrait=hero] [ID:JW_COMPLETE_ESCORT_PROMISE_002]
+周望山: 好。看見問題、告訴同行的人、把事情做完。你這趟守住的，不只是貨箱。 [#portrait=zhou] [ID:JW_COMPLETE_ESCORT_PROMISE_003]
+旁白: 蕭小滿抱著修好的木偶探進門。小將軍的兩條腿一長一短，走起路來格外神氣。 [ID:JW_COMPLETE_ESCORT_PROMISE_004]
+蕭小滿: 他說謝謝。還說下回若缺護衛，可以請他。 [#portrait=xiao] [ID:JW_COMPLETE_ESCORT_PROMISE_005]
+你: 他走得穩嗎？ [#portrait=hero] [ID:JW_COMPLETE_ESCORT_PROMISE_006]
+蕭小滿: 不穩，但很有志氣。 [#portrait=xiao] [ID:JW_COMPLETE_ESCORT_PROMISE_007]
+旁白: 周望山將這趟承諾寫進名冊旁的記事欄，落筆比核普通工錢時更鄭重。 [ID:JW_COMPLETE_ESCORT_PROMISE_008]
+=> END
+
+~ activity_bridge_repair
+林知微: 尺寸核過，木料也算好了。接下來要把材料送到修補處、核實橋板，再收好留下的釘子。 [#portrait=lin] [ID:JW_ACTIVITY_BRIDGE_REPAIR_001]
+你: 你把最後一件寫得很大。 [#portrait=hero] [ID:JW_ACTIVITY_BRIDGE_REPAIR_002]
+林知微: 因為我上回只顧著看橋穩不穩，差點讓搬木料的人踩到釘子。做完，不只是一件東西能用了。 [#portrait=lin] [ID:JW_ACTIVITY_BRIDGE_REPAIR_003]
+旁白: 你看過工錢與行程，把備好的銅錢交到材料單旁。這件事於是從「總該有人做」變成「今天來做」。 [ID:JW_ACTIVITY_BRIDGE_REPAIR_004]
+=> END
+
+~ complete_bridge_repair
+旁白: 新橋板踩上去，發出短短一聲響，再沒有原先那種不安的晃動。 [ID:JW_COMPLETE_BRIDGE_REPAIR_001]
+林知微: 你先別走，我還要再量一次。 [#portrait=lin] [ID:JW_COMPLETE_BRIDGE_REPAIR_002]
+你: 已經量過三次了。 [#portrait=hero] [ID:JW_COMPLETE_BRIDGE_REPAIR_003]
+林知微: 我知道。這次不是不信尺寸，是想記住，紙上的一條線真的能讓人走過去。 [#portrait=lin] [ID:JW_COMPLETE_BRIDGE_REPAIR_004]
+陸行雲: 那就別只顧著記。有人挑著藥籃過來，咱們先讓路。 [#portrait=lu] [ID:JW_COMPLETE_BRIDGE_REPAIR_005]
+旁白: 藥籃穩穩從橋上過去。挑籃的人點了點頭，沒有停下來講什麼大道理。 [ID:JW_COMPLETE_BRIDGE_REPAIR_006]
+你: 這樣也很好。 [#portrait=hero] [ID:JW_COMPLETE_BRIDGE_REPAIR_007]
+林知微: 嗯。這樣就很好。 [#portrait=lin] [ID:JW_COMPLETE_BRIDGE_REPAIR_008]
+=> END
+
+~ activity_missing_letter
+周望山: 先問問信上「木劍先生」這個舊稱，再核對真正的收信人。信封沒拆，確認以後照原樣送到。 [#portrait=zhou] [ID:JW_ACTIVITY_MISSING_LETTER_001]
+你: 戲班的節目單明明提過這個人，怎麼還找不到？ [#portrait=hero] [ID:JW_ACTIVITY_MISSING_LETTER_002]
+周望山: 小滿把節目改了三回。第一回大俠救人，第二回大俠認錯人，第三回大俠去討飯錢。 [#portrait=zhou] [ID:JW_ACTIVITY_MISSING_LETTER_003]
+你: 我知道為什麼你自己不去了。 [#portrait=hero] [ID:JW_ACTIVITY_MISSING_LETTER_004]
+周望山: 你知道便好。查清楚就送到，別替他們把私人家書編進第四回。 [#portrait=zhou] [ID:JW_ACTIVITY_MISSING_LETTER_005]
+=> END
+
+~ complete_missing_letter
+旁白: 舊節目單的「木劍先生」，原來是替戲班修劍的沈照嶺。信送到時，他看清寄件人的名字，磨劍的動作停了。 [ID:JW_COMPLETE_MISSING_LETTER_001]
+沈照嶺: 原來去了南邊。 [#portrait=shen] [ID:JW_COMPLETE_MISSING_LETTER_002]
+你: 周掌櫃說，是一位舊弟子的問候。 [#portrait=hero] [ID:JW_COMPLETE_MISSING_LETTER_003]
+沈照嶺: 他當年沒留下。我說他心不定，他說我只肯看他做錯的地方。後來就很少有消息。 [#portrait=shen] [ID:JW_COMPLETE_MISSING_LETTER_004]
+旁白: 信很短。他讀了兩遍，把紙角慢慢壓平。 [ID:JW_COMPLETE_MISSING_LETTER_005]
+沈照嶺: 現在替人守一座小渡口，還教幾個孩子練劍。字倒比從前寫得好。 [#portrait=shen] [ID:JW_COMPLETE_MISSING_LETTER_006]
+你: 您會回信嗎？ [#portrait=hero] [ID:JW_COMPLETE_MISSING_LETTER_007]
+沈照嶺: 會。先說我收到了，再問問他，那邊的孩子都愛用什麼劍。 [#portrait=shen] [ID:JW_COMPLETE_MISSING_LETTER_008]
+旁白: 他把木劍放回架上，請你替他留一張乾淨的紙。這一回，沒有先寫教訓人的話。 [ID:JW_COMPLETE_MISSING_LETTER_009]
+=> END
+
+~ activity_old_ballad
+旁白: 蕭小滿翻出三份舊曲譜。同一句小調，有的寫「回首」，有的寫「回手」，還有一份根本沒寫，留了個墨點。 [ID:JW_ACTIVITY_OLD_BALLAD_001]
+蕭小滿: 前人也會聽錯。我們唱得越有把握，後人就越不敢問。 [#portrait=xiao] [ID:JW_ACTIVITY_OLD_BALLAD_002]
+你: 那該信哪一份？ [#portrait=hero] [ID:JW_ACTIVITY_OLD_BALLAD_003]
+蕭小滿: 先把三份都唱一遍。別急著替它們決勝負。 [#portrait=xiao] [ID:JW_ACTIVITY_OLD_BALLAD_004]
+旁白: 你們敲著桌沿試節奏。唱到「莫尋高處月」時，小滿的手自然往旁邊一引，留出半個身位。 [ID:JW_ACTIVITY_OLD_BALLAD_005]
+蕭小滿: 你聽到了什麼？ [#portrait=xiao] [ID:JW_ACTIVITY_OLD_BALLAD_006]
+- 像在提醒人留一條退路。 [ID:JW_ACTIVITY_OLD_BALLAD_007]
+	你: 最響的那一拍前，反而有一小段空處。 [#portrait=hero] [ID:JW_ACTIVITY_OLD_BALLAD_008]
+	蕭小滿: 對。鑼鼓不停，人就只顧著往前衝。留白有時是在救下一步。 [#portrait=xiao] [ID:JW_ACTIVITY_OLD_BALLAD_009]
+- 像在叫人看看身旁的同行者。 [ID:JW_ACTIVITY_OLD_BALLAD_010]
+	你: 一個人唱，可以只顧自己的聲音；合唱就得聽別人。 [#portrait=hero] [ID:JW_ACTIVITY_OLD_BALLAD_011]
+	蕭小滿: 說得好。聲音蓋過所有人，不一定叫唱得最好。 [#portrait=xiao] [ID:JW_ACTIVITY_OLD_BALLAD_012]
+- 我還聽不明白，想再試一次。 [ID:JW_ACTIVITY_OLD_BALLAD_013]
+	你: 我怕只是順著字面猜，沒真正聽見。 [#portrait=hero] [ID:JW_ACTIVITY_OLD_BALLAD_014]
+	蕭小滿: 那就再試。能把「不明白」說出來，比硬接一句漂亮話有用。 [#portrait=xiao] [ID:JW_ACTIVITY_OLD_BALLAD_015]
+旁白: 你們把最說得通的一版記在旁邊，卻沒有劃掉其他兩版。曲調因此多了幾處可以呼吸的地方。 [ID:JW_ACTIVITY_OLD_BALLAD_016]
+蕭小滿: 這不算發現一部絕世祕笈。 [#portrait=xiao] [ID:JW_ACTIVITY_OLD_BALLAD_017]
+你: 但下回走古道，我可能會多回頭看一眼。 [#portrait=hero] [ID:JW_ACTIVITY_OLD_BALLAD_018]
+蕭小滿: 那就不白唱。等你回來，把路上的風也說給我聽。 [#portrait=xiao] [ID:JW_ACTIVITY_OLD_BALLAD_019]
+=> END
+
+~ activity_hermit_visit
+旁白: 陸行雲帶你走到山邊一間小屋。門上掛著木牌，寫著「出門賣菜，日落再回」。 [ID:JW_ACTIVITY_HERMIT_VISIT_001]
+你: 這就是你說的隱士？ [#portrait=hero] [ID:JW_ACTIVITY_HERMIT_VISIT_002]
+陸行雲: 隱士也得吃飯。想請人傳授武學，總不能只記得帶敬仰，忘了人家也有日子要過。 [#portrait=lu] [ID:JW_ACTIVITY_HERMIT_VISIT_003]
+旁白: 屋簷下留了一張小凳，凳腳高低不齊，旁邊卻堆著修好的鞋。 [ID:JW_ACTIVITY_HERMIT_VISIT_004]
+你: 這凳子不穩，他修鞋時怎麼坐？ [#portrait=hero] [ID:JW_ACTIVITY_HERMIT_VISIT_005]
+陸行雲: 你坐坐看。 [#portrait=lu] [ID:JW_ACTIVITY_HERMIT_VISIT_006]
+旁白: 你挪了挪重心，凳子仍輕輕晃著。直到腳尖找好支點，身體才不再追著凳腳跑。 [ID:JW_ACTIVITY_HERMIT_VISIT_007]
+陸行雲: 山路不會每回都平。你若一定要等腳下穩了才動，會錯過許多該走的時候。 [#portrait=lu] [ID:JW_ACTIVITY_HERMIT_VISIT_008]
+你: 所以先知道哪裡能借力，再決定往哪裡送。 [#portrait=hero] [ID:JW_ACTIVITY_HERMIT_VISIT_009]
+陸行雲: 嗯。那位前輩當年就是這樣教我的。然後讓我替他守屋，一守到天黑。 [#portrait=lu] [ID:JW_ACTIVITY_HERMIT_VISIT_010]
+旁白: 你們把被風吹散的鞋帶理好，替門邊的菜筐搬了個不會淋雨的位置。 [ID:JW_ACTIVITY_HERMIT_VISIT_011]
+你: 今天沒有見到人，卻也沒白來。 [#portrait=hero] [ID:JW_ACTIVITY_HERMIT_VISIT_012]
+陸行雲: 下回若見到，先問他菜賣得好不好。別一開口就叫人把一輩子濃縮成一句口訣。 [#portrait=lu] [ID:JW_ACTIVITY_HERMIT_VISIT_013]
+=> END
+
+~ activity_medicine_lesson
+旁白: 陶半夏把幾份乾藥草攤在桌上，旁邊另放著包紮用的乾淨布條。 [ID:JW_ACTIVITY_MEDICINE_LESSON_001]
+陶半夏: 今天先學分辨，再學配份量。拿錯一樣，後面包得再漂亮也沒用。 [#portrait=tao] [ID:JW_ACTIVITY_MEDICINE_LESSON_002]
+if origin == "herbalist"
+	你: 師父教過這幾樣。我想知道，走遠路時該怎麼帶才不容易受潮。 [#portrait=hero] [ID:JW_ACTIVITY_MEDICINE_LESSON_003]
+	陶半夏: 好問題。熟悉不等於不用再看，今天就多把這一層想清楚。 [#portrait=tao] [ID:JW_ACTIVITY_MEDICINE_LESSON_004]
+else
+	你: 這兩份看起來幾乎一樣。 [#portrait=hero] [ID:JW_ACTIVITY_MEDICINE_LESSON_005]
+	陶半夏: 所以要聞、要捻、要問。眼睛有用，也有看不出的時候。 [#portrait=tao] [ID:JW_ACTIVITY_MEDICINE_LESSON_006]
+旁白: 你依次核對藥材，把分量重新包好。最後幾份綁得不算漂亮，卻不會輕易散開。 [ID:JW_ACTIVITY_MEDICINE_LESSON_007]
+你: 對方如果說不疼，我還要繼續問嗎？ [#portrait=hero] [ID:JW_ACTIVITY_MEDICINE_LESSON_008]
+陶半夏: 問他能不能站穩，手指能不能動。大問題說不清，就換成眼前能回答的小問題。 [#portrait=tao] [ID:JW_ACTIVITY_MEDICINE_LESSON_009]
+你: 學武時好像也能這樣。 [#portrait=hero] [ID:JW_ACTIVITY_MEDICINE_LESSON_010]
+陶半夏: 是。先處理一件真正看得見的事，別急著替整個江湖開藥方。 [#portrait=tao] [ID:JW_ACTIVITY_MEDICINE_LESSON_011]
+旁白: 她把你親手配好的幾份藥交還給你，讓你放在行囊裡最順手的位置。 [ID:JW_ACTIVITY_MEDICINE_LESSON_012]
+=> END
+
+~ activity_meditate
+旁白: 林知微替你攤開一張空紙，沒有先寫題目。 [ID:JW_ACTIVITY_MEDITATE_001]
+林知微: 今天只記一件事。遇見誰、哪一步猶豫了、什麼和原先想的不一樣。 [#portrait=lin] [ID:JW_ACTIVITY_MEDITATE_002]
+if insight >= 6
+	你: 我記了很多，現在反而不知道該先用哪一件。 [#portrait=hero] [ID:JW_ACTIVITY_MEDITATE_003]
+	林知微: 那就先選眼前用得上的。這一回不必再往紙上塞新東西，讓已有的東西站穩。 [#portrait=lin] [ID:JW_ACTIVITY_MEDITATE_004]
+else
+	你: 如果只是很小的一件呢？ [#portrait=hero] [ID:JW_ACTIVITY_MEDITATE_005]
+	林知微: 小到你能說清楚，就很好。只寫「大有收穫」，下回翻開仍然不知道收穫在哪裡。 [#portrait=lin] [ID:JW_ACTIVITY_MEDITATE_006]
+旁白: 你寫下幾行，又刪去一個太大的詞。紙上的故事變短了，記得的那一步卻更清楚。 [ID:JW_ACTIVITY_MEDITATE_007]
+林知微: 想明白一件，就帶著它再出去看看。紙不會催你，期限也不必替你想。 [#portrait=lin] [ID:JW_ACTIVITY_MEDITATE_008]
+=> END
+
+~ activity_rest
+旁白: 你在藥鋪簷下坐了一會兒。鎮上的腳步聲來來去去，沒有人要求你每一刻都像個趕路的大俠。 [ID:JW_ACTIVITY_REST_001]
+陶半夏: 喝點水。這份藥帶好，下一趟別忘了放在容易拿到的地方。 [#portrait=tao] [ID:JW_ACTIVITY_REST_002]
+你: 原來休息也要練。 [#portrait=hero] [ID:JW_ACTIVITY_REST_003]
+陶半夏: 對。先練會不替自己找藉口，再練會不替自己找罪受。 [#portrait=tao] [ID:JW_ACTIVITY_REST_004]
+旁白: 肩上的緊繃慢慢鬆開。你把行囊重新整理好，準備下一段路。 [ID:JW_ACTIVITY_REST_005]
+=> END

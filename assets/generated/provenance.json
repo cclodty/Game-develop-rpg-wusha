@@ -1,0 +1,107 @@
+{
+  "project": "江湖未遠：入山之前",
+  "created": "2026-10-23",
+  "generator": "OpenAI image_gen",
+  "art_direction": "Original hand-painted chibi wuxia; jade/cream/coral palette; warm brown contour lines; watercolor and gouache environment texture.",
+  "source_policy": "All packaged PNGs are original generated outputs copied byte-for-byte; their originals remain in /workspace/generated_images. Existing prototype art was viewed only as a general style reference; new character identities and environments were generated for this project.",
+  "atlas": {
+    "grid": [
+      4,
+      3
+    ],
+    "cell_size": [
+      362,
+      362
+    ],
+    "order": [
+      "hero",
+      "herbalist",
+      "performer",
+      "shen",
+      "lu",
+      "tao",
+      "zhou",
+      "xiao",
+      "lin",
+      "bandit",
+      "lancer",
+      "examiner"
+    ],
+    "aliases": {
+      "courier": "hero"
+    },
+    "sampling": "Runtime alpha bounds >32/255 plus 5px padding, constrained to each cell; original PNG is not cropped.",
+    "iteration_notes": "Two image_gen padding revisions made each figure and weapon fit completely inside its cell. Final alpha >32/255 pixels are absent on all five internal grid boundaries."
+  },
+  "references": {
+    "characters": [
+      "/workspace/Game-develop-rpg-wusha/assets/generated/characters.png (visual style reference only)",
+      "exec-157ff62c-63a2-4790-a9d0-ae547d2afc19.png (first original cast)",
+      "exec-9a6de246-a8aa-444e-b6d7-364b2bb2730f.png (first padding revision)"
+    ],
+    "locations": [
+      "exec-157ff62c-63a2-4790-a9d0-ae547d2afc19.png (new cast and palette)"
+    ],
+    "title": [
+      "characters.png",
+      "wangxi.png"
+    ]
+  },
+  "assets": [
+    {
+      "file": "characters.png",
+      "source_output": "/workspace/generated_images/exec-6ab79e77-e4b0-499c-9e17-7efaa71a365b.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "format": "RGBA",
+      "sha256": "562d91e52f8969cc117ce5c94b0225dc4b440dd6daa80fadb5da90ec505fc093",
+      "copied_without_pixel_edits": true
+    },
+    {
+      "file": "wangxi.png",
+      "source_output": "/workspace/generated_images/exec-b2f4fb9f-818a-4442-8db8-a2046eaf3ced.png",
+      "size": [
+        1629,
+        965
+      ],
+      "format": "RGB",
+      "sha256": "1d9fab51d4db7efd59dafc363ced4a2ad2e0297622fe4949ff720b6cfb1c1a35",
+      "copied_without_pixel_edits": true
+    },
+    {
+      "file": "grove.png",
+      "source_output": "/workspace/generated_images/exec-7e8d6152-feb5-4f45-b4d9-db6e239c2d52.png",
+      "size": [
+        1629,
+        965
+      ],
+      "format": "RGB",
+      "sha256": "d9897bcc6d04981b070a19dcfe90441f0a1ebc440bbd0b8c074b9567ce85a4be",
+      "copied_without_pixel_edits": true
+    },
+    {
+      "file": "ridge.png",
+      "source_output": "/workspace/generated_images/exec-d95a6f97-f61d-4300-ba79-e96e12a4c859.png",
+      "size": [
+        1629,
+        965
+      ],
+      "format": "RGB",
+      "sha256": "cec1363b42337ff0c98a49312d36096e1dabc34515466fe77fedcbdebf1764d6",
+      "copied_without_pixel_edits": true
+    },
+    {
+      "file": "title.png",
+      "source_output": "/workspace/generated_images/exec-64c0626d-e29c-42d9-a3c7-002b379af389.png",
+      "size": [
+        1586,
+        992
+      ],
+      "format": "RGB",
+      "sha256": "7c0c8a61886f0f6c603aaf9b89ad683a4c3493d105eb2866e503d030f0f106c7",
+      "copied_without_pixel_edits": true
+    }
+  ]
+}
