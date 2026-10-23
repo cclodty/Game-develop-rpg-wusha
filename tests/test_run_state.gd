@@ -3,7 +3,8 @@ extends SceneTree
 
 const Run = preload("res://scripts/run_state.gd")
 const Data = preload("res://scripts/game_data.gd")
-const SAVE = "user://test-rules-v1.json"
+const Battle = preload("res://scripts/card_battle.gd")
+const SAVE = "user://test-rules-v2.json"
 var passed: int = 0
 var failed: int = 0
 
@@ -236,7 +237,9 @@ func _test_persistence() -> void:
 	state.data.pending.stage = "combat"
 	state.data.pending.visited = ["old_sign", "medicine_cart"]
 	state.data.pending.world_position = [399, 287]
-	state.data.pending.combat = {"position": [211, 319], "hp": 44, "medicine_used": 1, "enemies": [{"id": 0, "hp": 20, "telegraph": 0.3}]}
+	var battle: RefCounted = Battle.new()
+	_check(battle.configure("ridge", state.battle_stats()).ok, "real card encounter fixture initializes")
+	state.data.pending.combat = battle.snapshot()
 	state.data.dialogue = {"title": "activity_escort_promise", "cursor": "21", "revision": "revision-v1", "after": "activity_briefed", "return_npc": "zhou"}
 	var saved: Dictionary = state.save_game(SAVE)
 	_check(saved.ok, "atomic pending save succeeds: " + str(saved.message))
@@ -296,7 +299,7 @@ func _test_invalid_saves() -> void:
 		var invalid: Dictionary = original.duplicate(true)
 		for key in corruption:
 			invalid[key] = corruption[key]
-		_write_raw(SAVE, JSON.stringify({"version": 1, "data": invalid}))
+		_write_raw(SAVE, JSON.stringify({"version": Run.SAVE_VERSION, "data": invalid}))
 		_check(not state.load_game(SAVE).ok and state.data == original, "invalid field rejected without mutation: " + str(corruption))
 	var pending: RefCounted = _fresh()
 	pending.begin_activity("grove_survey")
@@ -304,7 +307,7 @@ func _test_invalid_saves() -> void:
 		var invalid: Dictionary = pending.data.duplicate(true)
 		for key in corruption:
 			invalid.pending[key] = corruption[key]
-		_write_raw(SAVE, JSON.stringify({"version": 1, "data": invalid}))
+		_write_raw(SAVE, JSON.stringify({"version": Run.SAVE_VERSION, "data": invalid}))
 		_check(not state.load_game(SAVE).ok and state.data == original, "invalid transaction rejected: " + str(corruption))
 	_clean_save()
 	_check(state.save_game(SAVE).ok, "valid save before refusing invalid in-memory data")

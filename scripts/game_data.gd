@@ -18,8 +18,8 @@ const NPCS = {
 }
 
 const SKILLS = {
-	"sword_qi": {"name": "破雲劍氣", "description": "凝氣於劍，向前打出穿行的劍氣。適合正面把握敵人的空隙。"},
-	"cloud_step": {"name": "掠影突進", "description": "短距離快速穿進戰局，沿路出劍。適合移位與連接普攻。"},
+	"sword_qi": {"name": "破雲劍氣", "description": "凝氣於劍，將把握破綻的功夫化為可配入牌組的招式。"},
+	"cloud_step": {"name": "掠影突進", "description": "以輕靈身法連接攻守，學會後可自由配入上場招式。"},
 }
 
 const SCHOOLS = {
@@ -32,30 +32,30 @@ const ACTIVITIES = {
 	"sword_lesson": {
 		"name": "聽劍入門", "npc": "shen", "cost": 2, "kind": "story", "repeatable": false,
 		"description": "跟沈師傅學會讓氣隨劍走。先聽清出手的理由，再試第一道劍氣。",
-		"reward_text": "武學 +2、沈師傅信任 +2，學會「破雲劍氣」；學費 12 文。",
+		"reward_text": "武學 +2、沈師傅信任 +2，學會「破雲劍氣」與「守嶺式」；學費 12 文。",
 		"fee": 12, "rewards": {"training": 2, "skills": ["sword_qi"], "favor": {"shen": 2}},
 	},
 	"practice": {
 		"name": "劍坪練習", "npc": "shen", "cost": 1, "kind": "battle", "battle": "practice", "repeatable": true,
-		"description": "在劍坪練習移位、連段和閃避。完成練習才記下這一份功夫。",
-		"reward_text": "完成後武學 +1；可重複安排。", "rewards": {"training": 1},
+		"description": "在劍坪練習讀懂起手、安排攻防和分配真氣。完成練習才記下這一份功夫。",
+		"reward_text": "完成後武學 +1、練習心得 +1；可重複安排。", "rewards": {"training": 1, "mastery": 1},
 	},
 	"spar": {
 		"name": "同門對練", "npc": "shen", "cost": 2, "kind": "battle", "battle": "spar", "repeatable": true,
 		"description": "與候選弟子輪流切磋，試著讀懂比自己快半拍的劍。",
-		"reward_text": "武學 +2、沈師傅信任 +1；需要武學 3。",
-		"requires": {"training": 3}, "rewards": {"training": 2, "favor": {"shen": 1}},
+		"reward_text": "武學 +2、練習心得 +2、沈師傅信任 +1；首次解鎖照嶺進階招式，需要武學 3。",
+		"requires": {"training": 3}, "rewards": {"training": 2, "mastery": 2, "favor": {"shen": 1}},
 	},
 	"courier_work": {
 		"name": "街巷送信", "npc": "zhou", "cost": 1, "kind": "task", "location": "wangxi", "repeatable": true,
 		"description": "把兩封信交到收信人手裡，聽完回覆再回驛站。",
-		"reward_text": "盤纏 +18 文（驛站出身 +26）、周主事信任 +1（此差事最多累積至 3）。",
+		"reward_text": "盤纏 +18 文（驛站出身 +26）、周主事信任 +1（此差事最多累積至 3）；學會驛站手藝招式，各出身都可學。",
 		"rewards": {"money": 18, "favor": {"zhou": 1}}, "favor_cap": 3,
 	},
 	"stage_work": {
 		"name": "街頭小戲", "npc": "xiao", "cost": 1, "kind": "task", "location": "wangxi", "repeatable": true,
 		"description": "替蕭小滿搭臺、招呼觀眾，演一折讓人願意停下腳步的小戲。",
-		"reward_text": "盤纏 +16 文（戲班出身 +24）、蕭小滿信任 +1（此差事最多累積至 3）。",
+		"reward_text": "盤纏 +16 文（戲班出身 +24）、蕭小滿信任 +1（此差事最多累積至 3）；學會戲班手藝招式，各出身都可學。",
 		"rewards": {"money": 16, "favor": {"xiao": 1}}, "favor_cap": 3,
 	},
 	"herb_errand": {
@@ -67,13 +67,13 @@ const ACTIVITIES = {
 	"grove_survey": {
 		"name": "青篁訪路", "npc": "lin", "cost": 2, "kind": "explore", "location": "grove", "battle": "grove", "repeatable": false,
 		"description": "替林知微核對舊地圖。水痕、竹刻和岔路，各有一種不會說話的證詞。",
-		"reward_text": "見識 +2、林知微信任 +1；記下一次探索經歷。",
+		"reward_text": "見識 +2、林知微信任 +1；記下一次探索經歷，解鎖訪路招式。",
 		"rewards": {"insight": 2, "favor": {"lin": 1}},
 	},
 	"ridge_tracks": {
 		"name": "望風尋跡", "npc": "lu", "cost": 3, "kind": "explore", "location": "ridge", "battle": "ridge", "repeatable": false,
 		"description": "沿望風古道追尋陸行雲留下的足跡。這條路教的是身法，也是如何選路。",
-		"reward_text": "見識 +2、陸行雲信任 +2，學會「掠影突進」。",
+		"reward_text": "見識 +2、陸行雲信任 +2，學會「掠影突進」並解鎖對應招式。",
 		"rewards": {"insight": 2, "skills": ["cloud_step"], "favor": {"lu": 2}},
 	},
 	"escort_promise": {
@@ -85,30 +85,30 @@ const ACTIVITIES = {
 	"bridge_repair": {
 		"name": "小橋補板", "npc": "lin", "cost": 2, "kind": "task", "location": "wangxi", "repeatable": false,
 		"description": "備木料、量橋板，讓河邊的老人不用再繞遠路。做完還要試試腳下穩不穩。",
-		"reward_text": "見識 +1、林知微信任 +2、陸行雲信任 +1；木料費 12 文。",
+		"reward_text": "見識 +1、林知微信任 +2、陸行雲信任 +1，解鎖修橋招式；木料費 12 文。",
 		"fee": 12, "rewards": {"insight": 1, "favor": {"lin": 2, "lu": 1}},
 	},
 	"missing_letter": {
 		"name": "未送達的信", "npc": "zhou", "cost": 2, "kind": "task", "location": "wangxi", "repeatable": false,
 		"description": "一封退回多次的信，只寫著舊稱呼。從鎮上的人情裡找到真正的收信人。",
-		"reward_text": "見識 +1、周主事信任 +2、沈師傅信任 +1，得到守約證明。",
+		"reward_text": "見識 +1、周主事信任 +2、沈師傅信任 +1，得到守約證明並解鎖送信招式。",
 		"rewards": {"insight": 1, "favor": {"zhou": 2, "shen": 1}},
 	},
 	"old_ballad": {
 		"name": "半支舊曲", "npc": "xiao", "cost": 2, "kind": "story", "repeatable": false,
 		"description": "和蕭小滿比對古道小調的不同唱法，從留白與回首之間，聽見同行人的腳步。",
-		"reward_text": "見識 +2、蕭小滿信任 +2。", "rewards": {"insight": 2, "favor": {"xiao": 2}},
+		"reward_text": "見識 +2、蕭小滿信任 +2，解鎖舊曲招式。", "rewards": {"insight": 2, "favor": {"xiao": 2}},
 	},
 	"hermit_visit": {
 		"name": "風亭問路", "npc": "lu", "cost": 2, "kind": "story", "repeatable": false,
 		"description": "帶著自己的見聞去找陸行雲。他會問你繞過什麼，也會問你為誰停過步。",
-		"reward_text": "見識 +2、武學 +1、陸行雲信任 +2；需要見識 3。",
+		"reward_text": "見識 +2、武學 +1、陸行雲信任 +2，解鎖兩種渡雲進階招式；需要見識 3。",
 		"requires": {"insight": 3}, "rewards": {"insight": 2, "training": 1, "favor": {"lu": 2}},
 	},
 	"medicine_lesson": {
 		"name": "藥鋪學方", "npc": "tao", "cost": 2, "kind": "story", "repeatable": false,
 		"description": "把認草藥的功夫用在真正需要的人身上，學會包好一份能帶上山路的藥。",
-		"reward_text": "回復藥 +3、見識 +1、陶掌櫃信任 +1；藥鋪出身另得一份藥。",
+		"reward_text": "回復藥 +3、見識 +1、陶掌櫃信任 +1，學會藥鋪手藝招式；藥鋪出身另得一份藥，各出身都可學招。",
 		"rewards": {"medicine": 3, "insight": 1, "favor": {"tao": 1}},
 	},
 	"meditate": {
@@ -126,6 +126,12 @@ const ACTIVITIES = {
 const EXPLORATIONS = ["herb_errand", "grove_survey", "ridge_tracks", "escort_promise"]
 const MAX_SLOTS = 21
 const MEDICINE_PRICE = 12
+const FORTUNE_HINTS = {
+	"herb_errand": "青布繫帶露出了藥籃的方向：先往溪谷西側核對藥草，再查看東北的調查點，最後沿南側確認回程。",
+	"grove_survey": "水痕與竹刻應連著看：先核對西側水痕，再沿東北竹刻辨認舊路，岔路的動靜留到最後確認。",
+	"ridge_tracks": "轉身時留下的足跡較深：先看古道西側的足跡，再核對東北石階，最後才越過南側的攔路之人。",
+	"escort_promise": "藥箱的繩痕藏著顛簸的原因：先在古道西側檢查束繩，再核對東北的驛道標記，護住南側的最後一程。",
+}
 
 static func activities_for(npc: String) -> Array:
 	var result: Array = []

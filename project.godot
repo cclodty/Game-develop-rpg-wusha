@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="江湖未遠"
-config/description="入山之前：七日安排，一程江湖。"
+config/description="抵達之前，塑造自己的主角；七日養成，以卡牌招式走進江湖。"
 run/main_scene="res://scenes/main.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="jianghu-weiyuan"

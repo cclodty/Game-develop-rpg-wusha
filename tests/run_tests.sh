@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # All player data goes into a disposable directory; project sources are read-only.
 set -euo pipefail
-# The complete gate must never inherit the asset-generation-only bypass.
+# Retained animation fixtures must never inherit an asset-generation bypass.
 unset WEIYUAN_ALLOW_PENDING_ANIMATION
 
 weiyuan_test_repo="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -36,12 +36,13 @@ run_godot_check() {
 
 run_godot_check import --import
 run_godot_check run_state --script tests/test_run_state.gd
-run_godot_check animation --script tests/test_animation.gd
-run_godot_check arena --script tests/test_arena.gd
+run_godot_check creation --script tests/test_creation.gd
+run_godot_check card_battle --script tests/test_card_battle.gd
+run_godot_check card_run --script tests/test_card_run.gd
+run_godot_check card_arena --script tests/test_card_arena.gd
 if [ -f tests/test_world.gd ]; then
     run_godot_check world --script tests/test_world.gd
 fi
 run_godot_check story --script tests/test_story.gd
-run_godot_check ui --script tests/test_ui.gd
-run_godot_check preview_lifecycle --script tests/test_preview_lifecycle.gd
-printf 'Godot rules, frame animation, action combat, dialogue, and UI validation all passed.\n'
+run_godot_check card_ui --script tests/test_card_ui.gd
+printf 'Godot character creation, card battle, schedule, save recovery, dialogue, world, and card UI validation all passed.\n'

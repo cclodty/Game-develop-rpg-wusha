@@ -3,6 +3,7 @@ extends SceneTree
 
 const STORY_PATH = "res://story/first_week.dialogue"
 const Data = preload("res://scripts/game_data.gd")
+const Run = preload("res://scripts/run_state.gd")
 var passed = 0
 var failed = 0
 var resource: DialogueResource
@@ -35,7 +36,7 @@ func _run() -> void:
 		_finish()
 		return
 	manager = Engine.get_singleton("DialogueManager")
-	var required: Array[String] = ["intro_herbalist", "intro_courier", "intro_performer", "exam_intro", "ending_zhaoling", "ending_duyun", "ending_stay"]
+	var required: Array[String] = ["intro_herbalist", "intro_courier", "intro_performer", "arrival_morning", "exam_intro", "ending_zhaoling", "ending_duyun", "ending_stay"]
 	for id in Data.NPCS:
 		required.append("npc_" + id)
 	for id in Data.ACTIVITIES:
@@ -60,15 +61,48 @@ func _run() -> void:
 	expect(fixed_ids.size() >= 200 and duplicates.is_empty(), "authored lines have unique stable translation IDs")
 	for origin in ["herbalist", "courier", "performer"]:
 		for phase in [{"day": 1, "training": 0, "insight": 0}, {"day": 4, "training": 6, "insight": 6}, {"day": 7, "training": 6, "insight": 6}]:
-			var context = {"hero_name": "試讀行者", "origin": origin, "day": phase.day, "remaining": (8 - phase.day) * 3, "training": phase.training, "insight": phase.insight}
-			await _walk_graph(context)
+			for answer in range(3):
+				await _walk_graph(_context(origin, phase, answer))
 	var first_lines: Dictionary = {}
+	var morning_origins: Dictionary = {}
 	for origin in ["herbalist", "courier", "performer"]:
-		var context = {"hero_name": "試讀行者", "origin": origin, "day": 1, "remaining": 21, "training": 0, "insight": 0}
+		var context = _context(origin, {"day": 1, "training": 0, "insight": 0}, 0)
 		var line: DialogueLine = await manager.get_next_dialogue_line(resource, "intro_" + origin, [context])
 		if line != null: first_lines[line.text] = true
-	expect(first_lines.size() == 3, "three origins open with recognizably different scenes")
+		morning_origins[await _linear_text("arrival_morning", context)] = true
+	expect(first_lines.size() == 3, "legacy origin introductions retain their three recognizably different scenes")
+	expect(morning_origins.size() == 3, "new next-morning introduction preserves each origin's familiar person")
+	for npc in Data.NPCS:
+		var remembered: Dictionary = {}
+		for answer in range(3):
+			var context = _context("herbalist", {"day": 1, "training": 0, "insight": 0}, answer)
+			remembered[await _linear_text("npc_" + npc, context)] = true
+		expect(remembered.size() == 3, "NPC " + npc + " audibly remembers all three motivation or road-choice branches")
+
 	_finish()
+
+
+func _context(origin: String, phase: Dictionary, answer: int) -> Dictionary:
+	var state: RefCounted = Run.new()
+	state.start_creation("試讀行者", origin)
+	for index in range(6): state.set_creation_answer(index, answer)
+	state.confirm_creation()
+	state.data.spent = (int(phase.day) - 1) * 3
+	state.data.training = phase.training
+	state.data.insight = phase.insight
+	return state.story_context()
+
+
+func _linear_text(title: String, context: Dictionary) -> String:
+	var result = ""
+	var key = title
+	for index in range(80):
+		var line: DialogueLine = await manager.get_next_dialogue_line(resource, key, [context])
+		if line == null: break
+		result += line.text + "\n"
+		if not line.responses.is_empty(): break
+		key = line.next_id
+	return result
 
 
 func _walk_graph(context: Dictionary) -> void:
@@ -106,7 +140,7 @@ func _walk_graph(context: Dictionary) -> void:
 					can_finish[id] = true
 					changed = true
 					break
-	var name = "%s day %d" % [context.origin, context.day]
+	var name = "%s day %d / %s" % [context.origin, context.day, context.creation_motivation]
 	expect(queue.is_empty() and empty_lines.is_empty(), name + ": every title and allowed response resolves to valid readable dialogue")
 	expect(not edges.is_empty() and can_finish.size() == edges.size(), name + ": every inquiry loop has an exit back to gameplay")
 
