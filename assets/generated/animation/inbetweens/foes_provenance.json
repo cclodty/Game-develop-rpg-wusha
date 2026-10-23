@@ -1,0 +1,174 @@
+{
+  "project": "江湖未遠 / 入山之前",
+  "created_on": "2026-10-23",
+  "purpose": "Six newly drawn temporal inbetween frames per six-frame action clip, interleaved with unchanged original key frames to produce twelve frames per clip.",
+  "generator": "OpenAI image_gen.imagegen",
+  "transparent_background": true,
+  "temporal_contract": {
+    "original_frames_per_clip": 6,
+    "new_frames_per_clip": 6,
+    "result_frames_per_clip": 12,
+    "interleave": [
+      "old0",
+      "new0",
+      "old1",
+      "new1",
+      "old2",
+      "new2",
+      "old3",
+      "new3",
+      "old4",
+      "new4",
+      "old5",
+      "new5"
+    ],
+    "loop_rows": "Idle and walk new5 bridges old5 toward old0.",
+    "one_shot_rows": "Attack, dodge and hurt new5 settles after old5; defeat new5 remains down.",
+    "new_sheet_layout": {
+      "columns": 6,
+      "rows": 6,
+      "row_order": [
+        "idle",
+        "walk",
+        "attack",
+        "dodge",
+        "hurt",
+        "defeat"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "actor": "bandit",
+      "path": "assets/generated/animation/inbetweens/bandit.png",
+      "sha256": "3301612d14569f3f781c9626d36c958f7b2e1e4c957230dccfc98e6efb7f6152",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "original_key_sheet": "assets/generated/animation/bandit.png",
+      "original_sha256": "bae1af501838c027ccce3a961a72fef9aa7e4b132d8da41dc4a2335750ca68c4",
+      "original_matches_previous_provenance": true,
+      "raw_generation_path": "/workspace/generated_images/exec-d48154a9-57d9-4342-94d6-b01b183458a1.png",
+      "new_drawn_frames": 36,
+      "combined_actor_frames": 72,
+      "reference_images": [
+        "assets/generated/animation/bandit.png",
+        "/workspace/generated_images/exec-23f39e89-c94d-449a-bc4a-14b1cbe5e5e4.png",
+        "/tmp/weiyuan_actual_twelve_bandit_before_proportion_fix.png"
+      ],
+      "prompt": "Correct the SECOND image (36 new inbetween drawings) using FIRST image as exact character model and THIRD image only as diagnostic comparison. Third image alternates OLD and NEW: NEW heads/torso are wrongly15–20%broader and dodge firstnewpose stands too tall. Output ONLY a corrected transparent6×6 midpoint sprite sheet, NOT the diagnostic contact sheet. Re-DRAW all36 intermediate poses with the ORIGINAL FIRSTimage's NARROWER head, face, jaw, shoulders and torso ratios. Match original eye-size/face-size, original slimmer furvest silhouette. Keep same original headheight andbodyheight: do not make chibiheadwider/chubbier. Preserveoriginal costume, palette, redheadband, moustache, topknot, shortcurvedsaber. This is anatomically redrawn correction, no whole-image affine shrinking/warping. Use SECONDimage intermediate limb positions as startingpoint, but fix these exact cells: ROW3COLUMN1 attack halfwaybetween ORIGINALrow3col1 raised-frontsaber and ORIGINALrow3col2 backswing; upperarmfolds BACK towards crown, saber sweeps BEHIND topknot, hand lowerthan raisedfirstkey. Do NOT lift sword higher/furtherforward thanoldfirstkey. ROW4COLUMN1 dodge is DEEPLY CROUCHED BETWEEN original firsttwo crouches: bothkneesbent, pelvislow, torsotilted, headnearoriginalcrouchedheadheight, no standing. Retain newrow3col2 frontvertical release, newrow3col3 halfwaydownslash, recoverymidpoints; all othernewarm/leg/weaponposes remain genuinelybetweenneighboring oldkeys. Loop idle/walk newlast towardoldfirst. Finaldefeatframes remainfullydown. Same6columns6rows, roworderidle/walk/attack/dodge/hurt/defeat. ALL figures small, preserve huge transparent gutters, no weaponoverlap, cleantransparentbackground. No gridlines, text, shadows,particles,motionblurs. Main priority corrected narrow ORIGINAL anatomy so OLD→NEW→OLD has no width pumping.",
+      "raw_pixels_unmodified": true
+    },
+    {
+      "actor": "lancer",
+      "path": "assets/generated/animation/inbetweens/lancer.png",
+      "sha256": "c38fb533a91655d6624cc3708ea4b60991ac479ebf67f5ab38ad14a3915a11f4",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "original_key_sheet": "assets/generated/animation/lancer.png",
+      "original_sha256": "632d0d443ebec6a1ae7f2a97a7d25122c1d8d868222f56f9c1e63480e00a9ad7",
+      "original_matches_previous_provenance": true,
+      "raw_generation_path": "/workspace/generated_images/exec-be98eaad-7d63-44c4-bebc-e688bde7e136.png",
+      "new_drawn_frames": 36,
+      "combined_actor_frames": 72,
+      "reference_images": [
+        "assets/generated/animation/lancer.png"
+      ],
+      "prompt": "Produce a complementary animation INBETWEEN atlas, not another version of the key-pose atlas. Supplied reference contains six old key poses per row. Final game will alternate OLD1,NEW1,OLD2,NEW2,...OLD6,NEW6, so every new drawing must occupy the missing HALF-TIME anatomical pose between adjacent old drawings. Output6columns×6rows, ONLY the36newdrawings. Keep exactsame originalidentity/costume/head-to-bodyratio and smallbodysize, identical sparse placement with wide transparent gutters; real transparent background. No grid/text/shadow/effects. Never overlap. No copied oldposes, no rotation/translation/warp/ghosting/crossfade: separately draw articulated inbetween knees/elbows/wrists/weapon positions. R1idle R2walk R3attack R4dodge R5hurt R6defeat. Lastcolumn R1/R2 returns towardsoldfirst; otherrowsfinalcolumn settles afteroldlast; defeat stays lying. Follow the CELL SPECIFICATION below even where it looks different from supplied key: this difference is why the frame is needed. Particularly NEWrow3col1 MUST NOT be the same overhead-raised oldrow3col1; NEWrow3col2 MUST already be coming FORWARD toward contact, not merely the original backswing. Smaller compact weapons, no colored arcs. LANCER youngmale blueheadband/navyclothes/ochrefur/spearredtassel. Samecompactforeshortenedspear; neverreachneighborcell. ROW1 sixnewposes show half handgripadjustments, halfwaychangingwristangle, eyelidhalfblink, scarfhalfsway betweenreferenceidlecolumns. ROW2 trueintermediatewalkingphases: highbackheel/fronttoetouch, legsapproachingpass, leftheelroll, oppositekneelift, righttoehover, leftbackheelpush towardoldfirst; clearlydifferentfootseparation thanoldkey. ROW3col1 shaftrotatesHALFWAY fromolduprightleftwindsupport tofrontlowthrust: bothhandsnearupperchest, SPEAR45DEGREE diagonalUPtowardright; col2 frontelbowhalfextends, SPEAR TIP TOWARDSVIEWER atwaistlevel in THREEQUARTER foreshortening, notsamewindup; col3 hipscontinueforwardhalfstep, backarmhalfextends duringthrust; col4 FRONT HAND RETRACTS HALFWAY fromlonglowthrust todiagonalguard, tiprisesaround30deg; col5 forearmriseshalfwaytosteeperguard, stancecloses; col6 diagonalguardwithrelaxedloweredshoulder. ROW4col1 kneehalfstraightensfromcrouchintohop; col2 oppositefootstartswingbodyturn; col3 torsohalfwaydescends into sidelanding withspearlowering; col4 forehandhalfwaytowardfloor tobrace; col5 pushupHALFWAYbetweenfloorbraceandstanding; col6 guardsettled. ROW5col1 eyeshalfclosed recoiling, handmoveshalfway; col2 jawtightensandheadhalfwayback; col3 torsohalfwayfoldingfromuprightgrimaceto crouch; col4 handapproachesgroundfromcrouch; col5 onlyHALF RISEN fromfloorbrace towardstanding; col6 softguardexhale. ROW6col1 kneeshalfwaylower; col2 hiphalfwaydescends; col3 torsohalfwayleansforwardoverknees; col4 torsoTIPS SIDEWAYS halfwaybetweenoldkneeling4andlying5, onehandcatchesfall; col5 fullydownhandhalfrelaxed; col6 remainslyingwithrestedtassel.",
+      "raw_pixels_unmodified": true
+    },
+    {
+      "actor": "examiner",
+      "path": "assets/generated/animation/inbetweens/examiner.png",
+      "sha256": "99b35fb4db6cc839bf196b8d6c006cf07e9d1687ea430844ee9f2ab34b87b9d7",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "original_key_sheet": "assets/generated/animation/examiner.png",
+      "original_sha256": "6f598a95cc3faf9eb955eb7f71435a03c36ae4b171f4d966195718504c05b0c4",
+      "original_matches_previous_provenance": true,
+      "raw_generation_path": "/workspace/generated_images/exec-836333f8-b6fd-40fa-90d8-e49a92b3b41b.png",
+      "new_drawn_frames": 36,
+      "combined_actor_frames": 72,
+      "reference_images": [
+        "assets/generated/animation/examiner.png"
+      ],
+      "prompt": "Produce a complementary animation INBETWEEN atlas, not another version of the key-pose atlas. Supplied reference contains six old key poses per row. Final game will alternate OLD1,NEW1,OLD2,NEW2,...OLD6,NEW6, so every new drawing must occupy the missing HALF-TIME anatomical pose between adjacent old drawings. Output6columns×6rows, ONLY the36newdrawings. Keep exactsame originalidentity/costume/head-to-bodyratio and smallbodysize, identical sparse placement with wide transparent gutters; real transparent background. No grid/text/shadow/effects. Never overlap. No copied oldposes, no rotation/translation/warp/ghosting/crossfade: separately draw articulated inbetween knees/elbows/wrists/weapon positions. R1idle R2walk R3attack R4dodge R5hurt R6defeat. Lastcolumn R1/R2 returns towardsoldfirst; otherrowsfinalcolumn settles afteroldlast; defeat stays lying. Follow the CELL SPECIFICATION below even where it looks different from supplied key: this difference is why the frame is needed. Particularly NEWrow3col1 MUST NOT be the same overhead-raised oldrow3col1; NEWrow3col2 MUST already be coming FORWARD toward contact, not merely the original backswing. Smaller compact weapons, no colored arcs. SILVERHAIRED FEMALE EXAMINER teal/cream/goldrobesstraight silver sword, preservewomanfaceexactly, notmale. ROW1new1 wristSTARTS loweringguard sword, half-wayold1→old2; new2 handrotatesandbladehalfwaytowardlowright; new3 elbowhalfwayraiseswhileeyesbegintoclose; new4 eyelidhalfopenswithforearmhalfwayreturningup; new5 smallhalfbreathandswordgriptransition; new6 halfblink/clothreturntowardoldfirst. ROW2sixnewwalkpassingphases: frontbootheelroll, rearbootlift, kneepass, oppositeheelroll, rearheelpush, footapproacholdfirst; alternatingfeet mustbe halfwaybetweenreferencekeys, robehemfoldsalsointermediate. ROW3new1 sword MOVES BEHIND CROWN to almostverticalwhileelbowfoldsback; NOT oldarmstraightup. new2 swordarm comesFORWARD frombehindhead HALFWAY TO THRUST, elbowbent90degrees, blade diagonallyUP-RIGHT infrontofshoulder, torsohalfturn; new3 contactthrust armhalfway retracts/changesangle, bladearound15degreesbeloworiginalhighthrust; new4 swordhand sweepsHALFWAY INWARD ACROSS CHEST towardoldrecovery, bladeangledright-down; new5 elbowhalfwaylowersfromcrossbodyrecoveryintoguard, hairandsleevesfollow; new6 guardwithsettledsleeveandslightwristrelax. ROW4new1 half-risingfromcrouchwithkneestillbent; new2 torsohalfwayleaningforwardandarmstretching towardground; new3 groundhandstartsretractingasbodyturnstoseatedposition; new4 headandshouldershalfwayliftfromseatedposture; new5 halfwayupfromlowbrace towardsfullguard; new6 fullyguardwithsettledrobe. ROW5new1 eyeshalfopeningandforearmshifttocheek; new2 headhalfrecoils, elbowflexes; new3 bodyHALFWAY DESCENDS fromuprightflinchtokneeling, hipsmidheight; new4 palmsstartbracingfloorastorsoleans; new5 HALF RISE fromfloorbrace tostanding, kneesstillvisiblybent; new6 recoveredguardquietexhale. ROW6new1 headhalfwaydroopswhileknee lowers; new2 torsofoldshalfwayoverknees; new3 armhalfwaydescendstoorrestsnearfloor, thennew4 bodyTIPS SIDEWAYS halfwaybetweenoldseated4andlying5, headstillaboveground; new5 lyingarmhalfwayrelaxes; new6 remainsdownclosedeyes,clothsettles.",
+      "raw_pixels_unmodified": true
+    }
+  ],
+  "production_method": "All inbetween poses were drawn by the image-generation tool. Installed PNGs are byte-for-byte copies of accepted tool outputs. No duplicate-frame substitution, code-generated recoloring, affine warping, crossfading or interpolation was used. Python inspected metadata/alpha only; it did not edit source image pixels. Runtime measures per-cell source regions and applies one uniform new-bank scale per actor on a fixed virtual canvas; no per-frame auto-resizing.",
+  "identity_constraints": {
+    "bandit": "Original stocky red-headband saber fighter, narrower original head/torso proportions preserved after correction.",
+    "lancer": "Original blue-clad spear fighter; compact diagonal/foreshortened spear keeps frames isolated.",
+    "examiner": "Original silver-haired female examiner in teal/cream/gold robes; no male redesign."
+  },
+  "rejected_or_unused_iterations": [
+    {
+      "actor": "bandit",
+      "path": "/workspace/generated_images/exec-09ad15b6-eda0-420b-9939-bbe8c3004565.png",
+      "status": "rejected",
+      "reason": "Generic first complementary pass followed original key timing too closely, especially attack lead-in. Replaced by explicit per-cell intermediate limb and weapon targets."
+    },
+    {
+      "actor": "lancer",
+      "path": "/workspace/generated_images/exec-344880e3-8f2a-4075-99a5-98ca5c73c548.png",
+      "status": "rejected",
+      "reason": "Attack lead-in too close to original key poses; replacement specifies diagonal wind-up, foreshortened extension, withdrawal, and intermediate leg positions."
+    },
+    {
+      "actor": "examiner",
+      "path": "/workspace/generated_images/exec-a5277117-df4e-4d85-9707-975f589f3429.png",
+      "status": "rejected",
+      "reason": "First pass repeated original raised/backswing key timing instead of distinct midpoint path; per-cell correction provided behind-crown and forward-diagonal release poses."
+    },
+    {
+      "actor": "bandit",
+      "path": "/workspace/generated_images/exec-23f39e89-c94d-449a-bc4a-14b1cbe5e5e4.png",
+      "status": "rejected_after_runtime_review",
+      "reason": "Clean physical gutters and articulated midpoints, but actual arena strip showed broader heads/torso, first dodge too upright, and first attack raised too far. Final image-generation correction used original anatomy and runtime comparison."
+    },
+    {
+      "actor": "examiner",
+      "path": "/workspace/generated_images/exec-251ed96e-7023-4d0c-85d9-f93efdcc57dc.png",
+      "status": "unused",
+      "reason": "A background-removal tool pass was requested because image preview displayed stored RGB behind alpha. Direct alpha analysis proved the prior candidate already had transparent gutters and 36 isolated substantial components, so the prior candidate was retained. No code background removal was used."
+    }
+  ],
+  "qa": {
+    "original_immutability": "All three original key-sheet SHA256 values match prior accepted provenance.",
+    "source_alpha": "Bandit/lancer RGBA0–255. Examiner RGBA0–254; hidden RGB in zero-alpha pixels does not represent visible background.",
+    "runtime_visual_review": {
+      "bandit": "Accepted by root and combat reviewer after proportion/dodge correction.",
+      "lancer": "Accepted by root and combat reviewer after calibration.",
+      "examiner": "Accepted by root and combat reviewer after bank calibration and actual twelve-frame arena sequence review."
+    },
+    "pixel_and_gameplay_tests": "Final combined suite and browser validation are reported by delivery; source metadata alone does not prove smooth motion.",
+    "asset_freeze": "All three foe midpoint sheets accepted for runtime sequence, proportions and physical isolation; PNGs frozen after root review."
+  },
+  "limitations": [
+    "One drawn right/front three-quarter direction, horizontally flipped at runtime for the opposite direction.",
+    "Six newly drawn inbetweens per action improve temporal sampling; no claim of eight-direction animation or continuous-motion capture.",
+    "Source rows and cell extents are irregular; calibrated source regions and one uniform scale per bank are required.",
+    "Minor hand-painted details can vary between drawings; chronological runtime review, not raw frame count, is used to assess continuity."
+  ]
+}

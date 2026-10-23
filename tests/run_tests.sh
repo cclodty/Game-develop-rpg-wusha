@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # All player data goes into a disposable directory; project sources are read-only.
 set -euo pipefail
+# The complete gate must never inherit the asset-generation-only bypass.
+unset WEIYUAN_ALLOW_PENDING_ANIMATION
 
 weiyuan_test_repo="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 weiyuan_test_root="$(mktemp -d /tmp/weiyuan-tests.XXXXXX)"

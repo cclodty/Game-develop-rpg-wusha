@@ -1,38 +1,31 @@
-# Frame animation integration contract
+# Twelve-frame animation integration contract
 
-This update replaces runtime pose tilting/bobbing with separately drawn sprite frames, preserving original portraits for dialogue. Godot 4.6.3, same save directory and game rules.
+Every logical clip now contains 12 separately drawn poses. Preserve the original 252 key poses and add 252 genuinely new in-between drawings; do not count duplicated frames, crossfades, recoloring or affine transforms as extra animation. Godot 4.6.3, existing save directory, action durations and combat rules remain unchanged.
 
-## Generated sheets
+## Source sheets and temporal order
 
-All source sheets use a transparent **6 columns × 6 rows** grid. The six-by-six arrangement describes pose order; generated row/column spacing can vary. Measured source regions in `SOURCE_LAYOUTS` retain every authored opaque pixel and exclude neighboring poses. `AtlasTexture.margin` places each region on one fixed virtual canvas per actor, with a shared standing scale and ground pivot. Never assume equal grid boundaries for an uncalibrated sheet, resize individual silhouettes, or rewrite source PNG pixels. Facing is right/front three-quarter, same character proportions/outfit as `assets/generated/characters.png`. Six distinct sequential poses per row; no painted motion blur, shadows, text, grid lines, or particles. No automatic recoloring or synthetic frame warps. Original PNGs remain unchanged; sampling/alignment is runtime metadata.
+Original sheets remain byte-identical under `assets/generated/animation/`: `courier`, `herbalist`, `performer`, `bandit`, `lancer`, `examiner`, `npcs`. Each physical sheet has six columns and six rows. Six combat actors have idle, walk, attack, dodge, hurt and defeat rows. The NPC sheet has rows for shen, lu, tao, zhou, xiao and lin.
 
-Actor sheets under `assets/generated/animation/<actor>.png`: `courier`, `herbalist`, `performer`, `bandit`, `lancer`, `examiner`.
-Rows: 0 `idle`, 1 `walk`, 2 `attack`, 3 `dodge`, 4 `hurt`, 5 `defeat`. Idle/walk loop; action clips clamp at end. All poses should keep consistent centered feet and head size with enough horizontal weapon margin. Idle/walk hold/sheath role weapon; attacks use sword for all heroes, saber/spear/sword for the three foes.
+New sheets under `assets/generated/animation/inbetweens/` have the same filenames and physical ordering. Each new cell i is a drawn midpoint between original cell i and its successor. Idle/walk and all NPC loops bridge original5 back to original0 in their final new cell. Nonlooping clips use a distinct settled continuation after original5; defeat remains down. Runtime order is original0, midpoint0, original1, midpoint1, ..., original5, midpoint5. There are 42 logical clips and 504 unique pose cells across 14 PNGs.
 
-`npcs.png`: 6 columns × 6 rows; each row is a six-frame idle/occupational gesture loop for `shen`, `lu`, `tao`, `zhou`, `xiao`, `lin`, in that order. No combat frames required for static NPCs.
+Keep the established Q-style, face, outfit, weapons and right/front three-quarter viewpoint. All figures and weapons must be physically separated by transparent gutters. Generated spacing may be uneven, so measured regions replace assumed equal-grid slicing. Original PNG pixels are not rewritten.
 
-## Runtime API — scripts/animation_bank.gd
+## Calibration and runtime API
 
-`class_name WeiyuanAnimation extends RefCounted` static functions:
-- `has_actor(actor:String)->bool`
-- `frame(actor:String, clip:String, normalized_progress:float)->Texture2D`: clamp 0..1; 1 selects last frame. Unknown clip falls back to idle; actor aliases hero→courier.
-- `loop_frame(actor:String,clip:String,elapsed:float)->Texture2D`: idle6fps, walk10fps defaults; positive modulo.
-- `draw_rect(actor:String, height:float)->Rect2`: fixed scale and ground anchor across all frames; no independent resize to each frame's visible bounds. Adjust actor metadata after inspecting artwork.
-- `frame_index(clip:String,normalized_progress:float)->int` and `clip_duration(clip:String)->float` for timing/tests.
-- `metadata(actor:String)->Dictionary` exposes path/grid/frame count/anchor for QA.
+`WeiyuanAnimation` retains `frame`, `loop_frame`, `draw_rect`, `frame_index`, `clip_duration`, `metadata` and `has_actor`. `FRAME_COUNT` is 12; the physical source grid remains 6×6. Metadata exposes every runtime frame's source path, region and padding so QA can verify interleaving and source isolation.
 
-AtlasTexture objects cached, imports use transparent linear filtering and no mip bleed. Do not overwrite `art.gd` dialogue portraits.
+Use one fixed body scale and ground anchor per actor. If the new sheet's nominal standing size differs, calibrate one uniform scale for the entire actor bank (or NPC row), with proportional virtual-canvas/pivot dimensions. Never resize each pose using its own alpha bounds. The target world rectangle remains fixed for all 12 frames. Cache AtlasTexture objects, preserve transparency and clipped linear filtering, and leave dialogue portraits in `art.gd` unchanged.
 
-## World
+## Timing, pauses and saves
 
-World player draws idle/walk frames using origin id; NPCs draw actor-specific idle frames. Advance animation time only with enabled gameplay input; pause/menu freezes visual phase. Walking uses true alternating foot poses, remove old per-frame body tilt/squash/bounce when atlas available. Persist only relevant phase if needed; walking animations may resume idle after loading town (position authoritative).
+Idle: 12 frames in 1.0 second (12 fps). Walk: 12 in 0.6 seconds (20 fps). Attack: 0.32s. Dodge: 0.25s. Hurt: 0.24s. Defeat: 0.65s. Loops wrap; action endpoints clamp to frame11.
 
-## Arena
+Combat simulations own damage. The original attack contact pose is now zero-based frame4, at the existing 0.11s hit time. Player anticipation samples frames0–3; the remaining poses follow contact without adding damage callbacks. Enemy windup, strike and recovery retain their gameplay durations while exposing the new intermediate poses. Qi and cloud step retain their existing release/impact rules. Old normalized clocks naturally select the new sequence; do not migrate or reset player progress.
 
-Animation is driven by existing gameplay simulation clocks, not AnimationPlayer callbacks that duplicate damage. Attack frame2 aligns existing hit at0.11s in0.32s action; skill/dodge/hurt use corresponding clip. Enemy windup maps to first2 attackframes, strike/contact toframe2, recovery tolast3frames. Preserve current timings, telegraphs, attack/hit rules. Player/foe display direction uses horizontal flip. Add explicit animation state/timers to JSON snapshot only if necessary, with backward-compatible defaults. Pausing freezes all clip clocks. A short (~0.65s) noninteractive defeat presentation may precede result UI. Combat is already settled; only presentation advances. Persist its phase for new snapshots, handle old resolved snapshots compatibly, freeze during pause, and never duplicate rewards or emit finished twice.
+World and arena pause gates freeze animation phases. The settled fight's existing 0.65s noninteractive defeat presentation remains frozen when paused, resumes from saves, and emits its result once. Both previous save generations must retain their compatible defaults.
 
-Visual helpers/state exposed for tests, e.g. `player_animation()->{clip,progress,frame}` and `enemy_animation(enemy)->dict`. No change to public encounter API.
+## Preview and delivery
 
-## Delivery
+The title's animation viewer exposes 12 chronological thumbnails in two rows of six, actor/clip selection, pause, backward/forward step, mirroring and half speed. Frame11 advances to0; backward from0 selects11. The viewer never creates or modifies a player save.
 
-Document actual frame counts, directions and any remaining limitations honestly. Provide a Godot preview scene with clip/actor controls and pause/step to review individual frames. Test real atlas regions, distinct frames, pause/resume, hit-frame alignment, legacy save defaults, and actual browser playback. Publish updated existing source/download branches only after validation; keep old game branch untouched.
+Mandatory QA checks all 504 visible/distinct original and new cells, their source attribution, transparent boundaries, fixed scale/pivot, preservation of original PNG hashes, loop duration, contact timing, pause/resume and save compatibility. Inspect old/new transitions in rendered gameplay for body-size jumps and unrelated poses. Browser recording is real gameplay; format conversion does not synthesize frames. Publish the existing source/download branches after verification and keep the earlier prototype branch intact.

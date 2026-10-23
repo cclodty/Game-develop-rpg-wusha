@@ -11,6 +11,8 @@ const PAPER = Color("f6f0df")
 const INK = Color("243e39")
 const JADE = Color("315d51")
 const GOLD = Color("b58b4d")
+const STRIP_COLUMNS = 6
+const POSE_AREA = Rect2(365, 207, 688, 320)
 const ACTORS = ["courier", "herbalist", "performer", "bandit", "lancer", "examiner", "shen", "lu", "tao", "zhou", "xiao", "lin"]
 const CLIPS = ["idle", "walk", "attack", "dodge", "hurt", "defeat"]
 const CLIP_NAMES = {"idle": "待機", "walk": "行走", "attack": "出招", "dodge": "閃避", "hurt": "受擊", "defeat": "倒地"}
@@ -68,20 +70,22 @@ func _ready() -> void:
 	_button(actions, "preview_speed", "播放：原速", Vector2(20, 573), Vector2(284, 52), _speed)
 	_label(actions, "空白鍵：播放／暫停\n方向鍵：前後一格\nEsc：返回", Vector2(20, 645), Vector2(284, 75), 17)
 	_caption = _label(self, "", Vector2(365, 147), Vector2(688, 45), 23, true)
-	_button(self, "preview_previous", "上一格", Vector2(365, 640), Vector2(190, 52), step_frame.bind(-1))
-	_button(self, "preview_pause", "暫停", Vector2(575, 640), Vector2(268, 52), toggle_playing, true)
-	_button(self, "preview_step", "下一格", Vector2(863, 640), Vector2(190, 52), step_frame.bind(1))
-	var strip = _panel(Vector2(365, 714), Vector2(688, 146))
-	for i in range(6):
+	_button(self, "preview_previous", "上一格", Vector2(365, 546), Vector2(190, 46), step_frame.bind(-1))
+	_button(self, "preview_pause", "暫停", Vector2(575, 546), Vector2(268, 46), toggle_playing, true)
+	_button(self, "preview_step", "下一格", Vector2(863, 546), Vector2(190, 46), step_frame.bind(1))
+	var strip = _panel(Vector2(365, 612), Vector2(688, 248))
+	for i in range(Bank.FRAME_COUNT):
+		var column: int = i % STRIP_COLUMNS
+		var row: int = i / STRIP_COLUMNS
 		var thumb = TextureRect.new()
-		thumb.position = Vector2(14 + i * 112, 9)
-		thumb.size = Vector2(100, 86)
+		thumb.position = Vector2(14 + column * 112, 8 + row * 120)
+		thumb.size = Vector2(100, 74)
 		thumb.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 		thumb.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 		thumb.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		strip.add_child(thumb)
 		_thumbs.append(thumb)
-		_button(strip, "frame_%d" % i, str(i + 1), Vector2(14 + i * 112, 99), Vector2(100, 34), select_frame.bind(i))
+		_button(strip, "frame_%d" % i, str(i + 1), Vector2(14 + column * 112, 84 + row * 120), Vector2(100, 30), select_frame.bind(i))
 	_refresh_controls()
 
 
@@ -114,20 +118,20 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _draw_pose(canvas: Control) -> void:
-	var area = Rect2(365, 207, 688, 405)
+	var area = POSE_AREA
 	canvas.draw_style_box(_style(Color("f8f5e9"), Color("c9ceb9")), area)
-	for y in range(8):
+	for y in range(ceili(area.size.y / 50.0)):
 		for x in range(13):
 			if (x + y) % 2 == 0:
-				canvas.draw_rect(Rect2(365 + x * 52, 207 + y * 50, minf(52, 688 - x * 52), minf(50, 405 - y * 50)), Color(0.23, 0.38, 0.29, 0.025))
-	var ground = Vector2(709, 550)
+				canvas.draw_rect(Rect2(365 + x * 52, 207 + y * 50, minf(52, 688 - x * 52), minf(50, area.size.y - y * 50)), Color(0.23, 0.38, 0.29, 0.025))
+	var ground = Vector2(709, 495)
 	canvas.draw_line(Vector2(425, ground.y), Vector2(993, ground.y), Color("c0ccb4"), 2)
 	canvas.draw_set_transform(ground + Vector2(0, 2), 0, Vector2(1, 0.22))
 	canvas.draw_circle(Vector2.ZERO, 70, Color(0.16, 0.26, 0.20, 0.12))
 	canvas.draw_set_transform(ground, 0, Vector2(-1 if mirrored else 1, 1))
-	var texture = Bank.frame(current_actor, current_clip, (float(frame_index) + 0.01) / 6.0)
+	var texture = Bank.frame(current_actor, current_clip, (float(frame_index) + 0.01) / float(Bank.FRAME_COUNT))
 	if texture:
-		canvas.draw_texture_rect(texture, Bank.draw_rect(current_actor, 270), false)
+		canvas.draw_texture_rect(texture, Bank.draw_rect(current_actor, 230), false)
 	canvas.draw_set_transform(Vector2.ZERO)
 
 
@@ -159,13 +163,13 @@ func toggle_playing() -> void:
 
 func select_frame(index: int) -> void:
 	playing = false
-	frame_index = clampi(index, 0, 5)
-	elapsed = float(frame_index) / 6.0 * Bank.clip_duration(current_clip)
+	frame_index = clampi(index, 0, Bank.FRAME_COUNT - 1)
+	elapsed = float(frame_index) / float(Bank.FRAME_COUNT) * Bank.clip_duration(current_clip)
 	_refresh_frame()
 
 
 func step_frame(offset: int) -> void:
-	select_frame(posmod(frame_index + offset, 6))
+	select_frame(posmod(frame_index + offset, Bank.FRAME_COUNT))
 
 
 func _flip() -> void:
@@ -179,25 +183,25 @@ func _speed() -> void:
 
 
 func animation_state() -> Dictionary:
-	return {"actor": current_actor, "clip": current_clip, "frame": frame_index, "playing": playing, "elapsed": elapsed, "mirrored": mirrored, "rate": playback_rate}
+	return {"actor": current_actor, "clip": current_clip, "frame": frame_index, "playing": playing, "elapsed": elapsed, "mirrored": mirrored, "rate": playback_rate, "frame_count": Bank.FRAME_COUNT}
 
 
 func _refresh_controls() -> void:
 	_actor_title.text = _actor_name(current_actor)
-	_note.text = "眨眼、翻頁、理袖與招呼，讓鎮上的人物有自己的生活節奏。" if current_actor in Data.NPCS else "六種動作，每組六格。\n\n動作會重播；出招、受擊與倒地結束後稍停，再從第一格開始。"
+	_note.text = "十二格日常動作。\n\n眨眼、翻頁、理袖與招呼，讓鎮上的人物有自己的生活節奏。" if current_actor in Data.NPCS else "六種動作，每組十二格。\n\n動作會重播；出招、受擊與倒地結束後稍停，再從第一格開始。"
 	for id in ACTORS:
 		action_buttons["actor_" + id].modulate = Color("d5e8c5") if id == current_actor else Color.WHITE
 	for clip in CLIPS:
 		action_buttons["clip_" + clip].disabled = current_actor in Data.NPCS and clip != "idle"
 		action_buttons["clip_" + clip].modulate = Color("d5e8c5") if clip == current_clip else Color.WHITE
-	for i in range(6): _thumbs[i].texture = Bank.frame(current_actor, current_clip, (float(i) + 0.01) / 6.0)
+	for i in range(Bank.FRAME_COUNT): _thumbs[i].texture = Bank.frame(current_actor, current_clip, (float(i) + 0.01) / float(Bank.FRAME_COUNT))
 	_refresh_frame()
 
 
 func _refresh_frame() -> void:
-	_caption.text = "%s · %s　　第 %d／6 格" % [_actor_name(current_actor), CLIP_NAMES[current_clip], frame_index + 1]
+	_caption.text = "%s · %s　　第 %d／%d 格" % [_actor_name(current_actor), CLIP_NAMES[current_clip], frame_index + 1, Bank.FRAME_COUNT]
 	action_buttons.preview_pause.text = "暫停" if playing else "播放"
-	for i in range(6): action_buttons["frame_%d" % i].modulate = Color("d5e8c5") if i == frame_index else Color.WHITE
+	for i in range(Bank.FRAME_COUNT): action_buttons["frame_%d" % i].modulate = Color("d5e8c5") if i == frame_index else Color.WHITE
 
 
 func _close() -> void:

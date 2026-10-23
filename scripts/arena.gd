@@ -12,6 +12,9 @@ const INK := Color("263d3b")
 const JADE := Color("478d7e")
 const GOLD := Color("d8ad56")
 const RED := Color("bd6153")
+const AnimationBank = preload("res://scripts/animation_bank.gd")
+const CONTACT_PROGRESS := 1.0 / 3.0
+const RECOVERY_PROGRESS := 0.5
 const HURT_DURATION := 0.24
 const DEFEAT_DURATION := 0.65
 const STRIKE_DURATION := 0.12
@@ -804,9 +807,9 @@ func player_animation() -> Dictionary:
 	if attack_time > 0.0:
 		if _attack_style == "qi":
 			# Qi is released instantly by the existing skill, so start at contact.
-			return _clip_state("attack", (2.0 + (1.0 - attack_time / 0.28) * 4.0) / 6.0)
+			return _clip_state("attack", lerpf(CONTACT_PROGRESS, 1.0, 1.0 - attack_time / 0.28))
 		var attack_age := maxf(0.0, 0.32 - attack_time)
-		var progress := attack_age / 0.11 * (2.0 / 6.0) if not _attack_impacted else (2.0 + maxf(0.0, attack_age - 0.11) / 0.21 * 4.0) / 6.0
+		var progress := attack_age / 0.11 * CONTACT_PROGRESS if not _attack_impacted else lerpf(CONTACT_PROGRESS, 1.0, maxf(0.0, attack_age - 0.11) / 0.21)
 		return _clip_state("attack", progress)
 	return _loop_state("walk" if _moving else "idle", elapsed)
 
@@ -814,29 +817,31 @@ func player_animation() -> Dictionary:
 func enemy_animation(enemy: Dictionary) -> Dictionary:
 	if float(enemy.get("hp", 1.0)) <= 0.0:
 		return _clip_state("defeat", float(enemy.get("death_age", 0.0)) / DEFEAT_DURATION)
-	# Contact is held visibly, even if the foe is struck during the same frame.
+	# Contact stays readable for the same 0.12 seconds: the authored contact
+	# pose leads into its new in-between without changing collision timing.
 	if float(enemy.get("strike_timer", 0.0)) > 0.0 or float(enemy.get("rush_remaining", 0.0)) > 0.0:
-		return _clip_state("attack", 2.0 / 6.0)
+		var strike_age := clampf(1.0 - float(enemy.get("strike_timer", 0.0)) / STRIKE_DURATION, 0.0, 1.0)
+		return _clip_state("attack", minf(RECOVERY_PROGRESS - 0.000001, lerpf(CONTACT_PROGRESS, RECOVERY_PROGRESS, strike_age)))
 	if float(enemy.get("hurt_timer", 0.0)) > 0.0:
 		return _clip_state("hurt", 1.0 - float(enemy.hurt_timer) / HURT_DURATION)
 	if float(enemy.get("windup", 0.0)) > 0.0:
 		var anticipation := 1.0 - float(enemy.windup) / maxf(0.01, float(enemy.windup_total))
-		return _clip_state("attack", minf(1.999, maxf(0.0, anticipation) * 2.0) / 6.0)
+		return _clip_state("attack", minf(CONTACT_PROGRESS - 0.000001, maxf(0.0, anticipation) * CONTACT_PROGRESS))
 	if bool(enemy.get("attack_visual", false)) and float(enemy.get("recovery", 0.0)) > 0.0:
 		var recovery_total := maxf(STRIKE_DURATION + 0.01, float(enemy.get("recovery_total", 0.75)))
 		var recovery_age := clampf((recovery_total - float(enemy.recovery) - STRIKE_DURATION) / (recovery_total - STRIKE_DURATION), 0.0, 1.0)
-		return _clip_state("attack", (3.0 + recovery_age * 3.0) / 6.0)
+		return _clip_state("attack", lerpf(RECOVERY_PROGRESS, 1.0, recovery_age))
 	return _loop_state("walk" if bool(enemy.get("moving", false)) else "idle", elapsed + float(enemy.get("id", 0)) * 0.17)
 
 
 func _clip_state(clip: String, progress: float) -> Dictionary:
 	progress = clampf(progress, 0.0, 1.0)
-	return {"clip": clip, "progress": progress, "frame": mini(5, floori(progress * 6.0)), "looped": false}
+	return {"clip": clip, "progress": progress, "frame": AnimationBank.frame_index(clip, progress), "looped": false}
 
 
 func _loop_state(clip: String, time: float) -> Dictionary:
-	var fps := 10.0 if clip == "walk" else 6.0
-	var result := _clip_state(clip, fposmod(time * fps, 6.0) / 6.0)
+	var duration := AnimationBank.clip_duration(clip)
+	var result := _clip_state(clip, fposmod(time, duration) / duration)
 	result.looped = true
 	result.elapsed = time
 	return result

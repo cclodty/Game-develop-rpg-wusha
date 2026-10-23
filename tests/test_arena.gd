@@ -266,6 +266,7 @@ func _run() -> void:
 	arena.free()
 
 	await _test_frame_animation()
+	_test_twelve_frame_timing()
 	print("TESTS COMPLETE: %d passed, %d failed" % [passed, failed])
 	quit(1 if failed else 0)
 
@@ -291,47 +292,49 @@ func _test_frame_animation() -> void:
 	arena.attack(Vector2.RIGHT)
 	_check(arena.player_animation().clip == "attack" and arena.player_animation().frame == 0, "sword begins with anticipation frame zero")
 	_advance(arena, 0.10)
-	_check(arena.player_animation().frame == 1 and enemy.hp == initial_hp, "attack first two frames precede the hit at 0.11 seconds")
+	_check(arena.player_animation().frame == 3 and enemy.hp == initial_hp, "four anticipation frames precede the unchanged hit at 0.11 seconds")
 	arena.step_simulation(0.01)
-	_check(arena.player_animation().frame == 2 and enemy.hp < initial_hp, "attack contact frame two and actual damage coincide at 0.11 seconds")
-	_check(arena._animation.call("frame_index", "attack", arena.player_animation().progress) == arena.player_animation().frame, "arena contact sample selects bank frame two")
+	_check(arena.player_animation().frame == 4 and enemy.hp < initial_hp, "authored contact at new frame four and actual damage coincide at 0.11 seconds")
+	_check(arena._animation.call("frame_index", "attack", arena.player_animation().progress) == arena.player_animation().frame, "arena contact sample selects bank frame four")
 	var hero_frame := arena._frame_texture("courier", arena.player_animation()) as AtlasTexture
 	_check(hero_frame != null and hero_frame.atlas.resource_path == "res://assets/generated/animation/courier.png", "arena hero draws the actual attack atlas instead of a tilted portrait")
 	var foe_frame := arena._frame_texture("bandit", arena.enemy_animation(enemy)) as AtlasTexture
-	_check(foe_frame != null and foe_frame.atlas.resource_path == "res://assets/generated/animation/bandit.png", "enemy hurt renders the actual animation atlas")
+	_check(foe_frame != null and foe_frame.atlas.resource_path.begins_with("res://assets/generated/animation/"), "enemy hurt renders its actual original or in-between animation atlas")
 	var pending_attack: Dictionary = JSON.parse_string(JSON.stringify(arena.snapshot()))
 	var resumed := _arena()
 	resumed.configure("spar", arena.stats, pending_attack)
 	_check(JSON.stringify(resumed.player_animation()) == JSON.stringify(arena.player_animation()), "mid-sword save restores the exact clip and frame")
-	_advance(arena, 0.18)
-	_advance(resumed, 0.18)
-	_check(arena.player_animation().frame == 5 and resumed.player_animation().frame == 5, "sword recovery reaches its last drawn frame after resume")
+	_advance(arena, 0.20)
+	_advance(resumed, 0.20)
+	_check(arena.player_animation().frame == 11 and resumed.player_animation().frame == 11, "sword recovery reaches frame eleven before its unchanged duration ends")
 	arena.free()
 	resumed.free()
 
 	arena = _arena("ridge", ["sword_qi", "cloud_step"])
 	arena.cast_qi(Vector2.RIGHT)
-	_check(arena.player_animation().clip == "attack" and arena.player_animation().frame == 2, "instant sword qi starts its attack clip at projectile release")
+	_check(arena.player_animation().clip == "attack" and arena.player_animation().frame == 4, "instant sword qi starts at the preserved contact pose on frame four")
 	arena.cast_step(Vector2.RIGHT)
 	_check(arena.player_animation().clip == "dodge" and arena.player_animation().frame == 0, "cloud step uses the dodge pose sequence")
 	_advance(arena, 0.16)
-	_check(arena.player_animation().frame >= 2, "cloud step advances drawn dodge poses")
+	_check(arena.player_animation().frame >= 5, "cloud step advances its denser drawn dodge poses")
 	arena.free()
 
 	arena = _arena()
 	arena.dodge(Vector2.UP)
 	var dodge_frames: Dictionary = {int(arena.player_animation().frame): true}
-	for frame in range(12):
-		arena.step_simulation(0.02)
+	for frame in range(29):
+		arena.step_simulation(1.0 / 120.0)
 		dodge_frames[int(arena.player_animation().frame)] = true
-	_check(arena.player_animation().clip == "dodge" and dodge_frames.size() == 6, "ordinary dodge presents all six frames during its unchanged 0.25 seconds")
+	_check(arena.player_animation().clip == "dodge" and dodge_frames.size() == 12, "ordinary dodge presents all twelve frames during its unchanged 0.25 seconds")
+	arena.step_simulation(0.01)
+	_check(arena.player_animation().clip == "idle", "denser dodge still ends at 0.25 seconds")
 	arena.free()
 
 	arena = _arena()
 	arena._damage_player(9.0, Vector2.LEFT)
 	_check(arena.player_animation().clip == "hurt" and arena.player_animation().frame == 0, "damage starts a genuine player hurt pose")
 	_advance(arena, 0.18)
-	_check(arena.player_animation().clip == "hurt" and arena.player_animation().frame >= 4, "hurt remains visible and advances beyond its first frame")
+	_check(arena.player_animation().clip == "hurt" and arena.player_animation().frame >= 8, "hurt advances its denser frames without lengthening the reaction")
 	var hurt_save := arena.snapshot()
 	resumed = _arena()
 	resumed.configure("spar", arena.stats, JSON.parse_string(JSON.stringify(hurt_save)))
@@ -347,19 +350,28 @@ func _test_frame_animation() -> void:
 	arena.step_simulation(0.02)
 	_check(arena.enemy_animation(enemy).clip == "attack" and arena.enemy_animation(enemy).frame == 0, "enemy windup begins on attack frame zero")
 	_advance(arena, 0.4)
-	_check(arena.enemy_animation(enemy).frame == 1 and enemy.windup > 0.0, "enemy anticipation uses only the first two frames")
+	_check(arena.enemy_animation(enemy).frame == 2 and enemy.windup > 0.0, "enemy anticipation advances through its first four frames")
 	_advance(arena, 0.4)
-	_check(arena.enemy_animation(enemy).frame == 2 and arena.hp < arena.max_hp, "enemy contact damage visibly selects strike frame two")
+	_check(arena.enemy_animation(enemy).frame == 4 and arena.hp < arena.max_hp, "enemy contact damage visibly selects preserved strike frame four")
 	var enemy_contact := arena.snapshot()
 	resumed = _arena()
 	resumed.configure("spar", arena.stats, JSON.parse_string(JSON.stringify(enemy_contact)))
 	_check(JSON.stringify(resumed.enemy_animation(resumed.enemies[0])) == JSON.stringify(arena.enemy_animation(enemy)), "enemy strike presentation restores without firing a second attack")
 	_advance(arena, 0.06)
-	_check(arena.enemy_animation(enemy).frame == 2, "enemy strike frame is held long enough to see")
+	_check(arena.enemy_animation(enemy).frame == 5, "enemy strike moves into the new in-between during the same 0.12-second hold")
+	resumed.configure("spar", arena.stats, JSON.parse_string(JSON.stringify(arena.snapshot())))
+	_check(resumed.enemy_animation(resumed.enemies[0]).frame == 5 and resumed.damage_taken == arena.damage_taken, "saving on the new strike in-between retains its pose and existing damage")
+	resumed.set_input_enabled(false)
+	var paused_midpoint := JSON.stringify(resumed.snapshot())
+	_advance(resumed, 1.0)
+	_check(JSON.stringify(resumed.snapshot()) == paused_midpoint, "pause freezes an in-between strike frame and its complete encounter snapshot")
+	resumed.set_input_enabled(true)
+	_advance(resumed, 0.08)
+	_check(resumed.enemy_animation(resumed.enemies[0]).frame == 6 and resumed.damage_taken == arena.damage_taken, "resumed strike moves to recovery without another damage callback")
 	_advance(arena, 0.08)
-	_check(arena.enemy_animation(enemy).frame == 3, "enemy recovery starts on fourth drawn attack frame")
-	_advance(arena, 0.42)
-	_check(arena.enemy_animation(enemy).frame == 5, "enemy recovery continues through the final three frames")
+	_check(arena.enemy_animation(enemy).frame == 6, "enemy recovery starts at preserved old frame three, now frame six")
+	_advance(arena, 0.52)
+	_check(arena.enemy_animation(enemy).frame == 11, "enemy recovery continues through the final six frames")
 	resumed.free()
 	arena.free()
 
@@ -368,7 +380,7 @@ func _test_frame_animation() -> void:
 	arena._hit_enemy(enemy, 10, Vector2.ZERO)
 	_check(arena.enemy_animation(enemy).clip == "hurt", "enemy hit feedback includes a distinct hurt clip")
 	_advance(arena, 0.18)
-	_check(arena.enemy_animation(enemy).clip == "hurt" and arena.enemy_animation(enemy).frame >= 4, "enemy hurt animation remains visible after its gameplay stun ends")
+	_check(arena.enemy_animation(enemy).clip == "hurt" and arena.enemy_animation(enemy).frame >= 8, "denser enemy hurt animation remains visible after its unchanged gameplay stun")
 	var legacy := arena.snapshot()
 	legacy.erase("visual")
 	legacy.erase("settlement_remaining")
@@ -390,7 +402,7 @@ func _test_frame_animation() -> void:
 	arena._hit_enemy(enemy, 10, Vector2.ZERO)
 	_advance(arena, 0.30)
 	_check(arena._corpses.size() == 1 and arena.enemies.size() == 1 and not arena.status().resolved, "defeated enemy plays a visual-only copy while other foes continue")
-	_check(arena._clip_state("defeat", arena._corpses[0].age / arena.DEFEAT_DURATION).frame == 2, "enemy defeat sequence advances through separate frames")
+	_check(arena._clip_state("defeat", arena._corpses[0].age / arena.DEFEAT_DURATION).frame == 5, "enemy defeat sequence advances through original and in-between frames")
 	var corpse_save: Dictionary = JSON.parse_string(JSON.stringify(arena.snapshot()))
 	resumed = _arena()
 	resumed.configure("spar", arena.stats, corpse_save)
@@ -410,7 +422,7 @@ func _test_frame_animation() -> void:
 	var stopped_elapsed := arena.elapsed
 	var stopped_enemies := JSON.stringify(arena.snapshot().enemies)
 	_advance(arena, 0.30, Vector2.RIGHT)
-	_check(arena.player_animation().clip == "defeat" and arena.player_animation().frame == 2 and outcomes.is_empty(), "player defeat plays intermediate frames before result UI")
+	_check(arena.player_animation().clip == "defeat" and arena.player_animation().frame == 5 and outcomes.is_empty(), "player defeat plays additional intermediate frames before result UI")
 	_check(arena.player_position == stopped_position and arena.elapsed == stopped_elapsed and JSON.stringify(arena.snapshot().enemies) == stopped_enemies, "settled presentation cannot advance AI, movement or combat time")
 	_check(not arena.attack() and not arena.dodge() and not arena.use_medicine(), "settled presentation cannot accept combat actions")
 	arena.set_input_enabled(false)
@@ -423,12 +435,12 @@ func _test_frame_animation() -> void:
 	resumed.finished.connect(func(won: bool, report: Dictionary) -> void: resumed_outcomes.append({"won": won, "report": report}))
 	resumed.configure("spar", arena.stats, defeat_save)
 	resumed._emit_restored_result(resumed._generation)
-	_check(resumed_outcomes.is_empty() and resumed.player_animation().frame == 2, "resuming mid-defeat retains phase and cannot dispatch prematurely")
+	_check(resumed_outcomes.is_empty() and resumed.player_animation().frame == 5, "resuming mid-defeat retains normalized phase and cannot dispatch prematurely")
 	_advance(resumed, 0.32)
-	_check(resumed_outcomes.is_empty() and resumed.player_animation().frame == 5, "last defeat frame is shown before settlement completes")
+	_check(resumed_outcomes.is_empty() and resumed.player_animation().frame == 11, "last defeat frame is shown before unchanged settlement time completes")
 	_advance(resumed, 0.1)
 	_advance(resumed, 1.0)
-	_check(resumed_outcomes.size() == 1 and not resumed_outcomes[0].won and resumed.player_animation().frame == 5, "resumed defeat finishes exactly once after its remaining visual time")
+	_check(resumed_outcomes.size() == 1 and not resumed_outcomes[0].won and resumed.player_animation().frame == 11, "resumed defeat finishes exactly once after its remaining visual time")
 	resumed.free()
 	# Old saves already marked resolved retain their previous immediate dispatch.
 	defeat_save.erase("settlement_remaining")
@@ -438,7 +450,7 @@ func _test_frame_animation() -> void:
 	resumed.finished.connect(func(won: bool, report: Dictionary) -> void: resumed_outcomes.append({"won": won, "report": report}))
 	resumed.configure("spar", arena.stats, defeat_save)
 	await process_frame
-	_check(resumed_outcomes.size() == 1 and resumed.player_animation().frame == 5, "legacy resolved saves dispatch once without replaying or charging a fight")
+	_check(resumed_outcomes.size() == 1 and resumed.player_animation().frame == 11, "legacy resolved saves dispatch once without replaying or charging a fight")
 	resumed.free()
 	arena.free()
 
@@ -466,4 +478,96 @@ func _test_frame_animation() -> void:
 	_advance(resumed, 0.4)
 	_check(resumed_outcomes.size() == 1 and resumed_outcomes[0].won and resumed_outcomes[0].report.hits == 1, "resumed victory presents then settles once with its original report")
 	resumed.free()
+	arena.free()
+
+
+
+func _sample_player_frames(arena: WeiyuanArena, clip: String, seconds: float, movement: Vector2 = Vector2.ZERO) -> Dictionary:
+	var seen: Dictionary = {}
+	# Faster than the shortest pose dwell time, so this measures the live
+	# simulation without skipping newly authored intermediate poses.
+	for tick in range(floori(seconds * 240.0)):
+		var state := arena.player_animation()
+		if state.clip == clip:
+			seen[int(state.frame)] = true
+		arena.step_simulation(1.0 / 240.0, movement)
+	return seen
+
+
+func _test_twelve_frame_timing() -> void:
+	var arena := _arena()
+	_check(arena.AnimationBank.FRAME_COUNT == 12, "combat consumes the shared twelve-frame animation bank")
+	var idle_frames := _sample_player_frames(arena, "idle", 1.0)
+	_check(idle_frames.size() == 12, "idle presents twelve frames within the original one-second loop")
+	arena.step_simulation(1.0 / 240.0, Vector2.RIGHT)
+	var walk_frames := _sample_player_frames(arena, "walk", 0.6, Vector2.RIGHT)
+	_check(walk_frames.size() == 12, "walk presents twelve frames within the original 0.6-second loop")
+	_check(arena._loop_state("idle", 1.0).frame == 0 and arena._loop_state("walk", 0.6).frame == 0, "denser loops wrap at their original duration boundaries")
+	_check(arena._clip_state("defeat", 1.0).frame == 11 and arena._clip_state("defeat", 2.0).frame == 11, "non-looping actions clamp to their new final frame")
+	arena.free()
+
+	arena = _arena()
+	var enemy := _single_target(arena)
+	var hp_before: float = enemy.hp
+	arena.attack(Vector2.RIGHT)
+	var attack_frames := _sample_player_frames(arena, "attack", 0.32)
+	_check(attack_frames.size() == 12 and attack_frames.has(0) and attack_frames.has(3), "live sword action presents all twelve poses including four before contact")
+	_check(arena.successful_hits == 1 and enemy.hp < hp_before, "interleaved sword frames still cause exactly one physical hit")
+	arena.step_simulation(0.01)
+	_check(arena.player_animation().clip == "idle" and arena.successful_hits == 1, "sword presentation ends at the original 0.32 seconds without an extra hit")
+	arena.free()
+
+	arena = _arena()
+	arena._damage_player(9.0, Vector2.LEFT)
+	var hurt_frames := _sample_player_frames(arena, "hurt", 0.24)
+	_check(hurt_frames.size() == 12, "player hurt displays twelve poses within the unchanged reaction time")
+	arena.step_simulation(0.01)
+	_check(arena.player_animation().clip == "idle" and arena._invulnerability > 0.36, "denser hurt presentation leaves the original damage immunity clock intact")
+	arena.free()
+
+	arena = _arena()
+	enemy = _single_target(arena)
+	enemy.cooldown = 0.0
+	arena.step_simulation(0.02)
+	var enemy_frames: Dictionary = {}
+	for tick in range(374):
+		var state := arena.enemy_animation(enemy)
+		if state.clip == "attack": enemy_frames[int(state.frame)] = true
+		arena.step_simulation(1.0 / 240.0)
+	_check(enemy_frames.size() == 12, "enemy anticipation, contact and recovery together present all twelve attack poses")
+	_check(arena.damage_taken == 9, "enemy's extra strike pose does not create a second collision")
+	arena.free()
+
+	# The previous six-frame release serialized clocks, not frame numbers.
+	# These are its exact pre-contact field values, with no schema conversion.
+	arena = _arena()
+	enemy = _single_target(arena)
+	var legacy_six := arena.snapshot()
+	legacy_six.attack_timer = 0.22
+	legacy_six.attack_direction = [1.0, 0.0]
+	legacy_six.attack_impacted = false
+	legacy_six.cooldown = 0.23
+	legacy_six.combo = 1
+	legacy_six.combo_window = 1.05
+	legacy_six.visual = {"attack_style": "sword", "hurt_timer": 0.0, "moving": false, "corpses": []}
+	var resumed := _arena()
+	resumed.configure("spar", arena.stats, JSON.parse_string(JSON.stringify(legacy_six)))
+	_check(resumed.player_animation().frame == 3 and resumed.successful_hits == 0, "six-frame save's pre-contact clock resumes before the same physical hit")
+	resumed.step_simulation(0.01)
+	_check(resumed.player_animation().frame == 4 and resumed.successful_hits == 1, "legacy pre-contact save hits once at its original remaining 0.01 seconds")
+	var after_contact: Dictionary = JSON.parse_string(JSON.stringify(resumed.snapshot()))
+	arena.configure("spar", resumed.stats, after_contact)
+	_advance(arena, 0.2)
+	_check(arena.successful_hits == 1 and arena.player_animation().frame == 11, "saved post-contact clock resumes the remaining new poses without repeating damage")
+	resumed.free()
+	arena.free()
+
+	arena = _arena()
+	var outcomes: Array = []
+	arena.finished.connect(func(won: bool, report: Dictionary) -> void: outcomes.append({"won": won, "report": report}))
+	arena._damage_player(999.0, Vector2.LEFT)
+	var defeat_frames := _sample_player_frames(arena, "defeat", 0.62)
+	_check(defeat_frames.size() == 12 and outcomes.is_empty(), "all twelve defeat frames appear before the unchanged settlement deadline")
+	_advance(arena, 0.04)
+	_check(outcomes.size() == 1 and arena.player_animation().frame == 11, "twelve-frame defeat still settles once after 0.65 seconds")
 	arena.free()

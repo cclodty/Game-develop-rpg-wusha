@@ -19,14 +19,15 @@ import subprocess
 from threading import Thread
 import time
 
-from PIL import Image, ImageChops
+from PIL import Image, ImageChops, ImageStat
 from playwright.sync_api import sync_playwright
-from test_web import QuietHandler, READ_SAVE_JS
+from test_web import QuietHandler, READ_SAVE_JS, build_hashes
 
 
 ACTORS = ["courier", "herbalist", "performer", "bandit", "lancer", "examiner", "shen", "lu", "tao", "zhou", "xiao", "lin"]
 CLIPS = ["idle", "walk", "attack", "dodge", "hurt", "defeat"]
-POSE_AREA = (365, 207, 1053, 612)  # Excludes changing labels and control highlights.
+FRAME_COUNT = 12
+POSE_AREA = (365, 207, 1053, 527)  # Excludes changing labels and control highlights.
 
 
 def main():
@@ -42,6 +43,7 @@ def main():
     web = root / "build/web"
     if not (web / "index.pck").exists():
         parser.error("Export the stable animation build first: bash tools/export_web.sh")
+    hashes = build_hashes(web)
     server = ThreadingHTTPServer(("127.0.0.1", 0), partial(QuietHandler, directory=str(web)))
     Thread(target=server.serve_forever, daemon=True).start()
     messages, checks, markers = [], [], []
@@ -70,9 +72,14 @@ def main():
                 click(1246, 234 + CLIPS.index(name) * 65)
 
             def frame(index, name=None):
-                click(429 + index * 112, 830)
+                click(429 + (index % 6) * 112, 711 + (index // 6) * 120)
                 png = page.screenshot(path=str(output / f"{name}.png") if name else None)
-                return Image.open(io.BytesIO(png)).convert("RGB").crop(POSE_AREA)
+                pose = Image.open(io.BytesIO(png)).convert("RGB").crop(POSE_AREA)
+                # The empty checkerboard/ground has very little variation;
+                # a missing odd-frame texture must not pass merely by differing
+                # from a correctly rendered even frame.
+                assert min(ImageStat.Stat(pose).stddev) > 12, f"Frame {index + 1} rendered no visible sprite"
+                return pose
 
             def mark(name):
                 markers.append({"name": name, "seconds": round(time.monotonic() - started, 3)})
@@ -92,40 +99,61 @@ def main():
             assert ImageChops.difference(first, paused).getbbox() is None, "Paused preview continues moving"
             checks.append("Paused sprite pixels remain unchanged while real time passes")
             fingerprints = {hashlib.sha256(first.tobytes()).hexdigest()}
-            for index in range(1, 6):
+            last = first
+            for index in range(1, FRAME_COUNT):
                 pose = frame(index, f"courier-walk-{index}")
                 fingerprints.add(hashlib.sha256(pose.tobytes()).hexdigest())
-            assert len(fingerprints) == 6, "Courier walk does not render six distinct poses"
-            checks.append("All six courier walk cells render as different actual sprite poses")
+                last = pose
+            assert len(fingerprints) == FRAME_COUNT, "Courier walk does not render twelve distinct poses"
+            checks.append("All twelve courier walk cells render as different actual sprite poses")
+            click(958, 569)  # Next from frame 12 wraps to frame 1.
+            wrapped = Image.open(io.BytesIO(page.screenshot())).convert("RGB").crop(POSE_AREA)
+            assert ImageChops.difference(first, wrapped).getbbox() is None, "Next-frame control does not wrap to the first pose"
+            click(460, 569)
+            reversed_pose = Image.open(io.BytesIO(page.screenshot())).convert("RGB").crop(POSE_AREA)
+            assert ImageChops.difference(last, reversed_pose).getbbox() is None, "Previous-frame control does not wrap to the twelfth pose"
+            checks.append("Visible next/previous controls wrap between the twelfth and first actual poses")
 
             for name in ACTORS:
                 actor(name)
                 clip("idle" if name in ACTORS[6:] else "attack")
                 pose_a = frame(0)
-                pose_b = frame(3, f"{name}-pose")
+                pose_b = frame(1, f"{name}-pose")
                 assert ImageChops.difference(pose_a, pose_b).getbbox() is not None, f"No visible frame change for {name}"
-            checks.append("All six fighters and six NPCs visibly change drawn frame through the browser controls")
+            checks.append("All six fighters and six NPCs visibly render their newly inserted second pose")
 
             # Record uninterrupted playback of every hero clip, followed by
             # role-specific action/idle loops. These are real rendered frames.
             actor("courier")
             frame(0)
-            click(709, 666)  # Resume after the explicit paused frame selection.
+            click(709, 569)  # Resume after the explicit paused frame selection.
             mark("playback-start")
             for name in CLIPS:
                 clip(name)
                 mark("courier-" + name)
                 page.wait_for_timeout(2200)
+            # The recorder samples at 25fps. A real half-speed preview keeps
+            # attack/dodge's 12 poses below that rate without interpolating or
+            # inventing frames; the visible speed label remains in the video.
+            click(1246, 725)
+            mark("half-speed-start")
+            for name in ("attack", "dodge"):
+                clip(name)
+                mark("courier-" + name + "-half-speed")
+                page.wait_for_timeout(2500)
+            page.screenshot(path=str(output / "half-speed.png"))
+            click(1246, 725)
+            mark("normal-speed-restored")
             for name in ACTORS[1:]:
                 actor(name)
                 clip("idle" if name in ACTORS[6:] else "walk" if name == "herbalist" else "attack")
                 mark(name)
                 page.wait_for_timeout(1400)
-            click(709, 666)
+            click(709, 569)
             mark("preview-end")
             actor("courier")
             clip("walk")
-            frame(2, "preview")
+            frame(5, "preview")
             click(1319, 59)
             page.wait_for_timeout(200)
             assert page.evaluate(READ_SAVE_JS) is None, "Animation preview wrote a player save"
@@ -136,12 +164,11 @@ def main():
             browser.close()
         errors = [item for item in messages if item["type"] == "pageerror" or "SCRIPT ERROR" in item["text"] or item["text"].startswith("ERROR:")]
         assert not errors, errors
-        hashes = {}
-        for name in ("index.html", "index.js", "index.wasm", "index.pck"):
-            with (web / name).open("rb") as stream:
-                hashes[name] = hashlib.file_digest(stream, "sha256").hexdigest()
+        assert build_hashes(web) == hashes, "Exported files changed during animation capture"
         report = {"checks": checks, "console": messages, "recording": str(recording), "markers": markers,
-                  "state_injection": False, "synthetic_frames": False, "build_sha256": hashes}
+                  "state_injection": False, "synthetic_frames": False, "frames_per_clip": FRAME_COUNT,
+                  "distinct_walk_pose_count": len(fingerprints), "half_speed_control_used": True,
+                  "build_sha256": hashes}
         ffmpeg = shutil.which("ffmpeg")
         if ffmpeg:
             times = {entry["name"]: entry["seconds"] for entry in markers}

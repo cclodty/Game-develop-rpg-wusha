@@ -48,13 +48,15 @@ func _animation_regressions() -> void:
 		world.configure("wangxi", hero_origin)
 		var first: Dictionary = world.player_animation()
 		_check(first.actor == hero_origin and first.clip == "idle", "World selects the chosen origin's idle animation: " + hero_origin)
+		_check(first.frame_count == 12 and is_equal_approx(first.fps, 12.0), "Idle uses twelve drawn frames within its original one-second duration: " + hero_origin)
 		_simulate(0.23)
 		_check(world.player_animation().frame != first.frame, "Idle advances through separate frames: " + hero_origin)
 		_key(KEY_D, true)
-		_simulate(0.23)
+		_simulate(0.30)
 		_key(KEY_D, false)
 		var walking: Dictionary = world.player_animation()
 		_check(walking.clip == "walk" and walking.frame > 0, "Real movement selects and advances walk poses: " + hero_origin)
+		_check(is_equal_approx(walking.fps, 20.0) and walking.frame % 2 == 1, "Walking reaches a new midpoint pose at twenty frames per second: " + hero_origin)
 		var npc_poses: Dictionary = {}
 		for npc: String in ["shen", "lu", "tao", "zhou", "xiao", "lin"]:
 			npc_poses[npc] = world.npc_animation(npc)
@@ -83,6 +85,38 @@ func _animation_regressions() -> void:
 	_simulate(0.4)
 	_check(world.player_animation().elapsed == before_hide.elapsed, "Hidden world cannot advance actor clocks")
 	world.show()
+
+
+func _twelve_frame_npc_regressions() -> void:
+	world.set_input_enabled(true)
+	world.configure("wangxi")
+	var seen: Dictionary = {}
+	var drawn: Dictionary = {}
+	var sources_correct: Dictionary = {}
+	var actors: Array[String] = ["shen", "lu", "tao", "zhou", "xiao", "lin"]
+	for npc: String in actors:
+		seen[npc] = {}
+		drawn[npc] = {}
+		sources_correct[npc] = true
+	# Sample away from frame boundaries, covering exactly one unchanged idle loop.
+	world._physics_process(1.0 / 48.0)
+	for sample in range(12):
+		for npc: String in actors:
+			var pose: Dictionary = world.npc_animation(npc)
+			seen[npc][pose.frame] = true
+			var midpoint: bool = pose.frame % 2 == 1
+			var expected_source: String = "inbetween" if midpoint else "original"
+			var path_matches: bool = "/inbetweens/npcs.png" in pose.source_path if midpoint else pose.source_path.ends_with("/animation/npcs.png")
+			sources_correct[npc] = sources_correct[npc] and pose.source_bank == expected_source and path_matches and pose.source_column == floori(float(pose.frame) / 2.0)
+			var texture: Texture2D = world._animation_bank.call("loop_frame", npc, "idle", pose.elapsed)
+			if texture != null:
+				var pixels: PackedByteArray = texture.get_image().get_data()
+				drawn[npc][hash(pixels)] = true
+		world._physics_process(1.0 / 12.0)
+	for npc: String in actors:
+		_check(seen[npc].size() == 12, "One second of town gestures visits all twelve output frames: " + npc)
+		_check(sources_correct[npc], "NPC frames alternate untouched originals with the six new source drawings: " + npc)
+		_check(drawn[npc].size() == 12, "NPC playback draws twelve distinct pixel frames: " + npc)
 
 
 func _run() -> void:
@@ -175,6 +209,7 @@ func _run() -> void:
 		_simulate(12.0)
 		_check(world.get_player_position().distance_to(exit_point) < 8.0, "Exploration can return to exit: " + place)
 	_animation_regressions()
+	_twelve_frame_npc_regressions()
 	world.queue_free()
 	print("TESTS COMPLETE: %s passed, %s failed" % [checks - failed, failed])
 	quit(1 if failed else 0)

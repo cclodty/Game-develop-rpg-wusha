@@ -53,6 +53,7 @@ var _font: Font
 var _serif: Font
 var _art: Script
 var _animation_bank: Script
+var _animation_frame_count: int = 12
 var _portraits: Dictionary = {}
 var _backdrop: Texture2D
 
@@ -167,13 +168,20 @@ func _actor_animation(actor: String, clip: String, elapsed: float) -> Dictionary
 	if _animation_bank != null:
 		duration = float(_animation_bank.call("clip_duration", clip))
 	var progress: float = fposmod(elapsed, maxf(duration, 0.001)) / maxf(duration, 0.001)
-	var frame: int = mini(5, floori(progress * 6.0))
+	var frame: int = mini(_animation_frame_count - 1, floori(progress * float(_animation_frame_count)))
 	var animated: bool = false
+	var source: Dictionary = {}
 	if _animation_bank != null:
 		frame = int(_animation_bank.call("frame_index", clip, progress))
 		animated = bool(_animation_bank.call("has_actor", actor))
+		if _animation_bank.has_method("frame_metadata"):
+			source = _animation_bank.call("frame_metadata", actor, clip, frame)
 	return {"actor": actor, "clip": clip, "elapsed": elapsed, "progress": progress,
-		"frame": frame, "animated": animated, "paused": not input_enabled}
+		"frame": frame, "frame_count": _animation_frame_count, "duration": duration,
+		"fps": float(_animation_frame_count) / maxf(duration, 0.001),
+		"source_bank": "inbetween" if int(source.get("bank", 0)) == 1 else "original",
+		"source_path": str(source.get("path", "")), "source_column": int(source.get("column", frame)),
+		"animated": animated, "paused": not input_enabled}
 
 
 func navigate_to_npc(id: String) -> void:
@@ -218,6 +226,8 @@ func _load_art() -> void:
 func _load_animation_bank() -> void:
 	if ResourceLoader.exists("res://scripts/animation_bank.gd"):
 		_animation_bank = load("res://scripts/animation_bank.gd") as Script
+		if _animation_bank != null:
+			_animation_frame_count = int(_animation_bank.get_script_constant_map().get("FRAME_COUNT", 12))
 
 
 func _build_location() -> void:

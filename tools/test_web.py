@@ -55,6 +55,14 @@ class QuietHandler(GameHandler):
         pass
 
 
+def build_hashes(web):
+    hashes = {}
+    for name in ("index.html", "index.js", "index.wasm", "index.pck"):
+        with (web / name).open("rb") as stream:
+            hashes[name] = hashlib.file_digest(stream, "sha256").hexdigest()
+    return hashes
+
+
 class Journey:
     def __init__(self, page, url, output, name):
         self.page, self.url, self.output, self.name = page, url, output, name
@@ -130,19 +138,22 @@ def main():
     parser.add_argument("--output", type=Path)
     parser.add_argument("--origins", nargs="+", choices=("herbalist", "courier", "performer"), default=["herbalist", "courier", "performer"], help="Focus a regression run after a scoped change; default checks all origins.")
     parser.add_argument("--record-video", action="store_true", help="Record genuine browser playback for animation review; clips/markers are written under the output directory.")
+    parser.add_argument("--scope", choices=("full", "animation"), default="full", help="Animation scope checks all selected origins, walking, learned-skill combat, pause/save/resume and retreat; full also covers exploration and the ending.")
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
     output = args.output or root / "artifacts" / "web"
     output.mkdir(parents=True, exist_ok=True)
     (root / "artifacts" / ".gdignore").touch()
     (output / "result.json").unlink(missing_ok=True)
+    (output / "progress.json").unlink(missing_ok=True)
     web = root / "build" / "web"
     if not (web / "index.html").exists():
         parser.error("Export first: bash tools/export_web.sh")
+    hashes = build_hashes(web)
     server = ThreadingHTTPServer(("127.0.0.1", 0), partial(QuietHandler, directory=str(web)))
     Thread(target=server.serve_forever, daemon=True).start()
     url = f"http://127.0.0.1:{server.server_address[1]}/"
-    messages, checks, recordings = [], [], []
+    messages, checks, recordings, completed_origins = [], [], [], []
     try:
         with sync_playwright() as playwright:
             browser = playwright.chromium.launch(executable_path=args.browser, headless=True, args=[
@@ -194,27 +205,31 @@ def main():
                 journey.mark("walking-end")
                 checks.append(f"{origin}: WebGL, creation, bespoke intro, free town walking, independent persistent save")
                 if origin == "herbalist":
-                    exercise_activity(journey, checks)
+                    exercise_activity(journey, checks, scope=args.scope)
                 context.close()
                 if args.record_video:
                     target = output / "recordings" / f"{origin}-gameplay.webm"
                     page.video.save_as(str(target))
                     recordings.append({"origin": origin, "path": str(target), "markers": journey.markers})
+                completed_origins.append(origin)
+                # Preserve completed flows and video markers if a later origin
+                # fails. This is explicitly partial, never a passing result.
+                (output / "progress.json").write_text(json.dumps({"status": "partial", "checks": checks,
+                    "completed_origins": completed_origins, "requested_origins": args.origins, "scope": args.scope,
+                    "console": messages, "state_injection": False, "build_sha256": hashes,
+                    "recordings": recordings}, ensure_ascii=False, indent=2))
             browser.close()
         errors = [message for message in messages if message["type"] == "pageerror" or "SCRIPT ERROR" in message["text"] or message["text"].startswith("ERROR:")]
         assert not errors, errors
-        hashes = {}
-        for name in ("index.html", "index.js", "index.wasm", "index.pck"):
-            with (web / name).open("rb") as stream:
-                hashes[name] = hashlib.file_digest(stream, "sha256").hexdigest()
-        (output / "result.json").write_text(json.dumps({"checks": checks, "origins": args.origins, "console": messages, "state_injection": False, "build_sha256": hashes, "recordings": recordings}, ensure_ascii=False, indent=2))
+        assert build_hashes(web) == hashes, "Exported files changed during the browser run"
+        (output / "result.json").write_text(json.dumps({"checks": checks, "origins": args.origins, "scope": args.scope, "console": messages, "state_injection": False, "build_sha256": hashes, "recordings": recordings}, ensure_ascii=False, indent=2))
         print(f"WEB TESTS COMPLETE: {len(checks)} flow groups passed; no engine/browser errors", flush=True)
     finally:
         server.shutdown()
         server.server_close()
 
 
-def exercise_activity(journey, checks):
+def exercise_activity(journey, checks, scope="full"):
     page = journey.page
     page.mouse.click(1276, 653)
     page.wait_for_timeout(200)
@@ -283,6 +298,8 @@ def exercise_activity(journey, checks):
     town = journey.save(lambda data: not data["pending"] and data["phase"] == "town", "retreat returns to town")
     assert town["spent"] == 3 and town["training"] == 2 and "practice" not in town["completed"]
     checks.append("Retreat retains spent time and does not issue unfinished practice rewards")
+    if scope == "animation":
+        return
 
     page.mouse.click(1276, 592)
     page.wait_for_timeout(200)

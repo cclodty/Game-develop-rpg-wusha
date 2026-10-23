@@ -1,0 +1,138 @@
+{
+  "project": "江湖未遠：入山之前",
+  "created": "2026-10-23",
+  "generator": "OpenAI image_gen",
+  "purpose": "Six separately drawn supplemental poses per clip, interleaved with the six retained original key poses.",
+  "heroes": 3,
+  "original_hero_frames_retained": 108,
+  "new_hero_frames": 108,
+  "combined_hero_frames": 216,
+  "source_layout": {
+    "columns": 6,
+    "rows": 6,
+    "clips": [
+      "idle",
+      "walk",
+      "attack",
+      "dodge",
+      "hurt",
+      "defeat"
+    ],
+    "new_frames_per_clip": 6,
+    "combined_runtime_frames_per_clip": 12,
+    "order": [
+      "original0",
+      "new0",
+      "original1",
+      "new1",
+      "original2",
+      "new2",
+      "original3",
+      "new3",
+      "original4",
+      "new4",
+      "original5",
+      "new5"
+    ],
+    "loop_seam": "Idle/walk new5 bridges original5 to original0. One-shot new5 is the settled final follow-through; defeat stays prone.",
+    "sampling": "Nonuniform source spacing is calibrated with explicit regions and transparent atlas margins. Whole-new-bank proportional scale is allowed to match the retained original model; no per-frame resizing or generated runtime in-betweens."
+  },
+  "provenance_policy": "All packaged PNGs are byte-identical image_gen outputs. Existing six-frame source sheets remain unchanged. Original and revised generated outputs remain in /workspace/generated_images. Python was used only for read-only alpha/size/hash analysis and this metadata file; no programmatic image editing, recoloring, frame warps or crossfades were used to create poses.",
+  "revision_focus": [
+    "Draw intermediate leg/arm/weapon articulation while preserving existing original keyframes.",
+    "Correct attack anticipation/contact/follow-through ordering.",
+    "Separate full figures and blades with real transparent source gutters.",
+    "Correct conspicuous head/torso width and color differences from the original model.",
+    "Compare actual chronological twelve-frame gameplay renderings during review."
+  ],
+  "limitations": [
+    "One front three-quarter viewing direction with runtime horizontal mirroring.",
+    "Hand-painted poses can have small natural silhouette variations.",
+    "Source rows and columns require calibration metadata rather than equal-grid slicing."
+  ],
+  "assets": [
+    {
+      "actor": "courier",
+      "file": "courier.png",
+      "source_output": "/workspace/generated_images/exec-f9908041-8216-4b3f-b82b-c06f1d2c6f76.png",
+      "source_iteration_history": [
+        "/workspace/generated_images/exec-62561384-a2ee-446a-916c-082bab799cd3.png",
+        "/workspace/generated_images/exec-cc88d164-1e7c-4ba6-89e0-b3a64ca59f2d.png",
+        "/workspace/generated_images/exec-afe5cdbe-fc1a-4b71-aaa3-b5f096ae7f6a.png",
+        "/workspace/generated_images/exec-2d51c65a-7a1c-4c50-968a-bd9058dd8887.png",
+        "/workspace/generated_images/exec-cad4dbb7-659e-4eeb-ab06-4f9b9e87ed06.png"
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "format": "RGBA",
+      "sha256": "4518e466612fe6af2b2e07a4ad4178f923998c298481493bef72bad74731737a",
+      "unchanged_original_reference": "../courier.png",
+      "unchanged_original_sha256": "c69955932af95e440b2a0c6468fc0cca3d87f5d0e444d6c53cbf8f6de8327ce5",
+      "copied_without_pixel_edits": true
+    },
+    {
+      "actor": "herbalist",
+      "file": "herbalist.png",
+      "source_output": "/workspace/generated_images/exec-e693c80d-001e-4afa-ad39-681b04694fd4.png",
+      "source_iteration_history": [
+        "/workspace/generated_images/exec-d410dedd-349b-4037-ab9b-a61637caf12d.png",
+        "/workspace/generated_images/exec-d25b373a-49df-4764-ae8e-6791d52dd465.png",
+        "/workspace/generated_images/exec-8d7523a5-8926-4447-97a1-43cff6038d7c.png",
+        "/workspace/generated_images/exec-262b1f2d-9ae4-496c-aac6-9555a1aa7adb.png"
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "format": "RGBA",
+      "sha256": "b1cec0d68a33d291157263dd6b9a165e75fcdfa22c8a2e3086142a8a940799bc",
+      "unchanged_original_reference": "../herbalist.png",
+      "unchanged_original_sha256": "72d4aba08d431f1cba5048f83ec23756595c8cd6dfb30a07caa1c0ca5b51bf42",
+      "copied_without_pixel_edits": true
+    },
+    {
+      "actor": "performer",
+      "file": "performer.png",
+      "source_output": "/workspace/generated_images/exec-17153658-8d15-4ef5-9c31-9abf1758366d.png",
+      "source_iteration_history": [
+        "/workspace/generated_images/exec-3a14f356-c81f-46a6-9d90-ab1d6c41d005.png",
+        "/workspace/generated_images/exec-a4cc1074-15c4-4d28-81b5-8c7d7bdd9b90.png",
+        "/workspace/generated_images/exec-d1d919b5-876f-4dbf-8f05-efd447700f8b.png",
+        "/workspace/generated_images/exec-daf03e0b-fac0-44e0-8736-dce28ba9eadd.png"
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "format": "RGBA",
+      "sha256": "810f309f7839d2bf0cf89f5dcf960205380e54e666c4881c7b93f283d0e1317a",
+      "unchanged_original_reference": "../performer.png",
+      "unchanged_original_sha256": "15da5865d3721c24c9991966403c34d011511fb2803c759f65bf15ceac69eeb8",
+      "copied_without_pixel_edits": true
+    }
+  ],
+  "review": {
+    "status": "accepted_and_frozen",
+    "reviewers": [
+      "root integration review",
+      "combat actual-arena review",
+      "art source review"
+    ],
+    "rendering": "Actual Godot arena actor drawing, 12 chronological frames per clip, six clips per hero; original even frames interleaved with generated odd frames.",
+    "evidence": [
+      "/tmp/weiyuan_actual_twelve_courier.png",
+      "/tmp/weiyuan_actual_twelve_herbalist.png",
+      "/tmp/weiyuan_actual_twelve_performer.png"
+    ],
+    "accepted_findings": [
+      "Conspicuous alternating wide/narrow head and torso differences corrected.",
+      "Ground placement stable at actual gameplay scale.",
+      "Attack blades complete and isolated from neighboring source poses.",
+      "Walk, dodge, hurt and defeat sequences read in chronological order.",
+      "Small natural hand-painted silhouette differences remain acceptable."
+    ],
+    "original_preservation": "All three retained original PNG SHA-256 values independently rechecked against the previous hero_provenance.json; unchanged."
+  }
+}

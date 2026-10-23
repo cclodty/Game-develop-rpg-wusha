@@ -135,6 +135,7 @@ func test_animation_preview() -> void:
 	var preview = app.animation_preview
 	expect(is_instance_valid(preview), "title opens the live frame-animation preview")
 	if not is_instance_valid(preview): return
+	expect(preview.animation_state().frame_count == 12, "preview exposes twelve real frames per clip")
 	fit("animation preview")
 	press("actor_courier")
 	press("clip_walk")
@@ -145,12 +146,13 @@ func test_animation_preview() -> void:
 	var frozen: Dictionary = preview.animation_state().duplicate(true)
 	await create_timer(0.18).timeout
 	expect(preview.animation_state() == frozen, "preview pause holds both phase and frame")
-	press("frame_5")
-	expect(preview.animation_state().frame == 5 and not preview.animation_state().playing, "frame-strip selection shows the chosen drawn frame and pauses")
+	for index in range(12):
+		press("frame_" + str(index))
+		expect(preview.animation_state().frame == index and not preview.animation_state().playing, "frame-strip selection shows drawn frame %d of 12 and pauses" % (index + 1))
 	press("preview_step")
 	expect(preview.animation_state().frame == 0, "stepping past the last pose wraps to frame zero")
 	press("preview_previous")
-	expect(preview.animation_state().frame == 5, "previous-frame control wraps in reverse")
+	expect(preview.animation_state().frame == 11, "previous-frame control wraps to the twelfth pose")
 	press("preview_flip")
 	expect(preview.animation_state().mirrored, "preview can review the mirrored left-facing presentation")
 	press("preview_speed")
