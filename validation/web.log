@@ -1,0 +1,173 @@
+PASS CARD WEB: real keyboard name and mouse origin enter the prologue
+PASS CARD WEB: question 1 is active
+PASS CARD WEB: choice 1 persists its authored response
+PASS CARD WEB: question 2 is active
+PASS CARD WEB: choice 2 persists its authored response
+PASS CARD WEB: question 3 is active
+PASS CARD WEB: choice 3 persists its authored response
+PASS CARD WEB: Continue restores the exact creation answers, page and adjustments
+PASS CARD WEB: question 4 is active
+PASS CARD WEB: choice 4 persists its authored response
+PASS CARD WEB: question 5 is active
+PASS CARD WEB: choice 5 persists its authored response
+PASS CARD WEB: question 6 is active
+PASS CARD WEB: choice 6 persists its authored response
+PASS CARD WEB: six choices reach the ability summary
+PASS CARD WEB: visible controls transfer one ability point
+PASS CARD WEB: confirmation enters the new morning arrival story
+PASS CARD WEB: read current dialogue checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: real WASD walking saves the new world position
+PASS CARD WEB: read original ten-card deck
+PASS CARD WEB: incomplete deck does not overwrite the saved ten cards
+PASS CARD WEB: actual visible origin-card swap commits a legal ten-card deck
+PASS CARD WEB: activity preview does not spend a slot
+PASS CARD WEB: practice starts and charges exactly one slot
+PASS CARD WEB: read current dialogue checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: actual card encounter presents five-card mulligan
+PASS CARD WEB: actual first card is selected for the opening redraw
+PASS CARD WEB: visible redraw button begins the first turn
+PASS CARD WEB: pause preserves the current card turn
+PASS CARD WEB: paused time does not change the card model
+PASS CARD WEB: Continue restores the pending card encounter
+PASS CARD WEB: read live card checkpoint
+PASS CARD WEB: visible card or turn input changes the real model
+PASS CARD WEB: read live card checkpoint
+PASS CARD WEB: visible card or turn input changes the real model
+PASS CARD WEB: read live card checkpoint
+PASS CARD WEB: visible card or turn input changes the real model
+PASS CARD WEB: read live card checkpoint
+PASS CARD WEB: visible card or turn input changes the real model
+PASS CARD WEB: read live card checkpoint
+PASS CARD WEB: visible card or turn input changes the real model
+PASS CARD WEB: read live card checkpoint
+PASS CARD WEB: visible card or turn input changes the real model
+PASS CARD WEB: read live card checkpoint
+PASS CARD WEB: visible card or turn input changes the real model
+PASS CARD WEB: read live card checkpoint
+PASS CARD WEB: visible card or turn input changes the real model
+PASS CARD WEB: read live card checkpoint
+PASS CARD WEB: visible card or turn input changes the real model
+PASS CARD WEB: read live card checkpoint
+PASS CARD WEB: visible card or turn input changes the real model
+PASS CARD WEB: read live card checkpoint
+PASS CARD WEB: visible card or turn input changes the real model
+PASS CARD WEB: read live card checkpoint
+PASS CARD WEB: visible card or turn input changes the real model
+PASS CARD WEB: read live card checkpoint
+PASS CARD WEB: visible card or turn input changes the real model
+PASS CARD WEB: read live card checkpoint
+PASS CARD WEB: visible card or turn input changes the real model
+PASS CARD WEB: read live card checkpoint
+PASS CARD WEB: visible card or turn input changes the real model
+PASS CARD WEB: read live card checkpoint
+PASS CARD WEB: visible card or turn input changes the real model
+PASS CARD WEB: read live card checkpoint
+PASS CARD WEB: visible card or turn input changes the real model
+PASS CARD WEB: read live card checkpoint
+PASS CARD WEB: visible card or turn input changes the real model
+PASS CARD WEB: read live card checkpoint
+PASS CARD WEB: read current dialogue checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: card victory and authored debrief settle once
+PASS CARD WEB: real keyboard name and mouse origin enter the prologue
+PASS CARD WEB: question 1 is active
+PASS CARD WEB: choice 1 persists its authored response
+PASS CARD WEB: question 2 is active
+PASS CARD WEB: choice 2 persists its authored response
+PASS CARD WEB: question 3 is active
+PASS CARD WEB: choice 3 persists its authored response
+PASS CARD WEB: question 4 is active
+PASS CARD WEB: choice 4 persists its authored response
+PASS CARD WEB: question 5 is active
+PASS CARD WEB: choice 5 persists its authored response
+PASS CARD WEB: question 6 is active
+PASS CARD WEB: choice 6 persists its authored response
+PASS CARD WEB: six choices reach the ability summary
+PASS CARD WEB: visible controls transfer one ability point
+PASS CARD WEB: confirmation enters the new morning arrival story
+PASS CARD WEB: read current dialogue checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: real WASD walking saves the new world position
+PASS CARD WEB: real keyboard name and mouse origin enter the prologue
+PASS CARD WEB: question 1 is active
+PASS CARD WEB: choice 1 persists its authored response
+PASS CARD WEB: question 2 is active
+PASS CARD WEB: choice 2 persists its authored response
+PASS CARD WEB: question 3 is active
+PASS CARD WEB: choice 3 persists its authored response
+PASS CARD WEB: question 4 is active
+PASS CARD WEB: choice 4 persists its authored response
+PASS CARD WEB: question 5 is active
+PASS CARD WEB: choice 5 persists its authored response
+PASS CARD WEB: question 6 is active
+PASS CARD WEB: choice 6 persists its authored response
+PASS CARD WEB: six choices reach the ability summary
+PASS CARD WEB: visible controls transfer one ability point
+PASS CARD WEB: Continue restores the exact creation answers, page and adjustments
+PASS CARD WEB: confirmation enters the new morning arrival story
+PASS CARD WEB: read current dialogue checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: dialogue input advances the saved checkpoint
+PASS CARD WEB: real WASD walking saves the new world position
+CARD WEB TESTS COMPLETE: 7 flow groups passed; no engine/browser errors

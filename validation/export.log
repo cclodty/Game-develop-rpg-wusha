@@ -1,0 +1,201 @@
+/workspace/.godot-environment/cache/shanhexing/export/Godot_v4.6.3-stable_export_templates.tpz: OK
+Verified official template: version.txt
+Verified official template: web_nothreads_debug.zip
+Verified official template: web_nothreads_release.zip
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Scanning file structure...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Started Loading editor (5 steps)[39m[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Loading editor layout...[39m[0m
+[  16% ] [90m[1mloading_editor_layout[22m | Loading docks...[39m[0m
+[92m[ DONE ][39m [1mloading_editor_layout[22m
+[0m
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Scanning file structure...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1msavepack[22m | Started Packing (102 steps)[39m[0m
+[   4% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/compiler/compilation.gdc[39m[0m
+[   5% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/compiler/compiled_line.gdc[39m[0m
+[   6% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/compiler/compiler.gdc[39m[0m
+[   7% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/compiler/compiler_regex.gdc[39m[0m
+[   8% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/compiler/compiler_result.gdc[39m[0m
+[   8% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/compiler/expression_parser.gdc[39m[0m
+[   9% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/compiler/resolved_goto_data.gdc[39m[0m
+[  10% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/compiler/resolved_line_data.gdc[39m[0m
+[  11% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/compiler/resolved_tag_data.gdc[39m[0m
+[  12% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/compiler/tree_line.gdc[39m[0m
+[  30% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/example_balloon/example_balloon.gdc[39m[0m
+[  31% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-57fc9b32a4ae3d4a3041b46baf4b8f92-example_balloon.scn[39m[0m
+[  32% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-25872080cd204f02261b5746b425708f-small_example_balloon.scn[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/l10n/en.po[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/l10n/es.po[39m[0m
+[  34% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/l10n/uk.po[39m[0m
+[  35% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/l10n/zh.po[39m[0m
+[  35% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/l10n/zh_TW.po[39m[0m
+[  36% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/utilities/builtins.gdc[39m[0m
+[  37% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/utilities/dialogue_cache.gdc[39m[0m
+[  38% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/utilities/translations.gdc[39m[0m
+[  39% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/utilities/waiter.gdc[39m[0m
+[  43% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/constants.gdc[39m[0m
+[  44% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/dialogue_label.gdc[39m[0m
+[  45% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-e41b7d5321416240678013b406b79557-dialogue_label.scn[39m[0m
+[  46% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/dialogue_line.gdc[39m[0m
+[  47% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/dialogue_manager.gdc[39m[0m
+[  48% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/dialogue_processor.gdc[39m[0m
+[  49% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/dialogue_resource.gdc[39m[0m
+[  50% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/dialogue_response.gdc[39m[0m
+[  50% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/dialogue_responses_menu.gdc[39m[0m
+[  51% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/editor_translation_parser_plugin.gdc[39m[0m
+[  52% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/export_plugin.gdc[39m[0m
+[  53% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/import_plugin.gdc[39m[0m
+[  54% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/inspector_plugin.gdc[39m[0m
+[  55% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/plugin.gdc[39m[0m
+[  56% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/settings.gdc[39m[0m
+[  57% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/test_scene.gdc[39m[0m
+[  57% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-74a175fe1e216df3bdf79c5c27a2ac2c-test_scene.scn[39m[0m
+[  58% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/river_ambience.wav-f34bfd1419263d8071b2b019ec28eb8f.sample[39m[0m
+[  58% ] [90m[1msavepack[22m | Storing File: res://assets/audio/river_ambience.wav.import[39m[0m
+[  59% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/tap.wav-9cba102532372cbf5ec98b0f6dac6850.sample[39m[0m
+[  59% ] [90m[1msavepack[22m | Storing File: res://assets/audio/tap.wav.import[39m[0m
+[  60% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/JianghuSans.otf-93eac98cf5597414028479e794ec3a8b.fontdata[39m[0m
+[  60% ] [90m[1msavepack[22m | Storing File: res://assets/fonts/JianghuSans.otf.import[39m[0m
+[  61% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/JianghuSerif.otf-fbea5f31868e3980bd5456a250eef6f8.fontdata[39m[0m
+[  61% ] [90m[1msavepack[22m | Storing File: res://assets/fonts/JianghuSerif.otf.import[39m[0m
+[  62% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/bandit.png-189a2a7888c4dd8d4621d3dd391983dd.ctex[39m[0m
+[  62% ] [90m[1msavepack[22m | Storing File: res://assets/generated/animation/inbetweens/bandit.png.import[39m[0m
+[  63% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/courier.png-816898f381b09c20483e7c180ad3c7e3.ctex[39m[0m
+[  63% ] [90m[1msavepack[22m | Storing File: res://assets/generated/animation/inbetweens/courier.png.import[39m[0m
+[  64% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/examiner.png-843f901077a1860f84e26a66bba078b8.ctex[39m[0m
+[  64% ] [90m[1msavepack[22m | Storing File: res://assets/generated/animation/inbetweens/examiner.png.import[39m[0m
+[  64% ] [90m[1msavepack[22m | Storing File: res://assets/generated/animation/inbetweens/foes_provenance.json[39m[0m
+[  65% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/herbalist.png-7c1a32be30a413431ffdecb6cf7b5c0d.ctex[39m[0m
+[  65% ] [90m[1msavepack[22m | Storing File: res://assets/generated/animation/inbetweens/herbalist.png.import[39m[0m
+[  66% ] [90m[1msavepack[22m | Storing File: res://assets/generated/animation/inbetweens/hero_provenance.json[39m[0m
+[  66% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/lancer.png-1185b742574bae0bf68846d7f917f847.ctex[39m[0m
+[  66% ] [90m[1msavepack[22m | Storing File: res://assets/generated/animation/inbetweens/lancer.png.import[39m[0m
+[  67% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/npcs.png-ff857b02c5b1a7368504b06eed330558.ctex[39m[0m
+[  67% ] [90m[1msavepack[22m | Storing File: res://assets/generated/animation/inbetweens/npcs.png.import[39m[0m
+[  68% ] [90m[1msavepack[22m | Storing File: res://assets/generated/animation/inbetweens/npc_provenance.json[39m[0m
+[  69% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/performer.png-79996ed3449fe41c076fe622370e0586.ctex[39m[0m
+[  69% ] [90m[1msavepack[22m | Storing File: res://assets/generated/animation/inbetweens/performer.png.import[39m[0m
+[  70% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/bandit.png-c48c236dcfeda4744d27c1988f172e7b.ctex[39m[0m
+[  70% ] [90m[1msavepack[22m | Storing File: res://assets/generated/animation/bandit.png.import[39m[0m
+[  70% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/courier.png-08669717664f52d201b36165de1fc258.ctex[39m[0m
+[  70% ] [90m[1msavepack[22m | Storing File: res://assets/generated/animation/courier.png.import[39m[0m
+[  71% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/examiner.png-e697dd0a7e8f731195ca512f4ccba728.ctex[39m[0m
+[  71% ] [90m[1msavepack[22m | Storing File: res://assets/generated/animation/examiner.png.import[39m[0m
+[  72% ] [90m[1msavepack[22m | Storing File: res://assets/generated/animation/foes_provenance.json[39m[0m
+[  73% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/herbalist.png-49fc4b7f7ff22876dc3ae865f5d28c60.ctex[39m[0m
+[  73% ] [90m[1msavepack[22m | Storing File: res://assets/generated/animation/herbalist.png.import[39m[0m
+[  74% ] [90m[1msavepack[22m | Storing File: res://assets/generated/animation/hero_provenance.json[39m[0m
+[  75% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/lancer.png-ff4ca23584e8226d20ccb4581ac3a15a.ctex[39m[0m
+[  75% ] [90m[1msavepack[22m | Storing File: res://assets/generated/animation/lancer.png.import[39m[0m
+[  76% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/npcs.png-cda84cc1a0466edae6232284e0c45367.ctex[39m[0m
+[  76% ] [90m[1msavepack[22m | Storing File: res://assets/generated/animation/npcs.png.import[39m[0m
+[  77% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/performer.png-266a85a4fea03977f44c7b75a8fd9821.ctex[39m[0m
+[  77% ] [90m[1msavepack[22m | Storing File: res://assets/generated/animation/performer.png.import[39m[0m
+[  77% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/characters.png-7fa66eb5d7b429f1d5d98283966efa1c.ctex[39m[0m
+[  77% ] [90m[1msavepack[22m | Storing File: res://assets/generated/characters.png.import[39m[0m
+[  78% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/grove.png-c42b1b35d5630da273d027224d9af0df.ctex[39m[0m
+[  78% ] [90m[1msavepack[22m | Storing File: res://assets/generated/grove.png.import[39m[0m
+[  79% ] [90m[1msavepack[22m | Storing File: res://assets/generated/provenance.json[39m[0m
+[  80% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/ridge.png-99a263b63ee551d9d53d646c63e5fd0e.ctex[39m[0m
+[  80% ] [90m[1msavepack[22m | Storing File: res://assets/generated/ridge.png.import[39m[0m
+[  81% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/title.png-52bf8df0afdca24c27deb19220215d81.ctex[39m[0m
+[  81% ] [90m[1msavepack[22m | Storing File: res://assets/generated/title.png.import[39m[0m
+[  82% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/wangxi.png-2ce44ff3043bfe83b23dc422975f9074.ctex[39m[0m
+[  82% ] [90m[1msavepack[22m | Storing File: res://assets/generated/wangxi.png.import[39m[0m
+[  83% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/first_week.dialogue-9e4253aa3ca0b4509e8ca796e0b6587a.tres[39m[0m
+[  83% ] [90m[1msavepack[22m | Storing File: res://story/first_week.dialogue.import[39m[0m
+[  84% ] [90m[1msavepack[22m | Storing File: res://scripts/main.gdc[39m[0m
+[  84% ] [90m[1msavepack[22m | Storing File: res://scripts/world.gdc[39m[0m
+[  85% ] [90m[1msavepack[22m | Storing File: res://scripts/run_state.gdc[39m[0m
+[  86% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-0e13b5feed92d6d8a2bee5d903030b4a-animation_preview.scn[39m[0m
+[  87% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-3ad5c15c4f3250da0cc7c1af1770d85f-main.scn[39m[0m
+[  88% ] [90m[1msavepack[22m | Storing File: res://scripts/animation_bank.gdc[39m[0m
+[  89% ] [90m[1msavepack[22m | Storing File: res://scripts/animation_midpoints.gdc[39m[0m
+[  90% ] [90m[1msavepack[22m | Storing File: res://scripts/animation_preview.gdc[39m[0m
+[  91% ] [90m[1msavepack[22m | Storing File: res://scripts/arena.gdc[39m[0m
+[  91% ] [90m[1msavepack[22m | Storing File: res://scripts/art.gdc[39m[0m
+[  92% ] [90m[1msavepack[22m | Storing File: res://scripts/card_arena.gdc[39m[0m
+[  93% ] [90m[1msavepack[22m | Storing File: res://scripts/card_battle.gdc[39m[0m
+[  94% ] [90m[1msavepack[22m | Storing File: res://scripts/card_catalog.gdc[39m[0m
+[  95% ] [90m[1msavepack[22m | Storing File: res://scripts/card_ui.gdc[39m[0m
+[  96% ] [90m[1msavepack[22m | Storing File: res://scripts/character_creation.gdc[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/creation_journey.gdc[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/game_data.gdc[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/compiler/compilation.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/compiler/compiled_line.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/compiler/compiler.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/compiler/compiler_regex.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/compiler/compiler_result.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/compiler/expression_parser.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/compiler/resolved_goto_data.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/compiler/resolved_line_data.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/compiler/resolved_tag_data.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/compiler/tree_line.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/example_balloon/example_balloon.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/example_balloon/example_balloon.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/example_balloon/small_example_balloon.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/utilities/builtins.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/utilities/dialogue_cache.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/utilities/translations.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/utilities/waiter.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/constants.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/dialogue_label.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/dialogue_label.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/dialogue_line.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/dialogue_manager.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/dialogue_processor.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/dialogue_resource.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/dialogue_response.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/dialogue_responses_menu.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/editor_translation_parser_plugin.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/export_plugin.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/import_plugin.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/inspector_plugin.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/plugin.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/settings.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/test_scene.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://addons/dialogue_manager/test_scene.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/main.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/world.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/run_state.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scenes/animation_preview.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scenes/main.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/animation_bank.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/animation_midpoints.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/animation_preview.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/arena.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/art.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/card_arena.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/card_battle.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/card_catalog.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/card_ui.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/character_creation.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/creation_journey.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/game_data.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://.godot/global_script_class_cache.cfg[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://.godot/uid_cache.bin[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://project.binary[39m[0m
+[92m[ DONE ][39m [1msavepack[22m
+[0m
+
+Web build ready: /workspace/Jianghu-weiyuan/build/web
+Local play: python3 tools/serve_web.py

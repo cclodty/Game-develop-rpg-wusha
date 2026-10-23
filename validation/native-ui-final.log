@@ -1,0 +1,262 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:364)
+OpenGL API 4.5 (Core Profile) Mesa 25.0.7-2+deb13u1 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 19.1.7, 256 bits)
+
+WARNING: res://addons/dialogue_manager/test_scene.tscn:3 - ext_resource, invalid UID: uid://c8e16qdgu40wo - using text path instead: res://addons/dialogue_manager/test_scene.gd
+     at: load (scene/resources/resource_format_text.cpp:500)
+PASS CARD UI: fresh title enables a new journey and disables missing Continue
+PASS CARD UI: title controls fit the viewport: []
+PASS CARD UI: first-time help controls fit the viewport: []
+PASS CARD UI: title help explains the scenario creation and card loop
+PASS CARD UI: origin selection controls fit the viewport: []
+PASS CARD UI: herbalist: naming starts the six-question journey
+PASS CARD UI: herbalist: name and background are retained
+PASS CARD UI: herbalist: scenario question 1 is shown in order
+PASS CARD UI: herbalist question 1 controls fit the viewport: []
+PASS CARD UI: herbalist question 1: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: herbalist: answer 1 receives its story response
+PASS CARD UI: herbalist answer response 1 controls fit the viewport: []
+PASS CARD UI: herbalist answer response 1: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: herbalist: scenario question 2 is shown in order
+PASS CARD UI: herbalist question 2 controls fit the viewport: []
+PASS CARD UI: herbalist question 2: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: herbalist: answer 2 receives its story response
+PASS CARD UI: herbalist answer response 2 controls fit the viewport: []
+PASS CARD UI: herbalist answer response 2: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: herbalist: scenario question 3 is shown in order
+PASS CARD UI: herbalist question 3 controls fit the viewport: []
+PASS CARD UI: herbalist question 3: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: herbalist: answer 3 receives its story response
+PASS CARD UI: herbalist answer response 3 controls fit the viewport: []
+PASS CARD UI: herbalist answer response 3: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: mid-question aftermath: save-and-exit returns to title
+PASS CARD UI: mid-question aftermath: Continue recreates the prologue component
+PASS CARD UI: mid-question aftermath: exact page, answers, adjustment and source selection survive restart
+PASS CARD UI: mid-question aftermath restored page controls fit the viewport: []
+PASS CARD UI: herbalist: scenario question 4 is shown in order
+PASS CARD UI: herbalist question 4 controls fit the viewport: []
+PASS CARD UI: herbalist question 4: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: herbalist: answer 4 receives its story response
+PASS CARD UI: herbalist answer response 4 controls fit the viewport: []
+PASS CARD UI: herbalist answer response 4: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: herbalist: scenario question 5 is shown in order
+PASS CARD UI: herbalist question 5 controls fit the viewport: []
+PASS CARD UI: herbalist question 5: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: herbalist: answer 5 receives its story response
+PASS CARD UI: herbalist answer response 5 controls fit the viewport: []
+PASS CARD UI: herbalist answer response 5: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: herbalist: scenario question 6 is shown in order
+PASS CARD UI: herbalist question 6 controls fit the viewport: []
+PASS CARD UI: herbalist question 6: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: herbalist: answer 6 receives its story response
+PASS CARD UI: herbalist answer response 6 controls fit the viewport: []
+PASS CARD UI: herbalist answer response 6: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: herbalist: six answers produce the six-attribute explanation
+PASS CARD UI: herbalist: scenario decisions use no preparation slots
+PASS CARD UI: herbalist attribute summary controls fit the viewport: []
+PASS CARD UI: ability explanations wrap completely within their cards: []
+PASS CARD UI: herbalist: summary offers review of previous answers
+PASS CARD UI: answer review controls fit the viewport: []
+PASS CARD UI: herbalist: revising an answer returns to the updated summary
+PASS CARD UI: herbalist: result offers a legal adjustment source
+PASS CARD UI: herbalist: result offers a legal adjustment destination
+PASS CARD UI: herbalist: point transfer visibly changes only the two chosen abilities
+PASS CARD UI: herbalist: confirming the result enters the authored arrival morning
+PASS CARD UI: herbalist: confirmation retains the chosen background decisions
+PASS CARD UI: arrival morning dialogue controls fit the viewport: []
+PASS CARD UI: herbalist: prologue returns control in Wangxi town
+PASS CARD UI: herbalist: all seven preparation days remain after the prologue
+PASS CARD UI: herbalist: town save enables Continue
+PASS CARD UI: origin selection controls fit the viewport: []
+PASS CARD UI: courier: naming starts the six-question journey
+PASS CARD UI: courier: name and background are retained
+PASS CARD UI: courier: scenario question 1 is shown in order
+PASS CARD UI: courier question 1 controls fit the viewport: []
+PASS CARD UI: courier question 1: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: courier: answer 1 receives its story response
+PASS CARD UI: courier answer response 1 controls fit the viewport: []
+PASS CARD UI: courier answer response 1: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: courier: scenario question 2 is shown in order
+PASS CARD UI: courier question 2 controls fit the viewport: []
+PASS CARD UI: courier question 2: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: courier: answer 2 receives its story response
+PASS CARD UI: courier answer response 2 controls fit the viewport: []
+PASS CARD UI: courier answer response 2: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: courier: scenario question 3 is shown in order
+PASS CARD UI: courier question 3 controls fit the viewport: []
+PASS CARD UI: courier question 3: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: courier: answer 3 receives its story response
+PASS CARD UI: courier answer response 3 controls fit the viewport: []
+PASS CARD UI: courier answer response 3: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: courier: scenario question 4 is shown in order
+PASS CARD UI: courier question 4 controls fit the viewport: []
+PASS CARD UI: courier question 4: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: courier: answer 4 receives its story response
+PASS CARD UI: courier answer response 4 controls fit the viewport: []
+PASS CARD UI: courier answer response 4: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: courier: scenario question 5 is shown in order
+PASS CARD UI: courier question 5 controls fit the viewport: []
+PASS CARD UI: courier question 5: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: courier: answer 5 receives its story response
+PASS CARD UI: courier answer response 5 controls fit the viewport: []
+PASS CARD UI: courier answer response 5: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: courier: scenario question 6 is shown in order
+PASS CARD UI: courier question 6 controls fit the viewport: []
+PASS CARD UI: courier question 6: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: courier: answer 6 receives its story response
+PASS CARD UI: courier answer response 6 controls fit the viewport: []
+PASS CARD UI: courier answer response 6: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: courier: six answers produce the six-attribute explanation
+PASS CARD UI: courier: scenario decisions use no preparation slots
+PASS CARD UI: courier attribute summary controls fit the viewport: []
+PASS CARD UI: ability explanations wrap completely within their cards: []
+PASS CARD UI: courier: summary offers review of previous answers
+PASS CARD UI: answer review controls fit the viewport: []
+PASS CARD UI: courier: revising an answer returns to the updated summary
+PASS CARD UI: courier: result offers a legal adjustment source
+PASS CARD UI: selected adjustment source: save-and-exit returns to title
+PASS CARD UI: selected adjustment source: Continue recreates the prologue component
+PASS CARD UI: selected adjustment source: exact page, answers, adjustment and source selection survive restart
+PASS CARD UI: selected adjustment source restored page controls fit the viewport: []
+PASS CARD UI: courier: result offers a legal adjustment destination
+PASS CARD UI: courier: point transfer visibly changes only the two chosen abilities
+PASS CARD UI: courier: confirming the result enters the authored arrival morning
+PASS CARD UI: courier: confirmation retains the chosen background decisions
+PASS CARD UI: arrival morning dialogue controls fit the viewport: []
+PASS CARD UI: courier: prologue returns control in Wangxi town
+PASS CARD UI: courier: all seven preparation days remain after the prologue
+PASS CARD UI: courier: town save enables Continue
+PASS CARD UI: origin selection controls fit the viewport: []
+PASS CARD UI: performer: naming starts the six-question journey
+PASS CARD UI: performer: name and background are retained
+PASS CARD UI: performer: scenario question 1 is shown in order
+PASS CARD UI: performer question 1 controls fit the viewport: []
+PASS CARD UI: performer question 1: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: performer: answer 1 receives its story response
+PASS CARD UI: performer answer response 1 controls fit the viewport: []
+PASS CARD UI: performer answer response 1: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: performer: scenario question 2 is shown in order
+PASS CARD UI: performer question 2 controls fit the viewport: []
+PASS CARD UI: performer question 2: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: performer: answer 2 receives its story response
+PASS CARD UI: performer answer response 2 controls fit the viewport: []
+PASS CARD UI: performer answer response 2: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: performer: scenario question 3 is shown in order
+PASS CARD UI: performer question 3 controls fit the viewport: []
+PASS CARD UI: performer question 3: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: performer: answer 3 receives its story response
+PASS CARD UI: performer answer response 3 controls fit the viewport: []
+PASS CARD UI: performer answer response 3: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: performer: scenario question 4 is shown in order
+PASS CARD UI: performer question 4 controls fit the viewport: []
+PASS CARD UI: performer question 4: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: performer: answer 4 receives its story response
+PASS CARD UI: performer answer response 4 controls fit the viewport: []
+PASS CARD UI: performer answer response 4: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: performer: scenario question 5 is shown in order
+PASS CARD UI: performer question 5 controls fit the viewport: []
+PASS CARD UI: performer question 5: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: performer: answer 5 receives its story response
+PASS CARD UI: performer answer response 5 controls fit the viewport: []
+PASS CARD UI: performer answer response 5: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: performer: scenario question 6 is shown in order
+PASS CARD UI: performer question 6 controls fit the viewport: []
+PASS CARD UI: performer question 6: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: performer: answer 6 receives its story response
+PASS CARD UI: performer answer response 6 controls fit the viewport: []
+PASS CARD UI: performer answer response 6: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: performer: six answers produce the six-attribute explanation
+PASS CARD UI: performer: scenario decisions use no preparation slots
+PASS CARD UI: performer attribute summary controls fit the viewport: []
+PASS CARD UI: ability explanations wrap completely within their cards: []
+PASS CARD UI: performer: summary offers review of previous answers
+PASS CARD UI: answer review controls fit the viewport: []
+PASS CARD UI: performer: revising an answer returns to the updated summary
+PASS CARD UI: performer: result offers a legal adjustment source
+PASS CARD UI: performer: result offers a legal adjustment destination
+PASS CARD UI: performer: point transfer visibly changes only the two chosen abilities
+PASS CARD UI: completed result adjustment: save-and-exit returns to title
+PASS CARD UI: completed result adjustment: Continue recreates the prologue component
+PASS CARD UI: completed result adjustment: exact page, answers, adjustment and source selection survive restart
+PASS CARD UI: completed result adjustment restored page controls fit the viewport: []
+PASS CARD UI: performer: confirming the result enters the authored arrival morning
+PASS CARD UI: performer: confirmation retains the chosen background decisions
+PASS CARD UI: arrival morning dialogue controls fit the viewport: []
+PASS CARD UI: performer: prologue returns control in Wangxi town
+PASS CARD UI: performer: all seven preparation days remain after the prologue
+PASS CARD UI: performer: town save enables Continue
+PASS CARD UI: deck editor controls fit the viewport: []
+PASS CARD UI: workshop portrait, name and ability explanations do not overlap: []
+PASS CARD UI: town opens the ten-card editor
+PASS CARD UI: character motivation is readable text rather than a serialized object
+PASS CARD UI: zero mastery cannot purchase an upgrade
+PASS CARD UI: nine-card draft cannot be applied
+PASS CARD UI: incomplete draft does not change the active deck or schedule
+PASS CARD UI: cancelling leaves the original deck intact
+PASS CARD UI: learned origin card completes a valid ten-card draft
+PASS CARD UI: scrolled deck library controls fit the viewport: []
+PASS CARD UI: applying saves the chosen composition and returns to town
+PASS CARD UI: legal deck editing costs no activity slots
+PASS CARD UI: new scene instance restores the saved deck
+PASS CARD UI: sword_lesson activity cost controls fit the viewport: []
+PASS CARD UI: completed lesson consumes two slots and unlocks its card
+PASS CARD UI: practice activity cost controls fit the viewport: []
+PASS CARD UI: practice briefing creates the actual card battlefield
+PASS CARD UI: card battle initial hand controls fit the viewport: []
+PASS CARD UI: opening shows five drawn cards, three energy and one opening adjustment
+PASS CARD UI: encounter uses the deck applied before departure
+PASS CARD UI: active encounter locks deck and upgrades without changing its snapshot
+PASS CARD UI: opening card click selects a replacement without playing it
+PASS CARD UI: card battle pause controls fit the viewport: []
+PASS CARD UI: pause disables every card encounter control
+PASS CARD UI: paused public inputs cannot change hand, choice, turn, energy or enemies
+PASS CARD UI: Continue restores exact hand, piles, RNG, intents and selected mulligan card
+PASS CARD UI: battle save and resume do not charge the activity again
+PASS CARD UI: confirming a legal replacement starts the first player turn
+PASS CARD UI: card rules panel controls fit the viewport: []
+PASS CARD UI: pile viewer shows draw without changing the battle
+PASS CARD UI: card pile draw controls fit the viewport: []
+PASS CARD UI: pile viewer shows discard without changing the battle
+PASS CARD UI: card pile discard controls fit the viewport: []
+PASS CARD UI: pile viewer shows exhaust without changing the battle
+PASS CARD UI: card pile exhaust controls fit the viewport: []
+PASS CARD UI: pile viewer shows hand without changing the battle
+PASS CARD UI: card pile hand controls fit the viewport: []
+PASS CARD UI: ending the turn resolves the advertised attack and deals the next hand
+PASS CARD UI: medicine is a legal once-per-turn UI action
+PASS CARD UI: legal card and end-turn inputs defeat the practice opponent
+PASS CARD UI: card victory and authored debrief settle once and return to town
+PASS CARD UI: practice awards one training and one mastery without recharging time
+PASS CARD UI: restoring a settled win neither repeats rewards nor consumes medicine again
+PASS CARD UI: practice activity cost controls fit the viewport: []
+PASS CARD UI: legal card and end-turn inputs defeat the practice opponent
+PASS CARD UI: card victory and authored debrief settle once and return to town
+PASS CARD UI: earned practice mastery enables a real upgrade
+PASS CARD UI: upgrade consumes its advertised mastery and no schedule slots
+PASS CARD UI: upgraded card identity covers both copies and cannot be purchased twice
+PASS CARD UI: ending fixture passes the production save validator: 旅程已儲存。
+PASS CARD UI: exam confirmation controls fit the viewport: []
+PASS CARD UI: exam introduction opens the real card examiner encounter
+PASS CARD UI: concession evaluates both previously earned invitations
+PASS CARD UI: school invitation choices controls fit the viewport: []
+PASS CARD UI: zhaoling ending offers a new journey
+PASS CARD UI: ending controls fit the viewport: []
+PASS CARD UI: ending fixture passes the production save validator: 旅程已儲存。
+PASS CARD UI: exam confirmation controls fit the viewport: []
+PASS CARD UI: exam introduction opens the real card examiner encounter
+PASS CARD UI: concession evaluates both previously earned invitations
+PASS CARD UI: school invitation choices controls fit the viewport: []
+PASS CARD UI: duyun ending offers a new journey
+PASS CARD UI: ending controls fit the viewport: []
+PASS CARD UI: ending fixture passes the production save validator: 旅程已儲存。
+PASS CARD UI: exam confirmation controls fit the viewport: []
+PASS CARD UI: exam introduction opens the real card examiner encounter
+PASS CARD UI: concession evaluates both previously earned invitations
+PASS CARD UI: school invitation choices controls fit the viewport: []
+PASS CARD UI: stay ending offers a new journey
+PASS CARD UI: ending controls fit the viewport: []
+PASS CARD UI: previewing an early exam does not silently discard preparation time
+PASS CARD UI: unprepared concession leaves the town ending available
+PASS CARD UI: an unsuccessful applicant can finish without forced retries
+TESTS COMPLETE: 254 passed, 0 failed

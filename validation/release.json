@@ -1,0 +1,46 @@
+{
+  "source_commit": "fc1e2ae957349caafec2e4163cf5737320584e5e",
+  "source_branch": "weiyuan-card-prototype",
+  "created_utc": "2026-10-23T16:45:05.504736+00:00",
+  "godot": "4.6.3",
+  "dialogue_manager": "3.10.4",
+  "native_latest_checks": {
+    "run_state": 562,
+    "creation": 1564,
+    "card_battle": 641,
+    "card_run": 469,
+    "card_arena": 46,
+    "world": 104,
+    "story": 67,
+    "card_ui": 254
+  },
+  "native_latest_total": 3707,
+  "browser_flow_groups": 7,
+  "browser_state_injection": false,
+  "browser_origins": [
+    "herbalist",
+    "courier",
+    "performer"
+  ],
+  "build_sha256": {
+    "index.html": "2b7cf3057b89916576207e0b310adf666379376f4bcbab6223512d1efacc8ce8",
+    "index.js": "e3f56ee40e6f84371053db06692cfac15e2c8659547b11c6b2dfa1996dabd981",
+    "index.wasm": "26b61ce95247012ab3dca3ff51e96d1cdbff44ee91a8c20a83e150afca83f1b6",
+    "index.pck": "16842492f325f6f0beaebe27f13027fdb6e4338e3314ba066f793e8c76546325"
+  },
+  "packages": {
+    "jianghu-weiyuan-cards-source.zip": {
+      "bytes": 73030721,
+      "sha256": "bc7bb4073d2461dc67625719492e5b621739b9f17aeb6f4d766ae047ec806598"
+    },
+    "jianghu-weiyuan-cards-web.zip": {
+      "bytes": 68571470,
+      "sha256": "1fc0327759f148b514eeeae3253e8c1f519c9188244e465f9b1e1020cfe45f24"
+    }
+  },
+  "first_time_human_playtests_completed": 0,
+  "retained_download_refs": {
+    "weiyuan-download": "47a3fc3d7b3940435e93649dcc7ee943bf569a92",
+    "playable-download": "23a20812ba0b5dda6f81a6a130ff75e7c1fdc9e3"
+  }
+}

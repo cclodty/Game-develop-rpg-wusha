@@ -1,0 +1,2 @@
+bc7bb4073d2461dc67625719492e5b621739b9f17aeb6f4d766ae047ec806598  jianghu-weiyuan-cards-source.zip
+1fc0327759f148b514eeeae3253e8c1f519c9188244e465f9b1e1020cfe45f24  jianghu-weiyuan-cards-web.zip

@@ -1,0 +1,145 @@
+{
+  "checks": [
+    "Herbalist: save/exit and reload resume the exact third-question aftermath",
+    "herbalist: six real choices, thirty-point summary, manual adjustment, bespoke morning, free town walking",
+    "Visible deck editing rejects nine cards and saves an actual origin-card substitution without spending time",
+    "Real opening redraw, pause/save/reload, legal card/turn inputs and victory settle one practice slot/reward exactly once",
+    "courier: six real choices, thirty-point summary, manual adjustment, bespoke morning, free town walking",
+    "Performer: summary adjustments persist across save/exit and reload",
+    "performer: six real choices, thirty-point summary, manual adjustment, bespoke morning, free town walking"
+  ],
+  "origins": [
+    "herbalist",
+    "courier",
+    "performer"
+  ],
+  "console": [
+    {
+      "type": "log",
+      "text": "Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org"
+    },
+    {
+      "type": "log",
+      "text": "OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL"
+    },
+    {
+      "type": "log",
+      "text": "Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support."
+    },
+    {
+      "type": "log",
+      "text": "Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org"
+    },
+    {
+      "type": "log",
+      "text": "OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL"
+    },
+    {
+      "type": "log",
+      "text": "Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support."
+    },
+    {
+      "type": "log",
+      "text": "Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org"
+    },
+    {
+      "type": "log",
+      "text": "OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL"
+    },
+    {
+      "type": "log",
+      "text": "Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support."
+    },
+    {
+      "type": "log",
+      "text": "Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org"
+    },
+    {
+      "type": "log",
+      "text": "OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL"
+    },
+    {
+      "type": "log",
+      "text": "Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support."
+    },
+    {
+      "type": "log",
+      "text": "Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org"
+    },
+    {
+      "type": "log",
+      "text": "OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL"
+    },
+    {
+      "type": "log",
+      "text": "Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support."
+    },
+    {
+      "type": "log",
+      "text": "Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org"
+    },
+    {
+      "type": "log",
+      "text": "OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL"
+    },
+    {
+      "type": "log",
+      "text": "Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support."
+    }
+  ],
+  "state_injection": false,
+  "build_sha256": {
+    "index.html": "2b7cf3057b89916576207e0b310adf666379376f4bcbab6223512d1efacc8ce8",
+    "index.js": "e3f56ee40e6f84371053db06692cfac15e2c8659547b11c6b2dfa1996dabd981",
+    "index.wasm": "26b61ce95247012ab3dca3ff51e96d1cdbff44ee91a8c20a83e150afca83f1b6",
+    "index.pck": "16842492f325f6f0beaebe27f13027fdb6e4338e3314ba066f793e8c76546325"
+  },
+  "recordings": [
+    {
+      "origin": "herbalist",
+      "path": "/workspace/Jianghu-weiyuan/artifacts/cards-validation/web/recordings/herbalist-cards.webm",
+      "markers": [
+        {
+          "name": "prologue-start",
+          "seconds": 6.399
+        },
+        {
+          "name": "prologue-end",
+          "seconds": 27.19
+        },
+        {
+          "name": "battle-start",
+          "seconds": 107.853
+        }
+      ]
+    },
+    {
+      "origin": "courier",
+      "path": "/workspace/Jianghu-weiyuan/artifacts/cards-validation/web/recordings/courier-cards.webm",
+      "markers": [
+        {
+          "name": "prologue-start",
+          "seconds": 5.762
+        },
+        {
+          "name": "prologue-end",
+          "seconds": 27.633
+        }
+      ]
+    },
+    {
+      "origin": "performer",
+      "path": "/workspace/Jianghu-weiyuan/artifacts/cards-validation/web/recordings/performer-cards.webm",
+      "markers": [
+        {
+          "name": "prologue-start",
+          "seconds": 5.509
+        },
+        {
+          "name": "prologue-end",
+          "seconds": 30.706
+        }
+      ]
+    }
+  ]
+}
