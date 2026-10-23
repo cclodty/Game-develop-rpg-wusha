@@ -110,6 +110,7 @@ func _run() -> void:
 	await frames(3)
 	expect(app.action_buttons.has("new_game") and app.action_buttons["continue"].disabled, "fresh title offers creation and disables missing save")
 	fit("title")
+	await test_animation_preview()
 	for origin in ["herbalist", "courier", "performer"]:
 		if not await new_origin(origin):
 			await _finish()
@@ -126,6 +127,45 @@ func _run() -> void:
 	await test_checkpoint_recovery()
 	await test_exam_results()
 	await _finish()
+
+
+func test_animation_preview() -> void:
+	if not press("animation_preview"): return
+	await frames(3)
+	var preview = app.animation_preview
+	expect(is_instance_valid(preview), "title opens the live frame-animation preview")
+	if not is_instance_valid(preview): return
+	fit("animation preview")
+	press("actor_courier")
+	press("clip_walk")
+	var before: float = preview.animation_state().elapsed
+	await create_timer(0.18).timeout
+	expect(preview.animation_state().elapsed > before, "preview playback advances its real animation clock")
+	press("preview_pause")
+	var frozen: Dictionary = preview.animation_state().duplicate(true)
+	await create_timer(0.18).timeout
+	expect(preview.animation_state() == frozen, "preview pause holds both phase and frame")
+	press("frame_5")
+	expect(preview.animation_state().frame == 5 and not preview.animation_state().playing, "frame-strip selection shows the chosen drawn frame and pauses")
+	press("preview_step")
+	expect(preview.animation_state().frame == 0, "stepping past the last pose wraps to frame zero")
+	press("preview_previous")
+	expect(preview.animation_state().frame == 5, "previous-frame control wraps in reverse")
+	press("preview_flip")
+	expect(preview.animation_state().mirrored, "preview can review the mirrored left-facing presentation")
+	press("preview_speed")
+	expect(preview.animation_state().rate == 0.5, "half-speed playback is available for timing review")
+	for actor in ["courier", "herbalist", "performer", "bandit", "lancer", "examiner"]:
+		press("actor_" + actor)
+		for clip in ["idle", "walk", "attack", "dodge", "hurt", "defeat"]:
+			press("clip_" + clip)
+			expect(preview.animation_state().actor == actor and preview.animation_state().clip == clip, actor + ": preview selects authored " + clip + " clip")
+	for actor in ["shen", "lu", "tao", "zhou", "xiao", "lin"]:
+		press("actor_" + actor)
+		expect(preview.animation_state().actor == actor and preview.animation_state().clip == "idle" and app.action_buttons["clip_attack"].disabled, actor + ": NPC preview offers its dedicated idle loop")
+	press("preview_back")
+	await frames(3)
+	expect(app.action_buttons.has("new_game") and not FileAccess.file_exists(Run.SAVE_PATH), "returning from animation review leaves the title and player save untouched")
 
 
 func test_world_and_activities() -> void:

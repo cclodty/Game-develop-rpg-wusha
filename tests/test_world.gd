@@ -42,6 +42,49 @@ func _click(point: Vector2) -> void:
 	world._unhandled_input(event)
 
 
+func _animation_regressions() -> void:
+	for hero_origin: String in ["herbalist", "courier", "performer"]:
+		world.set_input_enabled(true)
+		world.configure("wangxi", hero_origin)
+		var first: Dictionary = world.player_animation()
+		_check(first.actor == hero_origin and first.clip == "idle", "World selects the chosen origin's idle animation: " + hero_origin)
+		_simulate(0.23)
+		_check(world.player_animation().frame != first.frame, "Idle advances through separate frames: " + hero_origin)
+		_key(KEY_D, true)
+		_simulate(0.23)
+		_key(KEY_D, false)
+		var walking: Dictionary = world.player_animation()
+		_check(walking.clip == "walk" and walking.frame > 0, "Real movement selects and advances walk poses: " + hero_origin)
+		var npc_poses: Dictionary = {}
+		for npc: String in ["shen", "lu", "tao", "zhou", "xiao", "lin"]:
+			npc_poses[npc] = world.npc_animation(npc)
+		var ground: Vector2 = world.get_player_position()
+		world.set_input_enabled(false)
+		_simulate(2.13)
+		var paused: Dictionary = world.player_animation()
+		_check(paused.clip == walking.clip and paused.frame == walking.frame and paused.elapsed == walking.elapsed, "Opening a menu freezes the exact hero pose: " + hero_origin)
+		var npcs_frozen: bool = true
+		for npc: String in npc_poses:
+			var pose: Dictionary = world.npc_animation(npc)
+			npcs_frozen = npcs_frozen and pose.frame == npc_poses[npc].frame and pose.elapsed == npc_poses[npc].elapsed
+		_check(npcs_frozen, "All six occupational gesture loops freeze during a menu: " + hero_origin)
+		world.set_input_enabled(true)
+		_simulate(0.23)
+		_check(world.player_animation().clip == "idle" and world.get_player_position() == ground, "Resuming a cancelled journey returns to idle without sliding: " + hero_origin)
+		_check(world.npc_animation("shen").elapsed > npc_poses.shen.elapsed, "NPC gesture timing resumes after the menu: " + hero_origin)
+		if FileAccess.file_exists("res://assets/generated/animation/" + hero_origin + ".png"):
+			_check(world.player_animation().animated, "Present origin sheet is used instead of a portrait: " + hero_origin)
+	if FileAccess.file_exists("res://assets/generated/animation/npcs.png"):
+		for npc: String in ["shen", "lu", "tao", "zhou", "xiao", "lin"]:
+			_check(world.npc_animation(npc).animated, "Town NPC uses its generated gesture frames: " + npc)
+	# Hiding the world without an input event must also freeze its visual clocks.
+	var before_hide: Dictionary = world.player_animation()
+	world.hide()
+	_simulate(0.4)
+	_check(world.player_animation().elapsed == before_hide.elapsed, "Hidden world cannot advance actor clocks")
+	world.show()
+
+
 func _run() -> void:
 	world = World.new()
 	root.add_child(world)
@@ -131,6 +174,7 @@ func _run() -> void:
 		world._walk_to(exit_point)
 		_simulate(12.0)
 		_check(world.get_player_position().distance_to(exit_point) < 8.0, "Exploration can return to exit: " + place)
+	_animation_regressions()
 	world.queue_free()
 	print("TESTS COMPLETE: %s passed, %s failed" % [checks - failed, failed])
 	quit(1 if failed else 0)

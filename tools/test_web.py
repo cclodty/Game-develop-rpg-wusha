@@ -3,6 +3,7 @@
 
 Requires Python Playwright and Pillow. Uses an isolated temporary browser profile
 and a random loopback port, leaving the player's port-8070 save untouched.
+With --record-video, install the recorder using `python3 -m playwright install ffmpeg`.
 """
 import argparse
 from functools import partial
@@ -57,7 +58,14 @@ class QuietHandler(GameHandler):
 class Journey:
     def __init__(self, page, url, output, name):
         self.page, self.url, self.output, self.name = page, url, output, name
-        self.hero_name = {"herbalist": "小行", "courier": "望山", "performer": "小滿"}.get(name, name)
+        # Godot receives canvas keyboard events. Playwright insert_text() emits
+        # a DOM input event, which does not emulate a real Chinese IME here.
+        self.hero_name = {"herbalist": "YaoXing", "courier": "WangShan", "performer": "XiaoMan"}.get(name, name)
+        self.started = time.monotonic()
+        self.markers = []
+
+    def mark(self, name):
+        self.markers.append({"name": name, "seconds": round(time.monotonic() - self.started, 3)})
 
     def loaded(self):
         self.page.wait_for_function("!document.getElementById('status')", timeout=120000)
@@ -87,7 +95,7 @@ class Journey:
         self.page.wait_for_timeout(150)
         self.page.mouse.click(460, 230)
         self.page.keyboard.press("Control+A")
-        self.page.keyboard.insert_text(self.hero_name)
+        self.page.keyboard.type(self.hero_name, delay=35)
         self.page.mouse.click({"herbalist": 334, "courier": 719, "performer": 1104}[origin], 655)
         self.capture("creation")
         self.page.mouse.click(1109, 758)
@@ -121,6 +129,7 @@ def main():
     parser.add_argument("--browser", default=shutil.which("chromium") or shutil.which("google-chrome"))
     parser.add_argument("--output", type=Path)
     parser.add_argument("--origins", nargs="+", choices=("herbalist", "courier", "performer"), default=["herbalist", "courier", "performer"], help="Focus a regression run after a scoped change; default checks all origins.")
+    parser.add_argument("--record-video", action="store_true", help="Record genuine browser playback for animation review; clips/markers are written under the output directory.")
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
     output = args.output or root / "artifacts" / "web"
@@ -133,14 +142,17 @@ def main():
     server = ThreadingHTTPServer(("127.0.0.1", 0), partial(QuietHandler, directory=str(web)))
     Thread(target=server.serve_forever, daemon=True).start()
     url = f"http://127.0.0.1:{server.server_address[1]}/"
-    messages, checks = [], []
+    messages, checks, recordings = [], [], []
     try:
         with sync_playwright() as playwright:
             browser = playwright.chromium.launch(executable_path=args.browser, headless=True, args=[
                 "--no-sandbox", "--disable-dev-shm-usage", "--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader",
             ])
             for origin in args.origins:
-                context = browser.new_context(viewport={"width": 1440, "height": 900}, device_scale_factor=1)
+                context_options = {"viewport": {"width": 1440, "height": 900}, "device_scale_factor": 1}
+                if args.record_video:
+                    context_options.update(record_video_dir=str(output / "recordings"), record_video_size={"width": 1440, "height": 900})
+                context = browser.new_context(**context_options)
                 page = context.new_page()
                 page.on("console", lambda event: messages.append({"type": event.type, "text": event.text}))
                 page.on("pageerror", lambda error: messages.append({"type": "pageerror", "text": str(error)}))
@@ -163,16 +175,31 @@ def main():
                 page.wait_for_timeout(4900)  # Let the welcome toast clear for a legible HUD capture.
                 journey.capture("town")
                 before = town["world_position"].copy()
+                journey.mark("walking-start")
                 page.keyboard.down("d")
                 page.wait_for_timeout(650)
                 page.keyboard.up("d")
+                if args.record_video:
+                    # Capture both real facing directions while retaining a
+                    # net rightward displacement for the persisted-input check.
+                    page.keyboard.down("a")
+                    page.wait_for_timeout(450)
+                    page.keyboard.up("a")
+                    page.keyboard.down("d")
+                    page.wait_for_timeout(500)
+                    page.keyboard.up("d")
                 page.keyboard.press("Control+s")
                 moved = journey.save(lambda data: data["world_position"][0] > before[0] + 35, "WASD moves the rendered character and persists its position")
                 assert moved["spent"] == 0
+                journey.mark("walking-end")
                 checks.append(f"{origin}: WebGL, creation, bespoke intro, free town walking, independent persistent save")
                 if origin == "herbalist":
                     exercise_activity(journey, checks)
                 context.close()
+                if args.record_video:
+                    target = output / "recordings" / f"{origin}-gameplay.webm"
+                    page.video.save_as(str(target))
+                    recordings.append({"origin": origin, "path": str(target), "markers": journey.markers})
             browser.close()
         errors = [message for message in messages if message["type"] == "pageerror" or "SCRIPT ERROR" in message["text"] or message["text"].startswith("ERROR:")]
         assert not errors, errors
@@ -180,7 +207,7 @@ def main():
         for name in ("index.html", "index.js", "index.wasm", "index.pck"):
             with (web / name).open("rb") as stream:
                 hashes[name] = hashlib.file_digest(stream, "sha256").hexdigest()
-        (output / "result.json").write_text(json.dumps({"checks": checks, "origins": args.origins, "console": messages, "state_injection": False, "build_sha256": hashes}, ensure_ascii=False, indent=2))
+        (output / "result.json").write_text(json.dumps({"checks": checks, "origins": args.origins, "console": messages, "state_injection": False, "build_sha256": hashes, "recordings": recordings}, ensure_ascii=False, indent=2))
         print(f"WEB TESTS COMPLETE: {len(checks)} flow groups passed; no engine/browser errors", flush=True)
     finally:
         server.shutdown()
@@ -211,6 +238,7 @@ def exercise_activity(journey, checks):
     journey.save(lambda data: data.get("pending", {}).get("id") == "practice" and data["spent"] == 3, "practice adds one activity slot")
     journey.finish_dialogue()
     began = journey.save(lambda data: data.get("pending", {}).get("stage") == "combat", "briefing enters the real-time battlefield")
+    journey.mark("combat-start")
     page.wait_for_timeout(1000)
     page.mouse.move(815, 410)
     page.keyboard.down("j")
@@ -246,6 +274,7 @@ def exercise_activity(journey, checks):
     assert resumed["pending"]["combat"]["qi_cooldown"] > 0
     journey.capture("battle-resumed")
     checks.append("Actual J/D/Space/Q inputs, pause freeze and battle save/reload preserve one-time activity cost")
+    journey.mark("combat-resumed")
     page.mouse.click(530, 665)
     page.wait_for_timeout(120)
     page.mouse.click(1276, 737)

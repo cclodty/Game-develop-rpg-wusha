@@ -6,6 +6,7 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "artifacts" / "release"
 WEB = ROOT / "build" / "web"
+MAX_ARCHIVE_BYTES = 100 * 1024 * 1024
 
 PLAY_GUIDE = """江湖未遠 — 入山之前
 
@@ -17,6 +18,8 @@ Windows 開始遊玩：
 3. 遊戲會在預設瀏覽器開啟；遊玩時保留啟動視窗。
 4. 建立角色，選擇藥鋪學徒、驛站跑腿或戲班子弟，開始七日準備。
 5. 結束時關閉遊戲分頁與啟動視窗即可。
+
+想先看角色動作，可在標題畫面按「逐格動畫圖鑑」，切換角色、動作，暫停逐格檢視。
 
 不需要安裝 Godot 或 Python。Windows 啟動器使用系統內建 PowerShell。
 固定本機網址：http://127.0.0.1:8070/
@@ -56,6 +59,8 @@ def package() -> None:
 
     OUTPUT.mkdir(parents=True, exist_ok=True)
     (OUTPUT.parent / ".gdignore").touch(exist_ok=True)
+    # A failed/oversized rebuild must not leave an apparently current manifest.
+    (OUTPUT / "SHA256SUMS.txt").unlink(missing_ok=True)
     source_zip = OUTPUT / "jianghu-weiyuan-source.zip"
     excluded = {".git", ".godot", "artifacts", "build", "__pycache__", ".pytest_cache"}
     with zipfile.ZipFile(source_zip, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
@@ -75,6 +80,10 @@ def package() -> None:
         for name in ("tools/serve_web.py", "tools/serve_web_windows.ps1", "Play-Windows.cmd", "THIRD_PARTY_NOTICES.md"):
             archive.write(ROOT / name, Path("jianghu-weiyuan-web") / name)
         archive.writestr("jianghu-weiyuan-web/開始遊玩.txt", PLAY_GUIDE)
+
+    for path in (source_zip, web_zip):
+        if path.stat().st_size >= MAX_ARCHIVE_BYTES:
+            raise SystemExit(f"Archive exceeds the 100 MiB delivery limit: {path.name}")
 
     with (OUTPUT / "SHA256SUMS.txt").open("w") as hashes:
         for path in (source_zip, web_zip):

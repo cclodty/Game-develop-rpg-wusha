@@ -12,6 +12,9 @@ const INK := Color("263d3b")
 const JADE := Color("478d7e")
 const GOLD := Color("d8ad56")
 const RED := Color("bd6153")
+const HURT_DURATION := 0.24
+const DEFEAT_DURATION := 0.65
+const STRIKE_DURATION := 0.12
 
 var mode: String = "practice"
 var stats: Dictionary = {}
@@ -37,8 +40,10 @@ var _resolved: bool = false
 var _won: bool = false
 var _result_emitted: bool = false
 var _generation: int = 0
+var _settlement_remaining: float = 0.0
 var _cooldown: float = 0.0
 var _attack_timer: float = 0.0
+var _attack_style: String = "sword"
 var _attack_direction := Vector2.RIGHT
 var _attack_impacted: bool = false
 var _combo: int = 0
@@ -47,6 +52,7 @@ var _dodge_timer: float = 0.0
 var _dodge_direction := Vector2.RIGHT
 var _invulnerability: float = 0.0
 var _flash: float = 0.0
+var _hurt_timer: float = 0.0
 var _heal_cooldown: float = 0.0
 var _qi_cooldown: float = 0.0
 var _step_cooldown: float = 0.0
@@ -62,11 +68,13 @@ var _waves: Array = []
 var _effects: Array[Dictionary] = []
 var _floating: Array[Dictionary] = []
 var _ghosts: Array[Dictionary] = []
+var _corpses: Array[Dictionary] = []
 var _ghost_timer: float = 0.0
 var _banner: String = ""
 var _banner_timer: float = 0.0
 var _font: Font
 var _art: Script
+var _animation: Script
 var _textures: Dictionary = {}
 var _sound: AudioStreamPlayer
 
@@ -75,6 +83,8 @@ func _ready() -> void:
 	_font = load("res://assets/fonts/JianghuSans.otf") as Font
 	if ResourceLoader.exists("res://scripts/art.gd"):
 		_art = load("res://scripts/art.gd") as Script
+	if ResourceLoader.exists("res://scripts/animation_bank.gd"):
+		_animation = load("res://scripts/animation_bank.gd") as Script
 	_sound = AudioStreamPlayer.new()
 	_sound.volume_db = -22.0
 	if ResourceLoader.exists("res://assets/audio/tap.wav"):
@@ -110,6 +120,7 @@ func configure(encounter_mode: String, hero_stats: Dictionary, restore: Dictiona
 	_effects.clear()
 	_floating.clear()
 	_ghosts.clear()
+	_corpses.clear()
 	_step_hit_ids.clear()
 	medicine_used = 0
 	successful_hits = 0
@@ -120,12 +131,14 @@ func configure(encounter_mode: String, hero_stats: Dictionary, restore: Dictiona
 	_next_enemy_id = 1
 	_cooldown = 0.0
 	_attack_timer = 0.0
+	_attack_style = "sword"
 	_attack_impacted = false
 	_combo = 0
 	_combo_window = 0.0
 	_dodge_timer = 0.0
 	_invulnerability = 0.0
 	_flash = 0.0
+	_hurt_timer = 0.0
 	_heal_cooldown = 0.0
 	_qi_cooldown = 0.0
 	_step_cooldown = 0.0
@@ -135,6 +148,7 @@ func configure(encounter_mode: String, hero_stats: Dictionary, restore: Dictiona
 	_resolved = false
 	_won = false
 	_result_emitted = false
+	_settlement_remaining = 0.0
 	_moving = false
 	_waves = _wave_plan()
 	_banner = "起手有聲，出劍有度"
@@ -145,7 +159,7 @@ func configure(encounter_mode: String, hero_stats: Dictionary, restore: Dictiona
 		_restore(restore)
 	_emit_status()
 	queue_redraw()
-	if _resolved:
+	if _resolved and _settlement_remaining <= 0.0:
 		call_deferred("_emit_restored_result", _generation)
 
 
@@ -153,8 +167,6 @@ func set_input_enabled(value: bool) -> void:
 	_input_enabled = value
 	if value:
 		_block_held_attack = Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) or Input.is_physical_key_pressed(KEY_J)
-	else:
-		_moving = false
 	queue_redraw()
 
 
@@ -178,7 +190,10 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _process(delta: float) -> void:
-	if not _configured or not _input_enabled or _resolved:
+	if not _configured or not _input_enabled:
+		return
+	if _resolved:
+		step_simulation(delta)
 		return
 	var movement := Vector2(
 		float(Input.is_physical_key_pressed(KEY_D) or Input.is_physical_key_pressed(KEY_RIGHT)) - float(Input.is_physical_key_pressed(KEY_A) or Input.is_physical_key_pressed(KEY_LEFT)),
@@ -199,9 +214,19 @@ func _process(delta: float) -> void:
 
 ## Explicit input lets deterministic tests exercise the same simulation as play.
 func step_simulation(delta: float, movement: Vector2 = Vector2.ZERO) -> void:
-	if not _configured or not _input_enabled or _resolved or delta <= 0.0:
+	if not _configured or not _input_enabled or delta <= 0.0:
 		return
 	delta = minf(delta, 0.05)
+	if _resolved:
+		# A settled fight cannot change gameplay again. Only its final defeat
+		# frames advance before the owner opens the result UI.
+		if _settlement_remaining > 0.0:
+			_settlement_remaining = maxf(0.0, _settlement_remaining - delta)
+			_update_effects(delta)
+			queue_redraw()
+		if _settlement_remaining <= 0.0 and not _result_emitted:
+			_emit_restored_result(_generation)
+		return
 	elapsed += delta
 	_update_effects(delta)
 	_status_timer -= delta
@@ -219,6 +244,7 @@ func step_simulation(delta: float, movement: Vector2 = Vector2.ZERO) -> void:
 	_step_cooldown = maxf(0.0, _step_cooldown - delta)
 	_invulnerability = maxf(0.0, _invulnerability - delta)
 	_flash = maxf(0.0, _flash - delta)
+	_hurt_timer = maxf(0.0, _hurt_timer - delta)
 	stamina = minf(max_stamina, stamina + delta * 25.0)
 	_moving = movement.length_squared() > 0.01
 	if _moving:
@@ -241,7 +267,7 @@ func step_simulation(delta: float, movement: Vector2 = Vector2.ZERO) -> void:
 	player_position = _clamp_position(player_position)
 	if _attack_timer > 0.0:
 		_attack_timer = maxf(0.0, _attack_timer - delta)
-		if not _attack_impacted and _attack_timer <= 0.21:
+		if not _attack_impacted and _attack_timer <= 0.21 + 0.000001:
 			_attack_impacted = true
 			_sword_impact()
 	for enemy in enemies:
@@ -276,6 +302,7 @@ func attack(direction: Vector2 = Vector2.ZERO) -> bool:
 	_combo = (_combo % 3) + 1 if _combo_window > 0.0 else 1
 	_combo_window = 1.15
 	_attack_timer = 0.32
+	_attack_style = "sword"
 	_attack_direction = facing
 	_attack_impacted = false
 	_cooldown = 0.39 if _combo == 3 else 0.33
@@ -305,6 +332,7 @@ func cast_qi(direction: Vector2 = Vector2.ZERO) -> bool:
 	stamina -= 22.0
 	_attack_direction = aim
 	_attack_timer = 0.28
+	_attack_style = "qi"
 	_attack_impacted = true
 	projectiles.append({"owner": "player", "pos": player_position + aim * 35.0, "velocity": aim * 460.0, "life": 1.55, "damage": _base_damage() * 2.1, "radius": 32.0, "hit_ids": [], "color": GOLD})
 	_floating.append({"text": "破雲劍氣", "pos": player_position + Vector2(0, -80), "life": 1.0, "duration": 1.0, "color": GOLD})
@@ -360,7 +388,10 @@ func snapshot() -> Dictionary:
 		copy.velocity = _point(copy.velocity)
 		copy.erase("color")
 		saved_projectiles.append(copy)
-	return {"version": 1, "mode": mode, "position": _point(player_position), "facing": _point(facing), "hp": hp, "stamina": stamina, "wave": wave, "enemies": saved_enemies, "projectiles": saved_projectiles, "medicine_used": medicine_used, "hits": successful_hits, "dodges": successful_dodges, "damage_taken": damage_taken, "elapsed": elapsed, "next_enemy_id": _next_enemy_id, "cooldown": _cooldown, "attack_timer": _attack_timer, "attack_direction": _point(_attack_direction), "attack_impacted": _attack_impacted, "combo": _combo, "combo_window": _combo_window, "dodge_timer": _dodge_timer, "dodge_direction": _point(_dodge_direction), "invulnerability": _invulnerability, "heal_cooldown": _heal_cooldown, "qi_cooldown": _qi_cooldown, "step_cooldown": _step_cooldown, "step_timer": _step_timer, "step_hit_ids": _step_hit_ids.duplicate(), "start_delay": _start_delay, "wave_delay": _wave_delay, "resolved": _resolved, "won": _won}
+	var saved_corpses: Array = []
+	for corpse in _corpses:
+		saved_corpses.append({"kind": corpse.kind, "pos": _point(corpse.pos), "facing": _point(corpse.facing), "age": corpse.age})
+	return {"version": 1, "mode": mode, "position": _point(player_position), "facing": _point(facing), "hp": hp, "stamina": stamina, "wave": wave, "enemies": saved_enemies, "projectiles": saved_projectiles, "medicine_used": medicine_used, "hits": successful_hits, "dodges": successful_dodges, "damage_taken": damage_taken, "elapsed": elapsed, "next_enemy_id": _next_enemy_id, "cooldown": _cooldown, "attack_timer": _attack_timer, "attack_direction": _point(_attack_direction), "attack_impacted": _attack_impacted, "combo": _combo, "combo_window": _combo_window, "dodge_timer": _dodge_timer, "dodge_direction": _point(_dodge_direction), "invulnerability": _invulnerability, "heal_cooldown": _heal_cooldown, "qi_cooldown": _qi_cooldown, "step_cooldown": _step_cooldown, "step_timer": _step_timer, "step_hit_ids": _step_hit_ids.duplicate(), "start_delay": _start_delay, "wave_delay": _wave_delay, "resolved": _resolved, "won": _won, "settlement_remaining": _settlement_remaining, "visual": {"hurt_timer": _hurt_timer, "attack_style": _attack_style, "moving": _moving, "corpses": saved_corpses}}
 
 
 func _restore(saved: Dictionary) -> void:
@@ -412,6 +443,16 @@ func _restore(saved: Dictionary) -> void:
 				_step_hit_ids.append(int(id))
 	_start_delay = clampf(_number(saved.get("start_delay"), 0), 0.0, 1.2)
 	_wave_delay = clampf(_number(saved.get("wave_delay"), 0), 0.0, 1.7)
+	var visual: Dictionary = saved.get("visual", {}) if saved.get("visual", {}) is Dictionary else {}
+	_hurt_timer = clampf(_number(visual.get("hurt_timer"), 0), 0.0, HURT_DURATION)
+	_attack_style = "qi" if visual.get("attack_style", "sword") == "qi" else "sword"
+	_moving = bool(visual.get("moving", false))
+	_corpses.clear()
+	if visual.get("corpses", []) is Array:
+		for value in visual.get("corpses", []):
+			if not value is Dictionary or _corpses.size() >= 16 or not value.get("kind", "") in ["bandit", "lancer", "boss"]:
+				continue
+			_corpses.append({"kind": str(value.kind), "pos": _clamp_position(_vector(value.get("pos"), player_position)), "facing": _vector(value.get("facing"), Vector2.RIGHT), "age": clampf(_number(value.get("age"), 0), 0.0, DEFEAT_DURATION + 0.4)})
 	enemies.clear()
 	for value in saved.enemies:
 		if not value is Dictionary or not value.get("kind", "") in ["bandit", "lancer", "boss"]:
@@ -425,6 +466,11 @@ func _restore(saved: Dictionary) -> void:
 		for key in ["facing", "attack_dir", "target"]:
 			enemy[key] = _vector(value.get(key, []), enemy[key])
 		enemy.attack_kind = str(value.get("attack_kind", "slash")) if value.get("attack_kind", "slash") in ["slash", "shot", "ring", "rush"] else "slash"
+		enemy.moving = bool(value.get("moving", false))
+		enemy.hurt_timer = clampf(_number(value.get("hurt_timer"), 0), 0.0, HURT_DURATION)
+		enemy.strike_timer = clampf(_number(value.get("strike_timer"), 0), 0.0, STRIKE_DURATION)
+		enemy.recovery_total = clampf(_number(value.get("recovery_total"), 1.25 if enemy.kind == "boss" else 0.75), 0.0, 2.0)
+		enemy.attack_visual = bool(value.get("attack_visual", float(enemy.recovery) > 0.0))
 		enemies.append(enemy)
 	projectiles.clear()
 	for value in saved.projectiles:
@@ -441,6 +487,7 @@ func _restore(saved: Dictionary) -> void:
 		projectiles.append({"owner": owner, "pos": _vector(value.get("pos", []), player_position), "velocity": _vector(value.get("velocity", []), Vector2.ZERO).limit_length(600), "life": clampf(_number(value.get("life"), 0.0), 0.0, 5.0), "damage": clampf(_number(value.get("damage"), 0.0), 0.0, 500.0), "radius": clampf(_number(value.get("radius"), 10.0), 1.0, 60.0), "hit_ids": hit_ids, "color": GOLD if owner == "player" else RED})
 	_resolved = bool(saved.get("resolved", false))
 	_won = bool(saved.get("won", false))
+	_settlement_remaining = clampf(_number(saved.get("settlement_remaining"), 0), 0.0, DEFEAT_DURATION) if _resolved else 0.0
 	if hp <= 0.0 and not _resolved:
 		_resolved = true
 		_won = false
@@ -481,10 +528,13 @@ func _make_enemy(kind: String, start: Vector2, identifier: int) -> Dictionary:
 	var enemy_hp := 110.0 if kind == "bandit" else 92.0
 	if mode == "practice": enemy_hp *= 0.65
 	if kind == "boss": enemy_hp = 860.0
-	return {"id": identifier, "kind": kind, "pos": _clamp_position(start), "hp": enemy_hp, "max_hp": enemy_hp, "facing": Vector2.LEFT, "attack_dir": Vector2.LEFT, "target": player_position, "cooldown": 1.1 + float(identifier % 3) * 0.35, "windup": 0.0, "windup_total": 1.0, "recovery": 0.0, "stun": 0.0, "flash": 0.0, "attack_kind": "slash", "attack_counter": 0, "phase": 1, "rush_remaining": 0.0}
+	return {"id": identifier, "kind": kind, "pos": _clamp_position(start), "hp": enemy_hp, "max_hp": enemy_hp, "facing": Vector2.LEFT, "attack_dir": Vector2.LEFT, "target": player_position, "cooldown": 1.1 + float(identifier % 3) * 0.35, "windup": 0.0, "windup_total": 1.0, "recovery": 0.0, "stun": 0.0, "flash": 0.0, "attack_kind": "slash", "attack_counter": 0, "phase": 1, "rush_remaining": 0.0, "moving": false, "hurt_timer": 0.0, "strike_timer": 0.0, "recovery_total": 0.0, "attack_visual": false}
 
 
 func _update_enemy(enemy: Dictionary, delta: float) -> void:
+	enemy.moving = false
+	enemy.hurt_timer = maxf(0.0, float(enemy.get("hurt_timer", 0.0)) - delta)
+	enemy.strike_timer = maxf(0.0, float(enemy.get("strike_timer", 0.0)) - delta)
 	enemy.flash = maxf(0.0, float(enemy.flash) - delta)
 	enemy.stun = maxf(0.0, float(enemy.stun) - delta)
 	if float(enemy.stun) > 0.0:
@@ -503,6 +553,7 @@ func _update_enemy(enemy: Dictionary, delta: float) -> void:
 	if float(enemy.recovery) > 0.0:
 		enemy.recovery = maxf(0.0, float(enemy.recovery) - delta)
 		return
+	enemy.attack_visual = false
 	var to_player: Vector2 = player_position - enemy.pos
 	var distance := to_player.length()
 	if distance > 0.01: enemy.facing = to_player.normalized()
@@ -520,8 +571,10 @@ func _update_enemy(enemy: Dictionary, delta: float) -> void:
 		var speed := 62.0 if enemy.kind == "lancer" else (78.0 if is_boss else 88.0)
 		if mode == "practice": speed *= 0.7
 		enemy.pos += to_player.normalized() * speed * delta
+		enemy.moving = true
 	elif enemy.kind == "lancer" and distance < 100.0:
 		enemy.pos -= to_player.normalized() * 60.0 * delta
+		enemy.moving = true
 	for other in enemies:
 		if int(other.id) == int(enemy.id): continue
 		var spacing: Vector2 = enemy.pos - other.pos
@@ -549,6 +602,8 @@ func _enemy_attack(enemy: Dictionary) -> void:
 	var damage := 14.0 if is_boss else 9.0
 	if mode == "practice": damage = 5.0
 	enemy.recovery = 1.25 if is_boss else 0.75
+	enemy.strike_timer = STRIKE_DURATION
+	enemy.attack_visual = true
 	match str(enemy.attack_kind):
 		"shot":
 			projectiles.append({"owner": "enemy", "pos": enemy.pos + enemy.attack_dir * 28.0, "velocity": enemy.attack_dir * 245.0, "life": 3.0, "damage": damage, "radius": 12.0, "hit_ids": [], "color": RED})
@@ -565,6 +620,7 @@ func _enemy_attack(enemy: Dictionary) -> void:
 			var offset: Vector2 = player_position - enemy.pos
 			if offset.length() <= radius and (offset.length() < 25.0 or offset.normalized().dot(enemy.attack_dir) > 0.30):
 				_damage_player(damage, enemy.attack_dir)
+	enemy.recovery_total = enemy.recovery
 
 
 func _sword_impact() -> void:
@@ -586,6 +642,7 @@ func _hit_enemy(enemy: Dictionary, damage: float, knockback: Vector2) -> void:
 		damage *= 0.6
 	enemy.hp = maxf(0.0, float(enemy.hp) - damage)
 	enemy.flash = 0.16
+	enemy.hurt_timer = HURT_DURATION
 	if enemy.kind != "boss" and float(enemy.windup) <= 0.0:
 		enemy.stun = 0.12
 	enemy.pos = _clamp_position(enemy.pos + knockback)
@@ -593,6 +650,7 @@ func _hit_enemy(enemy: Dictionary, damage: float, knockback: Vector2) -> void:
 	_floating.append({"text": str(roundi(damage)), "pos": enemy.pos + Vector2(0, -67), "life": 0.65, "duration": 0.65, "color": Color("fff3c8")})
 	_effects.append({"kind": "spark", "pos": enemy.pos + Vector2(0, -28), "life": 0.24, "duration": 0.24, "color": GOLD, "radius": 24.0})
 	if float(enemy.hp) <= 0.0:
+		_corpses.append({"kind": str(enemy.kind), "pos": enemy.pos, "facing": enemy.facing, "age": 0.0})
 		_effects.append({"kind": "ring", "pos": enemy.pos, "life": 0.50, "duration": 0.50, "color": Color("a9c7a1"), "radius": 50.0})
 		_sound_effect(0.8)
 
@@ -608,6 +666,7 @@ func _damage_player(amount: float, direction: Vector2) -> bool:
 	damage_taken += roundi(amount)
 	_invulnerability = 0.62
 	_flash = 0.22
+	_hurt_timer = HURT_DURATION
 	player_position = _clamp_position(player_position + direction.normalized() * 18.0)
 	_floating.append({"text": "-%d" % roundi(amount), "pos": player_position + Vector2(0, -76), "life": 0.85, "duration": 0.85, "color": Color("e58c73")})
 	_emit_status()
@@ -642,14 +701,14 @@ func _settle(won: bool) -> void:
 		return
 	_resolved = true
 	_won = won
-	_result_emitted = true
+	_settlement_remaining = DEFEAT_DURATION
+	_moving = false
 	_emit_status()
 	queue_redraw()
-	finished.emit(won, _settle_report())
 
 
 func _emit_restored_result(generation: int) -> void:
-	if generation == _generation and _resolved and not _result_emitted:
+	if generation == _generation and _resolved and _settlement_remaining <= 0.0 and not _result_emitted:
 		_result_emitted = true
 		finished.emit(_won, _settle_report())
 
@@ -705,7 +764,7 @@ func _spawn_ghost(delta: float) -> void:
 	_ghost_timer -= delta
 	if _ghost_timer <= 0.0:
 		_ghost_timer = 0.045
-		_ghosts.append({"pos": player_position, "facing": facing, "life": 0.28})
+		_ghosts.append({"pos": player_position, "facing": _dodge_direction, "life": 0.28, "animation": player_animation()})
 
 
 func _update_effects(delta: float) -> void:
@@ -720,6 +779,67 @@ func _update_effects(delta: float) -> void:
 	for ghost in _ghosts:
 		ghost.life = float(ghost.life) - delta
 	_ghosts = _ghosts.filter(func(ghost: Dictionary) -> bool: return float(ghost.life) > 0.0)
+	for corpse in _corpses:
+		corpse.age = float(corpse.age) + delta
+	_corpses = _corpses.filter(func(corpse: Dictionary) -> bool: return float(corpse.age) < DEFEAT_DURATION + 0.4)
+
+
+## Visual state is sampled from simulation time; it never triggers combat hits.
+func player_animation() -> Dictionary:
+	if hp <= 0.0:
+		return _clip_state("defeat", 1.0 - _settlement_remaining / DEFEAT_DURATION)
+	# Finish the winning pose while the last foe falls, without advancing any
+	# gameplay cooldown, movement, hit or resource value after resolution.
+	var presentation_age := DEFEAT_DURATION - _settlement_remaining if _resolved else 0.0
+	var step_time := maxf(0.0, _step_timer - presentation_age)
+	var dodge_time := maxf(0.0, _dodge_timer - presentation_age)
+	var hurt_time := maxf(0.0, _hurt_timer - presentation_age)
+	var attack_time := maxf(0.0, _attack_timer - presentation_age)
+	if step_time > 0.0:
+		return _clip_state("dodge", 1.0 - step_time / 0.32)
+	if dodge_time > 0.0:
+		return _clip_state("dodge", 1.0 - dodge_time / 0.25)
+	if hurt_time > 0.0:
+		return _clip_state("hurt", 1.0 - hurt_time / HURT_DURATION)
+	if attack_time > 0.0:
+		if _attack_style == "qi":
+			# Qi is released instantly by the existing skill, so start at contact.
+			return _clip_state("attack", (2.0 + (1.0 - attack_time / 0.28) * 4.0) / 6.0)
+		var attack_age := maxf(0.0, 0.32 - attack_time)
+		var progress := attack_age / 0.11 * (2.0 / 6.0) if not _attack_impacted else (2.0 + maxf(0.0, attack_age - 0.11) / 0.21 * 4.0) / 6.0
+		return _clip_state("attack", progress)
+	return _loop_state("walk" if _moving else "idle", elapsed)
+
+
+func enemy_animation(enemy: Dictionary) -> Dictionary:
+	if float(enemy.get("hp", 1.0)) <= 0.0:
+		return _clip_state("defeat", float(enemy.get("death_age", 0.0)) / DEFEAT_DURATION)
+	# Contact is held visibly, even if the foe is struck during the same frame.
+	if float(enemy.get("strike_timer", 0.0)) > 0.0 or float(enemy.get("rush_remaining", 0.0)) > 0.0:
+		return _clip_state("attack", 2.0 / 6.0)
+	if float(enemy.get("hurt_timer", 0.0)) > 0.0:
+		return _clip_state("hurt", 1.0 - float(enemy.hurt_timer) / HURT_DURATION)
+	if float(enemy.get("windup", 0.0)) > 0.0:
+		var anticipation := 1.0 - float(enemy.windup) / maxf(0.01, float(enemy.windup_total))
+		return _clip_state("attack", minf(1.999, maxf(0.0, anticipation) * 2.0) / 6.0)
+	if bool(enemy.get("attack_visual", false)) and float(enemy.get("recovery", 0.0)) > 0.0:
+		var recovery_total := maxf(STRIKE_DURATION + 0.01, float(enemy.get("recovery_total", 0.75)))
+		var recovery_age := clampf((recovery_total - float(enemy.recovery) - STRIKE_DURATION) / (recovery_total - STRIKE_DURATION), 0.0, 1.0)
+		return _clip_state("attack", (3.0 + recovery_age * 3.0) / 6.0)
+	return _loop_state("walk" if bool(enemy.get("moving", false)) else "idle", elapsed + float(enemy.get("id", 0)) * 0.17)
+
+
+func _clip_state(clip: String, progress: float) -> Dictionary:
+	progress = clampf(progress, 0.0, 1.0)
+	return {"clip": clip, "progress": progress, "frame": mini(5, floori(progress * 6.0)), "looped": false}
+
+
+func _loop_state(clip: String, time: float) -> Dictionary:
+	var fps := 10.0 if clip == "walk" else 6.0
+	var result := _clip_state(clip, fposmod(time * fps, 6.0) / 6.0)
+	result.looped = true
+	result.elapsed = time
+	return result
 
 
 func _title() -> String:
@@ -748,23 +868,31 @@ func _draw() -> void:
 		if float(enemy.windup) > 0.0:
 			_draw_telegraph(enemy)
 	for ghost in _ghosts:
-		_draw_actor(ghost.pos, "hero", ghost.facing, 0.0, Color(0.45, 0.80, 0.71, float(ghost.life) / 0.28 * 0.30), false)
+		_draw_actor(ghost.pos, "hero", ghost.facing, ghost.get("animation", _clip_state("dodge", 0.0)), Color(0.45, 0.80, 0.71, float(ghost.life) / 0.28 * 0.30), false)
 	var figures: Array[Dictionary] = []
+	for corpse in _corpses:
+		figures.append({"pos": corpse.pos, "corpse": corpse})
 	for enemy in enemies:
-		figures.append({"pos": enemy.pos, "enemy": enemy})
+		if float(enemy.hp) > 0.0:
+			figures.append({"pos": enemy.pos, "enemy": enemy})
 	figures.append({"pos": player_position, "hero": true})
 	figures.sort_custom(func(a: Dictionary, b: Dictionary) -> bool: return a.pos.y < b.pos.y)
 	for figure in figures:
 		if figure.has("hero"):
-			var bob := absf(sin(elapsed * 13.0)) * 3.5 if _moving else sin(elapsed * 2.3) * 1.1
 			var tint := Color("ffd4c8") if _flash > 0.0 else Color.WHITE
 			if _invulnerability > 0.0 and _flash <= 0.0: tint = Color(0.77, 1.0, 0.92, 0.85)
-			_draw_actor(player_position, "hero", facing, bob, tint, true)
+			var direction := _dodge_direction if _step_timer > 0.0 or _dodge_timer > 0.0 else (_attack_direction if _attack_timer > 0.0 else facing)
+			_draw_actor(player_position, "hero", direction, player_animation(), tint, true)
+		elif figure.has("corpse"):
+			var corpse: Dictionary = figure.corpse
+			var id := "examiner" if corpse.kind == "boss" else str(corpse.kind)
+			var fade := 1.0 - clampf((float(corpse.age) - DEFEAT_DURATION) / 0.4, 0.0, 1.0)
+			_draw_actor(corpse.pos, id, corpse.facing, _clip_state("defeat", float(corpse.age) / DEFEAT_DURATION), Color(1, 1, 1, fade), false, 1.20 if corpse.kind == "boss" else 1.0)
 		else:
 			var enemy: Dictionary = figure.enemy
 			var id := "examiner" if enemy.kind == "boss" else str(enemy.kind)
-			var bob := sin(elapsed * 5.0 + float(enemy.id)) * 1.4
-			_draw_actor(enemy.pos, id, enemy.facing, bob, Color("ffd3c2") if float(enemy.flash) > 0.0 else Color.WHITE, false, 1.20 if enemy.kind == "boss" else 1.0)
+			var direction: Vector2 = enemy.attack_dir if float(enemy.windup) > 0.0 or float(enemy.get("strike_timer", 0.0)) > 0.0 or float(enemy.rush_remaining) > 0.0 else enemy.facing
+			_draw_actor(enemy.pos, id, direction, enemy_animation(enemy), Color("ffd3c2") if float(enemy.flash) > 0.0 else Color.WHITE, false, 1.20 if enemy.kind == "boss" else 1.0)
 			_draw_enemy_health(enemy)
 	for projectile in projectiles:
 		var direction: Vector2 = projectile.velocity.normalized()
@@ -795,6 +923,8 @@ func _draw_court() -> void:
 		if result is Texture2D: background = result as Texture2D
 	if background:
 		draw_texture_rect(background, Rect2(Vector2.ZERO, SIZE), false, Color(1, 1, 1, 0.58))
+	draw_style_box(_panel(Color(PAPER, 0.91), 10), Rect2(12, 9, 1056, 47))
+	draw_style_box(_panel(Color(PAPER, 0.91), 10), Rect2(14, 588, 1052, 40))
 	draw_style_box(_panel(Color("496456"), 16, Color("b4c29c"), 3), Rect2(38, 83, 1004, 500))
 	var ground := Color("ddd2ac") if mode in ["practice", "spar", "exam"] else Color("abb68d")
 	draw_style_box(_panel(ground, 12, Color("ede0b9"), 4), Rect2(53, 98, 974, 470))
@@ -822,23 +952,35 @@ func _draw_court() -> void:
 	_label("WASD 移動   滑鼠指向 · 左鍵 / J 出劍   空白鍵閃避   Q / E 武功   R 用藥", Vector2(24, 614), 1032, 16, INK, true)
 
 
-func _draw_actor(point: Vector2, id: String, direction: Vector2, bob: float, tint: Color, hero: bool, scale_factor: float = 1.0) -> void:
+func _frame_texture(actor: String, animation: Dictionary) -> Texture2D:
+	if _animation == null and ResourceLoader.exists("res://scripts/animation_bank.gd"):
+		_animation = load("res://scripts/animation_bank.gd") as Script
+	if _animation != null and bool(_animation.call("has_actor", actor)):
+		if bool(animation.get("looped", false)):
+			return _animation.call("loop_frame", actor, str(animation.clip), float(animation.elapsed)) as Texture2D
+		return _animation.call("frame", actor, str(animation.clip), float(animation.progress)) as Texture2D
+	return _texture(actor)
+
+
+func _draw_actor(point: Vector2, id: String, direction: Vector2, animation: Dictionary, tint: Color, hero: bool, scale_factor: float = 1.0) -> void:
 	var portrait_id := str(stats.get("origin", "hero")) if id == "hero" else id
-	var texture := _texture(portrait_id)
+	var texture := _frame_texture(portrait_id, animation)
+	var animated := _animation != null and bool(_animation.call("has_actor", portrait_id))
 	draw_set_transform(point + Vector2(0, 5), 0, Vector2(1, 0.35))
 	draw_circle(Vector2.ZERO, 26 * scale_factor, Color(0.15, 0.25, 0.21, 0.22 * tint.a))
 	draw_set_transform(Vector2.ZERO)
 	if hero:
 		draw_arc(point + Vector2(0, 5), 30, 0.15, PI - 0.15, 24, Color(JADE, tint.a * 0.8), 3, true)
-	var tilt := sin(elapsed * 12.0) * 0.04 if hero and _moving else 0.0
-	if hero and _attack_timer > 0.0:
-		tilt += sin((1.0 - _attack_timer / 0.32) * PI) * 0.18 * signf(direction.x)
 	var mirror := -1.0 if direction.x < -0.12 else 1.0
-	draw_set_transform(point + Vector2(0, -bob), tilt, Vector2(mirror, 1.0) * scale_factor)
+	draw_set_transform(point, 0, Vector2(mirror, 1.0) * scale_factor)
 	if texture:
-		var height := 104.0
-		var width := height * texture.get_width() / float(maxi(1, texture.get_height()))
-		draw_texture_rect(texture, Rect2(-width / 2.0, -height + 11, width, height), false, tint)
+		if animated:
+			var frame_rect: Rect2 = _animation.call("draw_rect", portrait_id, 104.0)
+			draw_texture_rect(texture, frame_rect, false, tint)
+		else:
+			var height := 104.0
+			var width := height * texture.get_width() / float(maxi(1, texture.get_height()))
+			draw_texture_rect(texture, Rect2(-width / 2.0, -height + 11, width, height), false, tint)
 	else:
 		var coat := JADE if hero else (RED if id == "bandit" else Color("7187a0"))
 		draw_colored_polygon(PackedVector2Array([Vector2(-20, -7), Vector2(-14, -48), Vector2(13, -48), Vector2(22, -7)]), coat * tint)

@@ -6,6 +6,7 @@ const Data = preload("res://scripts/game_data.gd")
 const World = preload("res://scripts/world.gd")
 const Arena = preload("res://scripts/arena.gd")
 const Art = preload("res://scripts/art.gd")
+const AnimationPreview = preload("res://scenes/animation_preview.tscn")
 const SANS = preload("res://assets/fonts/JianghuSans.otf")
 const SERIF = preload("res://assets/fonts/JianghuSerif.otf")
 const PAPER = Color("f6f0df")
@@ -25,6 +26,7 @@ var action_buttons: Dictionary = {}
 var current_location = "wangxi"
 var selected_origin = "herbalist"
 var name_entry: LineEdit
+var animation_preview: Control
 var _backdrop: Control
 var _world_layer: Node2D
 var _hud: Control
@@ -101,6 +103,11 @@ func _process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if not (event is InputEventKey) or not event.pressed or event.echo: return
+	if _overlay_kind == "animation_preview":
+		if event.keycode == KEY_ESCAPE:
+			_close_overlay()
+			get_viewport().set_input_as_handled()
+		return
 	if event.ctrl_pressed and event.keycode == KEY_S:
 		if _screen == "game": _save(true)
 		get_viewport().set_input_as_handled()
@@ -225,6 +232,7 @@ func _close_overlay() -> void:
 	_story_busy = false
 	story_line = null
 	_clear(_overlay)
+	animation_preview = null
 	_overlay_kind = ""
 	_enable_playfield(true)
 
@@ -274,9 +282,20 @@ func _show_title() -> void:
 	_button(panel, "new_game", "啟程 · 初入望溪", Vector2(44, 424), Vector2(520, 64), _show_creation, true)
 	var continue_button = _button(panel, "continue", "接著上次的旅程", Vector2(44, 506), Vector2(520, 60), _continue_game)
 	continue_button.disabled = not FileAccess.file_exists(Run.SAVE_PATH) and not FileAccess.file_exists(Run.SAVE_PATH + ".bak")
-	_label(panel, "三種出身 · 自由安排日程 · 即時劍術\n鍵盤滑鼠遊玩　／　自動存檔", Vector2(44, 596), Vector2(520, 64), 18, MUTED)
+	_button(panel, "animation_preview", "逐格動畫圖鑑", Vector2(44, 590), Vector2(520, 48), _show_animation_preview)
+	_label(panel, "三種出身 · 自由安排日程 · 即時劍術\n鍵盤滑鼠遊玩　／　自動存檔", Vector2(44, 650), Vector2(520, 47), 16, MUTED)
 	_label(_hud, "望溪鎮的晨霧散了。你的故事，從今天開始。", Vector2(780, 820), Vector2(610, 40), 19, PAPER, true)
 	_button(_hud, "sound", "聲音：關" if _muted else "聲音：開", Vector2(1260, 28), Vector2(150, 44), _toggle_music)
+
+
+func _show_animation_preview() -> void:
+	_close_overlay()
+	_overlay_kind = "animation_preview"
+	_enable_playfield(false)
+	animation_preview = AnimationPreview.instantiate()
+	_overlay.add_child(animation_preview)
+	animation_preview.closed.connect(_close_overlay)
+	action_buttons.merge(animation_preview.action_buttons)
 
 
 func _show_creation() -> void:

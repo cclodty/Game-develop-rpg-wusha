@@ -96,7 +96,7 @@ const ACTIVITIES = {
 	},
 	"old_ballad": {
 		"name": "半支舊曲", "npc": "xiao", "cost": 2, "kind": "story", "repeatable": false,
-		"description": "聽蕭小滿唱完她總在中途停下的曲子，也替一位遠客找到回家的地名。",
+		"description": "和蕭小滿比對古道小調的不同唱法，從留白與回首之間，聽見同行人的腳步。",
 		"reward_text": "見識 +2、蕭小滿信任 +2。", "rewards": {"insight": 2, "favor": {"xiao": 2}},
 	},
 	"hermit_visit": {

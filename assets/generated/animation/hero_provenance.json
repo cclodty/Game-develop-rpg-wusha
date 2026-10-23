@@ -1,0 +1,169 @@
+{
+  "project": "江湖未遠：入山之前",
+  "created": "2026-10-23",
+  "generator": "OpenAI image_gen",
+  "asset_type": "Separately drawn animation pose sheets",
+  "total_hero_frames": 108,
+  "frames_per_actor": 36,
+  "layout": {
+    "columns": 6,
+    "rows": 6,
+    "order": [
+      "idle",
+      "walk",
+      "attack",
+      "dodge",
+      "hurt",
+      "defeat"
+    ],
+    "frames_per_clip": 6,
+    "attack_contact_frame_zero_based": 2,
+    "direction": "Right-facing front three-quarter; runtime may flip horizontally.",
+    "source_spacing": "The generator produced six columns and six action rows with nonuniform spacing. Runtime explicit source regions and a fixed virtual canvas/ground anchor are required; do not slice by equal normalized row bounds.",
+    "scale_rule": "Use one fixed actor scale across all frames. Pose frames are redrawn, not procedural rotation, squash, recolor, or synthetic in-between warps."
+  },
+  "visual_validation": [
+    "All six actions and all six frames per row inspected visually.",
+    "Walk frames show alternating planted feet and passing knees.",
+    "Attack frames progress from low guard to overhead anticipation, horizontal contact, follow-through, recovery and guard.",
+    "Dodge, hurt and defeat include distinct redrawn limb and expression poses.",
+    "Padding revisions isolate complete figures and sword tips from neighboring poses.",
+    "Herbal basket and performance drum moved to back/hip to free sword hand."
+  ],
+  "source_policy": "Packaged PNGs are byte-identical to image_gen outputs. Original and padding revision outputs remain in /workspace/generated_images. Read-only alpha analysis identifies frame gaps; no Python or other image pixel editing was used.",
+  "references": {
+    "courier": [
+      "../characters.png (top-left original hero)"
+    ],
+    "herbalist": [
+      "courier.png (movement template)",
+      "../characters.png (top-row second hero costume)"
+    ],
+    "performer": [
+      "courier.png (movement template)",
+      "../characters.png (top-row third hero costume)"
+    ]
+  },
+  "limitations": [
+    "One viewing direction with horizontal mirroring; no independent back-facing animations.",
+    "Six frames per action; transition and timing are controlled by gameplay simulation.",
+    "Generated source spacing is not perfectly uniform; calibration metadata must be included when exporting."
+  ],
+  "assets": [
+    {
+      "actor": "courier",
+      "file": "courier.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "format": "RGBA",
+      "sha256": "c69955932af95e440b2a0c6468fc0cca3d87f5d0e444d6c53cbf8f6de8327ce5",
+      "source_output": "/workspace/generated_images/exec-6618802f-33b5-43c6-b9b6-f62653003cca.png",
+      "previous_outputs": [
+        "/workspace/generated_images/exec-ed8be4e7-9960-4f09-b845-6546c5172512.png",
+        "/workspace/generated_images/exec-30a466f7-73ae-43be-92c8-8d2fc0a957e9.png"
+      ],
+      "design": "Jade courier jacket, cream trousers, high ponytail with jade ribbon, brown satchel and sheathed straight sword.",
+      "clear_horizontal_row_gaps": [
+        [
+          245,
+          318
+        ],
+        [
+          466,
+          518
+        ],
+        [
+          684,
+          749
+        ],
+        [
+          889,
+          942
+        ],
+        [
+          1092,
+          1124
+        ]
+      ],
+      "copied_without_pixel_edits": true
+    },
+    {
+      "actor": "herbalist",
+      "file": "herbalist.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "format": "RGBA",
+      "sha256": "72d4aba08d431f1cba5048f83ec23756595c8cd6dfb30a07caa1c0ca5b51bf42",
+      "source_output": "/workspace/generated_images/exec-605e7d5d-4047-4bda-8024-0e3a5296b43c.png",
+      "previous_outputs": [
+        "/workspace/generated_images/exec-0c0aa0a7-9ffe-48b4-a5c9-76ab35f0209b.png"
+      ],
+      "design": "Same young hero; mint/cream herbalist clothes, medicine basket strapped to back so both hands can wield a straight sword.",
+      "clear_horizontal_row_gaps": [
+        [
+          212,
+          282
+        ],
+        [
+          432,
+          484
+        ],
+        [
+          654,
+          726
+        ],
+        [
+          867,
+          919
+        ],
+        [
+          1064,
+          1118
+        ]
+      ],
+      "copied_without_pixel_edits": true
+    },
+    {
+      "actor": "performer",
+      "file": "performer.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "format": "RGBA",
+      "sha256": "15da5865d3721c24c9991966403c34d011511fb2803c759f65bf15ceac69eeb8",
+      "source_output": "/workspace/generated_images/exec-d4b9a1a6-537a-47a3-ba39-c855605a1f2b.png",
+      "previous_outputs": [
+        "/workspace/generated_images/exec-43e9d2ef-f315-446c-a5d6-c9b6a93b738a.png"
+      ],
+      "design": "Same young hero; red robe and ponytail ribbon, teal sash, cream trousers; drum strapped to back/hip while hands wield a straight sword.",
+      "clear_horizontal_row_gaps": [
+        [
+          227,
+          288
+        ],
+        [
+          440,
+          502
+        ],
+        [
+          661,
+          735
+        ],
+        [
+          871,
+          914
+        ],
+        [
+          1058,
+          1105
+        ]
+      ],
+      "copied_without_pixel_edits": true
+    }
+  ]
+}

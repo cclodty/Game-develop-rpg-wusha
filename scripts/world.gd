@@ -41,6 +41,8 @@ var _path_cursor: int = 0
 var _pending_interaction: Dictionary = {}
 var _elapsed: float = 0.0
 var _walk_phase: float = 0.0
+var _hero_clip: String = "idle"
+var _hero_clip_elapsed: float = 0.0
 var _moving: bool = false
 var _facing: float = 1.0
 var _footstep: float = 0.0
@@ -50,6 +52,7 @@ var _click_age: float = 10.0
 var _font: Font
 var _serif: Font
 var _art: Script
+var _animation_bank: Script
 var _portraits: Dictionary = {}
 var _backdrop: Texture2D
 
@@ -62,6 +65,7 @@ func _ready() -> void:
 	if _serif == null:
 		_serif = _font
 	_load_art()
+	_load_animation_bank()
 	_build_location()
 	queue_redraw()
 
@@ -76,7 +80,13 @@ func configure(place: String, hero_origin: String = "herbalist", initial_positio
 	_path.clear()
 	_particles.clear()
 	_nearby.clear()
+	_elapsed = 0.0
+	_walk_phase = 0.0
+	_hero_clip = "idle"
+	_hero_clip_elapsed = 0.0
+	_moving = false
 	_load_art()
+	_load_animation_bank()
 	_build_location()
 	player_position = _nearest_walkable(player_position)
 	queue_redraw()
@@ -130,6 +140,42 @@ func get_npc_position(id: String) -> Vector2:
 	return npc_positions.get(id, Vector2(-1, -1))
 
 
+func player_animation() -> Dictionary:
+	var state := _actor_animation(origin, _hero_clip, _hero_clip_elapsed)
+	state["position"] = player_position
+	state["facing"] = _facing
+	return state
+
+
+func npc_animation(id: String) -> Dictionary:
+	if not npc_positions.has(id):
+		return {}
+	# Offset the occupational gestures so the whole town does not move in unison.
+	var offset: float = 0.0
+	for index in range(TOWN_NPCS.size()):
+		if TOWN_NPCS[index]["id"] == id:
+			offset = float(index) * 0.13
+			break
+	var state := _actor_animation(id, "idle", _elapsed + offset)
+	state["position"] = npc_positions[id]
+	state["facing"] = 1.0
+	return state
+
+
+func _actor_animation(actor: String, clip: String, elapsed: float) -> Dictionary:
+	var duration: float = 0.6 if clip == "walk" else 1.0
+	if _animation_bank != null:
+		duration = float(_animation_bank.call("clip_duration", clip))
+	var progress: float = fposmod(elapsed, maxf(duration, 0.001)) / maxf(duration, 0.001)
+	var frame: int = mini(5, floori(progress * 6.0))
+	var animated: bool = false
+	if _animation_bank != null:
+		frame = int(_animation_bank.call("frame_index", clip, progress))
+		animated = bool(_animation_bank.call("has_actor", actor))
+	return {"actor": actor, "clip": clip, "elapsed": elapsed, "progress": progress,
+		"frame": frame, "animated": animated, "paused": not input_enabled}
+
+
 func navigate_to_npc(id: String) -> void:
 	if not input_enabled or location != "wangxi" or not npc_positions.has(id):
 		return
@@ -167,6 +213,11 @@ func _load_art() -> void:
 	if _art.has_method("portrait"):
 		for id: String in ["hero", "herbalist", "courier", "performer", "shen", "lu", "tao", "zhou", "xiao", "lin"]:
 			_portraits[id] = _art.call("portrait", id)
+
+
+func _load_animation_bank() -> void:
+	if ResourceLoader.exists("res://scripts/animation_bank.gd"):
+		_animation_bank = load("res://scripts/animation_bank.gd") as Script
 
 
 func _build_location() -> void:
@@ -278,7 +329,7 @@ func _grid_point(point: Vector2) -> Vector2i:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if not input_enabled or not visible:
+	if not input_enabled or not is_visible_in_tree():
 		return
 	if event is InputEventKey and event.pressed and not event.echo:
 		if event.keycode in [KEY_F, KEY_ENTER, KEY_KP_ENTER]:
@@ -330,6 +381,11 @@ func _walk_to(point: Vector2) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	# Gameplay and all actor phases share the pause gate. In particular, a menu
+	# preserves the exact walking pose until gameplay resumes and selects idle.
+	if not input_enabled or not is_visible_in_tree():
+		_moving = false
+		return
 	_elapsed += delta
 	_click_age += delta
 	_moving = false
@@ -362,6 +418,12 @@ func _physics_process(delta: float) -> void:
 				if _footstep > 0.15:
 					_footstep = 0.0
 					_particles.append({"position": player_position + Vector2(0, 4), "age": 0.0})
+		var next_clip: String = "walk" if _moving else "idle"
+		if next_clip != _hero_clip:
+			_hero_clip = next_clip
+			_hero_clip_elapsed = 0.0
+		else:
+			_hero_clip_elapsed += delta
 		if not _pending_interaction.is_empty() and player_position.distance_to(_pending_interaction["position"]) < INTERACTION_RADIUS - 5.0:
 			var selected := _pending_interaction.duplicate()
 			_activate(selected)
@@ -583,6 +645,10 @@ func _draw_actor(actor: Dictionary) -> void:
 	var position: Vector2 = actor["position"]
 	var hero: bool = actor["hero"]
 	var id: String = actor["id"]
+	var animation: Dictionary = player_animation() if hero else npc_animation(id)
+	var frame_texture: Texture2D
+	if _animation_bank != null and animation.get("animated", false):
+		frame_texture = _animation_bank.call("loop_frame", id, animation["clip"], animation["elapsed"]) as Texture2D
 	var texture: Texture2D = _portraits.get(id) as Texture2D
 	if hero and texture == null:
 		texture = _portraits.get("hero") as Texture2D
@@ -592,17 +658,25 @@ func _draw_actor(actor: Dictionary) -> void:
 	draw_set_transform(Vector2.ZERO)
 	if hero:
 		draw_arc(position + Vector2(0, 3), 25, 0, TAU, 32, Color(0.87, 0.71, 0.37, 0.85), 2, true)
-	var bounce: float = absf(sin(_walk_phase)) * 4 if hero and _moving else pulse * 0.7
-	var tilt: float = sin(_walk_phase) * 0.045 if hero and _moving else 0.0
 	var height: float = 85.0 if hero else 81.0
 	var facing: float = _facing if hero else 1.0
-	draw_set_transform(position - Vector2(0, bounce), tilt, Vector2(facing, 1))
-	if texture != null:
-		var size := texture.get_size()
-		var width: float = height * size.x / maxf(size.y, 1.0)
-		draw_texture_rect(texture, Rect2(-width * 0.5, -height, width, height), false)
+	if frame_texture != null:
+		# The bank supplies one calibrated rectangle for the complete sheet. Feet,
+		# body scale and ground shadow never shift with a frame's visible bounds.
+		draw_set_transform(position, 0.0, Vector2(facing, 1.0))
+		var frame_rect: Rect2 = _animation_bank.call("draw_rect", id, height)
+		draw_texture_rect(frame_texture, frame_rect, false)
 	else:
-		_draw_fallback_character(hero, id)
+		# Keep the original portrait available while an optional sheet is loading.
+		var bounce: float = absf(sin(_walk_phase)) * 4 if hero and _moving else pulse * 0.7
+		var tilt: float = sin(_walk_phase) * 0.045 if hero and _moving else 0.0
+		draw_set_transform(position - Vector2(0, bounce), tilt, Vector2(facing, 1))
+		if texture != null:
+			var size := texture.get_size()
+			var width: float = height * size.x / maxf(size.y, 1.0)
+			draw_texture_rect(texture, Rect2(-width * 0.5, -height, width, height), false)
+		else:
+			_draw_fallback_character(hero, id)
 	draw_set_transform(Vector2.ZERO)
 	if not hero and _font != null:
 		var active: bool = _nearby.get("id", "") == id

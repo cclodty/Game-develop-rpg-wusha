@@ -34,10 +34,12 @@ run_godot_check() {
 
 run_godot_check import --import
 run_godot_check run_state --script tests/test_run_state.gd
+run_godot_check animation --script tests/test_animation.gd
 run_godot_check arena --script tests/test_arena.gd
 if [ -f tests/test_world.gd ]; then
     run_godot_check world --script tests/test_world.gd
 fi
 run_godot_check story --script tests/test_story.gd
 run_godot_check ui --script tests/test_ui.gd
-printf 'Godot rules, action combat, dialogue, and UI validation all passed.\n'
+run_godot_check preview_lifecycle --script tests/test_preview_lifecycle.gd
+printf 'Godot rules, frame animation, action combat, dialogue, and UI validation all passed.\n'

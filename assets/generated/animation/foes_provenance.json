@@ -1,0 +1,186 @@
+{
+  "project": "江湖未遠 / 入山之前",
+  "created_on": "2026-10-23",
+  "generator": "OpenAI image_gen.imagegen",
+  "generation_arguments": {
+    "transparent_background": true,
+    "referenced_image_paths": "See per-asset reference_images."
+  },
+  "original_style_reference": {
+    "path": "assets/generated/characters.png",
+    "sha256": "562d91e52f8969cc117ce5c94b0225dc4b440dd6daa80fadb5da90ec505fc093"
+  },
+  "assets": [
+    {
+      "path": "assets/generated/animation/bandit.png",
+      "raw_generation_path": "/workspace/generated_images/exec-5742ff71-d56b-42e1-862a-967da99bf3d9.png",
+      "sha256": "bae1af501838c027ccce3a961a72fef9aa7e4b132d8da41dc4a2335750ca68c4",
+      "raw_sha256": "bae1af501838c027ccce3a961a72fef9aa7e4b132d8da41dc4a2335750ca68c4",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "transparent_background": true,
+      "raw_pixels_unmodified": true,
+      "logical_layout": {
+        "columns": 6,
+        "rows": 6,
+        "frame_count": 36
+      },
+      "row_order": [
+        "idle",
+        "walk",
+        "attack",
+        "dodge",
+        "hurt",
+        "defeat"
+      ],
+      "reference_images": [
+        "assets/generated/animation/npcs.png",
+        "assets/generated/characters.png"
+      ],
+      "prompt_summary": "Preserve original bottom-row second character: stocky male, red headband/scarf, brown topknot and beard, beige fur vest, red tunic, dark trousers, curved silver saber. Thirty-six separately drawn articulated poses; compact diagonal saber cuts, curled defeat poses, small figures with very wide transparent gutters. Successful NPC sheet supplied as spacing reference only.",
+      "visual_inspection": "Inspected full generated PNG. Identity, distinct articulated poses, action/gesture order, transparency and physical separation accepted. Generated layout is not exactly uniform; runtime source-region calibration is required."
+    },
+    {
+      "path": "assets/generated/animation/lancer.png",
+      "raw_generation_path": "/workspace/generated_images/exec-a0e8a43b-c56f-49b9-b2c2-5c77daffba22.png",
+      "sha256": "632d0d443ebec6a1ae7f2a97a7d25122c1d8d868222f56f9c1e63480e00a9ad7",
+      "raw_sha256": "632d0d443ebec6a1ae7f2a97a7d25122c1d8d868222f56f9c1e63480e00a9ad7",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "transparent_background": true,
+      "raw_pixels_unmodified": true,
+      "logical_layout": {
+        "columns": 6,
+        "rows": 6,
+        "frame_count": 36
+      },
+      "row_order": [
+        "idle",
+        "walk",
+        "attack",
+        "dodge",
+        "hurt",
+        "defeat"
+      ],
+      "reference_images": [
+        "assets/generated/animation/npcs.png",
+        "assets/generated/characters.png"
+      ],
+      "prompt_summary": "Preserve original bottom-row third character: dark-haired young man, blue headband/scarf, navy clothing, ochre fur mantle, wooden spear with silver tip/red tassel. Thirty-six separately drawn articulated poses; compact diagonal and foreshortened spear thrusts keep the entire weapon inside each isolated frame. Successful NPC sheet supplied as spacing reference only.",
+      "visual_inspection": "Inspected full generated PNG. Identity, distinct articulated poses, action/gesture order, transparency and physical separation accepted. Generated layout is not exactly uniform; runtime source-region calibration is required."
+    },
+    {
+      "path": "assets/generated/animation/examiner.png",
+      "raw_generation_path": "/workspace/generated_images/exec-892151bb-2d1e-4793-b62a-f2e96c78e036.png",
+      "sha256": "6f598a95cc3faf9eb955eb7f71435a03c36ae4b171f4d966195718504c05b0c4",
+      "raw_sha256": "6f598a95cc3faf9eb955eb7f71435a03c36ae4b171f4d966195718504c05b0c4",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "transparent_background": true,
+      "raw_pixels_unmodified": true,
+      "logical_layout": {
+        "columns": 6,
+        "rows": 6,
+        "frame_count": 36
+      },
+      "row_order": [
+        "idle",
+        "walk",
+        "attack",
+        "dodge",
+        "hurt",
+        "defeat"
+      ],
+      "reference_images": [
+        "assets/generated/characters.png"
+      ],
+      "prompt_summary": "Preserve original bottom-right character as a silver-haired WOMAN, ornate teal/cream/gold robe and straight silver sword; no male redesign. Thirty-six separately drawn articulated poses, small figures and abundant transparent separation.",
+      "visual_inspection": "Inspected full generated PNG. Identity, distinct articulated poses, action/gesture order, transparency and physical separation accepted. Generated layout is not exactly uniform; runtime source-region calibration is required."
+    },
+    {
+      "path": "assets/generated/animation/npcs.png",
+      "raw_generation_path": "/workspace/generated_images/exec-6fb2defe-e695-4598-90b4-1fc78c16b5b6.png",
+      "sha256": "f72b1447775ca8e0eb7f8036a64a1283b1ee687c762b61d5ab949f32ec5d9ec2",
+      "raw_sha256": "f72b1447775ca8e0eb7f8036a64a1283b1ee687c762b61d5ab949f32ec5d9ec2",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "transparent_background": true,
+      "raw_pixels_unmodified": true,
+      "logical_layout": {
+        "columns": 6,
+        "rows": 6,
+        "frame_count": 36
+      },
+      "row_order": [
+        "shen",
+        "lu",
+        "tao",
+        "zhou",
+        "xiao",
+        "lin"
+      ],
+      "reference_images": [
+        "assets/generated/characters.png"
+      ],
+      "prompt_summary": "Six rows in order Shen, Lu, Tao, Zhou, Xiao, Lin; six separately drawn idle/occupational gesture poses per row, preserving each original face, outfit and prop. Shen folds arms/touches beard; Lu adjusts sword/opens hand; Tao inspects jar/herbs; Zhou reads/rolls paper; Xiao lifts/waves fan; Lin reads/turns page. Small figures and abundant transparent separation.",
+      "visual_inspection": "Inspected full generated PNG. Identity, distinct articulated poses, action/gesture order, transparency and physical separation accepted. Generated layout is not exactly uniform; runtime source-region calibration is required."
+    }
+  ],
+  "production_method": "Image-generation tool created all individual drawn poses. Accepted generated PNGs were copied byte-for-byte to the project; no Python image edits, recoloring, synthetic frame warps, image rotations or duplicated-frame animation were used. Python was used only to inspect PNG metadata and write this provenance record. Runtime AtlasTexture regions/margins isolate and align the unchanged drawings.",
+  "layout_note": "Six logical columns and six rows, but generated row spacing and individual extents are irregular. The approved runtime uses explicit per-frame source regions and fixed virtual-canvas margins, not naive equal-grid slicing. Physical transparency between neighboring drawings is mandatory.",
+  "limitations": [
+    "One right/front three-quarter drawn direction; opposite direction uses runtime horizontal flip.",
+    "Six drawn frames per actor clip and six drawn idle/gesture frames per NPC, not eight-direction animation.",
+    "Generated pose proportions and prop details vary slightly; fixed actor scale/anchors reduce visible registration changes without fabricating poses."
+  ],
+  "rejected_generations": [
+    {
+      "path": "/workspace/generated_images/exec-0ce1e73c-ea11-470e-8ac1-ff2490e1a3b6.png",
+      "actor": "bandit",
+      "reason": "Large figures and saber crossed neighboring cell boundaries; not shipped."
+    },
+    {
+      "path": "/workspace/generated_images/exec-977ccb9b-d021-4623-8212-ee0e009755f6.png",
+      "actor": "bandit",
+      "reason": "Spacing edit still had connected saber/neighbor spans that could not be isolated by rectangular source regions; not shipped."
+    },
+    {
+      "path": "/workspace/generated_images/exec-9b792ffb-cb23-4902-98b2-76691e9ab7f5.png",
+      "actor": "bandit",
+      "reason": "Generated painted motion arcs and overlap despite instructions; not shipped."
+    },
+    {
+      "path": "/workspace/generated_images/exec-c8a3def7-6b54-45b0-96ad-4ca91bc914e3.png",
+      "actor": "lancer",
+      "reason": "Extended spear intruded into neighboring attack drawing; not shipped."
+    }
+  ],
+  "rejected_file_policy": "Rejected raw files remain in the generation workspace for audit and are not included in project runtime assets.",
+  "qa_owner": "Animation-bank agent validates physical regions, alpha gutters, frame uniqueness, anchors and runtime sampling; final test results belong to the delivery report.",
+  "qa_result": {
+    "reported_by": "animation-bank agent",
+    "suite": "tests/test_animation_bank.gd",
+    "scope": "All seven final project sheets, including these four PNGs",
+    "passed": 2596,
+    "failed": 0,
+    "checks": [
+      "Distinct frames",
+      "No opaque source-region edge bleed",
+      "All opaque pixels retained",
+      "Fixed virtual-canvas sampling"
+    ],
+    "note": "Gameplay/browser final validation is reported separately by delivery."
+  }
+}
