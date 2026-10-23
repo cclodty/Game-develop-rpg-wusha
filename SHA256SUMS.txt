@@ -1,2 +1,2 @@
-c5857a928bd7a417e5d959acc9c3235e443e1541aca8fb9310908dfddae409ed  jianghu-weiyuan-source.zip
-5f5afcbdb7091e26c75743266a2f1438cff09e30b7e7846e774f205f01ceb023  jianghu-weiyuan-web.zip
+cf2a1de1877c7c2a715dc7b3f0218ac3e6e9fb9f052c39e70a5d6238be19a504  jianghu-weiyuan-source.zip
+5c388864610cc3aaa76d4bfd77f159f2af285b25da99f10837904caca8a0320e  jianghu-weiyuan-web.zip

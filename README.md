@@ -1,6 +1,6 @@
 # 江湖未遠 · 入山之前
 
-原創 Q 版武俠養成 RPG 的第一個可玩首篇。七日安排，一程江湖。
+原創 Q 版武俠養成 RPG 的可玩首篇，已加入逐格角色動畫。七日安排，一程江湖。
 
 ## 下載與開始
 
@@ -16,6 +16,20 @@ macOS／Linux 可在解壓後的資料夾執行 `python3 tools/serve_web.py`，�
 
 ![望溪鎮的實際遊戲畫面](preview.png)
 
+## 本次更新：角色逐格動畫
+
+標題畫面按 **「逐格動畫圖鑑」**，即可選角色、切換動作、半速播放、暫停和逐格查看；不改動遊戲存檔。
+
+- 三種主角造型、短刀客、長兵客及考核教頭：各有待機、行走、出招、閃避、受擊與倒地，每組六格。
+- 六名鎮民：眨眼、理袖、翻頁、看路圖等專屬待機動作。
+- 合共 42 組、252 格獨立姿態。動畫直接用於城鎮與戰鬥；暫停凍結畫格，戰鬥存讀保留進度。
+
+[觀看動畫圖鑑（MP4）](https://github.com/cclodty/Game-develop-rpg-wusha/raw/refs/heads/weiyuan-download/preview.mp4) · [城鎮行走](https://github.com/cclodty/Game-develop-rpg-wusha/raw/refs/heads/weiyuan-download/walking.mp4) · [即時戰鬥](https://github.com/cclodty/Game-develop-rpg-wusha/raw/refs/heads/weiyuan-download/combat.mp4)
+
+影片均錄自實際瀏覽器遊戲畫面。
+
+![動畫圖鑑實際畫面](animation-preview.png)
+
 ## 首篇內容
 
 - 三種出身、自訂姓名、七日早午晚共 21 時段，第八日入門選拔。
@@ -30,7 +44,7 @@ WASD／方向鍵移動，F 互動；左鍵／J 出劍，Space 閃避，Q／E 已
 
 [瀏覽 Godot 原始碼](https://github.com/cclodty/Game-develop-rpg-wusha/tree/weiyuan-first-chapter) · [下載原始碼 ZIP](https://github.com/cclodty/Game-develop-rpg-wusha/raw/refs/heads/weiyuan-download/jianghu-weiyuan-source.zip) · [SHA-256 校驗碼](SHA256SUMS.txt) · [詳細驗證記錄](https://github.com/cclodty/Game-develop-rpg-wusha/blob/weiyuan-first-chapter/docs/VALIDATION.md)
 
-使用 Godot 4.6.3 與 Dialogue Manager 3.10.4。雲端測試涵蓋規則、戰鬥、場景、劇本、介面及 Chromium 真實輸入；Windows 啟動伺服器在 Linux 上的 PowerShell 驗證，尚未作原生 Windows 實機驗收。首篇 30–60 分鐘仍是待真人試玩的目標；角色使用姿態插畫與程式動作，逐格動畫、後續章節尚未製作。
+使用 Godot 4.6.3 與 Dialogue Manager 3.10.4。雲端測試涵蓋規則、戰鬥、場景、劇本、介面及 Chromium 真實輸入；Windows 啟動伺服器在 Linux 上的 PowerShell 驗證，尚未作原生 Windows 實機驗收。首篇 30–60 分鐘仍是待真人試玩的目標。動畫採三分之四視角與左右翻轉；獨立八方向造型及後續章節尚未製作。
 
 本作存檔與舊版分開。固定使用同一瀏覽器及網址續玩；清除網站資料會刪除瀏覽器存檔。
 
