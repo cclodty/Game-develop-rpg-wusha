@@ -66,6 +66,33 @@
     "Safari, mobile and gamepad"
   ],
   "public_download_verification": {
-    "status": "pending"
+    "status": "passed",
+    "checked_at_utc": "2026-10-24T01:36:19.302151+00:00",
+    "package_publish_commit": "b629e4ce0f12b6261110d79412fc944cc8115a2b",
+    "downloads": [
+      {
+        "name": "jianghu-weiyuan-martial-web.zip",
+        "url": "https://github.com/cclodty/Game-develop-rpg-wusha/raw/refs/heads/weiyuan-martial-download/jianghu-weiyuan-martial-web.zip",
+        "http_status": 200,
+        "bytes": 68614748,
+        "sha256": "0bc0c19c66eb4ee551ed8cf960c791713504af1513cef42806bf3fa729609d06",
+        "matches_local_package": true
+      },
+      {
+        "name": "jianghu-weiyuan-martial-source.zip",
+        "url": "https://github.com/cclodty/Game-develop-rpg-wusha/raw/refs/heads/weiyuan-martial-download/jianghu-weiyuan-martial-source.zip",
+        "http_status": 200,
+        "bytes": 75304121,
+        "sha256": "5d224cfb93afb1f544dda9c456528dfc68fdaa92cfb24e63d1c6e3969ae42fc0",
+        "matches_local_package": true
+      }
+    ],
+    "preserved_remote_heads": {
+      "playable-download": "23a20812ba0b5dda6f81a6a130ff75e7c1fdc9e3",
+      "weiyuan-download": "47a3fc3d7b3940435e93649dcc7ee943bf569a92",
+      "weiyuan-cards-download": "124d9941ac4da5a4b872dfd65b56b0b470b8c807",
+      "weiyuan-card-prototype": "fc1e2ae957349caafec2e4163cf5737320584e5e"
+    },
+    "source_commit_verified": true
   }
 }
