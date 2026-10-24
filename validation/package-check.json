@@ -1,0 +1,44 @@
+{
+  "archives": {
+    "source": {
+      "bytes": 75304121,
+      "sha256": "5d224cfb93afb1f544dda9c456528dfc68fdaa92cfb24e63d1c6e3969ae42fc0",
+      "members": 309,
+      "crc_ok": true,
+      "save_files_absent": true
+    },
+    "web": {
+      "bytes": 68614748,
+      "sha256": "0bc0c19c66eb4ee551ed8cf960c791713504af1513cef42806bf3fa729609d06",
+      "members": 18,
+      "crc_ok": true,
+      "save_files_absent": true
+    }
+  },
+  "http": {
+    "index.html": {
+      "sha256": "eb43332b15b82e9f9cc32562d69a88425fb1356e4f6bcbd7ed48fada464f753e",
+      "mime": "text/html",
+      "status": 200
+    },
+    "index.js": {
+      "sha256": "e3f56ee40e6f84371053db06692cfac15e2c8659547b11c6b2dfa1996dabd981",
+      "mime": "text/javascript",
+      "status": 200
+    },
+    "index.wasm": {
+      "sha256": "26b61ce95247012ab3dca3ff51e96d1cdbff44ee91a8c20a83e150afca83f1b6",
+      "mime": "application/wasm",
+      "status": 200
+    },
+    "index.pck": {
+      "sha256": "53e3c0ab105666b2f49a24ddbd9ef0a5c276282b5d6794342b135627c02beff6",
+      "mime": "application/octet-stream",
+      "status": 200
+    }
+  },
+  "source_all_members_match": true,
+  "source_changed_members": [],
+  "unpacked_port": 8072,
+  "wasm_head_ok": true
+}

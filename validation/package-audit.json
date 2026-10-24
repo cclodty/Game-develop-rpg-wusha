@@ -1,0 +1,18 @@
+{
+  "tracked_source_files": 309,
+  "packages": {
+    "source": {
+      "bytes": 75304121,
+      "files": 309,
+      "sha256": "5d224cfb93afb1f544dda9c456528dfc68fdaa92cfb24e63d1c6e3969ae42fc0"
+    },
+    "web": {
+      "bytes": 68614748,
+      "files": 18,
+      "sha256": "0bc0c19c66eb4ee551ed8cf960c791713504af1513cef42806bf3fa729609d06"
+    }
+  },
+  "source_matches_git_index": true,
+  "web_matches_tested_export": true,
+  "player_saves_present": false
+}

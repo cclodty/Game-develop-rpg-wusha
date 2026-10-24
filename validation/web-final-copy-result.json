@@ -1,0 +1,44 @@
+{
+  "checks": [
+    "Formal journey: mid-prologue save/reload preserves the response, choices and attributes",
+    "herbalist: six choices, manual adjustment, authored morning and free movement on an independent v3 journey"
+  ],
+  "origins": [
+    "herbalist"
+  ],
+  "creation_only": true,
+  "console": [
+    {
+      "type": "log",
+      "text": "Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org"
+    },
+    {
+      "type": "log",
+      "text": "OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL"
+    },
+    {
+      "type": "log",
+      "text": "Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support."
+    },
+    {
+      "type": "log",
+      "text": "Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org"
+    },
+    {
+      "type": "log",
+      "text": "OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL"
+    },
+    {
+      "type": "log",
+      "text": "Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support."
+    }
+  ],
+  "state_injection": false,
+  "build_sha256": {
+    "index.html": "eb43332b15b82e9f9cc32562d69a88425fb1356e4f6bcbd7ed48fada464f753e",
+    "index.js": "e3f56ee40e6f84371053db06692cfac15e2c8659547b11c6b2dfa1996dabd981",
+    "index.wasm": "26b61ce95247012ab3dca3ff51e96d1cdbff44ee91a8c20a83e150afca83f1b6",
+    "index.pck": "53e3c0ab105666b2f49a24ddbd9ef0a5c276282b5d6794342b135627c02beff6"
+  },
+  "recordings": []
+}

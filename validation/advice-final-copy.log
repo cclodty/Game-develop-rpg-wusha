@@ -1,0 +1,8 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+WARNING: res://addons/dialogue_manager/test_scene.tscn:3 - ext_resource, invalid UID: uid://c8e16qdgu40wo - using text path instead: res://addons/dialogue_manager/test_scene.gd
+     at: load (scene/resources/resource_format_text.cpp:500)
+ADVICE TEXT: 初學交鋒
+起始十張牌：出劍、架勢、調息、審勢、飛石問路各兩張。先讀敵人意圖，再安排攻防；調息補真氣，審勢找牌。 目前攻防均衡，可以先嘗試以飛石問路拆防，再安排出劍。
+ADVICE LAYOUT: 4 lines, line height 27, allocated 145.0
+BALANCED ADVICE CHECK: PASS (0 errors)

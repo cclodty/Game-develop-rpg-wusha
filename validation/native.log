@@ -1,0 +1,552 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Scanning file structure...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | Started Registering global classes... (2 steps)[39m[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  33% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[92m[ DONE ][39m [1mupdate_scripts_classes[22m
+[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Started Loading editor (5 steps)[39m[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Loading editor layout...[39m[0m
+[  16% ] [90m[1mloading_editor_layout[22m | Loading docks...[39m[0m
+[92m[ DONE ][39m [1mloading_editor_layout[22m
+[0m
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+WARNING: res://addons/dialogue_manager/test_scene.tscn:3 - ext_resource, invalid UID: uid://c8e16qdgu40wo - using text path instead: res://addons/dialogue_manager/test_scene.gd
+     at: load (scene/resources/resource_format_text.cpp:500)
+ROUTE VERIFIED: herbalist; training 8/21 slots -> zhaoling; social 7/21 slots -> duyun
+ROUTE VERIFIED: courier; training 8/21 slots -> zhaoling; social 7/21 slots -> duyun
+ROUTE VERIFIED: performer; training 8/21 slots -> zhaoling; social 7/21 slots -> duyun
+TESTS COMPLETE: 563 passed, 0 failed
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+WARNING: res://addons/dialogue_manager/test_scene.tscn:3 - ext_resource, invalid UID: uid://c8e16qdgu40wo - using text path instead: res://addons/dialogue_manager/test_scene.gd
+     at: load (scene/resources/resource_format_text.cpp:500)
+TESTS COMPLETE: 1564 passed, 0 failed
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+WARNING: res://addons/dialogue_manager/test_scene.tscn:3 - ext_resource, invalid UID: uid://c8e16qdgu40wo - using text path instead: res://addons/dialogue_manager/test_scene.gd
+     at: load (scene/resources/resource_format_text.cpp:500)
+TESTS COMPLETE: 256 passed, 0 failed
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+WARNING: res://addons/dialogue_manager/test_scene.tscn:3 - ext_resource, invalid UID: uid://c8e16qdgu40wo - using text path instead: res://addons/dialogue_manager/test_scene.gd
+     at: load (scene/resources/resource_format_text.cpp:500)
+LEGAL FIGHT MATRIX: [{"enemy":"flurry","hp":62,"preset":"shouzhong","seed":7,"turns":3,"won":true},{"enemy":"flurry","hp":61,"preset":"shouzhong","seed":42,"turns":3,"won":true},{"enemy":"flurry","hp":62,"preset":"shouzhong","seed":2026,"turns":3,"won":true},{"enemy":"armored","hp":61,"preset":"shouzhong","seed":7,"turns":5,"won":true},{"enemy":"armored","hp":65,"preset":"shouzhong","seed":42,"turns":3,"won":true},{"enemy":"armored","hp":66,"preset":"shouzhong","seed":2026,"turns":5,"won":true},{"enemy":"charging","hp":55,"preset":"shouzhong","seed":7,"turns":4,"won":true},{"enemy":"charging","hp":57,"preset":"shouzhong","seed":42,"turns":3,"won":true},{"enemy":"charging","hp":56,"preset":"shouzhong","seed":2026,"turns":3,"won":true},{"enemy":"counter","hp":54,"preset":"shouzhong","seed":7,"turns":4,"won":true},{"enemy":"counter","hp":57,"preset":"shouzhong","seed":42,"turns":3,"won":true},{"enemy":"counter","hp":57,"preset":"shouzhong","seed":2026,"turns":3,"won":true},{"enemy":"flurry","hp":56,"preset":"xingyun","seed":7,"turns":4,"won":true},{"enemy":"flurry","hp":63,"preset":"xingyun","seed":42,"turns":4,"won":true},{"enemy":"flurry","hp":60,"preset":"xingyun","seed":2026,"turns":4,"won":true},{"enemy":"armored","hp":60,"preset":"xingyun","seed":7,"turns":5,"won":true},{"enemy":"armored","hp":55,"preset":"xingyun","seed":42,"turns":5,"won":true},{"enemy":"armored","hp":50,"preset":"xingyun","seed":2026,"turns":5,"won":true},{"enemy":"charging","hp":54,"preset":"xingyun","seed":7,"turns":4,"won":true},{"enemy":"charging","hp":59,"preset":"xingyun","seed":42,"turns":5,"won":true},{"enemy":"charging","hp":56,"preset":"xingyun","seed":2026,"turns":4,"won":true},{"enemy":"counter","hp":60,"preset":"xingyun","seed":7,"turns":4,"won":true},{"enemy":"counter","hp":55,"preset":"xingyun","seed":42,"turns":5,"won":true},{"enemy":"counter","hp":64,"preset":"xingyun","seed":2026,"turns":5,"won":true},{"enemy":"flurry","hp":48,"preset":"guiyuan","seed":7,"turns":4,"won":true},{"enemy":"flurry","hp":53,"preset":"guiyuan","seed":42,"turns":3,"won":true},{"enemy":"flurry","hp":61,"preset":"guiyuan","seed":2026,"turns":4,"won":true},{"enemy":"armored","hp":57,"preset":"guiyuan","seed":7,"turns":3,"won":true},{"enemy":"armored","hp":59,"preset":"guiyuan","seed":42,"turns":5,"won":true},{"enemy":"armored","hp":64,"preset":"guiyuan","seed":2026,"turns":3,"won":true},{"enemy":"charging","hp":49,"preset":"guiyuan","seed":7,"turns":3,"won":true},{"enemy":"charging","hp":56,"preset":"guiyuan","seed":42,"turns":4,"won":true},{"enemy":"charging","hp":64,"preset":"guiyuan","seed":2026,"turns":4,"won":true},{"enemy":"counter","hp":55,"preset":"guiyuan","seed":7,"turns":3,"won":true},{"enemy":"counter","hp":55,"preset":"guiyuan","seed":42,"turns":4,"won":true},{"enemy":"counter","hp":55,"preset":"guiyuan","seed":2026,"turns":3,"won":true}]
+LEGAL FIGHTS WON: 36 / 36
+DISTINCT PROFILE FIGHTS WON: 36 / 36
+TESTS COMPLETE: 2249 passed, 0 failed
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+WARNING: res://addons/dialogue_manager/test_scene.tscn:3 - ext_resource, invalid UID: uid://c8e16qdgu40wo - using text path instead: res://addons/dialogue_manager/test_scene.gd
+     at: load (scene/resources/resource_format_text.cpp:500)
+MARTIAL ROUTE VERIFIED: herbalist -> zhaoling
+MARTIAL ROUTE VERIFIED: herbalist -> duyun
+MARTIAL ROUTE VERIFIED: courier -> zhaoling
+MARTIAL ROUTE VERIFIED: courier -> duyun
+MARTIAL ROUTE VERIFIED: performer -> zhaoling
+MARTIAL ROUTE VERIFIED: performer -> duyun
+TESTS COMPLETE: 650 passed, 0 failed
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+WARNING: res://addons/dialogue_manager/test_scene.tscn:3 - ext_resource, invalid UID: uid://c8e16qdgu40wo - using text path instead: res://addons/dialogue_manager/test_scene.gd
+     at: load (scene/resources/resource_format_text.cpp:500)
+PASS CARD ARENA: new practice / shouzhong encounter accepts its preparation
+PASS CARD ARENA: five opening cards and once-only mulligan are visible
+PASS CARD ARENA: all actionable controls fit 1080x640: []
+PASS CARD ARENA: opening choice respects resolve limit
+PASS CARD ARENA: exact JSON snapshot restores into a separate view: 已恢復原來的回合與待選招式。
+PASS CARD ARENA: opening selection restores without drawing or changing RNG
+PASS CARD ARENA: visible redraw performs exactly one action notification
+PASS CARD ARENA: opening redraw cannot repeat
+PASS CARD ARENA: selecting any card never automatically spends qi or momentum
+PASS CARD ARENA: ordinary and empowered actions are explicit separate controls
+PASS CARD ARENA: marking a retained card is only a saved view choice
+PASS CARD ARENA: exact JSON snapshot restores into a separate view: 已恢復原來的回合與待選招式。
+PASS CARD ARENA: retained card and selected target restore exactly
+PASS CARD ARENA: retaining one card fills to five, then clears next-turn marker
+PASS CARD ARENA: real time never advances the card model
+PASS CARD ARENA: all actionable controls fit 1080x640: []
+PASS CARD ARENA: read-only rules modal blocks combat inputs
+PASS CARD ARENA: exact JSON snapshot restores into a separate view: 已恢復原來的回合與待選招式。
+PASS CARD ARENA: open rule view restores with underlying battle unchanged
+PASS CARD ARENA: external pause disables every UI action including modal close
+PASS CARD ARENA: pause freezes effects without modifying saved choices
+PASS CARD ARENA: pile viewer displays actual current cards
+PASS CARD ARENA: draw viewer counts without exposing draw order
+PASS CARD ARENA: all actionable controls fit 1080x640: []
+PASS CARD ARENA: rule and pile inspection never changes state
+PASS CARD ARENA: new practice / xingyun encounter accepts its preparation
+PASS CARD ARENA: ordinary button legally starts a refined cycle card
+PASS CARD ARENA: choice phase records already-paid qi and two-card capacity
+PASS CARD ARENA: cycle card buttons toggle at most the allowed count
+PASS CARD ARENA: in-flight cycle forbids unrelated combat actions
+PASS CARD ARENA: exact JSON snapshot restores into a separate view: 已恢復原來的回合與待選招式。
+PASS CARD ARENA: in-flight selection and paid effects survive exact JSON restore
+PASS CARD ARENA: all actionable controls fit 1080x640: []
+PASS CARD ARENA: confirm cycle finishes once without paying or playing the card again
+PASS CARD ARENA: completed cycle cannot be replayed for another reward
+PASS CARD ARENA: new practice / xingyun encounter accepts its preparation
+PASS CARD ARENA: skip cycle preserves hand and finishes the paid action
+PASS CARD ARENA: new practice / shouzhong encounter accepts its preparation
+PASS CARD ARENA: zero momentum leaves ordinary mode available but rejects empowerment
+PASS CARD ARENA: rejected empowerment spends nothing
+PASS CARD ARENA: empowered button exposes the exact model preview
+PASS CARD ARENA: explicit empowerment pays one qi and one momentum, preparing retaliation
+PASS CARD ARENA: a selected card preview leaves the prepared retaliation visible
+PASS CARD ARENA: visible defensive empowerment counterattacks a real enemy action
+PASS CARD ARENA: new practice / xingyun encounter accepts its preparation
+PASS CARD ARENA: draw-two grows the hand above five through a legal action
+PASS CARD ARENA: sixth card is available on page two
+PASS CARD ARENA: exact JSON snapshot restores into a separate view: 已恢復原來的回合與待選招式。
+PASS CARD ARENA: second page and selected sixth card restore
+PASS CARD ARENA: all actionable controls fit 1080x640: []
+PASS CARD ARENA: sixth card can be explicitly played
+PASS CARD ARENA: new grove / shouzhong encounter accepts its preparation
+PASS CARD ARENA: choosing second enemy changes only view selection
+PASS CARD ARENA: explicit normal action hits selected second enemy
+PASS CARD ARENA: medicine costs one qi and is limited once per battle
+PASS CARD ARENA: next turn does not reset the medicine allowance
+PASS CARD ARENA: new practice / shouzhong encounter accepts its preparation
+PASS CARD ARENA: real explicit card controls win a practice encounter
+PASS CARD ARENA: paused terminal effects cannot send completion
+PASS CARD ARENA: completed view sends its real result exactly once
+PASS CARD ARENA: exact JSON snapshot restores into a separate view: 已恢復原來的回合與待選招式。
+PASS CARD ARENA: completed save emits only one result on restoration
+PASS CARD ARENA: invalid snapshot reports a restore failure
+PASS CARD ARENA: invalid restore never silently creates a fresh battle
+PASS CARD ARENA: view-only snapshot cannot masquerade as a saved battle
+PASS CARD ARENA: all twelve cards and six refinement faces fit readable text bounds: []
+TESTS COMPLETE: 66 passed, 0 failed
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+WARNING: res://addons/dialogue_manager/test_scene.tscn:3 - ext_resource, invalid UID: uid://c8e16qdgu40wo - using text path instead: res://addons/dialogue_manager/test_scene.gd
+     at: load (scene/resources/resource_format_text.cpp:500)
+TESTS COMPLETE: 104 passed, 0 failed
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+WARNING: res://addons/dialogue_manager/test_scene.tscn:3 - ext_resource, invalid UID: uid://c8e16qdgu40wo - using text path instead: res://addons/dialogue_manager/test_scene.gd
+     at: load (scene/resources/resource_format_text.cpp:500)
+PASS STORY: first chapter compiles: []
+PASS STORY: Godot imports the authored DialogueResource
+PASS STORY: all origins, six NPCs, activities, exam and endings exist: []
+PASS STORY: dialogue cannot award resources or advance the schedule
+PASS STORY: authored lines have unique stable translation IDs
+PASS STORY: martial dialogue no longer teaches superseded v2 card effects
+PASS STORY: the authored story introduces current inners, delayed technique and medicine limit
+PASS STORY: herbalist day 1 / prove: every title and allowed response resolves to valid readable dialogue
+PASS STORY: herbalist day 1 / prove: every inquiry loop has an exit back to gameplay
+PASS STORY: herbalist day 1 / discover: every title and allowed response resolves to valid readable dialogue
+PASS STORY: herbalist day 1 / discover: every inquiry loop has an exit back to gameplay
+PASS STORY: herbalist day 1 / belong: every title and allowed response resolves to valid readable dialogue
+PASS STORY: herbalist day 1 / belong: every inquiry loop has an exit back to gameplay
+PASS STORY: herbalist day 4 / prove: every title and allowed response resolves to valid readable dialogue
+PASS STORY: herbalist day 4 / prove: every inquiry loop has an exit back to gameplay
+PASS STORY: herbalist day 4 / discover: every title and allowed response resolves to valid readable dialogue
+PASS STORY: herbalist day 4 / discover: every inquiry loop has an exit back to gameplay
+PASS STORY: herbalist day 4 / belong: every title and allowed response resolves to valid readable dialogue
+PASS STORY: herbalist day 4 / belong: every inquiry loop has an exit back to gameplay
+PASS STORY: herbalist day 7 / prove: every title and allowed response resolves to valid readable dialogue
+PASS STORY: herbalist day 7 / prove: every inquiry loop has an exit back to gameplay
+PASS STORY: herbalist day 7 / discover: every title and allowed response resolves to valid readable dialogue
+PASS STORY: herbalist day 7 / discover: every inquiry loop has an exit back to gameplay
+PASS STORY: herbalist day 7 / belong: every title and allowed response resolves to valid readable dialogue
+PASS STORY: herbalist day 7 / belong: every inquiry loop has an exit back to gameplay
+PASS STORY: courier day 1 / prove: every title and allowed response resolves to valid readable dialogue
+PASS STORY: courier day 1 / prove: every inquiry loop has an exit back to gameplay
+PASS STORY: courier day 1 / discover: every title and allowed response resolves to valid readable dialogue
+PASS STORY: courier day 1 / discover: every inquiry loop has an exit back to gameplay
+PASS STORY: courier day 1 / belong: every title and allowed response resolves to valid readable dialogue
+PASS STORY: courier day 1 / belong: every inquiry loop has an exit back to gameplay
+PASS STORY: courier day 4 / prove: every title and allowed response resolves to valid readable dialogue
+PASS STORY: courier day 4 / prove: every inquiry loop has an exit back to gameplay
+PASS STORY: courier day 4 / discover: every title and allowed response resolves to valid readable dialogue
+PASS STORY: courier day 4 / discover: every inquiry loop has an exit back to gameplay
+PASS STORY: courier day 4 / belong: every title and allowed response resolves to valid readable dialogue
+PASS STORY: courier day 4 / belong: every inquiry loop has an exit back to gameplay
+PASS STORY: courier day 7 / prove: every title and allowed response resolves to valid readable dialogue
+PASS STORY: courier day 7 / prove: every inquiry loop has an exit back to gameplay
+PASS STORY: courier day 7 / discover: every title and allowed response resolves to valid readable dialogue
+PASS STORY: courier day 7 / discover: every inquiry loop has an exit back to gameplay
+PASS STORY: courier day 7 / belong: every title and allowed response resolves to valid readable dialogue
+PASS STORY: courier day 7 / belong: every inquiry loop has an exit back to gameplay
+PASS STORY: performer day 1 / prove: every title and allowed response resolves to valid readable dialogue
+PASS STORY: performer day 1 / prove: every inquiry loop has an exit back to gameplay
+PASS STORY: performer day 1 / discover: every title and allowed response resolves to valid readable dialogue
+PASS STORY: performer day 1 / discover: every inquiry loop has an exit back to gameplay
+PASS STORY: performer day 1 / belong: every title and allowed response resolves to valid readable dialogue
+PASS STORY: performer day 1 / belong: every inquiry loop has an exit back to gameplay
+PASS STORY: performer day 4 / prove: every title and allowed response resolves to valid readable dialogue
+PASS STORY: performer day 4 / prove: every inquiry loop has an exit back to gameplay
+PASS STORY: performer day 4 / discover: every title and allowed response resolves to valid readable dialogue
+PASS STORY: performer day 4 / discover: every inquiry loop has an exit back to gameplay
+PASS STORY: performer day 4 / belong: every title and allowed response resolves to valid readable dialogue
+PASS STORY: performer day 4 / belong: every inquiry loop has an exit back to gameplay
+PASS STORY: performer day 7 / prove: every title and allowed response resolves to valid readable dialogue
+PASS STORY: performer day 7 / prove: every inquiry loop has an exit back to gameplay
+PASS STORY: performer day 7 / discover: every title and allowed response resolves to valid readable dialogue
+PASS STORY: performer day 7 / discover: every inquiry loop has an exit back to gameplay
+PASS STORY: performer day 7 / belong: every title and allowed response resolves to valid readable dialogue
+PASS STORY: performer day 7 / belong: every inquiry loop has an exit back to gameplay
+PASS STORY: legacy origin introductions retain their three recognizably different scenes
+PASS STORY: new next-morning introduction preserves each origin's familiar person
+PASS STORY: NPC shen audibly remembers all three motivation or road-choice branches
+PASS STORY: NPC lu audibly remembers all three motivation or road-choice branches
+PASS STORY: NPC tao audibly remembers all three motivation or road-choice branches
+PASS STORY: NPC zhou audibly remembers all three motivation or road-choice branches
+PASS STORY: NPC xiao audibly remembers all three motivation or road-choice branches
+PASS STORY: NPC lin audibly remembers all three motivation or road-choice branches
+PASS STORY: herbalist day 4 / prove: every title and allowed response resolves to valid readable dialogue
+PASS STORY: herbalist day 4 / prove: every inquiry loop has an exit back to gameplay
+PASS STORY: optional lesson pushing_palm has its own readable response
+PASS STORY: herbalist day 4 / prove: every title and allowed response resolves to valid readable dialogue
+PASS STORY: herbalist day 4 / prove: every inquiry loop has an exit back to gameplay
+PASS STORY: optional lesson yielding_palm has its own readable response
+PASS STORY: herbalist day 4 / prove: every title and allowed response resolves to valid readable dialogue
+PASS STORY: herbalist day 4 / prove: every inquiry loop has an exit back to gameplay
+PASS STORY: optional lesson cloud_step has its own readable response
+PASS STORY: herbalist day 4 / prove: every title and allowed response resolves to valid readable dialogue
+PASS STORY: herbalist day 4 / prove: every inquiry loop has an exit back to gameplay
+PASS STORY: optional lesson hidden_needle has its own readable response
+TESTS COMPLETE: 81 passed, 0 failed
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+WARNING: res://addons/dialogue_manager/test_scene.tscn:3 - ext_resource, invalid UID: uid://c8e16qdgu40wo - using text path instead: res://addons/dialogue_manager/test_scene.gd
+     at: load (scene/resources/resource_format_text.cpp:500)
+PASS CARD UI: fresh title enables a new journey and disables missing Continue
+PASS CARD UI: title controls fit the viewport: []
+PASS CARD UI: first-time help controls fit the viewport: []
+PASS CARD UI: title help explains the scenario creation and card loop
+PASS CARD UI: origin selection controls fit the viewport: []
+PASS CARD UI: herbalist: naming starts the six-question journey
+PASS CARD UI: herbalist: name and background are retained
+PASS CARD UI: herbalist: scenario question 1 is shown in order
+PASS CARD UI: herbalist question 1 controls fit the viewport: []
+PASS CARD UI: herbalist question 1: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: herbalist: answer 1 receives its story response
+PASS CARD UI: herbalist answer response 1 controls fit the viewport: []
+PASS CARD UI: herbalist answer response 1: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: herbalist: scenario question 2 is shown in order
+PASS CARD UI: herbalist question 2 controls fit the viewport: []
+PASS CARD UI: herbalist question 2: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: herbalist: answer 2 receives its story response
+PASS CARD UI: herbalist answer response 2 controls fit the viewport: []
+PASS CARD UI: herbalist answer response 2: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: herbalist: scenario question 3 is shown in order
+PASS CARD UI: herbalist question 3 controls fit the viewport: []
+PASS CARD UI: herbalist question 3: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: herbalist: answer 3 receives its story response
+PASS CARD UI: herbalist answer response 3 controls fit the viewport: []
+PASS CARD UI: herbalist answer response 3: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: mid-question aftermath: save-and-exit returns to title
+PASS CARD UI: mid-question aftermath: Continue recreates the prologue component
+PASS CARD UI: mid-question aftermath: exact page, answers, adjustment and source selection survive restart
+PASS CARD UI: mid-question aftermath restored page controls fit the viewport: []
+PASS CARD UI: herbalist: scenario question 4 is shown in order
+PASS CARD UI: herbalist question 4 controls fit the viewport: []
+PASS CARD UI: herbalist question 4: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: herbalist: answer 4 receives its story response
+PASS CARD UI: herbalist answer response 4 controls fit the viewport: []
+PASS CARD UI: herbalist answer response 4: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: herbalist: scenario question 5 is shown in order
+PASS CARD UI: herbalist question 5 controls fit the viewport: []
+PASS CARD UI: herbalist question 5: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: herbalist: answer 5 receives its story response
+PASS CARD UI: herbalist answer response 5 controls fit the viewport: []
+PASS CARD UI: herbalist answer response 5: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: herbalist: scenario question 6 is shown in order
+PASS CARD UI: herbalist question 6 controls fit the viewport: []
+PASS CARD UI: herbalist question 6: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: herbalist: answer 6 receives its story response
+PASS CARD UI: herbalist answer response 6 controls fit the viewport: []
+PASS CARD UI: herbalist answer response 6: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: herbalist: six answers produce the six-attribute explanation
+PASS CARD UI: herbalist: scenario decisions use no preparation slots
+PASS CARD UI: herbalist attribute summary controls fit the viewport: []
+PASS CARD UI: ability explanations wrap completely within their cards: []
+PASS CARD UI: herbalist: summary offers review of previous answers
+PASS CARD UI: answer review controls fit the viewport: []
+PASS CARD UI: herbalist: revising an answer returns to the updated summary
+PASS CARD UI: herbalist: result offers a legal adjustment source
+PASS CARD UI: herbalist: result offers a legal adjustment destination
+PASS CARD UI: herbalist: point transfer visibly changes only the two chosen abilities
+PASS CARD UI: herbalist: confirming the result enters the authored arrival morning
+PASS CARD UI: herbalist: confirmation retains the chosen background decisions
+PASS CARD UI: arrival morning dialogue controls fit the viewport: []
+PASS CARD UI: herbalist: prologue returns control in Wangxi town
+PASS CARD UI: herbalist: all seven preparation days remain after the prologue
+PASS CARD UI: herbalist: town save enables Continue
+PASS CARD UI: origin selection controls fit the viewport: []
+PASS CARD UI: courier: naming starts the six-question journey
+PASS CARD UI: courier: name and background are retained
+PASS CARD UI: courier: scenario question 1 is shown in order
+PASS CARD UI: courier question 1 controls fit the viewport: []
+PASS CARD UI: courier question 1: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: courier: answer 1 receives its story response
+PASS CARD UI: courier answer response 1 controls fit the viewport: []
+PASS CARD UI: courier answer response 1: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: courier: scenario question 2 is shown in order
+PASS CARD UI: courier question 2 controls fit the viewport: []
+PASS CARD UI: courier question 2: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: courier: answer 2 receives its story response
+PASS CARD UI: courier answer response 2 controls fit the viewport: []
+PASS CARD UI: courier answer response 2: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: courier: scenario question 3 is shown in order
+PASS CARD UI: courier question 3 controls fit the viewport: []
+PASS CARD UI: courier question 3: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: courier: answer 3 receives its story response
+PASS CARD UI: courier answer response 3 controls fit the viewport: []
+PASS CARD UI: courier answer response 3: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: courier: scenario question 4 is shown in order
+PASS CARD UI: courier question 4 controls fit the viewport: []
+PASS CARD UI: courier question 4: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: courier: answer 4 receives its story response
+PASS CARD UI: courier answer response 4 controls fit the viewport: []
+PASS CARD UI: courier answer response 4: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: courier: scenario question 5 is shown in order
+PASS CARD UI: courier question 5 controls fit the viewport: []
+PASS CARD UI: courier question 5: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: courier: answer 5 receives its story response
+PASS CARD UI: courier answer response 5 controls fit the viewport: []
+PASS CARD UI: courier answer response 5: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: courier: scenario question 6 is shown in order
+PASS CARD UI: courier question 6 controls fit the viewport: []
+PASS CARD UI: courier question 6: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: courier: answer 6 receives its story response
+PASS CARD UI: courier answer response 6 controls fit the viewport: []
+PASS CARD UI: courier answer response 6: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: courier: six answers produce the six-attribute explanation
+PASS CARD UI: courier: scenario decisions use no preparation slots
+PASS CARD UI: courier attribute summary controls fit the viewport: []
+PASS CARD UI: ability explanations wrap completely within their cards: []
+PASS CARD UI: courier: summary offers review of previous answers
+PASS CARD UI: answer review controls fit the viewport: []
+PASS CARD UI: courier: revising an answer returns to the updated summary
+PASS CARD UI: courier: result offers a legal adjustment source
+PASS CARD UI: selected adjustment source: save-and-exit returns to title
+PASS CARD UI: selected adjustment source: Continue recreates the prologue component
+PASS CARD UI: selected adjustment source: exact page, answers, adjustment and source selection survive restart
+PASS CARD UI: selected adjustment source restored page controls fit the viewport: []
+PASS CARD UI: courier: result offers a legal adjustment destination
+PASS CARD UI: courier: point transfer visibly changes only the two chosen abilities
+PASS CARD UI: courier: confirming the result enters the authored arrival morning
+PASS CARD UI: courier: confirmation retains the chosen background decisions
+PASS CARD UI: arrival morning dialogue controls fit the viewport: []
+PASS CARD UI: courier: prologue returns control in Wangxi town
+PASS CARD UI: courier: all seven preparation days remain after the prologue
+PASS CARD UI: courier: town save enables Continue
+PASS CARD UI: origin selection controls fit the viewport: []
+PASS CARD UI: performer: naming starts the six-question journey
+PASS CARD UI: performer: name and background are retained
+PASS CARD UI: performer: scenario question 1 is shown in order
+PASS CARD UI: performer question 1 controls fit the viewport: []
+PASS CARD UI: performer question 1: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: performer: answer 1 receives its story response
+PASS CARD UI: performer answer response 1 controls fit the viewport: []
+PASS CARD UI: performer answer response 1: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: performer: scenario question 2 is shown in order
+PASS CARD UI: performer question 2 controls fit the viewport: []
+PASS CARD UI: performer question 2: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: performer: answer 2 receives its story response
+PASS CARD UI: performer answer response 2 controls fit the viewport: []
+PASS CARD UI: performer answer response 2: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: performer: scenario question 3 is shown in order
+PASS CARD UI: performer question 3 controls fit the viewport: []
+PASS CARD UI: performer question 3: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: performer: answer 3 receives its story response
+PASS CARD UI: performer answer response 3 controls fit the viewport: []
+PASS CARD UI: performer answer response 3: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: performer: scenario question 4 is shown in order
+PASS CARD UI: performer question 4 controls fit the viewport: []
+PASS CARD UI: performer question 4: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: performer: answer 4 receives its story response
+PASS CARD UI: performer answer response 4 controls fit the viewport: []
+PASS CARD UI: performer answer response 4: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: performer: scenario question 5 is shown in order
+PASS CARD UI: performer question 5 controls fit the viewport: []
+PASS CARD UI: performer question 5: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: performer: answer 5 receives its story response
+PASS CARD UI: performer answer response 5 controls fit the viewport: []
+PASS CARD UI: performer answer response 5: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: performer: scenario question 6 is shown in order
+PASS CARD UI: performer question 6 controls fit the viewport: []
+PASS CARD UI: performer question 6: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: performer: answer 6 receives its story response
+PASS CARD UI: performer answer response 6 controls fit the viewport: []
+PASS CARD UI: performer answer response 6: authored prose renders readable lines inside its scroll viewport
+PASS CARD UI: performer: six answers produce the six-attribute explanation
+PASS CARD UI: performer: scenario decisions use no preparation slots
+PASS CARD UI: performer attribute summary controls fit the viewport: []
+PASS CARD UI: ability explanations wrap completely within their cards: []
+PASS CARD UI: performer: summary offers review of previous answers
+PASS CARD UI: answer review controls fit the viewport: []
+PASS CARD UI: performer: revising an answer returns to the updated summary
+PASS CARD UI: performer: result offers a legal adjustment source
+PASS CARD UI: performer: result offers a legal adjustment destination
+PASS CARD UI: performer: point transfer visibly changes only the two chosen abilities
+PASS CARD UI: completed result adjustment: save-and-exit returns to title
+PASS CARD UI: completed result adjustment: Continue recreates the prologue component
+PASS CARD UI: completed result adjustment: exact page, answers, adjustment and source selection survive restart
+PASS CARD UI: completed result adjustment restored page controls fit the viewport: []
+PASS CARD UI: performer: confirming the result enters the authored arrival morning
+PASS CARD UI: performer: confirmation retains the chosen background decisions
+PASS CARD UI: arrival morning dialogue controls fit the viewport: []
+PASS CARD UI: performer: prologue returns control in Wangxi town
+PASS CARD UI: performer: all seven preparation days remain after the prologue
+PASS CARD UI: performer: town save enables Continue
+PASS CARD UI: deck editor controls fit the viewport: []
+PASS CARD UI: workshop portrait, name and ability explanations do not overlap: []
+PASS CARD UI: town opens the ten-card editor
+PASS CARD UI: character motivation is readable text rather than a serialized object
+PASS CARD UI: unlearned refinement cannot be purchased
+PASS CARD UI: nine-card draft cannot be applied
+PASS CARD UI: incomplete draft does not change the active deck or schedule
+PASS CARD UI: cancelling leaves the original deck intact
+PASS CARD UI: learned gathering technique completes a valid ten-card draft
+PASS CARD UI: scrolled deck library controls fit the viewport: []
+PASS CARD UI: applying saves the chosen composition and returns to town
+PASS CARD UI: legal deck editing costs no activity slots
+PASS CARD UI: new scene instance restores the saved deck
+PASS CARD UI: sword_lesson activity cost controls fit the viewport: []
+PASS CARD UI: completed lesson consumes two slots and unlocks its card
+PASS CARD UI: practice activity cost controls fit the viewport: []
+PASS CARD UI: practice briefing creates the actual card battlefield
+PASS CARD UI: card battle initial hand controls fit the viewport: []
+PASS CARD UI: opening shows five drawn cards, three energy and one opening adjustment
+PASS CARD UI: encounter uses the deck applied before departure
+PASS CARD UI: active encounter locks deck and upgrades without changing its snapshot
+PASS CARD UI: opening card click selects a replacement without playing it
+PASS CARD UI: card battle pause controls fit the viewport: []
+PASS CARD UI: pause disables every card encounter control
+PASS CARD UI: paused public inputs cannot change hand, choice, turn, energy or enemies
+PASS CARD UI: Continue restores exact hand, piles, RNG, intents and selected mulligan card
+PASS CARD UI: battle save and resume do not charge the activity again
+PASS CARD UI: confirming a legal replacement starts the first player turn
+PASS CARD UI: card rules panel controls fit the viewport: []
+PASS CARD UI: pile viewer shows draw without changing the battle
+PASS CARD UI: card pile draw controls fit the viewport: []
+PASS CARD UI: pile viewer shows discard without changing the battle
+PASS CARD UI: card pile discard controls fit the viewport: []
+PASS CARD UI: pile viewer shows exhaust without changing the battle
+PASS CARD UI: card pile exhaust controls fit the viewport: []
+PASS CARD UI: pile viewer shows hand without changing the battle
+PASS CARD UI: card pile hand controls fit the viewport: []
+PASS CARD UI: ending the turn resolves the advertised attack and deals the next hand
+PASS CARD UI: medicine costs one qi and consumes the once-per-battle allowance
+PASS CARD UI: medicine cannot be used again in this battle
+PASS CARD UI: legal card and end-turn inputs defeat the practice opponent
+PASS CARD UI: card victory and authored debrief settle once and return to town
+PASS CARD UI: practice awards one training and one mastery without recharging time
+PASS CARD UI: restoring a settled win neither repeats rewards nor consumes medicine again
+PASS CARD UI: practice activity cost controls fit the viewport: []
+PASS CARD UI: legal card and end-turn inputs defeat the practice opponent
+PASS CARD UI: card victory and authored debrief settle once and return to town
+PASS CARD UI: earned practice mastery enables a real upgrade
+PASS CARD UI: upgrade consumes its advertised mastery and no schedule slots
+PASS CARD UI: purchased refinement starts on the stable branch
+PASS CARD UI: switching an unlocked refinement is free and persists for the card kind
+PASS CARD UI: ending fixture passes the production save validator: 旅程已儲存。
+PASS CARD UI: exam confirmation controls fit the viewport: []
+PASS CARD UI: exam introduction opens the real card examiner encounter
+PASS CARD UI: concession evaluates both previously earned invitations
+PASS CARD UI: school invitation choices controls fit the viewport: []
+PASS CARD UI: zhaoling ending offers a new journey
+PASS CARD UI: ending controls fit the viewport: []
+PASS CARD UI: ending fixture passes the production save validator: 旅程已儲存。
+PASS CARD UI: exam confirmation controls fit the viewport: []
+PASS CARD UI: exam introduction opens the real card examiner encounter
+PASS CARD UI: concession evaluates both previously earned invitations
+PASS CARD UI: school invitation choices controls fit the viewport: []
+PASS CARD UI: duyun ending offers a new journey
+PASS CARD UI: ending controls fit the viewport: []
+PASS CARD UI: ending fixture passes the production save validator: 旅程已儲存。
+PASS CARD UI: exam confirmation controls fit the viewport: []
+PASS CARD UI: exam introduction opens the real card examiner encounter
+PASS CARD UI: concession evaluates both previously earned invitations
+PASS CARD UI: school invitation choices controls fit the viewport: []
+PASS CARD UI: stay ending offers a new journey
+PASS CARD UI: ending controls fit the viewport: []
+PASS CARD UI: previewing an early exam does not silently discard preparation time
+PASS CARD UI: unprepared concession leaves the town ending available
+PASS CARD UI: an unsuccessful applicant can finish without forced retries
+PASS CARD UI: formal journey exists before independent trial testing
+PASS CARD UI: trial entry offers the complete twelve-card verification pool and all three inners
+PASS CARD UI: trial hub controls fit the viewport: []
+PASS CARD UI: trial presets use equal five-point attributes
+PASS CARD UI: trial presets use equal five-point attributes
+PASS CARD UI: trial presets use equal five-point attributes
+PASS CARD UI: trial presets use equal five-point attributes
+PASS CARD UI: trial presets use equal five-point attributes
+PASS CARD UI: trial presets use equal five-point attributes
+PASS CARD UI: trial loadout workshop controls fit the viewport: []
+PASS CARD UI: workshop portrait, name and ability explanations do not overlap: []
+PASS CARD UI: incompatible weapon disables apply without changing the active loadout
+PASS CARD UI: weapon, inner and ten cards commit as one loadout
+PASS CARD UI: lab can select the costly opening-thrust refinement
+PASS CARD UI: lab can return an unlocked technique to its unrefined baseline
+PASS CARD UI: a sample preset resets branch choices to its documented baseline
+PASS CARD UI: trial preset applies its documented weapon, inner and exact ten cards: shouzhong
+PASS CARD UI: trial starts the requested public-intent opponent without charging time: flurry
+PASS CARD UI: trial flurry opening controls fit the viewport: []
+PASS CARD UI: retention is an explicit marked hand-card selection
+PASS CARD UI: retained card selection: exact model and UI choices survive an app restart
+PASS CARD UI: retained card selection: restore does not charge a slot
+PASS CARD UI: end turn preserves the selected card and fills the hand to five
+PASS CARD UI: lab-shouzhong-flurry: legal visible card actions defeat this test opponent
+PASS CARD UI: lab-shouzhong-flurry result controls fit the viewport: []
+PASS CARD UI: lab-shouzhong-flurry: completed trial returns to its independent hub
+PASS CARD UI: lab-shouzhong-flurry: trials do not create journey time, training or activity rewards
+PASS CARD UI: trial battle and saves leave the formal journey file byte-identical: flurry
+PASS CARD UI: trial preset applies its documented weapon, inner and exact ten cards: xingyun
+PASS CARD UI: trial starts the requested public-intent opponent without charging time: armored
+PASS CARD UI: trial armored opening controls fit the viewport: []
+PASS CARD UI: cycle selection controls fit the viewport: []
+PASS CARD UI: mid-cycle selection: exact model and UI choices survive an app restart
+PASS CARD UI: mid-cycle selection: restore does not charge a slot
+PASS CARD UI: restored cycle resolves its reserved card exactly once
+PASS CARD UI: resolving a saved cycle does not count a second card play
+PASS CARD UI: lab-xingyun-armored: legal visible card actions defeat this test opponent
+PASS CARD UI: lab-xingyun-armored result controls fit the viewport: []
+PASS CARD UI: lab-xingyun-armored: completed trial returns to its independent hub
+PASS CARD UI: lab-xingyun-armored: trials do not create journey time, training or activity rewards
+PASS CARD UI: trial battle and saves leave the formal journey file byte-identical: armored
+PASS CARD UI: trial preset applies its documented weapon, inner and exact ten cards: guiyuan
+PASS CARD UI: trial starts the requested public-intent opponent without charging time: charging
+PASS CARD UI: trial charging opening controls fit the viewport: []
+PASS CARD UI: lab-guiyuan-charging: legal visible card actions defeat this test opponent
+PASS CARD UI: lab-guiyuan-charging result controls fit the viewport: []
+PASS CARD UI: lab-guiyuan-charging: completed trial returns to its independent hub
+PASS CARD UI: lab-guiyuan-charging: trials do not create journey time, training or activity rewards
+PASS CARD UI: trial battle and saves leave the formal journey file byte-identical: charging
+PASS CARD UI: trial preset applies its documented weapon, inner and exact ten cards: xingyun
+PASS CARD UI: trial starts the requested public-intent opponent without charging time: counter
+PASS CARD UI: trial counter opening controls fit the viewport: []
+PASS CARD UI: lab-xingyun-counter: legal visible card actions defeat this test opponent
+PASS CARD UI: lab-xingyun-counter result controls fit the viewport: []
+PASS CARD UI: lab-xingyun-counter: completed trial returns to its independent hub
+PASS CARD UI: lab-xingyun-counter: trials do not create journey time, training or activity rewards
+PASS CARD UI: trial battle and saves leave the formal journey file byte-identical: counter
+PASS CARD UI: actual scene controls exercised: normal
+PASS CARD UI: actual scene controls exercised: boost
+PASS CARD UI: actual scene controls exercised: cycle
+PASS CARD UI: actual scene controls exercised: retain
+PASS CARD UI: actual scene controls exercised: lab_choice_restore
+PASS CARD UI: legal inaction reaches the actual defeat and retry screen
+PASS CARD UI: retry starts a fresh attempt without spending an activity slot
+PASS CARD UI: retry preserves the locked seed, deck and inner
+PASS CARD UI: same-seed retry restores the same real opening hand, piles and intents
+PASS CARD UI: trial withdrawal returns to the lab with no formal reward
+PASS CARD UI: title exposes separate formal and trial Continue actions
+PASS CARD UI: formal Continue selects the original journey rather than the latest trial
+PASS CARD UI: trial Continue independently restores the trial hub
+TESTS COMPLETE: 326 passed, 0 failed
+Godot character creation, card battle, schedule, save recovery, dialogue, world, and card UI validation all passed.

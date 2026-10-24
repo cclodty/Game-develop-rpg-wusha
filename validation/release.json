@@ -1,0 +1,71 @@
+{
+  "release": "Jianghu Weiyuan martial core v3",
+  "release_date": "2026-10-24",
+  "source_branch": "weiyuan-martial-core",
+  "source_commit": "57bffda162cd663e240a26fdee84053548302ca5",
+  "download_branch": "weiyuan-martial-download",
+  "godot": "4.6.3",
+  "dialogue_manager": "3.10.4",
+  "packages": {
+    "source": {
+      "bytes": 75304121,
+      "files": 309,
+      "sha256": "5d224cfb93afb1f544dda9c456528dfc68fdaa92cfb24e63d1c6e3969ae42fc0"
+    },
+    "web": {
+      "bytes": 68614748,
+      "files": 18,
+      "sha256": "0bc0c19c66eb4ee551ed8cf960c791713504af1513cef42806bf3fa729609d06"
+    }
+  },
+  "native": {
+    "passed": 5859,
+    "failed": 0,
+    "log": "native.log",
+    "legal_battles_won": 72
+  },
+  "browser_full": {
+    "flow_groups": 9,
+    "origins": [
+      "herbalist",
+      "courier",
+      "performer"
+    ],
+    "state_injection": false,
+    "report": "web-result.json",
+    "build_sha256": {
+      "index.html": "eb43332b15b82e9f9cc32562d69a88425fb1356e4f6bcbd7ed48fada464f753e",
+      "index.js": "e3f56ee40e6f84371053db06692cfac15e2c8659547b11c6b2dfa1996dabd981",
+      "index.wasm": "26b61ce95247012ab3dca3ff51e96d1cdbff44ee91a8c20a83e150afca83f1b6",
+      "index.pck": "4c2e617dfa750517e54062728feb9e6da16ccce0a82be94bd984028f438d9d61"
+    }
+  },
+  "final_copy_change": {
+    "scope": "Two character-creation tutorial strings now name the v3 card Flying Stone; no battle logic or numbers changed.",
+    "native_creation_passed": 1564,
+    "flow_groups": 2,
+    "report": "web-final-copy-result.json",
+    "build_sha256": {
+      "index.html": "eb43332b15b82e9f9cc32562d69a88425fb1356e4f6bcbd7ed48fada464f753e",
+      "index.js": "e3f56ee40e6f84371053db06692cfac15e2c8659547b11c6b2dfa1996dabd981",
+      "index.wasm": "26b61ce95247012ab3dca3ff51e96d1cdbff44ee91a8c20a83e150afca83f1b6",
+      "index.pck": "53e3c0ab105666b2f49a24ddbd9ef0a5c276282b5d6794342b135627c02beff6"
+    }
+  },
+  "package_checks": {
+    "source_matches_git_commit": true,
+    "web_matches_final_export": true,
+    "no_player_saves": true,
+    "crc_and_sha256": true,
+    "extracted_python_launcher_http": true
+  },
+  "pending_validation": [
+    "Three first-time human players",
+    "2–4 minute battles and 30–60 minute chapter duration",
+    "Windows desktop and Chinese IME",
+    "Safari, mobile and gamepad"
+  ],
+  "public_download_verification": {
+    "status": "pending"
+  }
+}
