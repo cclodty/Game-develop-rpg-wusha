@@ -4,24 +4,30 @@ import hashlib
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-OUTPUT = ROOT / "artifacts" / "cards-release"
+OUTPUT = ROOT / "artifacts" / "martial-release"
 WEB = ROOT / "build" / "web"
 MAX_ARCHIVE_BYTES = 100 * 1024 * 1024
+SAVE_NAMES = {
+    base + suffix
+    for base in ("run-v1.json", "run-cards-v2.json", "run-martial-v3.json", "lab-martial-v3.json")
+    for suffix in ("", ".bak", ".tmp")
+}
 
-PLAY_GUIDE = """江湖未遠 — 入山之前 · 卡牌原型
+PLAY_GUIDE = """江湖未遠 — 入山之前 · 內功與蓄勢
 
 先選擇如何回應路上的人與事，再安排自己的七日江湖。
-這是情境建角與回合制卡牌版本，舊即時劍戰版另行保留。
+這是內功、蓄勢、運勁與武學混搭的驗證版，舊卡牌與即時劍戰版另行保留。
 
 Windows 開始遊玩：
 1. 在下載的 ZIP 上按右鍵，選「全部解壓縮」。
-2. 進入解壓後的 jianghu-weiyuan-cards-web 資料夾，雙擊 Play-Windows.cmd。
+2. 進入解壓後的 jianghu-weiyuan-martial-web 資料夾，雙擊 Play-Windows.cmd。
 3. 遊戲會在預設瀏覽器開啟；遊玩時保留啟動視窗。
-4. 自訂姓名與出身，完成六次情境選擇及能力回顧，開始七日準備。
+4. 想先試新規則，可進入「武學試招」選三套牌組與四類對手。
+   想走故事，可自訂姓名與出身，完成六次情境選擇後開始七日準備。
 5. 結束時關閉遊戲分頁與啟動視窗即可。
 
 不需要安裝 Godot 或 Python。Windows 啟動器使用系統內建 PowerShell。
-固定本機網址：http://127.0.0.1:8071/
+固定本機網址：http://127.0.0.1:8072/
 若瀏覽器未自動開啟，待啟動視窗顯示 ready 後，手動開啟此網址。
 若提示埠已占用，先關閉之前的卡牌遊戲啟動視窗，再重新開啟。
 
@@ -35,10 +41,14 @@ F／Enter：與附近人物或目標互動，也可點擊人物後走近互動�
 暫停、行程、角色與配招、地圖與對話選項使用畫面按鈕。
 
 卡牌戰鬥：
-先查看敵人本回合意圖與牌面預覽，再點牌出招；多名對手時再點目標。
-決定好後按「結束回合」。
-牌組固定十張、每種最多兩張；每回合抽五張、恢復三點真氣。
-回合結束時丟棄手牌；標示「本場除外」的牌在這場戰鬥不再抽到。
+先查看敵方意圖，點選手牌與目標，再明確選「普通施展」或「運勁」。
+普通施展不花勢；運勁花牌面指定的勢，勢不足時仍可使用普通版本。
+牌組固定十張、每種最多兩張，主修一門內功、裝備一種主兵器。
+每回合恢復三點真氣，可留一張牌，下一回合連同留牌補至五張。
+勢上限三點，每輪最多取得兩點，可以跨回合保留，戰鬥結束清空。
+掠影步可挑其他手牌換掉，也可略過；未完成挑牌前不會進入下一招。
+用藥需一點真氣，每場最多一次；本場除外的牌不再洗回。
+決定好出招和留牌後按「結束回合」。
 鎮上沒有進行中活動時，可免費調整牌組；活動開始後暫時鎖定。
 學會新招式不會自動換牌，請在「角色與配招」選擇帶入的十張牌。
 
@@ -47,9 +57,10 @@ F／Enter：與附近人物或目標互動，也可點擊人物後走近互動�
 戰敗可重試，重試不重扣時段，保留該次出發的牌組與抽牌種子。
 正式撤退保留已花費時間，不發未完成獎勵。
 
-卡牌版存檔名稱為 run-cards-v2.json，保存在目前瀏覽器的網站資料。
-請固定使用同一瀏覽器與網址續玩；不會載入或改寫動作版 run-v1.json。
-本版使用 8071，動作版保留 8070，舊《山河行》保留 8060。
+旅程存檔為 run-martial-v3.json，武學試招另存 lab-martial-v3.json。
+兩者獨立保存在目前瀏覽器的網站資料；請固定使用同一瀏覽器與網址續玩。
+不載入或改寫舊 run-cards-v2.json／run-v1.json。
+本版使用 8072，舊卡牌版保留 8071，動作版 8070，舊《山河行》8060。
 
 直接雙擊 build/web/index.html 無法正確載入 WebAssembly，請使用啟動器。
 此版本以桌面橫向畫面為主；手機、手把及 Safari 尚未列為主要支援目標。
@@ -70,25 +81,25 @@ def package() -> None:
     (OUTPUT.parent / ".gdignore").touch(exist_ok=True)
     # A failed/oversized rebuild must not leave an apparently current manifest.
     (OUTPUT / "SHA256SUMS.txt").unlink(missing_ok=True)
-    source_zip = OUTPUT / "jianghu-weiyuan-cards-source.zip"
+    source_zip = OUTPUT / "jianghu-weiyuan-martial-source.zip"
     excluded = {".git", ".godot", "artifacts", "build", "__pycache__", ".pytest_cache"}
     with zipfile.ZipFile(source_zip, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
         for path in sorted(ROOT.rglob("*")):
             relative = path.relative_to(ROOT)
             if any(part in excluded for part in relative.parts) or not path.is_file():
                 continue
-            if path.suffix in {".tmp", ".pyc"} or path.name in {"run-v1.json", "run-v1.json.bak", "run-cards-v2.json", "run-cards-v2.json.bak", ".DS_Store"}:
+            if path.suffix in {".tmp", ".pyc"} or path.name in SAVE_NAMES | {".DS_Store"}:
                 continue
-            archive.write(path, Path("jianghu-weiyuan-cards-source") / relative)
+            archive.write(path, Path("jianghu-weiyuan-martial-source") / relative)
 
-    web_zip = OUTPUT / "jianghu-weiyuan-cards-web.zip"
+    web_zip = OUTPUT / "jianghu-weiyuan-martial-web.zip"
     with zipfile.ZipFile(web_zip, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
         for path in sorted(WEB.rglob("*")):
-            if path.is_file() and path.suffix != ".import" and path.name != ".gdignore":
-                archive.write(path, Path("jianghu-weiyuan-cards-web/build/web") / path.relative_to(WEB))
+            if path.is_file() and path.suffix not in {".import", ".tmp"} and path.name not in SAVE_NAMES | {".gdignore", ".DS_Store"}:
+                archive.write(path, Path("jianghu-weiyuan-martial-web/build/web") / path.relative_to(WEB))
         for name in ("tools/serve_web.py", "tools/serve_web_windows.ps1", "Play-Windows.cmd", "THIRD_PARTY_NOTICES.md"):
-            archive.write(ROOT / name, Path("jianghu-weiyuan-cards-web") / name)
-        archive.writestr("jianghu-weiyuan-cards-web/開始遊玩.txt", PLAY_GUIDE)
+            archive.write(ROOT / name, Path("jianghu-weiyuan-martial-web") / name)
+        archive.writestr("jianghu-weiyuan-martial-web/開始遊玩.txt", PLAY_GUIDE)
 
     for path in (source_zip, web_zip):
         if path.stat().st_size >= MAX_ARCHIVE_BYTES:

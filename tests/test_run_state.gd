@@ -4,7 +4,7 @@ extends SceneTree
 const Run = preload("res://scripts/run_state.gd")
 const Data = preload("res://scripts/game_data.gd")
 const Battle = preload("res://scripts/card_battle.gd")
-const SAVE = "user://test-rules-v2.json"
+const SAVE = "user://test-rules-v3.json"
 var passed: int = 0
 var failed: int = 0
 
@@ -220,12 +220,13 @@ func _test_pending_and_retry() -> void:
 	_check(not state.complete_activity("success", {"medicine_used": 1, "pending_token": token}).ok and state.data.medicine == 7, "duplicate settlement consumes neither medicine nor rewards")
 	_check(state.begin_activity("practice").ok, "start next transaction")
 	_check(not state.complete_activity("success", {"pending_token": token}).ok and state.data.training == 0, "stale callback cannot complete a different activity")
-	_check(state.retreat_activity({"medicine_used": 2}).ok and state.data.medicine == 5, "retreat commits used medicine but no completion rewards")
+	_check(not state.retreat_activity({"medicine_used": 2}).ok, "one battle cannot consume a second dose")
+	_check(state.retreat_activity({"medicine_used": 1}).ok and state.data.medicine == 6, "retreat commits used medicine but no completion rewards")
 	_check(state.data.spent == 3 and state.data.training == 0 and "practice" not in state.data.completed, "abandoned fight retains only committed time")
 	_check(state.prepare_exam_now().ok and state.begin_exam().ok, "begin exam for resource retry")
 	_check(state.retry_activity().ok and state.data.spent == 21, "exam retry costs no further time")
-	_check(state.complete_exam(false, {"medicine_used": 1}).ok and state.data.medicine == 4, "exam surrender settles medicine once")
-	_check(not state.complete_exam(false, {"medicine_used": 1}).ok and state.data.medicine == 4, "exam cannot consume a second dose")
+	_check(state.complete_exam(false, {"medicine_used": 1}).ok and state.data.medicine == 5, "exam surrender settles medicine once")
+	_check(not state.complete_exam(false, {"medicine_used": 1}).ok and state.data.medicine == 5, "exam cannot consume a second dose")
 
 func _test_persistence() -> void:
 	_clean_save()
@@ -247,7 +248,11 @@ func _test_persistence() -> void:
 		return
 	_check(FileAccess.file_exists(SAVE) and not FileAccess.file_exists(SAVE + ".tmp"), "completed atomic save has no temporary file")
 	var restored: RefCounted = Run.new()
-	_check(restored.load_game(SAVE).ok, "pending save loads")
+	var loaded: Dictionary = restored.load_game(SAVE)
+	_check(loaded.ok, "pending save loads: " + str(loaded.message))
+	if not loaded.ok:
+		_clean_save()
+		return
 	_check(restored.data.origin == "courier" and restored.data.spent == 6 and restored.data.money == 54, "identity, original costs, fee and income survive")
 	_check(restored.data.favor.zhou == 1 and restored.has_skill("sword_qi") and restored.data.completed.has("courier_work"), "relationships, skills, reward ledger survive")
 	_check(restored.data.world_position == state.data.world_position and restored.data.dialogue == state.data.dialogue, "walking and dialogue cursor survive")

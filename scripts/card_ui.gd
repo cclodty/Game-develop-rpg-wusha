@@ -76,41 +76,48 @@ static func button(parent: Node, text: String, position: Vector2, size: Vector2,
 static func card_button(parent: Node, card: Dictionary, position: Vector2, size: Vector2, callback: Callable, selected: bool = false) -> Button:
 	var value = button(parent, "", position, size, callback, false, true)
 	value.clip_contents = true
-	value.tooltip_text = str(card.get("name", "")) + "\n" + str(card.get("description", "")) + str(card.get("preview_tooltip", ""))
-	var accent = Color("a55f4c") if card.get("type", "skill") == "attack" else JADE
+	var details = str(card.get("name", "")) + "\n普通：" + str(card.get("normal_description", card.get("description", "")))
+	if int(card.get("boost_cost", 0)) > 0:
+		details += "\n運勁 %d 勢：%s" % [int(card.boost_cost), str(card.get("boost_description", ""))]
+	value.tooltip_text = details + str(card.get("preview_tooltip", ""))
+	var accents = {"attack": Color("a55f4c"), "guard": JADE, "change": Color("57788a")}
+	var accent: Color = accents.get(str(card.get("type", "change")), JADE)
 	value.add_theme_stylebox_override("normal", style(Color("fcf7e9"), GOLD if selected else accent, 3 if selected else 1))
-	var category = "攻擊" if card.get("type", "skill") == "attack" else "技法"
-	label(value, category, Vector2(14, 10), Vector2(size.x - 65, 22), 14, accent)
-	var cost = label(value, str(card.get("cost", 0)), Vector2(size.x - 43, 7), Vector2(32, 32), 23, JADE, true)
+	var category = {"attack": "攻", "guard": "守", "change": "變"}.get(str(card.get("type", "change")), "變")
+	var discipline = {"basic": "通用", "sword": "劍術", "palm": "拳掌", "dart": "暗器", "footwork": "身法"}.get(str(card.get("discipline", "basic")), "通用")
+	label(value, "%s · %s" % [category, discipline], Vector2(12, 8), Vector2(size.x - 57, 23), 13, accent)
+	var cost = label(value, str(card.get("cost", 0)), Vector2(size.x - 39, 6), Vector2(29, 32), 23, JADE, true)
 	cost.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	var portrait = TextureRect.new()
 	portrait.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	portrait.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	portrait.texture = Art.portrait(str(card.get("art_id", "courier")))
-	portrait.position = Vector2(12, 32)
-	portrait.size = Vector2(35, 46)
+	portrait.position = Vector2(10, 32)
+	portrait.size = Vector2(34, 40)
 	portrait.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	value.add_child(portrait)
-	label(value, str(card.get("name", "招式")), Vector2(54, 34), Vector2(size.x - 67, 44), 18, INK, true)
-	var description = label(value, str(card.get("face_description", compact_description(card))), Vector2(14, 82), Vector2(size.x - 28, size.y - 112), 15, INK)
+	var card_name = str(card.get("name", "招式")).replace("（穩定）", "·穩").replace("（專精）", "·專")
+	label(value, card_name, Vector2(49, 32), Vector2(size.x - 60, 43), 17, INK, true)
+	var description = label(value, str(card.get("face_description", compact_description(card))), Vector2(12, 78), Vector2(size.x - 24, size.y - 107), 14, INK)
 	description.name = "Effect"
-	var group = {"basic": "基本功", "zhaoling": "照嶺劍路", "duyun": "渡雲身法", "origin": "出身所長", "event": "江湖際遇"}
-	label(value, "已選取" if selected else str(group.get(str(card.get("group", "basic")), "招式")), Vector2(14, size.y - 26), Vector2(size.x - 28, 20), 13, GOLD if selected else MUTED)
+	var caption = str(card.get("selection_label", ""))
+	if caption.is_empty(): caption = "留至下回合" if card.get("retained", false) else ("已選取" if selected else "需劍" if card.get("weapon", "any") == "sword" else "通用武學")
+	label(value, caption, Vector2(12, size.y - 24), Vector2(size.x - 24, 22), 12, GOLD if selected else JADE if card.get("retained", false) else MUTED)
 	return value
 
 static func compact_description(card: Dictionary) -> String:
 	var lines: Array[String] = []
-	if card.has("damage"):
-		lines.append("%s %d%s 傷害" % ["全體" if card.get("all", false) else "造成", int(card.damage), " × %d" % int(card.hits) if int(card.get("hits", 1)) > 1 else ""])
-	if card.has("block"): lines.append("獲得 %d 防護" % int(card.block))
-	if card.has("draw"): lines.append("抽 %d 張牌" % int(card.draw))
-	if card.has("energy"): lines.append("回復 %d 真氣" % int(card.energy))
-	if card.has("heal"): lines.append("回復 %d 氣血" % int(card.heal))
-	if card.has("weak"): lines.append("虛弱 %d 回合" % int(card.weak))
-	if card.has("vulnerable"): lines.append("破綻 %d 回合" % int(card.vulnerable))
-	if card.has("next_attack"): lines.append("下一張攻擊 +%d" % int(card.next_attack))
-	if card.has("guard_bonus"): lines.append("有防護時傷害 +%d" % int(card.guard_bonus))
-	if card.has("skill_refund"): lines.append("技法後施展：回氣 %d" % int(card.skill_refund))
-	if card.get("block_damage", false): lines.append("全部防護轉為傷害")
+	if int(card.get("strip_block", 0)) > 0: lines.append("先移除 %d 防護" % int(card.strip_block))
+	if int(card.get("damage", 0)) > 0: lines.append("造成 %d 傷害" % int(card.damage))
+	if int(card.get("guard_bonus", 0)) > 0: lines.append("有防護再 +%d 傷害" % int(card.guard_bonus))
+	if int(card.get("block", 0)) > 0: lines.append("獲得 %d 防護" % int(card.block))
+	if int(card.get("draw", 0)) > 0: lines.append("抽 %d 張牌" % int(card.draw))
+	if int(card.get("energy", 0)) > 0: lines.append("回復 %d 真氣" % int(card.energy))
+	if int(card.get("cycle_limit", 0)) > 0: lines.append("可棄 %d 張，抽等量" % int(card.cycle_limit))
+	if int(card.get("delayed_damage", 0)) > 0: lines.append("下回合造成 %d 傷害" % int(card.delayed_damage))
+	if int(card.get("momentum_gain", 0)) > 0: lines.append("獲得 %d 勢" % int(card.momentum_gain))
+	if int(card.get("retaliation", 0)) > 0: lines.append("準備反擊 %d 傷害" % int(card.retaliation))
 	if card.get("exhaust", false): lines.append("本場除外")
+	if int(card.get("boost_cost", 0)) > 0 and not card.get("empowered", false):
+		lines.append("可運勁 · %d 勢" % int(card.boost_cost))
 	return "\n".join(lines)

@@ -1,7 +1,7 @@
 extends SceneTree
-## Native scene integration. Creation, deck editing and the principal practice
-## battle use live buttons and legal player actions. Ending eligibility uses
-## explicitly identified presentation fixtures; this is not a human playtest.
+## Real native scene integration for martial v3. Uses live controls and legal
+## card actions; ending eligibility alone uses labeled presentation fixtures.
+## Player save directories must be isolated. This is not a human playtest.
 
 const MainScene = preload("res://scenes/main.tscn")
 const Run = preload("res://scripts/run_state.gd")
@@ -10,6 +10,8 @@ const Creation = preload("res://scripts/character_creation.gd")
 var passed: int = 0
 var failed: int = 0
 var app: Control
+var battle_coverage: Dictionary = {"normal": false, "boost": false, "cycle": false, "retain": false, "lab_choice_restore": false}
+var _checkpoint_cycle = false
 
 
 func _initialize() -> void:
@@ -308,7 +310,8 @@ func test_deck_editor() -> void:
 	await capture("workshop-initial")
 	expect(app._overlay_kind == "deck" and before.size() == 10, "town opens the ten-card editor")
 	expect(not text_under(app._overlay).contains("\"id\":"), "character motivation is readable text rather than a serialized object")
-	expect(button_for("upgrade_strike").disabled, "zero mastery cannot purchase an upgrade")
+	var upgrade: Button = button_for("upgrade_opening_thrust")
+	expect(upgrade == null or upgrade.disabled, "unlearned refinement cannot be purchased")
 	await press("deck_remove_guard")
 	expect(app._deck_draft.size() == 9 and button_for("deck_save").disabled, "nine-card draft cannot be applied")
 	expect(app.run.data.deck == before and app.run.data.spent == spent, "incomplete draft does not change the active deck or schedule")
@@ -316,9 +319,9 @@ func test_deck_editor() -> void:
 	expect(app.run.data.deck == before, "cancelling leaves the original deck intact")
 	await press("deck")
 	await press("deck_remove_guard")
-	var origin_card: String = str(Cards.ORIGIN_CARDS[app.run.data.origin])
+	var origin_card: String = "gather_momentum"
 	await press("deck_add_" + origin_card)
-	expect(app._deck_draft.size() == 10 and not button_for("deck_save").disabled, "learned origin card completes a valid ten-card draft")
+	expect(app._deck_draft.size() == 10 and not button_for("deck_save").disabled, "learned gathering technique completes a valid ten-card draft")
 	fit("scrolled deck library")
 	await capture("workshop-scrolled")
 	await press("deck_save")
@@ -331,13 +334,55 @@ func test_deck_editor() -> void:
 	expect(origin_card in app.run.data.deck and app.run.data.deck.size() == 10, "new scene instance restores the saved deck")
 
 
+func select_hand(index: int) -> bool:
+	var desired_page: int = index / 5
+	while int(app.arena.view_state().page) != desired_page:
+		if not await press("hand_next" if int(app.arena.view_state().page) < desired_page else "hand_previous"):
+			return false
+	return await press("card_" + str(index))
+
+
+func restore_battle_checkpoint(lab: bool, description: String) -> bool:
+	await press("pause")
+	var frozen: Dictionary = app.arena.snapshot().duplicate(true)
+	var spent: int = app.run.data.spent
+	await press("save_exit")
+	await restart_app()
+	await press("lab_continue" if lab else "continue")
+	expect(is_instance_valid(app.arena) and same_saved_value(app.arena.snapshot(), frozen), description + ": exact model and UI choices survive an app restart")
+	if app.run.data.is_empty():
+		var diagnosis: Dictionary = Run.new().load_game(Run.LAB_SAVE_PATH if lab else Run.SAVE_PATH)
+		expect(false, description + ": load rejected: " + str(diagnosis))
+		return false
+	expect(app.run.data.spent == spent, description + ": restore does not charge a slot")
+	return is_instance_valid(app.arena)
+
+
 func battle_step() -> bool:
 	var state: Dictionary = app.arena.battle.status()
 	if state.phase == "mulligan":
 		return await press("mulligan_skip")
 	if state.resolved:
 		return false
-	if state.can_use_medicine and state.hp <= state.max_hp - 20:
+	if state.phase == "choice":
+		battle_coverage.cycle = true
+		if state.hand.size() > 0:
+			await select_hand(0)
+		if _checkpoint_cycle and not battle_coverage.lab_choice_restore:
+			fit("cycle selection")
+			await capture("lab-cycle-selected")
+			var before_count: int = int(state.cards_played)
+			if not await restore_battle_checkpoint(true, "mid-cycle selection"):
+				return false
+			battle_coverage.lab_choice_restore = true
+			await capture("lab-cycle-resumed")
+			await press("cycle_confirm")
+			var after: Dictionary = app.arena.battle.status()
+			expect(after.phase == "player" and after.get("in_play", []).is_empty() and after.get("pending_choice", {}).is_empty(), "restored cycle resolves its reserved card exactly once")
+			expect(int(after.cards_played) == before_count, "resolving a saved cycle does not count a second card play")
+			return true
+		return await press("cycle_confirm" if state.hand.size() > 0 else "cycle_skip")
+	if state.get("can_use_medicine", false) and state.hp <= state.max_hp - 20:
 		return await press("medicine")
 	var target: int = -1
 	var incoming: int = 0
@@ -347,43 +392,73 @@ func battle_step() -> bool:
 			continue
 		if target < 0 or enemy.hp < state.enemies[target].hp:
 			target = index
-		incoming += int(enemy.intent.get("display_damage", enemy.intent.damage)) * int(enemy.intent.hits)
+		incoming += int(enemy.intent.get("display_damage", enemy.intent.get("damage", 0))) * int(enemy.intent.get("hits", 1))
 	var choice: int = -1
-	var best: int = -1000
+	var boosted: bool = false
+	var best: float = 0.05
 	for index in range(state.hand.size()):
 		var id: String = str(state.hand[index])
-		var card: Dictionary = Cards.card(id, id in state.upgraded_cards)
-		if int(card.cost) > int(state.qi):
-			continue
-		var score: int = 0
-		if card.has("damage"):
-			score = 40 + int(card.damage) * int(card.get("hits", 1))
-		if card.has("weak") and state.enemies[target].weak == 0 and incoming > state.block:
-			score += 20
-		if card.has("block") and incoming > state.block:
-			score += 60
-		if card.has("draw") and state.qi > card.cost:
-			score += 15
-		if card.has("energy"):
-			score += 100
-		var has_attack: bool = state.hand.any(func(card_id): return Cards.card(str(card_id)).type == "attack")
-		if card.has("next_attack") and has_attack:
-			score += 90
-		if card.has("vulnerable") and has_attack:
-			score += 85
-		if score > best:
-			best = score
-			choice = index
+		for empowered: bool in [false, true]:
+			var card: Dictionary = Cards.card(id, state.stats.get("refinements", {}).get(id, ""), empowered)
+			if empowered and int(card.get("boost_cost", 0)) == 0:
+				continue
+			var preview: Dictionary = app.arena.battle.preview_card(index, target, empowered)
+			if not bool(preview.get("can_play", false)):
+				continue
+			var damage: float = 0.0
+			for hit in preview.get("damage", []):
+				damage += float(hit.get("hp_loss", hit.get("amount", 0)))
+			var score: float = damage * 3.0
+			var missing_block: int = maxi(0, incoming - int(state.block))
+			score += mini(int(preview.get("block", card.get("block", 0))), missing_block) * 4.0
+			if card.has("delayed_damage"):
+				score += int(card.delayed_damage) * 2.5
+			if int(card.get("retaliation", 0)) > 0 and incoming > 0 and int(state.get("retaliation", 0)) == 0:
+				score += int(card.retaliation) * 3.5
+			if card.has("energy"):
+				score += 45.0 if state.hand.size() > 1 else 1.0
+			if card.has("draw") and int(state.qi) > int(card.cost):
+				score += int(card.draw) * 7.0
+			if card.has("cycle_limit") and state.hand.size() > 1:
+				score += 6.0
+			if card.has("momentum_gain") and int(state.get("momentum", 0)) < 3 and int(state.get("momentum_gained", 0)) < 2:
+				score += 12.0
+			if card.has("strip_block") and target >= 0:
+				score += mini(int(card.strip_block), int(state.enemies[target].block)) * 2.0
+			if empowered:
+				score -= int(card.get("momentum_cost", 0)) * 2.0
+			# Saved qi is a deliberate resource choice for Guiyuan, not a forced
+			# attempt to spend every last point on an ineffective card.
+			if state.stats.get("inner", "") == "guiyuan" and int(state.qi) == int(card.cost) and int(state.get("momentum", 0)) < 3 and score < 15.0:
+				score -= 12.0
+			if score > best:
+				best = score
+				choice = index
+				boosted = empowered
 	if choice < 0:
+		if state.hand.size() > 0:
+			var retain: int = 0
+			for index in range(state.hand.size()):
+				if state.hand[index] == "sword_qi" or (not battle_coverage.cycle and state.hand[index] == "cloud_step"):
+					retain = index
+					break
+			await select_hand(retain)
+			if int(app.arena.view_state().get("retained_index", -1)) != retain:
+				await press("retain_selected")
+			battle_coverage.retain = int(app.arena.view_state().get("retained_index", -1)) == retain
 		return await press("end_turn")
-	var desired_page: int = choice / 5
-	while int(app.arena.view_state().page) != desired_page:
-		if not await press("hand_next" if int(app.arena.view_state().page) < desired_page else "hand_previous"):
-			return false
-	if not await press("card_" + str(choice)):
+	if not await select_hand(choice):
 		return false
-	if is_instance_valid(app.arena) and app.arena.selected_card >= 0:
-		return await press("target_" + str(target))
+	var card: Dictionary = Cards.card(str(state.hand[choice]), state.stats.get("refinements", {}).get(str(state.hand[choice]), ""), boosted)
+	if card.target == "enemy":
+		await press("target_" + str(target))
+	var before_cards: int = int(state.cards_played)
+	if not battle_coverage["boost" if boosted else "normal"]:
+		await capture("lab-boost-selected" if boosted else "lab-normal-selected")
+	if not await press("play_boost" if boosted else "play_normal"):
+		return false
+	if is_instance_valid(app.arena) and int(app.arena.battle.status().cards_played) > before_cards:
+		battle_coverage["boost" if boosted else "normal"] = true
 	return true
 
 
@@ -424,7 +499,7 @@ func test_card_battle_flow() -> void:
 	expect(initial.hand.size() == 5 and int(initial.qi) == 3 and initial.phase == "mulligan", "opening shows five drawn cards, three energy and one opening adjustment")
 	expect(app.run.data.pending.deck == deck and initial.stats.deck == deck, "encounter uses the deck applied before departure")
 	var locked: Dictionary = app.run.data.pending.duplicate(true)
-	expect(not app.run.set_deck(Cards.starting_deck()).ok and not app.run.upgrade_card("strike").ok and app.run.data.pending == locked, "active encounter locks deck and upgrades without changing its snapshot")
+	expect(not app.run.set_deck(Cards.starting_deck()).ok and not app.run.upgrade_card("opening_thrust").ok and app.run.data.pending == locked, "active encounter locks deck and upgrades without changing its snapshot")
 	await press("card_0")
 	expect(app.arena.mulligan_selection == [0], "opening card click selects a replacement without playing it")
 	await press("pause")
@@ -442,6 +517,10 @@ func test_card_battle_flow() -> void:
 	await restart_app()
 	await press("continue")
 	expect(is_instance_valid(app.arena) and same_saved_value(app.arena.snapshot(), frozen), "Continue restores exact hand, piles, RNG, intents and selected mulligan card")
+	if app.run.data.is_empty() or not is_instance_valid(app.arena):
+		var diagnosis: Dictionary = Run.new().load_game()
+		expect(false, "battle Continue failed: " + str(diagnosis))
+		return
 	expect(app.run.data.spent == before + 3, "battle save and resume do not charge the activity again")
 	await press("mulligan_confirm")
 	expect(app.arena.battle.status().phase == "player" and app.arena.battle.status().hand.size() == 5, "confirming a legal replacement starts the first player turn")
@@ -458,7 +537,8 @@ func test_card_battle_flow() -> void:
 	await press("end_turn")
 	expect(app.arena.battle.status().turn == 2 and app.arena.battle.status().hp < initial.hp, "ending the turn resolves the advertised attack and deals the next hand")
 	await press("medicine")
-	expect(app.arena.battle.status().medicine_used == 1, "medicine is a legal once-per-turn UI action")
+	expect(app.arena.battle.status().medicine_used == 1 and app.arena.battle.status().qi == 2, "medicine costs one qi and consumes the once-per-battle allowance")
+	expect(button_for("medicine").disabled, "medicine cannot be used again in this battle")
 	if not await win_visible_battle():
 		return
 	expect(app.run.data.spent == before + 3 and app.run.data.training == 3 and app.run.data.mastery == 1, "practice awards one training and one mastery without recharging time")
@@ -473,13 +553,16 @@ func test_card_battle_flow() -> void:
 	if not await win_visible_battle():
 		return
 	var mastery: int = app.run.data.mastery
-	var cost: int = app.run.upgrade_status("strike").cost
+	var cost: int = app.run.upgrade_status("opening_thrust").cost
 	var slots: int = app.run.data.spent
 	await press("deck")
-	expect(not button_for("upgrade_strike").disabled, "earned practice mastery enables a real upgrade")
-	await press("upgrade_strike")
-	expect("strike" in app.run.data.upgraded_cards and app.run.data.mastery == mastery - cost and app.run.data.spent == slots, "upgrade consumes its advertised mastery and no schedule slots")
-	expect(button_for("upgrade_strike").disabled and app.run.data.deck.count("strike") == 2, "upgraded card identity covers both copies and cannot be purchased twice")
+	expect(not button_for("upgrade_opening_thrust").disabled, "earned practice mastery enables a real upgrade")
+	await press("upgrade_opening_thrust")
+	expect("opening_thrust" in app.run.data.upgraded_cards and app.run.data.mastery == mastery - cost and app.run.data.spent == slots, "upgrade consumes its advertised mastery and no schedule slots")
+	expect(app.run.data.refinements.get("opening_thrust") == "stable", "purchased refinement starts on the stable branch")
+	var paid_mastery: int = app.run.data.mastery
+	await press("refine_opening_thrust_specialist")
+	expect(app.run.data.refinements.get("opening_thrust") == "specialist" and app.run.data.mastery == paid_mastery and app.run.data.spent == slots, "switching an unlocked refinement is free and persists for the card kind")
 	await press("deck_cancel")
 
 
@@ -499,6 +582,9 @@ func test_exam_presentations() -> void:
 			for card_id: String in Cards.cards_for_activity(activity):
 				if card_id not in app.run.data.learned_cards:
 					app.run.data.learned_cards.append(card_id)
+			for inner_id: String in Cards.inners_for_activity(activity):
+				if inner_id not in app.run.data.learned_inners:
+					app.run.data.learned_inners.append(inner_id)
 		var saved: Dictionary = app.run.save_game()
 		expect(saved.ok, "ending fixture passes the production save validator: " + str(saved.message))
 		if not saved.ok:
@@ -537,8 +623,133 @@ func test_exam_presentations() -> void:
 	expect(app.run.data.school == "stay", "an unsuccessful applicant can finish without forced retries")
 
 
+func test_lab_workshop() -> void:
+	await press("deck")
+	fit("trial loadout workshop")
+	workshop_portrait_fits()
+	await capture("lab-workshop")
+	var original: Dictionary = app.run.data.duplicate(true)
+	await press("weapon_unarmed")
+	expect(button_for("deck_save").disabled and app.run.data.weapon == "sword", "incompatible weapon disables apply without changing the active loadout")
+	await press("weapon_sword")
+	for inner_id: String in ["shouzhong", "xingyun", "guiyuan"]:
+		await press("inner_" + inner_id)
+		await capture("lab-workshop-" + inner_id)
+	await press("inner_guiyuan")
+	await press("deck_save")
+	expect(app.run.data.inner == "guiyuan" and app.run.data.weapon == "sword" and app.run.data.deck == original.deck, "weapon, inner and ten cards commit as one loadout")
+	await press("deck")
+	await press("refine_opening_thrust_specialist")
+	expect(app.run.data.refinements.get("opening_thrust", "") == "specialist", "lab can select the costly opening-thrust refinement")
+	await press("refine_opening_thrust_none")
+	expect(not app.run.data.refinements.has("opening_thrust"), "lab can return an unlocked technique to its unrefined baseline")
+	await press("deck_cancel")
+	await press("preset_shouzhong")
+	expect(app.run.data.inner == "shouzhong" and app.run.data.refinements.is_empty(), "a sample preset resets branch choices to its documented baseline")
+
+
+func win_lab_battle(label: String) -> bool:
+	var observed_win: bool = false
+	for _action in range(220):
+		if not is_instance_valid(app.arena):
+			break
+		var state: Dictionary = app.arena.battle.status()
+		if state.resolved:
+			observed_win = state.won
+			expect(state.won and int(state.cards_played) > 0, label + ": legal visible card actions defeat this test opponent")
+			await create_timer(0.4).timeout
+			await frames(3)
+			break
+		if not await battle_step():
+			return false
+	if app._overlay_kind == "trial_result":
+		fit(label + " result")
+		await capture(label + "-result")
+		await press("trial_again")
+	expect(app.run.data.mode == "lab" and app.run.data.pending.is_empty() and app.run.data.phase == "town", label + ": completed trial returns to its independent hub")
+	expect(app.run.data.spent == 0 and app.run.data.training == 0 and app.run.data.completed.is_empty(), label + ": trials do not create journey time, training or activity rewards")
+	return observed_win and app.run.data.pending.is_empty()
+
+
+func test_lab_flow() -> void:
+	app._show_title()
+	await frames()
+	var journey_file: String = FileAccess.get_file_as_string(Run.SAVE_PATH)
+	expect(not journey_file.is_empty(), "formal journey exists before independent trial testing")
+	await press("lab_new")
+	expect(app.run.data.mode == "lab" and app.run.data.phase == "town" and app.run.data.learned_cards.size() == 12 and app.run.data.learned_inners.size() == 3, "trial entry offers the complete twelve-card verification pool and all three inners")
+	fit("trial hub")
+	await capture("lab-hub")
+	for value in app.run.data.attributes.values():
+		expect(int(value) == 5, "trial presets use equal five-point attributes")
+	await test_lab_workshop()
+	var cases: Array = [["shouzhong", "flurry"], ["xingyun", "armored"], ["guiyuan", "charging"], ["xingyun", "counter"]]
+	for pair in cases:
+		var preset: String = pair[0]
+		var foe: String = pair[1]
+		await press("preset_" + preset)
+		expect(app.run.data.deck == Cards.PRESETS[preset].deck and app.run.data.inner == preset and app.run.data.weapon == Cards.PRESETS[preset].weapon, "trial preset applies its documented weapon, inner and exact ten cards: " + preset)
+		await press("enemy_" + foe)
+		await press("trial_start")
+		expect(is_instance_valid(app.arena) and app.run.data.pending.id == "trial" and app.arena.mode == foe and app.run.data.pending.cost == 0, "trial starts the requested public-intent opponent without charging time: " + foe)
+		if not is_instance_valid(app.arena):
+			return
+		fit("trial " + foe + " opening")
+		await capture("lab-" + foe + "-mulligan")
+		await press("mulligan_skip")
+		if foe == "flurry":
+			var first_hand: Array = app.arena.battle.status().hand.duplicate()
+			await select_hand(0)
+			await press("retain_selected")
+			expect(app.arena.view_state().retained_index == 0, "retention is an explicit marked hand-card selection")
+			await capture("lab-retain-selected")
+			if not await restore_battle_checkpoint(true, "retained card selection"):
+				return
+			await press("end_turn")
+			var next_hand: Array = app.arena.battle.status().hand
+			expect(next_hand.size() == 5 and next_hand[0] == first_hand[0], "end turn preserves the selected card and fills the hand to five")
+			battle_coverage.retain = true
+		_checkpoint_cycle = preset == "xingyun"
+		if not await win_lab_battle("lab-" + preset + "-" + foe):
+			return
+		_checkpoint_cycle = false
+		expect(FileAccess.get_file_as_string(Run.SAVE_PATH) == journey_file, "trial battle and saves leave the formal journey file byte-identical: " + foe)
+	for key in battle_coverage:
+		expect(bool(battle_coverage[key]), "actual scene controls exercised: " + key)
+	# A clean retry/retreat checkpoint exercises the same locked loadout and seed
+	# without fabricating a battle outcome or changing a model field.
+	await press("preset_guiyuan")
+	await press("enemy_charging")
+	await press("trial_start")
+	var locked: Dictionary = app.run.data.pending.duplicate(true)
+	var original_opening: Dictionary = app.arena.snapshot().duplicate(true)
+	await press("mulligan_skip")
+	# Deliberately pass legal turns until defeated; never assign combat health.
+	for _turn in range(20):
+		if app.arena.battle.status().resolved:
+			break
+		await press("end_turn")
+	await create_timer(0.5).timeout
+	expect(app._overlay_kind == "defeat" and app.run.data.pending.stage == "defeat", "legal inaction reaches the actual defeat and retry screen")
+	await press("retry")
+	expect(app.arena.battle.status().phase == "mulligan" and app.run.data.spent == 0 and app.run.data.pending.attempt == 1, "retry starts a fresh attempt without spending an activity slot")
+	expect(app.run.data.pending.seed == locked.seed and app.run.data.pending.deck == locked.deck and app.run.data.pending.inner == locked.inner, "retry preserves the locked seed, deck and inner")
+	expect(same_saved_value(app.arena.snapshot(), original_opening), "same-seed retry restores the same real opening hand, piles and intents")
+	await press("retreat")
+	await press("retreat")
+	expect(app.run.data.pending.is_empty() and app.run.data.spent == 0 and app.run.data.mode == "lab", "trial withdrawal returns to the lab with no formal reward")
+	await press("lab_exit")
+	await restart_app()
+	expect(not button_for("continue").disabled and not button_for("lab_continue").disabled, "title exposes separate formal and trial Continue actions")
+	await press("continue")
+	expect(app.run.data.mode == "journey" and FileAccess.get_file_as_string(Run.SAVE_PATH) == journey_file, "formal Continue selects the original journey rather than the latest trial")
+	app._show_title()
+	await press("lab_continue")
+	expect(app.run.data.mode == "lab" and app.run.data.pending.is_empty(), "trial Continue independently restores the trial hub")
+
+
 func _run() -> void:
-	if FileAccess.file_exists(Run.SAVE_PATH) or FileAccess.file_exists(Run.SAVE_PATH + ".bak"):
+	if FileAccess.file_exists(Run.SAVE_PATH) or FileAccess.file_exists(Run.SAVE_PATH + ".bak") or FileAccess.file_exists(Run.LAB_SAVE_PATH):
 		push_error("Card UI tests require a fresh XDG_DATA_HOME; refusing to replace an existing player save.")
 		quit(2)
 		return
@@ -549,6 +760,7 @@ func _run() -> void:
 	await frames(4)
 	expect(button_for("new_game") != null and button_for("continue").disabled, "fresh title enables a new journey and disables missing Continue")
 	fit("title")
+	await capture("title")
 	await press("help")
 	fit("first-time help")
 	expect(text_under(app._overlay).contains("六") and text_under(app._overlay).contains("五張"), "title help explains the scenario creation and card loop")
@@ -564,6 +776,7 @@ func _run() -> void:
 	await test_deck_editor()
 	await test_card_battle_flow()
 	await test_exam_presentations()
+	await test_lab_flow()
 	await _finish()
 
 

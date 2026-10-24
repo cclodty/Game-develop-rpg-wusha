@@ -20,6 +20,12 @@ const GOLD = Color("b58b4d")
 const RED = Color("a34c3d")
 const FIELD_OFFSET = Vector2(28, 136)
 const STORY_PATH = "res://story/first_week.dialogue"
+const TRIAL_ENEMIES = {
+	"flurry": {"name": "連擊 · 快刀客", "description": "連續多段攻擊。觀察防護與一次反擊的時機。"},
+	"armored": {"name": "重甲 · 守關人", "description": "厚重防護與反攻。試試拆防、保留和集中出手。"},
+	"charging": {"name": "蓄勢 · 蓄勁者", "description": "準備後重擊。決定搶攻，或留下足夠防護。"},
+	"counter": {"name": "反制 · 拆招客", "description": "直接攻牌會招致反制。可用伏針、變招和等待。"},
+}
 
 var run = Run.new()
 var world: Node2D
@@ -32,7 +38,11 @@ var name_entry: LineEdit
 var animation_preview: Control
 var creation_journey: Control
 var _deck_draft: Array = []
+var _weapon_draft = "sword"
+var _inner_draft = "guiyuan"
 var _deck_scroll: ScrollContainer
+var _lab_enemy = "flurry"
+var _lab_seed_value = 1729
 var _combat_restore_failed = false
 var _backdrop: Control
 var _world_layer: Node2D
@@ -135,7 +145,11 @@ func _input(event: InputEvent) -> void:
 		return
 	if event.keycode == KEY_ESCAPE and _screen == "game":
 		get_viewport().set_input_as_handled()
-		if _overlay_kind in ["pause", "map", "journal", "npc", "confirm", "planner", "deck", "help"]:
+		if _overlay_kind == "deck":
+			_close_deck()
+		elif _overlay_kind == "attributes":
+			_render_deck_editor()
+		elif _overlay_kind in ["pause", "map", "journal", "npc", "confirm", "planner", "help", "trial_result"]:
 			_close_overlay()
 		elif _overlay_kind.is_empty():
 			_show_pause()
@@ -213,6 +227,12 @@ func _button(parent: Node, key: String, text: String, pos: Vector2, extent: Vect
 	node.add_theme_stylebox_override("hover", _style(Color("427563") if primary else Color("e7eeda"), GOLD, 10, 2))
 	node.add_theme_stylebox_override("pressed", _style(Color("24473f") if primary else Color("d7e2c9"), GOLD, 10))
 	node.add_theme_stylebox_override("disabled", _style(Color("e4e1d5"), Color("d3d0c6"), 10))
+	# Small controls must fit their declared rows instead of inheriting 24 px padding.
+	if extent.y < 53:
+		for style_key in ["normal", "hover", "pressed", "disabled"]:
+			var compact_style = node.get_theme_stylebox(style_key) as StyleBoxFlat
+			compact_style.content_margin_top = maxf(2.0, (extent.y - 29.0) / 2.0)
+			compact_style.content_margin_bottom = compact_style.content_margin_top
 	node.pressed.connect(callback)
 	parent.add_child(node)
 	if not key.is_empty(): action_buttons[key] = node
@@ -300,6 +320,12 @@ func _show_title() -> void:
 	_button(panel, "help", "初行手札 · 怎樣遊玩", Vector2(44, 590), Vector2(520, 48), _show_help)
 	_label(panel, "情境建角 · 自由配招 · 七日的人情與奇遇\n鍵盤滑鼠遊玩　／　自動存檔", Vector2(44, 650), Vector2(520, 47), 16, MUTED)
 	_label(_hud, "望溪鎮的晨霧散了。你的故事，從今天開始。", Vector2(780, 820), Vector2(610, 40), 19, PAPER, true)
+	var lab_panel = _panel(_hud, Vector2(805, 420), Vector2(555, 342), Color(0.97, 0.95, 0.89, 0.97))
+	_label(lab_panel, "武學試招", Vector2(28, 20), Vector2(500, 48), 32, JADE, true)
+	_label(lab_panel, "三門內功 · 十二招式 · 四類對手\n直接比較牌組，自由配招與切換練法。", Vector2(28, 82), Vector2(500, 77), 21)
+	_button(lab_panel, "lab_new", "開始新的試招", Vector2(28, 180), Vector2(500, 56), _new_lab, true)
+	var lab_continue = _button(lab_panel, "lab_continue", "接續上次試招", Vector2(28, 249), Vector2(500, 53), _continue_lab)
+	lab_continue.disabled = not FileAccess.file_exists(Run.LAB_SAVE_PATH) and not FileAccess.file_exists(Run.LAB_SAVE_PATH + ".bak")
 	_button(_hud, "sound", "聲音：關" if _muted else "聲音：開", Vector2(1260, 28), Vector2(150, 44), _toggle_music)
 
 
@@ -395,7 +421,121 @@ func _continue_game() -> void:
 		_toast(str(result.message))
 
 
+func _is_lab() -> bool:
+	return str(run.data.get("mode", "journey")) == "lab"
+
+
+func _new_lab() -> void:
+	run.new_lab("shouzhong")
+	_lab_enemy = "flurry"
+	_lab_seed_value = 1729
+	_screen = "game"
+	if not _muted and not _music.playing: _music.play()
+	_show_lab_hub()
+	_save()
+
+
+func _continue_lab() -> void:
+	var result: Dictionary = run.load_game(Run.LAB_SAVE_PATH)
+	if not result.get("ok", false):
+		_toast(str(result.get("message", "試招存檔未能讀取。")), true)
+		return
+	_screen = "game"
+	if not _muted and not _music.playing: _music.play()
+	_recover_screen()
+	if bool(result.get("recovered", false)): _toast(str(result.message))
+
+
+func _show_lab_hub() -> void:
+	_close_overlay()
+	_discard_field()
+	_clear(_hud)
+	_clear(_backdrop)
+	_picture(_backdrop, Art.title_background(), Vector2.ZERO, Vector2(1440, 900), true)
+	_shade(_backdrop, 0.25).mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var panel = _panel(_hud, Vector2(40, 35), Vector2(1360, 830))
+	_label(panel, "武學試招 · 找到自己的打法", Vector2(30, 20), Vector2(1060, 55), 36, JADE, true)
+	_label(panel, "試招可自由使用十二張牌與三門內功；所有能力固定為 5，不影響七日旅程。", Vector2(30, 86), Vector2(1260, 40), 20, MUTED)
+	_button(panel, "lab_exit", "存檔回卷首", Vector2(1130, 24), Vector2(200, 48), _save_exit)
+	var preset_ids = ["shouzhong", "xingyun", "guiyuan"]
+	for i in range(preset_ids.size()):
+		var id: String = preset_ids[i]
+		var preset: Dictionary = Cards.PRESETS[id]
+		var card = _panel(panel, Vector2(30 + i * 440, 140), Vector2(420, 227), Color("fffbef"))
+		_picture(card, Art.portrait(["shen", "lu", "herbalist"][i]), Vector2(10, 40), Vector2(105, 126))
+		_label(card, str(preset.name), Vector2(126, 15), Vector2(276, 40), 27, JADE, true)
+		_label(card, str(preset.description), Vector2(126, 65), Vector2(276, 110), 17)
+		_button(card, "preset_" + id, "套用基準牌組", Vector2(16, 174), Vector2(388, 39), _apply_lab_preset.bind(id))
+	_label(panel, "選一位對手", Vector2(30, 385), Vector2(600, 35), 23, JADE)
+	var enemy_ids: Array = TRIAL_ENEMIES.keys()
+	for i in range(enemy_ids.size()):
+		var id: String = enemy_ids[i]
+		var info: Dictionary = TRIAL_ENEMIES[id]
+		var card = _panel(panel, Vector2(30 + i * 330, 432), Vector2(310, 157), Color("eaf0e0") if _lab_enemy == id else Color("fffbef"))
+		_label(card, str(info.name), Vector2(14, 10), Vector2(282, 33), 21, JADE, true)
+		_label(card, str(info.description), Vector2(14, 49), Vector2(282, 60), 17)
+		_button(card, "enemy_" + id, "已選對手" if _lab_enemy == id else "選擇對手", Vector2(14, 111), Vector2(282, 34), _select_lab_enemy.bind(id), _lab_enemy == id)
+	var inner: Dictionary = Cards.INNERS.get(str(run.data.get("inner", "guiyuan")), {})
+	var weapon: Dictionary = Cards.WEAPONS.get(str(run.data.get("weapon", "sword")), {})
+	_label(panel, "目前配置：%s · %s · 十張招式" % [str(weapon.get("name", "")), str(inner.get("name", ""))], Vector2(30, 614), Vector2(790, 38), 23, JADE)
+	_label(panel, "套用基準會清除試招練法；也可自由配招，再挑同一對手比較。\n每場有一份回復藥；消耗一真氣，每場最多使用一次。", Vector2(30, 659), Vector2(850, 65), 18, MUTED)
+	_label(panel, "起手種子", Vector2(950, 618), Vector2(150, 30), 19)
+	var seed_input = SpinBox.new()
+	seed_input.position = Vector2(1100, 612)
+	seed_input.size = Vector2(220, 45)
+	seed_input.min_value = 1
+	seed_input.max_value = 2147483646
+	seed_input.step = 1
+	seed_input.value = _lab_seed_value
+	seed_input.add_theme_font_size_override("font_size", 20)
+	panel.add_child(seed_input)
+	seed_input.value_changed.connect(func(value): _lab_seed_value = int(value))
+	_label(panel, "相同種子可重現起手；\n同一次重試不更換種子。", Vector2(950, 669), Vector2(370, 57), 17, MUTED)
+	_button(panel, "deck", "自由配招與精修", Vector2(30, 750), Vector2(350, 55), _show_deck)
+	_button(panel, "help", "查看交手規則", Vector2(405, 750), Vector2(310, 55), _show_help)
+	_button(panel, "trial_start", "進場試招", Vector2(980, 750), Vector2(350, 55), _begin_trial, true)
+
+
+func _apply_lab_preset(id: String) -> void:
+	var result: Dictionary = run.apply_lab_preset(id)
+	if result.ok:
+		_show_lab_hub()
+		_save()
+	_toast(result.message, not result.ok)
+
+
+func _select_lab_enemy(id: String) -> void:
+	_lab_enemy = id
+	_show_lab_hub()
+
+
+func _begin_trial() -> void:
+	var result: Dictionary = run.begin_trial(_lab_enemy, _lab_seed_value)
+	if not result.ok:
+		_toast(result.message, true)
+		return
+	_start_arena()
+
+
+func _show_trial_result(report: Dictionary) -> void:
+	var panel = _modal("trial_result", Vector2(850, 590), "這一場，已看見招式的配合", "試招成果只記在這裡，不發放七日旅程的武學、資源或人物信任。")
+	_label(panel, "%s · %s" % [Cards.INNERS[str(run.data.inner)].name, TRIAL_ENEMIES.get(str(report.get("mode", _lab_enemy)), {}).get("name", "試招")], Vector2(35, 150), Vector2(780, 43), 26, JADE)
+	_label(panel, "歷時 %d 回合　施展 %d 張牌\n承受 %d 傷害　剩餘氣血 %d\n消耗 %d 勢　運勁 %d 次　留牌 %d 次" % [int(report.get("turns", 0)), int(report.get("cards_played", 0)), int(report.get("damage_taken", 0)), int(report.get("hp_left", 0)), int(report.get("momentum_spent", 0)), int(report.get("boosts_used", 0)), int(report.get("retains_used", 0))], Vector2(35, 220), Vector2(780, 140), 24)
+	_label(panel, "回想一次花勢或留牌的決定。換一門內功或幾張招式，再向同一對手試招。", Vector2(35, 391), Vector2(780, 70), 21, MUTED)
+	_button(panel, "trial_again", "回到試招準備", Vector2(35, 495), Vector2(365, 58), _close_overlay, true)
+	_button(panel, "trial_deck", "調整配招", Vector2(450, 495), Vector2(365, 58), _show_deck)
+
+
 func _recover_screen() -> void:
+	if _is_lab():
+		var lab_pending: Dictionary = run.data.get("pending", {})
+		if lab_pending.is_empty():
+			_show_lab_hub()
+		else:
+			_lab_enemy = str(lab_pending.get("battle_mode", "flurry"))
+			_lab_seed_value = int(lab_pending.get("seed", 1729))
+			_start_arena(lab_pending.get("combat", {}), lab_pending.get("stage", "") == "defeat")
+		return
 	if str(run.data.get("phase", "")) == "prologue":
 		_show_creation_journey()
 		return
@@ -430,6 +570,9 @@ func _recover_screen() -> void:
 
 
 func _show_world(location: String, position_override: Vector2 = Vector2(-1, -1)) -> void:
+	if _is_lab():
+		_show_lab_hub()
+		return
 	_close_overlay()
 	_discard_field()
 	_clear(_backdrop)
@@ -457,6 +600,9 @@ func _show_world(location: String, position_override: Vector2 = Vector2(-1, -1))
 
 
 func _refresh_hud() -> void:
+	if _is_lab() and not is_instance_valid(arena):
+		_show_lab_hub()
+		return
 	_clear(_hud)
 	_combat_status = null
 	_combat_hp = null
@@ -464,11 +610,12 @@ func _refresh_hud() -> void:
 	var top = _panel(_hud, Vector2(20, 18), Vector2(1400, 94))
 	_label(top, "江湖未遠", Vector2(20, 13), Vector2(230, 47), 34, JADE, true)
 	_label(top, "入山之前", Vector2(22, 60), Vector2(250, 25), 16, GOLD)
-	_label(top, "第 %d 日 · %s" % [run.day(), run.period()], Vector2(286, 14), Vector2(300, 44), 27, JADE, true)
-	_label(top, "選拔準備尚餘 %d 個時段" % run.remaining() if run.remaining() > 0 else "第八日 · 入門選拔", Vector2(288, 60), Vector2(340, 25), 17, RED)
+	_label(top, "武學試招" if _is_lab() else "第 %d 日 · %s" % [run.day(), run.period()], Vector2(286, 14), Vector2(300, 44), 27, JADE, true)
+	_label(top, "獨立試招 · 不影響七日旅程" if _is_lab() else ("選拔準備尚餘 %d 個時段" % run.remaining() if run.remaining() > 0 else "第八日 · 入門選拔"), Vector2(288, 60), Vector2(340, 25), 17, RED)
 	var origin_name = str(Data.ORIGINS.get(run.data.get("origin", ""), {}).get("name", "旅人"))
+	if _is_lab(): origin_name = "能力各 5"
 	_label(top, str(run.data.get("hero_name", "小行")) + " · " + origin_name, Vector2(680, 17), Vector2(410, 32), 21)
-	_label(top, "盤纏 %d　藥 %d　武學 %d　見識 %d" % [run.data.get("money", 0), run.data.get("medicine", 0), run.data.get("training", 0), run.data.get("insight", 0)], Vector2(680, 58), Vector2(530, 29), 18, MUTED)
+	_label(top, "主修 %s　·　兵器 %s" % [Cards.INNERS[str(run.data.inner)].name, Cards.WEAPONS[str(run.data.weapon)].name] if _is_lab() else "盤纏 %d　藥 %d　武學 %d　見識 %d" % [run.data.get("money", 0), run.data.get("medicine", 0), run.data.get("training", 0), run.data.get("insight", 0)], Vector2(680, 58), Vector2(530, 29), 18, MUTED)
 	_button(top, "pause", "暫停／存檔", Vector2(1220, 24), Vector2(160, 47), _show_pause)
 	var side = _panel(_hud, Vector2(1132, 128), Vector2(288, 656))
 	if is_instance_valid(arena):
@@ -476,7 +623,7 @@ func _refresh_hud() -> void:
 		_combat_hp = _bar(side, Vector2(22, 86), Vector2(244, 24), RED)
 		_combat_stamina = _bar(side, Vector2(22, 126), Vector2(244, 17), JADE)
 		_combat_status = _label(side, "", Vector2(22, 164), Vector2(245, 254), 18)
-		_label(side, "先看敵方意圖，再選招。\n每回合 3 真氣、抽 5 張。\n防護於下回合開始清除。\n思考與看牌都不耗時。", Vector2(22, 421), Vector2(245, 150), 18, MUTED)
+		_label(side, "點牌後選普通或運勁。\n回合末可留一張，補至五張。\n勢跨回合，每輪最多得二。\n用藥耗一真氣，每場一次。", Vector2(22, 421), Vector2(245, 150), 17, MUTED)
 		_button(side, "retreat", "認輸" if _pending_id() == "exam" else "撤退", Vector2(22, 585), Vector2(244, 48), _confirm_retreat)
 		_on_arena_status(arena.status())
 	else:
@@ -503,7 +650,7 @@ func _refresh_hud() -> void:
 			_button(side, "planner", "七日行程與門派", Vector2(22, 501), Vector2(244, 48), _show_planner)
 			_button(side, "journal", "紀事與人物", Vector2(22, 562), Vector2(244, 48), _show_journal)
 	var foot = _panel(_hud, Vector2(20, 804), Vector2(1400, 74), Color("edf0e1"))
-	_label(foot, "WASD／方向鍵 移動　·　點地面行走　·　F 互動　·　Esc 暫停　·　Ctrl+S 存檔" if not is_instance_valid(arena) else "點手牌選招式，點敵人選目標。　看清意圖、安排牌序，再結束回合。", Vector2(24, 20), Vector2(1200, 37), 18, MUTED)
+	_label(foot, "WASD／方向鍵 移動　·　點地面行走　·　F 互動　·　Esc 暫停　·　Ctrl+S 存檔" if not is_instance_valid(arena) else "先選招式與目標，再按普通／運勁。　留住一張牌，為下一回合準備。", Vector2(24, 20), Vector2(1200, 37), 18, MUTED)
 	_button(foot, "sound", "聲音：關" if _muted else "聲音：開", Vector2(1240, 14), Vector2(140, 44), _toggle_music)
 
 
@@ -683,13 +830,15 @@ func _buy_medicine() -> void:
 func _confirm_activity(id: String) -> void:
 	var activity: Dictionary = Data.ACTIVITIES[id]
 	var status: Dictionary = run.activity_status(id)
-	var panel = _modal("confirm", Vector2(830, 560), str(activity.name), "安排前，看看這一程要付出什麼。")
-	_label(panel, activity.description, Vector2(35, 145), Vector2(760, 90), 24)
-	_label(panel, "消耗 %d 個時段%s　｜　剩餘 %d → %d" % [int(activity.cost), "、%d 文" % int(activity.get("fee", 0)) if activity.get("fee", 0) else "", run.remaining(), maxi(0, run.remaining() - int(activity.cost))], Vector2(35, 253), Vector2(760, 45), 23, JADE)
-	_label(panel, activity.reward_text, Vector2(35, 310), Vector2(760, 90), 21)
-	_label(panel, "外出包含來回、探索與戰鬥。重試不重扣時段；退出不退還已投入時間。", Vector2(35, 402), Vector2(760, 56), 17, MUTED)
-	_button(panel, "cancel", "再想想", Vector2(35, 474), Vector2(220, 52), _show_planner)
-	var button = _button(panel, "confirm_activity", "確定安排", Vector2(535, 474), Vector2(260, 52), _begin_activity.bind(id), true)
+	var panel = _modal("confirm", Vector2(890, 700), str(activity.name), "安排前，看看這一程要付出什麼，以及本輪能遇到的機會。")
+	_label(panel, activity.description, Vector2(35, 142), Vector2(820, 78), 23)
+	_label(panel, "消耗 %d 個時段%s　｜　剩餘 %d → %d" % [int(activity.cost), "、%d 文" % int(activity.get("fee", 0)) if activity.get("fee", 0) else "", run.remaining(), maxi(0, run.remaining() - int(activity.cost))], Vector2(35, 235), Vector2(820, 45), 23, JADE)
+	_label(panel, activity.reward_text, Vector2(35, 292), Vector2(820, 98), 20)
+	var preview: Dictionary = run.activity_preview(id)
+	_label(panel, str(preview.get("text", "")), Vector2(35, 400), Vector2(820, 134), 19, JADE)
+	_label(panel, "外出包含來回、探索與戰鬥。重試不重扣時段，也不重抽本輪機會。", Vector2(35, 551), Vector2(820, 47), 17, MUTED)
+	_button(panel, "cancel", "再想想", Vector2(35, 618), Vector2(250, 52), _show_planner)
+	var button = _button(panel, "confirm_activity", "確定安排", Vector2(565, 618), Vector2(290, 52), _begin_activity.bind(id), true)
 	button.disabled = not status.ok
 
 
@@ -790,7 +939,8 @@ func _start_arena(restore: Dictionary = {}, show_defeat: bool = false) -> void:
 	_clear(_backdrop)
 	_panel(_backdrop, Vector2.ZERO, Vector2(1440, 900), Color("e2e5d7"), Color.TRANSPARENT).mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_panel(_backdrop, Vector2(20, 128), Vector2(1096, 656), Color("a9b69a")).mouse_filter = Control.MOUSE_FILTER_IGNORE
-	var mode = "exam" if _pending_id() == "exam" else str(Data.ACTIVITIES[_pending_id()].get("battle", "practice"))
+	var mode = str(run.data.pending.get("battle_mode", ""))
+	if mode.is_empty(): mode = "exam" if _pending_id() == "exam" else str(Data.ACTIVITIES[_pending_id()].get("battle", "practice"))
 	var stats: Dictionary = run.battle_stats()
 	stats["name"] = str(run.data.hero_name)
 	arena = Arena.new()
@@ -821,7 +971,7 @@ func _on_arena_status(status: Dictionary) -> void:
 	_combat_hp.value = float(status.get("hp", 0))
 	_combat_stamina.max_value = maxi(3, int(status.get("energy", 0)))
 	_combat_stamina.value = float(status.get("energy", 0))
-	_combat_status.text = "氣血 %d／%d\n防護 %d　真氣 %d\n第 %d 回合\n\n回復藥 %d\n\n鎮上可免費配招；\n本次行程使用出發時的牌組。" % [int(status.get("hp", 0)), int(status.get("max_hp", 100)), int(status.get("block", 0)), int(status.get("energy", 0)), int(status.get("turn", 1)), int(status.get("medicine", 0))]
+	_combat_status.text = "氣血 %d／%d\n防護 %d　真氣 %d\n勢 %d / 3　本輪已得 %d / 2\n第 %d 回合\n\n%s · %s\n回復藥 %d　%s" % [int(status.get("hp", 0)), int(status.get("max_hp", 100)), int(status.get("block", 0)), int(status.get("energy", 0)), int(status.get("momentum", 0)), int(status.get("momentum_gained", 0)), int(status.get("turn", 1)), str(Cards.INNERS[str(run.data.inner)].name), str(Cards.WEAPONS[str(run.data.weapon)].name), int(status.get("medicine_left", 0)), "本場已用" if int(status.get("medicine_used", 0)) > 0 else "本場可用一次"]
 
 
 func _combat_finished(won: bool, report: Dictionary, request: int, token: int) -> void:
@@ -834,6 +984,13 @@ func _combat_finished(won: bool, report: Dictionary, request: int, token: int) -
 		run.data.pending.stage = "defeat"
 		_show_defeat()
 		_save()
+	elif _is_lab():
+		var result: Dictionary = run.complete_activity("success", report)
+		if result.ok:
+			_show_lab_hub()
+			_save()
+			_show_trial_result(report)
+		else: _toast(result.message, true)
 	elif _pending_id() == "exam":
 		var result: Dictionary = run.complete_exam(true, report)
 		if result.ok:
@@ -853,9 +1010,9 @@ func _combat_finished(won: bool, report: Dictionary, request: int, token: int) -
 
 func _show_defeat() -> void:
 	var panel = _modal("defeat", Vector2(780, 455), "勝負還不是故事的結尾", "先看敵方意圖。敵人蓄勢時可進攻；攻勢將至時，記得留真氣防守。")
-	_label(panel, "重試會恢復本場開始時的氣血與回復藥，不再消耗行程。\n\n也可以就此收劍；選拔認輸後，師傅仍會參考這七日做過的事。", Vector2(35, 153), Vector2(710, 160), 23)
+	_label(panel, "重試保留相同的起手種子，恢復本場開始的氣血與回復藥。\n\n也可回試招準備，換內功、調整牌組，或改挑另一種對手。" if _is_lab() else "重試會恢復本場開始時的氣血與回復藥，不再消耗行程。\n\n也可以就此收劍；選拔認輸後，師傅仍會參考這七日做過的事。", Vector2(35, 153), Vector2(710, 160), 23)
 	_button(panel, "retry", "再試一次 · 不耗時", Vector2(35, 355), Vector2(335, 60), _retry_combat, true)
-	_button(panel, "retreat", "拱手認輸" if _pending_id() == "exam" else "撤退回鎮", Vector2(410, 355), Vector2(335, 60), _retreat_now)
+	_button(panel, "retreat", "回試招準備" if _is_lab() else ("拱手認輸" if _pending_id() == "exam" else "撤退回鎮"), Vector2(410, 355), Vector2(335, 60), _retreat_now)
 
 
 func _retry_combat() -> void:
@@ -894,7 +1051,7 @@ func _settle_activity() -> void:
 func _confirm_retreat() -> void:
 	if run.data.pending.is_empty(): return
 	var panel = _modal("retreat", Vector2(780, 390), "現在收劍？" if _pending_id() == "exam" else "結束這次行程？")
-	_label(panel, "選拔認輸會直接評定去向，已完成的修習與委託仍然有效。" if _pending_id() == "exam" else "已投入的時段不會退回。退出後，本次尚未完成的獎勵將不會發放；用過的藥也會計入。", Vector2(35, 105), Vector2(710, 150), 24)
+	_label(panel, "回到試招準備後可以修改牌組；這次試招不影響正式旅程的時間與物資。" if _is_lab() else ("選拔認輸會直接評定去向，已完成的修習與委託仍然有效。" if _pending_id() == "exam" else "已投入的時段不會退回。退出後，本次尚未完成的獎勵將不會發放；用過的藥也會計入。"), Vector2(35, 105), Vector2(710, 150), 24)
 	_button(panel, "cancel", "繼續這一程", Vector2(35, 292), Vector2(325, 55), _close_overlay, true)
 	_button(panel, "retreat", "確定認輸" if _pending_id() == "exam" else "確定撤退", Vector2(420, 292), Vector2(325, 55), _retreat_now)
 
@@ -910,7 +1067,8 @@ func _retreat_now() -> void:
 		_toast(result.message, true)
 		return
 	_discard_field()
-	if was_exam: _show_exam_results()
+	if _is_lab(): _show_lab_hub()
+	elif was_exam: _show_exam_results()
 	else: _show_world("wangxi")
 	_save()
 	_toast(result.message)
@@ -1017,14 +1175,14 @@ func _journal_line(parent: Node, text: String, color: Color) -> void:
 func _show_pause() -> void:
 	_save()
 	var panel = _modal("pause", Vector2(800, 590), "歇一口氣", "閱讀、配招與思考不耗時；關閉後會接著目前的回合。")
-	_label(panel, "WASD／方向鍵：移動\n滑鼠點地面：行走　　F：互動\n戰鬥：點選手牌與敵人，再確認出招\n每回合抽 5 張、3 真氣；敵方意圖會先顯示\n\nCtrl+S：存檔　　Esc：暫停／返回\n閱讀對話時，Enter 繼續，數字鍵選擇回應。", Vector2(35, 145), Vector2(730, 284), 23)
+	_label(panel, "城鎮：WASD／方向鍵，或點地面行走；F 互動。\n戰鬥：點選牌與目標，再按普通施展或運勁。\n每回合 3 真氣，可留一張牌，補至 5 張。\n勢跨回合保留，上限 3，每輪最多獲得 2。\n\nCtrl+S：存檔　　Esc：暫停／返回\n閱讀對話時，Enter 繼續，數字鍵選擇回應。", Vector2(35, 145), Vector2(730, 284), 22)
 	_button(panel, "resume", "繼續這一程", Vector2(35, 480), Vector2(350, 60), _close_overlay, true)
 	_button(panel, "save_exit", "存檔回卷首", Vector2(415, 480), Vector2(350, 60), _save_exit)
 
 
 func _show_help() -> void:
 	var panel = _modal("help", Vector2(1040, 710), "初行手札", "先認識自己，再慢慢學會怎樣出劍。")
-	_label(panel, "一、抵達之前\n選擇出身，在六個小情境中作出回應。最後會看見能力來源，還能挪動兩點；序章不扣七日的時段。\n\n二、七日的人情與武學\n走動、交談與配招免費。正式活動先顯示時段及盤纏成本，完成後獲得成果。在「角色與配招」中配置十張牌、精修已學招式。\n\n三、一招一式的切磋\n先看敵方意圖。每回合抽五張、獲得三點真氣；用手牌進攻或防守，準備好才結束回合。防護於下回合開始清除。\n\n戰敗可重試，不重扣時段；第八日也可認輸，兩派仍會參考你做過的事情。", Vector2(35, 142), Vector2(970, 445), 23)
+	_label(panel, "一、先認識自己的打法\n「武學試招」可直接比較三門內功與四類對手；「啟程」則透過六個情境建立主角，再安排七日的學武與探索。兩種進度分開保存。\n\n二、主兵器、內功與十張招式\n鎮上免費配招，同名最多兩張。劍招需要持劍；拳掌、暗器與身法可混搭。主修內功決定如何蓄勢與耗勢，精修可選不同練法。\n\n三、看清意圖，選擇普通或運勁\n每回合有三真氣，最多留一張手牌，下回合補至五張。勢上限三，每輪最多獲得二；普通出招不自動花勢。反擊與伏針按牌面時機結算。\n\n用藥耗一真氣、每場一次。戰敗可重試；讀檔不重抽奇遇，也不重發活動獎勵。", Vector2(35, 142), Vector2(970, 445), 21)
 	_button(panel, "close", "記下了，繼續", Vector2(690, 620), Vector2(315, 55), _close_overlay, true)
 
 
@@ -1033,30 +1191,38 @@ func _show_deck() -> void:
 		_toast("先完成這次行程，再回鎮上整理招式。")
 		return
 	_deck_draft = run.data.deck.duplicate()
+	_weapon_draft = str(run.data.weapon)
+	_inner_draft = str(run.data.inner)
 	_render_deck_editor()
 
 
 func _render_deck_editor(scroll_position: int = 0) -> void:
-	var panel = _modal("deck", Vector2(1320, 840), "角色與配招", "固定十張，每種最多兩張。配招需按「套用」儲存；精修會立即消耗心得，同名招式一併提升。")
-	_picture(panel, Art.portrait(str(run.data.origin)), Vector2(28, 140), Vector2(130, 145))
-	_label(panel, str(run.data.hero_name), Vector2(170, 154), Vector2(156, 64), 18, JADE, true)
-	_label(panel, str(Data.ORIGINS[str(run.data.origin)].name), Vector2(170, 232), Vector2(156, 42), 18, MUTED)
-	var labels: Dictionary = Creation.LABELS
-	var index = 0
-	for id in labels:
-		var value: int = int(run.data.attributes.get(id, 4))
-		_label(panel, "%s %d" % [labels[id], value], Vector2(30, 285 + index * 62), Vector2(78, 37), 19, JADE)
-		var effect: String = Creation.effect_text(id, value)
-		if id == "aptitude" and bool(run.data.get("aptitude_discount_used", false)):
-			effect = "首次折扣已使用；之後精修每招需 2 點心得。"
-		if id == "fortune" and bool(run.data.get("fortune_hint_used", false)):
-			effect = "已發現一次提前提示；仍可透過調查探索江湖。"
-		_label(panel, effect, Vector2(112, 285 + index * 62), Vector2(214, 58), 15, MUTED)
-		index += 1
-	var summary: Dictionary = Creation.summary(run.data.creation)
-	var motivation: Dictionary = summary.get("motivation", {})
-	_label(panel, "出行心願\n" + str(motivation.get("label", motivation.get("text", "親自走一段江湖路。"))), Vector2(30, 660), Vector2(290, 72), 18)
-	_label(panel, "練習心得：%d\n精修按招式生效，兩張一起提升。\n練功、對練可累積心得。" % int(run.data.get("mastery", 0)), Vector2(30, 746), Vector2(290, 80), 16, MUTED)
+	var panel = _modal("deck", Vector2(1320, 840), "角色與配招", "兵器、內功與十張牌需按「套用」儲存。精修與練法切換會立即保存；同名兩張共用練法。")
+	_picture(panel, Art.portrait(str(run.data.origin)), Vector2(28, 140), Vector2(120, 125))
+	_label(panel, str(run.data.hero_name), Vector2(162, 155), Vector2(164, 60), 18, JADE, true)
+	_label(panel, "試招 · 能力各 5" if _is_lab() else str(Data.ORIGINS[str(run.data.origin)].name), Vector2(162, 226), Vector2(164, 40), 17, MUTED)
+	_label(panel, "主兵器", Vector2(30, 281), Vector2(290, 30), 20, JADE)
+	var weapons: Array = Cards.WEAPONS.keys()
+	for index in range(weapons.size()):
+		var id: String = weapons[index]
+		var choose = _button(panel, "weapon_" + id, str(Cards.WEAPONS[id].name), Vector2(30 + (index % 2) * 150, 319 + (index / 2) * 43), Vector2(140, 36), _choose_weapon.bind(id), id == _weapon_draft)
+		choose.tooltip_text = str(Cards.WEAPONS[id].description)
+	_label(panel, "主修內功", Vector2(30, 416), Vector2(290, 30), 20, JADE)
+	var inners: Array = Cards.INNERS.keys()
+	for index in range(inners.size()):
+		var id: String = inners[index]
+		var choose = _button(panel, "inner_" + id, str(Cards.INNERS[id].name), Vector2(30 + index * 98, 456), Vector2(94, 39), _choose_inner.bind(id), id == _inner_draft)
+		choose.add_theme_font_size_override("font_size", 16)
+		choose.disabled = id not in run.data.learned_inners
+		choose.tooltip_text = str(Cards.INNERS[id].description) + "\n習得：" + str(Cards.INNERS[id].source_label)
+	_label(panel, str(Cards.INNERS[_inner_draft].description), Vector2(30, 512), Vector2(296, 122), 16)
+	var attributes: Array = Creation.ATTRIBUTE_KEYS
+	for index in range(attributes.size()):
+		var id: String = attributes[index]
+		var value: int = int(run.data.attributes[id])
+		_label(panel, "%s %d" % [Creation.LABELS[id], value], Vector2(30 + (index % 3) * 100, 647 + (index / 3) * 31), Vector2(96, 30), 18, JADE)
+	_button(panel, "attributes", "能力用途與出行心願", Vector2(30, 719), Vector2(290, 39), _show_attributes)
+	_label(panel, "試招已開放三種精修，可免費比較練法。" if _is_lab() else "練習心得：%d\n練功、對練取得心得，精修需 2 點。" % int(run.data.get("mastery", 0)), Vector2(30, 775), Vector2(290, 55), 16, MUTED)
 	var rows = _scroll(panel, Vector2(350, 140), Vector2(940, 550))
 	_deck_scroll = rows.get_parent() as ScrollContainer
 	var ordered_cards: Array = run.data.learned_cards.duplicate()
@@ -1064,28 +1230,42 @@ func _render_deck_editor(scroll_position: int = 0) -> void:
 		if id not in ordered_cards: ordered_cards.append(id)
 	for id in ordered_cards:
 		var learned: bool = id in run.data.learned_cards
-		var upgraded: bool = id in run.data.upgraded_cards
-		var card: Dictionary = Cards.card(id, upgraded)
+		var unlocked: bool = id in run.data.upgraded_cards
+		var branch: String = str(run.data.refinements.get(id, ""))
+		var card: Dictionary = Cards.card(id, branch)
 		var count: int = _deck_draft.count(id)
 		var row = Control.new()
-		row.custom_minimum_size = Vector2(910, 184)
+		row.custom_minimum_size = Vector2(910, 228)
 		rows.add_child(row)
-		var box = _panel(row, Vector2.ZERO, Vector2(910, 180), Color("fffbee") if learned else Color("e8e7da"))
+		var box = _panel(row, Vector2.ZERO, Vector2(910, 224), Color("fffbee") if learned else Color("e8e7da"))
 		_label(box, str(card.name), Vector2(16, 10), Vector2(465, 35), 23, JADE if learned else MUTED, true)
-		_label(box, "真氣 %d　%s" % [int(card.cost), {"attack": "攻擊", "skill": "招式", "power": "心法"}.get(str(card.type), str(card.type))], Vector2(548, 14), Vector2(345, 30), 17, MUTED)
-		_label(box, str(card.description) if learned else "未習得 · " + str(card.get("source_label", "從人物與探索中學習")), Vector2(16, 50), Vector2(520, 120), 18, INK if learned else MUTED)
-		var minus = _button(box, "deck_remove_" + id, "-", Vector2(550, 75), Vector2(46, 45), _change_deck.bind(id, -1))
+		var weapon_text = "通用" if card.weapon == "any" else "需" + str(Cards.WEAPONS[card.weapon].name)
+		_label(box, "真氣 %d　%s　%s" % [int(card.cost), str(Cards.TYPE_LABELS[card.type]), weapon_text], Vector2(548, 14), Vector2(345, 32), 17, MUTED)
+		_label(box, str(card.description) if learned else "未習得 · " + str(card.get("source_label", "從人物與探索中學習")), Vector2(16, 55), Vector2(525, 164), 17, INK if learned else MUTED)
+		var minus = _button(box, "deck_remove_" + id, "-", Vector2(566, 62), Vector2(46, 43), _change_deck.bind(id, -1))
 		minus.disabled = count == 0
-		_label(box, "%d / 2" % count, Vector2(604, 82), Vector2(62, 32), 20)
-		var plus = _button(box, "deck_add_" + id, "+", Vector2(670, 75), Vector2(46, 45), _change_deck.bind(id, 1))
-		plus.disabled = not learned or count >= 2 or _deck_draft.size() >= 10
-		var upgrade: Dictionary = run.upgrade_status(id)
-		var improve = _button(box, "upgrade_" + id, "已精修" if upgraded else "精修 · %d" % int(upgrade.get("cost", 2)), Vector2(740, 75), Vector2(154, 45), _upgrade_card.bind(id))
-		improve.disabled = not bool(upgrade.get("ok", false))
-		improve.tooltip_text = str(upgrade.get("message", "")) + ("\n精修後：" + str(Cards.card(id, true).description) if learned and not upgraded else "")
-	var check: Dictionary = Cards.validate_deck(_deck_draft, run.data.learned_cards)
-	_label(panel, "目前 %d / 10 張　%s" % [_deck_draft.size(), "可出發" if check.ok else "請補齊十張再套用"], Vector2(350, 708), Vector2(900, 36), 21, JADE if check.ok else RED)
-	_button(panel, "deck_cancel", "返回，保留原牌組", Vector2(350, 765), Vector2(325, 48), _close_overlay)
+		_label(box, "%d / 2" % count, Vector2(629, 67), Vector2(70, 35), 20)
+		var plus = _button(box, "deck_add_" + id, "+", Vector2(712, 62), Vector2(46, 43), _change_deck.bind(id, 1))
+		plus.disabled = not learned or count >= 2 or _deck_draft.size() >= 10 or (card.weapon != "any" and card.weapon != _weapon_draft)
+		plus.tooltip_text = "此招式需要" + str(Cards.WEAPONS.get(card.weapon, {}).get("name", "對應兵器")) if card.weapon != "any" and card.weapon != _weapon_draft else "加入十張出戰牌"
+		if id in Cards.REFINABLE:
+			var upgrade: Dictionary = run.upgrade_status(id)
+			var improve = _button(box, "upgrade_" + id, "已解鎖精修，選擇練法" if unlocked else "精修 · %d 心得" % int(upgrade.get("cost", 2)), Vector2(566, 116), Vector2(326, 40), _upgrade_card.bind(id))
+			improve.add_theme_font_size_override("font_size", 16)
+			improve.disabled = not bool(upgrade.get("ok", false))
+			improve.tooltip_text = str(upgrade.get("message", ""))
+			var branches = ["", "stable", "specialist"] if _is_lab() else ["stable", "specialist"]
+			var width = 102 if _is_lab() else 158
+			for branch_index in range(branches.size()):
+				var choice: String = branches[branch_index]
+				var label = "原式" if choice.is_empty() else str(Cards.REFINEMENT_LABELS[choice])
+				var change = _button(box, "refine_" + id + "_" + ("none" if choice.is_empty() else choice), label, Vector2(566 + branch_index * (width + 10), 171), Vector2(width, 39), _set_refinement.bind(id, choice), branch == choice)
+				change.disabled = not unlocked
+				change.add_theme_font_size_override("font_size", 16)
+				change.tooltip_text = "用未精修數值試招" if choice.is_empty() else str(Cards.REFINEMENTS[id][choice].description)
+	var check: Dictionary = Cards.validate_deck(_deck_draft, run.data.learned_cards, _weapon_draft)
+	_label(panel, "目前 %d / 10 張　%s" % [_deck_draft.size(), "配置可用" if check.ok else str(check.message)], Vector2(350, 704), Vector2(930, 50), 19, JADE if check.ok else RED)
+	_button(panel, "deck_cancel", "返回，保留原配置", Vector2(350, 765), Vector2(325, 48), _close_deck)
 	var save_button = _button(panel, "deck_save", "套用配招", Vector2(950, 765), Vector2(340, 48), _commit_deck, true)
 	save_button.disabled = not bool(check.ok)
 	_deck_scroll.set_deferred("scroll_vertical", scroll_position)
@@ -1101,9 +1281,9 @@ func _change_deck(id: String, amount: int) -> void:
 
 
 func _commit_deck() -> void:
-	var result: Dictionary = run.set_deck(_deck_draft)
+	var result: Dictionary = run.set_loadout(_deck_draft, _weapon_draft, _inner_draft)
 	if result.ok:
-		_close_overlay()
+		_close_deck()
 		_save()
 	_toast(result.message, not result.ok)
 
@@ -1115,6 +1295,46 @@ func _upgrade_card(id: String) -> void:
 		_save()
 		_render_deck_editor(scroll_position)
 	_toast(result.message, not result.ok)
+
+
+func _choose_weapon(id: String) -> void:
+	_weapon_draft = id
+	_render_deck_editor(_deck_scroll.scroll_vertical if is_instance_valid(_deck_scroll) else 0)
+
+
+func _choose_inner(id: String) -> void:
+	_inner_draft = id
+	_render_deck_editor(_deck_scroll.scroll_vertical if is_instance_valid(_deck_scroll) else 0)
+
+
+func _set_refinement(id: String, branch: String) -> void:
+	var scroll_position = _deck_scroll.scroll_vertical if is_instance_valid(_deck_scroll) else 0
+	var result: Dictionary = run.set_refinement(id, branch)
+	if result.ok:
+		_save()
+		_render_deck_editor(scroll_position)
+	_toast(result.message, not result.ok)
+
+
+func _close_deck() -> void:
+	if _is_lab(): _show_lab_hub()
+	else: _close_overlay()
+
+
+func _show_attributes() -> void:
+	var info: Dictionary = Creation.summary(run.data.creation)
+	var panel = _modal("attributes", Vector2(1240, 800), "能力與出行心願", "%s · %s" % [str(run.data.hero_name), str(info.motivation.label)])
+	for index in range(Creation.ATTRIBUTE_KEYS.size()):
+		var id: String = Creation.ATTRIBUTE_KEYS[index]
+		var value: int = int(run.data.attributes[id])
+		var card = _panel(panel, Vector2(30 + (index % 2) * 595, 145 + (index / 2) * 175), Vector2(575, 158), Color("fffbef"))
+		_label(card, "%s %d" % [Creation.LABELS[id], value], Vector2(18, 10), Vector2(535, 45), 27, JADE, true)
+		var description: String = Creation.effect_text(id, value)
+		if id == "aptitude" and bool(run.data.get("aptitude_discount_used", false)): description += " 首次優惠已使用。"
+		if id == "fortune" and bool(run.data.get("fortune_hint_used", false)): description += " 本輪提前提示已使用。"
+		_label(card, description, Vector2(18, 66), Vector2(535, 80), 21)
+	_label(panel, "能力提供便利。牌組與內功決定打法，反擊與伏針不重複獲得力道加成。", Vector2(30, 682), Vector2(1180, 38), 19, MUTED)
+	_button(panel, "attributes_back", "回到配招", Vector2(870, 735), Vector2(340, 46), _render_deck_editor, true)
 
 
 func _confirm_exam() -> void:

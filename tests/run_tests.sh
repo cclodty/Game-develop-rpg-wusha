@@ -37,6 +37,7 @@ run_godot_check() {
 run_godot_check import --import
 run_godot_check run_state --script tests/test_run_state.gd
 run_godot_check creation --script tests/test_creation.gd
+run_godot_check martial_catalog --script tests/test_martial_catalog.gd
 run_godot_check card_battle --script tests/test_card_battle.gd
 run_godot_check card_run --script tests/test_card_run.gd
 run_godot_check card_arena --script tests/test_card_arena.gd

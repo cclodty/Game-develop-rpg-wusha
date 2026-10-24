@@ -67,10 +67,13 @@ else
 沈照嶺: 站在門外也聽得見，不過進來看會清楚一些。我姓沈。你昨日幫驛車脫困的事，周掌櫃提過了。 [#portrait=shen] [ID:JW_ARRIVAL_MORNING_007]
 你: 我只是和大家一起做了一段。到這裡，還不知道該先學什麼。 [#portrait=hero] [ID:JW_ARRIVAL_MORNING_008]
 沈照嶺: 那就先不急著選門派。看一場練習，問幾句話，再決定今天要花多少工夫。願意正式修習時，費用與時段都會先說清楚。 [#portrait=shen] [ID:JW_ARRIVAL_MORNING_009]
-旁白: 他把五張寫著招名的薄木牌排在矮桌上。出劍、架勢、調息、審勢、虛招；你認得字，卻還不懂它們怎樣接成一場交鋒。 [ID:JW_ARRIVAL_MORNING_010]
-沈照嶺: 入門先用這五種，各備兩張。看對手下一步要做什麼，再用手上的牌安排攻防；真氣有限，一回合不必把想做的事全做完。 [#portrait=shen] [ID:JW_ARRIVAL_MORNING_011]
-你: 若對方準備重擊，先用架勢護住，再用虛招減弱他的攻勢？ [#portrait=hero] [ID:JW_ARRIVAL_MORNING_012]
-沈照嶺: 可以。調息補真氣，審勢多找幾張牌。準備妥當才結束回合，讓對方出手；讀牌時不必搶快，想清楚更要緊。 [#portrait=shen] [ID:JW_ARRIVAL_MORNING_013]
+旁白: 他把五張寫著招名的薄木牌排在矮桌上。出劍、架勢、調息、審勢、飛石問路；你認得字，卻還不懂它們怎樣接成一場交鋒。 [ID:JW_ARRIVAL_MORNING_010]
+沈照嶺: 入門先用這五種，各備兩張。每回合三點真氣，先看對手要做什麼，再決定手上的招式怎樣用。 [#portrait=shen] [ID:JW_ARRIVAL_MORNING_011]
+你: 若這回合用不到的架勢，能留到下一回合防身嗎？ [#portrait=hero] [ID:JW_ARRIVAL_MORNING_012]
+沈照嶺: 能留一張。下回合連留牌補到五張，便會少抽一張新牌。調息補真氣，審勢多找幾張；哪一張值得留下，由你自己選。 [#portrait=shen] [ID:JW_ARRIVAL_MORNING_013]
+沈照嶺: 起步先用歸元功。回合末若還留著真氣，便用一點收成勢；我也把收勢的練法記給你，回鎮後可以換進牌組。 [#portrait=shen] [ID:JW_ARRIVAL_MORNING_024]
+你: 所以這一刻留的餘地，下回合還用得上？ [#portrait=hero] [ID:JW_ARRIVAL_MORNING_025]
+沈照嶺: 對，勢最多留三點。招式可普通施展，也可按牌面花勢運勁。先付得起，再出手；不是每次都花光才叫盡力。 [#portrait=shen] [ID:JW_ARRIVAL_MORNING_026]
 旁白: 門外有人輕敲一下木框，手裡提著兩個包子。一個已經咬過，另一個被紙包得整整齊齊。 [ID:JW_ARRIVAL_MORNING_014]
 陸行雲: 沈師傅的早飯。這回我沒把飯錢夾進名冊，算不算也長進了一點？ [#portrait=lu] [ID:JW_ARRIVAL_MORNING_015]
 沈照嶺: 算。下回記得買三個，你路上總要吃掉一個。 [#portrait=shen] [ID:JW_ARRIVAL_MORNING_016]
@@ -133,7 +136,7 @@ elif creation_motivation == "belong"
 你: 一劍就能把雲分開？ [#portrait=hero] [ID:JW_SHEN_SWORD_002]
 沈照嶺: 真有那種本事，曬穀子的鄉親會天天來請你。今天先劈準眼前這道劍痕。 [#portrait=shen] [ID:JW_SHEN_SWORD_003]
 沈照嶺: 正式授課要留出兩個時段，也要付木劍與場地的錢。你可以先練基本功，備齊了再來。 [#portrait=shen] [ID:JW_SHEN_SWORD_004]
-沈照嶺: 學會以後，破雲劍氣可同時照應面前多名對手，但要花兩點真氣。先看敵人的意圖，別只盯著招式亮不亮。 [#portrait=shen] [ID:JW_SHEN_SWORD_005]
+沈照嶺: 破雲劍氣要把力量送準一位對手。勢蓄足時可選運勁，不必每回合都搶著用盡；確切費用與效果看招式上的說明。 [#portrait=shen] [ID:JW_SHEN_SWORD_005]
 => shen_questions
 
 ~ shen_exam
@@ -169,7 +172,7 @@ elif creation_approach == "observe"
 陸行雲: 說吧。我要是真不知道，就陪你去看。 [#portrait=lu] [ID:JW_LU_QUESTIONS_001]
 - 渡雲社和照嶺門有什麼不同？ [ID:JW_LU_QUESTIONS_002]
 	=> lu_school
-- 掠影突進，是不是跑得越快越好？ [ID:JW_LU_QUESTIONS_003]
+- 掠影步，是不是跑得越快越好？ [ID:JW_LU_QUESTIONS_003]
 	=> lu_step
 - 到外頭走走，對選拔真的有用？ [ID:JW_LU_QUESTIONS_004]
 	=> lu_outside
@@ -186,11 +189,11 @@ elif creation_approach == "observe"
 => lu_questions
 
 ~ lu_step
-陸行雲: 若只比快，雨水每回都贏。掠影突進要你先看出口，再決定往哪裡去。 [#portrait=lu] [ID:JW_LU_STEP_001]
+陸行雲: 若只比快，雨水每回都贏。掠影步要你先看出口，再決定往哪裡去。 [#portrait=lu] [ID:JW_LU_STEP_001]
 你: 就像穿過戲台上移動的布景？ [#portrait=hero] [ID:JW_LU_STEP_002]
 陸行雲: 對。人會動，劍也會動。出手後若只剩一條退路，你就已經走窄了。 [#portrait=lu] [ID:JW_LU_STEP_003]
 陸行雲: 望風古道有一段舊步痕。願意留出一趟工夫去看，我會教你讀它。 [#portrait=lu] [ID:JW_LU_STEP_004]
-陸行雲: 掠影突進能穩住防護，再多找一張手牌。退讓不是白白讓步，是替下一招留出轉圜。 [#portrait=lu] [ID:JW_LU_STEP_005]
+陸行雲: 掠影步先護住自己，再讓你換掉一張不合眼前局面的手牌。不想換也可以，退讓要有自己的理由。 [#portrait=lu] [ID:JW_LU_STEP_005]
 => lu_questions
 
 ~ lu_outside
@@ -253,7 +256,7 @@ elif creation_finish == "path"
 陶半夏: 能分清「還能再試」和「現在該退」。痛不是證明勇敢的收據，不必每一張都留著。 [#portrait=tao] [ID:JW_TAO_HEAL_001]
 你: 那在台上認輸呢？ [#portrait=hero] [ID:JW_TAO_HEAL_002]
 陶半夏: 活著回來，告訴我哪一步不對。我能替你處理傷口，招式要靠你下回記住。 [#portrait=tao] [ID:JW_TAO_HEAL_003]
-陶半夏: 真進了場，藥要在有空隙時用。你往藥瓶裡找答案，對面的劍可不會等。 [#portrait=tao] [ID:JW_TAO_HEAL_004]
+陶半夏: 真進了場，用藥也得留一點真氣。服過藥之後，還要想好怎樣接住對面那一招。 [#portrait=tao] [ID:JW_TAO_HEAL_004]
 => tao_questions
 
 ~ npc_zhou
@@ -427,7 +430,7 @@ if insight >= 6
 	陸行雲: 你的眼睛已經比初來時快些了。相信你看見的東西，也記得隨時再看一眼。 [#portrait=lu] [ID:JW_EXAM_INTRO_007]
 else
 	陸行雲: 拿到手牌先看意圖，不必急著全打出去。真氣留給防護還是攻擊，想清楚再結束這一回合。 [#portrait=lu] [ID:JW_EXAM_INTRO_008]
-陶半夏: 備好的藥敷若要用，記得事先放進牌組。知道自己帶了什麼，比臨場翻行囊可靠。 [#portrait=tao] [ID:JW_EXAM_INTRO_009]
+陶半夏: 藥先放在取得到的地方。用藥也要一點真氣，每場只能一次；別等到手忙腳亂才想起它。 [#portrait=tao] [ID:JW_EXAM_INTRO_009]
 周望山: 今日沒有替別人趕的路，只有你自己選的路。 [#portrait=zhou] [ID:JW_EXAM_INTRO_010]
 你: 我準備好了。 [#portrait=hero] [ID:JW_EXAM_INTRO_011]
 旁白: 你踏進場中。風掠過衣角，木劍輕輕相碰，發出一聲清楚的響。 [ID:JW_EXAM_INTRO_012]
@@ -489,15 +492,15 @@ else
 	沈照嶺: 你可以看著對方，也能聽見自己。兩件事一起做，才不會被別人的節奏牽走。 [#portrait=shen] [ID:JW_ACTIVITY_SWORD_LESSON_012]
 旁白: 你試過幾次，氣勁終於不再撞在自己腳邊。院角的竹葉輕輕翻起，露出較淡的葉背。 [ID:JW_ACTIVITY_SWORD_LESSON_013]
 沈照嶺: 記住這一次的感覺。它不華麗，但是真的。 [#portrait=shen] [ID:JW_ACTIVITY_SWORD_LESSON_014]
-你: 下一回交手，我先算好真氣；多人同時逼近時，再用這張劍氣牌照應他們。 [#portrait=hero] [ID:JW_ACTIVITY_SWORD_LESSON_015]
-沈照嶺: 可以。也可以先逼他改路，再用劍接上。招式教給你了，時機由你判斷。 [#portrait=shen] [ID:JW_ACTIVITY_SWORD_LESSON_016]
+你: 下一回交手，我先看清對手，再決定用普通劍氣，還是把蓄好的勢一起送出去。 [#portrait=hero] [ID:JW_ACTIVITY_SWORD_LESSON_015]
+沈照嶺: 可以。照隙一劍要你先站穩；守中訣則教你把擋住的攻勢留下來。兩種劍招與這門內功，你回去慢慢配。 [#portrait=shen] [ID:JW_ACTIVITY_SWORD_LESSON_016]
 旁白: 你把劍收回鞘中，第一次覺得，呼吸和劍鋒可以朝同一個地方走。 [ID:JW_ACTIVITY_SWORD_LESSON_017]
 => END
 
 ~ activity_practice
-沈照嶺: 今天把基本功放進走動裡。別站在原地等對方替你把距離算好。 [#portrait=shen] [ID:JW_ACTIVITY_PRACTICE_001]
-你: 先靠近，出劍，再離開危險的位置。 [#portrait=hero] [ID:JW_ACTIVITY_PRACTICE_002]
-沈照嶺: 對。先讀敵人的意圖。準備重擊時，就用架勢累積防護，或以虛招減弱攻勢；安排好了，再結束回合。 [#portrait=shen] [ID:JW_ACTIVITY_PRACTICE_003]
+沈照嶺: 今天把基本功放進交手裡。手上有招，仍得看清對手想把力送到哪裡。 [#portrait=shen] [ID:JW_ACTIVITY_PRACTICE_001]
+你: 先看攻勢，再決定出劍、防守，還是留一步給下一回合。 [#portrait=hero] [ID:JW_ACTIVITY_PRACTICE_002]
+沈照嶺: 對。這次也練推碑掌的發力：先拆開護住你的那股力，再把自己的掌送到。看見重擊，仍要算清防護。 [#portrait=shen] [ID:JW_ACTIVITY_PRACTICE_003]
 旁白: 練場上的木樁與陪練已準備好。你活動一下手腕，走進劃好的界線。 [ID:JW_ACTIVITY_PRACTICE_004]
 => END
 
@@ -505,7 +508,7 @@ else
 旁白: 最後一輪練習結束，握柄上的汗留下了清楚的指印。 [ID:JW_COMPLETE_PRACTICE_001]
 沈照嶺: 這次有幾步走得比出劍更好。記住，能重新站到舒服的位置，就還有下一招。 [#portrait=shen] [ID:JW_COMPLETE_PRACTICE_002]
 你: 我以前只想多打一下，沒想過少挨一下能留下多少餘地。 [#portrait=hero] [ID:JW_COMPLETE_PRACTICE_003]
-沈照嶺: 今日練到這裡。長進不必每回都很響，明天用得出來就好。 [#portrait=shen] [ID:JW_COMPLETE_PRACTICE_004]
+沈照嶺: 推碑掌的路數記住了，練習心得也留著。長進不必每回都很響，明天用得出來就好。 [#portrait=shen] [ID:JW_COMPLETE_PRACTICE_004]
 => END
 
 ~ activity_spar
@@ -522,7 +525,7 @@ if training >= 6
 else
 	沈照嶺: 你開始能把第一招和第二招放在一起想了。再把退路也算進去，便更完整。 [#portrait=shen] [ID:JW_COMPLETE_SPAR_003]
 你: 剛才有一回，我本來想追，後來看見對方的腳還沒動，就先停住了。 [#portrait=hero] [ID:JW_COMPLETE_SPAR_004]
-沈照嶺: 我看見了。能停住一把已想出去的劍，也是本事。 [#portrait=shen] [ID:JW_COMPLETE_SPAR_005]
+沈照嶺: 我看見了。這一回卸力掌便教到這裡：護住身體後才反擊，對手連出幾下，也別被帶得一味追手。 [#portrait=shen] [ID:JW_COMPLETE_SPAR_005]
 => END
 
 ~ activity_courier_work
@@ -614,10 +617,10 @@ else
 旁白: 你照著古道的步痕走了一遍，第二遍卻換了落腳的位置。陸行雲一直站在旁邊，這時才點頭。 [ID:JW_COMPLETE_RIDGE_TRACKS_001]
 陸行雲: 為什麼改？ [#portrait=lu] [ID:JW_COMPLETE_RIDGE_TRACKS_002]
 你: 風不一樣，旁邊的草也長過來了。前人的腳印不能替我踩今天的地。 [#portrait=hero] [ID:JW_COMPLETE_RIDGE_TRACKS_003]
-陸行雲: 很好。掠影突進就從這裡開始：不是追著影子跑，是知道下一個影子會落在哪裡。 [#portrait=lu] [ID:JW_COMPLETE_RIDGE_TRACKS_004]
+陸行雲: 很好。掠影步就從這裡開始：不是追著影子跑，是知道下一個影子會落在哪裡。 [#portrait=lu] [ID:JW_COMPLETE_RIDGE_TRACKS_004]
 旁白: 他讓你把呼吸收短半拍，身形前掠，劍鋒順勢劃出一道輕快的弧。 [ID:JW_COMPLETE_RIDGE_TRACKS_005]
 你: 原來出招和移位可以是同一步。 [#portrait=hero] [ID:JW_COMPLETE_RIDGE_TRACKS_006]
-陸行雲: 可以，也要記得何時不用。後面沒有落腳處，招式再快也只是撞得更響。 [#portrait=lu] [ID:JW_COMPLETE_RIDGE_TRACKS_007]
+陸行雲: 再配上行雲訣，付過真氣的不同招路便能接出勢。換招不是越多越好，要讓下一步還有用。 [#portrait=lu] [ID:JW_COMPLETE_RIDGE_TRACKS_007]
 旁白: 回鎮時，你把最清楚的一處步痕記下，又在旁邊添了一句：「到時再看。」 [ID:JW_COMPLETE_RIDGE_TRACKS_008]
 => END
 
@@ -645,6 +648,10 @@ else
 你: 你把最後一件寫得很大。 [#portrait=hero] [ID:JW_ACTIVITY_BRIDGE_REPAIR_002]
 林知微: 因為我上回只顧著看橋穩不穩，差點讓搬木料的人踩到釘子。做完，不只是一件東西能用了。 [#portrait=lin] [ID:JW_ACTIVITY_BRIDGE_REPAIR_003]
 旁白: 你看過工錢與行程，把備好的銅錢交到材料單旁。這件事於是從「總該有人做」變成「今天來做」。 [ID:JW_ACTIVITY_BRIDGE_REPAIR_004]
+if activity_variant == "pushing_palm"
+	林知微: 沈師傅託我帶來推碑掌的練法。搬梁時先找受力的一面，完工後我們再對照手上的感覺。 [#portrait=lin] [ID:JW_ACTIVITY_BRIDGE_REPAIR_005]
+elif activity_variant == "yielding_palm"
+	林知微: 沈師傅借來卸力掌的筆記。扶住搖晃的橋板，要先讓力有去處；完工後，我陪你試那個手勢。 [#portrait=lin] [ID:JW_ACTIVITY_BRIDGE_REPAIR_006]
 => END
 
 ~ complete_bridge_repair
@@ -656,6 +663,10 @@ else
 旁白: 藥籃穩穩從橋上過去。挑籃的人點了點頭，沒有停下來講什麼大道理。 [ID:JW_COMPLETE_BRIDGE_REPAIR_006]
 你: 這樣也很好。 [#portrait=hero] [ID:JW_COMPLETE_BRIDGE_REPAIR_007]
 林知微: 嗯。這樣就很好。 [#portrait=lin] [ID:JW_COMPLETE_BRIDGE_REPAIR_008]
+if activity_variant == "pushing_palm"
+	你: 剛才把梁推回正位時，掌根找到的那個方向，原來也能用來拆開對手的防護。 [#portrait=hero] [ID:JW_COMPLETE_BRIDGE_REPAIR_009]
+elif activity_variant == "yielding_palm"
+	你: 先接住晃動，再把力送回去。卸力掌的那幾筆，現在讀起來有了分量。 [#portrait=hero] [ID:JW_COMPLETE_BRIDGE_REPAIR_010]
 => END
 
 ~ activity_missing_letter
@@ -683,6 +694,10 @@ else
 蕭小滿: 前人也會聽錯。我們唱得越有把握，後人就越不敢問。 [#portrait=xiao] [ID:JW_ACTIVITY_OLD_BALLAD_002]
 你: 那該信哪一份？ [#portrait=hero] [ID:JW_ACTIVITY_OLD_BALLAD_003]
 蕭小滿: 先把三份都唱一遍。別急著替它們決勝負。 [#portrait=xiao] [ID:JW_ACTIVITY_OLD_BALLAD_004]
+if activity_variant == "cloud_step"
+	蕭小滿: 陸師傅還留了一頁掠影步。今天試唱時，把轉身與停頓一起找出來；唱完再照他的筆記練。 [#portrait=xiao] [ID:JW_ACTIVITY_OLD_BALLAD_020]
+elif activity_variant == "hidden_needle"
+	蕭小滿: 陸師傅留了伏針的練法。我們用草靶試，針先落定，聲音下一拍才跟上；可別朝戲服練。 [#portrait=xiao] [ID:JW_ACTIVITY_OLD_BALLAD_021]
 旁白: 你們敲著桌沿試節奏。唱到「莫尋高處月」時，小滿的手自然往旁邊一引，留出半個身位。 [ID:JW_ACTIVITY_OLD_BALLAD_005]
 蕭小滿: 你聽到了什麼？ [#portrait=xiao] [ID:JW_ACTIVITY_OLD_BALLAD_006]
 - 像在提醒人留一條退路。 [ID:JW_ACTIVITY_OLD_BALLAD_007]
@@ -698,6 +713,10 @@ else
 蕭小滿: 這不算發現一部絕世祕笈。 [#portrait=xiao] [ID:JW_ACTIVITY_OLD_BALLAD_017]
 你: 但下回走古道，我可能會多回頭看一眼。 [#portrait=hero] [ID:JW_ACTIVITY_OLD_BALLAD_018]
 蕭小滿: 那就不白唱。等你回來，把路上的風也說給我聽。 [#portrait=xiao] [ID:JW_ACTIVITY_OLD_BALLAD_019]
+if activity_variant == "cloud_step"
+	旁白: 你照著掠影步的筆記換了幾次落腳，終於能在同一段曲子裡，從容放下不合用的那一步。 [ID:JW_ACTIVITY_OLD_BALLAD_022]
+elif activity_variant == "hidden_needle"
+	旁白: 細針落在草靶上，下一拍才帶動細草一顫。你記下等待的分寸，也把留在桌上的針一一收好。 [ID:JW_ACTIVITY_OLD_BALLAD_023]
 => END
 
 ~ activity_hermit_visit
@@ -713,7 +732,7 @@ else
 陸行雲: 嗯。那位前輩當年就是這樣教我的。然後讓我替他守屋，一守到天黑。 [#portrait=lu] [ID:JW_ACTIVITY_HERMIT_VISIT_010]
 旁白: 你們把被風吹散的鞋帶理好，替門邊的菜筐搬了個不會淋雨的位置。 [ID:JW_ACTIVITY_HERMIT_VISIT_011]
 你: 今天沒有見到人，卻也沒白來。 [#portrait=hero] [ID:JW_ACTIVITY_HERMIT_VISIT_012]
-陸行雲: 下回若見到，先問他菜賣得好不好。別一開口就叫人把一輩子濃縮成一句口訣。 [#portrait=lu] [ID:JW_ACTIVITY_HERMIT_VISIT_013]
+陸行雲: 下回先問他菜賣得好不好。今天我教你伏針：先將細針落到草靶，下一拍才引它發作，別把一時看不見當成沒有作用。 [#portrait=lu] [ID:JW_ACTIVITY_HERMIT_VISIT_013]
 => END
 
 ~ activity_medicine_lesson

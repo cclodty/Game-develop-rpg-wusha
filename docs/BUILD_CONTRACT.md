@@ -1,75 +1,69 @@
-# 卡牌版整合合約：江湖未遠
+# 內功與蓄勢版整合合約
 
-適用 `weiyuan-card-prototype`，Godot 4.6.3 標準版，Dialogue Manager 3.10.4。本檔描述目前模組責任與接入；是否通過整合測試見 [VALIDATION.md](VALIDATION.md)。舊即時戰鬥合約保留於 [歷史文件](history/action-prototype/BUILD_CONTRACT.md)。
+適用 `weiyuan-martial-core`，Godot 4.6.3 標準版、Dialogue Manager 3.10.4。本文件說明實際模組責任；測試結果見 [VALIDATION.md](VALIDATION.md)。[卡牌 v2](history/cards-v2/BUILD_CONTRACT.md) 與 [動作版](history/action-prototype/BUILD_CONTRACT.md) 保留為歷史。
 
 ## 場景與責任
 
-邏輯畫面 1440×900。`world.gd` 與新的 `card_arena.gd` 都是 Node2D，遊玩區 1080×640，由 main 放在 (28,136) 並裁切；不要自行新增全螢幕 HUD 或 Camera2D。main 持有選單、建角入口、對話、活動與存檔流程。模態畫面應關閉世界／戰鬥輸入，避免同一次點擊穿透。
+邏輯畫面1440×900，`world.gd` 與 `card_arena.gd` 的遊玩區為1080×640，由 main 放在(28,136)並裁切。main 管理入口、建角、試招、對話、活動、暫停與保存；模態畫面關閉世界／戰鬥輸入，不能同次點擊穿透。
 
-| 模組 | 責任 | 不可代做 |
-|---|---|---|
-| `character_creation.gd` | 六題資料、六能力、微調驗證與回顧 | 寫檔、扣日程、發七日活動獎勵 |
-| `creation_journey.gd` | 顯示問答／結果／回顧／微調；呼叫 run 的建角方法 | 私自保存另一份能力或跳過確認 |
-| `run_state.gd` | 旅程交易、建角保存、已學牌／配招／精修、活動、結局 | 卡牌傷害或動畫時鐘 |
-| `card_catalog.gd` | 唯一的 18 牌效果／精修／來源與牌面說明 | 隨機掉牌或直接更改旅程 |
-| `card_battle.gd` | 純回合、敵意圖、抽洗牌、預覽與快照 | 場景、檔案、活動發獎 |
-| `card_arena.gd`／`card_ui.gd` | 真實模型的操作與可讀回饋 | 另算傷害、改抽牌結果、跨層發獎 |
-| `world.gd` | 城鎮與探索行走、人物／目標互動 | 推動日程或直接完成活動 |
-| `first_week.dialogue` | 已確認活動的敘事、NPC 訪談與收束 | `do`、賦值或隱藏的獎勵副作用 |
+| 模組 | 責任 |
+|---|---|
+| `character_creation.gd`／`creation_journey.gd` | 六題、能力及微調的單一計算／顯示；不發七日獎勵 |
+| `run_state.gd` | journey/lab分流、建角、已學招式／內功、配招／精修、變動奇遇、活動交易與保存 |
+| `game_data.gd` | 活動成本與收益、人物／地點、奇遇候選與對手線索 |
+| `card_catalog.gd` | 唯一十二招／三內功／三示範組合及固定授招來源 |
+| `card_battle.gd` | 純回合、資源、意圖、亂數、效果預覽、戰鬥快照；不操作檔案 |
+| `card_arena.gd`／`card_ui.gd` | 真正模型的操作與讀取回饋；不另算傷害或發獎 |
+| `world.gd` | 行走、人物與目標互動；不推日程 |
+| `first_week.dialogue` | 已確認活動的敘事與訪談；無賦值或獎勵副作用 |
 
 ## 共用識別碼
 
-- 出身：`herbalist` 藥鋪學徒、`courier` 驛站跑腿、`performer` 戲班子弟。
-- 屬性：`constitution` 根骨、`strength` 力道、`agility` 身法、`resolve` 定力、`aptitude` 悟性、`fortune` 機緣。
-- NPC：`shen` 沈照嶺、`lu` 陸行雲、`tao` 陶半夏、`zhou` 周望山、`xiao` 蕭小滿、`lin` 林知微。
-- 地點：`wangxi` 望溪鎮、`grove` 青篁溪谷、`ridge` 望風古道。
-- 代表武學：`sword_qi` 破雲劍氣、`cloud_step` 掠影突進；兩 ID 同時可作已習得旗標，實際戰鬥使用是否配入對應牌。
-- 去向：`zhaoling`、`duyun`、`stay`。出身、動機與低能力都不直接封鎖去向。
+出身是 `herbalist/courier/performer`，能力為 `constitution/strength/agility/resolve/aptitude/fortune`。人物 `shen/lu/tao/zhou/xiao/lin`；地點 `wangxi/grove/ridge`；去向 `zhaoling/duyun/stay`。代表招式 `sword_qi` 是破雲劍氣，`cloud_step` 現為掠影步。已學旗標不表示已配入，也不等於加入某派。
 
-## 建角與旅程 API
+內功 `shouzhong/xingyun/guiyuan`，兵器 `sword/saber/polearm/unarmed`；驗證池只有三張劍限定招，其餘可混搭，刀與長兵選項不代表已有其專屬牌池。試招對手為 `flurry/armored/charging/counter`，旅程保留 `practice/spar/grove/ridge/exam`。
 
-`WeiyuanRun` 為 RefCounted，公開 `data: Dictionary`。
+## 旅程、試招與配招 API
 
-玩家建立新旅程應呼叫 `start_creation(hero_name, origin)`，進入 `phase="prologue"`；`new_run()` 保留預設已完成建角作為規則／測試初始化，不可拿來跳過真正玩家的六題流程。
+`WeiyuanRun` 為 RefCounted，公開 `data`。正式玩家呼叫 `start_creation(hero_name,origin,journey_seed=0)`，六題 `set_creation_answer`、移點 `move_creation_point`／`reset_creation_adjustments`、`confirm_creation` 完成後由 prologue→intro，再播 `arrival_morning`。`new_run()` 只作預設建角的規則／測試初始化，不能繞過玩家流程。
 
-建角方法為 `set_creation_answer(index, choice)`、`move_creation_point(from,to)`、`reset_creation_adjustments()`、`confirm_creation()`，回傳 `{ok,message}`。確認後轉 `intro`，再接 `arrival_morning` 的三出身翌晨故事。`creation_journey.configure(run)` 顯示共用 run，發出 `changed`／`confirmed`／`closed`，main 負責保存與路由。
+行程入口保留 `day/period/remaining/activity_status/begin_activity/complete_activity/retreat_activity/retry_activity/prepare_exam_now/begin_exam/complete_exam/choose_school/buy_medicine`。`activity_preview(id)` 在扣時前返回本輪奇遇、已學時的心得替代獎勵與沿途對手提示。
 
-既有行程入口保留：`day()`、`period()`、`remaining()`、`activity_status(id)`、`begin_activity(id)`、`complete_activity(outcome="success",detail={})`、`retreat_activity(detail={})`、`retry_activity()`、`prepare_exam_now()`、`begin_exam()`、`complete_exam(won,detail={})`、`choose_school(id)`、`buy_medicine()`。條件與獎勵來自 `WeiyuanData.ACTIVITIES`，卡牌來源來自 `WeiyuanCards.ACTIVITY_CARDS`。
+配招以 `set_loadout(deck,weapon,inner)` 原子驗證三者；相容入口 `set_deck(deck)` 保留。`upgrade_status(id)` 提供費用及首次悟性折扣；`upgrade_card(id,branch="stable")` 花心得解鎖，`set_refinement(id,branch)` 在已解鎖的穩定／專精練法間免費切換。只允許 intro/town、pending空時更改；同名兩張共用分支。試招允許清空分支以回到未精修基準。
 
-新增 `set_deck(deck:Array)`、`upgrade_status(id)`、`upgrade_card(id)`；配招與精修只允許 `intro`／`town` 且 pending 為空。`upgrade_status` 提供 `ok/message/cost/discounted`，確認前要展示真實成本。`battle_stats()` 取得本次鎖定資料，不能由 UI 另組目前 live 配牌覆蓋它。
+`new_lab(preset="shouzhong")` 直接建立獨立試招：六能力各5、全十二招、三內功、三項精修已解鎖但未選分支、藥物1。`apply_lab_preset(id)` 重設對應牌組並清已選精修；`begin_trial(enemy,seed)` 建立零時段試招 pending。完成／撤退回試招準備，不發正式旅程資源或學武獎勵。既有旅程檔保留，不讓試招當作第八日或跨輪成長。
 
-## 活動交易與新存檔
+## 保存與活動交易
 
-檔案為 `user://run-cards-v2.json`，外層 `{version:2,data:{...}}`，備援 `.bak`、原子寫入暫檔 `.tmp`。不讀寫舊 `run-v1.json`。讀檔驗證失敗可恢復上一份有效備援，但不能以靜默新遊戲取代錯誤。
+外層 `{version:3,data:{...}}`。旅程 `user://run-martial-v3.json`，試招 `user://lab-martial-v3.json`；`current_save_path()` 根據 mode 選擇。`save_game(path="")` 預設保存目前模式；`load_game()` 預設載入旅程，試招續玩須明確傳 LAB_SAVE_PATH。備援 `.bak`、原子寫入 `.tmp`；不讀寫舊 `run-cards-v2.json` 或 `run-v1.json`。失敗報錯，不能靜默開新局。
 
-旅程保留姓名、出身、日期時段、資源、武學、見識、人物信任、技能旗標、完成活動、紀事、pending、phase、選拔結果、去向、世界位置與對話斷點。新增：
+保留姓名、日期、資源、關係、事件、世界位置與對話斷點；v3資料重點如下：
 
 | 欄位 | 內容 |
 |---|---|
-| `creation` | 內部版本 1；六答案、微調紀錄、目前頁／題與回看狀態 |
-| `attributes` | 六項整數，完成後 2–8、總和 30；須與 creation 計算一致 |
-| `learned_cards` | 合法、唯一的已學牌 ID |
-| `deck` | 十張已學牌，每種最多兩張 |
-| `upgraded_cards`／`mastery` | 已精修牌種與剩餘練習心得 |
-| `aptitude_discount_used` | 首次悟性精修優惠是否用過 |
-| `fortune_hint_used` | 首次機緣外出提示是否用過；開始外出時記錄 |
+| `mode` | `journey/lab`，不能互相當成續玩檔 |
+| `creation/attributes` | 六題與微調，六能力需與建角重算一致、總額30 |
+| `learned_cards/learned_inners` | 已學唯一ID，初始普通招式加收勢、歸元功 |
+| `deck/weapon/inner` | 十張合法牌與當前裝備 |
+| `upgraded_cards/refinements/mastery` | 已解鎖精修、各牌目前分支及心得 |
+| `aptitude_discount_used/fortune_hint_used` | 首次便利旗標，讀檔不重發 |
+| `journey_seed/opportunities/encounter_variants` | 新局確定的奇遇與探索對手；重試不重抽 |
+| `pending` | 活動token、成本、階段、鎖定配置、觀察目標、世界位置與戰鬥快照 |
 
-`begin_activity()` 建立唯一 token 並一次扣成本，鎖定 `attributes/deck/upgraded_cards/skills/training/insight/origin/exam_aid/seed` 與藥物額度。pending 可保存 `stage/visited/combat/world_position/report/battle_won`；主流程處理走到危險點、已完成觀察與戰後待結算等中斷邊界。
+`begin_activity()` 一次扣時及必要費用，鎖定 attributes/deck/weapon/inner/refinements/upgraded_cards/skills/training/insight/origin/exam_aid/seed、藥物額度與對手變體。`battle_stats()` 只回鎖定配置；活動途中改 live 欄位也不能影響已出發戰鬥。
 
-同次重試保留 token、種子與出發配置，只清掉本次戰場結果，不重新扣時／發藥。成功／撤退回報附 `pending_token`，藥物以 `medicine_used` 結算。重複或過期回報拒絕；活動完成後牌卡解鎖與心得只發一次。機緣提示不是新獎勵，不完成 `visited`，重試也不重設首次旗標。
+成功／撤退報告須帶 pending_token，藥物以 medicine_used 統一扣除。過期或重複回報拒絕，招式、內功、心得及信任只發一次。重試保留原token、出發種子與配置，不重扣時。奇遇核心不隨機：修橋只追加推碑／卸力其中一種，舊曲只追加掠影／伏針其中一種；固定師承仍能取得所有核心牌。已學追加牌改心得1，確認前明示。
 
-## 行走與劇本
+## 劇本與行走
 
-`world.configure(location,origin="herbalist",initial_position=Vector2(-1,-1))`、`set_objectives(Array)`、`set_input_enabled(bool)`、`get_player_position()`；信號 `npc_requested(id)`／`hotspot_requested(id)`／`exit_requested(destination)`。目標由 main 提供，不在 world 裡定義活動收益。
+`world.configure(location,origin,initial_position)`、`set_objectives`、`set_input_enabled`、`get_player_position`；信號 `npc_requested/hotspot_requested/exit_requested` 交給 main 路由。世界不持有收益規則。
 
-Dialogue Manager 新主入口為 `arrival_morning`（舊 `intro_<origin>`／`arrival` 保留相容），另有 `npc_<id>`、`activity_<id>`、操作活動的 `complete_<id>`、`exam_intro` 與三結局。`run.story_context()` 額外提供 `has_sword_qi`、`has_cloud_step`、`school`、`creation_motivation/approach/support/finish`；其餘明示鍵為 `hero_name/origin/day/remaining/training/insight`。不得任意讀未提供的存檔欄位。
+主劇本入口 `arrival_morning`，另有 `npc_<id>`、`activity_<id>`、操作後 `complete_<id>`、`exam_intro` 及三結局。舊 `intro_<origin>/arrival` 保留相容與固定ID。`story_context()` 提供姓名、出身、day/remaining/training/insight、has_sword_qi/has_cloud_step、school、四項creation回應標記，另有 `activity_variant/variant_title/variant_text`；沒有pending時後三者為空。
 
-一般訪談不扣時。故事／休息場景的 END 才結算已確認活動；任務／探索／戰鬥簡報 END 只啟動操作，成功收尾 END 才結算。固定可見 ID 與 `[#portrait=...]` 保留，詳見 [WRITING_GUIDE.md](WRITING_GUIDE.md)。
+普通訪談不扣時。故事／休息的 END 結算已確認活動；操作型簡報 END 只啟動行走／戰鬥，成功收尾 END 才發獎。Dialogue Manager 文字保持唯讀，ID與畫像標籤穩定；完整寫作規則見 [WRITING_GUIDE.md](WRITING_GUIDE.md)。
 
-## 卡牌、素材與驗證入口
+## 交付與驗證
 
-卡牌的精確函式與快照見 [CARD_CONTRACT.md](CARD_CONTRACT.md)，數值與意圖見 [CARD_DESIGN.md](CARD_DESIGN.md)。新卡牌場景取代 main 的即時戰鬥；舊 `arena.gd` 與動畫素材可保留作歷史參考，不能因舊測試過關就忽略新的回合套件。
+卡牌模型及視圖細節見 [CARD_CONTRACT.md](CARD_CONTRACT.md)。測試入口 `bash tests/run_tests.sh`，涵蓋建角、牌目錄、模型、場景、run、故事、世界與UI；真實瀏覽器以 `tools/test_martial_web.py` 操作，不能用存檔注入代替玩家可走通的路徑。實際通過數與限制只寫入驗證報告。
 
-本輪測試應覆蓋 `test_creation.gd`、`test_card_battle.gd`、卡牌視圖、卡牌 run-state 與新 UI 流程，再加上仍適用的故事、世界與存讀回歸。入口由本輪 `tests/run_tests.sh` 統一；最終實際執行數與 browser 證據只寫入 `VALIDATION.md`，本合約不預先宣告通過。
-
-卡牌版預定交付 `artifacts/cards-release/jianghu-weiyuan-cards-{web,source}.zip`，本機 port 8071，另用 `weiyuan-cards-download`。舊下載分支、8070 與舊存檔保留；發布仍以實際測試、匯出與校驗完成為準。
+新版交付 `artifacts/martial-release/jianghu-weiyuan-martial-{web,source}.zip`，固定本機port8072，來源分支 `weiyuan-martial-core`、下載分支 `weiyuan-martial-download`。包裝器拒絕100MiB以上單包，附SHA256、授權與啟動說明，排除所有版本的旅程／試招存檔及備份。舊卡牌8071／下載分支與動作8070／下載分支保留；發布完成與否以README及校驗檔為準。

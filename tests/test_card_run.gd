@@ -5,7 +5,7 @@ const Data = preload("res://scripts/game_data.gd")
 const Cards = preload("res://scripts/card_catalog.gd")
 const Creation = preload("res://scripts/character_creation.gd")
 const Battle = preload("res://scripts/card_battle.gd")
-const SAVE = "user://test-card-rules-v2.json"
+const SAVE = "user://test-card-rules-v3.json"
 var passed: int = 0
 var failed: int = 0
 var _answer_sets: Dictionary = {}
@@ -20,6 +20,8 @@ func _run() -> void:
 	_test_mastery_and_fortune()
 	_test_locked_battle_and_resume()
 	_test_both_routes()
+	_test_opportunities()
+	_test_lab_and_choice_resume()
 	_test_corrupt_card_saves()
 	_clean()
 	print("TESTS COMPLETE: %d passed, %d failed" % [passed, failed])
@@ -108,68 +110,64 @@ func _test_creation_and_draft_save() -> void:
 func _test_decks_and_unlocks() -> void:
 	for origin in Data.ORIGINS:
 		var state: RefCounted = _fresh(origin)
-		_check(state.data.learned_cards.size() == 6 and Cards.validate_deck(state.data.deck, state.data.learned_cards).ok, "five basics fill the first deck for " + origin)
+		_check(state.data.learned_cards.size() == 6 and Cards.validate_deck(state.data.deck, state.data.learned_cards, "sword").ok, "five basics fill a valid initial deck for " + origin)
+		_check(state.data.inner == "guiyuan" and state.data.learned_inners == ["guiyuan"], "all origins begin with the same accessible inner")
 		var chosen: Array = state.data.deck.duplicate()
-		chosen[0] = Cards.ORIGIN_CARDS[origin]
-		chosen[1] = Cards.ORIGIN_CARDS[origin]
+		chosen[0] = "gather_momentum"
+		chosen[1] = "gather_momentum"
 		var money: int = state.data.money
-		_check(state.set_deck(chosen).ok and state.data.money == money and state.data.spent == 0, "learned origin card supplies two free copies")
+		_check(state.set_loadout(chosen, "unarmed", "guiyuan").ok and state.data.money == money and state.data.spent == 0, "atomic loadout can change to a legal unarmed deck for free")
 		chosen[0] = "unknown"
-		_check(state.data.deck[0] == Cards.ORIGIN_CARDS[origin], "caller cannot mutate stored deck through its input array")
+		_check(state.data.deck[0] == "gather_momentum", "caller cannot mutate stored deck through input array")
 		var before: Dictionary = state.data.duplicate(true)
-		for invalid in [[], ["strike"], ["strike", "strike", "strike", "guard", "guard", "breath", "breath", "observe", "observe", "feint"], ["sword_qi", "sword_qi", "guard", "guard", "breath", "breath", "observe", "observe", "feint", "feint"], [null, "strike", "guard", "guard", "breath", "breath", "observe", "observe", "feint", "feint"]]:
-			_check(not state.set_deck(invalid).ok and state.data == before, "invalid size, copies or unlearned card cannot replace deck")
-		for activity in ["medicine_lesson", "courier_work", "stage_work"]: _do(state, activity)
-		for card_id in Cards.ORIGIN_CARDS.values(): _check(card_id in state.data.learned_cards, "all origins can learn every trade: " + card_id)
+		for invalid in [[], ["strike"], ["strike", "strike", "strike", "guard", "guard", "breath", "breath", "observe", "observe", "probing_stone"], ["sword_qi", "sword_qi", "guard", "guard", "breath", "breath", "observe", "observe", "probing_stone", "probing_stone"], [null, "strike", "guard", "guard", "breath", "breath", "observe", "observe", "probing_stone", "probing_stone"]]:
+			_check(not state.set_deck(invalid).ok and state.data == before, "invalid copies, size, permission or weapon are atomic")
+		_check(not state.set_loadout(Cards.starting_deck(), "unarmed", "guiyuan").ok and state.data == before, "sword cards cannot be equipped unarmed")
+		_check(not state.set_loadout(state.data.deck, "sword", "shouzhong").ok and state.data == before, "unlearned inner cannot be equipped")
+		_check(not state.set_loadout(state.data.deck, "wand", "guiyuan").ok and state.data == before, "unsupported weapon rejected")
+		for activity in ["sword_lesson", "practice", "spar", "grove_survey", "ridge_tracks", "hermit_visit"]: _do(state, activity)
+		_check(state.data.learned_cards.size() == 12 and state.data.learned_inners.size() == 3, "guaranteed activities teach every prototype card and inner for " + origin)
 		var learned_count: int = state.data.learned_cards.size()
-		_do(state, "courier_work")
-		_check(state.data.learned_cards.size() == learned_count, "repeat work never grants duplicate card ownership")
-	var apprentice: RefCounted = _fresh()
-	_do(apprentice, "sword_lesson")
-	_check("sword_qi" in apprentice.data.learned_cards and "steady_guard" in apprentice.data.learned_cards and "opening_thrust" not in apprentice.data.learned_cards, "first lesson gives two starter school cards")
-	_do(apprentice, "practice")
-	_do(apprentice, "spar")
-	_check("opening_thrust" in apprentice.data.learned_cards and apprentice.data.mastery == 3, "sparring unlocks advanced card and actual practice progress")
-	var traveler: RefCounted = _fresh()
-	_do(traveler, "ridge_tracks")
-	_check("cloud_step" in traveler.data.learned_cards and "flowing_cut" not in traveler.data.learned_cards, "ridge teaches the first Duyun card")
-	_do(traveler, "grove_survey")
-	_do(traveler, "hermit_visit")
-	for id in ["flowing_cut", "returning_swallow", "mountain_echo"]: _check(id in traveler.data.learned_cards, "travel route learns " + id)
-	for activity in ["bridge_repair", "missing_letter", "old_ballad"]:
-		var event: RefCounted = _fresh()
-		_do(event, activity)
-		for id in Cards.cards_for_activity(activity): _check(id in event.data.learned_cards, "completed event unlocks its authored card: " + activity)
+		_do(state, "practice")
+		_check(state.data.learned_cards.size() == learned_count, "repeat practice never duplicates ownership")
+		_check(state.save_game(SAVE).ok, "learned cards and inners follow actual event ledger")
+		_clean()
 
 func _test_mastery_and_fortune() -> void:
 	var regular: RefCounted = _with_tendency("aptitude", false)
+	_do(regular, "sword_lesson")
 	_do(regular, "practice")
-	_check(not regular.upgrade_status("strike").ok and not regular.upgrade_card("strike").ok and regular.data.mastery == 1, "low aptitude can progress but needs ordinary two practice points")
+	_check(not regular.upgrade_status("sword_qi").ok and not regular.upgrade_card("sword_qi").ok and regular.data.mastery == 1, "ordinary aptitude requires two real practice points")
 	_do(regular, "practice")
-	_check(regular.upgrade_card("strike").ok and regular.data.mastery == 0 and not regular.data.aptitude_discount_used, "ordinary practice unlocks exactly the same upgrade")
+	_check(regular.upgrade_card("sword_qi", "specialist").ok and regular.data.mastery == 0 and not regular.data.aptitude_discount_used, "ordinary practice unlocks specialist for both copies")
+	_check(regular.data.refinements.sword_qi == "specialist", "selected refinement stored by card kind")
 	var before: Dictionary = regular.data.duplicate(true)
-	_check(not regular.upgrade_card("strike").ok and not regular.upgrade_card("sword_qi").ok and regular.data == before, "duplicate or unlearned upgrades consume nothing")
+	_check(not regular.upgrade_card("sword_qi").ok and not regular.upgrade_card("cloud_step").ok and not regular.upgrade_card("strike").ok and regular.data == before, "duplicate, unlearned and unsupported refinements spend nothing")
+	_check(regular.set_refinement("sword_qi", "stable").ok and regular.data.mastery == 0, "already unlocked alternatives switch freely")
+	before = regular.data.duplicate(true)
+	_check(not regular.set_refinement("sword_qi", "").ok and not regular.set_refinement("opening_thrust", "stable").ok and regular.data == before, "journey cannot erase chosen refinement or select a locked branch")
 	var talented: RefCounted = _with_tendency("aptitude", true)
+	_do(talented, "sword_lesson")
 	_do(talented, "practice")
-	_check(talented.upgrade_status("strike").cost == 1 and talented.upgrade_card("strike").ok and talented.data.aptitude_discount_used, "high aptitude discounts the first upgrade once")
+	_check(talented.upgrade_status("sword_qi").cost == 1 and talented.upgrade_card("sword_qi").ok and talented.data.aptitude_discount_used, "high aptitude discounts exactly the first upgrade")
 	_do(talented, "practice")
-	_check(talented.upgrade_status("guard").cost == 2 and not talented.upgrade_card("guard").ok, "second upgrade never reuses aptitude discount")
+	_check(talented.upgrade_status("opening_thrust").cost == 2 and not talented.upgrade_card("opening_thrust").ok, "second upgrade cannot reuse first discount")
 	_do(talented, "practice")
-	_check(talented.upgrade_card("guard").ok and talented.data.upgraded_cards == ["strike", "guard"], "later upgrades use ordinary progress")
-	_check(talented.save_game(SAVE).ok, "upgrade and one-time discount persist")
+	_check(talented.upgrade_card("opening_thrust", "specialist").ok and talented.data.upgraded_cards == ["sword_qi", "opening_thrust"], "later refinement uses regular cost")
+	_check(talented.save_game(SAVE).ok, "refinement ownership and first discount save")
 	var restored: RefCounted = Run.new()
-	_check(restored.load_game(SAVE).ok and restored.upgrade_status("feint").cost == 2 and restored.data.aptitude_discount_used, "load cannot refresh upgrade shortcut")
+	_check(restored.load_game(SAVE).ok and restored.data.refinements.opening_thrust == "specialist" and restored.data.aptitude_discount_used, "reload cannot refresh discount or forget chosen branch")
 	_clean()
 	var lucky: RefCounted = _with_tendency("fortune", true)
 	_do(lucky, "courier_work")
-	_check(not lucky.data.fortune_hint_used, "town activities never consume the exploration hint")
-	_check(lucky.begin_activity("grove_survey").ok and lucky.data.pending.fortune_hint != "" and lucky.data.fortune_hint_used, "first exploration reveals a fixed authored clue")
+	_check(not lucky.data.fortune_hint_used, "town activities do not consume exploration hint")
+	_check(lucky.begin_activity("grove_survey").ok and lucky.data.pending.fortune_hint != "" and lucky.data.fortune_hint_used, "first exploration reveals the authored early hint")
 	var hint: String = lucky.data.pending.fortune_hint
-	_check(lucky.retry_activity().ok and lucky.data.pending.fortune_hint == hint and lucky.data.pending.visited.is_empty(), "hint survives retry but does not auto-complete investigation")
-	_check(lucky.retreat_activity().ok and lucky.begin_activity("ridge_tracks").ok and lucky.data.pending.fortune_hint == "", "retreat does not replenish the once-only clue")
+	_check(lucky.retry_activity().ok and lucky.data.pending.fortune_hint == hint and lucky.data.pending.visited.is_empty(), "retry preserves hint without completing objectives")
+	_check(lucky.retreat_activity().ok and lucky.begin_activity("ridge_tracks").ok and lucky.data.pending.fortune_hint == "", "retreat does not refresh once-only convenience")
 	var observant: RefCounted = _with_tendency("fortune", false)
-	_check(observant.begin_activity("grove_survey").ok and observant.data.pending.fortune_hint == "", "low fortune still has full exploration access")
-	_check(observant.complete_activity().ok and "mountain_echo" in observant.data.learned_cards, "ordinary investigation earns the same core card")
+	_check(observant.begin_activity("ridge_tracks").ok and observant.data.pending.fortune_hint == "", "low fortune still accesses full core training")
+	_check(observant.complete_activity().ok and "cloud_step" in observant.data.learned_cards and "xingyun" in observant.data.learned_inners, "ordinary investigation earns same core card and inner")
 
 func _test_locked_battle_and_resume() -> void:
 	var state: RefCounted = _fresh()
@@ -216,24 +214,123 @@ func _test_locked_battle_and_resume() -> void:
 	_clean()
 
 func _test_both_routes() -> void:
+	# Rules-level route fixtures settle accepted activities; actual combat is checked separately.
 	for origin in Data.ORIGINS:
 		for social in [false, true]:
 			var state: RefCounted = _fresh(origin)
-			var route: Array = ["grove_survey", "ridge_tracks", "hermit_visit"] if social else ["sword_lesson", "practice", "spar", "practice", "missing_letter"]
+			var route: Array = ["grove_survey", "ridge_tracks", "hermit_visit", "practice"] if social else ["sword_lesson", "practice", "spar", "practice", "missing_letter"]
 			for activity in route: _do(state, activity)
-			var new_cards: Array = ["cloud_step", "flowing_cut", "returning_swallow"] if social else ["sword_qi", "steady_guard", "opening_thrust"]
-			for card_id in new_cards: _check(card_id in state.data.learned_cards, "route learns complete school set for " + origin)
-			var deck: Array = ["strike", "strike", "guard", "guard", new_cards[0], new_cards[0], new_cards[1], new_cards[1], new_cards[2], new_cards[2]]
-			_check(state.set_deck(deck).ok and state.data.spent == (7 if social else 8), "route fits original time budget with a legal distinctive deck")
+			var preset: Dictionary = Cards.PRESETS["xingyun" if social else "shouzhong"]
+			_check(state.set_loadout(preset.deck, preset.weapon, preset.inner).ok and state.data.spent == 8, "each origin can learn a complete sample build in eight slots")
 			while state.remaining() > 0: _do(state, "rest")
-			_check(state.begin_exam().ok and state.battle_stats().deck == deck, "exam locks route-specific deck")
-			_check(state.complete_exam(false).ok, "card exam can still be conceded")
+			_check(state.begin_exam().ok and state.battle_stats().deck == preset.deck and state.battle_stats().inner == preset.inner, "exam locks route-specific full loadout")
+			_check(state.complete_exam(false).ok, "prepared exam may be conceded")
 			var school: String = "duyun" if social else "zhaoling"
-			_check(state.data.exam_result.eligible == [school] and state.choose_school(school).ok, "preparation earns expected ending even after concession")
-			_check(not state.set_deck(Cards.starting_deck()).ok and not state.upgrade_card("strike").ok, "completed story cannot mutate its build")
-			_check(state.save_game(SAVE).ok, "complete route ending saves")
+			_check(state.data.exam_result.eligible == [school] and state.choose_school(school).ok, "preparation earns the chosen ending even after concession")
+			_check(not state.set_deck(Cards.starting_deck()).ok and not state.upgrade_card("sword_qi").ok, "ending prevents workshop mutation")
+			_check(state.save_game(SAVE).ok, "complete route saves with earned loadout")
 			_clean()
-			print("CARD ROUTE VERIFIED: %s -> %s" % [origin, school])
+			print("MARTIAL ROUTE VERIFIED: %s -> %s" % [origin, school])
+
+func _test_opportunities() -> void:
+	var observed: Dictionary = {}
+	for seed in range(1, 25):
+		var state: RefCounted = Run.new()
+		state.new_run("問路人", "herbalist", seed)
+		var same_seed: RefCounted = Run.new()
+		same_seed.new_run("另一位", "performer", seed)
+		_check(state.data.opportunities == same_seed.data.opportunities and state.data.encounter_variants == same_seed.data.encounter_variants, "seed fixes opportunities and foes independently of origin")
+		observed[str(state.data.opportunities)] = true
+		for id in ["bridge_repair", "old_ballad"]:
+			var before: Dictionary = state.data.duplicate(true)
+			var preview: Dictionary = state.activity_preview(id)
+			_check(not preview.text.is_empty() and preview.card_id == state.data.opportunities[id] and state.data == before, "optional lesson and reward are disclosed before paying")
+		_check(not state.activity_preview("ridge_tracks").encounter_variant.is_empty(), "encounter clue available before expedition cost")
+	_check(observed.size() > 1, "fresh journeys actually offer different optional lessons")
+	var learner: RefCounted = Run.new()
+	learner.new_run("橋邊客", "herbalist", 1)
+	var choice: String = learner.data.opportunities.bridge_repair
+	_do(learner, "sword_lesson")
+	_do(learner, "practice")
+	if choice == "yielding_palm": _do(learner, "spar")
+	_do(learner, "courier_work")
+	var mastery: int = learner.data.mastery
+	_check(learner.activity_preview("bridge_repair").already_learned, "known optional technique advertises its alternate practice reward")
+	_check(learner.begin_activity("bridge_repair").ok and learner.story_context().activity_variant == choice, "accepted variant reaches Dialogue Manager context")
+	_check(learner.save_game(SAVE).ok, "pending optional lesson saves")
+	var loaded: RefCounted = Run.new()
+	_check(loaded.load_game(SAVE).ok and loaded.data.opportunities == learner.data.opportunities, "loading does not reroll optional reward")
+	_check(loaded.complete_activity().ok and loaded.data.mastery == mastery + 1, "known technique grants exactly the promised one practice point")
+	var settled: Dictionary = loaded.data.duplicate(true)
+	_check(not loaded.complete_activity().ok and loaded.data == settled, "optional alternate reward settles only once")
+	_check(loaded.begin_activity("ridge_tracks").ok, "start seeded expedition")
+	var locked: Dictionary = loaded.battle_stats()
+	_check(loaded.retry_activity().ok and loaded.battle_stats() == locked, "retry cannot reroll encounter pattern or opening seed")
+	_clean()
+
+func _test_lab_and_choice_resume() -> void:
+	for id in Cards.PRESETS:
+		var lab: RefCounted = Run.new()
+		lab.new_lab(id)
+		_check(lab.data.mode == "lab" and lab.data.inner == id and lab.data.deck == Cards.PRESETS[id].deck, "lab loads exact preset " + id)
+		_check(lab.data.attributes.values() == [5, 5, 5, 5, 5, 5] and lab.data.refinements.is_empty(), "trial begins with equal abilities and unrefined baseline")
+		_check(lab.current_save_path() == Run.LAB_SAVE_PATH and not lab.save_game(Run.SAVE_PATH).ok, "lab cannot overwrite canonical journey save")
+		_check(not lab.begin_activity("practice").ok and not lab.buy_medicine().ok and not lab.prepare_exam_now().ok and not lab.begin_exam().ok, "lab cannot farm story calendar, resources or endings")
+		_check(lab.set_refinement("sword_qi", "specialist").ok and lab.set_refinement("sword_qi", "").ok, "lab can compare already unlocked refinement with baseline")
+		_check(lab.begin_trial("armored", 91).ok, "trial starts against chosen pattern")
+		var token: int = lab.data.pending.token
+		var locked: Dictionary = lab.battle_stats()
+		var before: Dictionary = lab.data.duplicate(true)
+		_check(not lab.apply_lab_preset("guiyuan").ok and not lab.set_refinement("sword_qi", "stable").ok and lab.data == before, "active trial locks full build and refinement")
+		_check(lab.retry_activity().ok and lab.battle_stats() == locked and lab.data.spent == 0, "trial retry keeps seed/loadout and never spends a day")
+		_check(lab.retreat_activity({"medicine_used": 1, "pending_token": token}).ok and lab.data.medicine == 1 and lab.data.completed.is_empty() and lab.data.mastery == 0 and lab.data.money == 0, "trial retreat resets allowance without producing story rewards")
+		before = lab.data.duplicate(true)
+		_check(not lab.complete_activity("success", {"pending_token": token}).ok and lab.data == before, "trial settlement cannot replay")
+		_check(lab.begin_trial("counter", 92).ok, "another trial receives its own transaction")
+		before = lab.data.duplicate(true)
+		_check(not lab.complete_activity("success", {"pending_token": token}).ok and lab.data == before, "a prior trial callback cannot settle the next trial")
+		var victory: Dictionary = lab.complete_activity("success", {"pending_token": int(lab.data.pending.token), "medicine_used": 1})
+		_check(victory.ok and victory.rewards.is_empty() and lab.data.trial_history.size() == 2 and lab.data.trial_history[1].won and lab.data.spent == 0 and lab.data.money == 0 and lab.data.mastery == 0 and lab.data.medicine == 1, "trial success records outcome without awarding journey resources or charging medicine twice")
+		_check(lab.apply_lab_preset("xingyun").ok and lab.save_game(SAVE).ok, "free preset change and independent trial save validate")
+		_check(not lab._read_save(SAVE, "journey").ok, "a lab payload is rejected by journey-mode reader")
+		var restored: RefCounted = Run.new()
+		_check(restored.load_game(SAVE).ok and restored.data.mode == "lab" and restored.data.trial_history.size() == 2, "trial history and mode restore")
+		_clean()
+	var lab: RefCounted = Run.new()
+	lab.new_lab("xingyun")
+	_check(lab.set_refinement("cloud_step", "specialist").ok, "prepare two-card cycle refinement")
+	var battle: RefCounted = Battle.new()
+	var found: bool = false
+	for seed in range(1, 31):
+		_check(lab.begin_trial("flurry", seed).ok, "find a reproducible legal cycle hand")
+		var started: Dictionary = battle.configure("flurry", lab.battle_stats())
+		_check(started.ok, "lab stats configure real model")
+		if not started.ok: break
+		battle.skip_mulligan()
+		var index: int = battle.data.hand.find("cloud_step")
+		if index >= 0:
+			_check(battle.play_card(index, 0, false).ok and battle.data.phase == "choice", "a real cycle card enters pending-choice phase")
+			found = true
+			break
+		lab.retreat_activity()
+	_check(found, "deterministic search found an actual cycle opening")
+	if not found: return
+	lab.data.pending.combat = battle.snapshot()
+	_check(lab.save_game(SAVE).ok, "in-play card and pending cycle selection save in outer run")
+	var loaded: RefCounted = Run.new()
+	var load_result: Dictionary = loaded.load_game(SAVE)
+	_check(load_result.ok, "pending cycle restores with locked lab build: " + str(load_result.message))
+	if not load_result.ok:
+		_clean()
+		return
+	var resumed: RefCounted = Battle.new()
+	_check(resumed.configure("flurry", loaded.battle_stats(), loaded.data.pending.combat).ok, "restored pending choice configures without restarting")
+	var spent_qi: int = int(battle.data.qi)
+	_check(battle.resolve_choice([0, 1]).ok and resumed.resolve_choice([0, 1]).ok and _same(battle.snapshot(), resumed.snapshot()), "resolving saved selection consumes no second fee and draws identical cards")
+	_check(resumed.data.qi == spent_qi and resumed.data.phase == "player", "cycle continuation keeps paid qi and returns to player")
+	loaded.data.pending.combat = resumed.snapshot()
+	_check(loaded.save_game(SAVE).ok, "post-choice state also saves")
+	_clean()
 
 func _test_corrupt_card_saves() -> void:
 	var state: RefCounted = _fresh()
@@ -242,6 +339,9 @@ func _test_corrupt_card_saves() -> void:
 		{"attributes": {}}, {"attributes": {"constitution": 99}}, {"creation": {}},
 		{"mastery": -1}, {"mastery": 1.5}, {"aptitude_discount_used": "true"}, {"fortune_hint_used": 1},
 		{"learned_cards": ["strike"]}, {"upgraded_cards": ["sword_qi"]}, {"deck": Cards.starting_deck() + ["strike"]},
+		{"weapon": "wand"}, {"inner": "shouzhong"}, {"refinements": {"strike": "stable"}}, {"refinements": []},
+		{"learned_inners": ["guiyuan", "xingyun"]}, {"mode": "lab"}, {"journey_seed": 0}, {"opportunities": {}}, {"encounter_variants": {}},
+		{"trial_history": [{"mode": "flurry", "won": true, "seed": 1, "inner": "guiyuan", "weapon": "sword"}]},
 	]
 	for fields in corruptions:
 		var invalid: Dictionary = valid.duplicate(true)
@@ -255,7 +355,7 @@ func _test_corrupt_card_saves() -> void:
 	battle.configure("practice", state.battle_stats())
 	state.data.pending.combat = battle.snapshot()
 	state.data.pending.stage = "combat"
-	for fields in [{"seed": -1}, {"seed": 1.5}, {"seed": 2147483648}, {"deck": []}, {"attributes": {}}, {"upgraded_cards": ["strike"]}, {"medicine_at_start": 99}, {"fortune_hint": "forged"}, {"combat": {"version": 1}}]:
+	for fields in [{"seed": -1}, {"seed": 1.5}, {"seed": 2147483648}, {"deck": []}, {"attributes": {}}, {"upgraded_cards": ["strike"]}, {"weapon": "unarmed"}, {"inner": "xingyun"}, {"refinements": {"sword_qi": "stable"}}, {"encounter_variant": "counter"}, {"medicine_at_start": 99}, {"fortune_hint": "forged"}, {"combat": {"version": 1}}]:
 		var invalid: Dictionary = state.data.duplicate(true)
 		for key in fields: invalid.pending[key] = fields[key]
 		_reject_save(state, invalid, "malformed locked encounter: " + str(fields))
@@ -265,7 +365,14 @@ func _test_corrupt_card_saves() -> void:
 	_write(JSON.stringify({"version": 1, "data": state.data}))
 	var before: Dictionary = state.data.duplicate(true)
 	_check(not state.load_game(SAVE).ok and state.data == before, "v1 action-game envelope is not imported into card run")
-	_check(Run.SAVE_PATH == "user://run-cards-v2.json" and Run.SAVE_VERSION == 2, "card save namespace remains isolated from existing prototype")
+	_check(Run.SAVE_PATH == "user://run-martial-v3.json" and Run.SAVE_VERSION == 3, "card save namespace remains isolated from existing prototype")
+	_check(not state.save_game("user://run-cards-v2.json").ok and not state.save_game("user://run-v1.json").ok, "v3 cannot overwrite canonical previous versions even when explicitly passed")
+	var lab: RefCounted = Run.new()
+	lab.new_lab()
+	for fields in [{"medicine": 2}, {"training": 1}, {"spent": 1}, {"learned_cards": Cards.starting_learned("herbalist")}, {"lab_preset": "missing"}]:
+		var invalid: Dictionary = lab.data.duplicate(true)
+		for key in fields: invalid[key] = fields[key]
+		_reject_save(lab, invalid, "lab baseline/permission cannot be forged: " + str(fields))
 	_clean()
 
 func _reject_save(state: RefCounted, invalid: Dictionary, message: String) -> void:

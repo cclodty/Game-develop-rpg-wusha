@@ -182,10 +182,10 @@ static func effect_text(attribute: String, value: int) -> String:
 static func card_advice(state: Dictionary) -> String:
 	var values = final_attributes(state)
 	if values.is_empty(): return ""
-	var common = "起始十張牌：出劍、架勢、調息、審勢、虛招各兩張。先讀敵人意圖，再安排攻防；調息補真氣，審勢找牌。"
+	var common = "起始十張牌：出劍、架勢、調息、審勢、飛石問路各兩張。先讀敵人意圖，再安排攻防；調息補真氣，審勢找牌。"
 	if int(values.strength) > int(values.agility): return common + " 你的首張攻擊較有力，可留意第一張出劍的時機。"
 	if int(values.agility) > int(values.strength): return common + " 你的首張防護較厚，可先用架勢穩住再回擊。"
-	return common + " 目前攻防均衡，可以先嘗試防護與虛招的搭配。"
+	return common + " 目前攻防均衡，可以先嘗試以飛石問路拆防，再安排出劍。"
 
 static func summary(state: Dictionary) -> Dictionary:
 	var check = validate(state)

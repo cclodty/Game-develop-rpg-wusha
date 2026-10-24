@@ -12,7 +12,7 @@ const Art = preload("res://scripts/art.gd")
 const UI = preload("res://scripts/card_ui.gd")
 const SIZE = Vector2(1080, 640)
 const PAGE_SIZE = 5
-const HERO_FOOT = Vector2(178, 292)
+const HERO_FOOT = Vector2(166, 250)
 const CLIP_TIME = 0.28
 
 var battle = Battle.new()
@@ -23,6 +23,8 @@ var restore_error: String = ""
 var selected_card: int = -1
 var selected_target: int = 0
 var mulligan_selection: Array = []
+var retained_index: int = -1
+var cycle_selection: Array = []
 var last_report: Dictionary = {}
 
 var _configured: bool = false
@@ -64,6 +66,8 @@ func configure(encounter_mode: String, hero_stats: Dictionary, restore: Dictiona
 	selected_card = -1
 	selected_target = 0
 	mulligan_selection.clear()
+	retained_index = -1
+	cycle_selection.clear()
 	_page = 0
 	_panel = ""
 	_pile_tab = "draw"
@@ -115,6 +119,8 @@ func status() -> Dictionary:
 	result["restore_error"] = restore_error
 	result["selected_card"] = selected_card
 	result["selected_target"] = selected_target
+	result["retained_index"] = retained_index
+	result["cycle_selection"] = cycle_selection.duplicate()
 	return result
 
 
@@ -123,7 +129,7 @@ func report() -> Dictionary:
 
 
 func view_state() -> Dictionary:
-	return {"selected_card": selected_card, "selected_target": selected_target, "mulligan_selection": mulligan_selection.duplicate(), "page": _page, "panel": _panel, "pile_tab": _pile_tab}
+	return {"selected_card": selected_card, "selected_target": selected_target, "mulligan_selection": mulligan_selection.duplicate(), "retained_index": retained_index, "cycle_selection": cycle_selection.duplicate(), "page": _page, "panel": _panel, "pile_tab": _pile_tab}
 
 
 func _restore_view(value: Dictionary) -> void:
@@ -134,6 +140,12 @@ func _restore_view(value: Dictionary) -> void:
 	_page = clampi(_view_integer(value.get("page"), 0), 0, maxi(0, (hand.size() - 1) / PAGE_SIZE))
 	_panel = str(value.get("panel", "")) if value.get("panel", "") in ["", "deck", "rules"] else ""
 	_pile_tab = str(value.get("pile_tab", "draw")) if value.get("pile_tab", "draw") in ["draw", "discard", "exhaust", "hand"] else "draw"
+	retained_index = clampi(_view_integer(value.get("retained_index"), -1), -1, hand.size() - 1) if current.get("phase", "") in ["player", "choice"] else -1
+	if value.get("cycle_selection", []) is Array and current.get("phase", "") == "choice":
+		var maximum: int = int(current.get("pending_choice", {}).get("max_count", 0))
+		for raw in value.cycle_selection:
+			if (raw is int or raw is float) and is_finite(float(raw)) and float(raw) == float(int(raw)) and int(raw) >= 0 and int(raw) < hand.size() and int(raw) not in cycle_selection and cycle_selection.size() < maximum:
+				cycle_selection.append(int(raw))
 	if value.get("mulligan_selection", []) is Array and current.get("phase", "") == "mulligan":
 		for raw in value.get("mulligan_selection", []):
 			if (raw is int or raw is float) and int(raw) >= 0 and int(raw) < hand.size() and int(raw) not in mulligan_selection and mulligan_selection.size() < int(current.get("mulligan_limit", 0)):
@@ -145,56 +157,82 @@ func _view_integer(value: Variant, fallback: int) -> int:
 
 
 func select_card(index: int) -> bool:
-	if not _can_act():
-		return false
+	if not _can_act(): return false
 	var current: Dictionary = battle.status()
 	var hand: Array = current.get("hand", [])
-	if index < 0 or index >= hand.size():
-		return false
+	if index < 0 or index >= hand.size(): return false
 	if current.phase == "mulligan":
 		if index in mulligan_selection:
 			mulligan_selection.erase(index)
 		elif mulligan_selection.size() < int(current.get("mulligan_limit", 0)):
 			mulligan_selection.append(index)
 		else:
-			_message = "已選滿可換張數；再點一次已選牌可取消。"
+			_message = "已選滿可換張數；再點已選牌可取消。"
 			_refresh()
 			return false
-		_notify_view()
-		return true
-	if current.phase != "player":
+	elif current.phase == "choice":
+		if index in cycle_selection:
+			cycle_selection.erase(index)
+		elif cycle_selection.size() < int(current.get("pending_choice", {}).get("max_count", 0)):
+			cycle_selection.append(index)
+		else:
+			_message = "已選滿可換出的張數；再點已選牌可取消。"
+			_refresh()
+			return false
+	elif current.phase == "player":
+		selected_card = -1 if selected_card == index else index
+		_message = "選擇普通施展或運勁；點對手可更換目標。" if selected_card >= 0 else ""
+	else:
 		return false
-	var card: Dictionary = _card(str(hand[index]), current)
-	if int(card.get("cost", 0)) > int(current.get("qi", 0)):
-		_message = "真氣不足，先打出調息或結束回合。"
-		_refresh()
-		return false
-	if selected_card == index:
-		selected_card = -1
-		_notify_view()
-		return true
-	if card.get("target", "self") != "enemy":
-		return _play(index, selected_target)
-	var living: Array = _living_targets(current)
-	if living.size() == 1:
-		return _play(index, int(living[0]))
-	selected_card = index
-	_message = "已選「%s」，點選一位對手施展。" % card.get("name", "招式")
 	_notify_view()
 	return true
 
 
 func select_target(index: int) -> bool:
-	if not _can_act():
-		return false
-	var current: Dictionary = battle.status()
-	if index not in _living_targets(current):
-		return false
+	if not _can_act() or battle.status().get("phase", "") != "player": return false
+	if index not in _living_targets(battle.status()): return false
 	selected_target = index
-	if selected_card >= 0 and current.get("phase", "") == "player":
-		return _play(selected_card, index)
 	_notify_view()
 	return true
+
+
+func play_selected(empowered: bool = false) -> bool:
+	if not _can_act() or battle.status().get("phase", "") != "player": return false
+	var current: Dictionary = battle.status()
+	if selected_card < 0 or selected_card >= current.get("hand", []).size(): return false
+	return _play(selected_card, selected_target, empowered)
+
+
+func toggle_retain(index: int) -> bool:
+	if not _can_act() or battle.status().get("phase", "") != "player": return false
+	if index < 0 or index >= battle.status().get("hand", []).size(): return false
+	retained_index = -1 if retained_index == index else index
+	_message = "下回合會補至五張；留下這張，就少抽一張新牌。" if retained_index >= 0 else "已取消留牌。"
+	_notify_view()
+	return true
+
+
+func _retain_selected() -> void:
+	if selected_card >= 0: toggle_retain(selected_card)
+
+
+func confirm_cycle(indices: Array = []) -> bool:
+	if not _can_act() or battle.status().get("phase", "") != "choice": return false
+	var chosen: Array = indices.duplicate()
+	var result: Dictionary = battle.resolve_choice(chosen)
+	if bool(result.get("ok", false)):
+		if retained_index in chosen:
+			retained_index = -1
+		elif retained_index >= 0:
+			var earlier = 0
+			for index in chosen:
+				if int(index) < retained_index: earlier += 1
+			retained_index -= earlier
+	return _apply(result, "draw")
+
+
+func _confirm_cycle_selection() -> void:
+	confirm_cycle(cycle_selection)
 
 
 func confirm_mulligan() -> bool:
@@ -212,7 +250,10 @@ func skip_mulligan() -> bool:
 func end_turn() -> bool:
 	if not _can_act():
 		return false
-	return _apply(battle.end_turn(), "enemy")
+	if battle.status().get("phase", "") != "player": return false
+	var result: Dictionary = battle.end_turn(retained_index)
+	if bool(result.get("ok", false)): retained_index = -1
+	return _apply(result, "enemy")
 
 
 func use_medicine() -> bool:
@@ -260,11 +301,18 @@ func _change_page(direction: int) -> void:
 	_notify_view()
 
 
-func _play(index: int, target: int) -> bool:
+func _play(index: int, target: int, empowered: bool = false) -> bool:
 	_visual_target = target
 	var current: Dictionary = battle.status()
-	var card: Dictionary = _card(str(current.hand[index]), current)
-	return _apply(battle.play_card(index, target), "attack" if card.type == "attack" else "skill")
+	var card: Dictionary = _card(str(current.hand[index]), current, empowered)
+	if card.is_empty(): return false
+	var result: Dictionary = battle.play_card(index, target, empowered)
+	if bool(result.get("ok", false)):
+		if retained_index == index:
+			retained_index = -1
+		elif retained_index > index:
+			retained_index -= 1
+	return _apply(result, "attack" if card.type == "attack" else "skill")
 
 
 func _apply(result: Dictionary, effect: String) -> bool:
@@ -274,6 +322,7 @@ func _apply(result: Dictionary, effect: String) -> bool:
 		return false
 	selected_card = -1
 	mulligan_selection.clear()
+	cycle_selection.clear()
 	_visual_kind = effect
 	_visual_age = CLIP_TIME
 	if is_instance_valid(_sound) and _sound.stream != null:
@@ -322,40 +371,33 @@ func _emit_result(generation: int) -> void:
 	finished.emit(bool(battle.status().get("won", false)), last_report.duplicate(true))
 
 
-func _card(id: String, current: Dictionary) -> Dictionary:
-	var card: Dictionary = Cards.card(id, id in current.get("upgraded_cards", []))
-	var art_ids = {"zhaoling": "shen", "duyun": "lu", "event": "lin"}
-	var event_ids = {"bridge_oath": "zhou", "letter_focus": "zhou", "old_ballad": "xiao", "mountain_echo": "lin", "herb_poultice": "tao", "stage_flourish": "xiao"}
-	card["art_id"] = event_ids.get(id, art_ids.get(str(card.get("group", "basic")), str(stats.get("origin", "courier"))))
+func _card(id: String, current: Dictionary, empowered: bool = false) -> Dictionary:
+	var refinements: Dictionary = current.get("refinements", current.get("stats", {}).get("refinements", stats.get("refinements", {})))
+	var card: Dictionary = Cards.card(id, str(refinements.get(id, "")), empowered)
+	if card.is_empty(): return card
+	var art_ids = {"sword": "shen", "palm": "tao", "dart": "lu", "footwork": "courier"}
+	card["art_id"] = art_ids.get(str(card.get("discipline", "basic")), str(stats.get("origin", "courier")))
 	return card
+
+
+func _preview(index: int, empowered: bool = false) -> Dictionary:
+	var current: Dictionary = battle.status()
+	var living: Array = _living_targets(current)
+	var target: int = selected_target if selected_target in living else (int(living[0]) if not living.is_empty() else 0)
+	return battle.preview_card(index, target, empowered)
 
 
 func _hand_card(index: int, current: Dictionary) -> Dictionary:
 	var card: Dictionary = _card(str(current.hand[index]), current)
-	var living: Array = _living_targets(current)
-	var target: int = selected_target if selected_target in living else (int(living[0]) if not living.is_empty() else 0)
-	var preview: Dictionary = battle.preview_card(index, target)
-	if not bool(preview.get("ok", false)):
-		return card
-	var lines: PackedStringArray = UI.compact_description(card).split("\n")
-	if card.has("damage") and not preview.get("damage", []).is_empty():
-		var totals: Dictionary = {}
-		var hits: Array[String] = []
-		for hit in preview.damage:
-			var total: int = int(hit.amount) + int(hit.blocked)
-			totals[int(hit.target)] = int(totals.get(int(hit.target), 0)) + total
-			hits.append(str(total))
-		if card.get("all", false):
-			hits.clear()
-			for victim in totals: hits.append(str(totals[victim]))
-		lines[0] = "本次 %s 傷害" % ("／" if card.get("all", false) else "＋").join(hits)
-	for line in range(lines.size()):
-		if lines[line].begins_with("獲得 "):
-			lines[line] = "本次獲得 %d 防護" % int(preview.get("block", card.get("block", 0)))
-		elif lines[line].ends_with(" 氣血"):
-			lines[line] = "本次回復 %d 氣血" % int(preview.get("heal", card.get("heal", 0)))
-	card["face_description"] = "\n".join(lines)
-	card["preview_tooltip"] = "\n\n當前預覽（已計入屬性與狀態）\n" + str(preview.get("description", ""))
+	card["retained"] = index == retained_index
+	if current.get("phase", "") == "choice":
+		card["selection_label"] = "準備換出" if index in cycle_selection else "點選換出"
+	if current.get("phase", "") != "player": return card
+	var preview: Dictionary = _preview(index)
+	card["preview_tooltip"] = "\n\n普通施展預覽\n" + str(preview.get("description", preview.get("message", "")))
+	if int(card.get("boost_cost", 0)) > 0:
+		var boosted: Dictionary = _preview(index, true)
+		card.preview_tooltip += "\n\n運勁預覽\n" + str(boosted.get("description", boosted.get("message", "")))
 	return card
 
 
@@ -369,12 +411,11 @@ func _living_targets(current: Dictionary) -> Array:
 
 
 func _enemy_foot(index: int, count: int) -> Vector2:
-	return Vector2(715 if count == 1 else (610 + index * 230 if count == 2 else 530 + index * 180), 292)
+	return Vector2(790 if count == 1 else (610 + index * 230 if count == 2 else 530 + index * 180), 250)
 
 
 func _refresh() -> void:
-	if not is_inside_tree():
-		return
+	if not is_inside_tree(): return
 	if is_instance_valid(_ui):
 		remove_child(_ui)
 		_ui.queue_free()
@@ -391,49 +432,90 @@ func _refresh() -> void:
 		return
 	var current: Dictionary = _cached_status
 	var phase: String = str(current.get("phase", "mulligan"))
-	var names = {"practice": "竹影試招", "spar": "同門對練", "grove": "青篁遇敵", "ridge": "古道交鋒", "exam": "入山考核"}
-	UI.label(_ui, names.get(mode, "江湖對決"), Vector2(22, 12), Vector2(340, 42), 30, UI.INK, true)
-	var title: String = "起手調整" if phase == "mulligan" else ("勝負已定" if current.get("resolved", false) else "第 %d 回合 · 你的回合" % int(current.get("turn", 1)))
-	UI.label(_ui, title, Vector2(530, 18), Vector2(520, 32), 21, UI.JADE)
+	var names = {"practice": "竹影試招", "spar": "同門對練", "grove": "青篁遇敵", "ridge": "古道交鋒", "exam": "入山考核", "flurry": "連擊試戰", "armored": "重甲試戰", "charging": "蓄勢試戰", "counter": "反制試戰"}
+	UI.label(_ui, names.get(mode, "江湖對決"), Vector2(22, 9), Vector2(290, 40), 27, UI.INK, true)
+	var inner: String = str(current.get("inner", current.get("stats", {}).get("inner", stats.get("inner", "guiyuan"))))
+	var weapon: String = str(current.get("weapon", current.get("stats", {}).get("weapon", stats.get("weapon", "sword"))))
+	var inner_button: Button = _button("inner", "%s · %s" % [Cards.INNERS.get(inner, {}).get("name", inner), Cards.WEAPONS.get(weapon, {}).get("name", weapon)], Vector2(320, 10), Vector2(400, 35), open_panel.bind("rules"), true, false, true)
+	inner_button.tooltip_text = str(Cards.INNERS.get(inner, {}).get("description", ""))
+	var title: String = "起手調整" if phase == "mulligan" else ("勝負已定" if current.get("resolved", false) else ("換招選擇" if phase == "choice" else "第 %d 回合" % int(current.get("turn", 1))))
+	UI.label(_ui, title, Vector2(820, 16), Vector2(230, 31), 21, UI.JADE)
 	_build_fighters(current)
-	UI.label(_ui, "真氣  %d" % int(current.get("qi", 0)), Vector2(22, 324), Vector2(200, 36), 25, UI.JADE, true)
-	var hint: String = "看清敵人意圖，再安排這回合的招式。"
-	if phase == "mulligan":
-		hint = "點選要更換的牌：已選 %d / %d 張" % [mulligan_selection.size(), current.get("mulligan_limit", 0)]
-	elif not _message.is_empty():
-		hint = _message
-	UI.label(_ui, hint, Vector2(238, 321), Vector2(566, 40), 16, UI.MUTED)
+	_build_preview(current)
+	UI.label(_ui, "真氣 %d　勢 %d / 3" % [int(current.get("qi", 0)), int(current.get("momentum", 0))], Vector2(20, 265), Vector2(300, 34), 22, UI.JADE, true)
+	var gained: Label = UI.label(_ui, "本輪蓄勢 %d / 2" % int(current.get("momentum_gained", 0)), Vector2(325, 269), Vector2(190, 27), 16, UI.MUTED)
+	gained.name = "MomentumBudget"
+	var hint: String = _message if not _message.is_empty() else "先看意圖，選牌後決定普通或運勁。"
+	if phase == "mulligan": hint = "點選要換的牌：%d / %d 張" % [mulligan_selection.size(), current.get("mulligan_limit", 0)]
+	if phase == "choice": hint = "可換出 %d 張：已選 %d；也可略過。" % [int(current.get("pending_choice", {}).get("max_count", 0)), cycle_selection.size()]
+	var hint_label = UI.label(_ui, hint, Vector2(520, 268), Vector2(490, 31), 15, UI.MUTED)
+	hint_label.clip_text = true
+	hint_label.tooltip_text = hint
 	var hand: Array = current.get("hand", [])
 	_page = clampi(_page, 0, maxi(0, (hand.size() - 1) / PAGE_SIZE))
 	if hand.size() > PAGE_SIZE:
-		_button("hand_previous", "‹", Vector2(826, 323), Vector2(42, 35), _change_page.bind(-1), _page > 0)
-		UI.label(_ui, "%d / %d 張" % [mini((_page + 1) * PAGE_SIZE, hand.size()), hand.size()], Vector2(878, 328), Vector2(130, 26), 16)
-		_button("hand_next", "›", Vector2(1014, 323), Vector2(42, 35), _change_page.bind(1), (_page + 1) * PAGE_SIZE < hand.size())
+		_button("hand_previous", "<", Vector2(1009, 266), Vector2(25, 32), _change_page.bind(-1), _page > 0)
+		_button("hand_next", ">", Vector2(1037, 266), Vector2(25, 32), _change_page.bind(1), (_page + 1) * PAGE_SIZE < hand.size())
 	for slot in range(PAGE_SIZE):
 		var index: int = _page * PAGE_SIZE + slot
-		if index >= hand.size():
-			continue
+		if index >= hand.size(): continue
 		var card: Dictionary = _hand_card(index, current)
-		var selected: bool = index in mulligan_selection if phase == "mulligan" else index == selected_card
-		var button: Button = UI.card_button(_ui, card, Vector2(18 + slot * 210, 368), Vector2(202, 205), select_card.bind(index), selected)
+		var selected: bool = index in mulligan_selection if phase == "mulligan" else (index in cycle_selection if phase == "choice" else index == selected_card)
+		var button: Button = UI.card_button(_ui, card, Vector2(18 + slot * 210, 308), Vector2(202, 196), select_card.bind(index), selected)
 		button.name = "card_%d" % index
 		action_buttons[button.name] = button
-		button.disabled = not _input_enabled or not _panel.is_empty() or bool(current.get("resolved", false)) or (phase == "player" and int(card.cost) > int(current.get("qi", 0)))
-		if button.disabled:
-			button.modulate = Color(0.86, 0.88, 0.83)
-	_button("deck", "牌堆 · %d 張" % current.get("draw_count", 0), Vector2(18, 591), Vector2(154, 38), open_panel.bind("deck"), true, false, true)
-	_button("rules", "對決規則", Vector2(184, 591), Vector2(126, 38), open_panel.bind("rules"), true, false, true)
-	if selected_card >= 0:
-		_button("selection_cancel", "取消選牌", Vector2(324, 591), Vector2(134, 38), cancel_selection)
+		button.disabled = not _can_act()
+		if button.disabled: button.modulate = Color(0.86, 0.88, 0.83)
+	_build_actions(current)
+	_button("deck", "牌堆 · %d" % current.get("draw_count", 0), Vector2(18, 591), Vector2(145, 38), open_panel.bind("deck"), true, false, true)
+	_button("rules", "規則／內功", Vector2(175, 591), Vector2(145, 38), open_panel.bind("rules"), true, false, true)
 	if phase == "mulligan":
-		_button("mulligan_skip", "保留起手牌", Vector2(667, 591), Vector2(176, 38), skip_mulligan)
-		_button("mulligan_confirm", "換牌並開戰", Vector2(855, 591), Vector2(206, 38), confirm_mulligan, not mulligan_selection.is_empty(), true)
+		_button("mulligan_skip", "保留起手牌", Vector2(660, 591), Vector2(190, 38), skip_mulligan)
+		_button("mulligan_confirm", "換牌並開戰", Vector2(865, 591), Vector2(195, 38), confirm_mulligan, not mulligan_selection.is_empty(), true)
 	else:
-		_button("medicine", "用藥 · 餘 %d" % current.get("medicine_left", 0), Vector2(667, 591), Vector2(176, 38), use_medicine, bool(current.get("can_use_medicine", false)))
-		_button("end_turn", "結束回合", Vector2(855, 591), Vector2(206, 38), end_turn, bool(current.get("can_end_turn", phase == "player")), true)
-	if not _panel.is_empty():
-		_build_panel(current)
+		_button("medicine", "用藥 · 1真氣" if int(current.get("medicine_used", 0)) == 0 else "本場已用藥", Vector2(660, 591), Vector2(190, 38), use_medicine, phase == "player" and bool(current.get("can_use_medicine", false)))
+		_button("end_turn", "結束回合", Vector2(865, 591), Vector2(195, 38), end_turn, phase == "player" and bool(current.get("can_end_turn", true)), true)
+		if hand.size() > PAGE_SIZE:
+			UI.label(_ui, "手牌第 %d / %d 頁" % [_page + 1, ceili(hand.size() / 5.0)], Vector2(340, 599), Vector2(300, 27), 15, UI.MUTED)
+	if not _panel.is_empty(): _build_panel(current)
 	queue_redraw()
+
+
+func _build_actions(current: Dictionary) -> void:
+	var phase: String = str(current.get("phase", ""))
+	if phase == "mulligan":
+		UI.label(_ui, "這次換牌機會只在開場出現；點選後按「換牌並開戰」。", Vector2(22, 520), Vector2(1030, 48), 19, UI.JADE)
+		return
+	if phase == "choice":
+		UI.label(_ui, "掠影步已支付費用並獲得防護；選擇換出的牌後，才完成這次施展。", Vector2(22, 510), Vector2(1030, 28), 16, UI.JADE)
+		_button("cycle_confirm", "換出所選 %d 張" % cycle_selection.size(), Vector2(18, 544), Vector2(310, 36), _confirm_cycle_selection, not cycle_selection.is_empty(), true)
+		_button("cycle_skip", "不換牌，完成施展", Vector2(334, 544), Vector2(310, 36), confirm_cycle.bind([]))
+		UI.label(_ui, "此步也可暫停保存。", Vector2(665, 549), Vector2(380, 29), 16, UI.MUTED)
+		return
+	if bool(current.get("resolved", false)):
+		UI.label(_ui, "這場交手已結束。", Vector2(22, 525), Vector2(1000, 50), 24, UI.JADE)
+		return
+	var hand: Array = current.get("hand", [])
+	var selected: bool = selected_card >= 0 and selected_card < hand.size()
+	var card: Dictionary = _card(str(hand[selected_card]), current) if selected else {}
+	var target_name = "自己"
+	if selected and card.get("target", "self") == "enemy":
+		var living: Array = _living_targets(current)
+		if selected_target not in living and not living.is_empty(): selected_target = int(living[0])
+		if selected_target >= 0 and selected_target < current.get("enemies", []).size(): target_name = str(current.enemies[selected_target].get("name", "對手"))
+	UI.label(_ui, "%s → %s" % [str(card.name), target_name] if selected else "點選手牌查看效果；按施展按鈕才會出招。", Vector2(22, 509), Vector2(620, 26), 16, UI.JADE)
+	var retained_name = str(_card(str(hand[retained_index]), current).name) if retained_index >= 0 and retained_index < hand.size() else "未選"
+	UI.label(_ui, "留牌：" + retained_name, Vector2(665, 509), Vector2(390, 26), 15, UI.MUTED)
+	var normal: Dictionary = _preview(selected_card) if selected else {}
+	var boost: Dictionary = _preview(selected_card, true) if selected and int(card.get("boost_cost", 0)) > 0 else {}
+	var normal_text = "普通施展 · %d 真氣" % int(card.get("cost", 0)) if selected else "普通施展 · 先選牌"
+	var boost_text = "運勁 · %d 真氣＋%d 勢" % [int(card.get("cost", 0)), int(card.get("boost_cost", 0))] if selected and int(card.get("boost_cost", 0)) > 0 else "此招沒有運勁版本"
+	var normal_button = _button("play_normal", normal_text, Vector2(18, 539), Vector2(310, 41), play_selected.bind(false), selected and bool(normal.get("can_play", normal.get("ok", false))), true)
+	var boost_button = _button("play_boost", boost_text, Vector2(334, 539), Vector2(310, 41), play_selected.bind(true), not boost.is_empty() and bool(boost.get("can_play", boost.get("ok", false))), true)
+	normal_button.tooltip_text = str(normal.get("description", normal.get("message", "")))
+	boost_button.tooltip_text = str(boost.get("description", boost.get("message", "")))
+	_button("retain_selected", "取消這張留牌" if selected and retained_index == selected_card else "留到下回合", Vector2(660, 539), Vector2(190, 41), _retain_selected, selected)
+	_button("selection_cancel", "取消選牌", Vector2(865, 539), Vector2(195, 41), cancel_selection, selected)
 
 
 func _button(id: String, text: String, position: Vector2, size: Vector2, callback: Callable, enabled: bool = true, primary: bool = false, utility: bool = false, parent: Node = null) -> Button:
@@ -445,31 +527,68 @@ func _button(id: String, text: String, position: Vector2, size: Vector2, callbac
 
 
 func _build_fighters(current: Dictionary) -> void:
-	UI.label(_ui, str(stats.get("name", "無名少俠")), Vector2(28, 74), Vector2(330, 32), 23, UI.JADE, true)
-	UI.label(_ui, "氣血 %d / %d    防護 %d" % [current.get("hp", 0), current.get("max_hp", 0), current.get("block", 0)], Vector2(28, 110), Vector2(370, 30), 18)
+	UI.label(_ui, str(stats.get("name", "無名少俠")), Vector2(28, 59), Vector2(330, 31), 22, UI.JADE, true)
+	UI.label(_ui, "氣血 %d / %d　防護 %d" % [current.get("hp", 0), current.get("max_hp", 0), current.get("block", 0)], Vector2(28, 95), Vector2(380, 27), 17)
+	var retaliation: int = int(current.get("retaliation", current.get("retaliation_damage", 0)))
+	if retaliation > 0:
+		var counter_label = UI.label(_ui, "待發反擊\n%d 傷害" % retaliation, Vector2(25, 153), Vector2(86, 54), 15, UI.JADE)
+		counter_label.name = "RetaliationReady"
+	var delayed: Array = current.get("delayed_effects", current.get("delayed", []))
+	if not delayed.is_empty():
+		var delayed_label = UI.label(_ui, "伏針待發\n%d 次" % delayed.size(), Vector2(25, 208), Vector2(86, 45), 14, UI.MUTED)
+		delayed_label.name = "DelayedReady"
 	var enemies: Array = current.get("enemies", [])
 	for index in range(enemies.size()):
 		var enemy: Dictionary = enemies[index]
 		var foot: Vector2 = _enemy_foot(index, enemies.size())
-		var button: Button = _button("target_%d" % index, "", Vector2(foot.x - 82, 68), Vector2(166, 250), select_target.bind(index), int(enemy.get("hp", 0)) > 0)
+		# Give a lone boss's longer phase/retaliation intent enough width above its pose.
+		var target_width: float = 280 if enemies.size() == 1 else 210
+		var button: Button = _button("target_%d" % index, "", Vector2(foot.x - target_width / 2.0, 57), Vector2(target_width, 199), select_target.bind(index), int(enemy.get("hp", 0)) > 0 and current.get("phase", "") == "player")
 		button.add_theme_stylebox_override("normal", UI.style(Color(1, 1, 1, 0.01), UI.GOLD if selected_target == index else Color(1, 1, 1, 0), 2 if selected_card >= 0 and selected_target == index else 0))
 		button.add_theme_stylebox_override("disabled", UI.style(Color(1, 1, 1, 0)))
 		button.add_theme_stylebox_override("hover", UI.style(Color(0.87, 0.93, 0.82, 0.16), UI.GOLD, 2))
-		var name_label = UI.label(button, str(enemy.get("name", "對手")), Vector2(5, 0), Vector2(156, 28), 20, UI.INK, true)
+		var name_label = UI.label(button, str(enemy.get("name", "對手")), Vector2(3, 0), Vector2(target_width - 6, 28), 19, UI.INK, true)
 		name_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-		var hp_label = UI.label(button, "%d / %d　護 %d" % [enemy.get("hp", 0), enemy.get("max_hp", 0), enemy.get("block", 0)], Vector2(3, 31), Vector2(160, 25), 15)
+		var hp_label = UI.label(button, "%d / %d　護 %d" % [enemy.get("hp", 0), enemy.get("max_hp", 0), enemy.get("block", 0)], Vector2(3, 29), Vector2(target_width - 6, 24), 15)
 		hp_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		var intent: Dictionary = enemy.get("intent", {})
 		var intent_text: String = str(intent.get("label", "觀察局勢")) if int(enemy.get("hp", 0)) > 0 else "已退場"
-		var intent_label = UI.label(button, intent_text, Vector2(5, 61), Vector2(156, 54), 16, Color("9a5548"))
+		var intent_label = UI.label(button, intent_text, Vector2(3, 53), Vector2(target_width - 6, 49), 15, Color("9a5548"))
+		intent_label.name = "EnemyIntent"
 		intent_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-		var conditions: Array[String] = []
-		if int(enemy.get("weak", 0)) > 0:
-			conditions.append("虛弱 %d" % enemy.weak)
-		if int(enemy.get("vulnerable", 0)) > 0:
-			conditions.append("破綻 %d" % enemy.vulnerable)
-		var condition_label = UI.label(button, " · ".join(conditions), Vector2(2, 229), Vector2(162, 21), 13, UI.JADE)
-		condition_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		button.tooltip_text = intent_text
+
+
+func _build_preview(current: Dictionary) -> void:
+	if current.get("phase", "") != "player" or selected_card < 0 or selected_card >= current.get("hand", []).size(): return
+	var card: Dictionary = _card(str(current.hand[selected_card]), current)
+	var pane = Panel.new()
+	pane.name = "EffectPreview"
+	pane.position = Vector2(282, 65)
+	pane.size = Vector2(228, 189)
+	pane.add_theme_stylebox_override("panel", UI.style(Color("f8f1e5"), Color("d3c8a7")))
+	_ui.add_child(pane)
+	UI.label(pane, "實際效果預覽", Vector2(11, 5), Vector2(206, 25), 15, UI.JADE)
+	var scroll = ScrollContainer.new()
+	scroll.position = Vector2(11, 33)
+	scroll.size = Vector2(206, 146)
+	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	pane.add_child(scroll)
+	var normal: Dictionary = _preview(selected_card)
+	var text = "普通施展\n" + str(normal.get("description", normal.get("message", "")))
+	if int(card.get("boost_cost", 0)) > 0:
+		var boost: Dictionary = _preview(selected_card, true)
+		text += "\n\n運勁 %d 勢\n" % int(card.boost_cost) + str(boost.get("description", boost.get("message", "")))
+	var label = Label.new()
+	label.name = "ModelPreview"
+	label.add_theme_font_override("font", UI.FONT)
+	label.add_theme_font_size_override("font_size", 14)
+	label.add_theme_color_override("font_color", UI.INK)
+	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	label.custom_minimum_size = Vector2(185, 0)
+	label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	label.text = text
+	scroll.add_child(label)
 
 
 func _build_panel(current: Dictionary) -> void:
@@ -486,8 +605,22 @@ func _build_panel(current: Dictionary) -> void:
 	UI.label(panel, "對決規則" if _panel == "rules" else "牌堆一覽", Vector2(24, 18), Vector2(650, 44), 28, UI.JADE, true)
 	_button("panel_close", "返回對決", Vector2(724, 20), Vector2(156, 42), close_panel, true, false, true, panel)
 	if _panel == "rules":
-		var rules = "一回合，從容想好再出招。\n\n每回合回復 3 真氣，抽取 5 張牌。點牌可施展招式；有多位對手時，先選牌再選目標。牌上的數字是消耗的真氣。\n\n防護先抵擋傷害。虛弱讓攻擊傷害減少四分之一；破綻讓受到的傷害增加一半。仔細查看敵人頭上的下一步意圖，再決定攻守。\n\n按「結束回合」才會輪到敵人行動。未使用手牌進入棄牌堆；牌堆用盡時，棄牌會重新洗入。標示「本場除外」的牌不再洗回。\n\n起手換牌只有一次；藥品每回合最多使用一次，不耗真氣。查看牌堆、閱讀規則或暫停，都不會推進回合。"
-		UI.label(panel, rules, Vector2(28, 88), Vector2(852, 450), 19)
+		var inner: String = str(stats.get("inner", "guiyuan"))
+		var rules = "【%s】\n%s\n\n每回合恢復 3 真氣，手牌補至 5 張。點牌選取，再選普通施展或運勁；懸停施展按鈕可看實際預覽。\n\n勢跨回合保留，上限 3；每輪最多獲得 2。運勁額外支付牌面指定的勢，先付款，再結算招式及內功回報。\n\n可留 1 張牌到下回合，佔五張手牌的一格。剩餘手牌棄掉，牌堆空時洗入棄牌；本場除外不再抽回。\n\n防護下回合開始清除；反擊每敵方回合最多一次。伏針下回合開始結算，目標死亡便取消。\n\n用藥消耗 1 真氣，每場最多一次，回復 20 氣血。閱讀與思考不推動回合。" % [Cards.INNERS.get(inner, {}).get("name", inner), Cards.INNERS.get(inner, {}).get("description", "")]
+		var rule_scroll = ScrollContainer.new()
+		rule_scroll.position = Vector2(28, 84)
+		rule_scroll.size = Vector2(852, 458)
+		rule_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+		panel.add_child(rule_scroll)
+		var rule_text = Label.new()
+		rule_text.add_theme_font_override("font", UI.FONT)
+		rule_text.add_theme_font_size_override("font_size", 18)
+		rule_text.add_theme_color_override("font_color", UI.INK)
+		rule_text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		rule_text.custom_minimum_size = Vector2(820, 0)
+		rule_text.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		rule_text.text = rules
+		rule_scroll.add_child(rule_text)
 		return
 	var tabs = [["draw", "牌堆", current.get("draw_count", 0)], ["discard", "棄牌", current.get("discard_count", 0)], ["exhaust", "除外", current.get("exhaust_count", 0)], ["hand", "手牌", current.get("hand", []).size()]]
 	for index in range(tabs.size()):
@@ -516,7 +649,7 @@ func _build_panel(current: Dictionary) -> void:
 	for id in counts:
 		var card: Dictionary = _card(id, current)
 		var entry = Label.new()
-		entry.text = "%s × %d　｜　%d 真氣\n%s" % [card.get("name", id), counts[id], card.get("cost", 0), card.get("description", "")]
+		entry.text = "%s × %d　｜　%d 真氣\n%s%s" % [card.get("name", id), counts[id], card.get("cost", 0), card.get("normal_description", card.get("description", "")), "\n運勁 %d 勢：%s" % [int(card.get("boost_cost", 0)), card.get("boost_description", "")] if int(card.get("boost_cost", 0)) > 0 else ""]
 		entry.add_theme_font_override("font", UI.FONT)
 		entry.add_theme_font_size_override("font_size", 18)
 		entry.add_theme_color_override("font_color", UI.INK)
@@ -536,22 +669,22 @@ func _draw() -> void:
 	draw_style_box(UI.style(Color("e8eadb"), Color("c7c9af")), Rect2(Vector2.ZERO, SIZE))
 	var background: Texture2D = Art.location("grove" if mode == "grove" else ("ridge" if mode == "ridge" else "wangxi"))
 	if background:
-		draw_texture_rect(background, Rect2(0, 60, 1080, 257), false, Color(1, 1, 1, 0.25))
-	draw_rect(Rect2(0, 317, 1080, 323), Color("eef0e2"))
-	draw_line(Vector2(18, 317), Vector2(1062, 317), Color("c7ccb6"), 1)
+		draw_texture_rect(background, Rect2(0, 50, 1080, 208), false, Color(1, 1, 1, 0.25))
+	draw_rect(Rect2(0, 258, 1080, 382), Color("eef0e2"))
+	draw_line(Vector2(18, 258), Vector2(1062, 258), Color("c7ccb6"), 1)
 	if not _configured:
 		return
 	var phase: float = _visual_age / CLIP_TIME
 	var lunge: float = sin((1.0 - phase) * PI) * 18.0 if _visual_kind == "attack" and _visual_age > 0.0 else 0.0
 	var hero_tint = Color("ffdbc7") if _visual_kind == "enemy" and _visual_age > 0.1 else Color.WHITE
-	_draw_token(str(stats.get("origin", "courier")), HERO_FOOT + Vector2(lunge, 0), 145, hero_tint)
+	_draw_token(str(stats.get("origin", "courier")), HERO_FOOT + Vector2(lunge, 0), 124, hero_tint)
 	var enemies: Array = _cached_status.get("enemies", [])
 	for index in range(enemies.size()):
 		var enemy: Dictionary = enemies[index]
 		var tint = Color(0.52, 0.55, 0.5, 0.35) if int(enemy.get("hp", 0)) <= 0 else Color.WHITE
 		if _visual_kind == "attack" and index == _visual_target and _visual_age > 0.08:
 			tint = Color("ffe6ad")
-		_draw_token(str(enemy.get("kind", "bandit")), _enemy_foot(index, enemies.size()), 112, tint)
+		_draw_token(str(enemy.get("kind", "bandit")), _enemy_foot(index, enemies.size()), 91, tint)
 	if _visual_age > 0.0 and _visual_kind == "attack" and not enemies.is_empty():
 		var target: Vector2 = _enemy_foot(clampi(_visual_target, 0, enemies.size() - 1), enemies.size()) + Vector2(0, -45)
 		var start: Vector2 = HERO_FOOT + Vector2(45, -50)

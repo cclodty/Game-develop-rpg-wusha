@@ -6,14 +6,16 @@ const Content = preload("res://scripts/game_data.gd")
 const Cards = preload("res://scripts/card_catalog.gd")
 const Creation = preload("res://scripts/character_creation.gd")
 const Battle = preload("res://scripts/card_battle.gd")
-const SAVE_PATH = "user://run-cards-v2.json"
-const SAVE_VERSION = 2
+const SAVE_PATH = "user://run-martial-v3.json"
+const LAB_SAVE_PATH = "user://lab-martial-v3.json"
+const SAVE_VERSION = 3
+const TRIAL_MODES = ["flurry", "armored", "charging", "counter"]
 const MAX_SAVE_BYTES = 2097152
 const PHASES = ["prologue", "intro", "town", "activity", "exam", "results", "ending"]
 const PERIODS = ["早", "午", "晚"]
 var data: Dictionary = {}
 
-func new_run(hero_name: String, origin: String) -> void:
+func new_run(hero_name: String, origin: String, journey_seed: int = 0) -> void:
 	if not Content.ORIGINS.has(origin):
 		origin = "herbalist"
 	var clean_name: String = hero_name.strip_edges().replace("\n", "").replace("\r", "").replace("\t", "").substr(0, 16)
@@ -25,6 +27,7 @@ func new_run(hero_name: String, origin: String) -> void:
 		favor[npc] = 0
 	var creation: Dictionary = Creation.default_completed()
 	data = {
+		"mode": "journey",
 		"hero_name": clean_name, "origin": origin, "spent": 0,
 		"money": int(origin_data.money), "medicine": int(origin_data.medicine),
 		"training": 0, "insight": int(origin_data.insight), "favor": favor,
@@ -34,11 +37,17 @@ func new_run(hero_name: String, origin: String) -> void:
 		"creation": creation, "attributes": Creation.final_attributes(creation),
 		"learned_cards": Cards.starting_learned(origin), "deck": Cards.starting_deck(),
 		"upgraded_cards": [], "mastery": 0, "aptitude_discount_used": false, "fortune_hint_used": false,
+		"weapon": "sword", "inner": "guiyuan", "learned_inners": ["guiyuan"], "refinements": {},
+		"journey_seed": journey_seed if journey_seed >= 1 and journey_seed <= 2147483646 else randi_range(1, 2147483646),
+		"opportunities": {}, "encounter_variants": {}, "trial_history": [], "lab_preset": "",
 	}
+	var world: Dictionary = _world_for_seed(int(data.journey_seed))
+	data.opportunities = world.opportunities
+	data.encounter_variants = world.encounter_variants
 	_journal("以%s的身分抵達望溪鎮。七日之後，便是入門選拔。" % str(origin_data.name))
 
-func start_creation(hero_name: String, origin: String) -> void:
-	new_run(hero_name, origin)
+func start_creation(hero_name: String, origin: String, journey_seed: int = 0) -> void:
+	new_run(hero_name, origin, journey_seed)
 	data.creation = Creation.draft()
 	data.attributes = Creation.final_attributes(data.creation)
 	data.phase = "prologue"
@@ -80,19 +89,28 @@ func _apply_creation(result: Dictionary) -> Dictionary:
 	return {"ok": true, "message": str(result.get("message", "已記下這個選擇。"))}
 
 func set_deck(deck: Array) -> Dictionary:
+	return set_loadout(deck, str(data.get("weapon", "sword")), str(data.get("inner", "guiyuan")))
+
+func set_loadout(deck: Array, weapon: String, inner: String) -> Dictionary:
 	if not _can_prepare_cards():
 		return _fail("請在鎮上完成目前活動後再配招。")
-	var checked: Dictionary = Cards.validate_deck(deck, data.learned_cards)
+	if not Cards.WEAPONS.has(weapon) or inner not in data.learned_inners:
+		return _fail("請選擇可用兵器及已學會的內功。")
+	var checked: Dictionary = Cards.validate_deck(deck, data.learned_cards, weapon)
 	if not bool(checked.ok):
 		return checked
 	data.deck = deck.duplicate()
-	return {"ok": true, "message": "十張上場招式已調整，不消耗時段。"}
+	data.weapon = weapon
+	data.inner = inner
+	return {"ok": true, "message": "兵器、內功與十張招式已調整，不消耗時段。"}
 
 func upgrade_status(id: String) -> Dictionary:
 	if not _can_prepare_cards():
 		return {"ok": false, "message": "請先回到鎮上，再整理練習心得。", "cost": 0, "discounted": false}
 	if id not in data.learned_cards or not Cards.has(id):
 		return {"ok": false, "message": "尚未學會這項招式。", "cost": 0, "discounted": false}
+	if id not in Cards.REFINABLE:
+		return {"ok": false, "message": "這項招式目前沒有分支精修。", "cost": 0, "discounted": false}
 	if id in data.upgraded_cards:
 		return {"ok": false, "message": "這項招式已精修，兩張複本都會使用同一改良。", "cost": 0, "discounted": false}
 	var discounted: bool = int(data.attributes.aptitude) >= 6 and not bool(data.aptitude_discount_used)
@@ -101,7 +119,9 @@ func upgrade_status(id: String) -> Dictionary:
 		return {"ok": false, "message": "精修需要 %d 點練習心得；可透過劍坪練習或對練累積。" % cost, "cost": cost, "discounted": discounted}
 	return {"ok": true, "message": "消耗 %d 點心得，同名兩張招式一起改良。" % cost, "cost": cost, "discounted": discounted}
 
-func upgrade_card(id: String) -> Dictionary:
+func upgrade_card(id: String, branch: String = "stable") -> Dictionary:
+	if branch not in ["stable", "specialist"]:
+		return _fail("請選擇穩定或專精練法。")
 	var checked: Dictionary = upgrade_status(id)
 	if not bool(checked.ok):
 		return checked
@@ -109,10 +129,80 @@ func upgrade_card(id: String) -> Dictionary:
 	var discounted: bool = bool(checked.discounted)
 	data.mastery = int(data.mastery) - cost
 	data.upgraded_cards.append(id)
+	data.refinements[id] = branch
 	if discounted:
 		data.aptitude_discount_used = true
 	_journal("精修「%s」，消耗 %d 點練習心得；同名招式一併改良。" % [str(Cards.card(id).get("name", id)), cost])
 	return {"ok": true, "message": "招式已精修。", "cost": cost, "discounted": discounted}
+
+func set_refinement(id: String, branch: String) -> Dictionary:
+	if not _can_prepare_cards():
+		return _fail("本次行程的練法已鎖定，回鎮後才能調整。")
+	if id not in data.upgraded_cards or id not in Cards.REFINABLE or branch not in ["", "stable", "specialist"]:
+		return _fail("請先精修這項招式，再選擇已解鎖的練法。")
+	if branch.is_empty() and data.get("mode", "journey") != "lab":
+		return _fail("正式旅程請選擇一種已解鎖的練法。")
+	if branch.is_empty():
+		data.refinements.erase(id)
+	else:
+		data.refinements[id] = branch
+	return {"ok": true, "message": "練法已免費切換，同名招式一起生效。"}
+
+func new_lab(preset_id: String = "shouzhong") -> void:
+	new_run("試招行者", "herbalist", 1)
+	var creation: Dictionary = Creation.draft()
+	var answers: Array = [0, 0, 2, 1, 2, 2]
+	for index in range(6):
+		creation = Creation.with_answer(creation, index, int(answers[index])).creation
+	creation.page = "summary"
+	data.creation = creation
+	data.attributes = Creation.final_attributes(creation)
+	data.mode = "lab"
+	data.phase = "town"
+	data.money = 0
+	data.medicine = 1
+	data.insight = 0
+	data.learned_cards = Cards.CARDS.keys()
+	data.learned_inners = Cards.INNERS.keys()
+	data.upgraded_cards = Cards.REFINABLE.duplicate()
+	data.journal = []
+	apply_lab_preset(preset_id if Cards.PRESETS.has(preset_id) else "shouzhong")
+
+func apply_lab_preset(id: String) -> Dictionary:
+	if data.get("mode", "") != "lab" or not _can_prepare_cards() or not Cards.PRESETS.has(id):
+		return _fail("試招完成後，才能選擇這套範例配招。")
+	var preset: Dictionary = Cards.PRESETS[id]
+	var result: Dictionary = set_loadout(preset.deck, str(preset.weapon), str(preset.inner))
+	if not bool(result.ok): return result
+	data.refinements = {}
+	data.lab_preset = id
+	return {"ok": true, "message": "已套用範例牌組與未精修基準；能力固定為各五點。"}
+
+func begin_trial(enemy_mode: String, seed: int = 1729) -> Dictionary:
+	if data.get("mode", "") != "lab" or not _can_prepare_cards() or enemy_mode not in TRIAL_MODES or seed < 1 or seed > 2147483646:
+		return _fail("請先完成目前試戰，再選擇有效的對手與種子。")
+	data.serial = int(data.serial) + 1
+	data.pending = {"id": "trial", "token": int(data.serial), "cost": 0, "fee": 0, "start_spent": 0, "attempt": 0, "medicine_at_start": 1, "stage": "combat", "visited": [], "combat": {}, "battle_mode": enemy_mode}
+	_lock_encounter()
+	data.pending.seed = seed
+	data.phase = "activity"
+	data.dialogue = {}
+	return {"ok": true, "message": "試戰開始；不影響七日旅程。", "pending_token": int(data.pending.token)}
+
+func current_save_path() -> String:
+	return LAB_SAVE_PATH if data.get("mode", "journey") == "lab" else SAVE_PATH
+
+func _finish_trial(won: bool, detail: Dictionary) -> Dictionary:
+	var check: Dictionary = _check_pending(detail, false)
+	if not bool(check.ok): return check
+	var trial: Dictionary = {"mode": str(data.pending.battle_mode), "won": won, "seed": int(data.pending.seed), "inner": str(data.pending.inner), "weapon": str(data.pending.weapon)}
+	data.trial_history.append(trial)
+	if data.trial_history.size() > 32: data.trial_history.pop_front()
+	data.pending = {}
+	data.phase = "town"
+	data.dialogue = {}
+	_journal("試招完成，已保留配招；七日旅程沒有變動。")
+	return {"ok": true, "message": "試戰勝出。可換內功、牌組或對手再試。" if won else "試戰已結束。可以調整配招再試。", "activity_id": "trial", "rewards": {}, "exam_ready": false}
 
 func _can_prepare_cards() -> bool:
 	return not data.is_empty() and str(data.get("phase", "")) in ["intro", "town"] and data.get("pending", {}).is_empty()
@@ -129,7 +219,7 @@ func remaining() -> int:
 	return maxi(0, Content.MAX_SLOTS - int(data.get("spent", 0)))
 
 func ready_for_exam() -> bool:
-	return not data.is_empty() and remaining() == 0 and data.get("pending", {}).is_empty() and str(data.get("phase", "")) in ["intro", "town"]
+	return not data.is_empty() and data.get("mode", "") == "journey" and remaining() == 0 and data.get("pending", {}).is_empty() and str(data.get("phase", "")) in ["intro", "town"]
 
 func has_skill(id: String) -> bool:
 	return id in data.get("skills", [])
@@ -137,6 +227,8 @@ func has_skill(id: String) -> bool:
 func activity_status(id: String) -> Dictionary:
 	if data.is_empty():
 		return _fail("請先建立旅程。")
+	if data.get("mode", "") != "journey":
+		return _fail("武學試招不安排七日活動。請選擇試戰對手。")
 	if not Content.ACTIVITIES.has(id):
 		return _fail("找不到這項活動。")
 	var activity: Dictionary = Content.ACTIVITIES[id]
@@ -191,6 +283,8 @@ func complete_activity(outcome: String = "success", detail: Dictionary = {}) -> 
 		return retreat_activity(detail)
 	if outcome != "success":
 		return _fail("未知的活動結果，沒有變更旅程。")
+	if data.get("mode", "") == "lab" and data.get("pending", {}).get("id", "") == "trial":
+		return _finish_trial(true, detail)
 	var check: Dictionary = _check_pending(detail, false)
 	if not bool(check.ok):
 		return check
@@ -203,6 +297,9 @@ func complete_activity(outcome: String = "success", detail: Dictionary = {}) -> 
 		rewards.money = int(rewards.get("money", 0)) + 8
 	if id in ["herb_errand", "medicine_lesson"] and str(data.origin) == "herbalist":
 		rewards.medicine = int(rewards.get("medicine", 0)) + 1
+	var extra_card: String = str(data.opportunities.get(id, ""))
+	if not extra_card.is_empty() and extra_card in data.learned_cards:
+		rewards.mastery = int(rewards.get("mastery", 0)) + 1
 	_commit_medicine(detail)
 	for key in ["money", "medicine", "training", "insight", "mastery"]:
 		var cap: int = 99999 if key == "money" else (99 if key in ["medicine", "mastery"] else 60)
@@ -212,7 +309,16 @@ func complete_activity(outcome: String = "success", detail: Dictionary = {}) -> 
 		if card_id not in data.learned_cards:
 			data.learned_cards.append(card_id)
 			learned.append(card_id)
+	if not extra_card.is_empty() and extra_card not in data.learned_cards:
+		data.learned_cards.append(extra_card)
+		learned.append(extra_card)
 	rewards.cards = learned
+	var inners: Array = []
+	for inner_id in Cards.inners_for_activity(id):
+		if inner_id not in data.learned_inners:
+			data.learned_inners.append(inner_id)
+			inners.append(inner_id)
+	rewards.inners = inners
 	for skill in rewards.get("skills", []):
 		if skill not in data.skills:
 			data.skills.append(skill)
@@ -232,6 +338,8 @@ func complete_activity(outcome: String = "success", detail: Dictionary = {}) -> 
 	return {"ok": true, "message": message, "rewards": rewards, "activity_id": id, "exam_ready": ready_for_exam()}
 
 func retreat_activity(detail: Dictionary = {}) -> Dictionary:
+	if data.get("mode", "") == "lab" and data.get("pending", {}).get("id", "") == "trial":
+		return _finish_trial(false, detail)
 	if not data.is_empty() and str(data.get("pending", {}).get("id", "")) == "exam":
 		return complete_exam(false, detail)
 	var check: Dictionary = _check_pending(detail, false)
@@ -258,6 +366,8 @@ func retry_activity() -> Dictionary:
 	return {"ok": true, "message": "重新迎戰，不額外消耗時段或回復藥。", "pending_token": int(data.pending.token)}
 
 func buy_medicine() -> Dictionary:
+	if data.get("mode", "") == "lab":
+		return _fail("每次試戰已備一份藥，不使用正式旅程的盤纏。")
 	if data.is_empty() or not data.get("pending", {}).is_empty() or str(data.phase) not in ["intro", "town"]:
 		return _fail("請先回到鎮上，再購買回復藥。")
 	if int(data.money) < Content.MEDICINE_PRICE:
@@ -270,6 +380,8 @@ func buy_medicine() -> Dictionary:
 	return {"ok": true, "message": "回復藥 +1，盤纏 -%d 文。" % Content.MEDICINE_PRICE}
 
 func prepare_exam_now() -> Dictionary:
+	if data.get("mode", "") == "lab":
+		return _fail("武學試招沒有七日選拔。")
 	if data.is_empty() or not data.get("pending", {}).is_empty() or str(data.phase) not in ["intro", "town"]:
 		return _fail("先完成目前的事情，再決定是否提前收拾行囊。")
 	var unused: int = remaining()
@@ -355,6 +467,7 @@ func story_context() -> Dictionary:
 	var creation: Dictionary = Creation.summary(data.get("creation", Creation.draft()))
 	var motivation: Dictionary = creation.get("motivation", {})
 	var echoes: Dictionary = creation.get("choice_echoes", {})
+	var variant: Dictionary = _variant_details(str(data.get("pending", {}).get("id", "")), data)
 	return {
 		"hero_name": str(data.get("hero_name", "行路人")), "origin": str(data.get("origin", "herbalist")),
 		"day": day(), "remaining": remaining(), "training": int(data.get("training", 0)), "insight": int(data.get("insight", 0)),
@@ -364,16 +477,51 @@ func story_context() -> Dictionary:
 		"creation_approach": str(echoes.get("approach", "")),
 		"creation_support": str(echoes.get("support", "")),
 		"creation_finish": str(echoes.get("finish", "")),
+		"activity_variant": str(variant.get("card", "")),
+		"variant_title": str(variant.get("title", "")), "variant_text": str(variant.get("text", "")),
 	}
 
+func activity_preview(id: String) -> Dictionary:
+	if not Content.ACTIVITIES.has(id) or data.is_empty(): return {"text": ""}
+	var variant: Dictionary = _variant_details(id, data)
+	var lines: PackedStringArray = []
+	var card_id: String = str(variant.get("card", ""))
+	if not card_id.is_empty():
+		lines.append("本輪奇遇：" + str(variant.title) + "。" + str(variant.text))
+		lines.append("已學會這項招式；完成後改得練習心得 +1。" if card_id in data.learned_cards else "完成後另學「%s」。" % str(Cards.card(card_id).name))
+	var encounter: String = str(data.get("encounter_variants", {}).get(id, ""))
+	if not encounter.is_empty():
+		lines.append("沿途情報：" + str(Content.ENCOUNTER_HINTS[encounter]))
+	return {"text": "\n".join(lines), "variant_title": str(variant.get("title", "")), "variant_text": str(variant.get("text", "")), "card_id": card_id, "already_learned": not card_id.is_empty() and card_id in data.learned_cards, "encounter_variant": encounter}
+
+func _variant_details(id: String, source: Dictionary) -> Dictionary:
+	var card_id: String = str(source.get("opportunities", {}).get(id, ""))
+	for variant in Content.OPPORTUNITY_VARIANTS.get(id, []):
+		if str(variant.card) == card_id: return variant.duplicate(true)
+	return {}
+
+func _world_for_seed(seed: int) -> Dictionary:
+	var value: int = seed
+	var opportunities: Dictionary = {}
+	var encounters: Dictionary = {}
+	for id in Content.OPPORTUNITY_VARIANTS:
+		value = (value * 48271) % 2147483647
+		var options: Array = Content.OPPORTUNITY_VARIANTS[id]
+		opportunities[id] = str(options[value % options.size()].card)
+	for id in Content.EXPLORATIONS:
+		value = (value * 48271) % 2147483647
+		encounters[id] = TRIAL_MODES[value % TRIAL_MODES.size()]
+	return {"opportunities": opportunities, "encounter_variants": encounters}
+
 func _lock_encounter() -> void:
-	data.pending.seed = randi_range(1, 2147483646)
-	for key in ["attributes", "deck", "upgraded_cards", "skills"]:
+	data.pending.seed = (int(data.journey_seed) * 48271 + int(data.serial) * 69621) % 2147483646 + 1
+	for key in ["attributes", "deck", "upgraded_cards", "skills", "refinements"]:
 		data.pending[key] = data[key].duplicate(true)
-	for key in ["training", "insight", "origin"]:
+	for key in ["training", "insight", "origin", "weapon", "inner"]:
 		data.pending[key] = data[key]
 	data.pending.exam_aid = mini(3, data.completed.size() / 3)
 	data.pending.fortune_hint = ""
+	data.pending.encounter_variant = str(data.encounter_variants.get(str(data.pending.id), ""))
 
 func battle_stats() -> Dictionary:
 	if data.is_empty():
@@ -390,9 +538,14 @@ func _battle_stats_for(source: Dictionary) -> Dictionary:
 		"medicine": int(source.medicine) if pending.is_empty() else int(pending.medicine_at_start),
 		"exam_aid": mini(3, source.completed.size() / 3) if pending.is_empty() else int(pending.exam_aid),
 		"seed": int(pending.get("seed", 1)),
+		"weapon": str(locked.weapon), "inner": str(locked.inner), "refinements": locked.refinements.duplicate(true),
+		"encounter_variant": str(pending.get("encounter_variant", "")),
 	}
 
-func save_game(path: String = SAVE_PATH) -> Dictionary:
+func save_game(path: String = "") -> Dictionary:
+	if path.is_empty(): path = current_save_path()
+	if _legacy_path(path) or (path in [SAVE_PATH, LAB_SAVE_PATH] and path != current_save_path()):
+		return _fail("試招、正式旅程及舊版存檔分開保存，沒有覆蓋這個檔案。")
 	var validated: Dictionary = _validate_data(data)
 	if not bool(validated.ok):
 		return _fail("目前進度資料不完整，未覆蓋存檔：" + str(validated.message))
@@ -423,15 +576,20 @@ func save_game(path: String = SAVE_PATH) -> Dictionary:
 	return {"ok": true, "message": "旅程已儲存。"}
 
 func load_game(path: String = SAVE_PATH) -> Dictionary:
-	var primary: Dictionary = _read_save(path)
+	if _legacy_path(path): return _fail("舊版存檔保留，請用對應版本繼續遊玩。")
+	var expected_mode: String = "journey" if path == SAVE_PATH else ("lab" if path == LAB_SAVE_PATH else "")
+	var primary: Dictionary = _read_save(path, expected_mode)
 	if bool(primary.ok):
 		data = primary.data
 		return {"ok": true, "message": "旅程已讀取。", "recovered": false}
-	var backup: Dictionary = _read_save(path + ".bak")
+	var backup: Dictionary = _read_save(path + ".bak", expected_mode)
 	if bool(backup.ok):
 		data = backup.data
 		return {"ok": true, "message": "主存檔未能讀取，已恢復上一份完整備份。", "recovered": true}
 	return _fail(str(primary.message))
+
+func _legacy_path(path: String) -> bool:
+	return path.get_file().trim_suffix(".bak").trim_suffix(".tmp") in ["run-v1.json", "run-cards-v2.json"]
 
 func _check_pending(detail: Dictionary, exam: bool) -> Dictionary:
 	if data.is_empty() or data.get("pending", {}).is_empty():
@@ -443,7 +601,7 @@ func _check_pending(detail: Dictionary, exam: bool) -> Dictionary:
 	if detail.has("pending_token") and (not _whole(detail.pending_token, 1, int(data.serial)) or int(detail.pending_token) != int(pending.token)):
 		return _fail("這是較早活動的回覆，已忽略。")
 	var used: Variant = detail.get("medicine_used", 0)
-	if not _whole(used, 0, mini(int(data.medicine), int(pending.medicine_at_start))):
+	if not _whole(used, 0, mini(1, mini(int(data.medicine), int(pending.medicine_at_start)))):
 		return _fail("回復藥數量不符，未結算活動。")
 	return {"ok": true, "message": ""}
 
@@ -466,9 +624,11 @@ func _rewards_text(rewards: Dictionary) -> String:
 		parts.append("學會「%s」" % str(Content.SKILLS[skill].name))
 	for card_id in rewards.get("cards", []):
 		parts.append("解鎖招式「%s」" % str(Cards.card(card_id).get("name", card_id)))
+	for inner_id in rewards.get("inners", []):
+		parts.append("學會內功「%s」" % str(Cards.INNERS[inner_id].name))
 	return "、".join(parts) + "。" if not parts.is_empty() else "這份人情已經記下。"
 
-func _read_save(path: String) -> Dictionary:
+func _read_save(path: String, expected_mode: String = "") -> Dictionary:
 	if not FileAccess.file_exists(path):
 		return _fail("還沒有這段旅程的存檔。")
 	var file: FileAccess = FileAccess.open(path, FileAccess.READ)
@@ -485,24 +645,37 @@ func _read_save(path: String) -> Dictionary:
 	var envelope: Dictionary = json.data
 	if not _whole(envelope.get("version"), SAVE_VERSION, SAVE_VERSION) or not (envelope.get("data") is Dictionary):
 		return _fail("這份存檔不是本作支援的版本。")
-	return _validate_data(envelope.data)
+	var checked: Dictionary = _validate_data(envelope.data)
+	if bool(checked.ok) and not expected_mode.is_empty() and str(checked.data.mode) != expected_mode:
+		return _fail("這份存檔屬於另一種遊玩模式，原檔已保留。")
+	return checked
 
 func _validate_data(source: Dictionary) -> Dictionary:
 	if source.is_empty() or not _json_safe(source, 0):
 		return _fail("內容為空或含不支援的資料。")
 	var result: Dictionary = source.duplicate(true)
-	for key in ["hero_name", "origin", "phase", "school"]:
+	for key in ["hero_name", "origin", "phase", "school", "mode", "weapon", "inner", "lab_preset"]:
 		if not (result.get(key) is String):
 			return _fail("缺少文字欄位：" + key)
 	if str(result.hero_name).is_empty() or str(result.hero_name).length() > 16 or not Content.ORIGINS.has(result.origin) or result.phase not in PHASES:
 		return _fail("主角或階段資料不符。")
+	if result.mode not in ["journey", "lab"] or not Cards.WEAPONS.has(result.weapon):
+		return _fail("遊玩模式或主兵器不符。")
+	if not _whole(result.get("journey_seed"), 1, 2147483646):
+		return _fail("本輪江湖種子不完整。")
+	result.journey_seed = int(result.journey_seed)
+	var expected_world: Dictionary = _world_for_seed(result.journey_seed)
+	if not _same_json_value(result.get("opportunities"), expected_world.opportunities) or not _same_json_value(result.get("encounter_variants"), expected_world.encounter_variants):
+		return _fail("奇遇或遭遇變體與這輪江湖不一致。")
 	var limits: Dictionary = {"spent": 21, "money": 99999, "medicine": 99, "training": 60, "insight": 60, "mastery": 99, "serial": 1000000}
 	for key in limits:
 		if not _whole(result.get(key), 0, int(limits[key])):
 			return _fail("數值範圍不符：" + key)
 		result[key] = int(result[key])
-	if not (result.get("favor") is Dictionary):
+	if not (result.get("favor") is Dictionary) or result.favor.size() != Content.NPCS.size():
 		return _fail("缺少人物關係。")
+	if not (result.get("dialogue") is Dictionary):
+		return _fail("對話進度不完整。")
 	for npc in Content.NPCS:
 		if not _whole(result.favor.get(npc), 0, 9):
 			return _fail("人物關係數值不符。")
@@ -519,6 +692,19 @@ func _validate_data(source: Dictionary) -> Dictionary:
 			if field == "completed" and not Content.ACTIVITIES.has(id):
 				return _fail("不認得的活動。")
 			seen.append(id)
+	if not (result.get("trial_history") is Array) or result.trial_history.size() > 32:
+		return _fail("試戰紀錄不完整。")
+	for trial in result.trial_history:
+		if not (trial is Dictionary) or trial.get("mode") not in TRIAL_MODES or not (trial.get("won") is bool) or not _whole(trial.get("seed"), 1, 2147483646) or not Cards.INNERS.has(trial.get("inner")) or not Cards.WEAPONS.has(trial.get("weapon")):
+			return _fail("試戰紀錄內容不符。")
+	if result.mode == "lab":
+		if result.phase not in ["town", "activity"] or result.spent != 0 or result.money != 0 or result.medicine != 1 or result.training != 0 or result.insight != 0 or result.mastery != 0 or not result.completed.is_empty() or not result.skills.is_empty() or not result.dialogue.is_empty() or not Cards.PRESETS.has(result.lab_preset):
+			return _fail("試招不能帶入正式旅程的行程或成果。")
+		for value in result.favor.values():
+			if int(value) != 0: return _fail("試招不累積人物信任。")
+	else:
+		if not result.trial_history.is_empty() or not str(result.lab_preset).is_empty():
+			return _fail("正式旅程混入試招資料。")
 	var card_check: Dictionary = _validate_card_run(result)
 	if not bool(card_check.ok):
 		return card_check
@@ -532,15 +718,20 @@ func _validate_data(source: Dictionary) -> Dictionary:
 		return _fail("活動進度資料不符。")
 	var pending: Dictionary = result.pending
 	if not pending.is_empty():
-		if not (pending.get("id") is String) or (pending.id != "exam" and not Content.ACTIVITIES.has(pending.id)):
+		var is_trial: bool = result.mode == "lab" and pending.get("id") == "trial"
+		if not (pending.get("id") is String) or (not is_trial and pending.id != "exam" and not Content.ACTIVITIES.has(pending.id)):
 			return _fail("進行中的活動不存在。")
-		var expected_cost: int = 0 if pending.id == "exam" else int(Content.ACTIVITIES[pending.id].cost)
-		var expected_fee: int = 0 if pending.id == "exam" else int(Content.ACTIVITIES[pending.id].get("fee", 0))
+		if result.mode == "lab" and not is_trial:
+			return _fail("試招不能安排正式活動。")
+		if is_trial and pending.get("battle_mode") not in TRIAL_MODES:
+			return _fail("試戰對手不符。")
+		var expected_cost: int = 0 if pending.id == "exam" or is_trial else int(Content.ACTIVITIES[pending.id].cost)
+		var expected_fee: int = 0 if pending.id == "exam" or is_trial else int(Content.ACTIVITIES[pending.id].get("fee", 0))
 		for key in ["cost", "fee", "start_spent", "attempt", "medicine_at_start", "token"]:
 			if not _whole(pending.get(key), 0, 1000000):
 				return _fail("活動檢查點不完整。")
 			pending[key] = int(pending[key])
-		if pending.cost != expected_cost or pending.fee != expected_fee or pending.start_spent + pending.cost != result.spent or pending.token <= 0 or pending.token > result.serial or pending.medicine_at_start > 99:
+		if pending.cost != expected_cost or pending.fee != expected_fee or pending.start_spent + pending.cost != result.spent or pending.token <= 0 or pending.token != result.serial or pending.medicine_at_start > 99:
 			return _fail("活動成本與行程不一致。")
 		if pending.id == "exam" and (result.spent != 21 or result.phase != "exam"):
 			return _fail("選拔日期不符。")
@@ -550,7 +741,11 @@ func _validate_data(source: Dictionary) -> Dictionary:
 			return _fail("固定遭遇種子或支援資料不符。")
 		pending.seed = int(pending.seed)
 		pending.exam_aid = int(pending.exam_aid)
-		for key in ["attributes", "deck", "upgraded_cards", "skills", "training", "insight", "origin"]:
+		if not is_trial and pending.seed != (result.journey_seed * 48271 + pending.token * 69621) % 2147483646 + 1:
+			return _fail("遭遇抽牌種子與這次出發不一致。")
+		if pending.get("encounter_variant") != result.encounter_variants.get(pending.id, ""):
+			return _fail("遭遇變體不是出發時的安排。")
+		for key in ["attributes", "deck", "upgraded_cards", "skills", "training", "insight", "origin", "weapon", "inner", "refinements"]:
 			if not _same_json_value(pending.get(key), result[key]):
 				return _fail("活動開始時鎖定的能力或招式被改動：" + key)
 			pending[key] = result[key].duplicate(true) if result[key] is Dictionary or result[key] is Array else result[key]
@@ -572,7 +767,7 @@ func _validate_data(source: Dictionary) -> Dictionary:
 		if pending.has("combat") and not (pending.combat is Dictionary):
 			return _fail("戰鬥檢查點不符。")
 		if not pending.get("combat", {}).is_empty():
-			var mode: String = "exam" if pending.id == "exam" else str(Content.ACTIVITIES[pending.id].get("battle", ""))
+			var mode: String = str(pending.battle_mode) if is_trial else ("exam" if pending.id == "exam" else str(Content.ACTIVITIES[pending.id].get("battle", "")))
 			if mode.is_empty():
 				return _fail("這項活動沒有戰鬥檢查點。")
 			var battle_check: Dictionary = Battle.validate_snapshot(pending.combat, mode, _battle_stats_for(result))
@@ -581,7 +776,7 @@ func _validate_data(source: Dictionary) -> Dictionary:
 		if pending.has("report") and not (pending.report is Dictionary):
 			return _fail("戰鬥結果檢查點不符。")
 		if pending.has("report") and not pending.report.is_empty():
-			if not _whole(pending.report.get("medicine_used", 0), 0, int(pending.medicine_at_start)) or not _whole(pending.report.get("pending_token", pending.token), int(pending.token), int(pending.token)):
+			if not _whole(pending.report.get("medicine_used", 0), 0, mini(1, int(pending.medicine_at_start))) or not _whole(pending.report.get("pending_token", pending.token), int(pending.token), int(pending.token)):
 				return _fail("戰鬥結果與活動補給不符。")
 		if pending.has("battle_won") and not (pending.battle_won is bool):
 			return _fail("戰鬥勝負資料不符。")
@@ -641,22 +836,53 @@ func _validate_card_run(source: Dictionary) -> Dictionary:
 				return _fail("招式清單有重複或不認得的項目。")
 			seen.append(id)
 	var earned: Array = Cards.starting_learned(str(source.origin))
+	var earned_inners: Array = ["guiyuan"]
 	for activity in source.completed:
 		for id in Cards.cards_for_activity(activity):
 			if id not in earned:
 				earned.append(id)
+		var opportunity: String = str(source.opportunities.get(activity, ""))
+		if not opportunity.is_empty() and opportunity not in earned:
+			earned.append(opportunity)
+		for id in Cards.inners_for_activity(activity):
+			if id not in earned_inners: earned_inners.append(id)
+	var lab: bool = source.mode == "lab"
+	if lab:
+		earned = Cards.CARDS.keys()
+		earned_inners = Cards.INNERS.keys()
+		for key in source.attributes:
+			if int(source.attributes[key]) != 5: return _fail("試招使用各五點的共同能力基準。")
 	if earned.size() != source.learned_cards.size():
 		return _fail("已學招式與出身、完成事件不一致。")
 	for id in earned:
 		if id not in source.learned_cards:
 			return _fail("已學招式缺少事件成果。")
 	for id in source.upgraded_cards:
-		if id not in source.learned_cards:
+		if id not in source.learned_cards or id not in Cards.REFINABLE:
 			return _fail("未學會的招式不能已精修。")
-	var deck_check: Dictionary = Cards.validate_deck(source.get("deck"), source.learned_cards)
+	if not (source.get("learned_inners") is Array) or source.learned_inners.size() != earned_inners.size():
+		return _fail("內功清單與師承不一致。")
+	var seen_inners: Array = []
+	for id in source.learned_inners:
+		if not (id is String) or id not in earned_inners or id in seen_inners:
+			return _fail("內功清單含未學會或重複項目。")
+		seen_inners.append(id)
+	if source.inner not in source.learned_inners:
+		return _fail("主修內功尚未學會。")
+	if not (source.get("refinements") is Dictionary) or source.refinements.size() > Cards.REFINABLE.size():
+		return _fail("精修練法資料不完整。")
+	for id in source.refinements:
+		if id not in source.upgraded_cards or source.refinements[id] not in ["stable", "specialist"]:
+			return _fail("精修分支尚未解鎖或不受支援。")
+	if not lab and source.refinements.size() != source.upgraded_cards.size():
+		return _fail("已精修招式缺少所選練法。")
+	if lab:
+		if source.upgraded_cards.size() != Cards.REFINABLE.size() or bool(source.aptitude_discount_used) or bool(source.fortune_hint_used):
+			return _fail("試招的已解鎖練法或基準資料不符。")
+	var deck_check: Dictionary = Cards.validate_deck(source.get("deck"), source.learned_cards, str(source.weapon))
 	if not bool(deck_check.ok):
 		return deck_check
-	if bool(source.aptitude_discount_used) != (int(source.attributes.aptitude) >= 6 and not source.upgraded_cards.is_empty()):
+	if not lab and bool(source.aptitude_discount_used) != (int(source.attributes.aptitude) >= 6 and not source.upgraded_cards.is_empty()):
 		return _fail("悟性優惠與精修紀錄不一致。")
 	if bool(source.fortune_hint_used) and int(source.attributes.fortune) < 6:
 		return _fail("機緣提示與能力不一致。")

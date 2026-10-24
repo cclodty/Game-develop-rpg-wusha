@@ -12,7 +12,7 @@ class GameHandler(SimpleHTTPRequestHandler):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--port", type=int, default=8071)
+    parser.add_argument("--port", type=int, default=8072)
     args = parser.parse_args()
     directory = Path(__file__).resolve().parents[1] / "build" / "web"
     if not (directory / "index.html").is_file():

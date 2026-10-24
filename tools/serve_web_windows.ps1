@@ -1,6 +1,6 @@
 param(
     [ValidateRange(1, 65535)]
-    [int]$Port = 8071,
+    [int]$Port = 8072,
     [switch]$NoBrowser
 )
 
@@ -126,7 +126,7 @@ catch {
 }
 
 Write-Host ''
-Write-Host 'JIANGHU WEIYUAN CARDS - The game is ready.' -ForegroundColor Green
+Write-Host 'JIANGHU WEIYUAN MARTIAL - The game is ready.' -ForegroundColor Green
 Write-Host "Open: $url"
 Write-Host 'Keep this window open while playing. Close it to stop the game server.'
 Write-Host 'Use the same browser and this address next time to continue your save.'

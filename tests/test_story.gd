@@ -59,6 +59,8 @@ func _run() -> void:
 		if fixed_ids.has(id): duplicates.append(id)
 		fixed_ids[id] = true
 	expect(fixed_ids.size() >= 200 and duplicates.is_empty(), "authored lines have unique stable translation IDs")
+	expect(not text.contains("掠影突進") and not text.contains("虛招減弱") and not text.contains("可同時照應面前多名對手"), "martial dialogue no longer teaches superseded v2 card effects")
+	expect(text.contains("歸元功") and text.contains("守中訣") and text.contains("行雲訣") and text.contains("伏針") and text.contains("每場只能一次"), "the authored story introduces current inners, delayed technique and medicine limit")
 	for origin in ["herbalist", "courier", "performer"]:
 		for phase in [{"day": 1, "training": 0, "insight": 0}, {"day": 4, "training": 6, "insight": 6}, {"day": 7, "training": 6, "insight": 6}]:
 			for answer in range(3):
@@ -78,6 +80,14 @@ func _run() -> void:
 			var context = _context("herbalist", {"day": 1, "training": 0, "insight": 0}, answer)
 			remembered[await _linear_text("npc_" + npc, context)] = true
 		expect(remembered.size() == 3, "NPC " + npc + " audibly remembers all three motivation or road-choice branches")
+	# These contexts exercise authored branches, not activity rewards or RNG.
+	for variant in ["pushing_palm", "yielding_palm", "cloud_step", "hidden_needle"]:
+		var context = _context("herbalist", {"day": 4, "training": 6, "insight": 6}, 0)
+		context["activity_variant"] = variant
+		await _walk_graph(context)
+		var title = "complete_bridge_repair" if variant in ["pushing_palm", "yielding_palm"] else "activity_old_ballad"
+		var expected: String = {"pushing_palm": "掌根", "yielding_palm": "卸力掌", "cloud_step": "掠影步", "hidden_needle": "伏針"}[variant]
+		expect((await _linear_text(title, context)).contains(expected), "optional lesson " + variant + " has its own readable response")
 
 	_finish()
 
