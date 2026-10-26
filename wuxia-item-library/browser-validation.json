@@ -1,9 +1,10 @@
 {
   "status": "passed",
   "items": 368,
-  "decoded_atlases": 1,
-  "image_scope": "Tangmen S08 only: all 16 measured sprite regions. Other images suppressed in memory for this bounded smoke.",
+  "decoded_atlases": 2,
+  "image_scope": "All 368 card bindings; actual PNG decoding and rendered crops for Wudang S02 and Tangmen S08 (32 items). Visual identity review of all 368 is recorded separately in thumbnail-audit.json.",
   "tested": [
+    "368 card IDs/names/atlas paths/region CSS bindings",
     "classic martial name searches",
     "name provenance notes",
     "reference link title/URL/target/rel attributes (links not fetched)",
@@ -14,13 +15,14 @@
     "ID search",
     "empty state",
     "reset",
-    "S08 PNG decoded",
-    "16 measured sprite region aspect ratios and CSS image sources",
+    "S02 PNG decoded; 16 measured sprite region aspect ratios and CSS image sources",
+    "S08 PNG decoded; 16 measured sprite region aspect ratios and CSS image sources",
     "mobile overflow",
     "JavaScript errors"
   ],
-  "loading": "In-memory HTML with one local PNG supplied as a blob URL; no outbound traffic. Delivered HTML is unchanged and uses relative image paths.",
+  "loading": "In-memory HTML with two local PNGs supplied sequentially as blob URLs; no outbound traffic. Delivered HTML is unchanged and uses relative image paths.",
   "last_step": "passed",
+  "thumbnail_bindings_checked": 368,
   "classic_name_checks": [
     {
       "id": "SL006",
@@ -77,10 +79,21 @@
       "source_links_verified": 1
     }
   ],
-  "atlas_decode": {
-    "ok": true,
-    "width": 1254,
-    "height": 1254
+  "atlas_decodes": {
+    "S02": {
+      "ok": true,
+      "width": 1254,
+      "height": 1254
+    },
+    "S08": {
+      "ok": true,
+      "width": 1254,
+      "height": 1254
+    }
   },
-  "preview": "catalog-preview.png"
+  "previews": [
+    "wudang-preview.png",
+    "taiji-sword-preview.png",
+    "catalog-preview.png"
+  ]
 }

@@ -27,8 +27,8 @@
       "region": {
         "x": 0,
         "y": 0,
-        "width": 303,
-        "height": 322
+        "width": 321,
+        "height": 339
       }
     },
     "implementation_status": "design_only",
@@ -69,10 +69,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 303,
+        "x": 321,
         "y": 0,
-        "width": 325,
-        "height": 322
+        "width": 330,
+        "height": 339
       }
     },
     "implementation_status": "design_only",
@@ -113,10 +113,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 628,
+        "x": 651,
         "y": 0,
-        "width": 307,
-        "height": 322
+        "width": 302,
+        "height": 339
       }
     },
     "implementation_status": "design_only",
@@ -143,8 +143,8 @@
     "use": "本作規劃：提供拳掌進階方向，逐步強化近身連招與勁力控制。",
     "limitation": "本作規劃：須先完成基礎拳掌修習；招式未熟時不能穩定接續。",
     "acquisition": "本作規劃：通過拳掌考校並取得授業許可後研讀。",
-    "appearance": "長條雙開摺冊，兩端各有木片護封，中間橫束赭色布帶。",
-    "art_prompt": "Long double-ended folding staff manual with wooden end covers and one ochre cloth band across its center.",
+    "appearance": "赭黃矩形線裝掌譜，封面印醒目手掌及同心勁力圈，書角包深色皮。",
+    "art_prompt": "Rectangular ochre stitched palm-technique manual with a large clear open-palm diagram and concentric force circles; dark reinforced corners.",
     "atlas_id": "S01",
     "cell_index": 3,
     "art_status": "generated",
@@ -157,10 +157,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 935,
+        "x": 953,
         "y": 0,
-        "width": 319,
-        "height": 322
+        "width": 301,
+        "height": 339
       }
     },
     "implementation_status": "design_only",
@@ -173,7 +173,8 @@
     ],
     "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
     "needs_art_revision": false,
-    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
+    "art_revision_note": "v3逐格核對後修訂圖像；目前外觀與美術描述已同步至實際圖像。",
+    "art_revision_status": "completed"
   },
   {
     "id": "SL005",
@@ -187,8 +188,8 @@
     "use": "本作規劃：提供少林內功入門路線，支援持續作戰與休整恢復。",
     "limitation": "本作規劃：恢復需要調息時間，不能代替重傷處置。",
     "acquisition": "本作規劃：完成俗家弟子入門課業後領取。",
-    "appearance": "掌心大小的米褐色軟封冊，封面為層疊土紋圓印，細繩垂於書脊。",
-    "art_prompt": "Palm-sized beige softcover breathing booklet, layered earth-ring seal on cover, thin dangling spine cord.",
+    "appearance": "米褐矩形調息冊，封面是打坐輪廓、腹部同心圓與環繞呼吸圈。",
+    "art_prompt": "Beige rectangular inner-energy booklet with a clear seated meditation pictogram, concentric lower-belly breathing circles and surrounding breath rings.",
     "atlas_id": "S01",
     "cell_index": 4,
     "art_status": "generated",
@@ -202,9 +203,9 @@
       "image_height": 1254,
       "region": {
         "x": 0,
-        "y": 322,
-        "width": 326,
-        "height": 293
+        "y": 339,
+        "width": 311,
+        "height": 283
       }
     },
     "implementation_status": "design_only",
@@ -217,7 +218,8 @@
     ],
     "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
     "needs_art_revision": false,
-    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
+    "art_revision_note": "v3逐格核對後修訂圖像；目前外觀與美術描述已同步至實際圖像。",
+    "art_revision_status": "completed"
   },
   {
     "id": "SL006",
@@ -231,8 +233,8 @@
     "use": "本作規劃：開啟高階內功修習，逐步改善根骨與內力運用。",
     "limitation": "本作規劃：需要長期修煉及前置修為，讀經本身不會立即提升全部能力。",
     "acquisition": "本作規劃：完成高階修習考核並取得藏經閣研讀資格。",
-    "appearance": "厚實褐皮夾冊內夾赭紙，外有扁平石鎮與磨圓的麻繩扣。",
-    "art_prompt": "Thick brown leather-clasp manual with ochre pages, a flat stone paperweight and a worn hemp loop.",
+    "appearance": "褐皮矩形經冊呈軀幹輪廓，中央脊柱及雙臂以經脈連點標示，頁面沒有石鎮遮擋。",
+    "art_prompt": "Brown rectangular inner-energy manual with an unobstructed torso meridian diagram, dotted spinal centerline and branching arm channels; no stone weight.",
     "atlas_id": "S01",
     "cell_index": 5,
     "art_status": "generated",
@@ -245,10 +247,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 326,
-        "y": 322,
-        "width": 308,
-        "height": 293
+        "x": 311,
+        "y": 339,
+        "width": 311,
+        "height": 283
       }
     },
     "implementation_status": "design_only",
@@ -261,7 +263,8 @@
     ],
     "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
     "needs_art_revision": false,
-    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
+    "art_revision_note": "v3逐格核對後修訂圖像；目前外觀與美術描述已同步至實際圖像。",
+    "art_revision_status": "completed"
   },
   {
     "id": "SL007",
@@ -275,8 +278,8 @@
     "use": "本作規劃：提供精修內功的養成分支，改善內力運轉與調息效率。",
     "limitation": "本作規劃：須滿足高階內功條件；與其他主修內功的搭配另作平衡。",
     "acquisition": "本作規劃：取得真傳資格後分階段研讀。",
-    "appearance": "深赭布函包著窄幅經冊，函扣是一枚不起眼的小銅鐘片。",
-    "art_prompt": "Dark ochre cloth book case holding a narrow sutra, tiny flat bronze bell clasp, restrained monastery craft.",
+    "appearance": "攤開赭黃經書，兩頁共同呈打坐身形、脊柱連點及手臂經脈線。",
+    "art_prompt": "Open rectangular ochre inner-energy scripture displaying a seated meditation outline and clear spinal and arm meridian nodes; no bell clasp or case.",
     "atlas_id": "S01",
     "cell_index": 6,
     "art_status": "generated",
@@ -289,10 +292,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 634,
-        "y": 322,
-        "width": 308,
-        "height": 293
+        "x": 622,
+        "y": 339,
+        "width": 320,
+        "height": 283
       }
     },
     "implementation_status": "design_only",
@@ -305,7 +308,8 @@
     ],
     "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
     "needs_art_revision": false,
-    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
+    "art_revision_note": "v3逐格核對後修訂圖像；目前外觀與美術描述已同步至實際圖像。",
+    "art_revision_status": "completed"
   },
   {
     "id": "SL008",
@@ -334,9 +338,9 @@
       "image_height": 1254,
       "region": {
         "x": 942,
-        "y": 322,
+        "y": 339,
         "width": 312,
-        "height": 293
+        "height": 283
       }
     },
     "implementation_status": "design_only",
@@ -363,8 +367,8 @@
     "use": "本作規劃：開啟少林身法精修，提升越障與持續移動能力。",
     "limitation": "本作規劃：須有少林輕功及內功基礎，不能只靠讀取圖譜跳過修煉。",
     "acquisition": "本作規劃：完成高階身法試煉後分圖傳授。",
-    "appearance": "圓筒形細木匣收著窄卷，匣外刻一圈回轉箭紋並繫短黃繩。",
-    "art_prompt": "Slim cylindrical wooden scroll case, carved turning-arrow band, short yellow cord, narrow rolled paper visible.",
+    "appearance": "矩形展開紙圖繪多枚大足印，以彎曲動作箭頭相連，角落有小型打坐圖。",
+    "art_prompt": "Rectangular unfolded cream footwork diagram with bold footprints joined by curved movement arrows and a small seated meditation symbol; no cylindrical case or fan silhouette.",
     "atlas_id": "S01",
     "cell_index": 8,
     "art_status": "generated",
@@ -378,9 +382,9 @@
       "image_height": 1254,
       "region": {
         "x": 0,
-        "y": 615,
-        "width": 303,
-        "height": 312
+        "y": 622,
+        "width": 311,
+        "height": 308
       }
     },
     "implementation_status": "design_only",
@@ -393,7 +397,8 @@
     ],
     "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
     "needs_art_revision": false,
-    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
+    "art_revision_note": "v3逐格核對後修訂圖像；目前外觀與美術描述已同步至實際圖像。",
+    "art_revision_status": "completed"
   },
   {
     "id": "SL010",
@@ -407,8 +412,8 @@
     "use": "本作規劃：輔助既有拳法的熟練度養成，提示練習方向。",
     "limitation": "本作規劃：屬教學筆記，不能代替正式秘籍或師承。",
     "acquisition": "本作規劃：參加門內對練並整理練功紀錄。",
-    "appearance": "散頁夾在兩片竹板間，密集赭墨圈點，邊緣繫一枚扁木籤。",
-    "art_prompt": "Loose annotated practice sheets between bamboo boards, ochre correction dots, flat wooden tag at edge.",
+    "appearance": "竹板夾持的拳法散頁，以多個清楚拳形及接續動作箭頭作練習圖。",
+    "art_prompt": "Boxing practice sheets between flat bamboo boards, displaying multiple clear fist diagrams joined by movement arrows, no swords.",
     "atlas_id": "S01",
     "cell_index": 9,
     "art_status": "generated",
@@ -421,10 +426,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 303,
-        "y": 615,
-        "width": 323,
-        "height": 312
+        "x": 311,
+        "y": 622,
+        "width": 322,
+        "height": 308
       }
     },
     "implementation_status": "design_only",
@@ -432,7 +437,8 @@
     "reference_sources": [],
     "reference_note": "採用普通兵器、服飾或門派日用品的直白名稱；本作設計其門派配發及使用方式，不聲稱這是其他作品既有的專有寶物。",
     "needs_art_revision": false,
-    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
+    "art_revision_note": "v3逐格核對後修訂圖像；目前外觀與美術描述已同步至實際圖像。",
+    "art_revision_status": "completed"
   },
   {
     "id": "SL011",
@@ -446,8 +452,8 @@
     "use": "本作規劃：作為棍法外功的配套武器。",
     "limitation": "本作規劃：為普通門派制式兵器，不具專屬神兵效果。",
     "acquisition": "本作規劃：向門派兵器庫領取或製作。",
-    "appearance": "深褐硬木長棍橫斜放置，兩端舊銅套，中央有三道淺色握距環。",
-    "art_prompt": "Dark hardwood staff diagonally placed, aged brass end caps, three pale grip-spacing rings at center.",
+    "appearance": "完整細長深褐木棍斜放，兩端包銅，中央纏淺色握帶，無刀刃與法器杖首。",
+    "art_prompt": "Full-length slender dark wooden Shaolin staff placed diagonally, aged brass end caps and pale central grip bands, no blade or ritual head.",
     "atlas_id": "S01",
     "cell_index": 10,
     "art_status": "generated",
@@ -460,10 +466,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 626,
-        "y": 615,
-        "width": 311,
-        "height": 312
+        "x": 633,
+        "y": 622,
+        "width": 305,
+        "height": 308
       }
     },
     "implementation_status": "design_only",
@@ -471,7 +477,8 @@
     "reference_sources": [],
     "reference_note": "採用普通兵器、服飾或門派日用品的直白名稱；本作設計其門派配發及使用方式，不聲稱這是其他作品既有的專有寶物。",
     "needs_art_revision": false,
-    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
+    "art_revision_note": "v3逐格核對後修訂圖像；目前外觀與美術描述已同步至實際圖像。",
+    "art_revision_status": "completed"
   },
   {
     "id": "SL012",
@@ -499,10 +506,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 937,
-        "y": 615,
-        "width": 317,
-        "height": 312
+        "x": 938,
+        "y": 622,
+        "width": 316,
+        "height": 308
       }
     },
     "implementation_status": "design_only",
@@ -540,9 +547,9 @@
       "image_height": 1254,
       "region": {
         "x": 0,
-        "y": 927,
-        "width": 310,
-        "height": 327
+        "y": 930,
+        "width": 309,
+        "height": 324
       }
     },
     "implementation_status": "design_only",
@@ -578,10 +585,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 310,
-        "y": 927,
-        "width": 317,
-        "height": 327
+        "x": 309,
+        "y": 930,
+        "width": 318,
+        "height": 324
       }
     },
     "implementation_status": "design_only",
@@ -618,9 +625,9 @@
       "image_height": 1254,
       "region": {
         "x": 627,
-        "y": 927,
-        "width": 298,
-        "height": 327
+        "y": 930,
+        "width": 301,
+        "height": 324
       }
     },
     "implementation_status": "design_only",
@@ -656,10 +663,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 925,
-        "y": 927,
-        "width": 329,
-        "height": 327
+        "x": 928,
+        "y": 930,
+        "width": 326,
+        "height": 324
       }
     },
     "implementation_status": "design_only",
@@ -687,8 +694,8 @@
     "use": "本作規劃：建立劍法入門路線，訓練劍招和移動的配合。",
     "limitation": "本作規劃：須裝備劍；基礎修習不等同掌握太極劍法。",
     "acquisition": "本作規劃：完成入門劍術課業後領取。",
-    "appearance": "石青線裝薄冊，封面一枝米白松葉，細銀灰布條作書籤。",
-    "art_prompt": "Slate-blue stitched sword primer, cream pine sprig emblem, narrow silver-grey cloth bookmark.",
+    "appearance": "石青矩形線裝劍譜，封面是一柄完整直劍圖，細白劍穗式書籤垂於側。",
+    "art_prompt": "Slate-blue rectangular stitched sword manual with a large complete straight jian diagram on the cover, narrow pale bookmark tassel.",
     "atlas_id": "S02",
     "cell_index": 0,
     "art_status": "generated",
@@ -703,8 +710,8 @@
       "region": {
         "x": 0,
         "y": 0,
-        "width": 312,
-        "height": 321
+        "width": 305,
+        "height": 354
       }
     },
     "implementation_status": "design_only",
@@ -717,7 +724,8 @@
     ],
     "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
     "needs_art_revision": false,
-    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
+    "art_revision_note": "v3逐格核對後修訂圖像；目前外觀與美術描述已同步至實際圖像。",
+    "art_revision_status": "completed"
   },
   {
     "id": "WD002",
@@ -731,8 +739,8 @@
     "use": "本作規劃：開啟以守轉攻的劍法分支，練習卸力與反擊。",
     "limitation": "本作規劃：需要時機判斷及內功支援；無法無條件化解所有攻擊。",
     "acquisition": "本作規劃：通過進階劍術試煉後請師授予。",
-    "appearance": "扇形展開的淺灰摺圖，石青弧線與細劍尖圖記，玉色小扣。",
-    "art_prompt": "Fan-open pale grey folding diagram with slate-blue arcs and fine sword-tip marks, small jade-toned clasp.",
+    "appearance": "攤開的矩形太極劍譜，左頁畫完整直劍及圓轉箭頭，右頁是大陰陽圖，無扇骨或扇柄。",
+    "art_prompt": "Open rectangular Tai Chi sword manual, left page showing one complete straight jian sword with circular movement arrows, right page a large yin-yang symbol; no fan or fan-shaped pages.",
     "atlas_id": "S02",
     "cell_index": 1,
     "art_status": "generated",
@@ -745,10 +753,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 312,
+        "x": 305,
         "y": 0,
-        "width": 321,
-        "height": 321
+        "width": 320,
+        "height": 354
       }
     },
     "implementation_status": "design_only",
@@ -761,7 +769,8 @@
     ],
     "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
     "needs_art_revision": false,
-    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
+    "art_revision_note": "v3逐格核對後修訂圖像；目前外觀與美術描述已同步至實際圖像。",
+    "art_revision_status": "completed"
   },
   {
     "id": "WD003",
@@ -775,8 +784,8 @@
     "use": "本作規劃：提供徒手防守反擊路線，練習近身引化與反制。",
     "limitation": "本作規劃：需要掌握對手節奏；遇到範圍攻擊時仍須移動避讓。",
     "acquisition": "本作規劃：完成拳術及內息考校後請授。",
-    "appearance": "青灰綾裱長卷，卷首有一塊圓石與分流波紋，白玉色軸頭。",
-    "art_prompt": "Long blue-grey silk-backed scroll, round stone and split-wave emblem, ivory-jade roller ends.",
+    "appearance": "米白矩形卷軸印大拳頭圖、陰陽圖及環繞動作箭頭，軸頭為灰藍色。",
+    "art_prompt": "Cream rectangular boxing scroll with a large fist silhouette, yin-yang symbol and circular movement arrows, slate-blue rollers.",
     "atlas_id": "S02",
     "cell_index": 2,
     "art_status": "generated",
@@ -789,10 +798,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 633,
+        "x": 625,
         "y": 0,
-        "width": 307,
-        "height": 321
+        "width": 340,
+        "height": 354
       }
     },
     "implementation_status": "design_only",
@@ -805,7 +814,8 @@
     ],
     "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
     "needs_art_revision": false,
-    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
+    "art_revision_note": "v3逐格核對後修訂圖像；目前外觀與美術描述已同步至實際圖像。",
+    "art_revision_status": "completed"
   },
   {
     "id": "WD004",
@@ -819,8 +829,8 @@
     "use": "本作規劃：提供連續掌擊與節奏控制的外功分支。",
     "limitation": "本作規劃：連招需要穩定內息，受打斷後須重新建立攻勢。",
     "acquisition": "本作規劃：完成基礎拳掌修習後向授業師父換取。",
-    "appearance": "窄長米白冊套，石青布脊，旁束一小撮柔軟白絲作辨識。",
-    "art_prompt": "Narrow cream booklet sleeve with slate-blue spine and a small tied tassel of soft white fibers.",
+    "appearance": "米白矩形線裝掌譜，封面有大手掌與柔和流動弧線，沒有白毛束。",
+    "art_prompt": "Cream rectangular stitched palm manual with a large clear open-palm silhouette and smooth flowing arcs, no whisk-like tassel.",
     "atlas_id": "S02",
     "cell_index": 3,
     "art_status": "generated",
@@ -833,10 +843,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 940,
+        "x": 965,
         "y": 0,
-        "width": 314,
-        "height": 321
+        "width": 289,
+        "height": 354
       }
     },
     "implementation_status": "design_only",
@@ -849,7 +859,8 @@
     ],
     "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
     "needs_art_revision": false,
-    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
+    "art_revision_note": "v3逐格核對後修訂圖像；目前外觀與美術描述已同步至實際圖像。",
+    "art_revision_status": "completed"
   },
   {
     "id": "WD005",
@@ -863,8 +874,8 @@
     "use": "本作規劃：建立武當內功養成路線，支援拳劍及身法修習。",
     "limitation": "本作規劃：屬基礎內功；需要練習與後續傳授才能精進。",
     "acquisition": "本作規劃：完成入門登記及調息課業後領取。",
-    "appearance": "米白軟冊上有淡青呼吸圈點，圓角書封，青灰細帶環繞。",
-    "art_prompt": "Cream rounded softcover breathing booklet, pale blue dotted rings, slender blue-grey wrap band.",
+    "appearance": "米白矩形心法冊，封面是打坐人形、丹田亮圓及多道環繞呼吸線。",
+    "art_prompt": "Cream rectangular inner-energy booklet with a seated meditation pictogram, lower-belly circle and curved breathing rings.",
     "atlas_id": "S02",
     "cell_index": 4,
     "art_status": "generated",
@@ -878,9 +889,9 @@
       "image_height": 1254,
       "region": {
         "x": 0,
-        "y": 321,
-        "width": 312,
-        "height": 306
+        "y": 354,
+        "width": 340,
+        "height": 293
       }
     },
     "implementation_status": "design_only",
@@ -893,7 +904,8 @@
     ],
     "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
     "needs_art_revision": false,
-    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
+    "art_revision_note": "v3逐格核對後修訂圖像；目前外觀與美術描述已同步至實際圖像。",
+    "art_revision_status": "completed"
   },
   {
     "id": "WD006",
@@ -907,8 +919,8 @@
     "use": "本作規劃：提供高階內力修習方向，強化持續施展武學的能力。",
     "limitation": "本作規劃：須先穩固基礎內功，練功與運勁消耗需逐階適應。",
     "acquisition": "本作規劃：完成內功考校並獲師門傳授。",
-    "appearance": "青瓷色硬封冊，封面鑲細木水槽圖，頁邊有交錯米白紙籤。",
-    "art_prompt": "Celadon hard-cover manual with slender wooden channel motif, staggered cream page tabs.",
+    "appearance": "青綠硬封內功冊，封面繪軀幹輪廓、脊柱經脈連點和頭頂日輪，頁旁有紙籤。",
+    "art_prompt": "Celadon rectangular inner-energy manual with a clear torso and dotted spinal meridian diagram, small radiating sun emblem above, cream page tabs.",
     "atlas_id": "S02",
     "cell_index": 5,
     "art_status": "generated",
@@ -921,10 +933,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 312,
-        "y": 321,
-        "width": 313,
-        "height": 306
+        "x": 340,
+        "y": 354,
+        "width": 285,
+        "height": 293
       }
     },
     "implementation_status": "design_only",
@@ -937,7 +949,8 @@
     ],
     "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
     "needs_art_revision": false,
-    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
+    "art_revision_note": "v3逐格核對後修訂圖像；目前外觀與美術描述已同步至實際圖像。",
+    "art_revision_status": "completed"
   },
   {
     "id": "WD007",
@@ -951,8 +964,8 @@
     "use": "本作規劃：支援高階拳劍修習，改善防守轉反擊時的內力運用。",
     "limitation": "本作規劃：需要對應修為與招式配合，不自動賦予無限反傷。",
     "acquisition": "本作規劃：取得真傳資格後分階段研讀。",
-    "appearance": "深石青布函內並排兩冊米白經頁，封面為不閉合的銀灰圓環。",
-    "art_prompt": "Deep slate-blue cloth case holding two slim cream volumes, open silver-grey ring emblems.",
+    "appearance": "攤開的石青內功經書，中央大陰陽圖，兩側以連線串起經脈圓點。",
+    "art_prompt": "Open slate-blue rectangular inner-energy scripture with a large central yin-yang diagram and linked meridian-node columns on both pages.",
     "atlas_id": "S02",
     "cell_index": 6,
     "art_status": "generated",
@@ -966,9 +979,9 @@
       "image_height": 1254,
       "region": {
         "x": 625,
-        "y": 321,
-        "width": 319,
-        "height": 306
+        "y": 354,
+        "width": 303,
+        "height": 293
       }
     },
     "implementation_status": "design_only",
@@ -981,7 +994,8 @@
     ],
     "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
     "needs_art_revision": false,
-    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
+    "art_revision_note": "v3逐格核對後修訂圖像；目前外觀與美術描述已同步至實際圖像。",
+    "art_revision_status": "completed"
   },
   {
     "id": "WD008",
@@ -1009,10 +1023,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 944,
-        "y": 321,
-        "width": 310,
-        "height": 306
+        "x": 928,
+        "y": 354,
+        "width": 326,
+        "height": 293
       }
     },
     "implementation_status": "design_only",
@@ -1039,8 +1053,8 @@
     "use": "本作規劃：提供登高身法的進階路線，提升連續越障的穩定性。",
     "limitation": "本作規劃：需要可用落腳點與足夠體力，不能越過所有地形限制。",
     "acquisition": "本作規劃：完成進階身法及山路試煉後請授。",
-    "appearance": "小型六折青灰摺扇式冊，松枝輪廓串接足印，白繩束底。",
-    "art_prompt": "Small six-fold blue-grey fan booklet, pine-branch silhouettes linked by footprints, white cord at base.",
+    "appearance": "攤開矩形身法冊，逐級上升的腳印以騰躍弧線及向上箭頭相接。",
+    "art_prompt": "Open rectangular footwork manual showing ascending footprints connected by jumping arcs and an upward movement arrow; no fan silhouette.",
     "atlas_id": "S02",
     "cell_index": 8,
     "art_status": "generated",
@@ -1054,9 +1068,9 @@
       "image_height": 1254,
       "region": {
         "x": 0,
-        "y": 627,
-        "width": 299,
-        "height": 287
+        "y": 647,
+        "width": 314,
+        "height": 283
       }
     },
     "implementation_status": "design_only",
@@ -1069,7 +1083,8 @@
     ],
     "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
     "needs_art_revision": false,
-    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
+    "art_revision_note": "v3逐格核對後修訂圖像；目前外觀與美術描述已同步至實際圖像。",
+    "art_revision_status": "completed"
   },
   {
     "id": "WD010",
@@ -1097,10 +1112,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 299,
-        "y": 627,
-        "width": 328,
-        "height": 287
+        "x": 314,
+        "y": 647,
+        "width": 311,
+        "height": 283
       }
     },
     "implementation_status": "design_only",
@@ -1136,10 +1151,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 627,
-        "y": 627,
-        "width": 327,
-        "height": 287
+        "x": 625,
+        "y": 647,
+        "width": 287,
+        "height": 283
       }
     },
     "implementation_status": "design_only",
@@ -1175,10 +1190,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 954,
-        "y": 627,
-        "width": 300,
-        "height": 287
+        "x": 912,
+        "y": 647,
+        "width": 342,
+        "height": 283
       }
     },
     "implementation_status": "design_only",
@@ -1215,9 +1230,9 @@
       "image_height": 1254,
       "region": {
         "x": 0,
-        "y": 914,
-        "width": 343,
-        "height": 340
+        "y": 930,
+        "width": 303,
+        "height": 324
       }
     },
     "implementation_status": "design_only",
@@ -1254,10 +1269,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 343,
-        "y": 914,
-        "width": 284,
-        "height": 340
+        "x": 303,
+        "y": 930,
+        "width": 322,
+        "height": 324
       }
     },
     "implementation_status": "design_only",
@@ -1293,10 +1308,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 627,
-        "y": 914,
-        "width": 313,
-        "height": 340
+        "x": 625,
+        "y": 930,
+        "width": 294,
+        "height": 324
       }
     },
     "implementation_status": "design_only",
@@ -1332,10 +1347,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 940,
-        "y": 914,
-        "width": 314,
-        "height": 340
+        "x": 919,
+        "y": 930,
+        "width": 335,
+        "height": 324
       }
     },
     "implementation_status": "design_only",
@@ -1363,8 +1378,8 @@
     "use": "設計為峨嵋劍術修習物品，偏重轉守為攻。",
     "limitation": "需具備基本劍術；不等同持有秘籍便能熟練施展。",
     "acquisition": "設計為完成門內劍術考核後向教習領取。",
-    "appearance": "象牙白雙頁小冊，玉綠雙葉封印，書角包淡銅色薄片。",
-    "art_prompt": "Ivory two-leaf sword primer, jade-green twin-leaf seal, pale copper corner protectors.",
+    "appearance": "象牙矩形劍譜，封面繪完整玉綠直劍及雙側迴轉劍路，淡銅包角。",
+    "art_prompt": "Ivory rectangular sword manual with a clear jade-green straight-sword drawing and curved sword-motion paths printed on the cover, pale copper corners. No fan.",
     "atlas_id": "S03",
     "cell_index": 0,
     "art_status": "generated",
@@ -1379,8 +1394,8 @@
       "region": {
         "x": 0,
         "y": 0,
-        "width": 329,
-        "height": 347
+        "width": 311,
+        "height": 346
       }
     },
     "implementation_status": "design_only",
@@ -1393,7 +1408,8 @@
     ],
     "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「迴風拂柳劍」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
     "needs_art_revision": false,
-    "art_revision_note": ""
+    "art_revision_note": "v3逐格核對後修訂圖像；目前外觀與美術描述已同步至實際圖像。",
+    "art_revision_status": "completed"
   },
   {
     "id": "EM002",
@@ -1407,8 +1423,8 @@
     "use": "設計為近身截擊與拆招的修習物品。",
     "limitation": "依賴招路判讀，面對長兵器仍有距離限制。",
     "acquisition": "設計為完成徒手對練與拆招考核後傳授。",
-    "appearance": "薄玉綠摺頁以水鏡形開窗露出腕勢線圖，白絲帶橫束。",
-    "art_prompt": "Thin jade-green folding folio, round water-mirror window exposing wrist-motion lines, white silk band.",
+    "appearance": "玉綠矩形手法冊，封面印手掌、手腕與前臂圖，白色轉向箭頭繞腕。",
+    "art_prompt": "Jade rectangular hand-technique book, large open-palm and wrist/forearm illustration with an intercepting curved arrow printed on cover. No weapons.",
     "atlas_id": "S03",
     "cell_index": 1,
     "art_status": "generated",
@@ -1421,10 +1437,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 329,
+        "x": 311,
         "y": 0,
-        "width": 298,
-        "height": 347
+        "width": 316,
+        "height": 346
       }
     },
     "implementation_status": "design_only",
@@ -1437,7 +1453,8 @@
     ],
     "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「截手九式」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
     "needs_art_revision": false,
-    "art_revision_note": ""
+    "art_revision_note": "v3逐格核對後修訂圖像；目前外觀與美術描述已同步至實際圖像。",
+    "art_revision_status": "completed"
   },
   {
     "id": "EM003",
@@ -1451,8 +1468,8 @@
     "use": "設計為掌法進階修習物品，連結掌勢與內息運用。",
     "limitation": "須先掌握基本掌法與調息，不能僅靠讀卷跳過練習。",
     "acquisition": "設計為取得師門認可後由長輩傳授。",
-    "appearance": "窄幅象牙卷軸，玉綠折葉圖，淡銅扁軸，外包細紗。",
-    "art_prompt": "Narrow ivory scroll with folded jade-green leaf illustration, flat pale-copper rollers, fine gauze wrap.",
+    "appearance": "展開的象牙矩形掌法卷，紙上四個綠色掌形分列四向，間有轉向箭頭，淡銅軸頭。",
+    "art_prompt": "Open rectangular ivory palm manual scroll with four clear green palm silhouettes and curved arrows printed on paper, pale copper rollers.",
     "atlas_id": "S03",
     "cell_index": 2,
     "art_status": "generated",
@@ -1467,8 +1484,8 @@
       "region": {
         "x": 627,
         "y": 0,
-        "width": 294,
-        "height": 347
+        "width": 305,
+        "height": 346
       }
     },
     "implementation_status": "design_only",
@@ -1481,7 +1498,8 @@
     ],
     "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「四象掌」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
     "needs_art_revision": false,
-    "art_revision_note": ""
+    "art_revision_note": "v3逐格核對後修訂圖像；目前外觀與美術描述已同步至實際圖像。",
+    "art_revision_status": "completed"
   },
   {
     "id": "EM004",
@@ -1495,8 +1513,8 @@
     "use": "設計為變招與連續掌擊的修習物品。",
     "limitation": "連招仰賴節奏與站位，失去距離時需要重新調整。",
     "acquisition": "設計為完成掌法試煉後獲得抄本。",
-    "appearance": "玉綠布封橫冊，側邊附細長布護套，封面有一點細銀星紋。",
-    "art_prompt": "Jade cloth-covered horizontal booklet with a narrow cloth protective sleeve attached, one tiny silver dot emblem.",
+    "appearance": "玉綠矩形橫冊，封面印大掌形、流雲線與小雪花，側邊不附護套或工具。",
+    "art_prompt": "Jade rectangular horizontal palm-technique book with a large clear palm silhouette, flowing cloud arcs and small snowflake symbols printed on cover. No attached tool, needle case or fan.",
     "atlas_id": "S03",
     "cell_index": 3,
     "art_status": "generated",
@@ -1509,10 +1527,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 921,
+        "x": 932,
         "y": 0,
-        "width": 333,
-        "height": 347
+        "width": 322,
+        "height": 346
       }
     },
     "implementation_status": "design_only",
@@ -1525,7 +1543,8 @@
     ],
     "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「飄雪穿雲掌」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
     "needs_art_revision": false,
-    "art_revision_note": ""
+    "art_revision_note": "v3逐格核對後修訂圖像；目前外觀與美術描述已同步至實際圖像。",
+    "art_revision_status": "completed"
   },
   {
     "id": "EM005",
@@ -1539,8 +1558,8 @@
     "use": "設計為峨嵋內功入門的修習物品。",
     "limitation": "定位為基礎心法，不能代替高階內功的專門修習。",
     "acquisition": "設計為拜師後完成基礎課業時領取。",
-    "appearance": "米白軟封冊，玉綠水滴紋，細竹書籤夾於上緣。",
-    "art_prompt": "Cream softcover breathing booklet, jade-green water-drop motif, thin bamboo bookmark at top edge.",
+    "appearance": "米白矩形內功冊，封面印綠色打坐人形、體內經脈與環形調息箭頭。",
+    "art_prompt": "Ivory rectangular inner-energy book with a seated meditating silhouette, visible meridian channels and a circular breathing arrow printed on cover.",
     "atlas_id": "S03",
     "cell_index": 4,
     "art_status": "generated",
@@ -1554,9 +1573,9 @@
       "image_height": 1254,
       "region": {
         "x": 0,
-        "y": 347,
-        "width": 360,
-        "height": 298
+        "y": 346,
+        "width": 273,
+        "height": 306
       }
     },
     "implementation_status": "design_only",
@@ -1569,7 +1588,8 @@
     ],
     "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「峨嵋心法」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
     "needs_art_revision": false,
-    "art_revision_note": ""
+    "art_revision_note": "v3逐格核對後修訂圖像；目前外觀與美術描述已同步至實際圖像。",
+    "art_revision_status": "completed"
   },
   {
     "id": "EM006",
@@ -1583,8 +1603,8 @@
     "use": "設計為內力運用與續戰養成的進階內功物品。",
     "limitation": "與完整九陽神功分開處理，不因名稱相近而視作同一秘籍。",
     "acquisition": "設計為通過內功考核並獲師長授意後傳授。",
-    "appearance": "三冊薄白本以玉綠繫帶相連，封口嵌小型水滴玉扣。",
-    "art_prompt": "Three slim white booklets linked by jade-green ties, small teardrop-shaped jade clasp.",
+    "appearance": "玉綠細繩繫起的白色冊組，封面為打坐經脈人形與金色太陽紋。",
+    "art_prompt": "Stack of ivory inner-energy booklets with jade ties at edges, clear meditating meridian figure and warm gold sun motif printed on the front cover.",
     "atlas_id": "S03",
     "cell_index": 5,
     "art_status": "generated",
@@ -1597,10 +1617,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 360,
-        "y": 347,
-        "width": 267,
-        "height": 298
+        "x": 273,
+        "y": 346,
+        "width": 352,
+        "height": 306
       }
     },
     "implementation_status": "design_only",
@@ -1613,7 +1633,8 @@
     ],
     "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「峨嵋九陽功」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
     "needs_art_revision": false,
-    "art_revision_note": ""
+    "art_revision_note": "v3逐格核對後修訂圖像；目前外觀與美術描述已同步至實際圖像。",
+    "art_revision_status": "completed"
   },
   {
     "id": "EM007",
@@ -1627,8 +1648,8 @@
     "use": "設計為峨嵋高階內功修習物品，強調架式與內息配合。",
     "limitation": "須循序修習各莊法，僅有內力而欠缺架式基礎時仍須補練。",
     "acquisition": "設計為完成本門內功傳承任務後獲授。",
-    "appearance": "象牙硬函中放一冊玉綠窄經，函面嵌磨砂圓鏡片與葉邊。",
-    "art_prompt": "Ivory hard case holding a narrow jade-green volume, frosted round mirror inset with leaf edging.",
+    "appearance": "象牙硬函收納玉綠內功冊，函面繪站立人體經脈圖，沒有圓鏡。",
+    "art_prompt": "Ivory rectangular book case holding a jade inner-energy volume, standing human meridian-channel diagram printed prominently on the case, no mirror.",
     "atlas_id": "S03",
     "cell_index": 6,
     "art_status": "generated",
@@ -1641,10 +1662,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 627,
-        "y": 347,
-        "width": 297,
-        "height": 298
+        "x": 625,
+        "y": 346,
+        "width": 338,
+        "height": 306
       }
     },
     "implementation_status": "design_only",
@@ -1657,7 +1678,8 @@
     ],
     "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「臨濟十二莊」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
     "needs_art_revision": false,
-    "art_revision_note": ""
+    "art_revision_note": "v3逐格核對後修訂圖像；目前外觀與美術描述已同步至實際圖像。",
+    "art_revision_status": "completed"
   },
   {
     "id": "EM008",
@@ -1685,10 +1707,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 924,
-        "y": 347,
-        "width": 330,
-        "height": 298
+        "x": 963,
+        "y": 346,
+        "width": 291,
+        "height": 306
       }
     },
     "implementation_status": "design_only",
@@ -1715,8 +1737,8 @@
     "use": "設計為連續移位與換位的進階輕功修習物品。",
     "limitation": "需要足夠空間與身法基礎，不能穿越牆壁或封閉地形。",
     "acquisition": "設計為完成門內輕功考核後傳授。",
-    "appearance": "葉形布套包裹細長身法卷，白綠相間繫帶，末端露出折角紙。",
-    "art_prompt": "Leaf-shaped cloth sleeve around a slender movement scroll, white-green ties, folded paper corner showing.",
+    "appearance": "綠邊象牙身法展卷，卷中繪騰躍人形、環形足印與移位箭頭。",
+    "art_prompt": "Open ivory footwork scroll with jade border, leaping human silhouette encircled by clear footprints and turning arrows printed on paper.",
     "atlas_id": "S03",
     "cell_index": 8,
     "art_status": "generated",
@@ -1730,9 +1752,9 @@
       "image_height": 1254,
       "region": {
         "x": 0,
-        "y": 645,
-        "width": 309,
-        "height": 289
+        "y": 652,
+        "width": 312,
+        "height": 250
       }
     },
     "implementation_status": "design_only",
@@ -1745,7 +1767,8 @@
     ],
     "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「諸天化身步」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
     "needs_art_revision": false,
-    "art_revision_note": ""
+    "art_revision_note": "v3逐格核對後修訂圖像；目前外觀與美術描述已同步至實際圖像。",
+    "art_revision_status": "completed"
   },
   {
     "id": "EM010",
@@ -1759,8 +1782,8 @@
     "use": "設計為修習輔助與師門交流物品。",
     "limitation": "屬普通學習筆記，不包含未曾獲授的絕學。",
     "acquisition": "設計為完成師門日常研習後整理取得。",
-    "appearance": "幾疊象牙色散頁裝入玉綠網紋紙夾，頁側有細小葉印。",
-    "art_prompt": "Ivory loose-page bundles in a jade lattice-textured folder, tiny leaf seals along page edges.",
+    "appearance": "玉綠網紋夾中的象牙散頁，露出直劍、手掌與打坐人形習武草圖。",
+    "art_prompt": "Ivory practice sheets in a jade lattice folder, exposed pages clearly showing sword, palm and seated meditation sketches, no lettering.",
     "atlas_id": "S03",
     "cell_index": 9,
     "art_status": "generated",
@@ -1773,10 +1796,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 309,
-        "y": 645,
-        "width": 332,
-        "height": 289
+        "x": 312,
+        "y": 652,
+        "width": 315,
+        "height": 250
       }
     },
     "implementation_status": "design_only",
@@ -1784,7 +1807,8 @@
     "reference_sources": [],
     "reference_note": "普通門派用品的直白命名，並非引用特定遊戲或原作的專有物件；外觀、用途與取得流程為本作設計。",
     "needs_art_revision": false,
-    "art_revision_note": ""
+    "art_revision_note": "v3逐格核對後修訂圖像；目前外觀與美術描述已同步至實際圖像。",
+    "art_revision_status": "completed"
   },
   {
     "id": "EM011",
@@ -1812,10 +1836,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 641,
-        "y": 645,
-        "width": 310,
-        "height": 289
+        "x": 627,
+        "y": 652,
+        "width": 338,
+        "height": 250
       }
     },
     "implementation_status": "design_only",
@@ -1861,10 +1885,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 951,
-        "y": 645,
-        "width": 303,
-        "height": 289
+        "x": 965,
+        "y": 652,
+        "width": 289,
+        "height": 250
       }
     },
     "implementation_status": "design_only",
@@ -1901,9 +1925,9 @@
       "image_height": 1254,
       "region": {
         "x": 0,
-        "y": 934,
-        "width": 352,
-        "height": 320
+        "y": 902,
+        "width": 332,
+        "height": 352
       }
     },
     "implementation_status": "design_only",
@@ -1939,10 +1963,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 352,
-        "y": 934,
-        "width": 275,
-        "height": 320
+        "x": 332,
+        "y": 902,
+        "width": 295,
+        "height": 352
       }
     },
     "implementation_status": "design_only",
@@ -1979,9 +2003,9 @@
       "image_height": 1254,
       "region": {
         "x": 627,
-        "y": 934,
-        "width": 310,
-        "height": 320
+        "y": 902,
+        "width": 309,
+        "height": 352
       }
     },
     "implementation_status": "design_only",
@@ -2017,10 +2041,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 937,
-        "y": 934,
-        "width": 317,
-        "height": 320
+        "x": 936,
+        "y": 902,
+        "width": 318,
+        "height": 352
       }
     },
     "implementation_status": "design_only",
@@ -2058,8 +2082,8 @@
       "region": {
         "x": 0,
         "y": 0,
-        "width": 313,
-        "height": 312
+        "width": 318,
+        "height": 341
       }
     },
     "implementation_status": "design_only",
@@ -2100,10 +2124,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 313,
+        "x": 318,
         "y": 0,
-        "width": 314,
-        "height": 312
+        "width": 316,
+        "height": 341
       }
     },
     "implementation_status": "design_only",
@@ -2130,8 +2154,8 @@
     "use": "設計為華山傳授路線中的高階劍法修習物品。",
     "limitation": "重視悟性、臨敵判斷與實練，不設定為無條件擊破所有招式。",
     "acquisition": "設計為通過隱居劍客的傳承考驗後取得。",
-    "appearance": "細長深灰卷軸，以暗朱繩封住，一道黯銀劍痕穿過孤峰紋。",
-    "art_prompt": "Slender dark-grey scroll tied with crimson cord, dull silver sword slash through a solitary peak motif.",
+    "appearance": "展開的灰白矩形劍譜卷，左側繪直劍，右側有數條暗紅劍路及習劍人形，銀軸紅穗。",
+    "art_prompt": "Open rectangular grey-and-ivory sword manual scroll, straight sword at left and multiple crimson sword-path arrows with small sword-practice figures at right, silver rollers and crimson tassel. Never fan-shaped.",
     "atlas_id": "S04",
     "cell_index": 2,
     "art_status": "generated",
@@ -2144,10 +2168,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 627,
+        "x": 634,
         "y": 0,
-        "width": 333,
-        "height": 312
+        "width": 305,
+        "height": 341
       }
     },
     "implementation_status": "design_only",
@@ -2164,7 +2188,8 @@
     ],
     "reference_note": "官方網金將獨孤九劍列在華山派傳授內容；香港群俠傳說明其源自獨孤求敗、由風清揚傳授。此處歸入華山傳授路線，不宣稱由華山創派祖師所創；物件裝幀及取得流程為本作設計。",
     "needs_art_revision": false,
-    "art_revision_note": ""
+    "art_revision_note": "v3逐格核對後修訂圖像；目前外觀與美術描述已同步至實際圖像。",
+    "art_revision_status": "completed"
   },
   {
     "id": "HS004",
@@ -2192,10 +2217,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 960,
+        "x": 939,
         "y": 0,
-        "width": 294,
-        "height": 312
+        "width": 315,
+        "height": 341
       }
     },
     "implementation_status": "design_only",
@@ -2222,8 +2247,8 @@
     "use": "設計為華山內功的入門修習物品。",
     "limitation": "定位為內功基礎，不能取代進階心法。",
     "acquisition": "設計為正式拜師後完成基礎日課時傳授。",
-    "appearance": "青灰薄冊，暗朱細劍穗夾頁，封面僅有一枚黯銀尖葉印。",
-    "art_prompt": "Thin slate-grey breathing booklet, dark-crimson sword-tassel bookmark, single dull-silver pointed-leaf seal.",
+    "appearance": "青灰矩形內功冊附紅穗，封面為打坐人形、紅色經脈與白色調息箭頭。",
+    "art_prompt": "Slate rectangular inner-energy booklet with crimson tassel, seated meditating figure with red meridian channels and pale breathing arrows printed on cover.",
     "atlas_id": "S04",
     "cell_index": 4,
     "art_status": "generated",
@@ -2237,9 +2262,9 @@
       "image_height": 1254,
       "region": {
         "x": 0,
-        "y": 312,
-        "width": 313,
-        "height": 315
+        "y": 341,
+        "width": 324,
+        "height": 307
       }
     },
     "implementation_status": "design_only",
@@ -2252,7 +2277,8 @@
     ],
     "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「華山心法」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
     "needs_art_revision": false,
-    "art_revision_note": ""
+    "art_revision_note": "v3逐格核對後修訂圖像；目前外觀與美術描述已同步至實際圖像。",
+    "art_revision_status": "completed"
   },
   {
     "id": "HS006",
@@ -2266,8 +2292,8 @@
     "use": "設計為本作華山混元傳承支線的內功修習物品。",
     "limitation": "須先具備拳掌基礎與穩定調息，掌功與內功需要配合修習。",
     "acquisition": "設計為完成華山混元傳承支線並通過拳掌考核後傳授。",
-    "appearance": "三層青灰硬紙摺冊，暗紅峰線逐層抬高，扁銀鎮紙置於封面。",
-    "art_prompt": "Three-layer slate board folio, rising dark-red mountain lines, flat silver paperweight on cover.",
+    "appearance": "暗紅繩繫的青灰冊組，封面印人體經脈、紅白陰陽圖與循環箭頭，不附鎮紙。",
+    "art_prompt": "Slate rectangular inner-energy book stack with crimson edge cord, human meridian torso, red-and-white yin-yang circle and circulation arrows printed on cover, no loose paperweight.",
     "atlas_id": "S04",
     "cell_index": 5,
     "art_status": "generated",
@@ -2280,10 +2306,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 313,
-        "y": 312,
-        "width": 313,
-        "height": 315
+        "x": 324,
+        "y": 341,
+        "width": 310,
+        "height": 307
       }
     },
     "implementation_status": "design_only",
@@ -2296,7 +2322,8 @@
     ],
     "reference_note": "《金庸群俠傳5》攻略將《碧血劍》的華山傳承另列為混元宗，明載混元功。本作把這條華山支系納入同一門派目錄；不宣稱參考遊戲把混元宗與《笑傲江湖》華山氣宗視為同一可拜門派。裝幀與修習流程為本作設計。",
     "needs_art_revision": false,
-    "art_revision_note": ""
+    "art_revision_note": "v3逐格核對後修訂圖像；目前外觀與美術描述已同步至實際圖像。",
+    "art_revision_status": "completed"
   },
   {
     "id": "HS007",
@@ -2310,8 +2337,8 @@
     "use": "設計為華山內功養成的高階修習物品。",
     "limitation": "需要扎實內功基礎，修習進度另行設定。",
     "acquisition": "設計為完成華山內功考驗並獲掌門認可後傳授。",
-    "appearance": "暗朱布函包青灰經冊，函面為三道黯銀峰紋，扣帶像收鞘劍穗。",
-    "art_prompt": "Crimson cloth case holding a slate volume, three dull-silver peak marks, clasp shaped like a tucked sword tassel.",
+    "appearance": "暗朱布函中的青灰內功經冊，顯露打坐經脈人形及紫色霞雲圖，紅穗垂側。",
+    "art_prompt": "Crimson rectangular case holding a slate inner-energy volume, visible cover printed with seated meditation and meridian diagram framed by purple dawn-cloud bands, no external aura.",
     "atlas_id": "S04",
     "cell_index": 6,
     "art_status": "generated",
@@ -2324,10 +2351,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 626,
-        "y": 312,
-        "width": 318,
-        "height": 315
+        "x": 634,
+        "y": 341,
+        "width": 323,
+        "height": 307
       }
     },
     "implementation_status": "design_only",
@@ -2340,7 +2367,8 @@
     ],
     "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「紫霞神功」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
     "needs_art_revision": false,
-    "art_revision_note": ""
+    "art_revision_note": "v3逐格核對後修訂圖像；目前外觀與美術描述已同步至實際圖像。",
+    "art_revision_status": "completed"
   },
   {
     "id": "HS008",
@@ -2368,10 +2396,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 944,
-        "y": 312,
-        "width": 310,
-        "height": 315
+        "x": 957,
+        "y": 341,
+        "width": 297,
+        "height": 307
       }
     },
     "implementation_status": "design_only",
@@ -2398,8 +2426,8 @@
     "use": "設計為轉向、迴避與重新取得站位的輕功修習物品。",
     "limitation": "需要身法基礎與落腳空間，不設定為持續凌空飛行。",
     "acquisition": "設計為完成華山輕功進階試煉後傳授。",
-    "appearance": "三片窄灰竹簡以暗朱線連起，銀色折角路線清楚可見。",
-    "art_prompt": "Three narrow grey bamboo tablets joined by dark-crimson thread, clear silver angular movement paths.",
+    "appearance": "暗朱繩連起的三片灰竹簡，清楚繪有足印、跑躍人形與紅色回轉方向箭頭。",
+    "art_prompt": "Three rectangular grey bamboo footwork panels tied with crimson cord, clear footprints, leaping human silhouette and red turning-direction arrows printed on panels.",
     "atlas_id": "S04",
     "cell_index": 8,
     "art_status": "generated",
@@ -2413,9 +2441,9 @@
       "image_height": 1254,
       "region": {
         "x": 0,
-        "y": 627,
-        "width": 314,
-        "height": 287
+        "y": 648,
+        "width": 317,
+        "height": 266
       }
     },
     "implementation_status": "design_only",
@@ -2428,7 +2456,8 @@
     ],
     "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「飛燕迴翔」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
     "needs_art_revision": false,
-    "art_revision_note": ""
+    "art_revision_note": "v3逐格核對後修訂圖像；目前外觀與美術描述已同步至實際圖像。",
+    "art_revision_status": "completed"
   },
   {
     "id": "HS010",
@@ -2456,10 +2485,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 314,
-        "y": 627,
-        "width": 319,
-        "height": 287
+        "x": 317,
+        "y": 648,
+        "width": 310,
+        "height": 266
       }
     },
     "implementation_status": "design_only",
@@ -2495,10 +2524,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 633,
-        "y": 627,
-        "width": 305,
-        "height": 287
+        "x": 627,
+        "y": 648,
+        "width": 309,
+        "height": 266
       }
     },
     "implementation_status": "design_only",
@@ -2534,10 +2563,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 938,
-        "y": 627,
-        "width": 316,
-        "height": 287
+        "x": 936,
+        "y": 648,
+        "width": 318,
+        "height": 266
       }
     },
     "implementation_status": "design_only",
@@ -2575,7 +2604,7 @@
       "region": {
         "x": 0,
         "y": 914,
-        "width": 312,
+        "width": 311,
         "height": 340
       }
     },
@@ -2612,9 +2641,9 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 312,
+        "x": 311,
         "y": 914,
-        "width": 313,
+        "width": 314,
         "height": 340
       }
     },
@@ -2653,7 +2682,7 @@
       "region": {
         "x": 625,
         "y": 914,
-        "width": 314,
+        "width": 327,
         "height": 340
       }
     },
@@ -2690,9 +2719,9 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 939,
+        "x": 952,
         "y": 914,
-        "width": 315,
+        "width": 302,
         "height": 340
       }
     },

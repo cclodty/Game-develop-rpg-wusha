@@ -5,10 +5,10 @@
   "rows": 4,
   "width": 1254,
   "height": 1254,
-  "sha256": "db8d1263b40fd48a5588e9bd22680da549c7948d910b9690cd559cf5b3d3d178",
-  "source_path": "/workspace/generated_images/exec-e93be4a4-7c62-413b-9a70-01aa50e3f981.png",
+  "sha256": "0bbc0caf01400def7cbe8229bddfa893e5885b043ac8a59057f248c60b25e43b",
+  "source_path": "/workspace/generated_images/exec-5ef6a3fc-8c04-4d57-a873-a565221ba753.png",
   "prompt": "Production game inventory icon atlas on perfectly SQUARE fully transparent canvas. Invisible precise 4 by 4 equal square cells, exactly sixteen separate Chinese wuxia inventory icons. SMALL ICONS: every entire silhouette must fit within central 55 percent of both its cell's width and height, leaving at least22 percent fully transparent margin on all four sides. Icon centers exactly at12.5,37.5,62.5,87.5 percent of canvas coordinates. Wide empty transparent gutters at all cell boundaries; no fragments crossing. Original miniature gouache and watercolor, warm-brown delicate outlines, soft top-left light. Emei sect palette: muted jade green, ivory and pale copper, natural aged paper and cloth. No people, no hands, no scenery, no glows, no words, no letters, no pseudo-text, no numerals, no labels, no borders, no visible grid. Book covers only simple geometric leaves, water and mountain motifs. Put exactly these items in this exact row-major sequence, left to right then top to bottom:\n1. Ivory two-leaf sword primer, jade-green twin-leaf seal, pale copper corner protectors.\n2. Thin jade-green folding folio, round water-mirror window exposing wrist-motion lines, white silk band.\n3. Narrow ivory scroll with folded jade-green leaf illustration, flat pale-copper rollers, fine gauze wrap.\n4. Jade cloth-covered horizontal booklet with empty needle sleeve attached, one tiny silver dot emblem.\n5. Cream softcover breathing booklet, jade-green water-drop motif, thin bamboo bookmark at top edge.\n6. Three slim white booklets linked by jade-green ties, small teardrop-shaped jade clasp.\n7. Ivory hard case holding a narrow jade-green volume, frosted round mirror inset with leaf edging.\n8. Rounded white folding map with jade-green spring stones and tiny footprints, pale copper paper clip.\n9. Leaf-shaped cloth sleeve around a slender movement scroll, white-green ties, folded paper corner showing.\n10. Ivory loose-page bundles in a jade lattice-textured folder, tiny leaf seals along page edges.\n11. Crossed silver-white short swords of unequal length, jade-green grips, leaf-shaped pale copper guards.\n12. Slim ivory needle case half open, jade-green lining, neatly separated silver needles, leaf-shaped clasp.\n13. Folded ivory fitted short robe, jade-green forearm guards and lapels, slender leaf-pattern sash.\n14. Jade-green leaf-shaped wooden token, ivory twin-peak inlay, fine white cord through the stem.\n15. White four-corner cloth supply pouch, jade-green tie, pale copper leaf clasp, tiny rest tag beside it.\n16. Small ivory embroidered silk scroll, jade twin peaks and narrow stream, pale copper rollers, unfinished stitches.\nAll paired objects stay together inside their one cell. Keep swords and needle case small enough that tips and handles remain far from boundaries. Full silhouettes, no omissions or added objects, consistent visual weight.",
-  "revision_prompt": "Edit this exact Emei 4 by 4 transparent inventory atlas. Change ONLY item eleven: third row, third column, zero-based cell_index 10, currently two crossed short swords. Replace those TWO short swords with ONE single distinctive Yitian longsword and its clearly hollow matching sheath beside it. The sword has a long slender straight silver-white double-edged blade, jade-green grip, restrained pale-copper guard, small ivory tassel; matching slim jade-and-ivory sheath with copper fittings. Diagonal orientation helps the entire long blade fit well inside its own cell. Only ONE visible blade; sheath must visibly read as a scabbard rather than second sword. No letters or Chinese characters. Retain the palette, watercolor/gouache texture, delicate outlines and shading. Preserve the other FIFTEEN icon designs, all sixteen ordered positions, original square layout and generous transparent gutters. Do not shift, remove, recolor or redesign any other icon. Keep the entire target sword, pommel, tip, sheath and tassel strictly inside the existing third-row third-column cell with margins. Fully transparent background throughout empty space, no glow, no scenery, no labels or grid. Original atlas is reference; this is a minimal local icon replacement.",
+  "revision_prompt": "Edit this exact 4x4 Emei inventory atlas. Preserve style, jade-green and ivory color palette, square transparent background, sixteen icons in same row-major positions and scale, and generous empty gutters. Improve the books so their martial-arts CATEGORY is unmistakable at thumbnail size. ALL martial-art diagrams must be printed ON the rectangular book cover or ON an open scroll page, not floating extra physical weapons or hands. Use bold simple silhouettes, not illegible abstract ornaments. Make ONLY these cell changes:\nRow1 col1: same rectangular ivory book, replace two-leaf cover with a clearly drawn long straight sword and two curved sword-motion lines.\nRow1 col2: same jade rectangular book, replace circular window decoration with an open palm and wrist/forearm diagram showing a curved intercepting motion arrow. This is a hand technique manual, no sword.\nRow1 col3: replace closed leaf roll with a small OPEN ivory scroll whose page has FOUR clear palm silhouettes arranged as a simple cross, with subtle curved directional arrows. Palm-strike manual, no leaves.\nRow1 col4: same rectangular horizontal green book, remove attached side sleeve/rolled cylinder, large visible open-palm silhouette printed on its cover with sweeping cloud motion arcs and a few small snowflake marks. Palm manual, NOT needle case, NOT fan, no extra tool.\nRow2 col1: same ivory rectangular book, replace leaf/water decoration with a simple seated meditating human silhouette and clearly drawn meridian channels inside torso, thin breathing circular line around it.\nRow2 col2: same tied stack of three ivory booklets, replace leaf cover with a meditating torso meridian diagram backed by a small warm gold SUN motif, with jade ties pushed to edges so central diagram visible. Inner energy manual, not medicine.\nRow2 col3: retain ivory and jade rectangular case/book format but REMOVE mirror and show a visible book cover printed with standing human outline and symmetric meridian channels. No mirror, no reflective oval.\nRow3 col1: replace closed leaf sleeve with a small open ivory scroll, jade border, showing a sequence of clear FOOTPRINTS turning around a small leaping human silhouette. Footwork manual.\nRow3 col2: same jade folder with ivory loose practice pages but show simple PALM, SWORD and seated meditation sketches on exposed pages instead of leaf motifs. General martial practice notes.\nKEEP all other SEVEN cells unchanged in identity and design: row2col4 footprint terrain map; row3col3 the SINGLE straight Yitian longsword beside its scabbard; row3col4 ivory needle case; row4 robe, leaf-shaped token, medicine pouch, landscape inheritance scroll. Exactly sixteen separate cells; each entire icon safely fits in its own cell. No text, letters, numerals, pseudo-writing, titles, labels, visible grid, scenic background, or halos outside icons. Fully transparent empty space.",
   "prior_source_path": "/workspace/generated_images/exec-d32a7e0f-cad8-4e4c-9a2e-a1578c00aaaa.png",
   "item_ids": [
     "EM001",
@@ -28,12 +28,16 @@
     "EM015",
     "EM016"
   ],
-  "visual_review": "Visual review: sixteen icons retain their row-major order and ivory/jade gouache style. Third-row third-column EM011 now shows one single straight longsword and its closed jade-and-ivory scabbard, replacing crossed short swords. Complete blade tip, hilt, tassel and scabbard fit within the cell. The other fifteen icon identities and surrounding transparent gutters are preserved. Exact region measurements are pending atlas integration.",
-  "previous_source_path": "/workspace/generated_images/exec-fa9011fc-05e9-46c7-8910-15e7d1f80791.png",
-  "previous_sha256": "47e6f74714235887cdc3f1b2634915dbb4b731e7a79a5ae56331d1e885c5f4a0",
-  "previous_revision_prompt": "Edit this exact sixteen-item Emei inventory atlas. Preserve all sixteen designs and exact row-major ordering. Fix spacing only: shrink each complete object to 75 percent of its current scale, including every attached cord, handle and scroll corner. Then recenter every object at the exact centers of an invisible4 by4 grid: horizontal and vertical centers12.5%,37.5%,62.5%,87.5%. Fully transparent SQUARE canvas. There must be large continuous TRANSPARENT empty gutters on all six internal dividing lines. Every icon fits inside the central55 percent of its cell. Do not crop or truncate any piece. Do not add text, writing, grids, borders, labels, scenery or glows. Retain original ivory and jade palette, warm fine outlines and gouache texture.",
-  "previous_measurements": {
-    "transparent_ratio": 0.6915891475826001,
+  "visual_review": "All 16 final icons inspected with view_image after semantic and spacing revisions. Martial arts now use visible sword, palm, meridian, meditation or footprint diagrams as appropriate. Original equipment and supply identities were checked individually and preserved. All entire silhouettes fit separate cells; all six nominal grid boundaries and all outer edges have zero pixels with alpha>32. Detailed per-item observations are in wuxia-thumbnail-audit/em_hs.json.",
+  "previous_source_path": "/workspace/generated_images/exec-e93be4a4-7c62-413b-9a70-01aa50e3f981.png",
+  "previous_sha256": "db8d1263b40fd48a5588e9bd22680da549c7948d910b9690cd559cf5b3d3d178",
+  "previous_revision_prompt": "Edit this exact Emei 4 by 4 transparent inventory atlas. Change ONLY item eleven: third row, third column, zero-based cell_index 10, currently two crossed short swords. Replace those TWO short swords with ONE single distinctive Yitian longsword and its clearly hollow matching sheath beside it. The sword has a long slender straight silver-white double-edged blade, jade-green grip, restrained pale-copper guard, small ivory tassel; matching slim jade-and-ivory sheath with copper fittings. Diagonal orientation helps the entire long blade fit well inside its own cell. Only ONE visible blade; sheath must visibly read as a scabbard rather than second sword. No letters or Chinese characters. Retain the palette, watercolor/gouache texture, delicate outlines and shading. Preserve the other FIFTEEN icon designs, all sixteen ordered positions, original square layout and generous transparent gutters. Do not shift, remove, recolor or redesign any other icon. Keep the entire target sword, pommel, tip, sheath and tassel strictly inside the existing third-row third-column cell with margins. Fully transparent background throughout empty space, no glow, no scenery, no labels or grid. Original atlas is reference; this is a minimal local icon replacement.",
+  "previous_measurements": {},
+  "measurements_status": "basic_alpha_checks_passed; crop_regions_pending_root_integration",
+  "spacing_revision_prompt": "Spacing-only correction of this exact 16-icon inventory atlas. Preserve ALL sixteen existing icon identities and printed diagrams exactly, in the same order. Shrink EVERY complete icon to 70 percent of its current size, then center each in an invisible EXACT EQUAL 4x4 grid. Cell centers must be x=12.5%,37.5%,62.5%,87.5% and y=12.5%,37.5%,62.5%,87.5%. Each complete icon, including every tassel, string, scroll roller and blade tip, must fit within the central 65 percent of the width AND height of its equal cell. This leaves huge fully TRANSPARENT gutters all the way across the canvas at 25%,50%,75%, and clear exterior margins. Prioritize SMALL complete icons with large empty spacing. Keep all book-cover sword/palm/meridian/footprint diagrams intact and legible, never replace them with random motifs. Do not redesign any item or add/remove items. Transparent square background, no labels, no text, no grid, no border, no scenic background. ALL sixteen positions remain exactly row-major as reference.",
+  "semantic_revision_source_path": "/workspace/generated_images/exec-76678db5-8d41-4e33-aa2e-d1b5cbb5f725.png",
+  "measurements": {
+    "transparent_ratio": 0.7170489839213082,
     "v_boundary_pixels": [
       0,
       0,
@@ -46,5 +50,37 @@
     ],
     "outer_edge_pixels": 0
   },
-  "measurements_status": "pending_remeasurement_after_icon_revision"
+  "thumbnail_audit": {
+    "audited_item_ids": [
+      "EM001",
+      "EM002",
+      "EM003",
+      "EM004",
+      "EM005",
+      "EM006",
+      "EM007",
+      "EM008",
+      "EM009",
+      "EM010",
+      "EM011",
+      "EM012",
+      "EM013",
+      "EM014",
+      "EM015",
+      "EM016"
+    ],
+    "semantically_revised_item_ids": [
+      "EM001",
+      "EM002",
+      "EM003",
+      "EM004",
+      "EM005",
+      "EM006",
+      "EM007",
+      "EM009",
+      "EM010"
+    ],
+    "status": "passed",
+    "record_path": "/workspace/wuxia-thumbnail-audit/em_hs.json"
+  }
 }

@@ -21,5 +21,8 @@
   },
   "established_names_have_sources": true,
   "name_mapping_matches_catalog": true,
+  "visual_review_entries": 368,
+  "visual_review_matches_current_atlas_hashes": true,
+  "deliberately_revised_icons": 64,
   "note": "Some transparent gutter edges retain alpha<=32 artifacts; measured regions avoid foreground above that threshold. All source PNG bytes remain unedited."
 }

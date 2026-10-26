@@ -16,10 +16,20 @@ def main():
     assert len(manifest)==23
     regions=json.loads((ROOT/'atlas-regions.json').read_text())
     assert regions['summary']=={'measured':23,'passed':23,'failed':0}
+    audit=json.loads((ROOT/'thumbnail-audit.json').read_text())
+    reviewed={entry['id']:entry for entry in audit['items']}
+    assert len(audit['items'])==len(reviewed)==368
+    assert set(reviewed)=={item['id'] for item in items}
+    for item in items:
+        review=reviewed[item['id']]
+        assert (review['name'],review['atlas_id'],review['cell_index'])==(item['name'],item['atlas_id'],item['cell_index']),item['id']
+        assert review['status']=='passed' and review['action'] in {'kept','revised'},item['id']
+        assert all(review.get(key) for key in ['before_observation','expected_visual','after_observation']),item['id']
     for atlas in manifest:
         path=ROOT/atlas['image_path']
         digest=hashlib.sha256(path.read_bytes()).hexdigest()
         assert digest==atlas['sha256'],atlas['atlas_id']
+        assert audit['atlas_sha256s'][atlas['atlas_id']]==digest,(atlas['atlas_id'],'visual audit is stale')
         source=Path(atlas['source_path'])
         # Source originals may live outside the portable delivery after download.
         if source.is_file():
@@ -38,6 +48,8 @@ def main():
             'source_pixels_preserved':True,'implementation_status':'design_only',
             'sect_name_origins':dict(Counter(i['name_origin'] for i in items if i['collection']=='sect')),
             'established_names_have_sources':True,'name_mapping_matches_catalog':True,
+            'visual_review_entries':len(reviewed),'visual_review_matches_current_atlas_hashes':True,
+            'deliberately_revised_icons':sum(x['action']=='revised' for x in reviewed.values()),
             'note':'Some transparent gutter edges retain alpha<=32 artifacts; measured regions avoid foreground above that threshold. All source PNG bytes remain unedited.'}
     (ROOT/'validation-report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps(report,ensure_ascii=False,indent=2))

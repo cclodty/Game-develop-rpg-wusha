@@ -1,4 +1,4 @@
-"""Bounded browser smoke: all data interactions, one representative real PNG atlas."""
+"""Browser checks: every thumbnail binding and two decoded, rendered sect atlases."""
 import base64
 import json
 from pathlib import Path
@@ -7,8 +7,8 @@ from playwright.sync_api import sync_playwright
 ROOT = Path(__file__).resolve().parents[1]
 REPORT = ROOT / 'browser-validation.json'
 report = {'status': 'running', 'items': 368, 'decoded_atlases': 0,
-          'image_scope': 'Tangmen S08 only: all 16 measured sprite regions. Other images suppressed in memory for this bounded smoke.',
-          'tested': [], 'loading': 'In-memory HTML with one local PNG supplied as a blob URL; no outbound traffic. Delivered HTML is unchanged and uses relative image paths.'}
+          'image_scope': 'All 368 card bindings; actual PNG decoding and rendered crops for Wudang S02 and Tangmen S08 (32 items). Visual identity review of all 368 is recorded separately in thumbnail-audit.json.',
+          'tested': [], 'loading': 'In-memory HTML with two local PNGs supplied sequentially as blob URLs; no outbound traffic. Delivered HTML is unchanged and uses relative image paths.'}
 
 def progress(name):
     print(name, flush=True)
@@ -28,8 +28,30 @@ try:
         page.set_content((ROOT / 'index.html').read_text(), wait_until='domcontentloaded', timeout=15000)
         catalog = json.loads((ROOT / 'catalog.json').read_text())
         assert page.locator('.item').count() == 368
+        progress('all 368 item names and thumbnail bindings')
+        bindings = page.locator('#grid .item').evaluate_all('''els=>els.map(e=>({
+          id:e.querySelector('.meta-line span').textContent,
+          name:e.querySelector('h2').textContent,
+          image:e.querySelector('.sprite-window').style.backgroundImage,
+          position:e.querySelector('.sprite-window').style.backgroundPosition,
+          size:e.querySelector('.sprite-window').style.backgroundSize
+        }))''')
+        for item, binding in zip(catalog['items'], bindings):
+            ref = item['asset_ref']; region = ref['region']
+            assert (binding['id'], binding['name']) == (item['id'], item['name'])
+            assert ref['image_path'] in binding['image'], item['id']
+            size = [float(x.rstrip('%')) for x in binding['size'].split()]
+            position = [float(x.rstrip('%')) for x in binding['position'].split()]
+            assert len(size)==len(position)==2, item['id']
+            expected_size = [ref['image_width']/region['width']*100, ref['image_height']/region['height']*100]
+            expected_position = [region['x']/(ref['image_width']-region['width'])*100,
+                                 region['y']/(ref['image_height']-region['height'])*100]
+            assert all(abs(a-b)<.01 for a,b in zip(size,expected_size)), item['id']
+            assert all(abs(a-b)<.01 for a,b in zip(position,expected_position)), item['id']
+        report['thumbnail_bindings_checked'] = len(bindings)
+        report['tested'].append('368 card IDs/names/atlas paths/region CSS bindings')
         # Keep every item for interaction checks, suppress bulk image decoding only in memory.
-        page.evaluate('''() => {for(const item of data.items) if(item.atlas_id !== 'S08') {
+        page.evaluate('''() => {for(const item of data.items) {
           item.asset_ref=null; item.art_status='pending';} render();}''')
         progress('all eight sect filters and details')
         for sect in catalog['sects']:
@@ -87,40 +109,53 @@ try:
         report['tested'] += ['classic martial name searches', 'name provenance notes',
                              'reference link title/URL/target/rel attributes (links not fetched)']
         page.locator('#reset').click()
-        page.locator('#sect').select_option('tangmen')
         report['tested'] += ['368 item rows', '8 sect filters', 'inner manual filter', 'detail modal and Escape', 'ID search', 'empty state', 'reset']
-        progress('decode one Tangmen atlas with an 8-second bound')
-        atlas = catalog['atlases']['S08']
-        png_base64 = base64.b64encode((ROOT / atlas['image_path']).read_bytes()).decode()
-        decoded = page.evaluate('''async encoded => {
-          const bytes=Uint8Array.from(atob(encoded),c=>c.charCodeAt(0));
+        report['atlas_decodes'] = {}
+        report['previews'] = []
+        for atlas_id, sect_id, preview in [('S02','wudang','wudang-preview.png'),('S08','tangmen','catalog-preview.png')]:
+            progress(f'decode and render {atlas_id} with an 8-second bound')
+            page.locator('#sect').select_option(sect_id)
+            atlas = catalog['atlases'][atlas_id]
+            atlas_items = [i for i in catalog['items'] if i['atlas_id']==atlas_id]
+            png_base64 = base64.b64encode((ROOT / atlas['image_path']).read_bytes()).decode()
+            decoded = page.evaluate('''async payload => {
+          const bytes=Uint8Array.from(atob(payload.encoded),c=>c.charCodeAt(0));
           const url=URL.createObjectURL(new Blob([bytes],{type:'image/png'}));
           const result=await Promise.race([
             new Promise(resolve=>{const img=new Image();img.onload=()=>resolve({ok:true,width:img.naturalWidth,height:img.naturalHeight});img.onerror=()=>resolve({ok:false,error:'Image error'});img.src=url;}),
             new Promise(resolve=>setTimeout(()=>resolve({ok:false,error:'Image decode timeout'}),8000))
           ]);
-          for(const item of data.items) if(item.atlas_id==='S08') item.asset_ref.image_path=url;
+          for(const item of data.items) if(item.atlas_id===payload.atlas_id) {
+            item.asset_ref={...payload.items.find(x=>x.id===item.id).asset_ref,image_path:url};
+            item.art_status='generated';
+          }
           render();return result;
-        }''', png_base64)
-        report['atlas_decode'] = decoded
-        assert decoded.get('ok'), decoded
-        assert (decoded['width'],decoded['height']) == (atlas['width'],atlas['height'])
-        report['decoded_atlases'] = 1
-        assert page.locator('#grid .sprite-window').count() == 16
-        bounds = page.locator('#grid .sprite-window').evaluate_all('(els)=>els.map(e=>({w:e.clientWidth,h:e.clientHeight,bg:getComputedStyle(e).backgroundImage,size:getComputedStyle(e).backgroundSize}))')
-        assert all(b['w'] > 30 and b['h'] > 30 and 'blob:' in b['bg'] for b in bounds)
-        for item, bound in zip([i for i in catalog['items'] if i['atlas_id']=='S08'], bounds):
-            region = item['asset_ref']['region']
-            assert abs(bound['w']/bound['h'] - region['width']/region['height']) < .03
-        report['tested'] += ['S08 PNG decoded', '16 measured sprite region aspect ratios and CSS image sources']
-        progress('save actual rendered Tangmen preview')
-        page.screenshot(path=str(ROOT/'catalog-preview.png'), full_page=True, timeout=10000)
+        }''', {'encoded':png_base64,'atlas_id':atlas_id,'items':atlas_items})
+            report['atlas_decodes'][atlas_id] = decoded
+            assert decoded.get('ok'), decoded
+            assert (decoded['width'],decoded['height']) == (atlas['width'],atlas['height'])
+            report['decoded_atlases'] += 1
+            assert page.locator('#grid .sprite-window').count() == 16
+            bounds = page.locator('#grid .sprite-window').evaluate_all('(els)=>els.map(e=>({w:e.clientWidth,h:e.clientHeight,bg:getComputedStyle(e).backgroundImage,size:getComputedStyle(e).backgroundSize}))')
+            assert all(b['w'] > 30 and b['h'] > 30 and 'blob:' in b['bg'] for b in bounds)
+            for item, bound in zip(atlas_items, bounds):
+                region = item['asset_ref']['region']
+                assert abs(bound['w']/bound['h'] - region['width']/region['height']) < .03
+            report['tested'] += [f'{atlas_id} PNG decoded; 16 measured sprite region aspect ratios and CSS image sources']
+            page.screenshot(path=str(ROOT/preview), full_page=True, timeout=10000)
+            report['previews'].append(preview)
+            if atlas_id=='S02':
+                page.get_by_role('button',name='查看 太極劍法 詳情',exact=True).click()
+                assert page.locator('#detail-name').inner_text()=='太極劍法'
+                assert page.locator('#detail-thumb .sprite-window').count()==1
+                page.locator('#detail').screenshot(path=str(ROOT/'taiji-sword-preview.png'),timeout=10000)
+                report['previews'].append('taiji-sword-preview.png')
+                page.locator('#close-detail').click()
         page.set_viewport_size({'width':390,'height':844})
         assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
         assert not errors, errors
         report['tested'] += ['mobile overflow', 'JavaScript errors']
         report['status'] = 'passed'
-        report['preview'] = 'catalog-preview.png'
         progress('passed')
         browser.close()
 except Exception as error:

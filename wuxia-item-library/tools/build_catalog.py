@@ -158,7 +158,7 @@ def build() -> dict:
                 item['asset_ref']['region'] = {k: region[k] for k in ['x', 'y', 'width', 'height']}
     items.sort(key=lambda x: (x['atlas_id'], x['cell_index']))
     metadata = {
-        'version': 'wuxia-library-classic-v2', 'language': 'zh-Hant',
+        'version': 'wuxia-library-visual-v3', 'language': 'zh-Hant',
         'provenance': '240 original common items; sect arts use established names with sources, alongside plainly named traditional equipment. Gameplay and acquisition remain this project’s design.',
         'implementation_status': 'design_only', 'total_items': len(items),
         'base_items': 240, 'sect_items': 128,

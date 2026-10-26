@@ -571,7 +571,7 @@
       "region": {
         "x": 0,
         "y": 0,
-        "width": 316,
+        "width": 322,
         "height": 319
       }
     },
@@ -603,9 +603,9 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 316,
+        "x": 322,
         "y": 0,
-        "width": 311,
+        "width": 305,
         "height": 319
       }
     },
@@ -639,7 +639,7 @@
       "region": {
         "x": 627,
         "y": 0,
-        "width": 318,
+        "width": 313,
         "height": 319
       }
     },
@@ -671,9 +671,9 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 945,
+        "x": 940,
         "y": 0,
-        "width": 309,
+        "width": 314,
         "height": 319
       }
     },
@@ -707,8 +707,8 @@
       "region": {
         "x": 0,
         "y": 319,
-        "width": 336,
-        "height": 304
+        "width": 337,
+        "height": 305
       }
     },
     "implementation_status": "design_only"
@@ -739,10 +739,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 336,
+        "x": 337,
         "y": 319,
-        "width": 291,
-        "height": 304
+        "width": 290,
+        "height": 305
       }
     },
     "implementation_status": "design_only"
@@ -775,8 +775,8 @@
       "region": {
         "x": 627,
         "y": 319,
-        "width": 316,
-        "height": 304
+        "width": 315,
+        "height": 305
       }
     },
     "implementation_status": "design_only"
@@ -807,10 +807,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 943,
+        "x": 942,
         "y": 319,
-        "width": 311,
-        "height": 304
+        "width": 312,
+        "height": 305
       }
     },
     "implementation_status": "design_only"
@@ -842,9 +842,9 @@
       "image_height": 1254,
       "region": {
         "x": 0,
-        "y": 623,
-        "width": 335,
-        "height": 298
+        "y": 624,
+        "width": 348,
+        "height": 294
       }
     },
     "implementation_status": "design_only"
@@ -875,10 +875,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 335,
-        "y": 623,
-        "width": 287,
-        "height": 298
+        "x": 348,
+        "y": 624,
+        "width": 280,
+        "height": 294
       }
     },
     "implementation_status": "design_only"
@@ -909,10 +909,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 622,
-        "y": 623,
-        "width": 316,
-        "height": 298
+        "x": 628,
+        "y": 624,
+        "width": 310,
+        "height": 294
       }
     },
     "implementation_status": "design_only"
@@ -944,9 +944,9 @@
       "image_height": 1254,
       "region": {
         "x": 938,
-        "y": 623,
+        "y": 624,
         "width": 316,
-        "height": 298
+        "height": 294
       }
     },
     "implementation_status": "design_only"
@@ -978,9 +978,9 @@
       "image_height": 1254,
       "region": {
         "x": 0,
-        "y": 921,
-        "width": 336,
-        "height": 333
+        "y": 918,
+        "width": 311,
+        "height": 336
       }
     },
     "implementation_status": "design_only"
@@ -997,8 +997,8 @@
     "use": "木工施工與箱櫃製作的定位。",
     "limitation": "只提供量線輔助，不會自動完成製作。",
     "acquisition": "木匠鋪。",
-    "appearance": "小竹木墨斗帶圓軸與拉環，一截黑線彎在前方。",
-    "art_prompt": "Compact bamboo and wood marking reel, round axle, pull ring and a short black cord.",
+    "appearance": "一體式竹木墨斗，前端淺墨倉內有黑色墨墊，後端圓形繞線軸帶小搖柄；短黑線從導孔伸出，末端繫拉環。",
+    "art_prompt": "Compact traditional bamboo-and-wood carpenter ink-line tool, connected elongated body with a shallow black ink-pad reservoir at the front, round winding reel and small hand crank at the rear, short black line through a guide hole ending in a pull ring.",
     "atlas_id": "B12",
     "cell_index": 13,
     "art_status": "generated",
@@ -1011,13 +1011,16 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 336,
-        "y": 921,
-        "width": 290,
-        "height": 333
+        "x": 311,
+        "y": 918,
+        "width": 329,
+        "height": 336
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "needs_art_revision": false,
+    "art_revision_status": "completed",
+    "art_revision_note": "v3逐格核對後修訂圖像；目前外觀與美術描述已同步至實際圖像。"
   },
   {
     "id": "BASE191",
@@ -1045,10 +1048,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 626,
-        "y": 921,
-        "width": 288,
-        "height": 333
+        "x": 640,
+        "y": 918,
+        "width": 280,
+        "height": 336
       }
     },
     "implementation_status": "design_only"
@@ -1079,10 +1082,10 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 914,
-        "y": 921,
-        "width": 340,
-        "height": 333
+        "x": 920,
+        "y": 918,
+        "width": 334,
+        "height": 336
       }
     },
     "implementation_status": "design_only"

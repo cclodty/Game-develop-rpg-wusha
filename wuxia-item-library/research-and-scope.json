@@ -52,7 +52,7 @@
     "consumption": "書冊研讀與材料使用的具體時間、數值及消耗在接入玩法前另定；不將物品設計文案當作已實作功能。",
     "art": "Q版武俠道具、水粉水彩、暖褐輪廓、透明背景、完整剪影、書名由介面顯示，不烙文字。"
   },
-  "revision": "classic-names-v2",
+  "revision": "visual-match-v3",
   "naming_policy": {
     "established_names": "使用已核對的武學、兵器及傳承原名，不刻意替換成原創近義名。",
     "generic_items": "普通衣物、補給、信物使用通俗名稱，不假稱為已有的專有寶物。",
@@ -212,5 +212,13 @@
     "existing_martial_arts": 74,
     "generic_traditional_item": 50,
     "existing_named_item": 4
+  },
+  "visual_revision": {
+    "scope": "全部368件名稱、物品類型與縮圖逐格核對；保留既有名稱、ID及玩法。",
+    "manual_rule": "秘籍以書冊或矩形卷軸呈現，使用對應武器、拳掌、調息經脈或步履圖示；不以扇子或無關物件代替。",
+    "report": "thumbnail-audit.json",
+    "reviewed_count": 368,
+    "revised_icons": 64,
+    "changed_atlases": 9
   }
 }

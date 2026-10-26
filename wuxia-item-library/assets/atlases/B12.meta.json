@@ -5,110 +5,8 @@
   "rows": 4,
   "width": 1254,
   "height": 1254,
-  "sha256": "17e23688f79d49775d343563393aa424b64a8339b17ded3b20ebda35f1c2c6d3",
-  "alpha_extrema": [
-    0,
-    255
-  ],
-  "cell_bboxes_alpha128": [
-    [
-      58,
-      96,
-      268,
-      258
-    ],
-    [
-      47,
-      67,
-      274,
-      277
-    ],
-    [
-      30,
-      80,
-      254,
-      286
-    ],
-    [
-      32,
-      65,
-      283,
-      280
-    ],
-    [
-      44,
-      50,
-      301,
-      259
-    ],
-    [
-      57,
-      40,
-      262,
-      274
-    ],
-    [
-      18,
-      67,
-      286,
-      264
-    ],
-    [
-      29,
-      58,
-      280,
-      271
-    ],
-    [
-      49,
-      36,
-      309,
-      251
-    ],
-    [
-      48,
-      42,
-      271,
-      230
-    ],
-    [
-      19,
-      42,
-      288,
-      251
-    ],
-    [
-      22,
-      31,
-      282,
-      268
-    ],
-    [
-      44,
-      10,
-      296,
-      213
-    ],
-    [
-      42,
-      11,
-      255,
-      222
-    ],
-    [
-      30,
-      14,
-      313,
-      223
-    ],
-    [
-      0,
-      6,
-      287,
-      249
-    ]
-  ],
-  "source_path": "/workspace/generated_images/exec-cdbef7f1-9c9c-43e0-8b54-e5d34cfa9075.png",
+  "sha256": "3fc9769783c095ea8f2286acf9974ab8622eb4c9f66f6767f6d5c6fc0ae4ff40",
+  "source_path": "/workspace/generated_images/exec-e8185270-c6b3-41a4-bb8e-fd37049e41e5.png",
   "prompt": "A production-ready inventory atlas for a charming Ming-inspired wuxia game: square canvas, EXACT invisible 4x4 equal-cell grid, 16 distinct isolated icons. CRITICAL LAYOUT: SMALL OBJECTS with maximum width and height each only 55% of its cell, at least 22% transparent margin on every side of every cell. Centers exactly x=12.5%,37.5%,62.5%,87.5% and y=12.5%,37.5%,62.5%,87.5% of canvas. All silhouettes complete and disconnected, never cross cell boundaries. Lots of empty transparent space. Fully transparent background. No labels, writing, letters, numbers, grid, frame, border, watermark, or glow. Cohesive hand painted watercolor/gouache texture, fine warm brown outlines, rounded tactile forms, warm ivory/jade/coral and natural material palette, gentle top-left light, slight three-quarter overhead view. Only specified objects, row-major left to right top to bottom:\n1. Compact square iron hammer head on a short worn brown wooden handle.\n2. Slender silver gray metal file with crosshatched teeth and oval wooden grip.\n3. Yellow bamboo handled carving knife with short triangular blade and slim brown sheath.\n4. Ochre wooden bow saw frame, thin steel blade, twisted hemp tension cord.\n5. Broad pale wooden clamp with a brass pivot and gray cloth padded jaws.\n6. Round gray ceramic mortar and stubby pestle with traces of ochre pigment.\n7. Delicate brass balance rod with round pan, tiny sliding weight and navy sleeve.\n8. Open slim bamboo needle case, needles tucked in rust cloth, white thread around exterior.\n9. Short broad gray splitting blade with flat brown handle and two bamboo strips.\n10. Short pointed dark iron awl with pear shaped brown wooden handle.\n11. Dark gray rectangular whetstone in a light brown sliding wooden case.\n12. Wide flat cream bristle brush with dark bamboo handle and burgundy binding.\n13. Short open brass pliers with dark brown leather pads on both jaws.\n14. Compact bamboo and wood marking reel, round axle, pull ring and a short black cord.\n15. Dark chestnut lacquer tray with six compartments holding a few brass pins and wood chips.\n16. Half unrolled olive brown canvas tool roll showing a small hammer, file and wooden ruler.",
   "item_ids": [
     "BASE177",
@@ -128,5 +26,123 @@
     "BASE191",
     "BASE192"
   ],
-  "visual_review": "All 16 workshop tools appear in correct row-major order. Entire silhouettes visible and visually separated; no text or grid present. Some item bundles contain expected companion parts (knife sheath, bamboo strips, needles). Actual occupancy exceeds requested 55%, so crop using measured regions if needed. Alpha transparency and nonempty cells verified; low-alpha watercolor flecks remain."
+  "visual_review": "Thumbnail identity audit: reviewed all sixteen tools in row-major order before and after editing. BASE190 now has a connected traditional wooden ink-line body with a visible black ink reservoir, winding reel, hand crank and pull ring; it no longer reads as a bare spool. The other fifteen tool identities and positions remain intact. Complete isolated silhouettes, no text or grid, transparent RGBA; outer-edge foreground pixels above alpha32 = 0. Re-measure cell regions before publishing.",
+  "previous_source_path": "/workspace/generated_images/exec-cdbef7f1-9c9c-43e0-8b54-e5d34cfa9075.png",
+  "previous_sha256": "17e23688f79d49775d343563393aa424b64a8339b17ded3b20ebda35f1c2c6d3",
+  "revision_prompt": "Edit this existing 4 by 4 transparent inventory atlas. Preserve exact canvas dimensions, all sixteen row-major positions, painterly watercolor/gouache brown-outline style, and the identity and design of the other fifteen tools. ONLY replace row 4 column 2 (cell index 13), currently a bare round spool, with a recognizable traditional Chinese carpenter's ink-line tool / 墨斗. A compact warm-bamboo and wood single elongated housing: one end has a circular cord winding reel and a small hand crank, the other end has a distinct rounded shallow ink reservoir with a black ink-soaked pad visible in the well, and a short black line exits through a tiny guide hole and ends in a small pull ring. The ink reservoir and reel MUST be part of one connected compact body, not a loose extra bowl. Three-quarter overhead view to clearly show both reservoir and reel, simple warm wood, no modern plastic. Keep this entire object and its short cord safely inside row 4 column 2, SMALL with generous fully transparent margins; do not touch any neighboring item. Preserve all other fifteen icons (hammer, file, carving knife and sheath, frame saw; wooden clamp, mortar and pestle, brass scale, needle case; bamboo splitting blade, awl, boxed whetstone, flat brush; brass pliers, this new ink-line tool, six-compartment tray, canvas tool roll) and their positions. All silhouettes complete, separated, transparent background. No words, letters, numbers, labels, borders, gridlines, extra icons or scenery.",
+  "previous_measurements": {
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "cell_bboxes_alpha128": [
+      [
+        58,
+        96,
+        268,
+        258
+      ],
+      [
+        47,
+        67,
+        274,
+        277
+      ],
+      [
+        30,
+        80,
+        254,
+        286
+      ],
+      [
+        32,
+        65,
+        283,
+        280
+      ],
+      [
+        44,
+        50,
+        301,
+        259
+      ],
+      [
+        57,
+        40,
+        262,
+        274
+      ],
+      [
+        18,
+        67,
+        286,
+        264
+      ],
+      [
+        29,
+        58,
+        280,
+        271
+      ],
+      [
+        49,
+        36,
+        309,
+        251
+      ],
+      [
+        48,
+        42,
+        271,
+        230
+      ],
+      [
+        19,
+        42,
+        288,
+        251
+      ],
+      [
+        22,
+        31,
+        282,
+        268
+      ],
+      [
+        44,
+        10,
+        296,
+        213
+      ],
+      [
+        42,
+        11,
+        255,
+        222
+      ],
+      [
+        30,
+        14,
+        313,
+        223
+      ],
+      [
+        0,
+        6,
+        287,
+        249
+      ]
+    ]
+  },
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "thumbnail_revision": {
+    "item_ids": [
+      "BASE190"
+    ],
+    "reason": "Bare marking reel lacked the ink reservoir needed to recognize an ink-line tool.",
+    "regions_need_remeasurement": true
+  }
 }
