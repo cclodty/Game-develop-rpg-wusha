@@ -5,8 +5,8 @@
   "rows": 4,
   "width": 1254,
   "height": 1254,
-  "sha256": "c5dab715e04cd0e227908138d0e48b71aa940dc7f34a4a374104f37f64d8c28a",
-  "source_path": "/workspace/generated_images/exec-932aae10-41f3-49c1-9885-d082f2e62c03.png",
+  "sha256": "51258aa9b07554e617da88e9e20e91f980b8f33ee0a3ddf0e2bca8da5532d2ee",
+  "source_path": "/workspace/generated_images/exec-35b63bdb-abe9-4993-884b-2b73d668dd8e.png",
   "prompt": "Produce a square transparent 4x4 inventory atlas for the TANGMEN martial craft sect. EXACTLY sixteen distinct isolated objects in row-major order. Invisible equal cells with centers at 12.5%,37.5%,62.5%,87.5% of both axes. Icons small with at least20% blank transparent margin INSIDE each cell, each silhouette no more than60% cell width or height. Leave broad transparent gutters; no object overlaps another or touches the outside canvas. Transparent alpha. Hand-painted chibi wuxia props, muted indigo and antique copper, ivory paper, subtle teal accent, gouache/watercolor surfaces, fine warm-brown outlines, upper-left lighting, slightly top-down 3/4 view. Ten manuscript icons must use distinctly different bindings, covers, clips, outlines, folded paper/scroll shapes. Any paper showing must be blank or show simple NON-TEXT diagrams only. Strictly NO words, NO writing, NO letters, NO numbers, NO labels, NO grid, NO borders, NO frame, NO glow. Mechanics are stylized fantasy inventory items, not realistic construction diagrams. Exactly preserve the following item silhouettes and order. Do not substitute modern objects. The jacket must be empty, no character.\nRow-major content; numbers are ordering instructions, never appear in image:\n1. Compact indigo manual with antique-copper corners and three offset throwing-dart silhouettes embossed on the cover.\n2. Indigo folded diagram with antique-copper timing ticks, slender dart symbols arranged along separated arcs.\n3. Indigo hard book case with antique-copper four-petal clasp and layered mechanism diagrams peeking from the edge.\n4. Indigo loose-leaf sheets with antique-copper border and tiny clip, showing glove and narrow needle-case motifs.\n5. Palm-sized indigo breathing book with a fine antique-copper clasp, central dot inside a simple circular ring.\n6. Indigo ring-bound folio with antique-copper rings and three distinct geometric page tabs.\n7. Deep-indigo hardbound book with an antique-copper string-shaped inlay and a narrow leather fastening strap.\n8. Narrow indigo folded footwork chart, staggered antique-copper footprints on diagonals and a small four-petal corner mark.\n9. Several long indigo slips held by an antique-copper clamp, corridor pillars and curved stepping paths drawn on them.\n10. Thick indigo notebook with antique-copper spiral spine, a broken wooden test piece and inspection tabs tucked inside.\n11. Half-open rectangular indigo leather case, antique-copper dividers and neatly arranged short leaf-shaped throwing darts.\n12. Indigo forearm bracer enclosing folded antique-copper wing-like supports, closed configuration with a prominent circular safety clasp.\n13. Indigo short martial jacket with antique-copper fasteners and flat organized tool pouches along the waist.\n14. Antique-copper four-petal workshop token, indigo hanging cord and a small square registration notch.\n15. Small indigo cloth pouch with antique-copper ring, mist-teal wax seal and a pale powder-cloud emblem.\n16. Flat deep-indigo wooden blueprint case partly open, antique-copper four-petal lock and layered ivory diagrams protruding.",
   "item_ids": [
     "TM001",
@@ -26,31 +26,31 @@
     "TM015",
     "TM016"
   ],
-  "visual_review": "已逐格目視確認16件，靛青／古銅配色，書冊輪廓、飛鏢匣、護臂、分袋短衣、信物、補給袋與母圖匣可辨。完整剪影分離且外緣未裁切，書頁採幾何示意，無可讀標籤。取樣仍應以透明間隙測量，不能假設固定留白百分比。",
+  "visual_review": "已逐格目視確認 16 件且順序不變；第三排第三格改為靛青黃銅折疊弩式千機匣，第三排第四格改為盒匣式暴雨梨花針。千機匣追加縮小修正，兩側弩臂完整位於單格內；其餘 14 件類型與順序保留。透明背景、物件分離、無可讀文字、無格線，剪影未裁切。",
   "read_only_alpha_checks": {
     "width": 1254,
     "height": 1254,
-    "sha256": "c5dab715e04cd0e227908138d0e48b71aa940dc7f34a4a374104f37f64d8c28a",
+    "sha256": "51258aa9b07554e617da88e9e20e91f980b8f33ee0a3ddf0e2bca8da5532d2ee",
     "alpha_extrema": [
       0,
       255
     ],
     "nonempty_cells": 16,
     "nominal_vertical_divider_max_alpha": [
-      1,
       0,
+      1,
       1
     ],
     "nominal_horizontal_divider_max_alpha": [
       1,
-      0,
+      1,
       1
     ],
     "outer_edge_max_alpha": [
       0,
       0,
       1,
-      0
+      1
     ],
     "cells": [
       {
@@ -58,9 +58,9 @@
         "nonempty": true,
         "alpha32_bbox_in_nominal_cell": [
           34,
-          51,
-          289,
-          293
+          48,
+          293,
+          298
         ]
       },
       {
@@ -68,8 +68,8 @@
         "nonempty": true,
         "alpha32_bbox_in_nominal_cell": [
           30,
-          56,
-          293,
+          55,
+          295,
           274
         ]
       },
@@ -77,30 +77,30 @@
         "cell_index": 2,
         "nonempty": true,
         "alpha32_bbox_in_nominal_cell": [
-          20,
-          40,
-          294,
-          296
+          19,
+          37,
+          298,
+          300
         ]
       },
       {
         "cell_index": 3,
         "nonempty": true,
         "alpha32_bbox_in_nominal_cell": [
-          22,
-          33,
-          291,
-          296
+          20,
+          31,
+          295,
+          302
         ]
       },
       {
         "cell_index": 4,
         "nonempty": true,
         "alpha32_bbox_in_nominal_cell": [
-          35,
-          45,
-          290,
-          264
+          34,
+          43,
+          293,
+          267
         ]
       },
       {
@@ -109,18 +109,18 @@
         "alpha32_bbox_in_nominal_cell": [
           34,
           24,
-          298,
-          291
+          302,
+          297
         ]
       },
       {
         "cell_index": 6,
         "nonempty": true,
         "alpha32_bbox_in_nominal_cell": [
-          32,
+          31,
           24,
-          276,
-          294
+          277,
+          298
         ]
       },
       {
@@ -129,90 +129,93 @@
         "alpha32_bbox_in_nominal_cell": [
           22,
           39,
-          297,
-          269
+          299,
+          271
         ]
       },
       {
         "cell_index": 8,
         "nonempty": true,
         "alpha32_bbox_in_nominal_cell": [
-          27,
-          18,
-          288,
-          280
+          23,
+          16,
+          290,
+          286
         ]
       },
       {
         "cell_index": 9,
         "nonempty": true,
         "alpha32_bbox_in_nominal_cell": [
-          17,
-          26,
-          296,
-          285
+          16,
+          22,
+          299,
+          289
         ]
       },
       {
         "cell_index": 10,
         "nonempty": true,
         "alpha32_bbox_in_nominal_cell": [
-          21,
-          18,
-          296,
-          288
+          48,
+          78,
+          289,
+          226
         ]
       },
       {
         "cell_index": 11,
         "nonempty": true,
         "alpha32_bbox_in_nominal_cell": [
-          33,
-          20,
-          284,
-          284
+          47,
+          50,
+          295,
+          278
         ]
       },
       {
         "cell_index": 12,
         "nonempty": true,
         "alpha32_bbox_in_nominal_cell": [
-          26,
+          24,
           13,
-          296,
-          279
+          303,
+          282
         ]
       },
       {
         "cell_index": 13,
         "nonempty": true,
         "alpha32_bbox_in_nominal_cell": [
-          76,
+          74,
           5,
-          259,
-          282
+          266,
+          284
         ]
       },
       {
         "cell_index": 14,
         "nonempty": true,
         "alpha32_bbox_in_nominal_cell": [
-          38,
+          35,
           23,
-          274,
-          282
+          277,
+          284
         ]
       },
       {
         "cell_index": 15,
         "nonempty": true,
         "alpha32_bbox_in_nominal_cell": [
-          14,
+          12,
           10,
-          300,
-          278
+          302,
+          282
         ]
       }
     ]
-  }
+  },
+  "previous_source_path": "/workspace/generated_images/exec-932aae10-41f3-49c1-9885-d082f2e62c03.png",
+  "previous_sha256": "c5dab715e04cd0e227908138d0e48b71aa940dc7f34a4a374104f37f64d8c28a",
+  "revision_prompt": "Edit the supplied transparent 4 by 4 wuxia inventory atlas. Preserve exactly 16 separate items, strict row-major order, current indigo-and-brass palette, hand-painted style, placement, scale, and all items except two specified weapon cells. No text, labels, visible grid, frames or background. Maintain transparent alpha with clear empty gutters between rows and columns, complete silhouettes contained within each cell. ONLY replace item 11 (row 3 column 3, zero-based cell 10), currently an open dart-storage case, with Qianji Xia: a fictional wuxia Tangmen transforming mechanism weapon case, dark indigo wood with brass fittings, compact folded crossbow arms visibly opening from both sides of the case, central bolt channel, readable compact mechanical silhouette. It must read as a folding crossbow mechanism, not a box storing darts. ONLY replace item 12 (row 3 column 4, zero-based cell 11), currently a cylindrical forearm bracer, with Baoyu Lihua Zhen: a small flat dark-indigo metal concealed needle-launcher box with brass edges and a tightly grouped front array of tiny needle ports, plus a few slender silver needles beside it, closed mechanism. It must read as a compact rectangular box, not a wearable bracer. These are stylized fictional game icons, no construction schematic. Preserve all remaining fourteen objects and their order, including the ten book/scroll items and bottom row jacket, token, pouch, and blueprint case. Final transparent 4x4 atlas of exactly sixteen isolated painted inventory items.\n\nFollow-up correction:\nEdit the supplied transparent 4x4 wuxia inventory atlas. Keep all sixteen objects exactly in their current row-major order. Make ONLY ONE correction: the crossbow-like transforming weapon case in ROW THREE, COLUMN THREE (zero-based cell 10) is too wide. REDUCE THAT ENTIRE CROSSBOW OBJECT TO 72% OF ITS CURRENT WIDTH AND HEIGHT, with a correspondingly smaller complete silhouette, and center it inside its own row-three column-three cell. Its complete left and right arms, strings, box and all parts must fit safely between 52% and 72% of the full canvas width, leaving large transparent margins to both neighboring cells. Keep its design, indigo wood, brass fittings, perspective and hand-painted style. Preserve the other fifteen items exactly, especially the needle launcher box to its right. Do not create any additional object. No text, lettering, numbering, labels, grid, frames, background, shadows connecting icons. Transparent alpha. Final result remains a 4x4 atlas of exactly 16 isolated complete inventory objects."
 }

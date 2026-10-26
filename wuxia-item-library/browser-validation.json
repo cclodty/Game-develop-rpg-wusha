@@ -4,6 +4,9 @@
   "decoded_atlases": 1,
   "image_scope": "Tangmen S08 only: all 16 measured sprite regions. Other images suppressed in memory for this bounded smoke.",
   "tested": [
+    "classic martial name searches",
+    "name provenance notes",
+    "reference link title/URL/target/rel attributes (links not fetched)",
     "368 item rows",
     "8 sect filters",
     "inner manual filter",
@@ -18,6 +21,62 @@
   ],
   "loading": "In-memory HTML with one local PNG supplied as a blob URL; no outbound traffic. Delivered HTML is unchanged and uses relative image paths.",
   "last_step": "passed",
+  "classic_name_checks": [
+    {
+      "id": "SL006",
+      "name": "易筋經",
+      "query": "易筋經",
+      "source_links_verified": 1
+    },
+    {
+      "id": "WD002",
+      "name": "太極劍法",
+      "query": "太極",
+      "source_links_verified": 1
+    },
+    {
+      "id": "HS007",
+      "name": "紫霞神功",
+      "query": "紫霞",
+      "source_links_verified": 1
+    },
+    {
+      "id": "KL002",
+      "name": "正兩儀劍法",
+      "query": "兩儀",
+      "source_links_verified": 1
+    },
+    {
+      "id": "KT003",
+      "name": "七傷拳",
+      "query": "七傷拳",
+      "source_links_verified": 2
+    },
+    {
+      "id": "GB003",
+      "name": "降龍十八掌",
+      "query": "降龍十八掌",
+      "source_links_verified": 1
+    },
+    {
+      "id": "TM012",
+      "name": "暴雨梨花針",
+      "query": "暴雨梨花",
+      "source_links_verified": 2
+    },
+    {
+      "id": "SL001",
+      "name": "羅漢拳",
+      "query": "羅漢拳",
+      "source_links_verified": 1
+    },
+    {
+      "id": "WD008",
+      "name": "梯雲縱",
+      "query": "梯雲縱",
+      "source_links_verified": 1
+    }
+  ],
   "atlas_decode": {
     "ok": true,
     "width": 1254,

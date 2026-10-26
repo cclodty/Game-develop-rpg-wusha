@@ -1,7 +1,6 @@
 """Bounded browser smoke: all data interactions, one representative real PNG atlas."""
 import base64
 import json
-import time
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
@@ -40,7 +39,7 @@ try:
         assert page.locator('.item').count() == 3
         page.locator('.open-item').first.click()
         assert page.locator('#detail').is_visible()
-        assert page.locator('#detail-fields dd').count() == 4
+        assert page.locator('#detail-fields dd').count() >= 4
         page.keyboard.press('Escape')
         assert not page.locator('#detail').is_visible()
         page.locator('#reset').click()
@@ -48,6 +47,45 @@ try:
         assert page.locator('.item').count() == 1
         page.locator('#search').fill('NOT-AN-ITEM-XYZ')
         assert page.locator('.item').count() == 0
+        page.locator('#reset').click()
+        progress('classic martial names and reference links')
+        # Use recognisable name fragments so editions such as 太極劍 / 太極劍法
+        # still exercise the actual delivered names, without silently testing old originals.
+        familiar_names = ['易筋經', '太極', '金頂綿掌', '紫霞', '兩儀',
+                          '七傷拳', '降龍十八掌', '暴雨梨花', '羅漢拳', '梯雲縱']
+        name_checks, checked_ids = [], set()
+        for query in familiar_names:
+            item = next((i for i in catalog['items'] if i['collection'] == 'sect'
+                         and query in i['name'] and i['id'] not in checked_ids), None)
+            if item is None:
+                continue
+            assert item.get('name_origin'), f'{item["id"]}: missing name_origin'
+            assert item.get('reference_note'), f'{item["id"]}: missing reference_note'
+            sources = [s for s in item.get('reference_sources', [])
+                       if isinstance(s, dict) and str(s.get('url', '')).startswith('https://')]
+            assert sources, f'{item["id"]}: no HTTPS reference sources'
+            page.locator('#search').fill(query)
+            assert page.locator('.item').count() >= 1
+            page.get_by_role('button', name=f'查看 {item["name"]} 詳情', exact=True).click()
+            assert page.locator('#detail-name').inner_text() == item['name']
+            assert item['reference_note'] in page.locator('#detail-fields').inner_text()
+            links = page.locator('#detail-fields a').evaluate_all('''els => els.map(e => ({
+              text:e.textContent, href:e.getAttribute('href'), target:e.target, rel:e.rel
+            }))''')
+            assert len(links) == len(sources), f'{item["id"]}: incorrect source link count'
+            for source, link in zip(sources, links):
+                assert link['href'] == source['url'], (item['id'], source, link)
+                assert link['text'] == source['title'], (item['id'], source, link)
+                assert link['target'] == '_blank'
+                assert {'noopener', 'noreferrer'} <= set(link['rel'].split())
+            page.locator('#close-detail').click()
+            checked_ids.add(item['id'])
+            name_checks.append({'id':item['id'], 'name':item['name'], 'query':query,
+                                'source_links_verified':len(links)})
+        assert len(name_checks) >= 4, f'Expected at least four recognisable martial names, found {name_checks}'
+        report['classic_name_checks'] = name_checks
+        report['tested'] += ['classic martial name searches', 'name provenance notes',
+                             'reference link title/URL/target/rel attributes (links not fetched)']
         page.locator('#reset').click()
         page.locator('#sect').select_option('tangmen')
         report['tested'] += ['368 item rows', '8 sect filters', 'inner manual filter', 'detail modal and Escape', 'ID search', 'empty state', 'reset']

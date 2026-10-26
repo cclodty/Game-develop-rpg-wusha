@@ -21,6 +21,7 @@ FIELDS = [
     'art_prompt', 'atlas_id', 'cell_index', 'art_status', 'asset_ref',
     'implementation_status',
 ]
+REFERENCE_FIELDS = ['name_origin', 'reference_note', 'reference_sources']
 
 
 def read_array(name: str) -> list[dict]:
@@ -157,8 +158,8 @@ def build() -> dict:
                 item['asset_ref']['region'] = {k: region[k] for k in ['x', 'y', 'width', 'height']}
     items.sort(key=lambda x: (x['atlas_id'], x['cell_index']))
     metadata = {
-        'version': 'wuxia-library-rebuild-v1', 'language': 'zh-Hant',
-        'provenance': 'Newly authored reconstruction; not a recovered mapping of the previous 240 items.',
+        'version': 'wuxia-library-classic-v2', 'language': 'zh-Hant',
+        'provenance': '240 original common items; sect arts use established names with sources, alongside plainly named traditional equipment. Gameplay and acquisition remain this project’s design.',
         'implementation_status': 'design_only', 'total_items': len(items),
         'base_items': 240, 'sect_items': 128,
         'generated_images': sum(x['art_status'] == 'generated' for x in items),
@@ -167,10 +168,12 @@ def build() -> dict:
     document = {'metadata': metadata, 'sects': profiles, 'atlases': atlases, 'items': items}
     (ROOT / 'catalog.json').write_text(json.dumps(document, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     with (ROOT / 'catalog.csv').open('w', encoding='utf-8-sig', newline='') as stream:
-        writer = csv.DictWriter(stream, fieldnames=FIELDS)
+        writer = csv.DictWriter(stream, fieldnames=FIELDS + REFERENCE_FIELDS)
         writer.writeheader()
         for item in items:
             row = {key: item[key] for key in FIELDS}
+            row.update({key: item.get(key, '') for key in REFERENCE_FIELDS})
+            row['reference_sources'] = json.dumps(item.get('reference_sources', []), ensure_ascii=False)
             row['asset_ref'] = json.dumps(row['asset_ref'], ensure_ascii=False) if row['asset_ref'] else ''
             writer.writerow(row)
     template = (ROOT / 'tools' / 'catalog_template.html').read_text(encoding='utf-8')
@@ -179,13 +182,17 @@ def build() -> dict:
         raise ValueError('Template must contain exactly one data placeholder')
     (ROOT / 'index.html').write_text(template.replace('__CATALOG_DATA__', payload), encoding='utf-8')
     sect_names = {x['id']: x['name'] for x in profiles}
-    lines = ['武俠物品圖鑑｜重建版', '240 件通用物品＋128 件門派物品；設定資料，尚未接入遊戲。',
+    lines = ['武俠物品圖鑑｜經典門派版', '240 件通用物品＋128 件門派物品；門派武學採已有原名，玩法及取得方式另行設計。尚未接入遊戲。',
              f'已生成圖像：{metadata["generated_images"]}／368 件。', '']
     for item in items:
         lines.extend([f'{item["id"]}｜{item["name"]}｜{sect_names.get(item["sect_id"], "江湖通用")}｜{item["category_name"]}｜{item["tier"]}',
                       item['description'], f'用途：{item["use"]}', f'限制：{item["limitation"]}',
                       f'取得：{item["acquisition"]}', f'外觀：{item["appearance"]}',
                       '圖像：' + ('已生成' if item['art_status'] == 'generated' else '待製作'), ''])
+        if item.get('reference_note'):
+            lines.extend(['名稱說明：' + item['reference_note']])
+        for source in item.get('reference_sources', []):
+            lines.append('參考：' + source['title'] + ' ' + source['url'])
     (ROOT / 'CATALOG.txt').write_text('\n'.join(lines), encoding='utf-8')
     return metadata
 

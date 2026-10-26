@@ -3736,201 +3736,225 @@
           "cell_index": 0,
           "x": 0,
           "y": 0,
-          "width": 314,
-          "height": 345
+          "width": 303,
+          "height": 322
         },
         {
           "cell_index": 1,
-          "x": 314,
+          "x": 303,
           "y": 0,
-          "width": 313,
-          "height": 345
+          "width": 325,
+          "height": 322
         },
         {
           "cell_index": 2,
-          "x": 627,
+          "x": 628,
           "y": 0,
-          "width": 316,
-          "height": 345
+          "width": 307,
+          "height": 322
         },
         {
           "cell_index": 3,
-          "x": 943,
+          "x": 935,
           "y": 0,
-          "width": 311,
-          "height": 345
+          "width": 319,
+          "height": 322
         },
         {
           "cell_index": 4,
           "x": 0,
-          "y": 345,
-          "width": 336,
-          "height": 294
+          "y": 322,
+          "width": 326,
+          "height": 293
         },
         {
           "cell_index": 5,
-          "x": 336,
-          "y": 345,
-          "width": 294,
-          "height": 294
+          "x": 326,
+          "y": 322,
+          "width": 308,
+          "height": 293
         },
         {
           "cell_index": 6,
-          "x": 630,
-          "y": 345,
-          "width": 321,
-          "height": 294
+          "x": 634,
+          "y": 322,
+          "width": 308,
+          "height": 293
         },
         {
           "cell_index": 7,
-          "x": 951,
-          "y": 345,
-          "width": 303,
-          "height": 294
+          "x": 942,
+          "y": 322,
+          "width": 312,
+          "height": 293
         },
         {
           "cell_index": 8,
           "x": 0,
-          "y": 639,
-          "width": 313,
-          "height": 288
+          "y": 615,
+          "width": 303,
+          "height": 312
         },
         {
           "cell_index": 9,
-          "x": 313,
-          "y": 639,
-          "width": 314,
-          "height": 288
+          "x": 303,
+          "y": 615,
+          "width": 323,
+          "height": 312
         },
         {
           "cell_index": 10,
-          "x": 627,
-          "y": 639,
-          "width": 312,
-          "height": 288
+          "x": 626,
+          "y": 615,
+          "width": 311,
+          "height": 312
         },
         {
           "cell_index": 11,
-          "x": 939,
-          "y": 639,
-          "width": 315,
-          "height": 288
+          "x": 937,
+          "y": 615,
+          "width": 317,
+          "height": 312
         },
         {
           "cell_index": 12,
           "x": 0,
           "y": 927,
-          "width": 312,
+          "width": 310,
           "height": 327
         },
         {
           "cell_index": 13,
-          "x": 312,
+          "x": 310,
           "y": 927,
-          "width": 313,
+          "width": 317,
           "height": 327
         },
         {
           "cell_index": 14,
-          "x": 625,
+          "x": 627,
           "y": 927,
-          "width": 326,
+          "width": 298,
           "height": 327
         },
         {
           "cell_index": 15,
-          "x": 951,
+          "x": 925,
           "y": 927,
-          "width": 303,
+          "width": 329,
           "height": 327
         }
       ],
-      "sha256": "9171f5659ec329f1d3893506749719aa2eab486cd9e1eecd9fb711404e8b0844",
+      "sha256": "040c2c0ef89d8ab54044e944df2c2d9fef306657aaa7558ee4482e6f24b27d2b",
       "width": 1254,
       "height": 1254,
       "gaps": [
         {
           "axis": "rows",
           "boundary": 1,
-          "cut": 345,
-          "gap_start": 310,
-          "gap_end": 380,
-          "method": "alpha_at_most_32"
+          "cut": 322,
+          "gap_start": 320,
+          "gap_end": 324,
+          "method": "alpha_zero"
         },
         {
           "axis": "rows",
           "boundary": 2,
-          "cut": 639,
-          "gap_start": 611,
-          "gap_end": 667,
-          "method": "alpha_at_most_32"
+          "cut": 615,
+          "gap_start": 615,
+          "gap_end": 616,
+          "method": "alpha_zero"
         },
         {
           "axis": "rows",
           "boundary": 3,
           "cut": 927,
-          "gap_start": 900,
-          "gap_end": 955,
+          "gap_start": 908,
+          "gap_end": 947,
           "method": "alpha_at_most_32"
         },
         {
           "axis": "row_0_columns",
           "boundary": 1,
-          "cut": 314,
-          "gap_start": 314,
-          "gap_end": 315,
+          "cut": 303,
+          "gap_start": 291,
+          "gap_end": 316,
           "method": "alpha_zero"
         },
         {
           "axis": "row_0_columns",
           "boundary": 2,
-          "cut": 627,
-          "gap_start": 623,
-          "gap_end": 632,
+          "cut": 628,
+          "gap_start": 613,
+          "gap_end": 644,
           "method": "alpha_zero"
         },
         {
           "axis": "row_0_columns",
           "boundary": 3,
-          "cut": 943,
-          "gap_start": 943,
-          "gap_end": 944,
+          "cut": 935,
+          "gap_start": 929,
+          "gap_end": 941,
           "method": "alpha_zero"
         },
         {
           "axis": "row_1_columns",
           "boundary": 1,
-          "cut": 336,
-          "gap_start": 336,
-          "gap_end": 337,
+          "cut": 326,
+          "gap_start": 324,
+          "gap_end": 328,
           "method": "alpha_zero"
         },
         {
           "axis": "row_1_columns",
           "boundary": 2,
-          "cut": 630,
-          "gap_start": 625,
-          "gap_end": 636,
+          "cut": 634,
+          "gap_start": 631,
+          "gap_end": 638,
           "method": "alpha_zero"
         },
         {
           "axis": "row_1_columns",
           "boundary": 3,
-          "cut": 951,
-          "gap_start": 951,
-          "gap_end": 952,
+          "cut": 942,
+          "gap_start": 937,
+          "gap_end": 947,
           "method": "alpha_zero"
         },
         {
           "axis": "row_2_columns",
           "boundary": 1,
-          "cut": 313,
-          "gap_start": 313,
+          "cut": 303,
+          "gap_start": 295,
+          "gap_end": 312,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 2,
+          "cut": 626,
+          "gap_start": 625,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 3,
+          "cut": 937,
+          "gap_start": 937,
+          "gap_end": 938,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 1,
+          "cut": 310,
+          "gap_start": 306,
           "gap_end": 314,
           "method": "alpha_zero"
         },
         {
-          "axis": "row_2_columns",
+          "axis": "row_3_columns",
           "boundary": 2,
           "cut": 627,
           "gap_start": 627,
@@ -3938,35 +3962,11 @@
           "method": "alpha_zero"
         },
         {
-          "axis": "row_2_columns",
-          "boundary": 3,
-          "cut": 939,
-          "gap_start": 939,
-          "gap_end": 940,
-          "method": "alpha_zero"
-        },
-        {
-          "axis": "row_3_columns",
-          "boundary": 1,
-          "cut": 312,
-          "gap_start": 312,
-          "gap_end": 313,
-          "method": "alpha_zero"
-        },
-        {
-          "axis": "row_3_columns",
-          "boundary": 2,
-          "cut": 625,
-          "gap_start": 625,
-          "gap_end": 626,
-          "method": "alpha_zero"
-        },
-        {
           "axis": "row_3_columns",
           "boundary": 3,
-          "cut": 951,
-          "gap_start": 935,
-          "gap_end": 968,
+          "cut": 925,
+          "gap_start": 912,
+          "gap_end": 939,
           "method": "alpha_zero"
         }
       ],
@@ -3984,116 +3984,116 @@
           "cell_index": 0,
           "x": 0,
           "y": 0,
-          "width": 338,
+          "width": 312,
           "height": 321
         },
         {
           "cell_index": 1,
-          "x": 338,
+          "x": 312,
           "y": 0,
-          "width": 295,
+          "width": 321,
           "height": 321
         },
         {
           "cell_index": 2,
           "x": 633,
           "y": 0,
-          "width": 304,
+          "width": 307,
           "height": 321
         },
         {
           "cell_index": 3,
-          "x": 937,
+          "x": 940,
           "y": 0,
-          "width": 317,
+          "width": 314,
           "height": 321
         },
         {
           "cell_index": 4,
           "x": 0,
           "y": 321,
-          "width": 287,
-          "height": 302
+          "width": 312,
+          "height": 306
         },
         {
           "cell_index": 5,
-          "x": 287,
+          "x": 312,
           "y": 321,
-          "width": 322,
-          "height": 302
+          "width": 313,
+          "height": 306
         },
         {
           "cell_index": 6,
-          "x": 609,
+          "x": 625,
           "y": 321,
-          "width": 333,
-          "height": 302
+          "width": 319,
+          "height": 306
         },
         {
           "cell_index": 7,
-          "x": 942,
+          "x": 944,
           "y": 321,
-          "width": 312,
-          "height": 302
+          "width": 310,
+          "height": 306
         },
         {
           "cell_index": 8,
           "x": 0,
-          "y": 623,
-          "width": 287,
-          "height": 300
+          "y": 627,
+          "width": 299,
+          "height": 287
         },
         {
           "cell_index": 9,
-          "x": 287,
-          "y": 623,
-          "width": 338,
-          "height": 300
+          "x": 299,
+          "y": 627,
+          "width": 328,
+          "height": 287
         },
         {
           "cell_index": 10,
-          "x": 625,
-          "y": 623,
-          "width": 314,
-          "height": 300
+          "x": 627,
+          "y": 627,
+          "width": 327,
+          "height": 287
         },
         {
           "cell_index": 11,
-          "x": 939,
-          "y": 623,
-          "width": 315,
-          "height": 300
+          "x": 954,
+          "y": 627,
+          "width": 300,
+          "height": 287
         },
         {
           "cell_index": 12,
           "x": 0,
-          "y": 923,
-          "width": 317,
-          "height": 331
+          "y": 914,
+          "width": 343,
+          "height": 340
         },
         {
           "cell_index": 13,
-          "x": 317,
-          "y": 923,
-          "width": 310,
-          "height": 331
+          "x": 343,
+          "y": 914,
+          "width": 284,
+          "height": 340
         },
         {
           "cell_index": 14,
           "x": 627,
-          "y": 923,
+          "y": 914,
           "width": 313,
-          "height": 331
+          "height": 340
         },
         {
           "cell_index": 15,
           "x": 940,
-          "y": 923,
+          "y": 914,
           "width": 314,
-          "height": 331
+          "height": 340
         }
       ],
-      "sha256": "80f04c86bc8125c345c03f81cf00c828fcb953b70c20f20fb108c4e68c0a58e9",
+      "sha256": "85590b859a6aa0246b60a576036556511d649c095c707cbffa6d6982e9b6f9f7",
       "width": 1254,
       "height": 1254,
       "gaps": [
@@ -4101,32 +4101,32 @@
           "axis": "rows",
           "boundary": 1,
           "cut": 321,
-          "gap_start": 294,
-          "gap_end": 348,
+          "gap_start": 295,
+          "gap_end": 347,
           "method": "alpha_at_most_32"
         },
         {
           "axis": "rows",
           "boundary": 2,
-          "cut": 623,
-          "gap_start": 595,
-          "gap_end": 652,
-          "method": "alpha_at_most_32"
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
         },
         {
           "axis": "rows",
           "boundary": 3,
-          "cut": 923,
-          "gap_start": 899,
-          "gap_end": 948,
-          "method": "alpha_at_most_32"
+          "cut": 914,
+          "gap_start": 914,
+          "gap_end": 915,
+          "method": "alpha_zero"
         },
         {
           "axis": "row_0_columns",
           "boundary": 1,
-          "cut": 338,
-          "gap_start": 338,
-          "gap_end": 339,
+          "cut": 312,
+          "gap_start": 310,
+          "gap_end": 314,
           "method": "alpha_zero"
         },
         {
@@ -4140,45 +4140,21 @@
         {
           "axis": "row_0_columns",
           "boundary": 3,
-          "cut": 937,
-          "gap_start": 931,
-          "gap_end": 943,
+          "cut": 940,
+          "gap_start": 940,
+          "gap_end": 941,
           "method": "alpha_zero"
         },
         {
           "axis": "row_1_columns",
           "boundary": 1,
-          "cut": 287,
-          "gap_start": 287,
-          "gap_end": 288,
+          "cut": 312,
+          "gap_start": 311,
+          "gap_end": 313,
           "method": "alpha_zero"
         },
         {
           "axis": "row_1_columns",
-          "boundary": 2,
-          "cut": 609,
-          "gap_start": 609,
-          "gap_end": 610,
-          "method": "alpha_zero"
-        },
-        {
-          "axis": "row_1_columns",
-          "boundary": 3,
-          "cut": 942,
-          "gap_start": 941,
-          "gap_end": 943,
-          "method": "alpha_zero"
-        },
-        {
-          "axis": "row_2_columns",
-          "boundary": 1,
-          "cut": 287,
-          "gap_start": 287,
-          "gap_end": 288,
-          "method": "alpha_zero"
-        },
-        {
-          "axis": "row_2_columns",
           "boundary": 2,
           "cut": 625,
           "gap_start": 625,
@@ -4186,20 +4162,44 @@
           "method": "alpha_zero"
         },
         {
+          "axis": "row_1_columns",
+          "boundary": 3,
+          "cut": 944,
+          "gap_start": 941,
+          "gap_end": 947,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 1,
+          "cut": 299,
+          "gap_start": 281,
+          "gap_end": 318,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
           "axis": "row_2_columns",
           "boundary": 3,
-          "cut": 939,
-          "gap_start": 937,
-          "gap_end": 941,
-          "method": "alpha_zero"
+          "cut": 954,
+          "gap_start": 926,
+          "gap_end": 982,
+          "method": "alpha_at_most_32"
         },
         {
           "axis": "row_3_columns",
           "boundary": 1,
-          "cut": 317,
-          "gap_start": 316,
-          "gap_end": 318,
-          "method": "alpha_zero"
+          "cut": 343,
+          "gap_start": 314,
+          "gap_end": 373,
+          "method": "alpha_at_most_32"
         },
         {
           "axis": "row_3_columns",
@@ -4213,7 +4213,7 @@
           "axis": "row_3_columns",
           "boundary": 3,
           "cut": 940,
-          "gap_start": 940,
+          "gap_start": 939,
           "gap_end": 941,
           "method": "alpha_zero"
         }
@@ -4232,116 +4232,116 @@
           "cell_index": 0,
           "x": 0,
           "y": 0,
-          "width": 334,
+          "width": 329,
           "height": 347
         },
         {
           "cell_index": 1,
-          "x": 334,
+          "x": 329,
           "y": 0,
-          "width": 309,
+          "width": 298,
           "height": 347
         },
         {
           "cell_index": 2,
-          "x": 643,
+          "x": 627,
           "y": 0,
-          "width": 275,
+          "width": 294,
           "height": 347
         },
         {
           "cell_index": 3,
-          "x": 918,
+          "x": 921,
           "y": 0,
-          "width": 336,
+          "width": 333,
           "height": 347
         },
         {
           "cell_index": 4,
           "x": 0,
           "y": 347,
-          "width": 333,
-          "height": 301
+          "width": 360,
+          "height": 298
         },
         {
           "cell_index": 5,
-          "x": 333,
+          "x": 360,
           "y": 347,
-          "width": 302,
-          "height": 301
+          "width": 267,
+          "height": 298
         },
         {
           "cell_index": 6,
-          "x": 635,
+          "x": 627,
           "y": 347,
-          "width": 289,
-          "height": 301
+          "width": 297,
+          "height": 298
         },
         {
           "cell_index": 7,
           "x": 924,
           "y": 347,
           "width": 330,
-          "height": 301
+          "height": 298
         },
         {
           "cell_index": 8,
           "x": 0,
-          "y": 648,
-          "width": 329,
-          "height": 279
+          "y": 645,
+          "width": 309,
+          "height": 289
         },
         {
           "cell_index": 9,
-          "x": 329,
-          "y": 648,
-          "width": 308,
-          "height": 279
+          "x": 309,
+          "y": 645,
+          "width": 332,
+          "height": 289
         },
         {
           "cell_index": 10,
-          "x": 637,
-          "y": 648,
-          "width": 282,
-          "height": 279
+          "x": 641,
+          "y": 645,
+          "width": 310,
+          "height": 289
         },
         {
           "cell_index": 11,
-          "x": 919,
-          "y": 648,
-          "width": 335,
-          "height": 279
+          "x": 951,
+          "y": 645,
+          "width": 303,
+          "height": 289
         },
         {
           "cell_index": 12,
           "x": 0,
-          "y": 927,
-          "width": 368,
-          "height": 327
+          "y": 934,
+          "width": 352,
+          "height": 320
         },
         {
           "cell_index": 13,
-          "x": 368,
-          "y": 927,
-          "width": 265,
-          "height": 327
+          "x": 352,
+          "y": 934,
+          "width": 275,
+          "height": 320
         },
         {
           "cell_index": 14,
-          "x": 633,
-          "y": 927,
-          "width": 289,
-          "height": 327
+          "x": 627,
+          "y": 934,
+          "width": 310,
+          "height": 320
         },
         {
           "cell_index": 15,
-          "x": 922,
-          "y": 927,
-          "width": 332,
-          "height": 327
+          "x": 937,
+          "y": 934,
+          "width": 317,
+          "height": 320
         }
       ],
-      "sha256": "47e6f74714235887cdc3f1b2634915dbb4b731e7a79a5ae56331d1e885c5f4a0",
+      "sha256": "db8d1263b40fd48a5588e9bd22680da549c7948d910b9690cd559cf5b3d3d178",
       "width": 1254,
       "height": 1254,
       "gaps": [
@@ -4349,76 +4349,28 @@
           "axis": "rows",
           "boundary": 1,
           "cut": 347,
-          "gap_start": 302,
-          "gap_end": 392,
+          "gap_start": 304,
+          "gap_end": 391,
           "method": "alpha_at_most_32"
         },
         {
           "axis": "rows",
           "boundary": 2,
-          "cut": 648,
-          "gap_start": 606,
-          "gap_end": 691,
-          "method": "alpha_at_most_32"
-        },
-        {
-          "axis": "rows",
-          "boundary": 3,
-          "cut": 927,
-          "gap_start": 899,
-          "gap_end": 956,
-          "method": "alpha_at_most_32"
-        },
-        {
-          "axis": "row_0_columns",
-          "boundary": 1,
-          "cut": 334,
-          "gap_start": 334,
-          "gap_end": 335,
-          "method": "alpha_zero"
-        },
-        {
-          "axis": "row_0_columns",
-          "boundary": 2,
-          "cut": 643,
-          "gap_start": 643,
-          "gap_end": 644,
-          "method": "alpha_zero"
-        },
-        {
-          "axis": "row_0_columns",
-          "boundary": 3,
-          "cut": 918,
-          "gap_start": 918,
-          "gap_end": 919,
-          "method": "alpha_zero"
-        },
-        {
-          "axis": "row_1_columns",
-          "boundary": 1,
-          "cut": 333,
-          "gap_start": 270,
-          "gap_end": 397,
-          "method": "alpha_at_most_32"
-        },
-        {
-          "axis": "row_1_columns",
-          "boundary": 2,
-          "cut": 635,
-          "gap_start": 588,
+          "cut": 645,
+          "gap_start": 609,
           "gap_end": 682,
           "method": "alpha_at_most_32"
         },
         {
-          "axis": "row_1_columns",
+          "axis": "rows",
           "boundary": 3,
-          "cut": 924,
-          "gap_start": 871,
-          "gap_end": 978,
+          "cut": 934,
+          "gap_start": 913,
+          "gap_end": 955,
           "method": "alpha_at_most_32"
         },
         {
-          "axis": "row_2_columns",
+          "axis": "row_0_columns",
           "boundary": 1,
           "cut": 329,
           "gap_start": 328,
@@ -4426,43 +4378,91 @@
           "method": "alpha_zero"
         },
         {
+          "axis": "row_0_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 3,
+          "cut": 921,
+          "gap_start": 918,
+          "gap_end": 925,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 1,
+          "cut": 360,
+          "gap_start": 360,
+          "gap_end": 361,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 3,
+          "cut": 924,
+          "gap_start": 873,
+          "gap_end": 976,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 1,
+          "cut": 309,
+          "gap_start": 308,
+          "gap_end": 310,
+          "method": "alpha_zero"
+        },
+        {
           "axis": "row_2_columns",
           "boundary": 2,
-          "cut": 637,
-          "gap_start": 637,
-          "gap_end": 638,
+          "cut": 641,
+          "gap_start": 641,
+          "gap_end": 642,
           "method": "alpha_zero"
         },
         {
           "axis": "row_2_columns",
           "boundary": 3,
-          "cut": 919,
-          "gap_start": 859,
-          "gap_end": 979,
-          "method": "alpha_at_most_32"
+          "cut": 951,
+          "gap_start": 951,
+          "gap_end": 952,
+          "method": "alpha_zero"
         },
         {
           "axis": "row_3_columns",
           "boundary": 1,
-          "cut": 368,
-          "gap_start": 368,
-          "gap_end": 369,
+          "cut": 352,
+          "gap_start": 352,
+          "gap_end": 353,
           "method": "alpha_zero"
         },
         {
           "axis": "row_3_columns",
           "boundary": 2,
-          "cut": 633,
-          "gap_start": 633,
-          "gap_end": 634,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
           "method": "alpha_zero"
         },
         {
           "axis": "row_3_columns",
           "boundary": 3,
-          "cut": 922,
-          "gap_start": 922,
-          "gap_end": 923,
+          "cut": 937,
+          "gap_start": 937,
+          "gap_end": 938,
           "method": "alpha_zero"
         }
       ],
@@ -4974,116 +4974,116 @@
           "cell_index": 0,
           "x": 0,
           "y": 0,
-          "width": 299,
+          "width": 319,
           "height": 343
         },
         {
           "cell_index": 1,
-          "x": 299,
+          "x": 319,
           "y": 0,
-          "width": 334,
+          "width": 306,
           "height": 343
         },
         {
           "cell_index": 2,
-          "x": 633,
+          "x": 625,
           "y": 0,
-          "width": 312,
+          "width": 319,
           "height": 343
         },
         {
           "cell_index": 3,
-          "x": 945,
+          "x": 944,
           "y": 0,
-          "width": 309,
+          "width": 310,
           "height": 343
         },
         {
           "cell_index": 4,
           "x": 0,
           "y": 343,
-          "width": 334,
+          "width": 336,
           "height": 292
         },
         {
           "cell_index": 5,
-          "x": 334,
+          "x": 336,
           "y": 343,
-          "width": 283,
+          "width": 291,
           "height": 292
         },
         {
           "cell_index": 6,
-          "x": 617,
+          "x": 627,
           "y": 343,
-          "width": 321,
+          "width": 292,
           "height": 292
         },
         {
           "cell_index": 7,
-          "x": 938,
+          "x": 919,
           "y": 343,
-          "width": 316,
+          "width": 335,
           "height": 292
         },
         {
           "cell_index": 8,
           "x": 0,
           "y": 635,
-          "width": 312,
-          "height": 293
+          "width": 322,
+          "height": 285
         },
         {
           "cell_index": 9,
-          "x": 312,
+          "x": 322,
           "y": 635,
-          "width": 315,
-          "height": 293
+          "width": 305,
+          "height": 285
         },
         {
           "cell_index": 10,
           "x": 627,
           "y": 635,
-          "width": 312,
-          "height": 293
+          "width": 316,
+          "height": 285
         },
         {
           "cell_index": 11,
-          "x": 939,
+          "x": 943,
           "y": 635,
-          "width": 315,
-          "height": 293
+          "width": 311,
+          "height": 285
         },
         {
           "cell_index": 12,
           "x": 0,
-          "y": 928,
-          "width": 334,
-          "height": 326
+          "y": 920,
+          "width": 324,
+          "height": 334
         },
         {
           "cell_index": 13,
-          "x": 334,
-          "y": 928,
-          "width": 293,
-          "height": 326
+          "x": 324,
+          "y": 920,
+          "width": 298,
+          "height": 334
         },
         {
           "cell_index": 14,
-          "x": 627,
-          "y": 928,
-          "width": 297,
-          "height": 326
+          "x": 622,
+          "y": 920,
+          "width": 300,
+          "height": 334
         },
         {
           "cell_index": 15,
-          "x": 924,
-          "y": 928,
-          "width": 330,
-          "height": 326
+          "x": 922,
+          "y": 920,
+          "width": 332,
+          "height": 334
         }
       ],
-      "sha256": "f570ef0f39f2c20b47389a912ee71e60d0cdfff6bab304c9555e76087cf4d2bf",
+      "sha256": "879e26c0926c664099ce1f4a4c6bb6d7846b21cd6499b6d1ec78bbd894258460",
       "width": 1254,
       "height": 1254,
       "gaps": [
@@ -5091,80 +5091,80 @@
           "axis": "rows",
           "boundary": 1,
           "cut": 343,
-          "gap_start": 325,
-          "gap_end": 362,
+          "gap_start": 327,
+          "gap_end": 359,
           "method": "alpha_at_most_32"
         },
         {
           "axis": "rows",
           "boundary": 2,
           "cut": 635,
-          "gap_start": 620,
-          "gap_end": 651,
+          "gap_start": 621,
+          "gap_end": 649,
           "method": "alpha_at_most_32"
         },
         {
           "axis": "rows",
           "boundary": 3,
-          "cut": 928,
-          "gap_start": 927,
-          "gap_end": 929,
-          "method": "alpha_zero"
+          "cut": 920,
+          "gap_start": 910,
+          "gap_end": 931,
+          "method": "alpha_at_most_32"
         },
         {
           "axis": "row_0_columns",
           "boundary": 1,
-          "cut": 299,
-          "gap_start": 295,
-          "gap_end": 304,
-          "method": "alpha_zero"
+          "cut": 319,
+          "gap_start": 292,
+          "gap_end": 346,
+          "method": "alpha_at_most_32"
         },
         {
           "axis": "row_0_columns",
           "boundary": 2,
-          "cut": 633,
-          "gap_start": 633,
+          "cut": 625,
+          "gap_start": 617,
           "gap_end": 634,
           "method": "alpha_zero"
         },
         {
           "axis": "row_0_columns",
           "boundary": 3,
-          "cut": 945,
-          "gap_start": 941,
-          "gap_end": 949,
+          "cut": 944,
+          "gap_start": 943,
+          "gap_end": 945,
           "method": "alpha_zero"
         },
         {
           "axis": "row_1_columns",
           "boundary": 1,
-          "cut": 334,
-          "gap_start": 334,
-          "gap_end": 335,
+          "cut": 336,
+          "gap_start": 336,
+          "gap_end": 337,
           "method": "alpha_zero"
         },
         {
           "axis": "row_1_columns",
           "boundary": 2,
-          "cut": 617,
-          "gap_start": 617,
-          "gap_end": 618,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
           "method": "alpha_zero"
         },
         {
           "axis": "row_1_columns",
           "boundary": 3,
-          "cut": 938,
-          "gap_start": 938,
-          "gap_end": 939,
+          "cut": 919,
+          "gap_start": 906,
+          "gap_end": 933,
           "method": "alpha_zero"
         },
         {
           "axis": "row_2_columns",
           "boundary": 1,
-          "cut": 312,
-          "gap_start": 312,
-          "gap_end": 313,
+          "cut": 322,
+          "gap_start": 322,
+          "gap_end": 323,
           "method": "alpha_zero"
         },
         {
@@ -5178,33 +5178,33 @@
         {
           "axis": "row_2_columns",
           "boundary": 3,
-          "cut": 939,
-          "gap_start": 929,
-          "gap_end": 949,
+          "cut": 943,
+          "gap_start": 925,
+          "gap_end": 962,
           "method": "alpha_zero"
         },
         {
           "axis": "row_3_columns",
           "boundary": 1,
-          "cut": 334,
-          "gap_start": 334,
-          "gap_end": 335,
+          "cut": 324,
+          "gap_start": 324,
+          "gap_end": 325,
           "method": "alpha_zero"
         },
         {
           "axis": "row_3_columns",
           "boundary": 2,
-          "cut": 627,
-          "gap_start": 615,
-          "gap_end": 640,
+          "cut": 622,
+          "gap_start": 613,
+          "gap_end": 632,
           "method": "alpha_zero"
         },
         {
           "axis": "row_3_columns",
           "boundary": 3,
-          "cut": 924,
-          "gap_start": 918,
-          "gap_end": 931,
+          "cut": 922,
+          "gap_start": 922,
+          "gap_end": 923,
           "method": "alpha_zero"
         }
       ],
@@ -5222,237 +5222,237 @@
           "cell_index": 0,
           "x": 0,
           "y": 0,
-          "width": 316,
-          "height": 336
+          "width": 311,
+          "height": 327
         },
         {
           "cell_index": 1,
-          "x": 316,
+          "x": 311,
           "y": 0,
-          "width": 309,
-          "height": 336
+          "width": 311,
+          "height": 327
         },
         {
           "cell_index": 2,
-          "x": 625,
+          "x": 622,
           "y": 0,
           "width": 338,
-          "height": 336
+          "height": 327
         },
         {
           "cell_index": 3,
-          "x": 963,
+          "x": 960,
           "y": 0,
-          "width": 291,
-          "height": 336
+          "width": 294,
+          "height": 327
         },
         {
           "cell_index": 4,
           "x": 0,
-          "y": 336,
-          "width": 317,
-          "height": 292
+          "y": 327,
+          "width": 322,
+          "height": 300
         },
         {
           "cell_index": 5,
-          "x": 317,
-          "y": 336,
-          "width": 316,
-          "height": 292
+          "x": 322,
+          "y": 327,
+          "width": 294,
+          "height": 300
         },
         {
           "cell_index": 6,
-          "x": 633,
-          "y": 336,
-          "width": 304,
-          "height": 292
+          "x": 616,
+          "y": 327,
+          "width": 324,
+          "height": 300
         },
         {
           "cell_index": 7,
-          "x": 937,
-          "y": 336,
-          "width": 317,
-          "height": 292
+          "x": 940,
+          "y": 327,
+          "width": 314,
+          "height": 300
         },
         {
           "cell_index": 8,
           "x": 0,
-          "y": 628,
-          "width": 338,
-          "height": 306
+          "y": 627,
+          "width": 329,
+          "height": 307
         },
         {
           "cell_index": 9,
-          "x": 338,
-          "y": 628,
-          "width": 292,
-          "height": 306
+          "x": 329,
+          "y": 627,
+          "width": 302,
+          "height": 307
         },
         {
           "cell_index": 10,
-          "x": 630,
-          "y": 628,
-          "width": 310,
-          "height": 306
+          "x": 631,
+          "y": 627,
+          "width": 303,
+          "height": 307
         },
         {
           "cell_index": 11,
-          "x": 940,
-          "y": 628,
-          "width": 314,
-          "height": 306
+          "x": 934,
+          "y": 627,
+          "width": 320,
+          "height": 307
         },
         {
           "cell_index": 12,
           "x": 0,
           "y": 934,
-          "width": 344,
+          "width": 356,
           "height": 320
         },
         {
           "cell_index": 13,
-          "x": 344,
+          "x": 356,
           "y": 934,
-          "width": 283,
+          "width": 265,
           "height": 320
         },
         {
           "cell_index": 14,
-          "x": 627,
+          "x": 621,
           "y": 934,
-          "width": 307,
+          "width": 325,
           "height": 320
         },
         {
           "cell_index": 15,
-          "x": 934,
+          "x": 946,
           "y": 934,
-          "width": 320,
+          "width": 308,
           "height": 320
         }
       ],
-      "sha256": "18855e9f08db174193237853b8db393904a472e3376c7306a470ae5058a38479",
+      "sha256": "3d7ec4411825544f144c3054d737932f260bc95f2d6003a016e541af487e4b29",
       "width": 1254,
       "height": 1254,
       "gaps": [
         {
           "axis": "rows",
           "boundary": 1,
-          "cut": 336,
-          "gap_start": 313,
-          "gap_end": 359,
-          "method": "alpha_at_most_32"
+          "cut": 327,
+          "gap_start": 326,
+          "gap_end": 328,
+          "method": "alpha_zero"
         },
         {
           "axis": "rows",
           "boundary": 2,
-          "cut": 628,
+          "cut": 627,
           "gap_start": 616,
-          "gap_end": 640,
+          "gap_end": 639,
           "method": "alpha_at_most_32"
         },
         {
           "axis": "rows",
           "boundary": 3,
           "cut": 934,
-          "gap_start": 933,
-          "gap_end": 935,
+          "gap_start": 931,
+          "gap_end": 937,
           "method": "alpha_zero"
         },
         {
           "axis": "row_0_columns",
           "boundary": 1,
-          "cut": 316,
-          "gap_start": 315,
-          "gap_end": 317,
+          "cut": 311,
+          "gap_start": 308,
+          "gap_end": 314,
           "method": "alpha_zero"
         },
         {
           "axis": "row_0_columns",
           "boundary": 2,
-          "cut": 625,
-          "gap_start": 625,
-          "gap_end": 626,
+          "cut": 622,
+          "gap_start": 607,
+          "gap_end": 638,
           "method": "alpha_zero"
         },
         {
           "axis": "row_0_columns",
           "boundary": 3,
-          "cut": 963,
-          "gap_start": 963,
-          "gap_end": 964,
+          "cut": 960,
+          "gap_start": 959,
+          "gap_end": 962,
           "method": "alpha_zero"
         },
         {
           "axis": "row_1_columns",
           "boundary": 1,
-          "cut": 317,
+          "cut": 322,
           "gap_start": 305,
-          "gap_end": 330,
-          "method": "alpha_zero"
-        },
-        {
-          "axis": "row_1_columns",
-          "boundary": 2,
-          "cut": 633,
-          "gap_start": 633,
-          "gap_end": 634,
-          "method": "alpha_zero"
-        },
-        {
-          "axis": "row_1_columns",
-          "boundary": 3,
-          "cut": 937,
-          "gap_start": 936,
-          "gap_end": 939,
-          "method": "alpha_zero"
-        },
-        {
-          "axis": "row_2_columns",
-          "boundary": 1,
-          "cut": 338,
-          "gap_start": 338,
           "gap_end": 339,
           "method": "alpha_zero"
         },
         {
+          "axis": "row_1_columns",
+          "boundary": 2,
+          "cut": 616,
+          "gap_start": 613,
+          "gap_end": 620,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 3,
+          "cut": 940,
+          "gap_start": 938,
+          "gap_end": 943,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 1,
+          "cut": 329,
+          "gap_start": 322,
+          "gap_end": 337,
+          "method": "alpha_zero"
+        },
+        {
           "axis": "row_2_columns",
           "boundary": 2,
-          "cut": 630,
-          "gap_start": 601,
-          "gap_end": 659,
+          "cut": 631,
+          "gap_start": 605,
+          "gap_end": 657,
           "method": "alpha_at_most_32"
         },
         {
           "axis": "row_2_columns",
           "boundary": 3,
-          "cut": 940,
-          "gap_start": 937,
-          "gap_end": 943,
+          "cut": 934,
+          "gap_start": 931,
+          "gap_end": 937,
           "method": "alpha_zero"
         },
         {
           "axis": "row_3_columns",
           "boundary": 1,
-          "cut": 344,
-          "gap_start": 344,
-          "gap_end": 345,
+          "cut": 356,
+          "gap_start": 346,
+          "gap_end": 366,
           "method": "alpha_zero"
         },
         {
           "axis": "row_3_columns",
           "boundary": 2,
-          "cut": 627,
-          "gap_start": 627,
-          "gap_end": 628,
+          "cut": 621,
+          "gap_start": 603,
+          "gap_end": 640,
           "method": "alpha_zero"
         },
         {
           "axis": "row_3_columns",
           "boundary": 3,
-          "cut": 934,
-          "gap_start": 934,
-          "gap_end": 935,
+          "cut": 946,
+          "gap_start": 935,
+          "gap_end": 958,
           "method": "alpha_zero"
         }
       ],
@@ -5470,241 +5470,243 @@
           "cell_index": 0,
           "x": 0,
           "y": 0,
-          "width": 310,
-          "height": 307
-        },
-        {
-          "cell_index": 1,
-          "x": 310,
-          "y": 0,
-          "width": 315,
-          "height": 307
-        },
-        {
-          "cell_index": 2,
-          "x": 625,
-          "y": 0,
-          "width": 311,
-          "height": 307
-        },
-        {
-          "cell_index": 3,
-          "x": 936,
-          "y": 0,
-          "width": 318,
-          "height": 307
-        },
-        {
-          "cell_index": 4,
-          "x": 0,
-          "y": 307,
           "width": 312,
           "height": 320
         },
         {
-          "cell_index": 5,
+          "cell_index": 1,
           "x": 312,
-          "y": 307,
-          "width": 315,
-          "height": 320
-        },
-        {
-          "cell_index": 6,
-          "x": 627,
-          "y": 307,
-          "width": 309,
-          "height": 320
-        },
-        {
-          "cell_index": 7,
-          "x": 936,
-          "y": 307,
+          "y": 0,
           "width": 318,
           "height": 320
         },
         {
+          "cell_index": 2,
+          "x": 630,
+          "y": 0,
+          "width": 308,
+          "height": 320
+        },
+        {
+          "cell_index": 3,
+          "x": 938,
+          "y": 0,
+          "width": 316,
+          "height": 320
+        },
+        {
+          "cell_index": 4,
+          "x": 0,
+          "y": 320,
+          "width": 310,
+          "height": 305
+        },
+        {
+          "cell_index": 5,
+          "x": 310,
+          "y": 320,
+          "width": 327,
+          "height": 305
+        },
+        {
+          "cell_index": 6,
+          "x": 637,
+          "y": 320,
+          "width": 306,
+          "height": 305
+        },
+        {
+          "cell_index": 7,
+          "x": 943,
+          "y": 320,
+          "width": 311,
+          "height": 305
+        },
+        {
           "cell_index": 8,
           "x": 0,
-          "y": 627,
-          "width": 313,
-          "height": 301
+          "y": 625,
+          "width": 315,
+          "height": 313
         },
         {
           "cell_index": 9,
-          "x": 313,
-          "y": 627,
-          "width": 315,
-          "height": 301
+          "x": 315,
+          "y": 625,
+          "width": 310,
+          "height": 313
         },
         {
           "cell_index": 10,
-          "x": 628,
-          "y": 627,
-          "width": 319,
-          "height": 301
+          "x": 625,
+          "y": 625,
+          "width": 320,
+          "height": 313
         },
         {
           "cell_index": 11,
-          "x": 947,
-          "y": 627,
-          "width": 307,
-          "height": 301
+          "x": 945,
+          "y": 625,
+          "width": 309,
+          "height": 313
         },
         {
           "cell_index": 12,
           "x": 0,
-          "y": 928,
-          "width": 310,
-          "height": 326
+          "y": 938,
+          "width": 316,
+          "height": 316
         },
         {
           "cell_index": 13,
-          "x": 310,
-          "y": 928,
-          "width": 309,
-          "height": 326
+          "x": 316,
+          "y": 938,
+          "width": 303,
+          "height": 316
         },
         {
           "cell_index": 14,
           "x": 619,
-          "y": 928,
-          "width": 322,
-          "height": 326
+          "y": 938,
+          "width": 309,
+          "height": 316
         },
         {
           "cell_index": 15,
-          "x": 941,
-          "y": 928,
-          "width": 313,
-          "height": 326
+          "x": 928,
+          "y": 938,
+          "width": 326,
+          "height": 316
         }
       ],
-      "sha256": "c5dab715e04cd0e227908138d0e48b71aa940dc7f34a4a374104f37f64d8c28a",
+      "sha256": "51258aa9b07554e617da88e9e20e91f980b8f33ee0a3ddf0e2bca8da5532d2ee",
       "width": 1254,
       "height": 1254,
       "gaps": [
         {
           "axis": "rows",
           "boundary": 1,
-          "cut": 307,
-          "gap_start": 306,
-          "gap_end": 308,
-          "method": "alpha_zero"
+          "cut": 320,
+          "gap_start": 302,
+          "gap_end": 338,
+          "method": "alpha_at_most_32"
         },
         {
           "axis": "rows",
-          "boundary": 2,
-          "cut": 627,
-          "gap_start": 627,
-          "gap_end": 628,
-          "method": "alpha_zero"
-        },
-        {
-          "axis": "rows",
-          "boundary": 3,
-          "cut": 928,
-          "gap_start": 925,
-          "gap_end": 931,
-          "method": "alpha_zero"
-        },
-        {
-          "axis": "row_0_columns",
-          "boundary": 1,
-          "cut": 310,
-          "gap_start": 306,
-          "gap_end": 314,
-          "method": "alpha_zero"
-        },
-        {
-          "axis": "row_0_columns",
           "boundary": 2,
           "cut": 625,
-          "gap_start": 617,
-          "gap_end": 634,
+          "gap_start": 625,
+          "gap_end": 626,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "rows",
+          "boundary": 3,
+          "cut": 938,
+          "gap_start": 938,
+          "gap_end": 939,
           "method": "alpha_zero"
         },
         {
           "axis": "row_0_columns",
-          "boundary": 3,
-          "cut": 936,
-          "gap_start": 933,
-          "gap_end": 940,
-          "method": "alpha_zero"
-        },
-        {
-          "axis": "row_1_columns",
           "boundary": 1,
           "cut": 312,
-          "gap_start": 312,
-          "gap_end": 313,
-          "method": "alpha_zero"
-        },
-        {
-          "axis": "row_1_columns",
-          "boundary": 2,
-          "cut": 627,
-          "gap_start": 627,
-          "gap_end": 628,
-          "method": "alpha_zero"
-        },
-        {
-          "axis": "row_1_columns",
-          "boundary": 3,
-          "cut": 936,
-          "gap_start": 935,
-          "gap_end": 937,
-          "method": "alpha_zero"
-        },
-        {
-          "axis": "row_2_columns",
-          "boundary": 1,
-          "cut": 313,
-          "gap_start": 304,
+          "gap_start": 302,
           "gap_end": 322,
           "method": "alpha_zero"
         },
         {
+          "axis": "row_0_columns",
+          "boundary": 2,
+          "cut": 630,
+          "gap_start": 629,
+          "gap_end": 632,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 3,
+          "cut": 938,
+          "gap_start": 938,
+          "gap_end": 939,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 1,
+          "cut": 310,
+          "gap_start": 298,
+          "gap_end": 322,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 2,
+          "cut": 637,
+          "gap_start": 616,
+          "gap_end": 658,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 3,
+          "cut": 943,
+          "gap_start": 935,
+          "gap_end": 951,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 1,
+          "cut": 315,
+          "gap_start": 314,
+          "gap_end": 316,
+          "method": "alpha_zero"
+        },
+        {
           "axis": "row_2_columns",
           "boundary": 2,
-          "cut": 628,
-          "gap_start": 627,
-          "gap_end": 630,
+          "cut": 625,
+          "gap_start": 625,
+          "gap_end": 626,
           "method": "alpha_zero"
         },
         {
           "axis": "row_2_columns",
           "boundary": 3,
-          "cut": 947,
-          "gap_start": 937,
-          "gap_end": 957,
+          "cut": 945,
+          "gap_start": 945,
+          "gap_end": 946,
           "method": "alpha_zero"
         },
         {
           "axis": "row_3_columns",
           "boundary": 1,
-          "cut": 310,
+          "cut": 316,
           "gap_start": 306,
-          "gap_end": 314,
+          "gap_end": 326,
           "method": "alpha_zero"
         },
         {
           "axis": "row_3_columns",
           "boundary": 2,
           "cut": 619,
-          "gap_start": 619,
-          "gap_end": 620,
+          "gap_start": 582,
+          "gap_end": 656,
           "method": "alpha_zero"
         },
         {
           "axis": "row_3_columns",
           "boundary": 3,
-          "cut": 941,
-          "gap_start": 933,
+          "cut": 928,
+          "gap_start": 908,
           "gap_end": 949,
           "method": "alpha_zero"
         }
       ],
-      "warnings": [],
+      "warnings": [
+        "Some boundaries contain faint alpha at most 32; no stronger foreground is cut."
+      ],
       "foreground_outer_edge_pixels": 0
     }
   }

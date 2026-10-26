@@ -26,10 +26,24 @@ def validate():
         for field in ['name','description','use','limitation','acquisition','appearance','art_prompt']:
             assert isinstance(item[field], str) and item[field].strip(), (item['id'], field)
         assert item['implementation_status'] == 'design_only'
+        if item['collection'] == 'sect':
+            assert item.get('name_origin') in {'existing_martial_arts', 'existing_named_item', 'generic_traditional_item'}, item['id']
+            assert item.get('reference_note'), item['id']
+            assert not item.get('needs_art_revision'), item['id']
+            if item['name_origin'].startswith('existing_'):
+                assert item.get('reference_sources'), (item['id'], 'missing name source')
+            for source in item.get('reference_sources', []):
+                assert source.get('title') and source.get('url', '').startswith('https://'), item['id']
         if item['asset_ref']:
             ref = item['asset_ref']
             path = ref if isinstance(ref, str) else ref.get('image_path', ref.get('path'))
             assert path and (ROOT / path).is_file(), (item['id'], ref)
+    mapping = json.loads((ROOT / 'canonical-name-mapping.json').read_text())['items']
+    current = {x['id']: x for x in items if x['collection'] == 'sect'}
+    assert len(mapping) == 128 and {x['id'] for x in mapping} == set(current)
+    for entry in mapping:
+        assert entry['new_name'] == current[entry['id']]['name'], entry['id']
+        assert entry['reference_sources'] == current[entry['id']]['reference_sources'], entry['id']
     return items
 
 

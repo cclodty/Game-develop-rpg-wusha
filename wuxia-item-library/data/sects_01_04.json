@@ -1,16 +1,16 @@
 [
   {
     "id": "SL001",
-    "name": "立樁護身拳譜",
+    "name": "羅漢拳",
     "collection": "sect",
     "category_id": "external_manual",
     "category_name": "外功秘籍",
     "sect_id": "shaolin",
     "tier": "入門",
-    "description": "將站樁與收拳合寫的習武小冊，頁角留有弟子按掌的磨痕。",
-    "use": "提供由基礎防守轉入短拳的外功學習方向。",
-    "limitation": "架勢未穩時難以取得反擊優勢，不能同時兼顧遠處目標。",
-    "acquisition": "完成寺外護送委託後，由知客引薦至練武僧處換取。",
+    "description": "少林入門拳法的抄本，收錄架勢、直拳與收勢的練習圖解。",
+    "use": "本作規劃：學習少林基礎拳法，建立近身攻守與站樁能力。",
+    "limitation": "本作規劃：屬基礎拳法；掌握拳譜不會直接獲得高階掌法。",
+    "acquisition": "本作規劃：入門考核後向授業僧領取。",
     "appearance": "赭黃薄冊以粗褐線穿訂，封面壓一道方正拳印，邊角包深色布。",
     "art_prompt": "Thin ochre stitched boxing booklet, thick brown binding cord, square embossed fist symbol, dark cloth corner guards.",
     "atlas_id": "S01",
@@ -27,24 +27,34 @@
       "region": {
         "x": 0,
         "y": 0,
-        "width": 314,
-        "height": 345
+        "width": 303,
+        "height": 322
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "17173《金庸群俠傳 Online》：網金武功全接觸",
+        "url": "https://jinyong.17173.com/content/2002-1-9/n312_229042.html"
+      }
+    ],
+    "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+    "needs_art_revision": false,
+    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
   },
   {
     "id": "SL002",
-    "name": "橫門棍訣",
+    "name": "韋陀棍法",
     "collection": "sect",
     "category_id": "external_manual",
     "category_name": "外功秘籍",
     "sect_id": "shaolin",
     "tier": "進階",
-    "description": "記錄窄門守勢與棍身橫攔的橫卷，旁註特別提醒不可只追棍端。",
-    "use": "教授攔截逼近與掩護撤離的長兵技法。",
-    "limitation": "橫攔後需要重新收棍，對迅速繞側的對手較難連續應付。",
-    "acquisition": "協助修整山門並通過棍陣演練後取得。",
+    "description": "少林棍法秘籍，以長棍招架、掃擊與進退接續為修習主題。",
+    "use": "本作規劃：解鎖長棍外功的學習路線，兼顧距離控制與防守。",
+    "limitation": "本作規劃：須持長棍；狹窄地形會限制橫掃與大幅轉棍。",
+    "acquisition": "本作規劃：完成棍術基礎及門派護送試煉後換取。",
     "appearance": "短粗木軸的橫向卷軸，黃麻背襯，卷端露出三條平行棍路。",
     "art_prompt": "Horizontal martial scroll on thick wooden rollers, yellow hemp backing, three parallel staff path marks.",
     "atlas_id": "S01",
@@ -59,26 +69,36 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 314,
+        "x": 303,
         "y": 0,
-        "width": 313,
-        "height": 345
+        "width": 325,
+        "height": 322
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "17173《金庸群俠傳 Online》：網金武功全接觸",
+        "url": "https://jinyong.17173.com/content/2002-1-9/n312_229042.html"
+      }
+    ],
+    "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+    "needs_art_revision": false,
+    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
   },
   {
     "id": "SL003",
-    "name": "回鐘震掌圖",
+    "name": "大力金剛掌",
     "collection": "sect",
     "category_id": "external_manual",
     "category_name": "外功秘籍",
     "sect_id": "shaolin",
     "tier": "真傳",
-    "description": "銅鐘拓紋與掌勢圖相互對照，記述承力後向近身對手回掌的時機。",
-    "use": "解鎖以成功防護為前置的集中反擊掌法設計。",
-    "limitation": "若未真正接住攻勢，掌法只能發揮基本用途，不能憑空取得回震。",
-    "acquisition": "在護院試演中守住受託之人，再向掌法教習請益。",
+    "description": "少林掌法秘籍，著重掌勁凝聚與沉穩發力。",
+    "use": "本作規劃：開啟強力掌擊的修習路線，以較高消耗換取破防能力。",
+    "limitation": "本作規劃：須有內功與根骨基礎；連續強攻會增加內力負擔。",
+    "acquisition": "本作規劃：達到真傳要求後，向掌法師父請授。",
     "appearance": "褐色摺頁上壓有圓形鐘紋拓印，中央疊一張掌形薄紙，繫舊銅扣。",
     "art_prompt": "Brown accordion folio with circular bell rubbing, layered palm-shaped paper diagram, aged brass clasp.",
     "atlas_id": "S01",
@@ -93,26 +113,36 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 627,
+        "x": 628,
         "y": 0,
-        "width": 316,
-        "height": 345
+        "width": 307,
+        "height": 322
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "《天龍八部榮耀版》官方：大力金剛掌",
+        "url": "https://tlsy.cy.com/content/10192020/135606562.shtml"
+      }
+    ],
+    "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+    "needs_art_revision": false,
+    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
   },
   {
     "id": "SL004",
-    "name": "雙關護行棍式",
+    "name": "金剛般若掌",
     "collection": "sect",
     "category_id": "external_manual",
     "category_name": "外功秘籍",
     "sect_id": "shaolin",
-    "tier": "進階",
-    "description": "一本兩端均可翻讀的對練譜，分別示範護前與斷後的棍路。",
-    "use": "提供同一長兵在護持與主動壓迫間切換的招式選擇。",
-    "limitation": "需要預先決定護持方向；反覆變向會失去原先的節奏。",
-    "acquisition": "完成兩段行旅護送並交回沿途記錄後獲贈。",
+    "tier": "真傳",
+    "description": "少林高階掌法抄本，記錄掌勢、運勁與收發練習。",
+    "use": "本作規劃：提供拳掌進階方向，逐步強化近身連招與勁力控制。",
+    "limitation": "本作規劃：須先完成基礎拳掌修習；招式未熟時不能穩定接續。",
+    "acquisition": "本作規劃：通過拳掌考校並取得授業許可後研讀。",
     "appearance": "長條雙開摺冊，兩端各有木片護封，中間橫束赭色布帶。",
     "art_prompt": "Long double-ended folding staff manual with wooden end covers and one ochre cloth band across its center.",
     "atlas_id": "S01",
@@ -127,26 +157,36 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 943,
+        "x": 935,
         "y": 0,
-        "width": 311,
-        "height": 345
+        "width": 319,
+        "height": 322
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "17173《金庸群俠傳 Online》：網金武功全接觸",
+        "url": "https://jinyong.17173.com/content/2002-1-9/n312_229042.html"
+      }
+    ],
+    "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+    "needs_art_revision": false,
+    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
   },
   {
     "id": "SL005",
-    "name": "息土調元篇",
+    "name": "混元一氣功",
     "collection": "sect",
     "category_id": "inner_manual",
     "category_name": "內功心法",
     "sect_id": "shaolin",
     "tier": "入門",
-    "description": "以短句與吐納圈點記下練功後的調息法，封底附休息禁忌。",
-    "use": "提供較易上手的守勢調息內功方向。",
-    "limitation": "需要放慢進攻節奏，不能在連續搶攻時同時取得全部收益。",
-    "acquisition": "參與寺中日課並完成基本吐納講習後領取。",
+    "description": "少林俗家內功的修習冊，以調息、養勁和傷後恢復為主題。",
+    "use": "本作規劃：提供少林內功入門路線，支援持續作戰與休整恢復。",
+    "limitation": "本作規劃：恢復需要調息時間，不能代替重傷處置。",
+    "acquisition": "本作規劃：完成俗家弟子入門課業後領取。",
     "appearance": "掌心大小的米褐色軟封冊，封面為層疊土紋圓印，細繩垂於書脊。",
     "art_prompt": "Palm-sized beige softcover breathing booklet, layered earth-ring seal on cover, thin dangling spine cord.",
     "atlas_id": "S01",
@@ -162,25 +202,35 @@
       "image_height": 1254,
       "region": {
         "x": 0,
-        "y": 345,
-        "width": 336,
-        "height": 294
+        "y": 322,
+        "width": 326,
+        "height": 293
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "17173《劍俠情緣2》：少林武功",
+        "url": "https://jx2.17173.com/wugong/01.html"
+      }
+    ],
+    "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+    "needs_art_revision": false,
+    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
   },
   {
     "id": "SL006",
-    "name": "沉岳養勁錄",
+    "name": "易筋經",
     "collection": "sect",
     "category_id": "inner_manual",
     "category_name": "內功心法",
     "sect_id": "shaolin",
-    "tier": "進階",
-    "description": "一卷帶有負重註記的內功抄本，強調氣息、下盤與受力的配合。",
-    "use": "設計為強化正面承壓及蓄勁後出手的內功。",
-    "limitation": "移動與變招的靈活性是主要取捨，不提供持續無代價的防護。",
-    "acquisition": "協助整理舊練功器械，再以自身修習心得換閱。",
+    "tier": "真傳",
+    "description": "少林內功經卷，以筋骨鍛鍊與內息運行作為養成主題。",
+    "use": "本作規劃：開啟高階內功修習，逐步改善根骨與內力運用。",
+    "limitation": "本作規劃：需要長期修煉及前置修為，讀經本身不會立即提升全部能力。",
+    "acquisition": "本作規劃：完成高階修習考核並取得藏經閣研讀資格。",
     "appearance": "厚實褐皮夾冊內夾赭紙，外有扁平石鎮與磨圓的麻繩扣。",
     "art_prompt": "Thick brown leather-clasp manual with ochre pages, a flat stone paperweight and a worn hemp loop.",
     "atlas_id": "S01",
@@ -195,26 +245,36 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 336,
-        "y": 345,
-        "width": 294,
-        "height": 294
+        "x": 326,
+        "y": 322,
+        "width": 308,
+        "height": 293
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "17173《劍俠情緣2》：少林武功",
+        "url": "https://jx2.17173.com/wugong/01.html"
+      }
+    ],
+    "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+    "needs_art_revision": false,
+    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
   },
   {
     "id": "SL007",
-    "name": "靜鐘守意經",
+    "name": "洗髓經",
     "collection": "sect",
     "category_id": "inner_manual",
     "category_name": "內功心法",
     "sect_id": "shaolin",
     "tier": "真傳",
-    "description": "經頁以鐘聲間隔標記凝神次序，將忍耐與收放寫成同一門功課。",
-    "use": "設計為受壓後積蓄反擊機會的主修內功。",
-    "limitation": "必須選擇承受壓力的時機；對手不進攻時蓄勢效率較低。",
-    "acquisition": "完成不求速勝的守關考驗，經師長認可後授抄本。",
+    "description": "少林高階內功經卷，以精煉內息與穩固修為為修習主題。",
+    "use": "本作規劃：提供精修內功的養成分支，改善內力運轉與調息效率。",
+    "limitation": "本作規劃：須滿足高階內功條件；與其他主修內功的搭配另作平衡。",
+    "acquisition": "本作規劃：取得真傳資格後分階段研讀。",
     "appearance": "深赭布函包著窄幅經冊，函扣是一枚不起眼的小銅鐘片。",
     "art_prompt": "Dark ochre cloth book case holding a narrow sutra, tiny flat bronze bell clasp, restrained monastery craft.",
     "atlas_id": "S01",
@@ -229,26 +289,36 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 630,
-        "y": 345,
-        "width": 321,
-        "height": 294
+        "x": 634,
+        "y": 322,
+        "width": 308,
+        "height": 293
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "17173《劍俠情緣2》：少林武功",
+        "url": "https://jx2.17173.com/wugong/01.html"
+      }
+    ],
+    "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+    "needs_art_revision": false,
+    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
   },
   {
     "id": "SL008",
-    "name": "石階穩步圖",
+    "name": "一葦渡江術",
     "collection": "sect",
     "category_id": "footwork_manual",
     "category_name": "輕功身法",
     "sect_id": "shaolin",
-    "tier": "入門",
-    "description": "逐級石階旁畫有足印，教人把重心落在能隨時停步的位置。",
-    "use": "提供前進途中保留防守能力的基礎身法。",
-    "limitation": "步幅較短，不能代替長距追擊或迅速脫離包圍。",
-    "acquisition": "替寺中運送修繕材料後，由值勤僧傳授。",
+    "tier": "進階",
+    "description": "少林輕功秘籍，以輕身、換氣及越障為修習主題。",
+    "use": "本作規劃：解鎖短距離越障和渡水路線的練習。",
+    "limitation": "本作規劃：水面通行需符合場景與修為條件，並非無限制踏水。",
+    "acquisition": "本作規劃：完成身法考核後向輕功師父換取。",
     "appearance": "灰褐拓紙摺成三頁，石階壓紋上有赭色足印，封以麻紙角套。",
     "art_prompt": "Three-panel grey-brown stair rubbing with ochre footprints and plain kraft paper corner sleeve.",
     "atlas_id": "S01",
@@ -263,26 +333,36 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 951,
-        "y": 345,
-        "width": 303,
-        "height": 294
+        "x": 942,
+        "y": 322,
+        "width": 312,
+        "height": 293
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "《煙雨江湖》BWIKI：一葦渡江術",
+        "url": "https://wiki.biligame.com/yanyu/武学/一苇渡江术"
+      }
+    ],
+    "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+    "needs_art_revision": false,
+    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
   },
   {
     "id": "SL009",
-    "name": "轉柱回身訣",
+    "name": "九圖六坐像",
     "collection": "sect",
     "category_id": "footwork_manual",
     "category_name": "輕功身法",
     "sect_id": "shaolin",
-    "tier": "進階",
-    "description": "卷內以柱身作參照畫出回身路線，說明如何避開棍尾而再立正面。",
-    "use": "提供受到側向壓力時重新整理守勢的身法。",
-    "limitation": "需要可供轉身的空間，不能穿越敵人或無視地形。",
-    "acquisition": "通過木柱間的收棍轉身練習後換取。",
+    "tier": "真傳",
+    "description": "少林高階身法圖譜，結合靜坐修習與輕身練習。",
+    "use": "本作規劃：開啟少林身法精修，提升越障與持續移動能力。",
+    "limitation": "本作規劃：須有少林輕功及內功基礎，不能只靠讀取圖譜跳過修煉。",
+    "acquisition": "本作規劃：完成高階身法試煉後分圖傳授。",
     "appearance": "圓筒形細木匣收著窄卷，匣外刻一圈回轉箭紋並繫短黃繩。",
     "art_prompt": "Slim cylindrical wooden scroll case, carved turning-arrow band, short yellow cord, narrow rolled paper visible.",
     "atlas_id": "S01",
@@ -298,25 +378,35 @@
       "image_height": 1254,
       "region": {
         "x": 0,
-        "y": 639,
-        "width": 313,
-        "height": 288
+        "y": 615,
+        "width": 303,
+        "height": 312
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "《煙雨江湖》BWIKI：九圖六坐像",
+        "url": "https://wiki.biligame.com/yanyu/武学/九图六坐像"
+      }
+    ],
+    "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+    "needs_art_revision": false,
+    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
   },
   {
     "id": "SL010",
-    "name": "護院對練批註",
+    "name": "少林拳法心得",
     "collection": "sect",
     "category_id": "training_notes",
     "category_name": "修練心得",
     "sect_id": "shaolin",
     "tier": "進階",
-    "description": "多名護院僧在同一份對練紀錄上互作批註，紅點標出失去重心之處。",
-    "use": "用作少林外功精修的教學材料，提示防護後追擊與維持站位的不同練法。",
-    "limitation": "須已理解對應外功才能採納批註，不能替代完整秘籍。",
-    "acquisition": "提交一次守護事件的復盤紀錄，與護院教習交換。",
+    "description": "門中弟子的拳法練習批註，記錄對練失誤與站樁要點。",
+    "use": "本作規劃：輔助既有拳法的熟練度養成，提示練習方向。",
+    "limitation": "本作規劃：屬教學筆記，不能代替正式秘籍或師承。",
+    "acquisition": "本作規劃：參加門內對練並整理練功紀錄。",
     "appearance": "散頁夾在兩片竹板間，密集赭墨圈點，邊緣繫一枚扁木籤。",
     "art_prompt": "Loose annotated practice sheets between bamboo boards, ochre correction dots, flat wooden tag at edge.",
     "atlas_id": "S01",
@@ -331,26 +421,31 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 313,
-        "y": 639,
-        "width": 314,
-        "height": 288
+        "x": 303,
+        "y": 615,
+        "width": 323,
+        "height": 312
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "generic_traditional_item",
+    "reference_sources": [],
+    "reference_note": "採用普通兵器、服飾或門派日用品的直白名稱；本作設計其門派配發及使用方式，不聲稱這是其他作品既有的專有寶物。",
+    "needs_art_revision": false,
+    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
   },
   {
     "id": "SL011",
-    "name": "山門戒棍",
+    "name": "齊眉棍",
     "collection": "sect",
     "category_id": "sect_weapon",
     "category_name": "門派兵器",
     "sect_id": "shaolin",
     "tier": "進階",
-    "description": "兩端包銅的短梢長棍，棍身刻有便於辨認握距的淺環。",
-    "use": "適合橫攔與近身收棍，可作少林棍法的代表兵器。",
-    "limitation": "包銅端增加慣性，急停變向需要較好的控制。",
-    "acquisition": "完成護院輪值後向寺中匠房訂製。",
+    "description": "供少林弟子練習與護寺使用的木製長棍。",
+    "use": "本作規劃：作為棍法外功的配套武器。",
+    "limitation": "本作規劃：為普通門派制式兵器，不具專屬神兵效果。",
+    "acquisition": "本作規劃：向門派兵器庫領取或製作。",
     "appearance": "深褐硬木長棍橫斜放置，兩端舊銅套，中央有三道淺色握距環。",
     "art_prompt": "Dark hardwood staff diagonally placed, aged brass end caps, three pale grip-spacing rings at center.",
     "atlas_id": "S01",
@@ -365,28 +460,33 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 627,
-        "y": 639,
-        "width": 312,
-        "height": 288
+        "x": 626,
+        "y": 615,
+        "width": 311,
+        "height": 312
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "generic_traditional_item",
+    "reference_sources": [],
+    "reference_note": "採用普通兵器、服飾或門派日用品的直白名稱；本作設計其門派配發及使用方式，不聲稱這是其他作品既有的專有寶物。",
+    "needs_art_revision": false,
+    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
   },
   {
     "id": "SL012",
-    "name": "護腕鐵環",
+    "name": "禪杖",
     "collection": "sect",
     "category_id": "sect_weapon",
     "category_name": "門派兵器",
     "sect_id": "shaolin",
     "tier": "入門",
-    "description": "一對外緣平鈍的練功鐵環，內側墊布可避免長時佩戴磨傷。",
-    "use": "作為近身格擋與掌法練習的護具型兵器設計。",
-    "limitation": "較重且難以隱藏，不適合需要細緻手部操作的活動。",
-    "acquisition": "向棍房提供修繕材料後取得合手尺寸。",
-    "appearance": "一對厚實黑鐵腕環，褐布內襯，外側嵌細銅線戒紋。",
-    "art_prompt": "Pair of thick black iron wrist rings, brown cloth lining, fine brass bands set into their outer edges.",
+    "description": "僧人使用的長柄兵器，適合較重的杖法與招架。",
+    "use": "本作規劃：作為杖法修習及較重長兵器的養成裝備。",
+    "limitation": "本作規劃：需要相應力量與杖法；不能當作短兵器靈活連擊。",
+    "acquisition": "本作規劃：取得長兵器修習資格後向兵器庫換取。",
+    "appearance": "深棕長柄禪杖斜置，杖首有古銅環飾，杖尾包銅，整柄完整可見。",
+    "art_prompt": "Complete dark wooden Buddhist monk staff displayed diagonally, aged brass ritual head with hanging rings, brass butt cap.",
     "atlas_id": "S01",
     "cell_index": 11,
     "art_status": "generated",
@@ -399,26 +499,32 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 939,
-        "y": 639,
-        "width": 315,
-        "height": 288
+        "x": 937,
+        "y": 615,
+        "width": 317,
+        "height": 312
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "generic_traditional_item",
+    "reference_sources": [],
+    "reference_note": "採用普通兵器、服飾或門派日用品的直白名稱；本作設計其門派配發及使用方式，不聲稱這是其他作品既有的專有寶物。",
+    "needs_art_revision": false,
+    "art_revision_note": "已以影像生成工具修改對應圖格，完成新物品造型並目視核對；其他圖格保留原物品身份與排列。",
+    "art_revision_status": "completed"
   },
   {
     "id": "SL013",
-    "name": "護行僧衣",
+    "name": "少林僧衣",
     "collection": "sect",
     "category_id": "sect_attire",
     "category_name": "門派服飾",
     "sect_id": "shaolin",
     "tier": "進階",
-    "description": "短襬便於行旅的耐磨僧衣，肩背補片來自曾經的護送行程。",
-    "use": "提供耐磨與護送身份辨識，支援守勢角色的服裝配置。",
-    "limitation": "布甲護持有限，肩背補片也會增加攜行重量。",
-    "acquisition": "完成行腳護送後，由縫衣房依身量製作。",
+    "description": "少林弟子日常練功與行腳所穿的布衣。",
+    "use": "本作規劃：提供門派服裝與基礎防護裝備。",
+    "limitation": "本作規劃：布衣防護有限；穿著不能代替門派身分資格。",
+    "acquisition": "本作規劃：入門配發，亦可消耗布料修補。",
     "appearance": "折疊的赭黃短襬僧衣，深褐肩背補片，寬布腰帶打方結。",
     "art_prompt": "Folded ochre short-hem monk robe, dark brown shoulder patches, broad cloth sash tied in a square knot.",
     "atlas_id": "S01",
@@ -435,24 +541,29 @@
       "region": {
         "x": 0,
         "y": 927,
-        "width": 312,
+        "width": 310,
         "height": 327
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "generic_traditional_item",
+    "reference_sources": [],
+    "reference_note": "採用普通兵器、服飾或門派日用品的直白名稱；本作設計其門派配發及使用方式，不聲稱這是其他作品既有的專有寶物。",
+    "needs_art_revision": false,
+    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
   },
   {
     "id": "SL014",
-    "name": "護院木牌",
+    "name": "少林弟子腰牌",
     "collection": "sect",
     "category_id": "sect_token",
     "category_name": "門派信物",
     "sect_id": "shaolin",
     "tier": "入門",
-    "description": "刻有值勤位置與交接刻痕的木牌，代表受託護院的責任。",
-    "use": "用於進入對應練習場、交接護送委託與辨認師承來源。",
-    "limitation": "只代表指定職責，不能用來命令所有僧人或任意索取藏經。",
-    "acquisition": "完成第一次護院委託並接受值勤規則後領取。",
+    "description": "標示少林弟子身分的普通木牌。",
+    "use": "本作規劃：作為門派身分及部分服務的查驗憑證。",
+    "limitation": "本作規劃：僅證明已取得的資格，不會直接賦予師承或藏經閣權限。",
+    "acquisition": "本作規劃：完成入門登記後領取。",
     "appearance": "方形深木腰牌，山門淺浮雕，底部三道短刻痕，以粗黃繩穿掛。",
     "art_prompt": "Square dark wooden duty token, shallow monastery-gate relief, three short notches, thick yellow hanging cord.",
     "atlas_id": "S01",
@@ -467,26 +578,31 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 312,
+        "x": 310,
         "y": 927,
-        "width": 313,
+        "width": 317,
         "height": 327
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "generic_traditional_item",
+    "reference_sources": [],
+    "reference_note": "採用普通兵器、服飾或門派日用品的直白名稱；本作設計其門派配發及使用方式，不聲稱這是其他作品既有的專有寶物。",
+    "needs_art_revision": false,
+    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
   },
   {
     "id": "SL015",
-    "name": "行腳溫養膏",
+    "name": "少林傷藥",
     "collection": "sect",
     "category_id": "sect_supply",
     "category_name": "門派補給",
     "sect_id": "shaolin",
     "tier": "入門",
-    "description": "小陶罐封存行腳隊常備的溫養膏，罐旁附有休息使用的簡短叮囑。",
-    "use": "作為遊戲中正式休息活動的修練後補給材料。",
-    "limitation": "只能在休息時使用，不設計為交戰中立即治癒重傷的物品。",
-    "acquisition": "護送途中協助照料行腳者後，向寺內藥房換取。",
+    "description": "寺中供練功與行腳使用的外敷傷藥。",
+    "use": "本作規劃：支援輕傷處理與休整恢復。",
+    "limitation": "本作規劃：不處理內傷或中毒；使用效果及消耗待平衡。",
+    "acquisition": "本作規劃：向門派藥房換取，或完成藥材委託取得。",
     "appearance": "矮胖赭陶膏罐，米白布封，木抹片斜靠罐側，褐線紮口。",
     "art_prompt": "Squat ochre ceramic salve jar, cream cloth seal, small wooden spatula resting beside it, brown tied string.",
     "atlas_id": "S01",
@@ -501,28 +617,33 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 625,
+        "x": 627,
         "y": 927,
-        "width": 326,
+        "width": 298,
         "height": 327
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "generic_traditional_item",
+    "reference_sources": [],
+    "reference_note": "採用普通兵器、服飾或門派日用品的直白名稱；本作設計其門派配發及使用方式，不聲稱這是其他作品既有的專有寶物。",
+    "needs_art_revision": false,
+    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
   },
   {
     "id": "SL016",
-    "name": "舊鐘拓片匣",
+    "name": "少林七十二絕技",
     "collection": "sect",
     "category_id": "inheritance",
     "category_name": "傳承物",
     "sect_id": "shaolin",
     "tier": "傳承",
-    "description": "匣中保存一塊舊鐘銘文拓片，記有早年護院者守門時留下的約定。",
-    "use": "作為追尋少林護院傳承的任務物，解鎖指定舊事與師長對話。",
-    "limitation": "必須與見證者及山門遺跡互證，持有它不會直接學會真傳武功。",
-    "acquisition": "在完成護院舊案調查後，由保管者正式交付。",
-    "appearance": "小型深木扁匣半開，內露磨損圓鐘拓紙與一枚缺口銅片。",
-    "art_prompt": "Small flat dark wooden case slightly open, worn circular bell rubbing and a notched bronze fragment inside.",
+    "description": "以少林七十二絕技為主題的傳承經卷，記錄各門絕技的研習綱目。",
+    "use": "本作規劃：作為少林傳承總覽，逐步開啟特定絕技的研習任務。",
+    "limitation": "本作規劃：是多門武學的傳承概念，不能一次讀取便學會全部七十二門。",
+    "acquisition": "本作規劃：完成長線門派傳承任務後取得研讀資格。",
+    "appearance": "打開的深色木匣內排列多本赭黃線裝經冊，匣前展開帶抽象掌印與足印的練功圖頁。",
+    "art_prompt": "Open dark wooden manuscript chest with ochre stitched martial sutra volumes, an open paper leaf bearing abstract palm and footprint diagrams.",
     "atlas_id": "S01",
     "cell_index": 15,
     "art_status": "generated",
@@ -535,26 +656,37 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 951,
+        "x": 925,
         "y": 927,
-        "width": 303,
+        "width": 329,
         "height": 327
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "《新天龍八部》懷舊服官方：少林門派介紹",
+        "url": "https://event.changyou.com/tlhj/202009/profession/sl.shtml"
+      }
+    ],
+    "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。來源所稱「少林七十二絕技」是武學總稱；本作以傳承經卷承載該總稱，不聲稱來源遊戲存在同名可拾取經匣。",
+    "needs_art_revision": false,
+    "art_revision_note": "已以影像生成工具修改對應圖格，完成新物品造型並目視核對；其他圖格保留原物品身份與排列。",
+    "art_revision_status": "completed"
   },
   {
     "id": "WD001",
-    "name": "松風起劍譜",
+    "name": "武當劍法",
     "collection": "sect",
     "category_id": "external_manual",
     "category_name": "外功秘籍",
     "sect_id": "wudang",
     "tier": "入門",
-    "description": "以松枝起伏標示抬劍與收劍的節奏，註解從不要求一味求快。",
-    "use": "提供能在出劍後收回守勢的基礎劍術。",
-    "limitation": "攻勢較克制，面對厚重防護時需要其他破防手段。",
-    "acquisition": "完成山道引路委託，向外院教習交換劍路講習。",
+    "description": "武當基礎劍術抄本，記錄持劍、步法與劍勢接續。",
+    "use": "本作規劃：建立劍法入門路線，訓練劍招和移動的配合。",
+    "limitation": "本作規劃：須裝備劍；基礎修習不等同掌握太極劍法。",
+    "acquisition": "本作規劃：完成入門劍術課業後領取。",
     "appearance": "石青線裝薄冊，封面一枝米白松葉，細銀灰布條作書籤。",
     "art_prompt": "Slate-blue stitched sword primer, cream pine sprig emblem, narrow silver-grey cloth bookmark.",
     "atlas_id": "S02",
@@ -571,24 +703,34 @@
       "region": {
         "x": 0,
         "y": 0,
-        "width": 338,
+        "width": 312,
         "height": 321
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "《鐵血武林2》官方：武當門派及武學",
+        "url": "https://t2.hcplay.com.cn/news/142"
+      }
+    ],
+    "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+    "needs_art_revision": false,
+    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
   },
   {
     "id": "WD002",
-    "name": "迴環卸劍圖",
+    "name": "太極劍法",
     "collection": "sect",
     "category_id": "external_manual",
     "category_name": "外功秘籍",
     "sect_id": "wudang",
-    "tier": "進階",
-    "description": "一張連續展開的劍勢圖，將進退畫成互相接續的開口圓環。",
-    "use": "教授在接住對手攻勢後改變下一招落點的劍術。",
-    "limitation": "只能利用已觀察的攻擊節奏，對突發多向壓迫較難施展。",
-    "acquisition": "在圓石劍坪完成對練並寫下失誤原因後取得。",
+    "tier": "真傳",
+    "description": "武當代表劍法的圖譜，以圓轉劍勢及引化攻勢為修習主題。",
+    "use": "本作規劃：開啟以守轉攻的劍法分支，練習卸力與反擊。",
+    "limitation": "本作規劃：需要時機判斷及內功支援；無法無條件化解所有攻擊。",
+    "acquisition": "本作規劃：通過進階劍術試煉後請師授予。",
     "appearance": "扇形展開的淺灰摺圖，石青弧線與細劍尖圖記，玉色小扣。",
     "art_prompt": "Fan-open pale grey folding diagram with slate-blue arcs and fine sword-tip marks, small jade-toned clasp.",
     "atlas_id": "S02",
@@ -603,26 +745,36 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 338,
+        "x": 312,
         "y": 0,
-        "width": 295,
+        "width": 321,
         "height": 321
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "《鐵血武林2》官方：武當門派及武學",
+        "url": "https://t2.hcplay.com.cn/news/142"
+      }
+    ],
+    "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+    "needs_art_revision": false,
+    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
   },
   {
     "id": "WD003",
-    "name": "聽潮借勢劍訣",
+    "name": "太極拳",
     "collection": "sect",
     "category_id": "external_manual",
     "category_name": "外功秘籍",
     "sect_id": "wudang",
     "tier": "真傳",
-    "description": "卷首繪水波撞石後分流的形態，示範由守勢轉出的一記斜劍。",
-    "use": "解鎖將對手蓄勢轉為自己進攻窗口的代表劍招。",
-    "limitation": "需提前判讀對手，不應能無條件打斷所有蓄勢行動。",
-    "acquisition": "完成守護山下水道的事件，經師長試劍認可後傳授。",
+    "description": "武當拳術秘籍，以鬆沉、圓轉及借力發勁為修習主題。",
+    "use": "本作規劃：提供徒手防守反擊路線，練習近身引化與反制。",
+    "limitation": "本作規劃：需要掌握對手節奏；遇到範圍攻擊時仍須移動避讓。",
+    "acquisition": "本作規劃：完成拳術及內息考校後請授。",
     "appearance": "青灰綾裱長卷，卷首有一塊圓石與分流波紋，白玉色軸頭。",
     "art_prompt": "Long blue-grey silk-backed scroll, round stone and split-wave emblem, ivory-jade roller ends.",
     "atlas_id": "S02",
@@ -639,24 +791,34 @@
       "region": {
         "x": 633,
         "y": 0,
-        "width": 304,
+        "width": 307,
         "height": 321
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "《鐵血武林2》官方：武當門派及武學",
+        "url": "https://t2.hcplay.com.cn/news/142"
+      }
+    ],
+    "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+    "needs_art_revision": false,
+    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
   },
   {
     "id": "WD004",
-    "name": "拂塵引手錄",
+    "name": "綿掌",
     "collection": "sect",
     "category_id": "external_manual",
     "category_name": "外功秘籍",
     "sect_id": "wudang",
     "tier": "進階",
-    "description": "窄冊將拂塵軟梢與空手引導並列，記下以小幅動作避開正面碰撞的方法。",
-    "use": "提供干擾對手招路與創造退身空間的通用外功。",
-    "limitation": "牽引本身輸出有限，遇到沉重兵器時不能硬接。",
-    "acquisition": "協助整理觀中器具後向拂塵教習請益。",
+    "description": "武當掌法抄本，以綿密掌勢與連續運勁作為修習主題。",
+    "use": "本作規劃：提供連續掌擊與節奏控制的外功分支。",
+    "limitation": "本作規劃：連招需要穩定內息，受打斷後須重新建立攻勢。",
+    "acquisition": "本作規劃：完成基礎拳掌修習後向授業師父換取。",
     "appearance": "窄長米白冊套，石青布脊，旁束一小撮柔軟白絲作辨識。",
     "art_prompt": "Narrow cream booklet sleeve with slate-blue spine and a small tied tassel of soft white fibers.",
     "atlas_id": "S02",
@@ -671,26 +833,36 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 937,
+        "x": 940,
         "y": 0,
-        "width": 317,
+        "width": 314,
         "height": 321
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "《鐵血武林2》官方：武當門派及武學",
+        "url": "https://t2.hcplay.com.cn/news/142"
+      }
+    ],
+    "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+    "needs_art_revision": false,
+    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
   },
   {
     "id": "WD005",
-    "name": "清息入靜篇",
+    "name": "武當心法",
     "collection": "sect",
     "category_id": "inner_manual",
     "category_name": "內功心法",
     "sect_id": "wudang",
     "tier": "入門",
-    "description": "清楚分段的吐納小冊，頁上留有讀者自行記錄節奏的空欄。",
-    "use": "提供將暫緩出手轉化為下一步餘裕的基礎內功方向。",
-    "limitation": "調息會佔用當前行動，不能同時最大化進攻與回復。",
-    "acquisition": "完成外院靜坐課與一次山道行旅紀錄後取得。",
+    "description": "武當入門內功冊，以調息與氣息運行作為基礎功課。",
+    "use": "本作規劃：建立武當內功養成路線，支援拳劍及身法修習。",
+    "limitation": "本作規劃：屬基礎內功；需要練習與後續傳授才能精進。",
+    "acquisition": "本作規劃：完成入門登記及調息課業後領取。",
     "appearance": "米白軟冊上有淡青呼吸圈點，圓角書封，青灰細帶環繞。",
     "art_prompt": "Cream rounded softcover breathing booklet, pale blue dotted rings, slender blue-grey wrap band.",
     "atlas_id": "S02",
@@ -707,24 +879,34 @@
       "region": {
         "x": 0,
         "y": 321,
-        "width": 287,
-        "height": 302
+        "width": 312,
+        "height": 306
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "《鐵血武林2》官方：武當門派及武學",
+        "url": "https://t2.hcplay.com.cn/news/142"
+      }
+    ],
+    "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+    "needs_art_revision": false,
+    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
   },
   {
     "id": "WD006",
-    "name": "流泉轉元錄",
+    "name": "純陽無極功",
     "collection": "sect",
     "category_id": "inner_manual",
     "category_name": "內功心法",
     "sect_id": "wudang",
     "tier": "進階",
-    "description": "以水槽分流作譬喻的內功筆記，著重把過剩用力重新分配。",
-    "use": "設計為攻守變招銜接時調整資源運用的內功。",
-    "limitation": "需要有節制地交替招路，連續重複同類動作收益有限。",
-    "acquisition": "修復後山引水槽並完成氣息對練後換閱。",
+    "description": "武當高階內功秘籍，以深厚內息與持續運勁作為養成主題。",
+    "use": "本作規劃：提供高階內力修習方向，強化持續施展武學的能力。",
+    "limitation": "本作規劃：須先穩固基礎內功，練功與運勁消耗需逐階適應。",
+    "acquisition": "本作規劃：完成內功考校並獲師門傳授。",
     "appearance": "青瓷色硬封冊，封面鑲細木水槽圖，頁邊有交錯米白紙籤。",
     "art_prompt": "Celadon hard-cover manual with slender wooden channel motif, staggered cream page tabs.",
     "atlas_id": "S02",
@@ -739,26 +921,36 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 287,
+        "x": 312,
         "y": 321,
-        "width": 322,
-        "height": 302
+        "width": 313,
+        "height": 306
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "《鐵血武林2》官方：武當門派及武學",
+        "url": "https://t2.hcplay.com.cn/news/142"
+      }
+    ],
+    "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+    "needs_art_revision": false,
+    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
   },
   {
     "id": "WD007",
-    "name": "抱圓守真經",
+    "name": "太極神功",
     "collection": "sect",
     "category_id": "inner_manual",
     "category_name": "內功心法",
     "sect_id": "wudang",
     "tier": "真傳",
-    "description": "成對的經頁以留白示收、墨環示放，將等待與發力視為完整一循環。",
-    "use": "設計為保留資源、待對手露出空隙再集中出手的主修內功。",
-    "limitation": "保留過多會失去眼前機會；收益依賴何時完成收放循環。",
-    "acquisition": "在守關對練中展示多次合理收放，再獲師長授予抄本。",
+    "description": "武當內功秘籍，以陰陽調和及收放自如作為修習主題。",
+    "use": "本作規劃：支援高階拳劍修習，改善防守轉反擊時的內力運用。",
+    "limitation": "本作規劃：需要對應修為與招式配合，不自動賦予無限反傷。",
+    "acquisition": "本作規劃：取得真傳資格後分階段研讀。",
     "appearance": "深石青布函內並排兩冊米白經頁，封面為不閉合的銀灰圓環。",
     "art_prompt": "Deep slate-blue cloth case holding two slim cream volumes, open silver-grey ring emblems.",
     "atlas_id": "S02",
@@ -773,26 +965,36 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 609,
+        "x": 625,
         "y": 321,
-        "width": 333,
-        "height": 302
+        "width": 319,
+        "height": 306
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "17173《金庸群俠傳 Online》：武當武學資料",
+        "url": "https://jinyong.17173.com/content/2003-9-19/n234_150643.html"
+      }
+    ],
+    "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+    "needs_art_revision": false,
+    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
   },
   {
     "id": "WD008",
-    "name": "雲階輕履圖",
+    "name": "梯雲縱",
     "collection": "sect",
     "category_id": "footwork_manual",
     "category_name": "輕功身法",
     "sect_id": "wudang",
-    "tier": "入門",
-    "description": "沿山階畫出的步點寬窄有別，提醒學者隨地面調整步幅。",
-    "use": "提供在移步時保留下一招選擇的入門身法。",
-    "limitation": "需要確認落腳點，不能無視濕滑或破損地形。",
-    "acquisition": "完成山道巡查並標記危險路段後領取。",
+    "tier": "進階",
+    "description": "武當輕功秘籍，以輕身提縱與高處移動作為修習主題。",
+    "use": "本作規劃：開啟登高與越障能力，擴充場景探索路線。",
+    "limitation": "本作規劃：跳躍高度與落點受修為及場景限制，並非飛行。",
+    "acquisition": "本作規劃：完成輕功入門試煉後換取。",
     "appearance": "折成長條的米白路線圖，淡青階紋，末端繫一顆扁圓木珠。",
     "art_prompt": "Long folded cream route diagram, pale blue stair marks, one flat round wooden bead tied at the end.",
     "atlas_id": "S02",
@@ -807,26 +1009,36 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 942,
+        "x": 944,
         "y": 321,
-        "width": 312,
-        "height": 302
+        "width": 310,
+        "height": 306
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "《新天龍八部》官方：武當戰鬥技能",
+        "url": "https://tl.changyou.com/data/equip/wdzd.shtml"
+      }
+    ],
+    "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+    "needs_art_revision": false,
+    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
   },
   {
     "id": "WD009",
-    "name": "循松換影訣",
+    "name": "上天梯",
     "collection": "sect",
     "category_id": "footwork_manual",
     "category_name": "輕功身法",
     "sect_id": "wudang",
     "tier": "進階",
-    "description": "以數株松樹間的轉步為圖例，教人退半步後從另一側接回招式。",
-    "use": "提供放棄眼前追擊、換取下一步防守與出牌整理的身法。",
-    "limitation": "必須讓出一次即時進攻機會，不能同時當作免費追擊。",
-    "acquisition": "在後山松林完成往返試步與迷途者救援後取得。",
+    "description": "武當輕功圖譜，記錄提氣、落腳與向上攀越的練習要點。",
+    "use": "本作規劃：提供登高身法的進階路線，提升連續越障的穩定性。",
+    "limitation": "本作規劃：需要可用落腳點與足夠體力，不能越過所有地形限制。",
+    "acquisition": "本作規劃：完成進階身法及山路試煉後請授。",
     "appearance": "小型六折青灰摺扇式冊，松枝輪廓串接足印，白繩束底。",
     "art_prompt": "Small six-fold blue-grey fan booklet, pine-branch silhouettes linked by footprints, white cord at base.",
     "atlas_id": "S02",
@@ -842,25 +1054,35 @@
       "image_height": 1254,
       "region": {
         "x": 0,
-        "y": 623,
-        "width": 287,
-        "height": 300
+        "y": 627,
+        "width": 299,
+        "height": 287
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "《鐵血武林2》官方：武當門派及武學",
+        "url": "https://t2.hcplay.com.cn/news/142"
+      }
+    ],
+    "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+    "needs_art_revision": false,
+    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
   },
   {
     "id": "WD010",
-    "name": "圓石劍坪問答",
+    "name": "武當練功心得",
     "collection": "sect",
     "category_id": "training_notes",
     "category_name": "修練心得",
     "sect_id": "wudang",
     "tier": "進階",
-    "description": "教習與弟子的問題交替寫在兩欄，紅筆只圈出判斷錯誤而非招式快慢。",
-    "use": "作為劍術與內功精修的心得材料，區分穩守與借勢兩種練法。",
-    "limitation": "須先修習對應基礎；閱讀不能替代實際對練驗證。",
-    "acquisition": "完成劍坪對練並交付自己的復盤筆記後交換。",
+    "description": "門中弟子的練功筆記，記錄拳劍對練及調息課業。",
+    "use": "本作規劃：輔助既有武學的熟練度養成及練習提示。",
+    "limitation": "本作規劃：屬普通教學材料，不能用來取得未獲傳授的絕學。",
+    "acquisition": "本作規劃：完成對練課業並整理自身練功紀錄。",
     "appearance": "雙欄散頁置於淺灰石紋紙夾，石青短繩與一枚圓孔竹片。",
     "art_prompt": "Two-column loose study sheets in a pale stone-textured folder, slate-blue short cord and pierced bamboo disc.",
     "atlas_id": "S02",
@@ -875,26 +1097,31 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 287,
-        "y": 623,
-        "width": 338,
-        "height": 300
+        "x": 299,
+        "y": 627,
+        "width": 328,
+        "height": 287
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "generic_traditional_item",
+    "reference_sources": [],
+    "reference_note": "採用普通兵器、服飾或門派日用品的直白名稱；本作設計其門派配發及使用方式，不聲稱這是其他作品既有的專有寶物。",
+    "needs_art_revision": false,
+    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
   },
   {
     "id": "WD011",
-    "name": "聽風窄鋒劍",
+    "name": "武當佩劍",
     "collection": "sect",
     "category_id": "sect_weapon",
     "category_name": "門派兵器",
     "sect_id": "wudang",
     "tier": "進階",
-    "description": "劍身狹直、重心近手，劍格留出便於轉腕的空間。",
-    "use": "支援圓轉與收劍較快的武當劍術配置。",
-    "limitation": "刃面較窄，硬碰沉重兵器時需要避免正面較力。",
-    "acquisition": "完成劍坪考驗後由山下合作劍匠訂製。",
+    "description": "武當弟子所用的普通直劍，以練習與行走江湖為用途。",
+    "use": "本作規劃：作為武當劍法及太極劍法的配套武器。",
+    "limitation": "本作規劃：屬制式佩劍，不冒充真武劍等傳說兵器。",
+    "acquisition": "本作規劃：向門派兵器庫領取或訂製。",
     "appearance": "修長銀灰窄鋒劍，開環形劍格，石青纏柄，短米白劍穗。",
     "art_prompt": "Slim silver-grey straight sword, open-ring guard, slate-blue wrapped grip, short cream tassel.",
     "atlas_id": "S02",
@@ -909,26 +1136,31 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 625,
-        "y": 623,
-        "width": 314,
-        "height": 300
+        "x": 627,
+        "y": 627,
+        "width": 327,
+        "height": 287
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "generic_traditional_item",
+    "reference_sources": [],
+    "reference_note": "採用普通兵器、服飾或門派日用品的直白名稱；本作設計其門派配發及使用方式，不聲稱這是其他作品既有的專有寶物。",
+    "needs_art_revision": false,
+    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
   },
   {
     "id": "WD012",
-    "name": "引泉拂塵",
+    "name": "拂塵",
     "collection": "sect",
     "category_id": "sect_weapon",
     "category_name": "門派兵器",
     "sect_id": "wudang",
     "tier": "進階",
-    "description": "拂塵柄上留有防滑淺槽，柔軟絲束適合練習纏引與收放。",
-    "use": "配合引手外功製造轉招空隙，亦用於門派日課。",
-    "limitation": "軟梢不具重兵器的格擋能力，需要避開刃口正面。",
-    "acquisition": "完成觀內修繕委託後，以工料向器房換取。",
+    "description": "道門常見的木柄拂塵，亦可作為本作拂塵類招式的裝備。",
+    "use": "本作規劃：提供道門裝備外觀及拂塵武器槽位。",
+    "limitation": "本作規劃：裝備本身不賦予招式；相關外功仍需另行學習。",
+    "acquisition": "本作規劃：向門派庫房換取或委託製作。",
     "appearance": "淺木長柄拂塵，米白絲束自然垂落，尾端一圈石青繩結。",
     "art_prompt": "Pale wooden-handled horsetail whisk, naturally falling cream fibers, slate-blue cord knot at handle end.",
     "atlas_id": "S02",
@@ -943,28 +1175,33 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 939,
-        "y": 623,
-        "width": 315,
-        "height": 300
+        "x": 954,
+        "y": 627,
+        "width": 300,
+        "height": 287
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "generic_traditional_item",
+    "reference_sources": [],
+    "reference_note": "採用普通兵器、服飾或門派日用品的直白名稱；本作設計其門派配發及使用方式，不聲稱這是其他作品既有的專有寶物。",
+    "needs_art_revision": false,
+    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
   },
   {
     "id": "WD013",
-    "name": "雲紋短氅",
+    "name": "武當道袍",
     "collection": "sect",
     "category_id": "sect_attire",
     "category_name": "門派服飾",
     "sect_id": "wudang",
     "tier": "進階",
-    "description": "外氅剪短方便練劍，寬鬆袖口以內扣束住以免纏刃。",
-    "use": "提供行旅遮風與練劍便利的服裝選擇。",
-    "limitation": "防護以布料為主，不能代替甲具承受重擊。",
-    "acquisition": "完成一次山道巡守後，向觀中衣房換領。",
-    "appearance": "折疊青灰短氅，米白雲邊，袖口束帶可見，素木扣。",
-    "art_prompt": "Folded blue-grey short cloak, cream cloud-pattern edging, visible sleeve ties, plain wooden toggle.",
+    "description": "武當弟子日常修習與行走時穿著的道袍。",
+    "use": "本作規劃：提供門派服裝與輕型防護裝備。",
+    "limitation": "本作規劃：布袍防護有限，穿著不能代替門派身分資格。",
+    "acquisition": "本作規劃：入門配發，後續可換取較好的布料版本。",
+    "appearance": "完整灰藍交領長道袍，米白腰帶與雲紋袖口，下擺層疊展開，無人物或衣架。",
+    "art_prompt": "Complete slate-blue long Taoist robe with crossed cream lapels, pale tied sash and cloud-pattern sleeve and hem edging, no wearer or mannequin.",
     "atlas_id": "S02",
     "cell_index": 12,
     "art_status": "generated",
@@ -978,25 +1215,31 @@
       "image_height": 1254,
       "region": {
         "x": 0,
-        "y": 923,
-        "width": 317,
-        "height": 331
+        "y": 914,
+        "width": 343,
+        "height": 340
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "generic_traditional_item",
+    "reference_sources": [],
+    "reference_note": "採用普通兵器、服飾或門派日用品的直白名稱；本作設計其門派配發及使用方式，不聲稱這是其他作品既有的專有寶物。",
+    "needs_art_revision": false,
+    "art_revision_note": "已以影像生成工具修改對應圖格，完成新物品造型並目視核對；其他圖格保留原物品身份與排列。",
+    "art_revision_status": "completed"
   },
   {
     "id": "WD014",
-    "name": "問道竹符",
+    "name": "武當弟子符牌",
     "collection": "sect",
     "category_id": "sect_token",
     "category_name": "門派信物",
     "sect_id": "wudang",
     "tier": "入門",
-    "description": "兩片相合的竹符只記一次約定，交符時仍須說明來意。",
-    "use": "作為特定講習、藏書交換與引見任務的憑證。",
-    "limitation": "不是通行所有觀閣的令牌，使用範圍依約定而定。",
-    "acquisition": "替觀中轉交書信並完成約定回報後取得。",
+    "description": "供武當弟子隨身攜帶的普通竹製身分憑證。",
+    "use": "本作規劃：用於核對門派身分及已取得的門內服務資格。",
+    "limitation": "本作規劃：是本作的普通身分物件，不是既有作品的獨門寶物。",
+    "acquisition": "本作規劃：完成入門登記後領取。",
     "appearance": "兩片半圓竹符合成開口圓環，石青線穿孔，中央留白。",
     "art_prompt": "Two semicircular bamboo tokens forming an open ring, slate-blue thread through holes, empty center.",
     "atlas_id": "S02",
@@ -1011,26 +1254,31 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 317,
-        "y": 923,
-        "width": 310,
-        "height": 331
+        "x": 343,
+        "y": 914,
+        "width": 284,
+        "height": 340
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "generic_traditional_item",
+    "reference_sources": [],
+    "reference_note": "採用普通兵器、服飾或門派日用品的直白名稱；本作設計其門派配發及使用方式，不聲稱這是其他作品既有的專有寶物。",
+    "needs_art_revision": false,
+    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
   },
   {
     "id": "WD015",
-    "name": "松露安息香",
+    "name": "線香",
     "collection": "sect",
     "category_id": "sect_supply",
     "category_name": "門派補給",
     "sect_id": "wudang",
     "tier": "入門",
-    "description": "以松林氣息為辨識的短香，與一張安排夜間休息的紙籤同裝。",
-    "use": "用於遊戲中的安定休息或內功研習準備活動。",
-    "limitation": "需要安全且可停留的地方，不作戰鬥中立即補氣道具。",
-    "acquisition": "協助觀中香房清點存貨後以材料交換。",
+    "description": "供門中禮敬、靜坐及日常使用的普通香材。",
+    "use": "本作規劃：作為門派日用品與調息活動的消耗材料。",
+    "limitation": "本作規劃：沒有直接提升內功層數的效果，不能替代修煉。",
+    "acquisition": "本作規劃：向門派庫房購取或以香材製作。",
     "appearance": "三段短灰青香條置於米白紙筒，松葉印，青繩綁一張小籤。",
     "art_prompt": "Three short grey-blue incense sticks in a cream paper tube, pine-leaf seal, blue cord with a small tag.",
     "atlas_id": "S02",
@@ -1046,27 +1294,32 @@
       "image_height": 1254,
       "region": {
         "x": 627,
-        "y": 923,
+        "y": 914,
         "width": 313,
-        "height": 331
+        "height": 340
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "generic_traditional_item",
+    "reference_sources": [],
+    "reference_note": "採用普通兵器、服飾或門派日用品的直白名稱；本作設計其門派配發及使用方式，不聲稱這是其他作品既有的專有寶物。",
+    "needs_art_revision": false,
+    "art_revision_note": "保留現有通用書冊或同類器物造型；來源僅核對名稱，不把圖片當作來源遊戲素材。"
   },
   {
     "id": "WD016",
-    "name": "舊松誓約卷",
+    "name": "真武七截陣",
     "collection": "sect",
     "category_id": "inheritance",
     "category_name": "傳承物",
     "sect_id": "wudang",
     "tier": "傳承",
-    "description": "卷中記下前代師徒在風折老松前立下的約定，文字旁留有兩種手跡。",
-    "use": "串聯武當師承舊事與守約抉擇的傳承任務物。",
-    "limitation": "須找到對應見證與遺址，不能直接兌換鎮派內功。",
-    "acquisition": "完成失散師徒的調查線後，由持卷人正式託付。",
-    "appearance": "米白舊卷纏青灰綾帶，附一小片古松木，兩枚褪色印痕。",
-    "art_prompt": "Aged cream promise scroll with blue-grey silk tie, tiny old pinewood fragment and two faded seal marks.",
+    "description": "記載武當真武七截陣的傳承陣圖，圖示站位與彼此策應的關係。",
+    "use": "本作規劃：作為多人陣法的研習物品，逐步開啟協同作戰任務。",
+    "limitation": "本作規劃：須有多人配合與陣法熟練度，不能當作單人內功直接裝備。",
+    "acquisition": "本作規劃：完成門派長線傳承及團隊試煉後取得。",
+    "appearance": "展開的米白陣圖卷軸，六個外圈站位環繞中央陰陽圖，淡藍線條相連，卷端繫灰藍短帶。",
+    "art_prompt": "Open cream formation scroll with six outer station circles around a central yin-yang station, pale blue geometric connection lines and short slate-blue silk tie.",
     "atlas_id": "S02",
     "cell_index": 15,
     "art_status": "generated",
@@ -1080,25 +1333,36 @@
       "image_height": 1254,
       "region": {
         "x": 940,
-        "y": 923,
+        "y": 914,
         "width": 314,
-        "height": 331
+        "height": 340
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "《新天龍八部》官方：武當戰鬥技能",
+        "url": "https://tl.changyou.com/data/equip/wdzd.shtml"
+      }
+    ],
+    "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。來源核對陣法名稱；「陣圖」作為實體載體屬本作改編，不宣稱來源遊戲有相同物品掉落。",
+    "needs_art_revision": false,
+    "art_revision_note": "已以影像生成工具修改對應圖格，完成新物品造型並目視核對；其他圖格保留原物品身份與排列。",
+    "art_revision_status": "completed"
   },
   {
     "id": "EM001",
-    "name": "雙葉短劍譜",
+    "name": "迴風拂柳劍",
     "collection": "sect",
     "category_id": "external_manual",
     "category_name": "外功秘籍",
     "sect_id": "emei",
     "tier": "入門",
-    "description": "並排的短劍圖把左右手分別標示，重點是收放順序而非同時搶攻。",
-    "use": "教授以短兵封住近處破綻再出手的基礎外功。",
-    "limitation": "兵器較短，需要處理對方長兵的距離優勢。",
-    "acquisition": "完成山腳救援委託後向練劍教習請益。",
+    "description": "峨嵋劍術的圖譜抄本，記錄劍鋒迴轉與連續變招的練習次序。",
+    "use": "設計為峨嵋劍術修習物品，偏重轉守為攻。",
+    "limitation": "需具備基本劍術；不等同持有秘籍便能熟練施展。",
+    "acquisition": "設計為完成門內劍術考核後向教習領取。",
     "appearance": "象牙白雙頁小冊，玉綠雙葉封印，書角包淡銅色薄片。",
     "art_prompt": "Ivory two-leaf sword primer, jade-green twin-leaf seal, pale copper corner protectors.",
     "atlas_id": "S03",
@@ -1115,24 +1379,34 @@
       "region": {
         "x": 0,
         "y": 0,
-        "width": 334,
+        "width": 329,
         "height": 347
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "金庸群俠傳Online武林至尊：峨嵋派（官方）",
+        "url": "https://jy.orientaldragon.com.tw/node/44"
+      }
+    ],
+    "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「迴風拂柳劍」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
+    "needs_art_revision": false,
+    "art_revision_note": ""
   },
   {
     "id": "EM002",
-    "name": "映泉截腕圖",
+    "name": "截手九式",
     "collection": "sect",
     "category_id": "external_manual",
     "category_name": "外功秘籍",
     "sect_id": "emei",
     "tier": "進階",
-    "description": "鏡水般對稱的圖譜記錄短兵落在對手發力之前的細微位置。",
-    "use": "提供針對已顯露招路的精準干擾外功。",
-    "limitation": "出手條件較嚴格，判讀失誤時傷害與防守都有限。",
-    "acquisition": "在泉台對練中辨認對手起手差異後獲授。",
+    "description": "峨嵋手法的摺頁抄本，以腕部圖示說明截斷來勢的應對。",
+    "use": "設計為近身截擊與拆招的修習物品。",
+    "limitation": "依賴招路判讀，面對長兵器仍有距離限制。",
+    "acquisition": "設計為完成徒手對練與拆招考核後傳授。",
     "appearance": "薄玉綠摺頁以水鏡形開窗露出腕勢線圖，白絲帶橫束。",
     "art_prompt": "Thin jade-green folding folio, round water-mirror window exposing wrist-motion lines, white silk band.",
     "atlas_id": "S03",
@@ -1147,26 +1421,36 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 334,
+        "x": 329,
         "y": 0,
-        "width": 309,
+        "width": 298,
         "height": 347
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "金庸群俠傳Online武林至尊：峨嵋派（官方）",
+        "url": "https://jy.orientaldragon.com.tw/node/44"
+      }
+    ],
+    "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「截手九式」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
+    "needs_art_revision": false,
+    "art_revision_note": ""
   },
   {
     "id": "EM003",
-    "name": "折蘭護心訣",
+    "name": "四象掌",
     "collection": "sect",
     "category_id": "external_manual",
     "category_name": "外功秘籍",
     "sect_id": "emei",
     "tier": "真傳",
-    "description": "柔軟蘭葉彎折的圖像旁記著護住要處後反手制敵的順序。",
-    "use": "解鎖先防住關鍵一擊再反制的代表短兵外功。",
-    "limitation": "擅長處理單次可判讀威脅，不能同時無限防護多個方向。",
-    "acquisition": "完成保護傷者撤離的考驗，經教習見證後傳授。",
+    "description": "記載峨嵋四象掌的窄幅卷本，掌勢注解與行氣提示分列兩側。",
+    "use": "設計為掌法進階修習物品，連結掌勢與內息運用。",
+    "limitation": "須先掌握基本掌法與調息，不能僅靠讀卷跳過練習。",
+    "acquisition": "設計為取得師門認可後由長輩傳授。",
     "appearance": "窄幅象牙卷軸，玉綠折葉圖，淡銅扁軸，外包細紗。",
     "art_prompt": "Narrow ivory scroll with folded jade-green leaf illustration, flat pale-copper rollers, fine gauze wrap.",
     "atlas_id": "S03",
@@ -1181,28 +1465,38 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 643,
+        "x": 627,
         "y": 0,
-        "width": 275,
+        "width": 294,
         "height": 347
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "金庸群俠傳Online武林至尊：峨嵋派（官方）",
+        "url": "https://jy.orientaldragon.com.tw/node/44"
+      }
+    ],
+    "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「四象掌」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
+    "needs_art_revision": false,
+    "art_revision_note": ""
   },
   {
     "id": "EM004",
-    "name": "回針守距錄",
+    "name": "飄雪穿雲掌",
     "collection": "sect",
     "category_id": "external_manual",
     "category_name": "外功秘籍",
     "sect_id": "emei",
     "tier": "進階",
-    "description": "將投針與收手的位置逐項並列，要求每次出手都留下退身餘地。",
-    "use": "提供不依賴猛攻的遠近牽制外功，協助安全轉招。",
-    "limitation": "需要備用針具與清楚視線，對厚甲不以直接傷害見長。",
-    "acquisition": "協助找回散落練針並通過靶場規範考核後取得。",
-    "appearance": "玉綠布封橫冊附一條空針套，封面有一點細銀星紋。",
-    "art_prompt": "Jade cloth-covered horizontal booklet with empty needle sleeve attached, one tiny silver dot emblem.",
+    "description": "峨嵋掌法的隨身抄本，以短段注記整理掌勢虛實與變換。",
+    "use": "設計為變招與連續掌擊的修習物品。",
+    "limitation": "連招仰賴節奏與站位，失去距離時需要重新調整。",
+    "acquisition": "設計為完成掌法試煉後獲得抄本。",
+    "appearance": "玉綠布封橫冊，側邊附細長布護套，封面有一點細銀星紋。",
+    "art_prompt": "Jade cloth-covered horizontal booklet with a narrow cloth protective sleeve attached, one tiny silver dot emblem.",
     "atlas_id": "S03",
     "cell_index": 3,
     "art_status": "generated",
@@ -1215,26 +1509,36 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 918,
+        "x": 921,
         "y": 0,
-        "width": 336,
+        "width": 333,
         "height": 347
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "金庸群俠傳Online武林至尊：峨嵋派（官方）",
+        "url": "https://jy.orientaldragon.com.tw/node/44"
+      }
+    ],
+    "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「飄雪穿雲掌」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
+    "needs_art_revision": false,
+    "art_revision_note": ""
   },
   {
     "id": "EM005",
-    "name": "養息澄心篇",
+    "name": "峨嵋心法",
     "collection": "sect",
     "category_id": "inner_manual",
     "category_name": "內功心法",
     "sect_id": "emei",
     "tier": "入門",
-    "description": "淺白文字記下行旅與照護間的調息法，提醒先穩定自身再幫助旁人。",
-    "use": "提供偏向穩定防守與修習準備的基礎內功方向。",
-    "limitation": "仍需要休息與安排出手，不能因持有書冊便持續回復。",
-    "acquisition": "完成山門日課與照護委託後領取抄本。",
+    "description": "供入門弟子研讀的內功小冊，書頁依循調息與專注練習編排。",
+    "use": "設計為峨嵋內功入門的修習物品。",
+    "limitation": "定位為基礎心法，不能代替高階內功的專門修習。",
+    "acquisition": "設計為拜師後完成基礎課業時領取。",
     "appearance": "米白軟封冊，玉綠水滴紋，細竹書籤夾於上緣。",
     "art_prompt": "Cream softcover breathing booklet, jade-green water-drop motif, thin bamboo bookmark at top edge.",
     "atlas_id": "S03",
@@ -1251,24 +1555,34 @@
       "region": {
         "x": 0,
         "y": 347,
-        "width": 333,
-        "height": 301
+        "width": 360,
+        "height": 298
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "金庸群俠傳Online武林至尊：峨嵋派（官方）",
+        "url": "https://jy.orientaldragon.com.tw/node/44"
+      }
+    ],
+    "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「峨嵋心法」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
+    "needs_art_revision": false,
+    "art_revision_note": ""
   },
   {
     "id": "EM006",
-    "name": "清泉續脈錄",
+    "name": "峨嵋九陽功",
     "collection": "sect",
     "category_id": "inner_manual",
     "category_name": "內功心法",
     "sect_id": "emei",
     "tier": "進階",
-    "description": "分頁以泉水連流作譬喻，記下如何在壓力下保持呼吸與動作連貫。",
-    "use": "設計為連續完成防守與護持動作時維持節奏的內功。",
-    "limitation": "需要連貫行動；過度搶攻或忽略自身防線會中斷收益。",
-    "acquisition": "完成泉道修護與對應修習紀錄後向教習換閱。",
+    "description": "分裝成數冊的峨嵋內功抄本，保存本門九陽功的修習篇章。",
+    "use": "設計為內力運用與續戰養成的進階內功物品。",
+    "limitation": "與完整九陽神功分開處理，不因名稱相近而視作同一秘籍。",
+    "acquisition": "設計為通過內功考核並獲師長授意後傳授。",
     "appearance": "三冊薄白本以玉綠繫帶相連，封口嵌小型水滴玉扣。",
     "art_prompt": "Three slim white booklets linked by jade-green ties, small teardrop-shaped jade clasp.",
     "atlas_id": "S03",
@@ -1283,26 +1597,36 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 333,
+        "x": 360,
         "y": 347,
-        "width": 302,
-        "height": 301
+        "width": 267,
+        "height": 298
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "金庸群俠傳Online武林至尊：峨嵋派（官方）",
+        "url": "https://jy.orientaldragon.com.tw/node/44"
+      }
+    ],
+    "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「峨嵋九陽功」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
+    "needs_art_revision": false,
+    "art_revision_note": ""
   },
   {
     "id": "EM007",
-    "name": "照影凝神經",
+    "name": "臨濟十二莊",
     "collection": "sect",
     "category_id": "inner_manual",
     "category_name": "內功心法",
     "sect_id": "emei",
     "tier": "真傳",
-    "description": "書頁交替呈現留白與細密觀察圖，要求學者先辨別真正危險的出手。",
-    "use": "設計為讀取對手節奏、集中應對關鍵威脅的主修內功。",
-    "limitation": "對佯攻與多方向壓力需作取捨，不能提供全面預知。",
-    "acquisition": "在護持試演中作出合理取捨後，由師長傳抄。",
+    "description": "收納於硬匣中的峨嵋內功經卷，莊法篇章附有分段習練注記。",
+    "use": "設計為峨嵋高階內功修習物品，強調架式與內息配合。",
+    "limitation": "須循序修習各莊法，僅有內力而欠缺架式基礎時仍須補練。",
+    "acquisition": "設計為完成本門內功傳承任務後獲授。",
     "appearance": "象牙硬函中放一冊玉綠窄經，函面嵌磨砂圓鏡片與葉邊。",
     "art_prompt": "Ivory hard case holding a narrow jade-green volume, frosted round mirror inset with leaf edging.",
     "atlas_id": "S03",
@@ -1317,26 +1641,36 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 635,
+        "x": 627,
         "y": 347,
-        "width": 289,
-        "height": 301
+        "width": 297,
+        "height": 298
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "HKMUD 香港群俠傳：峨嵋派",
+        "url": "https://hkmud.com/%E5%B3%A8%E5%B5%8B%E6%B4%BE"
+      }
+    ],
+    "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「臨濟十二莊」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
+    "needs_art_revision": false,
+    "art_revision_note": ""
   },
   {
     "id": "EM008",
-    "name": "繞泉細步圖",
+    "name": "峨嵋身法",
     "collection": "sect",
     "category_id": "footwork_manual",
     "category_name": "輕功身法",
     "sect_id": "emei",
     "tier": "入門",
-    "description": "圖上步點避開濕滑泉石，教人以短步調整正面而不急於追遠。",
-    "use": "提供近身換位後維持防護的基礎身法。",
-    "limitation": "移動幅度小，不能作長距離追擊或逃脫。",
-    "acquisition": "完成泉台維護並協助引導旅人後取得。",
+    "description": "峨嵋入門步法的摺頁圖，標出轉向、落足與保持間距的練習。",
+    "use": "設計為閃避、移位與山路行走的基礎修習物品。",
+    "limitation": "效果取決於角色身法與地形，無法忽略障礙。",
+    "acquisition": "設計為完成入門身法訓練後領取。",
     "appearance": "圓角白色摺圖，玉綠泉石圖案與細足印，淡銅小夾。",
     "art_prompt": "Rounded white folding map with jade-green spring stones and tiny footprints, pale copper paper clip.",
     "atlas_id": "S03",
@@ -1354,23 +1688,33 @@
         "x": 924,
         "y": 347,
         "width": 330,
-        "height": 301
+        "height": 298
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "金庸群俠傳Online武林至尊：峨嵋派（官方）",
+        "url": "https://jy.orientaldragon.com.tw/node/44"
+      }
+    ],
+    "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「峨嵋身法」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
+    "needs_art_revision": false,
+    "art_revision_note": ""
   },
   {
     "id": "EM009",
-    "name": "葉底迴身訣",
+    "name": "諸天化身步",
     "collection": "sect",
     "category_id": "footwork_manual",
     "category_name": "輕功身法",
     "sect_id": "emei",
     "tier": "進階",
-    "description": "細長葉片間的足印分為兩路，示範避開第一輪壓力後再找回出手角度。",
-    "use": "提供暫讓進攻、整理手段並重新接戰的進階身法。",
-    "limitation": "退出時會讓出眼前攻勢，不能同時取得最大追擊收益。",
-    "acquisition": "在山林護送中安全帶回同伴，再完成回身對練後取得。",
+    "description": "峨嵋輕功的窄幅圖卷，以連續步位記錄身形轉換。",
+    "use": "設計為連續移位與換位的進階輕功修習物品。",
+    "limitation": "需要足夠空間與身法基礎，不能穿越牆壁或封閉地形。",
+    "acquisition": "設計為完成門內輕功考核後傳授。",
     "appearance": "葉形布套包裹細長身法卷，白綠相間繫帶，末端露出折角紙。",
     "art_prompt": "Leaf-shaped cloth sleeve around a slender movement scroll, white-green ties, folded paper corner showing.",
     "atlas_id": "S03",
@@ -1386,25 +1730,35 @@
       "image_height": 1254,
       "region": {
         "x": 0,
-        "y": 648,
-        "width": 329,
-        "height": 279
+        "y": 645,
+        "width": 309,
+        "height": 289
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "HKMUD 香港群俠傳：峨嵋派",
+        "url": "https://hkmud.com/%E5%B3%A8%E5%B5%8B%E6%B4%BE"
+      }
+    ],
+    "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「諸天化身步」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
+    "needs_art_revision": false,
+    "art_revision_note": ""
   },
   {
     "id": "EM010",
-    "name": "泉台護持筆記",
+    "name": "峨嵋習武筆記",
     "collection": "sect",
     "category_id": "training_notes",
     "category_name": "修練心得",
     "sect_id": "emei",
     "tier": "進階",
-    "description": "多位教習用不同小印標記護持案例，將救急與自保的判斷分開記錄。",
-    "use": "作為峨眉外功及護持技法精修的心得材料。",
-    "limitation": "需具備對應技法基礎，也不能照搬案例處理所有局面。",
-    "acquisition": "整理一次救援過程並與泉台教習共同復盤後獲贈。",
+    "description": "門內弟子整理的活頁筆記，記下劍術、掌法與調息練習中的常見失誤。",
+    "use": "設計為修習輔助與師門交流物品。",
+    "limitation": "屬普通學習筆記，不包含未曾獲授的絕學。",
+    "acquisition": "設計為完成師門日常研習後整理取得。",
     "appearance": "幾疊象牙色散頁裝入玉綠網紋紙夾，頁側有細小葉印。",
     "art_prompt": "Ivory loose-page bundles in a jade lattice-textured folder, tiny leaf seals along page edges.",
     "atlas_id": "S03",
@@ -1419,28 +1773,33 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 329,
-        "y": 648,
-        "width": 308,
-        "height": 279
+        "x": 309,
+        "y": 645,
+        "width": 332,
+        "height": 289
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "generic_traditional_item",
+    "reference_sources": [],
+    "reference_note": "普通門派用品的直白命名，並非引用特定遊戲或原作的專有物件；外觀、用途與取得流程為本作設計。",
+    "needs_art_revision": false,
+    "art_revision_note": ""
   },
   {
     "id": "EM011",
-    "name": "泉影雙短劍",
+    "name": "倚天劍",
     "collection": "sect",
     "category_id": "sect_weapon",
     "category_name": "門派兵器",
     "sect_id": "emei",
     "tier": "進階",
-    "description": "一對長短略異的短劍，較短者便於守線，較長者用於接續出手。",
-    "use": "支援短兵封擋與精準反制的武學配置。",
-    "limitation": "雙手均被佔用，且對長兵仍須先克服距離。",
-    "acquisition": "完成泉台試劍後，向門派合作工匠訂製。",
-    "appearance": "交叉擺放的銀白雙短劍，一長一短，玉綠柄，葉形淡銅劍格。",
-    "art_prompt": "Crossed silver-white short swords of unequal length, jade-green grips, leaf-shaped pale copper guards.",
+    "description": "與峨嵋傳承密切相關的知名寶劍；本作以單柄長劍呈現。",
+    "use": "設計為傳承任務中的名劍裝備與劇情物品。",
+    "limitation": "持劍不等於自動習得劍法；取得與使用條件另由劇情設計。",
+    "acquisition": "設計為完成峨嵋名劍傳承任務後取得。",
+    "appearance": "單柄銀白長劍斜置，細長直刃，玉綠握柄與素雅淡銅護手，白色短劍穗；旁置同色窄劍鞘。",
+    "art_prompt": "One single iconic Yitian longsword, slender straight silver-white double-edged blade, jade-green grip, restrained pale copper guard, short ivory tassel, narrow matching scabbard beside it. Clearly one long sword, never crossed short swords. Ivory and jade-green Emei palette. No lettering.",
     "atlas_id": "S03",
     "cell_index": 10,
     "art_status": "generated",
@@ -1453,26 +1812,41 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 637,
-        "y": 648,
-        "width": 282,
-        "height": 279
+        "x": 641,
+        "y": 645,
+        "width": 310,
+        "height": 289
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_named_item",
+    "reference_sources": [
+      {
+        "title": "金庸群俠傳Online武林至尊：伺服器合併神兵清單（含倚天劍）",
+        "url": "https://jy.orientaldragon.com.tw/node/1415"
+      },
+      {
+        "title": "HKMUD 香港群俠傳：峨嵋派",
+        "url": "https://hkmud.com/%E5%B3%A8%E5%B5%8B%E6%B4%BE"
+      }
+    ],
+    "reference_note": "官方網金神兵清單使用「倚天劍」原名；香港群俠傳峨嵋資料記述滅絕師太持有倚天劍。此處引用既有名劍，外觀細節、裝備用途與取得流程為本作設計，並非複製其他遊戲模型或掉落規則。",
+    "needs_art_revision": false,
+    "art_revision_note": "已將 S03 第 11 格的交叉雙短劍改為單柄倚天長劍與配鞘；完整劍尖、劍柄與劍穗均保留在格內。",
+    "art_revision_status": "completed"
   },
   {
     "id": "EM012",
-    "name": "護行針匣",
+    "name": "峨嵋針匣",
     "collection": "sect",
     "category_id": "sect_weapon",
     "category_name": "門派兵器",
     "sect_id": "emei",
     "tier": "進階",
-    "description": "分格整齊的窄匣裝著練用細針，出針口可收束以免行旅時散落。",
-    "use": "作為回針技法的門派兵器與攜行容器。",
-    "limitation": "需維護與補充針具，不適合無差別連續投擲。",
-    "acquisition": "完成練針安全考核後由器房交付。",
+    "description": "供峨嵋弟子攜帶細針的收納匣，襯布分隔針具以免碰撞。",
+    "use": "設計為細針類武器的攜帶與整理物品。",
+    "limitation": "普通針匣不自帶毒性或專屬暗器絕技。",
+    "acquisition": "設計為由門內匠人製作或以師門貢獻兌換。",
     "appearance": "象牙色細長針匣半開，玉綠內襯，數枚銀針分列，葉形扣。",
     "art_prompt": "Slim ivory needle case half open, jade-green lining, neatly separated silver needles, leaf-shaped clasp.",
     "atlas_id": "S03",
@@ -1487,26 +1861,31 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 919,
-        "y": 648,
-        "width": 335,
-        "height": 279
+        "x": 951,
+        "y": 645,
+        "width": 303,
+        "height": 289
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "generic_traditional_item",
+    "reference_sources": [],
+    "reference_note": "普通門派用品的直白命名，並非引用特定遊戲或原作的專有物件；外觀、用途與取得流程為本作設計。",
+    "needs_art_revision": false,
+    "art_revision_note": ""
   },
   {
     "id": "EM013",
-    "name": "行泉護袖衣",
+    "name": "峨嵋弟子服",
     "collection": "sect",
     "category_id": "sect_attire",
     "category_name": "門派服飾",
     "sect_id": "emei",
     "tier": "進階",
-    "description": "袖口與前襟做得貼身，肩背保留活動空間，適合短兵與照護活動。",
-    "use": "支援精細動作與近身防護的門派衣裝。",
-    "limitation": "布料與護袖不能代替重甲，長途濕寒環境仍需額外遮蔽。",
-    "acquisition": "完成泉台輪值後向衣房換領。",
+    "description": "峨嵋弟子習武時穿用的束袖衣，衣身便於收拾與活動。",
+    "use": "設計為門派身份服裝與基礎護具。",
+    "limitation": "衣著只能表明外觀，不能代替有效門籍。",
+    "acquisition": "設計為正式入門後領取，後續可向門內裁衣處補購。",
     "appearance": "折疊象牙白短衣，玉綠護袖與前襟，細葉紋腰帶，無拖曳長袖。",
     "art_prompt": "Folded ivory fitted short robe, jade-green forearm guards and lapels, slender leaf-pattern sash.",
     "atlas_id": "S03",
@@ -1522,25 +1901,30 @@
       "image_height": 1254,
       "region": {
         "x": 0,
-        "y": 927,
-        "width": 368,
-        "height": 327
+        "y": 934,
+        "width": 352,
+        "height": 320
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "generic_traditional_item",
+    "reference_sources": [],
+    "reference_note": "普通門派用品的直白命名，並非引用特定遊戲或原作的專有物件；外觀、用途與取得流程為本作設計。",
+    "needs_art_revision": false,
+    "art_revision_note": ""
   },
   {
     "id": "EM014",
-    "name": "泉台葉牌",
+    "name": "峨嵋腰牌",
     "collection": "sect",
     "category_id": "sect_token",
     "category_name": "門派信物",
     "sect_id": "emei",
     "tier": "入門",
-    "description": "葉形小牌記有被引薦人的承諾，背面的留白供接待者核對。",
-    "use": "作為講習引薦、短兵借用與護送交接的任務憑證。",
-    "limitation": "只對指定接待與委託有效，不代表門派永久授權。",
-    "acquisition": "完成首次護送與對應交接後獲授。",
+    "description": "以繫繩佩戴的木製腰牌，供門人識別身份及記錄差事。",
+    "use": "設計為門派身份與師門委託憑證。",
+    "limitation": "不能冒充掌門信物，也不能單憑腰牌取得禁地權限。",
+    "acquisition": "設計為完成入門登記後領取。",
     "appearance": "玉綠葉形木牌，象牙色雙峰嵌紋，細白繩穿過葉柄。",
     "art_prompt": "Jade-green leaf-shaped wooden token, ivory twin-peak inlay, fine white cord through the stem.",
     "atlas_id": "S03",
@@ -1555,26 +1939,31 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 368,
-        "y": 927,
-        "width": 265,
-        "height": 327
+        "x": 352,
+        "y": 934,
+        "width": 275,
+        "height": 320
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "generic_traditional_item",
+    "reference_sources": [],
+    "reference_note": "普通門派用品的直白命名，並非引用特定遊戲或原作的專有物件；外觀、用途與取得流程為本作設計。",
+    "needs_art_revision": false,
+    "art_revision_note": ""
   },
   {
     "id": "EM015",
-    "name": "護行清涼包",
+    "name": "峨嵋藥包",
     "collection": "sect",
     "category_id": "sect_supply",
     "category_name": "門派補給",
     "sect_id": "emei",
     "tier": "入門",
-    "description": "以白布分裝的行旅補給包，標記應在停步休息時打開使用。",
-    "use": "作為遊戲中遠行後休息與護持研習的消耗材料。",
-    "limitation": "不提供即時治療重傷或解除所有異常的能力。",
-    "acquisition": "協助整理山道救援物資後，以工料向藥房交換。",
+    "description": "門內為遠行弟子備下的布包，收納日常照護所需用品。",
+    "use": "設計為旅途補給與休整時使用的消耗物品。",
+    "limitation": "屬普通補給，不設定為包治重傷或解除所有異常。",
+    "acquisition": "設計為出行前向門內補給處購取。",
     "appearance": "白色四角布包，玉綠繫帶，淡銅葉扣，旁置一張小型休息籤。",
     "art_prompt": "White four-corner cloth supply pouch, jade-green tie, pale copper leaf clasp, tiny rest tag beside it.",
     "atlas_id": "S03",
@@ -1589,26 +1978,31 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 633,
-        "y": 927,
-        "width": 289,
-        "height": 327
+        "x": 627,
+        "y": 934,
+        "width": 310,
+        "height": 320
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "generic_traditional_item",
+    "reference_sources": [],
+    "reference_note": "普通門派用品的直白命名，並非引用特定遊戲或原作的專有物件；外觀、用途與取得流程為本作設計。",
+    "needs_art_revision": false,
+    "art_revision_note": ""
   },
   {
     "id": "EM016",
-    "name": "雙峰舊約繡卷",
+    "name": "峨嵋傳承卷軸",
     "collection": "sect",
     "category_id": "inheritance",
     "category_name": "傳承物",
     "sect_id": "emei",
     "tier": "傳承",
-    "description": "繡卷以兩座山峰與一條泉道記下早年護送誓約，背面留著未完成的署名。",
-    "use": "作為追尋峨眉護行傳承與失散見證人的任務物。",
-    "limitation": "需與沿途口述、路線證據核對，不能靠持有直接取得絕學。",
-    "acquisition": "完成失散繡卷的尋回與護送舊案後，由保管者交付。",
+    "description": "記錄本門師承與舊事的繡邊卷軸，依篇章保留歷代傳授記錄。",
+    "use": "設計為傳承劇情的查閱物品與門派收藏。",
+    "limitation": "記錄師承與史料，不等同完整武功秘籍。",
+    "acquisition": "設計為完成門派史料整理任務後獲准保管。",
     "appearance": "小幅象牙絲繡卷，玉綠雙峰與細泉紋，淡銅軸頭，局部針腳未收。",
     "art_prompt": "Small ivory embroidered silk scroll, jade twin peaks and narrow stream, pale copper rollers, unfinished stitches.",
     "atlas_id": "S03",
@@ -1623,26 +2017,31 @@
       "image_width": 1254,
       "image_height": 1254,
       "region": {
-        "x": 922,
-        "y": 927,
-        "width": 332,
-        "height": 327
+        "x": 937,
+        "y": 934,
+        "width": 317,
+        "height": 320
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "generic_traditional_item",
+    "reference_sources": [],
+    "reference_note": "普通門派用品的直白命名，並非引用特定遊戲或原作的專有物件；外觀、用途與取得流程為本作設計。",
+    "needs_art_revision": false,
+    "art_revision_note": ""
   },
   {
     "id": "HS001",
-    "name": "危峰正鋒譜",
+    "name": "華山劍法",
     "collection": "sect",
     "category_id": "external_manual",
     "category_name": "外功秘籍",
     "sect_id": "huashan",
     "tier": "入門",
-    "description": "細直劍路沿山脊繪成，教人先守住劍尖指向，再考慮搶先出手。",
-    "use": "提供劍尖控制與基礎單點進攻的外功學習方向。",
-    "limitation": "只重正面劍線，遭到側向壓力時須及時轉身或換招。",
-    "acquisition": "完成山道守望委託後，向外院劍師換取講習。",
+    "description": "華山入門劍術的線裝抄本，按練習順序收錄基本劍勢。",
+    "use": "設計為華山劍術入門修習物品。",
+    "limitation": "需具備用劍基礎，熟練程度仍由練習累積。",
+    "acquisition": "設計為完成入門兵器課業後由教習傳授。",
     "appearance": "青灰線裝小冊，封面一道暗朱山脊與直劍痕，黯銀包角。",
     "art_prompt": "Slate-grey stitched sword primer, one dark-crimson ridge and straight sword line, dull silver corners.",
     "atlas_id": "S04",
@@ -1663,20 +2062,30 @@
         "height": 312
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "金庸群俠傳Online武林至尊：華山派（官方）",
+        "url": "https://jy.orientaldragon.com.tw/index.php/node/48"
+      }
+    ],
+    "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「華山劍法」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
+    "needs_art_revision": false,
+    "art_revision_note": ""
   },
   {
     "id": "HS002",
-    "name": "斷雲尋隙圖",
+    "name": "奪命連環三仙劍",
     "collection": "sect",
     "category_id": "external_manual",
     "category_name": "外功秘籍",
     "sect_id": "huashan",
     "tier": "進階",
-    "description": "山雲間露出的窄縫對應劍勢落點，旁註要求等待破綻真正形成。",
-    "use": "提供先觀察或拆防再集中出劍的進階外功。",
-    "limitation": "未滿足破綻條件時效果有限，不能對所有守勢強行獲利。",
-    "acquisition": "在峭壁劍坪辨認多種守勢後完成試劍取得。",
+    "description": "華山連環劍招的摺頁圖譜，將銜接關係與攻勢變化分段記錄。",
+    "use": "設計為連續進攻的劍法修習物品。",
+    "limitation": "連環攻勢需要精準銜接，中途失去站位時應重新調整。",
+    "acquisition": "設計為完成華山劍術進階考核後獲授。",
     "appearance": "暗朱窄摺圖夾在青灰硬封中，雲隙開窗露出細銀劍路。",
     "art_prompt": "Narrow crimson folding diagram in slate hard covers, cloud-gap cutout revealing thin silver sword paths.",
     "atlas_id": "S04",
@@ -1697,20 +2106,30 @@
         "height": 312
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "金庸群俠傳Online武林至尊：華山派（官方）",
+        "url": "https://jy.orientaldragon.com.tw/index.php/node/48"
+      }
+    ],
+    "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「奪命連環三仙劍」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
+    "needs_art_revision": false,
+    "art_revision_note": ""
   },
   {
     "id": "HS003",
-    "name": "孤崖決劍訣",
+    "name": "獨孤九劍",
     "collection": "sect",
     "category_id": "external_manual",
     "category_name": "外功秘籍",
     "sect_id": "huashan",
     "tier": "真傳",
-    "description": "卷末只保留一條決斷的劍線，前文則詳記應該收劍的各種情況。",
-    "use": "解鎖在已掌握機會時集中資源終結的代表劍招。",
-    "limitation": "若時機失準會留下較大空檔，不能兼具全面防守。",
-    "acquisition": "完成山門決劍考驗並展示合理收手時機後授予。",
+    "description": "獨孤九劍的劍理抄本，記錄觀察來招與尋找破綻的修習要點。",
+    "use": "設計為華山傳授路線中的高階劍法修習物品。",
+    "limitation": "重視悟性、臨敵判斷與實練，不設定為無條件擊破所有招式。",
+    "acquisition": "設計為通過隱居劍客的傳承考驗後取得。",
     "appearance": "細長深灰卷軸，以暗朱繩封住，一道黯銀劍痕穿過孤峰紋。",
     "art_prompt": "Slender dark-grey scroll tied with crimson cord, dull silver sword slash through a solitary peak motif.",
     "atlas_id": "S04",
@@ -1731,20 +2150,34 @@
         "height": 312
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "金庸群俠傳Online武林至尊：華山派（官方）",
+        "url": "https://jy.orientaldragon.com.tw/index.php/node/48"
+      },
+      {
+        "title": "HKMUD 香港群俠傳：華山派說明",
+        "url": "https://hkmud.com/help/huashan.html"
+      }
+    ],
+    "reference_note": "官方網金將獨孤九劍列在華山派傳授內容；香港群俠傳說明其源自獨孤求敗、由風清揚傳授。此處歸入華山傳授路線，不宣稱由華山創派祖師所創；物件裝幀及取得流程為本作設計。",
+    "needs_art_revision": false,
+    "art_revision_note": ""
   },
   {
     "id": "HS004",
-    "name": "回鋒收勢錄",
+    "name": "沖靈劍法",
     "collection": "sect",
     "category_id": "external_manual",
     "category_name": "外功秘籍",
     "sect_id": "huashan",
     "tier": "進階",
-    "description": "雙向翻讀的短冊分別寫追擊與收勢，提醒有時收回劍鋒才是下一招的開始。",
-    "use": "提供追擊後轉回防守，或放棄追擊保留後手的外功選擇。",
-    "limitation": "收勢意味著放棄眼前傷害，不應同時得到完整追擊收益。",
-    "acquisition": "完成一次護送並在復盤中解釋收手選擇後取得。",
+    "description": "記錄沖靈劍法的雙面摺本，將劍勢往返與配合節奏分頁收錄。",
+    "use": "設計為劍招銜接與協同演練的修習物品。",
+    "limitation": "單人研讀不能直接獲得雙人演練的默契。",
+    "acquisition": "設計為完成門內劍術切磋支線後取得抄本。",
     "appearance": "雙面青灰摺冊，兩端各有紅色箭尾書籤，中央細銀橫扣。",
     "art_prompt": "Reversible slate folding booklet, red arrow-tail bookmarks at both ends, fine silver central clasp.",
     "atlas_id": "S04",
@@ -1765,20 +2198,30 @@
         "height": 312
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "金庸群俠傳Online武林至尊：華山派（官方）",
+        "url": "https://jy.orientaldragon.com.tw/index.php/node/48"
+      }
+    ],
+    "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「沖靈劍法」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
+    "needs_art_revision": false,
+    "art_revision_note": ""
   },
   {
     "id": "HS005",
-    "name": "守鋒調息篇",
+    "name": "華山心法",
     "collection": "sect",
     "category_id": "inner_manual",
     "category_name": "內功心法",
     "sect_id": "huashan",
     "tier": "入門",
-    "description": "吐納標記與劍尖穩定練習交錯排布，從小幅控制開始建立內勁。",
-    "use": "提供減少急躁出手、維持劍路節奏的基礎內功方向。",
-    "limitation": "需要有意識地保留餘力，連續猛攻時難以受益。",
-    "acquisition": "完成外院穩鋒練習與對應日課後領取。",
+    "description": "華山弟子用來練習吐納的薄冊，附有配合劍術的日課提示。",
+    "use": "設計為華山內功的入門修習物品。",
+    "limitation": "定位為內功基礎，不能取代進階心法。",
+    "acquisition": "設計為正式拜師後完成基礎日課時傳授。",
     "appearance": "青灰薄冊，暗朱細劍穗夾頁，封面僅有一枚黯銀尖葉印。",
     "art_prompt": "Thin slate-grey breathing booklet, dark-crimson sword-tassel bookmark, single dull-silver pointed-leaf seal.",
     "atlas_id": "S04",
@@ -1799,20 +2242,30 @@
         "height": 315
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "金庸群俠傳Online武林至尊：華山派（官方）",
+        "url": "https://jy.orientaldragon.com.tw/index.php/node/48"
+      }
+    ],
+    "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「華山心法」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
+    "needs_art_revision": false,
+    "art_revision_note": ""
   },
   {
     "id": "HS006",
-    "name": "層嶂蓄息錄",
+    "name": "混元功",
     "collection": "sect",
     "category_id": "inner_manual",
     "category_name": "內功心法",
     "sect_id": "huashan",
     "tier": "進階",
-    "description": "疊起的峰線比喻內息積蓄，註記每一次停頓都應服務於之後的出手。",
-    "use": "設計為延後部分攻勢、準備集中劍招的內功。",
-    "limitation": "蓄息期間仍需面對敵人壓力，不能免費囤積力量。",
-    "acquisition": "協助測繪山道並完成連續穩鋒考驗後換閱。",
+    "description": "華山混元功的內功抄本，篇章安排兼顧拳掌練習與內息培養。",
+    "use": "設計為本作華山混元傳承支線的內功修習物品。",
+    "limitation": "須先具備拳掌基礎與穩定調息，掌功與內功需要配合修習。",
+    "acquisition": "設計為完成華山混元傳承支線並通過拳掌考核後傳授。",
     "appearance": "三層青灰硬紙摺冊，暗紅峰線逐層抬高，扁銀鎮紙置於封面。",
     "art_prompt": "Three-layer slate board folio, rising dark-red mountain lines, flat silver paperweight on cover.",
     "atlas_id": "S04",
@@ -1833,20 +2286,30 @@
         "height": 315
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "遊民星空：《金庸群俠傳5》門派武學－混元宗",
+        "url": "https://www.gamersky.com/handbook/201804/1033434_3.shtml"
+      }
+    ],
+    "reference_note": "《金庸群俠傳5》攻略將《碧血劍》的華山傳承另列為混元宗，明載混元功。本作把這條華山支系納入同一門派目錄；不宣稱參考遊戲把混元宗與《笑傲江湖》華山氣宗視為同一可拜門派。裝幀與修習流程為本作設計。",
+    "needs_art_revision": false,
+    "art_revision_note": ""
   },
   {
     "id": "HS007",
-    "name": "澄鋒合意經",
+    "name": "紫霞神功",
     "collection": "sect",
     "category_id": "inner_manual",
     "category_name": "內功心法",
     "sect_id": "huashan",
     "tier": "真傳",
-    "description": "全卷以簡約筆畫比較出手意圖與實際劍路，強調把準備集中到真正的一擊。",
-    "use": "設計為觀察、守候與精準終結相互銜接的主修內功。",
-    "limitation": "一旦改變進攻目標或打亂準備順序，原有優勢需要重新建立。",
-    "acquisition": "經過劍坪試演與師長問答後傳授抄本。",
+    "description": "華山高階內功經卷，布套內保存完整篇章與修習順序。",
+    "use": "設計為華山內功養成的高階修習物品。",
+    "limitation": "需要扎實內功基礎，修習進度另行設定。",
+    "acquisition": "設計為完成華山內功考驗並獲掌門認可後傳授。",
     "appearance": "暗朱布函包青灰經冊，函面為三道黯銀峰紋，扣帶像收鞘劍穗。",
     "art_prompt": "Crimson cloth case holding a slate volume, three dull-silver peak marks, clasp shaped like a tucked sword tassel.",
     "atlas_id": "S04",
@@ -1867,20 +2330,30 @@
         "height": 315
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "金庸群俠傳Online武林至尊：華山派（官方）",
+        "url": "https://jy.orientaldragon.com.tw/index.php/node/48"
+      }
+    ],
+    "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「紫霞神功」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
+    "needs_art_revision": false,
+    "art_revision_note": ""
   },
   {
     "id": "HS008",
-    "name": "踏脊穩行圖",
+    "name": "華山身法",
     "collection": "sect",
     "category_id": "footwork_manual",
     "category_name": "輕功身法",
     "sect_id": "huashan",
     "tier": "入門",
-    "description": "以山脊窄路示範重心轉移，圖旁畫有停步而非急跑的記號。",
-    "use": "提供狹窄空間中維持劍線的基礎身法。",
-    "limitation": "速度有限，不能用來橫跨斷崖或越過不可通行地形。",
-    "acquisition": "完成山道修補與引路委託後領取。",
+    "description": "華山基礎身法圖，將山路落足與對練移位分段描繪。",
+    "use": "設計為華山輕功入門修習物品。",
+    "limitation": "在狹窄地形仍須控制步幅，不能忽視碰撞與落差。",
+    "acquisition": "設計為完成門內身法課業後取得。",
     "appearance": "長條灰紙地形圖，暗朱足印沿細脊分布，兩端以窄竹片夾住。",
     "art_prompt": "Long grey-paper ridge map, crimson footprints along a narrow crest, slim bamboo strips at both ends.",
     "atlas_id": "S04",
@@ -1901,20 +2374,30 @@
         "height": 315
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "金庸群俠傳Online武林至尊：華山派（官方）",
+        "url": "https://jy.orientaldragon.com.tw/index.php/node/48"
+      }
+    ],
+    "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「華山身法」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
+    "needs_art_revision": false,
+    "art_revision_note": ""
   },
   {
     "id": "HS009",
-    "name": "掠隙回步訣",
+    "name": "飛燕迴翔",
     "collection": "sect",
     "category_id": "footwork_manual",
     "category_name": "輕功身法",
     "sect_id": "huashan",
     "tier": "進階",
-    "description": "將前探、側撤與回身畫成三段短線，追求的是角度而非奔行距離。",
-    "use": "提供先讓出正面再切回破綻方向的進階身法。",
-    "limitation": "需要對手的出手承諾形成空隙，無法在所有時刻免費換位。",
-    "acquisition": "通過劍坪三向對練並完成自身失誤紀錄後取得。",
+    "description": "記錄華山輕功的簡冊，以回轉步位與騰挪路線編排練習。",
+    "use": "設計為轉向、迴避與重新取得站位的輕功修習物品。",
+    "limitation": "需要身法基礎與落腳空間，不設定為持續凌空飛行。",
+    "acquisition": "設計為完成華山輕功進階試煉後傳授。",
     "appearance": "三片窄灰竹簡以暗朱線連起，銀色折角路線清楚可見。",
     "art_prompt": "Three narrow grey bamboo tablets joined by dark-crimson thread, clear silver angular movement paths.",
     "atlas_id": "S04",
@@ -1935,20 +2418,30 @@
         "height": 287
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "existing_martial_arts",
+    "reference_sources": [
+      {
+        "title": "HKMUD 香港群俠傳：華山派說明",
+        "url": "https://hkmud.com/help/huashan.html"
+      }
+    ],
+    "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「飛燕迴翔」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
+    "needs_art_revision": false,
+    "art_revision_note": ""
   },
   {
     "id": "HS010",
-    "name": "劍坪失手錄",
+    "name": "華山劍法心得",
     "collection": "sect",
     "category_id": "training_notes",
     "category_name": "修練心得",
     "sect_id": "huashan",
     "tier": "進階",
-    "description": "只記敗招與收手理由的對練筆記，頁緣留有反覆修訂的剪裁痕。",
-    "use": "用作劍術精修素材，區分穩定出手與高風險終結的練法。",
-    "limitation": "須已有對應招式基礎；不能將他人的敗因直接當成固定解法。",
-    "acquisition": "提交一次真實敗戰或險勝的復盤，與教習交換批註。",
+    "description": "由華山門人整理的練劍筆記，保留對練失誤與修正批注。",
+    "use": "設計為劍法修習輔助與門派交流物品。",
+    "limitation": "心得不能替代對應秘籍，也不直接傳授獨孤九劍。",
+    "acquisition": "設計為完成門內切磋記錄與復盤後取得。",
     "appearance": "深灰紙夾裝不齊邊散頁，暗紅批改符，斷裂劍尖形木籤。",
     "art_prompt": "Dark-grey folder with uneven-edged practice notes, crimson correction marks, broken-sword-tip wooden tag.",
     "atlas_id": "S04",
@@ -1969,20 +2462,25 @@
         "height": 287
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "generic_traditional_item",
+    "reference_sources": [],
+    "reference_note": "普通門派用品的直白命名，並非引用特定遊戲或原作的專有物件；外觀、用途與取得流程為本作設計。",
+    "needs_art_revision": false,
+    "art_revision_note": ""
   },
   {
     "id": "HS011",
-    "name": "斷雲直鋒劍",
+    "name": "華山佩劍",
     "collection": "sect",
     "category_id": "sect_weapon",
     "category_name": "門派兵器",
     "sect_id": "huashan",
     "tier": "進階",
-    "description": "劍身平直、劍尖收得細長，便於沿已打開的劍線追進。",
-    "use": "支援精準單點與破綻追擊的門派劍器。",
-    "limitation": "劍尖細長，硬碰重物時需要避免勉強進劍。",
-    "acquisition": "完成尋隙試劍後向山下劍匠訂製。",
+    "description": "華山弟子常用的直身佩劍，劍柄纏布便於持握。",
+    "use": "設計為本門劍術適用的常規裝備。",
+    "limitation": "劍身需定期養護，能否發揮招式仍取決於持劍者的劍術。",
+    "acquisition": "設計為由門內匠人打造或以師門貢獻兌換。",
     "appearance": "黯銀直劍，尖端修長，暗朱纏柄，青灰平直劍格，短紅穗。",
     "art_prompt": "Dull silver straight sword with a long fine tip, crimson wrapped grip, flat slate guard and short red tassel.",
     "atlas_id": "S04",
@@ -2003,20 +2501,25 @@
         "height": 287
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "generic_traditional_item",
+    "reference_sources": [],
+    "reference_note": "普通門派用品的直白命名，並非引用特定遊戲或原作的專有物件；外觀、用途與取得流程為本作設計。",
+    "needs_art_revision": false,
+    "art_revision_note": ""
   },
   {
     "id": "HS012",
-    "name": "回鋒練劍",
+    "name": "華山練習劍",
     "collection": "sect",
     "category_id": "sect_weapon",
     "category_name": "門派兵器",
     "sect_id": "huashan",
     "tier": "入門",
-    "description": "刃口鈍厚的練劍留下多處對練痕跡，重量配置便於反覆收放。",
-    "use": "用於劍坪修習與安全對練，幫助理解收勢節點。",
-    "limitation": "鈍刃限制實戰傷害，不應當作與真劍等效的武器。",
-    "acquisition": "完成外院基本對練規範後領用。",
+    "description": "用於門內對練的鈍鋒鋼劍，舊木柄與護手繩便於維護。",
+    "use": "設計為練劍與切磋時使用的訓練裝備。",
+    "limitation": "鈍鋒仍需遵守切磋規則，不定位為實戰名劍。",
+    "acquisition": "設計為參加門內練劍課業時領取或借用。",
     "appearance": "青灰鈍刃練劍，磨舊木柄，暗朱護手繩，刃面有細小碰痕。",
     "art_prompt": "Slate blunt training sword, worn wooden grip, dark-crimson hand cord, small controlled dents on the blade.",
     "atlas_id": "S04",
@@ -2037,20 +2540,25 @@
         "height": 287
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "generic_traditional_item",
+    "reference_sources": [],
+    "reference_note": "普通門派用品的直白命名，並非引用特定遊戲或原作的專有物件；外觀、用途與取得流程為本作設計。",
+    "needs_art_revision": false,
+    "art_revision_note": ""
   },
   {
     "id": "HS013",
-    "name": "巡峰束袖袍",
+    "name": "華山弟子服",
     "collection": "sect",
     "category_id": "sect_attire",
     "category_name": "門派服飾",
     "sect_id": "huashan",
     "tier": "進階",
-    "description": "束袖與短前襬便於持劍攀行，背部補布記錄巡峰的磨耗。",
-    "use": "兼顧山路行動與劍術操作的服裝選擇。",
-    "limitation": "以輕便為優先，正面抗重擊能力有限。",
-    "acquisition": "完成巡峰輪值後向門派衣房換領。",
+    "description": "華山弟子的束袖衣袍，肩部加固以便日常習武與巡山。",
+    "use": "設計為門派身份服裝與基礎護具。",
+    "limitation": "衣著不等同正式門籍，也不授予掌門權限。",
+    "acquisition": "設計為正式入門後領取，後續可在門內補購。",
     "appearance": "折疊青灰短袍，暗朱束袖與內襟，細銀灰腰帶，補強肩片。",
     "art_prompt": "Folded slate short robe, dark-crimson sleeve ties and inner lapel, slim silver-grey sash, reinforced shoulders.",
     "atlas_id": "S04",
@@ -2071,20 +2579,25 @@
         "height": 340
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "generic_traditional_item",
+    "reference_sources": [],
+    "reference_note": "普通門派用品的直白命名，並非引用特定遊戲或原作的專有物件；外觀、用途與取得流程為本作設計。",
+    "needs_art_revision": false,
+    "art_revision_note": ""
   },
   {
     "id": "HS014",
-    "name": "巡峰劍牌",
+    "name": "華山腰牌",
     "collection": "sect",
     "category_id": "sect_token",
     "category_name": "門派信物",
     "sect_id": "huashan",
     "tier": "入門",
-    "description": "細長牌面刻有巡峰路段，交牌時需交代所見情況而非只報名號。",
-    "use": "作為巡峰委託、劍坪講習與門派引見的識別物。",
-    "limitation": "只證明指定任務身份，不賦予任意徵用物資的權利。",
-    "acquisition": "完成首次巡峰並交回路況記錄後授予。",
+    "description": "佩有繫環的木製腰牌，用作華山門人身份記錄。",
+    "use": "設計為門派委託與出入登記憑證。",
+    "limitation": "只反映持有人登記的權限，不能用作掌門令牌。",
+    "acquisition": "設計為完成華山入門登記後領取。",
     "appearance": "青灰窄木牌呈鈍劍尖形，暗朱三峰印，黯銀小環穿繩。",
     "art_prompt": "Narrow slate wooden token shaped like a blunt sword tip, crimson triple-peak seal, dull silver hanging ring.",
     "atlas_id": "S04",
@@ -2105,20 +2618,25 @@
         "height": 340
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "generic_traditional_item",
+    "reference_sources": [],
+    "reference_note": "普通門派用品的直白命名，並非引用特定遊戲或原作的專有物件；外觀、用途與取得流程為本作設計。",
+    "needs_art_revision": false,
+    "art_revision_note": ""
   },
   {
     "id": "HS015",
-    "name": "巡峰醒神茶包",
+    "name": "華山茶包",
     "collection": "sect",
     "category_id": "sect_supply",
     "category_name": "門派補給",
     "sect_id": "huashan",
     "tier": "入門",
-    "description": "小紙包收著巡峰者休息時沖飲的茶料，封口標記可重用的包法。",
-    "use": "作為遊戲中休息、交談或劍術研習前的行旅補給。",
-    "limitation": "須在安全休息點使用，不直接提高戰鬥速度或免除疲憊。",
-    "acquisition": "協助巡峰隊整備行囊後以補給份額換取。",
+    "description": "供巡山與遠行攜帶的茶包，以繩紮口並附簡易茶匙。",
+    "use": "設計為休整時使用的日常補給物品。",
+    "limitation": "普通茶飲不承擔治療重傷或解除特殊狀態的功能。",
+    "acquisition": "設計為向門內補給處購取。",
     "appearance": "灰白摺紙茶包，暗朱細帶，三峰小印，旁放一只淺木茶匙。",
     "art_prompt": "Grey-white folded tea packet, dark-crimson ribbon, small three-peak stamp, shallow wooden tea scoop beside it.",
     "atlas_id": "S04",
@@ -2139,20 +2657,25 @@
         "height": 340
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "generic_traditional_item",
+    "reference_sources": [],
+    "reference_note": "普通門派用品的直白命名，並非引用特定遊戲或原作的專有物件；外觀、用途與取得流程為本作設計。",
+    "needs_art_revision": false,
+    "art_revision_note": ""
   },
   {
     "id": "HS016",
-    "name": "孤峰舊劍穗",
+    "name": "華山傳承劍穗",
     "collection": "sect",
     "category_id": "inheritance",
     "category_name": "傳承物",
     "sect_id": "huashan",
     "tier": "傳承",
-    "description": "褪色劍穗內藏一小片巡峰名冊，記下一位前代劍師未完成的歸程。",
-    "use": "引出華山師承舊事與失落劍譜下落的傳承任務物。",
-    "limitation": "需要找到相關人物與行旅證據，劍穗本身不附帶戰鬥加成。",
-    "acquisition": "完成失蹤巡峰者的調查並取得保管者信任後交付。",
+    "description": "由門中前輩留下的舊劍穗，附紙記錄其持有人與交接經過。",
+    "use": "設計為傳承任務的紀念物與收藏物品。",
+    "limitation": "劍穗僅供紀念與查證舊事，不授予門內指揮權。",
+    "acquisition": "設計為完成華山前輩遺物支線後獲贈。",
     "appearance": "褪色暗朱短劍穗，黯銀破環，穗結中露出一角青灰名冊紙。",
     "art_prompt": "Faded crimson sword tassel, cracked dull-silver ring, a tiny slate-grey roster fragment peeking from the knot.",
     "atlas_id": "S04",
@@ -2173,6 +2696,11 @@
         "height": 340
       }
     },
-    "implementation_status": "design_only"
+    "implementation_status": "design_only",
+    "name_origin": "generic_traditional_item",
+    "reference_sources": [],
+    "reference_note": "普通門派用品的直白命名，並非引用特定遊戲或原作的專有物件；外觀、用途與取得流程為本作設計。",
+    "needs_art_revision": false,
+    "art_revision_note": ""
   }
 ]

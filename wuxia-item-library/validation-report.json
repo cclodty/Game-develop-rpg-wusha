@@ -14,5 +14,12 @@
   "no_opaque_outer_edge_pixels": true,
   "source_pixels_preserved": true,
   "implementation_status": "design_only",
+  "sect_name_origins": {
+    "existing_martial_arts": 74,
+    "generic_traditional_item": 50,
+    "existing_named_item": 4
+  },
+  "established_names_have_sources": true,
+  "name_mapping_matches_catalog": true,
   "note": "Some transparent gutter edges retain alpha<=32 artifacts; measured regions avoid foreground above that threshold. All source PNG bytes remain unedited."
 }

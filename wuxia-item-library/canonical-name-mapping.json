@@ -1,0 +1,1571 @@
+{
+  "version": "classic-names-v2",
+  "date": "2026-10-26",
+  "base_items_unchanged": 240,
+  "sect_items": 128,
+  "note": "對照上一次發布的368件重建版；不是無法復原的歷史240件舊版對照。保留ID、圖集與格子編號。武學及知名兵器引用已有名稱；普通用品採通稱，玩法與取得途徑另行設計。",
+  "items": [
+    {
+      "id": "SL001",
+      "sect_id": "shaolin",
+      "old_name": "立樁護身拳譜",
+      "new_name": "羅漢拳",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+      "reference_sources": [
+        {
+          "title": "17173《金庸群俠傳 Online》：網金武功全接觸",
+          "url": "https://jinyong.17173.com/content/2002-1-9/n312_229042.html"
+        }
+      ]
+    },
+    {
+      "id": "SL002",
+      "sect_id": "shaolin",
+      "old_name": "橫門棍訣",
+      "new_name": "韋陀棍法",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+      "reference_sources": [
+        {
+          "title": "17173《金庸群俠傳 Online》：網金武功全接觸",
+          "url": "https://jinyong.17173.com/content/2002-1-9/n312_229042.html"
+        }
+      ]
+    },
+    {
+      "id": "SL003",
+      "sect_id": "shaolin",
+      "old_name": "回鐘震掌圖",
+      "new_name": "大力金剛掌",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+      "reference_sources": [
+        {
+          "title": "《天龍八部榮耀版》官方：大力金剛掌",
+          "url": "https://tlsy.cy.com/content/10192020/135606562.shtml"
+        }
+      ]
+    },
+    {
+      "id": "SL004",
+      "sect_id": "shaolin",
+      "old_name": "雙關護行棍式",
+      "new_name": "金剛般若掌",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+      "reference_sources": [
+        {
+          "title": "17173《金庸群俠傳 Online》：網金武功全接觸",
+          "url": "https://jinyong.17173.com/content/2002-1-9/n312_229042.html"
+        }
+      ]
+    },
+    {
+      "id": "SL005",
+      "sect_id": "shaolin",
+      "old_name": "息土調元篇",
+      "new_name": "混元一氣功",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+      "reference_sources": [
+        {
+          "title": "17173《劍俠情緣2》：少林武功",
+          "url": "https://jx2.17173.com/wugong/01.html"
+        }
+      ]
+    },
+    {
+      "id": "SL006",
+      "sect_id": "shaolin",
+      "old_name": "沉岳養勁錄",
+      "new_name": "易筋經",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+      "reference_sources": [
+        {
+          "title": "17173《劍俠情緣2》：少林武功",
+          "url": "https://jx2.17173.com/wugong/01.html"
+        }
+      ]
+    },
+    {
+      "id": "SL007",
+      "sect_id": "shaolin",
+      "old_name": "靜鐘守意經",
+      "new_name": "洗髓經",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+      "reference_sources": [
+        {
+          "title": "17173《劍俠情緣2》：少林武功",
+          "url": "https://jx2.17173.com/wugong/01.html"
+        }
+      ]
+    },
+    {
+      "id": "SL008",
+      "sect_id": "shaolin",
+      "old_name": "石階穩步圖",
+      "new_name": "一葦渡江術",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+      "reference_sources": [
+        {
+          "title": "《煙雨江湖》BWIKI：一葦渡江術",
+          "url": "https://wiki.biligame.com/yanyu/武学/一苇渡江术"
+        }
+      ]
+    },
+    {
+      "id": "SL009",
+      "sect_id": "shaolin",
+      "old_name": "轉柱回身訣",
+      "new_name": "九圖六坐像",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+      "reference_sources": [
+        {
+          "title": "《煙雨江湖》BWIKI：九圖六坐像",
+          "url": "https://wiki.biligame.com/yanyu/武学/九图六坐像"
+        }
+      ]
+    },
+    {
+      "id": "SL010",
+      "sect_id": "shaolin",
+      "old_name": "護院對練批註",
+      "new_name": "少林拳法心得",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "採用普通兵器、服飾或門派日用品的直白名稱；本作設計其門派配發及使用方式，不聲稱這是其他作品既有的專有寶物。",
+      "reference_sources": []
+    },
+    {
+      "id": "SL011",
+      "sect_id": "shaolin",
+      "old_name": "山門戒棍",
+      "new_name": "齊眉棍",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "採用普通兵器、服飾或門派日用品的直白名稱；本作設計其門派配發及使用方式，不聲稱這是其他作品既有的專有寶物。",
+      "reference_sources": []
+    },
+    {
+      "id": "SL012",
+      "sect_id": "shaolin",
+      "old_name": "護腕鐵環",
+      "new_name": "禪杖",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "採用普通兵器、服飾或門派日用品的直白名稱；本作設計其門派配發及使用方式，不聲稱這是其他作品既有的專有寶物。",
+      "reference_sources": []
+    },
+    {
+      "id": "SL013",
+      "sect_id": "shaolin",
+      "old_name": "護行僧衣",
+      "new_name": "少林僧衣",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "採用普通兵器、服飾或門派日用品的直白名稱；本作設計其門派配發及使用方式，不聲稱這是其他作品既有的專有寶物。",
+      "reference_sources": []
+    },
+    {
+      "id": "SL014",
+      "sect_id": "shaolin",
+      "old_name": "護院木牌",
+      "new_name": "少林弟子腰牌",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "採用普通兵器、服飾或門派日用品的直白名稱；本作設計其門派配發及使用方式，不聲稱這是其他作品既有的專有寶物。",
+      "reference_sources": []
+    },
+    {
+      "id": "SL015",
+      "sect_id": "shaolin",
+      "old_name": "行腳溫養膏",
+      "new_name": "少林傷藥",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "採用普通兵器、服飾或門派日用品的直白名稱；本作設計其門派配發及使用方式，不聲稱這是其他作品既有的專有寶物。",
+      "reference_sources": []
+    },
+    {
+      "id": "SL016",
+      "sect_id": "shaolin",
+      "old_name": "舊鐘拓片匣",
+      "new_name": "少林七十二絕技",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。來源所稱「少林七十二絕技」是武學總稱；本作以傳承經卷承載該總稱，不聲稱來源遊戲存在同名可拾取經匣。",
+      "reference_sources": [
+        {
+          "title": "《新天龍八部》懷舊服官方：少林門派介紹",
+          "url": "https://event.changyou.com/tlhj/202009/profession/sl.shtml"
+        }
+      ]
+    },
+    {
+      "id": "WD001",
+      "sect_id": "wudang",
+      "old_name": "松風起劍譜",
+      "new_name": "武當劍法",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+      "reference_sources": [
+        {
+          "title": "《鐵血武林2》官方：武當門派及武學",
+          "url": "https://t2.hcplay.com.cn/news/142"
+        }
+      ]
+    },
+    {
+      "id": "WD002",
+      "sect_id": "wudang",
+      "old_name": "迴環卸劍圖",
+      "new_name": "太極劍法",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+      "reference_sources": [
+        {
+          "title": "《鐵血武林2》官方：武當門派及武學",
+          "url": "https://t2.hcplay.com.cn/news/142"
+        }
+      ]
+    },
+    {
+      "id": "WD003",
+      "sect_id": "wudang",
+      "old_name": "聽潮借勢劍訣",
+      "new_name": "太極拳",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+      "reference_sources": [
+        {
+          "title": "《鐵血武林2》官方：武當門派及武學",
+          "url": "https://t2.hcplay.com.cn/news/142"
+        }
+      ]
+    },
+    {
+      "id": "WD004",
+      "sect_id": "wudang",
+      "old_name": "拂塵引手錄",
+      "new_name": "綿掌",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+      "reference_sources": [
+        {
+          "title": "《鐵血武林2》官方：武當門派及武學",
+          "url": "https://t2.hcplay.com.cn/news/142"
+        }
+      ]
+    },
+    {
+      "id": "WD005",
+      "sect_id": "wudang",
+      "old_name": "清息入靜篇",
+      "new_name": "武當心法",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+      "reference_sources": [
+        {
+          "title": "《鐵血武林2》官方：武當門派及武學",
+          "url": "https://t2.hcplay.com.cn/news/142"
+        }
+      ]
+    },
+    {
+      "id": "WD006",
+      "sect_id": "wudang",
+      "old_name": "流泉轉元錄",
+      "new_name": "純陽無極功",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+      "reference_sources": [
+        {
+          "title": "《鐵血武林2》官方：武當門派及武學",
+          "url": "https://t2.hcplay.com.cn/news/142"
+        }
+      ]
+    },
+    {
+      "id": "WD007",
+      "sect_id": "wudang",
+      "old_name": "抱圓守真經",
+      "new_name": "太極神功",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+      "reference_sources": [
+        {
+          "title": "17173《金庸群俠傳 Online》：武當武學資料",
+          "url": "https://jinyong.17173.com/content/2003-9-19/n234_150643.html"
+        }
+      ]
+    },
+    {
+      "id": "WD008",
+      "sect_id": "wudang",
+      "old_name": "雲階輕履圖",
+      "new_name": "梯雲縱",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+      "reference_sources": [
+        {
+          "title": "《新天龍八部》官方：武當戰鬥技能",
+          "url": "https://tl.changyou.com/data/equip/wdzd.shtml"
+        }
+      ]
+    },
+    {
+      "id": "WD009",
+      "sect_id": "wudang",
+      "old_name": "循松換影訣",
+      "new_name": "上天梯",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。",
+      "reference_sources": [
+        {
+          "title": "《鐵血武林2》官方：武當門派及武學",
+          "url": "https://t2.hcplay.com.cn/news/142"
+        }
+      ]
+    },
+    {
+      "id": "WD010",
+      "sect_id": "wudang",
+      "old_name": "圓石劍坪問答",
+      "new_name": "武當練功心得",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "採用普通兵器、服飾或門派日用品的直白名稱；本作設計其門派配發及使用方式，不聲稱這是其他作品既有的專有寶物。",
+      "reference_sources": []
+    },
+    {
+      "id": "WD011",
+      "sect_id": "wudang",
+      "old_name": "聽風窄鋒劍",
+      "new_name": "武當佩劍",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "採用普通兵器、服飾或門派日用品的直白名稱；本作設計其門派配發及使用方式，不聲稱這是其他作品既有的專有寶物。",
+      "reference_sources": []
+    },
+    {
+      "id": "WD012",
+      "sect_id": "wudang",
+      "old_name": "引泉拂塵",
+      "new_name": "拂塵",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "採用普通兵器、服飾或門派日用品的直白名稱；本作設計其門派配發及使用方式，不聲稱這是其他作品既有的專有寶物。",
+      "reference_sources": []
+    },
+    {
+      "id": "WD013",
+      "sect_id": "wudang",
+      "old_name": "雲紋短氅",
+      "new_name": "武當道袍",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "採用普通兵器、服飾或門派日用品的直白名稱；本作設計其門派配發及使用方式，不聲稱這是其他作品既有的專有寶物。",
+      "reference_sources": []
+    },
+    {
+      "id": "WD014",
+      "sect_id": "wudang",
+      "old_name": "問道竹符",
+      "new_name": "武當弟子符牌",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "採用普通兵器、服飾或門派日用品的直白名稱；本作設計其門派配發及使用方式，不聲稱這是其他作品既有的專有寶物。",
+      "reference_sources": []
+    },
+    {
+      "id": "WD015",
+      "sect_id": "wudang",
+      "old_name": "松露安息香",
+      "new_name": "線香",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "採用普通兵器、服飾或門派日用品的直白名稱；本作設計其門派配發及使用方式，不聲稱這是其他作品既有的專有寶物。",
+      "reference_sources": []
+    },
+    {
+      "id": "WD016",
+      "sect_id": "wudang",
+      "old_name": "舊松誓約卷",
+      "new_name": "真武七截陣",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有武學名稱及門派歸屬；繁簡字統一為繁體。本作將其作為可收藏、研讀的武學物品，描述、作用、限制、取得方式與品階均屬本作規劃，不照搬來源遊戲數值或掉落設定。來源核對陣法名稱；「陣圖」作為實體載體屬本作改編，不宣稱來源遊戲有相同物品掉落。",
+      "reference_sources": [
+        {
+          "title": "《新天龍八部》官方：武當戰鬥技能",
+          "url": "https://tl.changyou.com/data/equip/wdzd.shtml"
+        }
+      ]
+    },
+    {
+      "id": "EM001",
+      "sect_id": "emei",
+      "old_name": "雙葉短劍譜",
+      "new_name": "迴風拂柳劍",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「迴風拂柳劍」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
+      "reference_sources": [
+        {
+          "title": "金庸群俠傳Online武林至尊：峨嵋派（官方）",
+          "url": "https://jy.orientaldragon.com.tw/node/44"
+        }
+      ]
+    },
+    {
+      "id": "EM002",
+      "sect_id": "emei",
+      "old_name": "映泉截腕圖",
+      "new_name": "截手九式",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「截手九式」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
+      "reference_sources": [
+        {
+          "title": "金庸群俠傳Online武林至尊：峨嵋派（官方）",
+          "url": "https://jy.orientaldragon.com.tw/node/44"
+        }
+      ]
+    },
+    {
+      "id": "EM003",
+      "sect_id": "emei",
+      "old_name": "折蘭護心訣",
+      "new_name": "四象掌",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「四象掌」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
+      "reference_sources": [
+        {
+          "title": "金庸群俠傳Online武林至尊：峨嵋派（官方）",
+          "url": "https://jy.orientaldragon.com.tw/node/44"
+        }
+      ]
+    },
+    {
+      "id": "EM004",
+      "sect_id": "emei",
+      "old_name": "回針守距錄",
+      "new_name": "飄雪穿雲掌",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「飄雪穿雲掌」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
+      "reference_sources": [
+        {
+          "title": "金庸群俠傳Online武林至尊：峨嵋派（官方）",
+          "url": "https://jy.orientaldragon.com.tw/node/44"
+        }
+      ]
+    },
+    {
+      "id": "EM005",
+      "sect_id": "emei",
+      "old_name": "養息澄心篇",
+      "new_name": "峨嵋心法",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「峨嵋心法」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
+      "reference_sources": [
+        {
+          "title": "金庸群俠傳Online武林至尊：峨嵋派（官方）",
+          "url": "https://jy.orientaldragon.com.tw/node/44"
+        }
+      ]
+    },
+    {
+      "id": "EM006",
+      "sect_id": "emei",
+      "old_name": "清泉續脈錄",
+      "new_name": "峨嵋九陽功",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「峨嵋九陽功」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
+      "reference_sources": [
+        {
+          "title": "金庸群俠傳Online武林至尊：峨嵋派（官方）",
+          "url": "https://jy.orientaldragon.com.tw/node/44"
+        }
+      ]
+    },
+    {
+      "id": "EM007",
+      "sect_id": "emei",
+      "old_name": "照影凝神經",
+      "new_name": "臨濟十二莊",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「臨濟十二莊」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
+      "reference_sources": [
+        {
+          "title": "HKMUD 香港群俠傳：峨嵋派",
+          "url": "https://hkmud.com/%E5%B3%A8%E5%B5%8B%E6%B4%BE"
+        }
+      ]
+    },
+    {
+      "id": "EM008",
+      "sect_id": "emei",
+      "old_name": "繞泉細步圖",
+      "new_name": "峨嵋身法",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「峨嵋身法」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
+      "reference_sources": [
+        {
+          "title": "金庸群俠傳Online武林至尊：峨嵋派（官方）",
+          "url": "https://jy.orientaldragon.com.tw/node/44"
+        }
+      ]
+    },
+    {
+      "id": "EM009",
+      "sect_id": "emei",
+      "old_name": "葉底迴身訣",
+      "new_name": "諸天化身步",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「諸天化身步」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
+      "reference_sources": [
+        {
+          "title": "HKMUD 香港群俠傳：峨嵋派",
+          "url": "https://hkmud.com/%E5%B3%A8%E5%B5%8B%E6%B4%BE"
+        }
+      ]
+    },
+    {
+      "id": "EM010",
+      "sect_id": "emei",
+      "old_name": "泉台護持筆記",
+      "new_name": "峨嵋習武筆記",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "普通門派用品的直白命名，並非引用特定遊戲或原作的專有物件；外觀、用途與取得流程為本作設計。",
+      "reference_sources": []
+    },
+    {
+      "id": "EM011",
+      "sect_id": "emei",
+      "old_name": "泉影雙短劍",
+      "new_name": "倚天劍",
+      "name_origin": "existing_named_item",
+      "reference_note": "官方網金神兵清單使用「倚天劍」原名；香港群俠傳峨嵋資料記述滅絕師太持有倚天劍。此處引用既有名劍，外觀細節、裝備用途與取得流程為本作設計，並非複製其他遊戲模型或掉落規則。",
+      "reference_sources": [
+        {
+          "title": "金庸群俠傳Online武林至尊：伺服器合併神兵清單（含倚天劍）",
+          "url": "https://jy.orientaldragon.com.tw/node/1415"
+        },
+        {
+          "title": "HKMUD 香港群俠傳：峨嵋派",
+          "url": "https://hkmud.com/%E5%B3%A8%E5%B5%8B%E6%B4%BE"
+        }
+      ]
+    },
+    {
+      "id": "EM012",
+      "sect_id": "emei",
+      "old_name": "護行針匣",
+      "new_name": "峨嵋針匣",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "普通門派用品的直白命名，並非引用特定遊戲或原作的專有物件；外觀、用途與取得流程為本作設計。",
+      "reference_sources": []
+    },
+    {
+      "id": "EM013",
+      "sect_id": "emei",
+      "old_name": "行泉護袖衣",
+      "new_name": "峨嵋弟子服",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "普通門派用品的直白命名，並非引用特定遊戲或原作的專有物件；外觀、用途與取得流程為本作設計。",
+      "reference_sources": []
+    },
+    {
+      "id": "EM014",
+      "sect_id": "emei",
+      "old_name": "泉台葉牌",
+      "new_name": "峨嵋腰牌",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "普通門派用品的直白命名，並非引用特定遊戲或原作的專有物件；外觀、用途與取得流程為本作設計。",
+      "reference_sources": []
+    },
+    {
+      "id": "EM015",
+      "sect_id": "emei",
+      "old_name": "護行清涼包",
+      "new_name": "峨嵋藥包",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "普通門派用品的直白命名，並非引用特定遊戲或原作的專有物件；外觀、用途與取得流程為本作設計。",
+      "reference_sources": []
+    },
+    {
+      "id": "EM016",
+      "sect_id": "emei",
+      "old_name": "雙峰舊約繡卷",
+      "new_name": "峨嵋傳承卷軸",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "普通門派用品的直白命名，並非引用特定遊戲或原作的專有物件；外觀、用途與取得流程為本作設計。",
+      "reference_sources": []
+    },
+    {
+      "id": "HS001",
+      "sect_id": "huashan",
+      "old_name": "危峰正鋒譜",
+      "new_name": "華山劍法",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「華山劍法」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
+      "reference_sources": [
+        {
+          "title": "金庸群俠傳Online武林至尊：華山派（官方）",
+          "url": "https://jy.orientaldragon.com.tw/index.php/node/48"
+        }
+      ]
+    },
+    {
+      "id": "HS002",
+      "sect_id": "huashan",
+      "old_name": "斷雲尋隙圖",
+      "new_name": "奪命連環三仙劍",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「奪命連環三仙劍」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
+      "reference_sources": [
+        {
+          "title": "金庸群俠傳Online武林至尊：華山派（官方）",
+          "url": "https://jy.orientaldragon.com.tw/index.php/node/48"
+        }
+      ]
+    },
+    {
+      "id": "HS003",
+      "sect_id": "huashan",
+      "old_name": "孤崖決劍訣",
+      "new_name": "獨孤九劍",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "官方網金將獨孤九劍列在華山派傳授內容；香港群俠傳說明其源自獨孤求敗、由風清揚傳授。此處歸入華山傳授路線，不宣稱由華山創派祖師所創；物件裝幀及取得流程為本作設計。",
+      "reference_sources": [
+        {
+          "title": "金庸群俠傳Online武林至尊：華山派（官方）",
+          "url": "https://jy.orientaldragon.com.tw/index.php/node/48"
+        },
+        {
+          "title": "HKMUD 香港群俠傳：華山派說明",
+          "url": "https://hkmud.com/help/huashan.html"
+        }
+      ]
+    },
+    {
+      "id": "HS004",
+      "sect_id": "huashan",
+      "old_name": "回鋒收勢錄",
+      "new_name": "沖靈劍法",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「沖靈劍法」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
+      "reference_sources": [
+        {
+          "title": "金庸群俠傳Online武林至尊：華山派（官方）",
+          "url": "https://jy.orientaldragon.com.tw/index.php/node/48"
+        }
+      ]
+    },
+    {
+      "id": "HS005",
+      "sect_id": "huashan",
+      "old_name": "守鋒調息篇",
+      "new_name": "華山心法",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「華山心法」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
+      "reference_sources": [
+        {
+          "title": "金庸群俠傳Online武林至尊：華山派（官方）",
+          "url": "https://jy.orientaldragon.com.tw/index.php/node/48"
+        }
+      ]
+    },
+    {
+      "id": "HS006",
+      "sect_id": "huashan",
+      "old_name": "層嶂蓄息錄",
+      "new_name": "混元功",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "《金庸群俠傳5》攻略將《碧血劍》的華山傳承另列為混元宗，明載混元功。本作把這條華山支系納入同一門派目錄；不宣稱參考遊戲把混元宗與《笑傲江湖》華山氣宗視為同一可拜門派。裝幀與修習流程為本作設計。",
+      "reference_sources": [
+        {
+          "title": "遊民星空：《金庸群俠傳5》門派武學－混元宗",
+          "url": "https://www.gamersky.com/handbook/201804/1033434_3.shtml"
+        }
+      ]
+    },
+    {
+      "id": "HS007",
+      "sect_id": "huashan",
+      "old_name": "澄鋒合意經",
+      "new_name": "紫霞神功",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「紫霞神功」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
+      "reference_sources": [
+        {
+          "title": "金庸群俠傳Online武林至尊：華山派（官方）",
+          "url": "https://jy.orientaldragon.com.tw/index.php/node/48"
+        }
+      ]
+    },
+    {
+      "id": "HS008",
+      "sect_id": "huashan",
+      "old_name": "踏脊穩行圖",
+      "new_name": "華山身法",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「華山身法」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
+      "reference_sources": [
+        {
+          "title": "金庸群俠傳Online武林至尊：華山派（官方）",
+          "url": "https://jy.orientaldragon.com.tw/index.php/node/48"
+        }
+      ]
+    },
+    {
+      "id": "HS009",
+      "sect_id": "huashan",
+      "old_name": "掠隙回步訣",
+      "new_name": "飛燕迴翔",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "名稱及門派關聯依據參考遊戲資料；本作將「飛燕迴翔」作為可收藏的修習物品。物件裝幀、用途、限制與取得流程為本作設計，並非參考遊戲的掉落或數值設定。",
+      "reference_sources": [
+        {
+          "title": "HKMUD 香港群俠傳：華山派說明",
+          "url": "https://hkmud.com/help/huashan.html"
+        }
+      ]
+    },
+    {
+      "id": "HS010",
+      "sect_id": "huashan",
+      "old_name": "劍坪失手錄",
+      "new_name": "華山劍法心得",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "普通門派用品的直白命名，並非引用特定遊戲或原作的專有物件；外觀、用途與取得流程為本作設計。",
+      "reference_sources": []
+    },
+    {
+      "id": "HS011",
+      "sect_id": "huashan",
+      "old_name": "斷雲直鋒劍",
+      "new_name": "華山佩劍",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "普通門派用品的直白命名，並非引用特定遊戲或原作的專有物件；外觀、用途與取得流程為本作設計。",
+      "reference_sources": []
+    },
+    {
+      "id": "HS012",
+      "sect_id": "huashan",
+      "old_name": "回鋒練劍",
+      "new_name": "華山練習劍",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "普通門派用品的直白命名，並非引用特定遊戲或原作的專有物件；外觀、用途與取得流程為本作設計。",
+      "reference_sources": []
+    },
+    {
+      "id": "HS013",
+      "sect_id": "huashan",
+      "old_name": "巡峰束袖袍",
+      "new_name": "華山弟子服",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "普通門派用品的直白命名，並非引用特定遊戲或原作的專有物件；外觀、用途與取得流程為本作設計。",
+      "reference_sources": []
+    },
+    {
+      "id": "HS014",
+      "sect_id": "huashan",
+      "old_name": "巡峰劍牌",
+      "new_name": "華山腰牌",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "普通門派用品的直白命名，並非引用特定遊戲或原作的專有物件；外觀、用途與取得流程為本作設計。",
+      "reference_sources": []
+    },
+    {
+      "id": "HS015",
+      "sect_id": "huashan",
+      "old_name": "巡峰醒神茶包",
+      "new_name": "華山茶包",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "普通門派用品的直白命名，並非引用特定遊戲或原作的專有物件；外觀、用途與取得流程為本作設計。",
+      "reference_sources": []
+    },
+    {
+      "id": "HS016",
+      "sect_id": "huashan",
+      "old_name": "孤峰舊劍穗",
+      "new_name": "華山傳承劍穗",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "普通門派用品的直白命名，並非引用特定遊戲或原作的專有物件；外觀、用途與取得流程為本作設計。",
+      "reference_sources": []
+    },
+    {
+      "id": "KL001",
+      "sect_id": "kunlun",
+      "old_name": "崑崙平嶺劍譜",
+      "new_name": "崑崙劍法",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "名稱與所屬門派參照所列作品；不同作品的版本設定不混為一談。本資料的書冊形式、描述、用途、限制與取得方式為本作設計，並非原遊戲數值或掉落資訊。",
+      "reference_sources": [
+        {
+          "title": "《HKMUD 香港群俠傳》崑崙派武功簡介",
+          "url": "https://hkmud.com/help/kunlun.html"
+        }
+      ]
+    },
+    {
+      "id": "KL002",
+      "sect_id": "kunlun",
+      "old_name": "疊嶺轉鋒圖",
+      "new_name": "正兩儀劍法",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "名稱與所屬門派參照所列作品；不同作品的版本設定不混為一談。本資料的書冊形式、描述、用途、限制與取得方式為本作設計，並非原遊戲數值或掉落資訊。",
+      "reference_sources": [
+        {
+          "title": "《HKMUD 香港群俠傳》崑崙派武功簡介",
+          "url": "https://hkmud.com/help/kunlun.html"
+        }
+      ]
+    },
+    {
+      "id": "KL003",
+      "sect_id": "kunlun",
+      "old_name": "雲脊九折劍卷",
+      "new_name": "迅雷劍法",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "名稱與所屬門派參照所列作品；不同作品的版本設定不混為一談。本資料的書冊形式、描述、用途、限制與取得方式為本作設計，並非原遊戲數值或掉落資訊。",
+      "reference_sources": [
+        {
+          "title": "《HKMUD 香港群俠傳》崑崙派武功簡介",
+          "url": "https://hkmud.com/help/kunlun.html"
+        }
+      ]
+    },
+    {
+      "id": "KL004",
+      "sect_id": "kunlun",
+      "old_name": "斷雪卸鋒摹本",
+      "new_name": "七弦五音劍",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "名稱與所屬門派參照所列作品；不同作品的版本設定不混為一談。本資料的書冊形式、描述、用途、限制與取得方式為本作設計，並非原遊戲數值或掉落資訊。",
+      "reference_sources": [
+        {
+          "title": "《放置江湖》BWIKI：昆侖派",
+          "url": "https://wiki.biligame.com/fzjh/%E6%98%86%E4%BB%91%E6%B4%BE"
+        }
+      ]
+    },
+    {
+      "id": "KL005",
+      "sect_id": "kunlun",
+      "old_name": "崑崙長息訣",
+      "new_name": "崑崙心法",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "名稱與所屬門派參照所列作品；不同作品的版本設定不混為一談。本資料的書冊形式、描述、用途、限制與取得方式為本作設計，並非原遊戲數值或掉落資訊。",
+      "reference_sources": [
+        {
+          "title": "《HKMUD 香港群俠傳》崑崙派武功簡介",
+          "url": "https://hkmud.com/help/kunlun.html"
+        }
+      ]
+    },
+    {
+      "id": "KL006",
+      "sect_id": "kunlun",
+      "old_name": "回嶺養元篇",
+      "new_name": "太清罡氣",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "名稱與所屬門派參照所列作品；不同作品的版本設定不混為一談。本資料的書冊形式、描述、用途、限制與取得方式為本作設計，並非原遊戲數值或掉落資訊。",
+      "reference_sources": [
+        {
+          "title": "《武林英雄傳》官方：門派介紹－崑崙",
+          "url": "https://wulin.tecogames.com/archives/891"
+        }
+      ]
+    },
+    {
+      "id": "KL007",
+      "sect_id": "kunlun",
+      "old_name": "靜峰藏勁錄",
+      "new_name": "兩儀神功",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "名稱與所屬門派參照所列作品；不同作品的版本設定不混為一談。本資料的書冊形式、描述、用途、限制與取得方式為本作設計，並非原遊戲數值或掉落資訊。",
+      "reference_sources": [
+        {
+          "title": "《HKMUD 香港群俠傳》崑崙派武功簡介",
+          "url": "https://hkmud.com/help/kunlun.html"
+        }
+      ]
+    },
+    {
+      "id": "KL008",
+      "sect_id": "kunlun",
+      "old_name": "踏脊步圖",
+      "new_name": "穿雲步法",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "名稱與所屬門派參照所列作品；不同作品的版本設定不混為一談。本資料的書冊形式、描述、用途、限制與取得方式為本作設計，並非原遊戲數值或掉落資訊。",
+      "reference_sources": [
+        {
+          "title": "《HKMUD 香港群俠傳》崑崙派武功簡介",
+          "url": "https://hkmud.com/help/kunlun.html"
+        }
+      ]
+    },
+    {
+      "id": "KL009",
+      "sect_id": "kunlun",
+      "old_name": "凌隘回身抄",
+      "new_name": "踏雪無痕",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "名稱與所屬門派參照所列作品；不同作品的版本設定不混為一談。本資料的書冊形式、描述、用途、限制與取得方式為本作設計，並非原遊戲數值或掉落資訊。",
+      "reference_sources": [
+        {
+          "title": "《放置江湖》BWIKI：昆侖派",
+          "url": "https://wiki.biligame.com/fzjh/%E6%98%86%E4%BB%91%E6%B4%BE"
+        }
+      ]
+    },
+    {
+      "id": "KL010",
+      "sect_id": "kunlun",
+      "old_name": "雪隘練劍札",
+      "new_name": "崑崙練劍筆記",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "此名稱是普通物品類型加上門派標識的描述性稱呼，並非聲稱其他作品已有同名獨有寶物；外觀、用途及取得方式為本作設計。",
+      "reference_sources": []
+    },
+    {
+      "id": "KL011",
+      "sect_id": "kunlun",
+      "old_name": "嶺風長劍",
+      "new_name": "崑崙長劍",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "此名稱是普通物品類型加上門派標識的描述性稱呼，並非聲稱其他作品已有同名獨有寶物；外觀、用途及取得方式為本作設計。",
+      "reference_sources": []
+    },
+    {
+      "id": "KL012",
+      "sect_id": "kunlun",
+      "old_name": "守隘雙手劍",
+      "new_name": "崑崙練功重劍",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "此名稱是普通物品類型加上門派標識的描述性稱呼，並非聲稱其他作品已有同名獨有寶物；外觀、用途及取得方式為本作設計。",
+      "reference_sources": []
+    },
+    {
+      "id": "KL013",
+      "sect_id": "kunlun",
+      "old_name": "崑崙護風披衣",
+      "new_name": "崑崙弟子披風",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "此名稱是普通物品類型加上門派標識的描述性稱呼，並非聲稱其他作品已有同名獨有寶物；外觀、用途及取得方式為本作設計。",
+      "reference_sources": []
+    },
+    {
+      "id": "KL014",
+      "sect_id": "kunlun",
+      "old_name": "雙峰巡路牌",
+      "new_name": "崑崙弟子令牌",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "此名稱是普通物品類型加上門派標識的描述性稱呼，並非聲稱其他作品已有同名獨有寶物；外觀、用途及取得方式為本作設計。",
+      "reference_sources": []
+    },
+    {
+      "id": "KL015",
+      "sect_id": "kunlun",
+      "old_name": "守隘暖行餅",
+      "new_name": "崑崙乾糧",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "此名稱是普通物品類型加上門派標識的描述性稱呼，並非聲稱其他作品已有同名獨有寶物；外觀、用途及取得方式為本作設計。",
+      "reference_sources": []
+    },
+    {
+      "id": "KL016",
+      "sect_id": "kunlun",
+      "old_name": "雲嶺傳圖匣",
+      "new_name": "崑崙劍譜匣",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "此名稱是普通物品類型加上門派標識的描述性稱呼，並非聲稱其他作品已有同名獨有寶物；外觀、用途及取得方式為本作設計。",
+      "reference_sources": []
+    },
+    {
+      "id": "KT001",
+      "sect_id": "kongtong",
+      "old_name": "崆峒扣門拳冊",
+      "new_name": "飛龍掌法",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "名稱與所屬門派參照所列作品；不同作品的版本設定不混為一談。本資料的書冊形式、描述、用途、限制與取得方式為本作設計，並非原遊戲數值或掉落資訊。",
+      "reference_sources": [
+        {
+          "title": "《武林英雄傳》官方：門派介紹－崆峒",
+          "url": "https://wulin.tecogames.com/archives/659"
+        }
+      ]
+    },
+    {
+      "id": "KT002",
+      "sect_id": "kongtong",
+      "old_name": "轉肘連環圖",
+      "new_name": "通天掌法",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "名稱與所屬門派參照所列作品；不同作品的版本設定不混為一談。本資料的書冊形式、描述、用途、限制與取得方式為本作設計，並非原遊戲數值或掉落資訊。",
+      "reference_sources": [
+        {
+          "title": "《武林英雄傳》官方：門派介紹－崆峒",
+          "url": "https://wulin.tecogames.com/archives/659"
+        }
+      ]
+    },
+    {
+      "id": "KT003",
+      "sect_id": "kongtong",
+      "old_name": "石門叩勁真譜",
+      "new_name": "七傷拳",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "名稱與所屬門派參照所列作品；不同作品的版本設定不混為一談。本資料的書冊形式、描述、用途、限制與取得方式為本作設計，並非原遊戲數值或掉落資訊。",
+      "reference_sources": [
+        {
+          "title": "《放置江湖》BWIKI：被動招式（化星功、七傷拳）",
+          "url": "https://wiki.biligame.com/fzjh/%E8%A2%AB%E5%8A%A8%E6%8B%9B%E5%BC%8F"
+        },
+        {
+          "title": "金庸 Wiki：七傷拳",
+          "url": "https://jinyong.fandom.com/zh/wiki/%E4%B8%83%E5%82%B7%E6%8B%B3?variant=zh-hant"
+        }
+      ]
+    },
+    {
+      "id": "KT004",
+      "sect_id": "kongtong",
+      "old_name": "換手短鋒摹錄",
+      "new_name": "十式練手劍",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "名稱與所屬門派參照所列作品；不同作品的版本設定不混為一談。本資料的書冊形式、描述、用途、限制與取得方式為本作設計，並非原遊戲數值或掉落資訊。",
+      "reference_sources": [
+        {
+          "title": "《武林英雄傳》官方：門派介紹－崆峒",
+          "url": "https://wulin.tecogames.com/archives/659"
+        }
+      ]
+    },
+    {
+      "id": "KT005",
+      "sect_id": "kongtong",
+      "old_name": "崆峒定樁息法",
+      "new_name": "上清心法",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "名稱與所屬門派參照所列作品；不同作品的版本設定不混為一談。本資料的書冊形式、描述、用途、限制與取得方式為本作設計，並非原遊戲數值或掉落資訊。",
+      "reference_sources": [
+        {
+          "title": "《武林英雄傳》官方：門派介紹－崆峒",
+          "url": "https://wulin.tecogames.com/archives/659"
+        }
+      ]
+    },
+    {
+      "id": "KT006",
+      "sect_id": "kongtong",
+      "old_name": "合節養勁篇",
+      "new_name": "化星功",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "名稱與所屬門派參照所列作品；不同作品的版本設定不混為一談。本資料的書冊形式、描述、用途、限制與取得方式為本作設計，並非原遊戲數值或掉落資訊。",
+      "reference_sources": [
+        {
+          "title": "《放置江湖》BWIKI：被動招式（化星功、七傷拳）",
+          "url": "https://wiki.biligame.com/fzjh/%E8%A2%AB%E5%8A%A8%E6%8B%9B%E5%BC%8F"
+        }
+      ]
+    },
+    {
+      "id": "KT007",
+      "sect_id": "kongtong",
+      "old_name": "藏鋒回震訣",
+      "new_name": "離合真經",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "名稱與所屬門派參照所列作品；不同作品的版本設定不混為一談。本資料的書冊形式、描述、用途、限制與取得方式為本作設計，並非原遊戲數值或掉落資訊。",
+      "reference_sources": [
+        {
+          "title": "《武林英雄傳》官方：門派介紹－崆峒",
+          "url": "https://wulin.tecogames.com/archives/659"
+        }
+      ]
+    },
+    {
+      "id": "KT008",
+      "sect_id": "kongtong",
+      "old_name": "踏石迫身圖",
+      "new_name": "輕靈身法",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "名稱與所屬門派參照所列作品；不同作品的版本設定不混為一談。本資料的書冊形式、描述、用途、限制與取得方式為本作設計，並非原遊戲數值或掉落資訊。",
+      "reference_sources": [
+        {
+          "title": "《武林英雄傳》官方：門派介紹－崆峒",
+          "url": "https://wulin.tecogames.com/archives/659"
+        }
+      ]
+    },
+    {
+      "id": "KT009",
+      "sect_id": "kongtong",
+      "old_name": "折門退步箋",
+      "new_name": "飛雲步法",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "名稱與所屬門派參照所列作品；不同作品的版本設定不混為一談。本資料的書冊形式、描述、用途、限制與取得方式為本作設計，並非原遊戲數值或掉落資訊。",
+      "reference_sources": [
+        {
+          "title": "《武林英雄傳》官方：門派介紹－崆峒",
+          "url": "https://wulin.tecogames.com/archives/659"
+        }
+      ]
+    },
+    {
+      "id": "KT010",
+      "sect_id": "kongtong",
+      "old_name": "試勁收手錄",
+      "new_name": "崆峒練功筆記",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "此名稱是普通物品類型加上門派標識的描述性稱呼，並非聲稱其他作品已有同名獨有寶物；外觀、用途及取得方式為本作設計。",
+      "reference_sources": []
+    },
+    {
+      "id": "KT011",
+      "sect_id": "kongtong",
+      "old_name": "石門短鐧",
+      "new_name": "崆峒短鐧",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "此名稱是普通物品類型加上門派標識的描述性稱呼，並非聲稱其他作品已有同名獨有寶物；外觀、用途及取得方式為本作設計。",
+      "reference_sources": []
+    },
+    {
+      "id": "KT012",
+      "sect_id": "kongtong",
+      "old_name": "回環護手鉤",
+      "new_name": "崆峒雙鉤",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "此名稱是普通物品類型加上門派標識的描述性稱呼，並非聲稱其他作品已有同名獨有寶物；外觀、用途及取得方式為本作設計。",
+      "reference_sources": []
+    },
+    {
+      "id": "KT013",
+      "sect_id": "kongtong",
+      "old_name": "崆峒束袖勁衣",
+      "new_name": "崆峒弟子服",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "此名稱是普通物品類型加上門派標識的描述性稱呼，並非聲稱其他作品已有同名獨有寶物；外觀、用途及取得方式為本作設計。",
+      "reference_sources": []
+    },
+    {
+      "id": "KT014",
+      "sect_id": "kongtong",
+      "old_name": "石門習武銅牌",
+      "new_name": "崆峒弟子令牌",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "此名稱是普通物品類型加上門派標識的描述性稱呼，並非聲稱其他作品已有同名獨有寶物；外觀、用途及取得方式為本作設計。",
+      "reference_sources": []
+    },
+    {
+      "id": "KT015",
+      "sect_id": "kongtong",
+      "old_name": "演武護掌膏",
+      "new_name": "崆峒跌打膏",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "此名稱是普通物品類型加上門派標識的描述性稱呼，並非聲稱其他作品已有同名獨有寶物；外觀、用途及取得方式為本作設計。",
+      "reference_sources": []
+    },
+    {
+      "id": "KT016",
+      "sect_id": "kongtong",
+      "old_name": "五門試勁石拓",
+      "new_name": "崆峒武學拓本",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "此名稱是普通物品類型加上門派標識的描述性稱呼，並非聲稱其他作品已有同名獨有寶物；外觀、用途及取得方式為本作設計。",
+      "reference_sources": []
+    },
+    {
+      "id": "GB001",
+      "sect_id": "gaibang",
+      "old_name": "丐幫行路棍譜",
+      "new_name": "打狗棒法",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有名稱及門派歸屬；物品形制、修習階段、用途、限制與取得方式為本專案設計，並非照搬來源遊戲規則。",
+      "reference_sources": [
+        {
+          "title": "《新天龍八部》官方資料站：丐幫技能",
+          "url": "https://tl.changyou.com/data/equip/gbzd.shtml"
+        }
+      ]
+    },
+    {
+      "id": "GB002",
+      "sect_id": "gaibang",
+      "old_name": "繞身挑棍圖",
+      "new_name": "驅蛇棍法",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有名稱及門派歸屬；物品形制、修習階段、用途、限制與取得方式為本專案設計，並非照搬來源遊戲規則。",
+      "reference_sources": [
+        {
+          "title": "《鐵血武林2》官方：丐幫門派武學介紹",
+          "url": "https://t2.hcplay.com.cn/news/713"
+        }
+      ]
+    },
+    {
+      "id": "GB003",
+      "sect_id": "gaibang",
+      "old_name": "百衲回潮掌錄",
+      "new_name": "降龍十八掌",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有名稱及門派歸屬；物品形制、修習階段、用途、限制與取得方式為本專案設計，並非照搬來源遊戲規則。",
+      "reference_sources": [
+        {
+          "title": "《新天龍八部》官方資料站：丐幫技能",
+          "url": "https://tl.changyou.com/data/equip/gbzd.shtml"
+        }
+      ]
+    },
+    {
+      "id": "GB004",
+      "sect_id": "gaibang",
+      "old_name": "短巷護身手抄",
+      "new_name": "蓮花掌法",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有名稱及門派歸屬；物品形制、修習階段、用途、限制與取得方式為本專案設計，並非照搬來源遊戲規則。",
+      "reference_sources": [
+        {
+          "title": "17173《九陰真經》官方合作專區：丐幫門派武學",
+          "url": "https://9yin.17173.com/mp/42.shtml"
+        }
+      ]
+    },
+    {
+      "id": "GB005",
+      "sect_id": "gaibang",
+      "old_name": "丐幫暖息篇",
+      "new_name": "丐幫心法",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有名稱及門派歸屬；物品形制、修習階段、用途、限制與取得方式為本專案設計，並非照搬來源遊戲規則。",
+      "reference_sources": [
+        {
+          "title": "《鐵血武林2》官方：丐幫門派武學介紹",
+          "url": "https://t2.hcplay.com.cn/news/713"
+        }
+      ]
+    },
+    {
+      "id": "GB006",
+      "sect_id": "gaibang",
+      "old_name": "隨行換勁訣",
+      "new_name": "降龍混天功",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有名稱及門派歸屬；物品形制、修習階段、用途、限制與取得方式為本專案設計，並非照搬來源遊戲規則。",
+      "reference_sources": [
+        {
+          "title": "《鐵血武林2》官方：丐幫門派武學介紹",
+          "url": "https://t2.hcplay.com.cn/news/713"
+        }
+      ]
+    },
+    {
+      "id": "GB007",
+      "sect_id": "gaibang",
+      "old_name": "守灶聚元錄",
+      "new_name": "睡夢羅漢功",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有名稱及門派歸屬；物品形制、修習階段、用途、限制與取得方式為本專案設計，並非照搬來源遊戲規則。",
+      "reference_sources": [
+        {
+          "title": "遊民星空：《逸劍風雲決》睡夢羅漢功獲取教程",
+          "url": "https://www.gamersky.com/handbook/202309/1649426.shtml"
+        }
+      ]
+    },
+    {
+      "id": "GB008",
+      "sect_id": "gaibang",
+      "old_name": "穿巷步圖",
+      "new_name": "逍遙遊步",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有名稱及門派歸屬；物品形制、修習階段、用途、限制與取得方式為本專案設計，並非照搬來源遊戲規則。",
+      "reference_sources": [
+        {
+          "title": "放置江湖 BWIKI：丐幫",
+          "url": "https://wiki.biligame.com/fzjh/%E4%B8%90%E5%B8%AE"
+        }
+      ]
+    },
+    {
+      "id": "GB009",
+      "sect_id": "gaibang",
+      "old_name": "借勢回棚抄",
+      "new_name": "八步趕蟾",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有名稱及門派歸屬；物品形制、修習階段、用途、限制與取得方式為本專案設計，並非照搬來源遊戲規則。",
+      "reference_sources": [
+        {
+          "title": "《新天龍八部》官方資料站：丐幫技能",
+          "url": "https://tl.changyou.com/data/equip/gbzd.shtml"
+        }
+      ]
+    },
+    {
+      "id": "GB010",
+      "sect_id": "gaibang",
+      "old_name": "百家交手補記",
+      "new_name": "丐幫武學心得",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "採用常見門派用品的直白名稱；本項為通用物品設計，不宣稱是特定作品的專有寶物。用途、限制與取得方式由本專案規劃。",
+      "reference_sources": []
+    },
+    {
+      "id": "GB011",
+      "sect_id": "gaibang",
+      "old_name": "青節行腳棍",
+      "new_name": "打狗棒",
+      "name_origin": "existing_named_item",
+      "reference_note": "來源用於核對既有名稱及門派歸屬；物品形制、修習階段、用途、限制與取得方式為本專案設計，並非照搬來源遊戲規則。打狗棒材質在作品間不同，本案採參考遊戲所述的青竹形制。",
+      "reference_sources": [
+        {
+          "title": "17173：《獨孤九劍》門派探秘",
+          "url": "https://newgame.17173.com/news/12102012/154629704.shtml"
+        }
+      ]
+    },
+    {
+      "id": "GB012",
+      "sect_id": "gaibang",
+      "old_name": "護橋沉木棍",
+      "new_name": "丐幫長棍",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "採用常見門派用品的直白名稱；本項為通用物品設計，不宣稱是特定作品的專有寶物。用途、限制與取得方式由本專案規劃。",
+      "reference_sources": []
+    },
+    {
+      "id": "GB013",
+      "sect_id": "gaibang",
+      "old_name": "百衲行旅衣",
+      "new_name": "百衲衣",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "採用常見門派用品的直白名稱；本項為通用物品設計，不宣稱是特定作品的專有寶物。用途、限制與取得方式由本專案規劃。",
+      "reference_sources": []
+    },
+    {
+      "id": "GB014",
+      "sect_id": "gaibang",
+      "old_name": "青繩引路結",
+      "new_name": "丐幫弟子袋",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "採用常見門派用品的直白名稱；本項為通用物品設計，不宣稱是特定作品的專有寶物。用途、限制與取得方式由本專案規劃。",
+      "reference_sources": []
+    },
+    {
+      "id": "GB015",
+      "sect_id": "gaibang",
+      "old_name": "幫灶雜糧包",
+      "new_name": "丐幫乾糧包",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "採用常見門派用品的直白名稱；本項為通用物品設計，不宣稱是特定作品的專有寶物。用途、限制與取得方式由本專案規劃。",
+      "reference_sources": []
+    },
+    {
+      "id": "GB016",
+      "sect_id": "gaibang",
+      "old_name": "舊路百結圖",
+      "new_name": "丐幫分舵地圖",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "採用常見門派用品的直白名稱；本項為通用物品設計，不宣稱是特定作品的專有寶物。用途、限制與取得方式由本專案規劃。",
+      "reference_sources": []
+    },
+    {
+      "id": "TM001",
+      "sect_id": "tangmen",
+      "old_name": "唐門試影投器冊",
+      "new_name": "含沙射影",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "名稱、唐門歸屬及外功攻擊定位參考《熱血俠義道》官方介紹；採用該遊戲的主動攻擊版本，與《劍網2》的同名防禦武學區別。秘籍形制、修習階段、具體用途、限制與取得方式為本專案設計。",
+      "reference_sources": [
+        {
+          "title": "《熱血俠義道》官方供稿：暗夜魅影蜀中唐門（17173）",
+          "url": "https://news.17173.com/content/12132018/103738929.shtml"
+        }
+      ]
+    },
+    {
+      "id": "TM002",
+      "sect_id": "tangmen",
+      "old_name": "錯時連發圖",
+      "new_name": "滿天花雨",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有名稱及門派歸屬；物品形制、修習階段、用途、限制與取得方式為本專案設計，並非照搬來源遊戲規則。",
+      "reference_sources": [
+        {
+          "title": "《劍俠情緣網絡版2新傳》官方：門派介紹",
+          "url": "https://jx2xz.xoyo.com/zt_news.html"
+        }
+      ]
+    },
+    {
+      "id": "TM003",
+      "sect_id": "tangmen",
+      "old_name": "藏花伏機譜",
+      "new_name": "金蛇刺",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有名稱及門派歸屬；物品形制、修習階段、用途、限制與取得方式為本專案設計，並非照搬來源遊戲規則。",
+      "reference_sources": [
+        {
+          "title": "《九陰》手遊官方：唐門門派武學與內功",
+          "url": "https://9yinsy.woniu.com/"
+        }
+      ]
+    },
+    {
+      "id": "TM004",
+      "sect_id": "tangmen",
+      "old_name": "收針護手摹錄",
+      "new_name": "鎖命針",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "《劍網2》官方門派區確認鎖命針名稱與唐門歸屬，詳細技能資料將其列為唐門高級陷阱。本案將其呈現為記錄機關佈設與啟動時機的武學抄本；物件裝幀、修習階段、限制與取得方式為本專案設計，不照搬來源遊戲數值。",
+      "reference_sources": [
+        {
+          "title": "《劍俠情緣網絡版2》官方：唐門絕技",
+          "url": "https://jx2.xoyo.com/"
+        },
+        {
+          "title": "52PK《劍俠情緣ⅡOnline》資料：唐門武功（鎖命針為陷阱）",
+          "url": "https://jx2.52pk.com/group_52pk/04.htm"
+        }
+      ]
+    },
+    {
+      "id": "TM005",
+      "sect_id": "tangmen",
+      "old_name": "唐門定息篇",
+      "new_name": "七絕經",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有名稱及門派歸屬；物品形制、修習階段、用途、限制與取得方式為本專案設計，並非照搬來源遊戲規則。",
+      "reference_sources": [
+        {
+          "title": "《九陰》手遊官方：唐門門派武學與內功",
+          "url": "https://9yinsy.woniu.com/"
+        }
+      ]
+    },
+    {
+      "id": "TM006",
+      "sect_id": "tangmen",
+      "old_name": "分機養氣訣",
+      "new_name": "驚羽訣",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有名稱及門派歸屬；物品形制、修習階段、用途、限制與取得方式為本專案設計，並非照搬來源遊戲規則。《劍網3》的驚羽訣屬唐門心法，但其戰鬥輸出歸為外功；本庫的內功秘籍分類指心法養成物品，不等同傷害屬性。",
+      "reference_sources": [
+        {
+          "title": "《劍網3》官方門派站：唐門",
+          "url": "https://jx3.xoyo.com/zt/2014/11/21/zt/menpai/tm.html"
+        }
+      ]
+    },
+    {
+      "id": "TM007",
+      "sect_id": "tangmen",
+      "old_name": "藏弦守息錄",
+      "new_name": "天羅詭道",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有名稱及門派歸屬；物品形制、修習階段、用途、限制與取得方式為本專案設計，並非照搬來源遊戲規則。",
+      "reference_sources": [
+        {
+          "title": "《劍網3》官方門派站：唐門",
+          "url": "https://jx3.xoyo.com/zt/2014/11/21/zt/menpai/tm.html"
+        }
+      ]
+    },
+    {
+      "id": "TM008",
+      "sect_id": "tangmen",
+      "old_name": "避鋒側步圖",
+      "new_name": "迷影縱",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有名稱及門派歸屬；物品形制、修習階段、用途、限制與取得方式為本專案設計，並非照搬來源遊戲規則。",
+      "reference_sources": [
+        {
+          "title": "《劍俠世界》官方：武功技能－木系門派唐門",
+          "url": "https://jxsj.xoyo.com/show-3423-8576-1.html"
+        }
+      ]
+    },
+    {
+      "id": "TM009",
+      "sect_id": "tangmen",
+      "old_name": "回廊藏步箋",
+      "new_name": "鳥翔碧空",
+      "name_origin": "existing_martial_arts",
+      "reference_note": "來源用於核對既有名稱及門派歸屬；物品形制、修習階段、用途、限制與取得方式為本專案設計，並非照搬來源遊戲規則。",
+      "reference_sources": [
+        {
+          "title": "劍網3 BWIKI：唐門武學",
+          "url": "https://wiki.biligame.com/jx3/%E5%94%90%E9%97%A8"
+        }
+      ]
+    },
+    {
+      "id": "TM010",
+      "sect_id": "tangmen",
+      "old_name": "機括失手錄",
+      "new_name": "唐門暗器心得",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "採用常見門派用品的直白名稱；本項為通用物品設計，不宣稱是特定作品的專有寶物。用途、限制與取得方式由本專案規劃。",
+      "reference_sources": []
+    },
+    {
+      "id": "TM011",
+      "sect_id": "tangmen",
+      "old_name": "分槽飛鏢匣",
+      "new_name": "千機匣",
+      "name_origin": "existing_named_item",
+      "reference_note": "來源用於核對既有名稱及門派歸屬；物品形制、修習階段、用途、限制與取得方式為本專案設計，並非照搬來源遊戲規則。",
+      "reference_sources": [
+        {
+          "title": "《劍網3》官方門派站：唐門",
+          "url": "https://jx3.xoyo.com/zt/2014/11/21/zt/menpai/tm.html"
+        }
+      ]
+    },
+    {
+      "id": "TM012",
+      "sect_id": "tangmen",
+      "old_name": "折羽護臂機",
+      "new_name": "暴雨梨花針",
+      "name_origin": "existing_named_item",
+      "reference_note": "《唐門六道》官方確認暴雨梨花針為唐門暗器；《新天龍八部》唐門介紹以暴雨梨花之名列出小匣機括與暗器手法等版本。本案採盒匣式兵器，細節造型、養成階段、效果、限制與取得方式為本專案設計，不照搬來源遊戲規則。",
+      "reference_sources": [
+        {
+          "title": "《新天龍八部》官方：蜀中唐門介紹",
+          "url": "https://event.changyou.com/xtl/201307/job/sub.shtml"
+        },
+        {
+          "title": "37《唐門六道》官方：暗器介紹",
+          "url": "https://www.37.com/tang/xinwen/20241010-2/"
+        }
+      ]
+    },
+    {
+      "id": "TM013",
+      "sect_id": "tangmen",
+      "old_name": "唐門分袋短衣",
+      "new_name": "唐門弟子服",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "採用常見門派用品的直白名稱；本項為通用物品設計，不宣稱是特定作品的專有寶物。用途、限制與取得方式由本專案規劃。",
+      "reference_sources": []
+    },
+    {
+      "id": "TM014",
+      "sect_id": "tangmen",
+      "old_name": "四瓣工房牌",
+      "new_name": "唐門令牌",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "採用常見門派用品的直白名稱；本項為通用物品設計，不宣稱是特定作品的專有寶物。用途、限制與取得方式由本專案規劃。",
+      "reference_sources": []
+    },
+    {
+      "id": "TM015",
+      "sect_id": "tangmen",
+      "old_name": "霧青息塵包",
+      "new_name": "唐門煙霧包",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "採用常見門派用品的直白名稱；本項為通用物品設計，不宣稱是特定作品的專有寶物。用途、限制與取得方式由本專案規劃。",
+      "reference_sources": []
+    },
+    {
+      "id": "TM016",
+      "sect_id": "tangmen",
+      "old_name": "無聲機匣母圖",
+      "new_name": "唐門機關圖譜",
+      "name_origin": "generic_traditional_item",
+      "reference_note": "採用常見門派用品的直白名稱；本項為通用物品設計，不宣稱是特定作品的專有寶物。用途、限制與取得方式由本專案規劃。",
+      "reference_sources": []
+    }
+  ]
+}

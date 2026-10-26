@@ -1,6 +1,7 @@
 """Final content, asset and provenance checks. Requires Pillow."""
 import hashlib
 import json
+from collections import Counter
 from pathlib import Path
 from PIL import Image
 from validate_catalog import validate
@@ -35,6 +36,8 @@ def main():
             'unique_ids_and_names':True,'item_order_matches_metadata':True,
             'sha256_matches':True,'transparent_pngs':True,'no_opaque_outer_edge_pixels':True,
             'source_pixels_preserved':True,'implementation_status':'design_only',
+            'sect_name_origins':dict(Counter(i['name_origin'] for i in items if i['collection']=='sect')),
+            'established_names_have_sources':True,'name_mapping_matches_catalog':True,
             'note':'Some transparent gutter edges retain alpha<=32 artifacts; measured regions avoid foreground above that threshold. All source PNG bytes remain unedited.'}
     (ROOT/'validation-report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps(report,ensure_ascii=False,indent=2))

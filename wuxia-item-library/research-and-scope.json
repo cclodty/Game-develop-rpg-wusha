@@ -1,6 +1,6 @@
 {
   "retrieved_date": "2026-10-26",
-  "note": "參考門派分類與武學取得方式；本庫的八派組合、物品名稱、描述與用途為本次重新設計，不是任何單一遊戲的資料表，也不是恢復的原240件。",
+  "note": "240件通用物品沿用原創重建版；128件門派物品的武學與知名兵器改採已有原名，普通用品採直白通稱。名稱、派別與版本依逐項來源註記；玩法、取得途徑和圖像仍為本作設計。",
   "sources": [
     {
       "title": "《劍網一》官方門派列表",
@@ -51,5 +51,166 @@
     "learning": "門派獨有指來源及傳承，武學預設可跨派研習；信物與傳承物仍有個別交付條件。",
     "consumption": "書冊研讀與材料使用的具體時間、數值及消耗在接入玩法前另定；不將物品設計文案當作已實作功能。",
     "art": "Q版武俠道具、水粉水彩、暖褐輪廓、透明背景、完整剪影、書名由介面顯示，不烙文字。"
+  },
+  "revision": "classic-names-v2",
+  "naming_policy": {
+    "established_names": "使用已核對的武學、兵器及傳承原名，不刻意替換成原創近義名。",
+    "generic_items": "普通衣物、補給、信物使用通俗名稱，不假稱為已有的專有寶物。",
+    "different_versions": "保留來源遊戲與支系說明，避免誤認為單一原典設定。"
+  },
+  "classic_name_sources": [
+    {
+      "title": "17173《金庸群俠傳 Online》：網金武功全接觸",
+      "url": "https://jinyong.17173.com/content/2002-1-9/n312_229042.html"
+    },
+    {
+      "title": "《天龍八部榮耀版》官方：大力金剛掌",
+      "url": "https://tlsy.cy.com/content/10192020/135606562.shtml"
+    },
+    {
+      "title": "17173《劍俠情緣2》：少林武功",
+      "url": "https://jx2.17173.com/wugong/01.html"
+    },
+    {
+      "title": "《煙雨江湖》BWIKI：一葦渡江術",
+      "url": "https://wiki.biligame.com/yanyu/武学/一苇渡江术"
+    },
+    {
+      "title": "《煙雨江湖》BWIKI：九圖六坐像",
+      "url": "https://wiki.biligame.com/yanyu/武学/九图六坐像"
+    },
+    {
+      "title": "《新天龍八部》懷舊服官方：少林門派介紹",
+      "url": "https://event.changyou.com/tlhj/202009/profession/sl.shtml"
+    },
+    {
+      "title": "《鐵血武林2》官方：武當門派及武學",
+      "url": "https://t2.hcplay.com.cn/news/142"
+    },
+    {
+      "title": "17173《金庸群俠傳 Online》：武當武學資料",
+      "url": "https://jinyong.17173.com/content/2003-9-19/n234_150643.html"
+    },
+    {
+      "title": "《新天龍八部》官方：武當戰鬥技能",
+      "url": "https://tl.changyou.com/data/equip/wdzd.shtml"
+    },
+    {
+      "title": "金庸群俠傳Online武林至尊：峨嵋派（官方）",
+      "url": "https://jy.orientaldragon.com.tw/node/44"
+    },
+    {
+      "title": "HKMUD 香港群俠傳：峨嵋派",
+      "url": "https://hkmud.com/%E5%B3%A8%E5%B5%8B%E6%B4%BE"
+    },
+    {
+      "title": "金庸群俠傳Online武林至尊：伺服器合併神兵清單（含倚天劍）",
+      "url": "https://jy.orientaldragon.com.tw/node/1415"
+    },
+    {
+      "title": "金庸群俠傳Online武林至尊：華山派（官方）",
+      "url": "https://jy.orientaldragon.com.tw/index.php/node/48"
+    },
+    {
+      "title": "HKMUD 香港群俠傳：華山派說明",
+      "url": "https://hkmud.com/help/huashan.html"
+    },
+    {
+      "title": "遊民星空：《金庸群俠傳5》門派武學－混元宗",
+      "url": "https://www.gamersky.com/handbook/201804/1033434_3.shtml"
+    },
+    {
+      "title": "《HKMUD 香港群俠傳》崑崙派武功簡介",
+      "url": "https://hkmud.com/help/kunlun.html"
+    },
+    {
+      "title": "《放置江湖》BWIKI：昆侖派",
+      "url": "https://wiki.biligame.com/fzjh/%E6%98%86%E4%BB%91%E6%B4%BE"
+    },
+    {
+      "title": "《武林英雄傳》官方：門派介紹－崑崙",
+      "url": "https://wulin.tecogames.com/archives/891"
+    },
+    {
+      "title": "《武林英雄傳》官方：門派介紹－崆峒",
+      "url": "https://wulin.tecogames.com/archives/659"
+    },
+    {
+      "title": "《放置江湖》BWIKI：被動招式（化星功、七傷拳）",
+      "url": "https://wiki.biligame.com/fzjh/%E8%A2%AB%E5%8A%A8%E6%8B%9B%E5%BC%8F"
+    },
+    {
+      "title": "金庸 Wiki：七傷拳",
+      "url": "https://jinyong.fandom.com/zh/wiki/%E4%B8%83%E5%82%B7%E6%8B%B3?variant=zh-hant"
+    },
+    {
+      "title": "《新天龍八部》官方資料站：丐幫技能",
+      "url": "https://tl.changyou.com/data/equip/gbzd.shtml"
+    },
+    {
+      "title": "《鐵血武林2》官方：丐幫門派武學介紹",
+      "url": "https://t2.hcplay.com.cn/news/713"
+    },
+    {
+      "title": "17173《九陰真經》官方合作專區：丐幫門派武學",
+      "url": "https://9yin.17173.com/mp/42.shtml"
+    },
+    {
+      "title": "遊民星空：《逸劍風雲決》睡夢羅漢功獲取教程",
+      "url": "https://www.gamersky.com/handbook/202309/1649426.shtml"
+    },
+    {
+      "title": "放置江湖 BWIKI：丐幫",
+      "url": "https://wiki.biligame.com/fzjh/%E4%B8%90%E5%B8%AE"
+    },
+    {
+      "title": "17173：《獨孤九劍》門派探秘",
+      "url": "https://newgame.17173.com/news/12102012/154629704.shtml"
+    },
+    {
+      "title": "《熱血俠義道》官方供稿：暗夜魅影蜀中唐門（17173）",
+      "url": "https://news.17173.com/content/12132018/103738929.shtml"
+    },
+    {
+      "title": "《劍俠情緣網絡版2新傳》官方：門派介紹",
+      "url": "https://jx2xz.xoyo.com/zt_news.html"
+    },
+    {
+      "title": "《九陰》手遊官方：唐門門派武學與內功",
+      "url": "https://9yinsy.woniu.com/"
+    },
+    {
+      "title": "《劍俠情緣網絡版2》官方：唐門絕技",
+      "url": "https://jx2.xoyo.com/"
+    },
+    {
+      "title": "52PK《劍俠情緣ⅡOnline》資料：唐門武功（鎖命針為陷阱）",
+      "url": "https://jx2.52pk.com/group_52pk/04.htm"
+    },
+    {
+      "title": "《劍網3》官方門派站：唐門",
+      "url": "https://jx3.xoyo.com/zt/2014/11/21/zt/menpai/tm.html"
+    },
+    {
+      "title": "《劍俠世界》官方：武功技能－木系門派唐門",
+      "url": "https://jxsj.xoyo.com/show-3423-8576-1.html"
+    },
+    {
+      "title": "劍網3 BWIKI：唐門武學",
+      "url": "https://wiki.biligame.com/jx3/%E5%94%90%E9%97%A8"
+    },
+    {
+      "title": "《新天龍八部》官方：蜀中唐門介紹",
+      "url": "https://event.changyou.com/xtl/201307/job/sub.shtml"
+    },
+    {
+      "title": "37《唐門六道》官方：暗器介紹",
+      "url": "https://www.37.com/tang/xinwen/20241010-2/"
+    }
+  ],
+  "classic_name_counts": {
+    "existing_martial_arts": 74,
+    "generic_traditional_item": 50,
+    "existing_named_item": 4
   }
 }
