@@ -1,0 +1,132 @@
+{
+  "atlas_id": "B14",
+  "image_path": "assets/atlases/B14.png",
+  "columns": 4,
+  "rows": 4,
+  "width": 1254,
+  "height": 1254,
+  "sha256": "92249ab6c0c71df5a07852086fe49147a7368c980800571545035200c75c8036",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "cell_bboxes_alpha128": [
+    [
+      53,
+      75,
+      301,
+      314
+    ],
+    [
+      40,
+      84,
+      271,
+      314
+    ],
+    [
+      16,
+      111,
+      297,
+      310
+    ],
+    [
+      4,
+      79,
+      283,
+      314
+    ],
+    [
+      49,
+      0,
+      302,
+      310
+    ],
+    [
+      29,
+      0,
+      304,
+      307
+    ],
+    [
+      21,
+      46,
+      269,
+      306
+    ],
+    [
+      31,
+      0,
+      266,
+      303
+    ],
+    [
+      27,
+      29,
+      314,
+      273
+    ],
+    [
+      0,
+      34,
+      293,
+      291
+    ],
+    [
+      30,
+      34,
+      288,
+      290
+    ],
+    [
+      3,
+      40,
+      281,
+      269
+    ],
+    [
+      43,
+      2,
+      281,
+      271
+    ],
+    [
+      23,
+      12,
+      291,
+      281
+    ],
+    [
+      61,
+      2,
+      231,
+      283
+    ],
+    [
+      2,
+      36,
+      293,
+      269
+    ]
+  ],
+  "source_path": "/workspace/generated_images/exec-140c6238-9a25-4885-8768-999be7019e56.png",
+  "prompt": "Create sixteen distinct book/manual/scroll inventory icons for a charming Ming-inspired wuxia game, arranged in EXACT equal 4x4 cells on a square FULLY TRANSPARENT canvas. Keep each entire book and every companion bookmark or pebble within the central 50% of its cell, leaving very generous EMPTY GUTTERS. Centers at x12.5,37.5,62.5,87.5 percent and y12.5,37.5,62.5,87.5 percent. Do not enlarge books to fill cells. Full silhouettes, no overlaps. NO TEXT WHATSOEVER: no readable words, no Chinese lettering, no Latin letters, no numbers, no labels; book cover markings must be simple symbolic sketches exactly as described. No grid, frame, watermark, glow or surrounding scenery. Consistent watercolor/gouache hand painting, warm brown fine outlines, ivory/jade/coral accents and earth tones, slight three-quarter overhead angle, soft upper-left light. Each book has a distinctive cover color, shape and symbol, as below. Exact row-major order left to right then top to bottom:\n1. Ochre stitched manual with a simple ink fist emblem and tiny pose diagrams at page edges.\n2. Pale gray booklet with bamboo bookmark and plain wooden sword sketch on cover.\n3. Rust red folding booklet with simple crossed short saber diagrams on an open corner.\n4. Long ochre paper scroll with wooden rollers and a plain staff ink diagram.\n5. Pale teal stitched booklet with three soft curved ink strokes on its cover.\n6. Square unfolded hemp paper with a faint nine cell grid and footprint symbols.\n7. Brown stitched notebook with two colored cloth bookmarks and a palm diagram page.\n8. Gray green small manual with a plain target sketch and one smooth pebble at its corner.\n9. Worn cream folded map with brown mountain ridges and a thin teal stream line.\n10. Blue gray logbook with winding river lines and tiny wooden boat symbols on exposed pages.\n11. Pale green illustrated herb booklet with a pressed leaf and watercolor root sketches.\n12. Earth brown folding guide with a small sample rope loop and simple cord line diagrams.\n13. Charcoal thin booklet with muted oil stains and a tiny whetstone and blade sketch.\n14. Bulky cream sewing sampler book with blue and red fabric swatches and visible stitching.\n15. Tall narrow brown paper trade ledger with hemp binding and a small wooden tally bookmark.\n16. Gray covered album of dark ink rubbings, abstract white carved marks on black pages.",
+  "item_ids": [
+    "BASE209",
+    "BASE210",
+    "BASE211",
+    "BASE212",
+    "BASE213",
+    "BASE214",
+    "BASE215",
+    "BASE216",
+    "BASE217",
+    "BASE218",
+    "BASE219",
+    "BASE220",
+    "BASE221",
+    "BASE222",
+    "BASE223",
+    "BASE224"
+  ],
+  "visual_review": "All 16 books and scrolls have distinct intended cover themes and correct row-major order: fist, wooden sword, sabers, staff, breathing, footwork, palm, target, map, river, herbs, knots, maintenance, sewing, ledger, rubbings. No readable words or numbered labels. Entire book silhouettes visible, but icons are considerably larger than requested and several cross equal quarter-cell boundaries; transparent gaps still separate neighboring item silhouettes. Requires measured per-item source rectangles rather than unconditional equal-grid slicing. No image pixel edits applied."
+}

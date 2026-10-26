@@ -1,0 +1,214 @@
+{
+  "atlas_id": "B02",
+  "image_path": "assets/atlases/B02.png",
+  "columns": 4,
+  "rows": 4,
+  "source_path": "/workspace/generated_images/exec-ed7ea9d1-adf0-46a8-a035-a4fa09a11a92.png",
+  "prompt": "Create a production game inventory icon atlas, square transparent PNG. EXACTLY 4 columns by 4 rows of equal invisible cells, EXACTLY 16 item groups, strict row-major sequence below. Each object or matched pair centered within its own cell, all silhouettes fully contained with at least 15 percent empty transparent margin on every side; no object crosses any cell boundary. Long blades lie diagonally bottom-left to top-right and fit completely. No text, labels, numbers, grid lines, frames, decorative panels, background scenery, glow or drop shadows. Original Ming-inspired low-mid fantasy wuxia RPG equipment. Hand-painted watercolor and gouache, fine warm brown outlines, restrained ivory, jade and coral accents, natural steel and wood, soft top-left light, clean readable slightly rounded forms, consistent scale and visual density. Preserve visual differences in the listed shapes. Transparent space must separate every cell. Row-major item sequence:\n1. Curved bundled bamboo training saber, cloth bindings, pale wooden grip\n2. Plain broad steel saber, slightly curved point, black ring pommel\n3. Willow leaf curved saber, circular guard, dark green scabbard\n4. Mostly straight long saber with slightly raised point and brown leather grip\n5. Short straight saber with angular clipped tip and thick oval wood grip\n6. Pair of crescent curved sabers, differently patterned dark grips\n7. Oversized long curved saber, extended two handed grip, rectangular iron guard\n8. Heavy short broad saber, thick black spine, downward hooked tip\n9. Light slender silver curved saber, tiny guard, pale grey wrapped grip\n10. Curved saber with a short hooked spine near the broad brass guard\n11. Broad wilderness saber with coarse sawback and rugged rope handle\n12. Compact curved boat saber, bamboo grip, scabbard with drainage opening\n13. Heavy backed broad saber, disk shaped brass pommel, deep curved edge\n14. Blunt iron training saber, rounded edge, flat tip, yellow cord grip\n15. Slim almost straight saber, narrow plain bamboo colored sheath, flat guard\n16. Ceremonial curved saber, blue lacquer sheath, gold leaf motifs, red stone pommel",
+  "correction_prompt": "Correct ONLY the layout of this existing 16-icon saber atlas. Keep all 16 distinct item groups and their exact row-major order, original hand-painted style and transparent background. Exact invisible 4 columns by 4 rows equal cells. Shrink EACH entire icon group to 65 percent of its current linear size, centering it precisely in its own cell. This must produce very generous empty transparent margins, at least 18 percent of cell width and height on every side. Every blade point, hilt, tassel and scabbard must be completely inside its cell; nothing crosses row or column boundaries. Do not add, remove or duplicate any item. Do not add labels, text, panels, grid lines, shadows, or glow. Keep the same square canvas and fully transparent empty areas.",
+  "previous_source_path": "/workspace/generated_images/exec-c0a5afa8-b9cd-4175-bbbe-88c10cf940ef.png",
+  "item_ids": [
+    "BASE017",
+    "BASE018",
+    "BASE019",
+    "BASE020",
+    "BASE021",
+    "BASE022",
+    "BASE023",
+    "BASE024",
+    "BASE025",
+    "BASE026",
+    "BASE027",
+    "BASE028",
+    "BASE029",
+    "BASE030",
+    "BASE031",
+    "BASE032"
+  ],
+  "visual_review": {
+    "reviewed": true,
+    "notes": "16 saber groups in expected row-major order. One layout correction reduced oversized icons. Complete silhouettes and transparent gaps visible; no apparent outer clipping. Fine transparency fringe can occur around watercolor edges. Equal-cell pixel analysis recorded separately."
+  },
+  "width": 1254,
+  "height": 1254,
+  "mode": "RGBA",
+  "sha256": "7eb27b3e7cfd8b1a05b19886a2204e1ad070ca05996c6aa8dae08fed4350788a",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "cells": [
+    {
+      "cell_index": 0,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        78,
+        100,
+        254,
+        284
+      ]
+    },
+    {
+      "cell_index": 1,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        79,
+        102,
+        241,
+        284
+      ]
+    },
+    {
+      "cell_index": 2,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        59,
+        100,
+        241,
+        291
+      ]
+    },
+    {
+      "cell_index": 3,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        58,
+        101,
+        212,
+        286
+      ]
+    },
+    {
+      "cell_index": 4,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        85,
+        86,
+        249,
+        261
+      ]
+    },
+    {
+      "cell_index": 5,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        78,
+        82,
+        247,
+        277
+      ]
+    },
+    {
+      "cell_index": 6,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        64,
+        67,
+        247,
+        273
+      ]
+    },
+    {
+      "cell_index": 7,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        65,
+        91,
+        235,
+        260
+      ]
+    },
+    {
+      "cell_index": 8,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        94,
+        59,
+        250,
+        256
+      ]
+    },
+    {
+      "cell_index": 9,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        84,
+        57,
+        248,
+        249
+      ]
+    },
+    {
+      "cell_index": 10,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        63,
+        60,
+        238,
+        247
+      ]
+    },
+    {
+      "cell_index": 11,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        52,
+        67,
+        234,
+        235
+      ]
+    },
+    {
+      "cell_index": 12,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        84,
+        42,
+        253,
+        214
+      ]
+    },
+    {
+      "cell_index": 13,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        85,
+        43,
+        250,
+        217
+      ]
+    },
+    {
+      "cell_index": 14,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        65,
+        44,
+        235,
+        219
+      ]
+    },
+    {
+      "cell_index": 15,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        58,
+        35,
+        238,
+        221
+      ]
+    }
+  ],
+  "boundary_pixels_alpha_gt32": {
+    "vertical": [
+      0,
+      0,
+      0
+    ],
+    "horizontal": [
+      0,
+      0,
+      0
+    ]
+  }
+}

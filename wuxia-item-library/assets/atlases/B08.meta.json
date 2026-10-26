@@ -1,0 +1,42 @@
+{
+  "atlas_id": "B08",
+  "image_path": "assets/atlases/B08.png",
+  "columns": 4,
+  "rows": 4,
+  "width": 1254,
+  "height": 1254,
+  "sha256": "6c53fd99fbdb3f95e11d2994b2d25b807b87a34975f8087e0cd4d5669e83229a",
+  "source_path": "/workspace/generated_images/exec-689e8382-7c62-438a-bc9d-bb17f5aca5a1.png",
+  "prompt": "Create ONE square transparent PNG inventory icon atlas for a Ming-inspired wuxia game. EXACT invisible 4 by 4 grid, sixteen equally sized square cells. Exactly SIXTEEN distinct food and drink icon compositions in the row-major order below. Icon centers at canvas percentages x=12.5,37.5,62.5,87.5 and y=12.5,37.5,62.5,87.5. Each entire composition MUST fit within the central 55 percent of its own cell width AND height, leaving broad completely transparent padding on every side. Render SMALL THUMBNAIL icons with generous blank transparent gaps. Consistent warm hand-painted gouache texture, fine warm brown outlines, natural materials, muted warm ivory/jade/coral/ochre colors, top-left illumination. Food should look tangible and appetizing, simple enough to recognize at inventory size. No text, no letter marks, no numbers, no labels, no visible grid, no frames, no border, no backdrop, no glow, no halo, no scattered crumbs outside the central icon. No plate unless explicitly requested; only each named composition. Keep all icons fully visible inside their own cell. Exact row-major sequence:\n1. golden sesame flatbread with a torn half showing soft layers, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n2. square dark green lotus leaf rice parcel tied with straw, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n3. stacked brown seasoned tofu squares on a short bamboo skewer, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n4. amber brittle candy pieces with pale pine nuts in a paper pouch, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n5. three split roasted chestnuts with golden kernels and a paper cone, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n6. round white rice ball with a dark red dried plum on waxed paper, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n7. small ochre bottle gourd canteen with wooden cork and brown strap, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n8. small dark pressed tea cake with orange peel flecks in rough paper, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n9. two ivory rice cake squares with tiny golden blossoms on a leaf, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n10. several reddish brown dried meat strips in a tied wax paper wrap, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n11. flaky pale gold pastry with a cut wedge revealing red bean filling, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n12. short green bamboo tube with its lid lifted over steamed rice, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n13. small open celadon jar of yellow green plums in amber syrup, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n14. bundle of pale brown dried edible mushrooms with wrinkled caps, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n15. squat dark ceramic wine jar with faded red seal and straw handle, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n16. open two tier wooden travel food box with pastry, dried fruit and bean snacks, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text",
+  "item_ids": [
+    "BASE113",
+    "BASE114",
+    "BASE115",
+    "BASE116",
+    "BASE117",
+    "BASE118",
+    "BASE119",
+    "BASE120",
+    "BASE121",
+    "BASE122",
+    "BASE123",
+    "BASE124",
+    "BASE125",
+    "BASE126",
+    "BASE127",
+    "BASE128"
+  ],
+  "visual_review": {
+    "status": "reviewed",
+    "notes": "Sixteen food/drink compositions match row-major identities. Icons remain visually separated with no apparent outer clipping. Padding is narrower than requested around paper wraps and tall bundles; saturated fringe speckles may approach cell boundaries. Preserve source and measure runtime regions if equal cell extraction picks up speckles.",
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "nonempty_cells": 16,
+    "edge_touch_cells": [
+      11,
+      15
+    ]
+  }
+}

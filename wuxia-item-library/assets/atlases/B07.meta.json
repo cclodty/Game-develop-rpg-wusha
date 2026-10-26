@@ -1,0 +1,39 @@
+{
+  "atlas_id": "B07",
+  "image_path": "assets/atlases/B07.png",
+  "columns": 4,
+  "rows": 4,
+  "width": 1254,
+  "height": 1254,
+  "sha256": "379398a2195f54bd51a5afa8d4797740a5ad466f5a9e7325da346022cf2e10a3",
+  "source_path": "/workspace/generated_images/exec-55c76597-2fcd-4e26-8d4c-f43c67d35c8b.png",
+  "prompt": "Create ONE square transparent PNG inventory icon atlas for a Ming-inspired wuxia game. EXACT invisible 4 by 4 grid, sixteen equally sized square cells. Exactly SIXTEEN distinct medicine-container icon compositions in the row-major order below. Icon centers at canvas percentages x=12.5,37.5,62.5,87.5 and y=12.5,37.5,62.5,87.5. Each complete composition MUST fit within the central 60 percent of its own cell width AND height, leaving a minimum 20 percent cell margin on all four sides. Render THUMBNAIL-sized objects with generous transparent empty gaps between every cell; never fill the whole cell. Same hand-painted warm gouache texture, fine warm brown outlines, muted ivory/jade/coral/ochre palette, natural materials, top-left illumination. No text, no letter marks, no labels, no numbers, no visible grid, no frame, no border, no background, no glow, no colored halos or scattered dust. Sixteen clearly distinct containers. These are fictional game items, not instructions. Keep all objects fully visible and wholly inside their own cell. Exact row-major sequence:\n1. ivory paper medicine packet with ochre seal and dark round pills, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n2. flat pale celadon medicine flask with indigo cloth seal, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n3. folded waxed paper revealing a brown square medicinal cloth patch, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n4. squat terracotta ointment pot with straw tie and amber balm, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n5. flat gray linen herbal pouch cross tied with teal cord, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n6. flat white porcelain salve box in a blue gray cloth sleeve, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n7. bundle of triangular rice paper tea packets with a dark green tag, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n8. tall reddish brown ceramic medicinal flask with a double cloth knot, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n9. small honey brown medicinal lozenge on folded ivory paper, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n10. wide pale lavender silk compress with thin ties and a center seam, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n11. narrow neck gray white ceramic wash bottle with wooden stopper, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n12. low dark wooden balm tin with cream colored salve and cloth seal, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n13. tiny amber glass scent bottle in a cream cord net, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n14. rolled ivory medicinal bandage with faint tan stains and paper sleeve, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n15. open compartmented wooden medical case with paper packets and two tiny jars, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n16. tall white porcelain restorative balm jar with pale blue lid and paper seal, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text",
+  "item_ids": [
+    "BASE097",
+    "BASE098",
+    "BASE099",
+    "BASE100",
+    "BASE101",
+    "BASE102",
+    "BASE103",
+    "BASE104",
+    "BASE105",
+    "BASE106",
+    "BASE107",
+    "BASE108",
+    "BASE109",
+    "BASE110",
+    "BASE111",
+    "BASE112"
+  ],
+  "visual_review": {
+    "status": "reviewed",
+    "notes": "Sixteen distinct medicine containers in correct row-major order; no apparent silhouette clipping or overlap. Decorative blossom motifs added to porcelain; no text. Small saturated fringe speckles visible in preview; generated pixels preserved.",
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "nonempty_cells": 16,
+    "edge_touch_cells": []
+  }
+}

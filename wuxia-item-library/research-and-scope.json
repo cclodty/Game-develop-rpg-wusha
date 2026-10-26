@@ -1,0 +1,55 @@
+{
+  "retrieved_date": "2026-10-26",
+  "note": "參考門派分類與武學取得方式；本庫的八派組合、物品名稱、描述與用途為本次重新設計，不是任何單一遊戲的資料表，也不是恢復的原240件。",
+  "sources": [
+    {
+      "title": "《劍網一》官方門派列表",
+      "url": "https://jx.xoyo.com/",
+      "used_for": "少林、武當、峨眉、華山、崑崙、丐幫、唐門等常見門派參考"
+    },
+    {
+      "title": "《劍俠世界》官方門派介紹",
+      "url": "https://jxsj.xoyo.com/show-3420-8395-1.html",
+      "used_for": "門派可涵蓋不同武學路線，唐門的暗器與用毒形象"
+    },
+    {
+      "title": "《武林英雄傳》官方門派介紹",
+      "url": "https://txwl.hcplay.com.cn/roles",
+      "used_for": "多門派差異化的武俠遊戲參考"
+    },
+    {
+      "title": "崆峒派（武俠文學條目）",
+      "url": "https://zh.wikipedia.org/wiki/%E5%B4%86%E5%B3%92%E6%B4%BE",
+      "used_for": "崆峒作為武俠門派的文學背景；本作不宣稱其設定為明代史實"
+    },
+    {
+      "title": "《逸劍風雲決》全功法取得途徑整理",
+      "url": "https://www.gamersky.com/handbook/202309/1650452.shtml",
+      "used_for": "師承、劇情與機遇取得武學的結構"
+    },
+    {
+      "title": "《太吾繪卷》秘籍與研讀介紹（2022年攻略）",
+      "url": "https://www.3dmgame.com/gl/3861064_8.html",
+      "used_for": "書冊、殘頁與研讀的物品表現；沒有移植耐久與時間規則"
+    }
+  ],
+  "reconstruction": {
+    "base_count": 240,
+    "sect_count": 8,
+    "items_per_sect": 16,
+    "total_count": 368,
+    "old_id_mapping": null,
+    "old_assets_restored": false,
+    "excluded": [
+      "克蘇魯24件物品",
+      "角色圖集",
+      "遊戲內功能接線",
+      "未驗證的舊世界觀"
+    ]
+  },
+  "design_rules": {
+    "learning": "門派獨有指來源及傳承，武學預設可跨派研習；信物與傳承物仍有個別交付條件。",
+    "consumption": "書冊研讀與材料使用的具體時間、數值及消耗在接入玩法前另定；不將物品設計文案當作已實作功能。",
+    "art": "Q版武俠道具、水粉水彩、暖褐輪廓、透明背景、完整剪影、書名由介面顯示，不烙文字。"
+  }
+}

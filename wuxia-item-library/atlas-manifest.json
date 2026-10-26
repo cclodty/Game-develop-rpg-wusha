@@ -1,0 +1,2702 @@
+{
+  "version": 1,
+  "generator": "OpenAI image_gen",
+  "atlases": [
+    {
+      "atlas_id": "B01",
+      "image_path": "assets/atlases/B01.png",
+      "columns": 4,
+      "rows": 4,
+      "source_path": "/workspace/generated_images/exec-4da87fcd-d7d7-4a2f-92a3-f4e17523e384.png",
+      "prompt": "Create a production-ready inventory sprite atlas for a warm hand-painted chibi wuxia RPG. SQUARE canvas, exact 4 columns by 4 rows of equally sized invisible square cells, 16 icons in row-major order. TRUE TRANSPARENT BACKGROUND. NO text, numbers, labels, grid lines, frames, logos or watermark. Watercolor/gouache texture, warm brown fine outlines, restrained jade/cream/coral accents, coherent scale and top-left soft lighting. Each item centered wholly inside its own cell with generous at least 15% empty space on ALL sides, no overlapping cells. Long swords diagonally oriented bottom-left to top-right to fit entire blade and hilt. Each cell exactly one item or explicitly paired set. Visually distinguish every silhouette, no generic repeats. Ming-inspired fantasy props, no neon or magic effects. These 16 cell descriptions in exact order:\n1. Honey brown wooden practice sword, blunt rounded tip, rope grip\n2. Plain dark iron straight sword, small oval guard, leather grip\n3. Very narrow silver thrusting sword, tapered needle point, black wood grip\n4. Short leaf shaped double edged sword, bronze guard, blue cloth sheath\n5. Broad straight sword with thick central ridge and trapezoid iron guard\n6. Heavy thick straight sword, ring pommel, long dark brown grip\n7. Matched long and short straight swords with a divided wooden scabbard\n8. Thin flexible gently curving silver sword, tiny brass guard, soft leather sheath\n9. Straight sword with open cage iron handguard and russet leather grip\n10. Straight laminated steel sword, subtle wavy forging lines, flat round guard\n11. Long slender straight sword, iron capped scabbard, brown tassel\n12. Long straight two handed sword, extended black cord grip, straight crossguard\n13. Straight sword ending in a short forked swallowtail tip, round brass guard\n14. Palm length narrow dagger sword beside a sliding lid wooden case\n15. Blunt steel training sword, flat squared tip, broad guard, white grip wrap\n16. Ceremonial straight sword, dark red lacquer scabbard, brass cloud inlays",
+      "item_ids": [
+        "BASE001",
+        "BASE002",
+        "BASE003",
+        "BASE004",
+        "BASE005",
+        "BASE006",
+        "BASE007",
+        "BASE008",
+        "BASE009",
+        "BASE010",
+        "BASE011",
+        "BASE012",
+        "BASE013",
+        "BASE014",
+        "BASE015",
+        "BASE016"
+      ],
+      "visual_review": "已檢視16格，劍形、護手及劍鞘可辨，未見缺格或相鄰物品混入。美術為生成版本，細部材質可能與文字描述略有差異。",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "sha256": "7ba75b180748688139d422a5fc2074aefa8183347bba57a2f8281c4cf22bb6c5"
+    },
+    {
+      "atlas_id": "B02",
+      "image_path": "assets/atlases/B02.png",
+      "columns": 4,
+      "rows": 4,
+      "source_path": "/workspace/generated_images/exec-ed7ea9d1-adf0-46a8-a035-a4fa09a11a92.png",
+      "prompt": "Create a production game inventory icon atlas, square transparent PNG. EXACTLY 4 columns by 4 rows of equal invisible cells, EXACTLY 16 item groups, strict row-major sequence below. Each object or matched pair centered within its own cell, all silhouettes fully contained with at least 15 percent empty transparent margin on every side; no object crosses any cell boundary. Long blades lie diagonally bottom-left to top-right and fit completely. No text, labels, numbers, grid lines, frames, decorative panels, background scenery, glow or drop shadows. Original Ming-inspired low-mid fantasy wuxia RPG equipment. Hand-painted watercolor and gouache, fine warm brown outlines, restrained ivory, jade and coral accents, natural steel and wood, soft top-left light, clean readable slightly rounded forms, consistent scale and visual density. Preserve visual differences in the listed shapes. Transparent space must separate every cell. Row-major item sequence:\n1. Curved bundled bamboo training saber, cloth bindings, pale wooden grip\n2. Plain broad steel saber, slightly curved point, black ring pommel\n3. Willow leaf curved saber, circular guard, dark green scabbard\n4. Mostly straight long saber with slightly raised point and brown leather grip\n5. Short straight saber with angular clipped tip and thick oval wood grip\n6. Pair of crescent curved sabers, differently patterned dark grips\n7. Oversized long curved saber, extended two handed grip, rectangular iron guard\n8. Heavy short broad saber, thick black spine, downward hooked tip\n9. Light slender silver curved saber, tiny guard, pale grey wrapped grip\n10. Curved saber with a short hooked spine near the broad brass guard\n11. Broad wilderness saber with coarse sawback and rugged rope handle\n12. Compact curved boat saber, bamboo grip, scabbard with drainage opening\n13. Heavy backed broad saber, disk shaped brass pommel, deep curved edge\n14. Blunt iron training saber, rounded edge, flat tip, yellow cord grip\n15. Slim almost straight saber, narrow plain bamboo colored sheath, flat guard\n16. Ceremonial curved saber, blue lacquer sheath, gold leaf motifs, red stone pommel",
+      "correction_prompt": "Correct ONLY the layout of this existing 16-icon saber atlas. Keep all 16 distinct item groups and their exact row-major order, original hand-painted style and transparent background. Exact invisible 4 columns by 4 rows equal cells. Shrink EACH entire icon group to 65 percent of its current linear size, centering it precisely in its own cell. This must produce very generous empty transparent margins, at least 18 percent of cell width and height on every side. Every blade point, hilt, tassel and scabbard must be completely inside its cell; nothing crosses row or column boundaries. Do not add, remove or duplicate any item. Do not add labels, text, panels, grid lines, shadows, or glow. Keep the same square canvas and fully transparent empty areas.",
+      "previous_source_path": "/workspace/generated_images/exec-c0a5afa8-b9cd-4175-bbbe-88c10cf940ef.png",
+      "item_ids": [
+        "BASE017",
+        "BASE018",
+        "BASE019",
+        "BASE020",
+        "BASE021",
+        "BASE022",
+        "BASE023",
+        "BASE024",
+        "BASE025",
+        "BASE026",
+        "BASE027",
+        "BASE028",
+        "BASE029",
+        "BASE030",
+        "BASE031",
+        "BASE032"
+      ],
+      "visual_review": {
+        "reviewed": true,
+        "notes": "16 saber groups in expected row-major order. One layout correction reduced oversized icons. Complete silhouettes and transparent gaps visible; no apparent outer clipping. Fine transparency fringe can occur around watercolor edges. Equal-cell pixel analysis recorded separately."
+      },
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "sha256": "7eb27b3e7cfd8b1a05b19886a2204e1ad070ca05996c6aa8dae08fed4350788a",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "cells": [
+        {
+          "cell_index": 0,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            78,
+            100,
+            254,
+            284
+          ]
+        },
+        {
+          "cell_index": 1,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            79,
+            102,
+            241,
+            284
+          ]
+        },
+        {
+          "cell_index": 2,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            59,
+            100,
+            241,
+            291
+          ]
+        },
+        {
+          "cell_index": 3,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            58,
+            101,
+            212,
+            286
+          ]
+        },
+        {
+          "cell_index": 4,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            85,
+            86,
+            249,
+            261
+          ]
+        },
+        {
+          "cell_index": 5,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            78,
+            82,
+            247,
+            277
+          ]
+        },
+        {
+          "cell_index": 6,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            64,
+            67,
+            247,
+            273
+          ]
+        },
+        {
+          "cell_index": 7,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            65,
+            91,
+            235,
+            260
+          ]
+        },
+        {
+          "cell_index": 8,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            94,
+            59,
+            250,
+            256
+          ]
+        },
+        {
+          "cell_index": 9,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            84,
+            57,
+            248,
+            249
+          ]
+        },
+        {
+          "cell_index": 10,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            63,
+            60,
+            238,
+            247
+          ]
+        },
+        {
+          "cell_index": 11,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            52,
+            67,
+            234,
+            235
+          ]
+        },
+        {
+          "cell_index": 12,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            84,
+            42,
+            253,
+            214
+          ]
+        },
+        {
+          "cell_index": 13,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            85,
+            43,
+            250,
+            217
+          ]
+        },
+        {
+          "cell_index": 14,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            65,
+            44,
+            235,
+            219
+          ]
+        },
+        {
+          "cell_index": 15,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            58,
+            35,
+            238,
+            221
+          ]
+        }
+      ],
+      "boundary_pixels_alpha_gt32": {
+        "vertical": [
+          0,
+          0,
+          0
+        ],
+        "horizontal": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "atlas_id": "B03",
+      "image_path": "assets/atlases/B03.png",
+      "columns": 4,
+      "rows": 4,
+      "source_path": "/workspace/generated_images/exec-b135a7f4-aacc-45a4-b9c8-4748798558f7.png",
+      "prompt": "Create one square transparent PNG inventory icon atlas. EXACT invisible 4 columns x 4 rows =16 separate item groups. Centers are at x=12.5%,37.5%,62.5%,87.5% and y=12.5%,37.5%,62.5%,87.5%. Strict row-major order below. Very spacious layout: EACH entire object group occupies only 50–60 percent of its own cell width and height. All parts fully contained with large transparent margins. Long pole weapons DIAGONAL bottom-left to top-right, drawn small enough to show the ENTIRE shaft and both ends. Do not crop or omit shafts. Matched parts remain together within their single cell. No text, labels, numbers, grid lines, frames, panels, scenery, glow or drop shadow. Original Ming-inspired low-mid fantasy wuxia equipment. Hand-painted watercolor/gouache, fine warm brown contour, natural wood and steel, muted ivory/jade/coral accents, soft top-left light, clean slightly rounded silhouettes. Keep crisp legible differences. Transparent space separates every cell. Items:\n1. Pale ashwood staff, subtle natural curve, slightly thicker rounded ends\n2. Dark wooden staff with short black iron end caps and central cloth grip\n3. Long spear with narrow leaf steel head, white tassel, brown wooden shaft\n4. Broad leaf hunting spearhead, reddish wooden shaft, leather head socket wrap\n5. Winged spear with symmetrical short side lugs and thick black wooden shaft\n6. Two pronged curved iron hunting fork on a thick long wooden pole\n7. Wide three pronged guard fork, extended central point, dark red pole\n8. Double ended pole weapon with fan shovel blade and crescent head\n9. Long spear with inward side hook and dark iron socket\n10. Polearm with straight spear point and single horizontal side blade, brass bands\n11. Large crescent glaive blade, long thick shaft, simple tassel knot\n12. Long handled wedge axe, broad iron head, curved wooden shaft, two leather grips\n13. Long pole mace with faceted dark iron head and iron capped shaft end\n14. Rigid long iron rod with bamboo node ridges and octagonal grip\n15. Long hardwood staff with short rope and oval iron weight at one end\n16. Travel spear disassembled into three wooden sections with brass joints and leaf head",
+      "correction_prompt": "Layout correction of this exact 16-object polearm atlas. Retain all16 listed object groups and exact order, same hand-painted watercolor style and full transparency. Repaint each entire item group SMALLER at only65 percent of its current width and height, centered within its existing quarter-width quarter-height cell. Exact4 columns by4 rows. Very generous transparent gutters; no blade, shaft, decoration or rope crosses a cell. All object parts including axe blade at row3 column4 must be fully visible and clear of outer canvas edges. Do not crop or omit pole shafts. Keep the same canvas size. No text or grid. This is a size/layout correction, not a change of design.",
+      "previous_source_path": "/workspace/generated_images/exec-7921a238-4610-47a4-a082-812d19eec9bf.png",
+      "item_ids": [
+        "BASE033",
+        "BASE034",
+        "BASE035",
+        "BASE036",
+        "BASE037",
+        "BASE038",
+        "BASE039",
+        "BASE040",
+        "BASE041",
+        "BASE042",
+        "BASE043",
+        "BASE044",
+        "BASE045",
+        "BASE046",
+        "BASE047",
+        "BASE048"
+      ],
+      "visual_review": {
+        "reviewed": true,
+        "notes": "16 polearm groups in expected row-major order. One layout correction reduced oversize and cleared the axe from the outer edge. Entire shafts, weapon heads and dismantled travel spear visible; generous transparent separation. Fine watercolor transparency fringe is present."
+      },
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "sha256": "b401022c19ba591533ac37ffdc22a9bc0098da620b8c3b29fedc243800d38dd1",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "cells": [
+        {
+          "cell_index": 0,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            79,
+            91,
+            246,
+            270
+          ]
+        },
+        {
+          "cell_index": 1,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            68,
+            90,
+            241,
+            271
+          ]
+        },
+        {
+          "cell_index": 2,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            60,
+            84,
+            235,
+            269
+          ]
+        },
+        {
+          "cell_index": 3,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            70,
+            86,
+            238,
+            270
+          ]
+        },
+        {
+          "cell_index": 4,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            74,
+            69,
+            246,
+            262
+          ]
+        },
+        {
+          "cell_index": 5,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            72,
+            75,
+            248,
+            264
+          ]
+        },
+        {
+          "cell_index": 6,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            67,
+            72,
+            241,
+            264
+          ]
+        },
+        {
+          "cell_index": 7,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            57,
+            72,
+            247,
+            268
+          ]
+        },
+        {
+          "cell_index": 8,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            74,
+            69,
+            237,
+            254
+          ]
+        },
+        {
+          "cell_index": 9,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            72,
+            68,
+            245,
+            253
+          ]
+        },
+        {
+          "cell_index": 10,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            61,
+            58,
+            236,
+            260
+          ]
+        },
+        {
+          "cell_index": 11,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            67,
+            72,
+            247,
+            257
+          ]
+        },
+        {
+          "cell_index": 12,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            77,
+            49,
+            250,
+            232
+          ]
+        },
+        {
+          "cell_index": 13,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            66,
+            46,
+            245,
+            231
+          ]
+        },
+        {
+          "cell_index": 14,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            59,
+            47,
+            236,
+            232
+          ]
+        },
+        {
+          "cell_index": 15,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            66,
+            52,
+            231,
+            224
+          ]
+        }
+      ],
+      "boundary_pixels_alpha_gt32": {
+        "vertical": [
+          0,
+          0,
+          0
+        ],
+        "horizontal": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "atlas_id": "B04",
+      "image_path": "assets/atlases/B04.png",
+      "columns": 4,
+      "rows": 4,
+      "source_path": "/workspace/generated_images/exec-32fd8491-fa0c-4521-89b4-07d2e98f1162.png",
+      "prompt": "A square transparent game inventory atlas of sixteen unusual wuxia weapons. STRICT4 columns by4 rows invisible equal cells. Row-major16 groups specified below. Draw SMALL ICONS with VERY LARGE EMPTY TRANSPARENT GAPS: total group width and height must never exceed60% of one cell. Exact center coordinates x12.5%,37.5%,62.5%,87.5% and same y. Every chain, rope, matched pair and net is neatly coiled or arranged INSIDE its own small group; groups never touch. Long items diagonal. Hand-painted watercolor and gouache with fine warm brown outlines, ivory/jade/coral restrained accents, naturally colored wood/leather/steel, soft top-left light; original Ming-inspired low-mid fantasy, crisp recognizable rounded forms. No labels, writing, numbers, borders, frames, grids, panels, background, glow or shadows. Full transparent background. Order left to right then top to bottom:\n1. Two dark wooden short sticks linked by thick pale rope\n2. Three section hardwood staff linked by black iron rings, red grip wraps\n3. Coiled segmented black iron chain whip, conical tip, short wood handle\n4. Long rope with heavy spherical iron weights at both ends, leather center wrap\n5. Oval cork training weight attached to long hemp rope and cloth knot\n6. Slender silver rope dart, red cloth streamer, coiled hemp rope\n7. Short inward curved sickle connected to dark chain and flat round weight\n8. Pair of long hook swords with crescent guards and pointed pommels\n9. Pair of intersecting crescent deer horn blades with central leather grips\n10. Dark blue folding fan with exposed silver steel ribs and black lacquer grip\n11. Pair of thick steel rings with pale bamboo wrapped grip segments\n12. Dark grey stylus shaped iron short weapon, blunt point, ridged grip\n13. Coiled reddish brown braided leather whip, thick handle, thin black tip\n14. Pair of hardwood side handle batons with iron capped front ends\n15. Two square iron short bars linked by heavy short chain, leather end grips\n16. Bundled rope casting net with small edge weights and a single tether",
+      "item_ids": [
+        "BASE049",
+        "BASE050",
+        "BASE051",
+        "BASE052",
+        "BASE053",
+        "BASE054",
+        "BASE055",
+        "BASE056",
+        "BASE057",
+        "BASE058",
+        "BASE059",
+        "BASE060",
+        "BASE061",
+        "BASE062",
+        "BASE063",
+        "BASE064"
+      ],
+      "visual_review": {
+        "reviewed": true,
+        "notes": "16 distinct unusual weapon groups in expected row-major order. Coils, matched pairs and net remain grouped. No obvious cropped outer silhouette or overlapping item groups. Some items are larger than the requested60-percent occupancy; alpha boundary metrics identify any grid drift. Decorative marks on fan are motifs, not intended readable text."
+      },
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "sha256": "d8757c746016c0ea892aac23a6cfe75a628b55f0849a1885a5bc68e657f179c7",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "cells": [
+        {
+          "cell_index": 0,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            64,
+            75,
+            289,
+            301
+          ]
+        },
+        {
+          "cell_index": 1,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            42,
+            49,
+            295,
+            305
+          ]
+        },
+        {
+          "cell_index": 2,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            49,
+            81,
+            287,
+            301
+          ]
+        },
+        {
+          "cell_index": 3,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            24,
+            80,
+            263,
+            294
+          ]
+        },
+        {
+          "cell_index": 4,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            50,
+            62,
+            287,
+            292
+          ]
+        },
+        {
+          "cell_index": 5,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            38,
+            41,
+            299,
+            275
+          ]
+        },
+        {
+          "cell_index": 6,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            57,
+            55,
+            282,
+            290
+          ]
+        },
+        {
+          "cell_index": 7,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            55,
+            35,
+            268,
+            294
+          ]
+        },
+        {
+          "cell_index": 8,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            64,
+            33,
+            290,
+            313
+          ]
+        },
+        {
+          "cell_index": 9,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            33,
+            36,
+            295,
+            313
+          ]
+        },
+        {
+          "cell_index": 10,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            53,
+            59,
+            290,
+            313
+          ]
+        },
+        {
+          "cell_index": 11,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            58,
+            29,
+            248,
+            268
+          ]
+        },
+        {
+          "cell_index": 12,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            66,
+            0,
+            294,
+            254
+          ]
+        },
+        {
+          "cell_index": 13,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            41,
+            0,
+            304,
+            235
+          ]
+        },
+        {
+          "cell_index": 14,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            43,
+            0,
+            292,
+            252
+          ]
+        },
+        {
+          "cell_index": 15,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            17,
+            11,
+            277,
+            252
+          ]
+        }
+      ],
+      "boundary_pixels_alpha_gt32": {
+        "vertical": [
+          0,
+          0,
+          0
+        ],
+        "horizontal": [
+          0,
+          0,
+          572
+        ]
+      }
+    },
+    {
+      "atlas_id": "B05",
+      "image_path": "assets/atlases/B05.png",
+      "columns": 4,
+      "rows": 4,
+      "source_path": "/workspace/generated_images/exec-7e100f30-1c8a-4103-a00e-7898d82f831b.png",
+      "prompt": "Create a square transparent game inventory atlas: sixteen separate clothing and armor object icons, NO people, no bodies, no mannequins. Exact invisible4 columns x4 rows, row-major sequence. Center each group at grid coordinates12.5%,37.5%,62.5%,87.5% along each axis. Each icon is SMALL, at most55% cell width and55% cell height, with very generous transparent gutters. All sleeves, ties, guards and paired pieces must stay fully within own cell. Consistent front or slight three-quarter view; matched pairs count as a single group. Original Ming-inspired wuxia, hand-painted watercolor/gouache, fine warm brown outlines, ivory/jade/coral accents with natural materials, soft top-left light, clear rounded readable silhouettes. No words, symbols resembling writing, labels, numbers, frames, visible grid, scenery, glow or shadows. Transparent empty canvas around objects. Items left to right then top to bottom:\n1. Cream grey cross collar training jacket, wide dark sash, rolled sleeves\n2. Indigo quilted padded jacket with diamond stitching and cloth toggles\n3. Brown sleeveless soft leather armor, overlapping panels, diagonal straps\n4. Dark brown shaped hard leather cuirass, brass rivets, side lacing\n5. Light bamboo slat vest, green cloth trim, crossed back cords\n6. Black lacquered lamellar cuirass, red lacing, short protective skirt\n7. Silver grey fine chainmail shirt, short sleeves, cloth bound collar\n8. Dark green brigandine coat, ordered brass rivets, split lower hem\n9. Simple curved black iron breast and back plates with thick leather shoulder straps\n10. Articulated steel shoulder and upper arm armor with brown leather straps\n11. Pair of brown leather forearm guards with vertical iron strips and twin buckles\n12. Articulated silver plate hand guards over black leather palms, narrow wrist straps\n13. Grey cloth shin wraps with pale curved wooden splints and long crossed ties\n14. Pair of rounded iron knee guards with small hinged plates and padded lining\n15. Dark iron broad brimmed helmet, shallow rounded crown, brown chin strap\n16. Rounded grey iron helmet, layered neck lames, reddish brown padded lining",
+      "item_ids": [
+        "BASE065",
+        "BASE066",
+        "BASE067",
+        "BASE068",
+        "BASE069",
+        "BASE070",
+        "BASE071",
+        "BASE072",
+        "BASE073",
+        "BASE074",
+        "BASE075",
+        "BASE076",
+        "BASE077",
+        "BASE078",
+        "BASE079",
+        "BASE080"
+      ],
+      "visual_review": {
+        "reviewed": true,
+        "notes": "16 clothing/armor groups in expected row-major order, no human figures. All silhouettes appear complete and separated; matched guards remain within their own group. Some forms exceed requested55-percent occupancy and grid row boundaries may need measured regions. Shoulder armor is depicted with a small joining chest plate; hand guards are fully enclosed metal-backed gloves. Neither is a literal manufacturing blueprint."
+      },
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "sha256": "27b1841378c6403c1c321139bd01aff9ed466370e1f2c484c03eabe86a6f0e98",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "cells": [
+        {
+          "cell_index": 0,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            59,
+            78,
+            300,
+            310
+          ]
+        },
+        {
+          "cell_index": 1,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            30,
+            74,
+            297,
+            308
+          ]
+        },
+        {
+          "cell_index": 2,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            60,
+            80,
+            247,
+            314
+          ]
+        },
+        {
+          "cell_index": 3,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            66,
+            80,
+            240,
+            310
+          ]
+        },
+        {
+          "cell_index": 4,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            87,
+            38,
+            270,
+            286
+          ]
+        },
+        {
+          "cell_index": 5,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            38,
+            29,
+            285,
+            300
+          ]
+        },
+        {
+          "cell_index": 6,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            24,
+            0,
+            294,
+            290
+          ]
+        },
+        {
+          "cell_index": 7,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            42,
+            19,
+            259,
+            301
+          ]
+        },
+        {
+          "cell_index": 8,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            72,
+            25,
+            277,
+            313
+          ]
+        },
+        {
+          "cell_index": 9,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            36,
+            20,
+            295,
+            265
+          ]
+        },
+        {
+          "cell_index": 10,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            39,
+            40,
+            283,
+            253
+          ]
+        },
+        {
+          "cell_index": 11,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            32,
+            46,
+            272,
+            313
+          ]
+        },
+        {
+          "cell_index": 12,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            62,
+            0,
+            295,
+            240
+          ]
+        },
+        {
+          "cell_index": 13,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            47,
+            6,
+            313,
+            227
+          ]
+        },
+        {
+          "cell_index": 14,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            0,
+            15,
+            307,
+            227
+          ]
+        },
+        {
+          "cell_index": 15,
+          "nonempty": true,
+          "local_alpha_bbox": [
+            31,
+            0,
+            258,
+            242
+          ]
+        }
+      ],
+      "boundary_pixels_alpha_gt32": {
+        "vertical": [
+          0,
+          56,
+          0
+        ],
+        "horizontal": [
+          126,
+          0,
+          1009
+        ]
+      }
+    },
+    {
+      "atlas_id": "B06",
+      "image_path": "assets/atlases/B06.png",
+      "columns": 4,
+      "rows": 4,
+      "width": 1254,
+      "height": 1254,
+      "sha256": "2a1aff65b243941bb4cdcf4018621834c9997919cb8b66fed10f8860051c4bcc",
+      "source_path": "/workspace/generated_images/exec-31dd319c-d012-42ba-a6f6-7817d6a9e16e.png",
+      "prompt": "Create ONE square transparent PNG inventory icon atlas for a Ming-inspired wuxia game. EXACT invisible 4 by 4 grid with 16 equally sized square cells. Exactly sixteen distinct accessory icons, one named object composition per cell, in the row-major order below (left to right, top to bottom). Every entire object, string, chain and tassel must remain centered completely inside its own cell, with at least 15 percent of each cell width empty transparent margin on ALL four sides. Make icons equally legible, fine warm brown outlines, soft watercolor and gouache texture, muted warm ivory, jade, coral, gold and natural materials, top-left illumination, charming refined hand-painted game UI style. NO visible grid, NO frame, NO border, NO text or letters, NO labels, NO numbers, NO background scene, NO glow. Render all sixteen individually recognizable without overlapping any neighboring cell. Keep silhouettes compact even for elongated objects. Each description follows in exact row-major sequence:\n1. flat teal cord knot, plain wooden bead, short tassel, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n2. small aged brass bell on a dark red ankle cord, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n3. slender matte silver hairpin with one willow leaf finial, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n4. thick pale antler hair ring with a small gap and natural grain, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n5. plump paired fish sachet in ivory and muted teal fabric, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n6. wide dark ebony finger ring with rounded edges and subtle grain, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n7. arched bronze belt hook with a single curled cloud head, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n8. short pale jade bamboo pendant with cloudy inclusions and brown cord, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n9. dark bronze plum twig brooch with three ivory shell blossoms, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n10. rust red braided wrist cord with a flat knot and no metal, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n11. pair of pale crescent shell earrings with fine brown cords, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n12. smoky blue glass bead bracelet with dark wooden spacer beads, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n13. short matte silver cloak chain with two round knot clasps, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n14. warm brown carved swallow pendant with forked tail and blue cord, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n15. paired round wooden clasps with blue gray embroidered mountain panels, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n16. honey amber teardrop pendant with a tiny leaf inclusion and plain bronze rim, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text",
+      "repair_prompt": "Repair this exact sixteen-icon accessory atlas. Keep all SAME sixteen objects in the SAME row-major order and same warm hand-painted gouache style. Produce a square transparent PNG with EXACT 4 columns and 4 rows of equal invisible cells, all icons centered at cell centers: x=12.5%,37.5%,62.5%,87.5% and y=12.5%,37.5%,62.5%,87.5%. Crucial correction: substantially SHRINK EVERY complete icon including strings, loops, chains and tassels to fit within the CENTRAL 60% WIDTH and CENTRAL 60% HEIGHT of its own cell. That means each full icon fits a box of 15% of the full canvas width and height, leaving at least 20% empty cell margin on all sides. Every one of the three vertical and horizontal boundaries must be a wide fully transparent gap. Remove all stray colored pixels, speckles and halos. No accessory may cross any cell boundary. Thin wide objects like the hairpin, necklace, bird and paired mountain clasps should be compact and smaller. Keep each composition intact and individually recognizable. NO text, NO numbers, NO labels, NO visible grid, NO frame, NO border, NO background, NO glow. Do not add or delete any icon. True transparent empty background.",
+      "item_ids": [
+        "BASE081",
+        "BASE082",
+        "BASE083",
+        "BASE084",
+        "BASE085",
+        "BASE086",
+        "BASE087",
+        "BASE088",
+        "BASE089",
+        "BASE090",
+        "BASE091",
+        "BASE092",
+        "BASE093",
+        "BASE094",
+        "BASE095",
+        "BASE096"
+      ],
+      "visual_review": {
+        "status": "reviewed",
+        "notes": "16 accessory compositions match row-major identities. Original overcrowded version was regenerated with smaller icons; final atlas has broad empty gaps and no apparent cut silhouettes. Some fine colored edge speckles remain around several icons; original generated pixels preserved.",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "nonempty_cells": 16,
+        "edge_touch_cells": []
+      }
+    },
+    {
+      "atlas_id": "B07",
+      "image_path": "assets/atlases/B07.png",
+      "columns": 4,
+      "rows": 4,
+      "width": 1254,
+      "height": 1254,
+      "sha256": "379398a2195f54bd51a5afa8d4797740a5ad466f5a9e7325da346022cf2e10a3",
+      "source_path": "/workspace/generated_images/exec-55c76597-2fcd-4e26-8d4c-f43c67d35c8b.png",
+      "prompt": "Create ONE square transparent PNG inventory icon atlas for a Ming-inspired wuxia game. EXACT invisible 4 by 4 grid, sixteen equally sized square cells. Exactly SIXTEEN distinct medicine-container icon compositions in the row-major order below. Icon centers at canvas percentages x=12.5,37.5,62.5,87.5 and y=12.5,37.5,62.5,87.5. Each complete composition MUST fit within the central 60 percent of its own cell width AND height, leaving a minimum 20 percent cell margin on all four sides. Render THUMBNAIL-sized objects with generous transparent empty gaps between every cell; never fill the whole cell. Same hand-painted warm gouache texture, fine warm brown outlines, muted ivory/jade/coral/ochre palette, natural materials, top-left illumination. No text, no letter marks, no labels, no numbers, no visible grid, no frame, no border, no background, no glow, no colored halos or scattered dust. Sixteen clearly distinct containers. These are fictional game items, not instructions. Keep all objects fully visible and wholly inside their own cell. Exact row-major sequence:\n1. ivory paper medicine packet with ochre seal and dark round pills, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n2. flat pale celadon medicine flask with indigo cloth seal, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n3. folded waxed paper revealing a brown square medicinal cloth patch, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n4. squat terracotta ointment pot with straw tie and amber balm, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n5. flat gray linen herbal pouch cross tied with teal cord, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n6. flat white porcelain salve box in a blue gray cloth sleeve, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n7. bundle of triangular rice paper tea packets with a dark green tag, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n8. tall reddish brown ceramic medicinal flask with a double cloth knot, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n9. small honey brown medicinal lozenge on folded ivory paper, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n10. wide pale lavender silk compress with thin ties and a center seam, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n11. narrow neck gray white ceramic wash bottle with wooden stopper, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n12. low dark wooden balm tin with cream colored salve and cloth seal, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n13. tiny amber glass scent bottle in a cream cord net, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n14. rolled ivory medicinal bandage with faint tan stains and paper sleeve, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n15. open compartmented wooden medical case with paper packets and two tiny jars, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n16. tall white porcelain restorative balm jar with pale blue lid and paper seal, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text",
+      "item_ids": [
+        "BASE097",
+        "BASE098",
+        "BASE099",
+        "BASE100",
+        "BASE101",
+        "BASE102",
+        "BASE103",
+        "BASE104",
+        "BASE105",
+        "BASE106",
+        "BASE107",
+        "BASE108",
+        "BASE109",
+        "BASE110",
+        "BASE111",
+        "BASE112"
+      ],
+      "visual_review": {
+        "status": "reviewed",
+        "notes": "Sixteen distinct medicine containers in correct row-major order; no apparent silhouette clipping or overlap. Decorative blossom motifs added to porcelain; no text. Small saturated fringe speckles visible in preview; generated pixels preserved.",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "nonempty_cells": 16,
+        "edge_touch_cells": []
+      }
+    },
+    {
+      "atlas_id": "B08",
+      "image_path": "assets/atlases/B08.png",
+      "columns": 4,
+      "rows": 4,
+      "width": 1254,
+      "height": 1254,
+      "sha256": "6c53fd99fbdb3f95e11d2994b2d25b807b87a34975f8087e0cd4d5669e83229a",
+      "source_path": "/workspace/generated_images/exec-689e8382-7c62-438a-bc9d-bb17f5aca5a1.png",
+      "prompt": "Create ONE square transparent PNG inventory icon atlas for a Ming-inspired wuxia game. EXACT invisible 4 by 4 grid, sixteen equally sized square cells. Exactly SIXTEEN distinct food and drink icon compositions in the row-major order below. Icon centers at canvas percentages x=12.5,37.5,62.5,87.5 and y=12.5,37.5,62.5,87.5. Each entire composition MUST fit within the central 55 percent of its own cell width AND height, leaving broad completely transparent padding on every side. Render SMALL THUMBNAIL icons with generous blank transparent gaps. Consistent warm hand-painted gouache texture, fine warm brown outlines, natural materials, muted warm ivory/jade/coral/ochre colors, top-left illumination. Food should look tangible and appetizing, simple enough to recognize at inventory size. No text, no letter marks, no numbers, no labels, no visible grid, no frames, no border, no backdrop, no glow, no halo, no scattered crumbs outside the central icon. No plate unless explicitly requested; only each named composition. Keep all icons fully visible inside their own cell. Exact row-major sequence:\n1. golden sesame flatbread with a torn half showing soft layers, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n2. square dark green lotus leaf rice parcel tied with straw, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n3. stacked brown seasoned tofu squares on a short bamboo skewer, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n4. amber brittle candy pieces with pale pine nuts in a paper pouch, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n5. three split roasted chestnuts with golden kernels and a paper cone, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n6. round white rice ball with a dark red dried plum on waxed paper, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n7. small ochre bottle gourd canteen with wooden cork and brown strap, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n8. small dark pressed tea cake with orange peel flecks in rough paper, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n9. two ivory rice cake squares with tiny golden blossoms on a leaf, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n10. several reddish brown dried meat strips in a tied wax paper wrap, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n11. flaky pale gold pastry with a cut wedge revealing red bean filling, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n12. short green bamboo tube with its lid lifted over steamed rice, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n13. small open celadon jar of yellow green plums in amber syrup, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n14. bundle of pale brown dried edible mushrooms with wrinkled caps, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n15. squat dark ceramic wine jar with faded red seal and straw handle, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n16. open two tier wooden travel food box with pastry, dried fruit and bean snacks, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text",
+      "item_ids": [
+        "BASE113",
+        "BASE114",
+        "BASE115",
+        "BASE116",
+        "BASE117",
+        "BASE118",
+        "BASE119",
+        "BASE120",
+        "BASE121",
+        "BASE122",
+        "BASE123",
+        "BASE124",
+        "BASE125",
+        "BASE126",
+        "BASE127",
+        "BASE128"
+      ],
+      "visual_review": {
+        "status": "reviewed",
+        "notes": "Sixteen food/drink compositions match row-major identities. Icons remain visually separated with no apparent outer clipping. Padding is narrower than requested around paper wraps and tall bundles; saturated fringe speckles may approach cell boundaries. Preserve source and measure runtime regions if equal cell extraction picks up speckles.",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "nonempty_cells": 16,
+        "edge_touch_cells": [
+          11,
+          15
+        ]
+      }
+    },
+    {
+      "atlas_id": "B09",
+      "image_path": "assets/atlases/B09.png",
+      "columns": 4,
+      "rows": 4,
+      "width": 1254,
+      "height": 1254,
+      "sha256": "77cd48aeb8e15ded7b6078b8ea964dfd27a6d87379f5011155d2b4fffab27ad9",
+      "source_path": "/workspace/generated_images/exec-ffd4522c-93f8-43b3-828e-190836e834dd.png",
+      "prompt": "Create ONE square transparent PNG inventory icon atlas for a Ming-inspired wuxia game. EXACT invisible 4 by 4 equal-cell layout with sixteen separate botanical ingredient thumbnail icons. Exactly SIXTEEN distinct fictional herb specimens, each inside a compact silhouette, in the row-major order below. Icon centers at canvas percentages x=12.5,37.5,62.5,87.5 and y=12.5,37.5,62.5,87.5. Each ENTIRE plant bundle including stalks, leaves, containers and roots must fit within the central 50 percent of its own cell width AND height. Very generous fully transparent margins, especially near the outer canvas and every row boundary. Draw small inventory thumbnails, not large page-filling objects. Fine warm brown linework, warm gouache and watercolor texture, muted jade, ivory, coral, ochre and earthy natural colors, top-left lighting. Clearly distinguish leaf shapes, roots, stems, flowers, resin and seeds. NO text, NO labels, NO numbers, NO visible grid, NO frame, NO border, NO background, NO glow, NO halo, NO loose drifting particles. Keep each complete object wholly within its own cell. Exact row-major sequence:\n1. bundle of narrow blue green veined fictional herb leaves with fine roots, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n2. slender stems of tiny golden fictional medicinal flower spikes, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n3. small violet gray fictional moss fragments in a shallow paper tray, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n4. short ivory fictional roots with fuzzy fibers and tan tips, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n5. coiled brown fictional vine with dark red joints and a few green leaves, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n6. paired broad fictional herb leaves showing dark green tops and silver gray backs, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n7. delicate ivory bell shaped fictional dried flowers in a bamboo lattice case, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n8. small pile of matte black fictional medicinal seeds on folded brown paper, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n9. layered fan shaped fictional medicinal fungi with pale cream edges, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n10. thin pale yellow fictional wood slices with narrow dark red cores, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n11. several dark teal fictional dried medicinal berries with pale speckles, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n12. irregular pale blue green fictional resin shards on a dried leaf, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n13. bundle of short tan fictional herb stalks with paired dark rings, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n14. split brown fictional seed pod with pale gray medicinal floss, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n15. curved gray brown fictional medicinal root with tiny golden brown spots, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n16. tiny pale green fictional medicinal orchid in a breathable bamboo basket, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text",
+      "item_ids": [
+        "BASE129",
+        "BASE130",
+        "BASE131",
+        "BASE132",
+        "BASE133",
+        "BASE134",
+        "BASE135",
+        "BASE136",
+        "BASE137",
+        "BASE138",
+        "BASE139",
+        "BASE140",
+        "BASE141",
+        "BASE142",
+        "BASE143",
+        "BASE144"
+      ],
+      "visual_review": {
+        "status": "reviewed",
+        "notes": "Sixteen distinct fictional herb/material compositions in correct order, all visibly separated; no apparent outer silhouette clipping. Resin is stylized with angular crystalline shapes; bundled stems read as bamboo-like. Loose saturated edge speckles and narrower-than-requested margins remain; preserve generated original and use measured runtime regions where needed.",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "nonempty_cells": 16,
+        "edge_touch_cells": []
+      }
+    },
+    {
+      "atlas_id": "B10",
+      "image_path": "assets/atlases/B10.png",
+      "columns": 4,
+      "rows": 4,
+      "width": 1254,
+      "height": 1254,
+      "sha256": "22fc3059bee29473b4948ec1e8a26f575708c2b415a24e9a0a5c056a732bf3c7",
+      "source_path": "/workspace/generated_images/exec-5355468b-26d0-4f1f-8741-2e4986d35136.png",
+      "prompt": "Create ONE square transparent PNG inventory icon atlas for a Ming-inspired wuxia game. EXACT invisible 4 by 4 layout, sixteen equally sized square cells. Exactly SIXTEEN distinct mineral and metal material icons, row-major order below. Place every icon at its own cell center: canvas x=12.5%,37.5%,62.5%,87.5%; y=12.5%,37.5%,62.5%,87.5%. Each complete object or compact group fits INSIDE CENTRAL 50 percent of its cell's WIDTH and HEIGHT, leaving very generous transparent empty padding on all sides. Draw small isolated inventory thumbnails. Refined warm hand-painted gouache, fine warm brown outlines, quiet natural metal/stone colors with muted jade and ivory accents, consistent top-left light. Differentiate iron, bronze, steel, brass, silver, copper, mica, jade, clay, obsidian, inkstone, whetstone, turquoise, quartz, patterned stone and meteorite using shape and texture. NO text, NO letters, NO labels, NO numbers, NO gridlines, NO frames, NO borders, NO background, NO magical glow, NO colored halos, NO dust outside the object. No icon crosses its own cell. Exact row-major sequence:\n1. short dark gray wrought iron ingot with rounded corners and hammer marks, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n2. flat square bronze stock with beveled edges and muted green patina, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n3. long cool gray refined steel billet with one polished face, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n4. three overlapping warm brass sheets with slightly curled edges, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n5. irregular matte silver offcuts spilling from a gray cloth pouch, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n6. coiled reddish copper wire tied with a short hemp thread, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n7. layered silvery gray mica flakes with translucent broken edges, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n8. rough gray brown jade stone with a pale green exposed face, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n9. chalk white porcelain clay lumps in a shallow bamboo tray, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n10. irregular black obsidian flake with curved fracture ridges, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n11. flat rounded gray violet inkstone blank with a pale diagonal vein, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n12. rectangular ochre red whetstone with a smooth top and rough sides, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n13. small turquoise stone chips with brown veining on a paper tray, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n14. cluster of milky quartz points on a rough gray matrix, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n15. pale gray decorative stone slab with black branching natural patterns, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n16. small dark meteoritic iron fragment with pitted surface and a silver gray cut, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text",
+      "item_ids": [
+        "BASE145",
+        "BASE146",
+        "BASE147",
+        "BASE148",
+        "BASE149",
+        "BASE150",
+        "BASE151",
+        "BASE152",
+        "BASE153",
+        "BASE154",
+        "BASE155",
+        "BASE156",
+        "BASE157",
+        "BASE158",
+        "BASE159",
+        "BASE160"
+      ],
+      "visual_review": {
+        "status": "reviewed",
+        "notes": "Sixteen metal/mineral material compositions in correct row-major order. Iron and steel are distinguished by hammered versus bright refined finish; bronze, brass, copper and silver are distinct. No apparent silhouette clipping or overlap; transparent gaps present. Some colored edge fringe speckles remain in source pixels.",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "nonempty_cells": 16,
+        "edge_touch_cells": []
+      }
+    },
+    {
+      "atlas_id": "B11",
+      "image_path": "assets/atlases/B11.png",
+      "columns": 4,
+      "rows": 4,
+      "width": 1254,
+      "height": 1254,
+      "sha256": "a94aee4b6653115f2f3d47c77df5f4f2a0eddac2edab95e786cb2f87194303d4",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "cell_bboxes_alpha128": [
+        [
+          60,
+          82,
+          276,
+          273
+        ],
+        [
+          50,
+          88,
+          265,
+          274
+        ],
+        [
+          46,
+          97,
+          258,
+          265
+        ],
+        [
+          44,
+          89,
+          261,
+          272
+        ],
+        [
+          54,
+          52,
+          275,
+          273
+        ],
+        [
+          55,
+          70,
+          277,
+          273
+        ],
+        [
+          66,
+          70,
+          250,
+          282
+        ],
+        [
+          48,
+          66,
+          269,
+          271
+        ],
+        [
+          58,
+          62,
+          270,
+          262
+        ],
+        [
+          47,
+          62,
+          274,
+          264
+        ],
+        [
+          32,
+          65,
+          269,
+          265
+        ],
+        [
+          43,
+          78,
+          265,
+          261
+        ],
+        [
+          62,
+          37,
+          277,
+          246
+        ],
+        [
+          63,
+          44,
+          263,
+          242
+        ],
+        [
+          42,
+          41,
+          278,
+          248
+        ],
+        [
+          49,
+          43,
+          252,
+          243
+        ]
+      ],
+      "source_path": "/workspace/generated_images/exec-3f5b6308-9a9e-4331-ab12-ad8ef59d07bc.png",
+      "prompt": "Create a production-ready game inventory icon atlas. Square canvas with an exact invisible 4 by 4 grid of 16 equal cells. Exactly 16 distinct isolated object icons in the row-major order below; no additional objects beyond each specified item. Every icon centered inside its own cell, with at least 15 percent EMPTY transparent margin on all four sides of every cell. Full silhouettes never cross a cell boundary. Fully transparent background, including gaps. No labels, writing, letters, text, numbers, grid lines, borders, frames, watermarks or glowing effects. Cohesive charming Ming-inspired wuxia hand painted watercolor and gouache illustration. Warm brown fine outlines, softly rounded shapes, warm ivory, jade, coral and natural material colors. Gentle top-left lighting. Same object visual scale and slight three quarter overhead view. Show the 16 following material objects, row-major left to right, top to bottom:\n1. Thick beige hemp cloth roll, frayed coarse fibers, tied with straw rope.\n2. Folded ivory cotton fabric, soft diagonal folds, fine woven texture.\n3. Low indigo cotton fabric roll with undyed white selvage and subtle dye variations.\n4. Bamboo green twill silk folded into a fan, fine diagonal weave, narrow gray selvage.\n5. Overlapping pale apricot translucent silk squares held by a tiny wooden clip.\n6. Vermilion satin roll with broad smooth folds and a dark red reverse side.\n7. Small wooden spool of ochre gold woven trim, exposed repeating branch motif.\n8. Stack of brown blue and gray cloth patches with visible old stitches.\n9. Irregular dark chestnut leather hide with a curled corner exposing lighter fibers.\n10. Soft camel tan deerskin folded loosely, fine velvety grain.\n11. Folded dark brown waxed cloth, mottled muted sheen, simple hemp strap.\n12. Rounded rectangular gray white felt pad, dense edge and fuzzy surface.\n13. Pale yellow silk skein in an elongated loop, plain paper band around center.\n14. Round light brown hemp thread ball with curling tail and coarse fibers.\n15. Fluffy white cotton batting spilling from a half open cream cloth bundle.\n16. Coiled blue gray textured fish leather strip with tiny natural speckles.",
+      "revision_prompt": "Re-layout this exact sixteen-object inventory atlas with generous spacing for reliable mechanical equal-cell cropping. Preserve every existing object's identity, order, colors, paint style and transparency. Canvas square. EXACT invisible 4x4 uniform grid. Every icon must fit within the CENTRAL 60 PERCENT of its cell. Therefore leave EMPTY 20 PERCENT margins on all four sides of EVERY individual cell. Shrink all objects substantially; more empty space is necessary. Object centers must be at x=12.5%,37.5%,62.5%,87.5% and y=12.5%,37.5%,62.5%,87.5% of full canvas. All sixteen entire silhouettes must be safely inside their equal cells, including trailing threads, cloth corners and paper bands. No grid drawn, no labels, text or border. Fully transparent empty areas. This is a layout correction; do not change any object or combine objects.",
+      "item_ids": [
+        "BASE161",
+        "BASE162",
+        "BASE163",
+        "BASE164",
+        "BASE165",
+        "BASE166",
+        "BASE167",
+        "BASE168",
+        "BASE169",
+        "BASE170",
+        "BASE171",
+        "BASE172",
+        "BASE173",
+        "BASE174",
+        "BASE175",
+        "BASE176"
+      ],
+      "visual_review": "All 16 textile/material identities visible in correct row-major order. Initial output was revised through image generation for extra spacing. Revised silhouettes appear complete and separated, with no visible labels. RGBA transparency verified. Prompts request 20% margin but generated spacing varies; preserve measured alpha128 cell bounding boxes for crop inspection. Low-alpha watercolor specks may extend beyond the opaque silhouettes."
+    },
+    {
+      "atlas_id": "B12",
+      "image_path": "assets/atlases/B12.png",
+      "columns": 4,
+      "rows": 4,
+      "width": 1254,
+      "height": 1254,
+      "sha256": "17e23688f79d49775d343563393aa424b64a8339b17ded3b20ebda35f1c2c6d3",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "cell_bboxes_alpha128": [
+        [
+          58,
+          96,
+          268,
+          258
+        ],
+        [
+          47,
+          67,
+          274,
+          277
+        ],
+        [
+          30,
+          80,
+          254,
+          286
+        ],
+        [
+          32,
+          65,
+          283,
+          280
+        ],
+        [
+          44,
+          50,
+          301,
+          259
+        ],
+        [
+          57,
+          40,
+          262,
+          274
+        ],
+        [
+          18,
+          67,
+          286,
+          264
+        ],
+        [
+          29,
+          58,
+          280,
+          271
+        ],
+        [
+          49,
+          36,
+          309,
+          251
+        ],
+        [
+          48,
+          42,
+          271,
+          230
+        ],
+        [
+          19,
+          42,
+          288,
+          251
+        ],
+        [
+          22,
+          31,
+          282,
+          268
+        ],
+        [
+          44,
+          10,
+          296,
+          213
+        ],
+        [
+          42,
+          11,
+          255,
+          222
+        ],
+        [
+          30,
+          14,
+          313,
+          223
+        ],
+        [
+          0,
+          6,
+          287,
+          249
+        ]
+      ],
+      "source_path": "/workspace/generated_images/exec-cdbef7f1-9c9c-43e0-8b54-e5d34cfa9075.png",
+      "prompt": "A production-ready inventory atlas for a charming Ming-inspired wuxia game: square canvas, EXACT invisible 4x4 equal-cell grid, 16 distinct isolated icons. CRITICAL LAYOUT: SMALL OBJECTS with maximum width and height each only 55% of its cell, at least 22% transparent margin on every side of every cell. Centers exactly x=12.5%,37.5%,62.5%,87.5% and y=12.5%,37.5%,62.5%,87.5% of canvas. All silhouettes complete and disconnected, never cross cell boundaries. Lots of empty transparent space. Fully transparent background. No labels, writing, letters, numbers, grid, frame, border, watermark, or glow. Cohesive hand painted watercolor/gouache texture, fine warm brown outlines, rounded tactile forms, warm ivory/jade/coral and natural material palette, gentle top-left light, slight three-quarter overhead view. Only specified objects, row-major left to right top to bottom:\n1. Compact square iron hammer head on a short worn brown wooden handle.\n2. Slender silver gray metal file with crosshatched teeth and oval wooden grip.\n3. Yellow bamboo handled carving knife with short triangular blade and slim brown sheath.\n4. Ochre wooden bow saw frame, thin steel blade, twisted hemp tension cord.\n5. Broad pale wooden clamp with a brass pivot and gray cloth padded jaws.\n6. Round gray ceramic mortar and stubby pestle with traces of ochre pigment.\n7. Delicate brass balance rod with round pan, tiny sliding weight and navy sleeve.\n8. Open slim bamboo needle case, needles tucked in rust cloth, white thread around exterior.\n9. Short broad gray splitting blade with flat brown handle and two bamboo strips.\n10. Short pointed dark iron awl with pear shaped brown wooden handle.\n11. Dark gray rectangular whetstone in a light brown sliding wooden case.\n12. Wide flat cream bristle brush with dark bamboo handle and burgundy binding.\n13. Short open brass pliers with dark brown leather pads on both jaws.\n14. Compact bamboo and wood marking reel, round axle, pull ring and a short black cord.\n15. Dark chestnut lacquer tray with six compartments holding a few brass pins and wood chips.\n16. Half unrolled olive brown canvas tool roll showing a small hammer, file and wooden ruler.",
+      "item_ids": [
+        "BASE177",
+        "BASE178",
+        "BASE179",
+        "BASE180",
+        "BASE181",
+        "BASE182",
+        "BASE183",
+        "BASE184",
+        "BASE185",
+        "BASE186",
+        "BASE187",
+        "BASE188",
+        "BASE189",
+        "BASE190",
+        "BASE191",
+        "BASE192"
+      ],
+      "visual_review": "All 16 workshop tools appear in correct row-major order. Entire silhouettes visible and visually separated; no text or grid present. Some item bundles contain expected companion parts (knife sheath, bamboo strips, needles). Actual occupancy exceeds requested 55%, so crop using measured regions if needed. Alpha transparency and nonempty cells verified; low-alpha watercolor flecks remain."
+    },
+    {
+      "atlas_id": "B13",
+      "image_path": "assets/atlases/B13.png",
+      "columns": 4,
+      "rows": 4,
+      "width": 1254,
+      "height": 1254,
+      "sha256": "095228dffb6026b5e070f7a978b1bc146e475f544b566396c9d91cdcd44517c4",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "cell_bboxes_alpha128": [
+        [
+          89,
+          93,
+          314,
+          298
+        ],
+        [
+          0,
+          75,
+          272,
+          307
+        ],
+        [
+          75,
+          90,
+          225,
+          298
+        ],
+        [
+          21,
+          87,
+          256,
+          297
+        ],
+        [
+          59,
+          63,
+          307,
+          287
+        ],
+        [
+          41,
+          81,
+          303,
+          279
+        ],
+        [
+          46,
+          52,
+          292,
+          278
+        ],
+        [
+          40,
+          73,
+          241,
+          269
+        ],
+        [
+          58,
+          68,
+          311,
+          313
+        ],
+        [
+          54,
+          43,
+          291,
+          247
+        ],
+        [
+          70,
+          18,
+          243,
+          249
+        ],
+        [
+          39,
+          49,
+          260,
+          252
+        ],
+        [
+          95,
+          0,
+          268,
+          211
+        ],
+        [
+          62,
+          27,
+          312,
+          211
+        ],
+        [
+          61,
+          17,
+          274,
+          214
+        ],
+        [
+          19,
+          29,
+          274,
+          219
+        ]
+      ],
+      "source_path": "/workspace/generated_images/exec-67beb659-0f24-46e5-b999-0da45c1406eb.png",
+      "prompt": "A game inventory icon sheet with SIXTEEN SMALL travel props. Square transparent canvas and EXACT uniform 4x4 arrangement. Important: reserve broad invisible gutters; all objects must be SMALL enough to fit inside the central 50% width and 50% height of their own cell. Leave lots of EMPTY SPACE. Object centers exactly x=12.5%,37.5%,62.5%,87.5%, and y=12.5%,37.5%,62.5%,87.5% of canvas. Silhouettes complete, never touch cell boundaries. Fully transparent background, no shadows beyond each object. No text, labels, writing, numbers, grid, frames, border, watermark, glow. Charming traditional Ming-inspired wuxia inventory art, hand painted watercolor and gouache, warm brown thin outlines, ivory/jade/coral and natural materials, soft top-left light, three-quarter overhead. Draw exactly one specified object or its small companion set at each center, in row-major left-to-right top-to-bottom order:\n1. Indigo gray square bottom travel sack, broad hemp strap, brown reinforced base.\n2. Tall yellow green bamboo basket backpack with cloth straps and cream lining flap.\n3. Pale paulownia upright book box with brown leather corners and simple brass latch.\n4. Half open warm cream oil paper umbrella, visible bamboo ribs and curved wooden handle.\n5. Short straw rain cape with layered coarse golden brown fibers.\n6. Broad conical light brown woven bamboo hat with thin black chin cord.\n7. Flat round dark brown leather waterskin with pale wooden stopper and long strap.\n8. Single green bamboo cylinder with round wooden plug and cream cord loop.\n9. Three fold gray brown felt sleeping pad with cloth hinges and tied cord.\n10. Broad coil of thick brown hemp rope with light wrapped ends.\n11. Small round ivory paper lantern with bamboo ribs, carry handle and dark red base.\n12. Open small brown leather pouch with gray flint and curved dark fire steel.\n13. Two tier warm brown wooden lunch carrier with arched handle and square lacquer latch.\n14. Three section folding wooden ruler beside a thin knotted measuring cord.\n15. Small brass travel bell with slit openings and indigo fabric strap.\n16. Flat dark brown waist pouch with open flap, three cloth pockets and thin ties.",
+      "item_ids": [
+        "BASE193",
+        "BASE194",
+        "BASE195",
+        "BASE196",
+        "BASE197",
+        "BASE198",
+        "BASE199",
+        "BASE200",
+        "BASE201",
+        "BASE202",
+        "BASE203",
+        "BASE204",
+        "BASE205",
+        "BASE206",
+        "BASE207",
+        "BASE208"
+      ],
+      "visual_review": "All 16 travel supplies identifiable and in correct row-major order, with complete visible silhouettes and transparent gaps. Lantern includes a warm cream paper surface, not a detached glow. Images are larger than requested 50% occupancy; center spacing has small deviations. Some equal-cell bboxes touch boundaries due to neighboring silhouettes or faint paint fringes; use measured per-item regions rather than assuming exact cell-edge clearance. No object visibly clipped at canvas perimeter."
+    },
+    {
+      "atlas_id": "B14",
+      "image_path": "assets/atlases/B14.png",
+      "columns": 4,
+      "rows": 4,
+      "width": 1254,
+      "height": 1254,
+      "sha256": "92249ab6c0c71df5a07852086fe49147a7368c980800571545035200c75c8036",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "cell_bboxes_alpha128": [
+        [
+          53,
+          75,
+          301,
+          314
+        ],
+        [
+          40,
+          84,
+          271,
+          314
+        ],
+        [
+          16,
+          111,
+          297,
+          310
+        ],
+        [
+          4,
+          79,
+          283,
+          314
+        ],
+        [
+          49,
+          0,
+          302,
+          310
+        ],
+        [
+          29,
+          0,
+          304,
+          307
+        ],
+        [
+          21,
+          46,
+          269,
+          306
+        ],
+        [
+          31,
+          0,
+          266,
+          303
+        ],
+        [
+          27,
+          29,
+          314,
+          273
+        ],
+        [
+          0,
+          34,
+          293,
+          291
+        ],
+        [
+          30,
+          34,
+          288,
+          290
+        ],
+        [
+          3,
+          40,
+          281,
+          269
+        ],
+        [
+          43,
+          2,
+          281,
+          271
+        ],
+        [
+          23,
+          12,
+          291,
+          281
+        ],
+        [
+          61,
+          2,
+          231,
+          283
+        ],
+        [
+          2,
+          36,
+          293,
+          269
+        ]
+      ],
+      "source_path": "/workspace/generated_images/exec-140c6238-9a25-4885-8768-999be7019e56.png",
+      "prompt": "Create sixteen distinct book/manual/scroll inventory icons for a charming Ming-inspired wuxia game, arranged in EXACT equal 4x4 cells on a square FULLY TRANSPARENT canvas. Keep each entire book and every companion bookmark or pebble within the central 50% of its cell, leaving very generous EMPTY GUTTERS. Centers at x12.5,37.5,62.5,87.5 percent and y12.5,37.5,62.5,87.5 percent. Do not enlarge books to fill cells. Full silhouettes, no overlaps. NO TEXT WHATSOEVER: no readable words, no Chinese lettering, no Latin letters, no numbers, no labels; book cover markings must be simple symbolic sketches exactly as described. No grid, frame, watermark, glow or surrounding scenery. Consistent watercolor/gouache hand painting, warm brown fine outlines, ivory/jade/coral accents and earth tones, slight three-quarter overhead angle, soft upper-left light. Each book has a distinctive cover color, shape and symbol, as below. Exact row-major order left to right then top to bottom:\n1. Ochre stitched manual with a simple ink fist emblem and tiny pose diagrams at page edges.\n2. Pale gray booklet with bamboo bookmark and plain wooden sword sketch on cover.\n3. Rust red folding booklet with simple crossed short saber diagrams on an open corner.\n4. Long ochre paper scroll with wooden rollers and a plain staff ink diagram.\n5. Pale teal stitched booklet with three soft curved ink strokes on its cover.\n6. Square unfolded hemp paper with a faint nine cell grid and footprint symbols.\n7. Brown stitched notebook with two colored cloth bookmarks and a palm diagram page.\n8. Gray green small manual with a plain target sketch and one smooth pebble at its corner.\n9. Worn cream folded map with brown mountain ridges and a thin teal stream line.\n10. Blue gray logbook with winding river lines and tiny wooden boat symbols on exposed pages.\n11. Pale green illustrated herb booklet with a pressed leaf and watercolor root sketches.\n12. Earth brown folding guide with a small sample rope loop and simple cord line diagrams.\n13. Charcoal thin booklet with muted oil stains and a tiny whetstone and blade sketch.\n14. Bulky cream sewing sampler book with blue and red fabric swatches and visible stitching.\n15. Tall narrow brown paper trade ledger with hemp binding and a small wooden tally bookmark.\n16. Gray covered album of dark ink rubbings, abstract white carved marks on black pages.",
+      "item_ids": [
+        "BASE209",
+        "BASE210",
+        "BASE211",
+        "BASE212",
+        "BASE213",
+        "BASE214",
+        "BASE215",
+        "BASE216",
+        "BASE217",
+        "BASE218",
+        "BASE219",
+        "BASE220",
+        "BASE221",
+        "BASE222",
+        "BASE223",
+        "BASE224"
+      ],
+      "visual_review": "All 16 books and scrolls have distinct intended cover themes and correct row-major order: fist, wooden sword, sabers, staff, breathing, footwork, palm, target, map, river, herbs, knots, maintenance, sewing, ledger, rubbings. No readable words or numbered labels. Entire book silhouettes visible, but icons are considerably larger than requested and several cross equal quarter-cell boundaries; transparent gaps still separate neighboring item silhouettes. Requires measured per-item source rectangles rather than unconditional equal-grid slicing. No image pixel edits applied."
+    },
+    {
+      "atlas_id": "B15",
+      "image_path": "assets/atlases/B15.png",
+      "columns": 4,
+      "rows": 4,
+      "source_path": "/workspace/generated_images/exec-1334b825-eed2-419a-8e93-6484f1c51633.png",
+      "prompt": "SQUARE transparent inventory atlas for hand-painted wuxia RPG. Exact invisible4x4 equal grid. Exactly16 separate miniature object groups. Place object centers at x=12.5%,37.5%,62.5%,87.5% and y=12.5%,37.5%,62.5%,87.5%. EVERY group fits comfortably in central50-60% width AND height of its cell, leaving wide CLEAR transparent gutters. Do not enlarge to fill canvas. Top-left soft light, watercolor/gouache textures, fine warm-brown contour lines, earthy cream/jade/coral accents, consistent stylized game-prop illustration. No text, letters, numbers, gridlines, borders, glow, symbols outside objects. Entire silhouettes visible. Items exact row-major order:\n1. Small round bronze mirror back with concentric rings, central knob and faint green patina.\n2. Small pale jade celadon cup with short foot and soft milky glaze highlights.\n3. Warm yellow bamboo brush pot with shallow leaf carvings and a natural uneven rim.\n4. Flat oval blue gray stone paperweight with a white vein across its polished top.\n5. Pale green jade disk pendant with a central hole and short gray green tassel.\n6. Palm sized chestnut wooden horse with one raised foreleg and simple carved mane grooves.\n7. Rounded brown wooden trinket box with milky shell inlays and a tiny brass clasp.\n8. Gray drawstring pouch spilling dark and pale round wooden game stones.\n9. Dark brown square lacquer box with ochre gold branch design and cream lining.\n10. Squat ochre gray ceramic tea jar with small round lid and an incised wave band.\n11. Half open ivory folding fan with fine bamboo ribs and a tiny brown knot.\n12. Slender silver hairpin with a three petal open wire flower and no gemstones.\n13. Apricot red cloth sachet with teal and yellow cord knot and short tassel.\n14. Loose ring of worn brown green square holed copper coins on thick red cord.\n15. Dark brown rectangular sliding box with two green cloth padded recesses.\n16. Pale compartment sample box holding blue cloth, red wood and celadon shards, tied with hemp.",
+      "item_ids": [
+        "BASE225",
+        "BASE226",
+        "BASE227",
+        "BASE228",
+        "BASE229",
+        "BASE230",
+        "BASE231",
+        "BASE232",
+        "BASE233",
+        "BASE234",
+        "BASE235",
+        "BASE236",
+        "BASE237",
+        "BASE238",
+        "BASE239",
+        "BASE240"
+      ],
+      "visual_review": "已檢視16件依序對應；銅鏡、杯、筆筒、鎮紙、玉佩、木馬、貝盒、棋袋、漆盒、茶罐、扇、髮簪、香袋、錢串、藏印匣及貨樣盒皆完整。部分造形裝飾較文字豐富，格間距依實測區域取圖。",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "sha256": "ce325298ec7661891f1285476aebe3171b45d7971b79a9402045a04a5d27674f"
+    },
+    {
+      "atlas_id": "S01",
+      "image_path": "assets/atlases/S01.png",
+      "columns": 4,
+      "rows": 4,
+      "width": 1254,
+      "height": 1254,
+      "sha256": "9171f5659ec329f1d3893506749719aa2eab486cd9e1eecd9fb711404e8b0844",
+      "source_path": "/workspace/generated_images/exec-2d2a9349-bd9d-46e3-a536-b3fd2777499d.png",
+      "prompt": "Production game inventory icon atlas, perfectly SQUARE canvas, invisible exact 4 by 4 grid of equal square cells, exactly sixteen separate inventory items. Fully transparent background. Original hand-painted Chinese wuxia inventory art, miniature gouache and watercolor texture, delicate warm-brown outlines, soft top-left light. Shaolin monastery collection: ochre, dark brown, aged brass. No people or hands. No text, no letters, no numerals, no labels, no grids, no frames, no glow, no background scenery. Abstract cover motifs only. Every object centered inside its own cell with at least 15 percent fully transparent margin on all four sides. No object may cross a cell boundary. Match relative visual weight. Tall objects must fit within their cell, diagonal when appropriate. Sixteen items in exact row-major order, left to right then top to bottom:\n1. Thin ochre stitched boxing booklet, thick brown binding cord, square embossed fist symbol, dark cloth corner guards.\n2. Horizontal martial scroll on thick wooden rollers, yellow hemp backing, three parallel staff path marks.\n3. Brown accordion folio with circular bell rubbing, layered palm-shaped paper diagram, aged brass clasp.\n4. Long double-ended folding staff manual with wooden end covers and one ochre cloth band across its center.\n5. Palm-sized beige softcover breathing booklet, layered earth-ring seal on cover, thin dangling spine cord.\n6. Thick brown leather-clasp manual with ochre pages, a flat stone paperweight and a worn hemp loop.\n7. Dark ochre cloth book case holding a narrow sutra, tiny flat bronze bell clasp, restrained monastery craft.\n8. Three-panel grey-brown stair rubbing with ochre footprints and plain kraft paper corner sleeve.\n9. Slim cylindrical wooden scroll case, carved turning-arrow band, short yellow cord, narrow rolled paper visible.\n10. Loose annotated practice sheets between bamboo boards, ochre correction dots, flat wooden tag at edge.\n11. Dark hardwood staff diagonally placed, aged brass end caps, three pale grip-spacing rings at center.\n12. Pair of thick black iron wrist rings, brown cloth lining, fine brass bands set into their outer edges.\n13. Folded ochre short-hem monk robe, dark brown shoulder patches, broad cloth sash tied in a square knot.\n14. Square dark wooden duty token, shallow monastery-gate relief, three short notches, thick yellow hanging cord.\n15. Squat ochre ceramic salve jar, cream cloth seal, small wooden spatula resting beside it, brown tied string.\n16. Small flat dark wooden case slightly open, worn circular bell rubbing and a notched bronze fragment inside.\nDo not add, omit, merge or duplicate items. An item's paired pieces should remain grouped inside its single cell. High small-size silhouette readability.",
+      "revision_prompt": "Edit this inventory atlas, preserving ALL SIXTEEN existing object identities, designs and their row-major order. The only change is SPACING and SCALE. Output a square transparent 4 by 4 atlas with equal cells. Place each object's entire silhouette at the exact center of its cell and SHRINK it to fit strictly within the central 60 percent of both cell width and cell height. That means at least 20 percent fully transparent margin on all four sides of EVERY cell. This is crucial for game sprites: the three horizontal and three vertical cell boundaries must have wide EMPTY TRANSPARENT GUTTERS. Keep every cord, handle, sleeve and paper corner inside its object's central area. Objects may be different absolute sizes but no cell should contain any fragment from another cell. Do not add grid lines, text, borders, labels, background, glows, or scenery. Preserve gouache texture and warm brown Shaolin palette. Existing 16 objects remain intact; make no other changes.",
+      "prior_source_path": "/workspace/generated_images/exec-4157c2b5-c2a1-4ff6-80c6-6435bbf80527.png",
+      "item_ids": [
+        "SL001",
+        "SL002",
+        "SL003",
+        "SL004",
+        "SL005",
+        "SL006",
+        "SL007",
+        "SL008",
+        "SL009",
+        "SL010",
+        "SL011",
+        "SL012",
+        "SL013",
+        "SL014",
+        "SL015",
+        "SL016"
+      ],
+      "visual_review": "Sixteen distinct Shaolin items in correct row-major order; one spacing revision applied. Main silhouettes intact. Measured alpha>32 has zero pixels on all six exact equal-grid boundaries and all outer edges. Transparent canvas verified; minor scattered semi-transparent paint specks remain near some silhouettes.",
+      "measurements": {
+        "transparent_ratio": 0.637295264404305,
+        "v_boundary_pixels": [
+          0,
+          0,
+          0
+        ],
+        "h_boundary_pixels": [
+          0,
+          0,
+          0
+        ],
+        "outer_edge_pixels": 0
+      }
+    },
+    {
+      "atlas_id": "S02",
+      "image_path": "assets/atlases/S02.png",
+      "columns": 4,
+      "rows": 4,
+      "width": 1254,
+      "height": 1254,
+      "sha256": "80f04c86bc8125c345c03f81cf00c828fcb953b70c20f20fb108c4e68c0a58e9",
+      "source_path": "/workspace/generated_images/exec-d1153ed5-dc63-4e92-bcdf-73e674a292a6.png",
+      "prompt": "Production game inventory icon atlas on a perfectly SQUARE fully transparent canvas. Invisible exact 4 by 4 grid of equal square cells, exactly sixteen separate Chinese wuxia inventory icons. Important: SMALL ICONS, each entire object must fit within central 55 percent of its cell width and height. At least 22 percent transparent margin on all four sides of every cell. Icon centers exactly at 12.5,37.5,62.5,87.5 percent canvas coordinates. Wide completely EMPTY transparent gutters on all three horizontal and three vertical dividing lines. No touching or overlap between objects. Preserve full silhouette including cords and long handles. Hand-painted gouache/watercolor, fine warm-brown outlines, muted slate blue, cream and mist grey Wudang palette, soft top-left lighting. No people, no text or pseudo-writing, no letters, no numerals, no labels, no visible grid, no frames, no background scenery, no glow. Book cover marks are only simple abstract geometric motifs. Exact row-major left-to-right top-to-bottom contents:\n1. Slate-blue stitched sword primer, cream pine sprig emblem, narrow silver-grey cloth bookmark.\n2. Fan-open pale grey folding diagram with slate-blue arcs and fine sword-tip marks, small jade-toned clasp.\n3. Long blue-grey silk-backed scroll, round stone and split-wave emblem, ivory-jade roller ends.\n4. Narrow cream booklet sleeve with slate-blue spine and a small tied tassel of soft white fibers.\n5. Cream rounded softcover breathing booklet, pale blue dotted rings, slender blue-grey wrap band.\n6. Celadon hard-cover manual with slender wooden channel motif, staggered cream page tabs.\n7. Deep slate-blue cloth case holding two slim cream volumes, open silver-grey ring emblems.\n8. Long folded cream route diagram, pale blue stair marks, one flat round wooden bead tied at the end.\n9. Small six-fold blue-grey fan booklet, pine-branch silhouettes linked by footprints, white cord at base.\n10. Two-column loose study sheets in a pale stone-textured folder, slate-blue short cord and pierced bamboo disc.\n11. Slim silver-grey straight sword, open-ring guard, slate-blue wrapped grip, short cream tassel.\n12. Pale wooden-handled horsetail whisk, naturally falling cream fibers, slate-blue cord knot at handle end.\n13. Folded blue-grey short cloak, cream cloud-pattern edging, visible sleeve ties, plain wooden toggle.\n14. Two semicircular bamboo tokens forming an open ring, slate-blue thread through holes, empty center.\n15. Three short grey-blue incense sticks in a cream paper tube, pine-leaf seal, blue cord with a small tag.\n16. Aged cream promise scroll with blue-grey silk tie, tiny old pinewood fragment and two faded seal marks.\nUse equal visual weight, NO oversized objects. Paired pieces stay inside their one cell. Exactly sixteen items, no additions, no duplicates, no omissions.",
+      "item_ids": [
+        "WD001",
+        "WD002",
+        "WD003",
+        "WD004",
+        "WD005",
+        "WD006",
+        "WD007",
+        "WD008",
+        "WD009",
+        "WD010",
+        "WD011",
+        "WD012",
+        "WD013",
+        "WD014",
+        "WD015",
+        "WD016"
+      ],
+      "visual_review": "Sixteen Wudang icons in expected row-major order, all main silhouettes intact and distinct. Zero alpha>32 pixels on six exact grid boundaries and outer edges. Generated appearance uses painterly material detail, with some isolated semitransparent flecks around icons. Fan-shaped item is a foldout teaching diagram, not an additional weapon.",
+      "measurements": {
+        "transparent_ratio": 0.6312857865993097,
+        "v_boundary_pixels": [
+          0,
+          0,
+          0
+        ],
+        "h_boundary_pixels": [
+          0,
+          0,
+          0
+        ],
+        "outer_edge_pixels": 0
+      }
+    },
+    {
+      "atlas_id": "S03",
+      "image_path": "assets/atlases/S03.png",
+      "columns": 4,
+      "rows": 4,
+      "width": 1254,
+      "height": 1254,
+      "sha256": "47e6f74714235887cdc3f1b2634915dbb4b731e7a79a5ae56331d1e885c5f4a0",
+      "source_path": "/workspace/generated_images/exec-fa9011fc-05e9-46c7-8910-15e7d1f80791.png",
+      "prompt": "Production game inventory icon atlas on perfectly SQUARE fully transparent canvas. Invisible precise 4 by 4 equal square cells, exactly sixteen separate Chinese wuxia inventory icons. SMALL ICONS: every entire silhouette must fit within central 55 percent of both its cell's width and height, leaving at least22 percent fully transparent margin on all four sides. Icon centers exactly at12.5,37.5,62.5,87.5 percent of canvas coordinates. Wide empty transparent gutters at all cell boundaries; no fragments crossing. Original miniature gouache and watercolor, warm-brown delicate outlines, soft top-left light. Emei sect palette: muted jade green, ivory and pale copper, natural aged paper and cloth. No people, no hands, no scenery, no glows, no words, no letters, no pseudo-text, no numerals, no labels, no borders, no visible grid. Book covers only simple geometric leaves, water and mountain motifs. Put exactly these items in this exact row-major sequence, left to right then top to bottom:\n1. Ivory two-leaf sword primer, jade-green twin-leaf seal, pale copper corner protectors.\n2. Thin jade-green folding folio, round water-mirror window exposing wrist-motion lines, white silk band.\n3. Narrow ivory scroll with folded jade-green leaf illustration, flat pale-copper rollers, fine gauze wrap.\n4. Jade cloth-covered horizontal booklet with empty needle sleeve attached, one tiny silver dot emblem.\n5. Cream softcover breathing booklet, jade-green water-drop motif, thin bamboo bookmark at top edge.\n6. Three slim white booklets linked by jade-green ties, small teardrop-shaped jade clasp.\n7. Ivory hard case holding a narrow jade-green volume, frosted round mirror inset with leaf edging.\n8. Rounded white folding map with jade-green spring stones and tiny footprints, pale copper paper clip.\n9. Leaf-shaped cloth sleeve around a slender movement scroll, white-green ties, folded paper corner showing.\n10. Ivory loose-page bundles in a jade lattice-textured folder, tiny leaf seals along page edges.\n11. Crossed silver-white short swords of unequal length, jade-green grips, leaf-shaped pale copper guards.\n12. Slim ivory needle case half open, jade-green lining, neatly separated silver needles, leaf-shaped clasp.\n13. Folded ivory fitted short robe, jade-green forearm guards and lapels, slender leaf-pattern sash.\n14. Jade-green leaf-shaped wooden token, ivory twin-peak inlay, fine white cord through the stem.\n15. White four-corner cloth supply pouch, jade-green tie, pale copper leaf clasp, tiny rest tag beside it.\n16. Small ivory embroidered silk scroll, jade twin peaks and narrow stream, pale copper rollers, unfinished stitches.\nAll paired objects stay together inside their one cell. Keep swords and needle case small enough that tips and handles remain far from boundaries. Full silhouettes, no omissions or added objects, consistent visual weight.",
+      "revision_prompt": "Edit this exact sixteen-item Emei inventory atlas. Preserve all sixteen designs and exact row-major ordering. Fix spacing only: shrink each complete object to 75 percent of its current scale, including every attached cord, handle and scroll corner. Then recenter every object at the exact centers of an invisible4 by4 grid: horizontal and vertical centers12.5%,37.5%,62.5%,87.5%. Fully transparent SQUARE canvas. There must be large continuous TRANSPARENT empty gutters on all six internal dividing lines. Every icon fits inside the central55 percent of its cell. Do not crop or truncate any piece. Do not add text, writing, grids, borders, labels, scenery or glows. Retain original ivory and jade palette, warm fine outlines and gouache texture.",
+      "prior_source_path": "/workspace/generated_images/exec-d32a7e0f-cad8-4e4c-9a2e-a1578c00aaaa.png",
+      "item_ids": [
+        "EM001",
+        "EM002",
+        "EM003",
+        "EM004",
+        "EM005",
+        "EM006",
+        "EM007",
+        "EM008",
+        "EM009",
+        "EM010",
+        "EM011",
+        "EM012",
+        "EM013",
+        "EM014",
+        "EM015",
+        "EM016"
+      ],
+      "visual_review": "Sixteen Emei items match expected row-major order, with distinct ivory/jade book formats, paired short swords, needle case and sect token. One spacing correction preserved all main silhouettes. All six equal-grid boundaries and outer edges have zero alpha>32 pixels; low-alpha painterly residue remains around some icons.",
+      "measurements": {
+        "transparent_ratio": 0.6915891475826001,
+        "v_boundary_pixels": [
+          0,
+          0,
+          0
+        ],
+        "h_boundary_pixels": [
+          0,
+          0,
+          0
+        ],
+        "outer_edge_pixels": 0
+      }
+    },
+    {
+      "atlas_id": "S04",
+      "image_path": "assets/atlases/S04.png",
+      "columns": 4,
+      "rows": 4,
+      "width": 1254,
+      "height": 1254,
+      "sha256": "12ac54729cccfc865b7d66991329bb1ad9ac6e094caeb81a3c793d6507846b37",
+      "source_path": "/workspace/generated_images/exec-56a241f1-2bff-40bd-b2c1-9a566b6d9c3e.png",
+      "prompt": "Create a production Chinese wuxia game inventory atlas: perfectly SQUARE fully TRANSPARENT background. Exactly sixteen separated SMALL inventory icons in an invisible4 by4 grid of equal square cells. Center each at12.5%,37.5%,62.5%,87.5% canvas x/y. Each complete object must fit within CENTRAL50 percent of both cell width and height. This means wide empty transparent gutters and25% margin on every side within each cell. Tall swords are diagonal and shrunk to fit wholly inside cell; cords, tags and scroll ends must not enter neighboring cells. Original gouache watercolor miniature art, fine warm-brown outlines, soft upper-left light. Huashan sect muted palette: dark crimson, slate grey, dull silver. No people, no hands, no scenery, no glow, no text or pseudo-writing, no letters, no numbers, no labels, no frames, no visible grid. Covers have only geometric peaks or sword-line symbols. Exact row-major order, left to right then next row:\n1. Slate-grey stitched sword primer, one dark-crimson ridge and straight sword line, dull silver corners.\n2. Narrow crimson folding diagram in slate hard covers, cloud-gap cutout revealing thin silver sword paths.\n3. Slender dark-grey scroll tied with crimson cord, dull silver sword slash through a solitary peak motif.\n4. Reversible slate folding booklet, red arrow-tail bookmarks at both ends, fine silver central clasp.\n5. Thin slate-grey breathing booklet, dark-crimson sword-tassel bookmark, single dull-silver pointed-leaf seal.\n6. Three-layer slate board folio, rising dark-red mountain lines, flat silver paperweight on cover.\n7. Crimson cloth case holding a slate volume, three dull-silver peak marks, clasp shaped like a tucked sword tassel.\n8. Long grey-paper ridge map, crimson footprints along a narrow crest, slim bamboo strips at both ends.\n9. Three narrow grey bamboo tablets joined by dark-crimson thread, clear silver angular movement paths.\n10. Dark-grey folder with uneven-edged practice notes, crimson correction marks, broken-sword-tip wooden tag.\n11. Dull silver straight sword with a long fine tip, crimson wrapped grip, flat slate guard and short red tassel.\n12. Slate blunt training sword, worn wooden grip, dark-crimson hand cord, small controlled dents on the blade.\n13. Folded slate short robe, dark-crimson sleeve ties and inner lapel, slim silver-grey sash, reinforced shoulders.\n14. Narrow slate wooden token shaped like a blunt sword tip, crimson triple-peak seal, dull silver hanging ring.\n15. Grey-white folded tea packet, dark-crimson ribbon, small three-peak stamp, shallow wooden tea scoop beside it.\n16. Faded crimson sword tassel, cracked dull-silver ring, a tiny slate-grey roster fragment peeking from the knot.\nConsistent visual weight. Exactly these sixteen items. No extra props beyond specified paired pieces. Each paired piece remains inside same cell. Preserve very clear small-size silhouettes.",
+      "item_ids": [
+        "HS001",
+        "HS002",
+        "HS003",
+        "HS004",
+        "HS005",
+        "HS006",
+        "HS007",
+        "HS008",
+        "HS009",
+        "HS010",
+        "HS011",
+        "HS012",
+        "HS013",
+        "HS014",
+        "HS015",
+        "HS016"
+      ],
+      "visual_review": "Sixteen Huashan items in correct row-major order; crimson/slate/silver collection is visually coherent. Sword tips, book corners, tassels and robe silhouette fully preserved. Zero alpha>32 pixels on all six equal-grid boundaries and outer edges. Some tiny low-alpha paint residue around edges; no readable text. The practice-note icon includes schematic sparring figures as part of the illustration.",
+      "measurements": {
+        "transparent_ratio": 0.6501816197736621,
+        "v_boundary_pixels": [
+          0,
+          0,
+          0
+        ],
+        "h_boundary_pixels": [
+          0,
+          0,
+          0
+        ],
+        "outer_edge_pixels": 0
+      }
+    },
+    {
+      "atlas_id": "S05",
+      "image_path": "assets/atlases/S05.png",
+      "columns": 4,
+      "rows": 4,
+      "width": 1254,
+      "height": 1254,
+      "sha256": "1e1242d6a8ca2be8f06868c6362616800e137a81498b4ccf2ac6035d52215270",
+      "source_path": "/workspace/generated_images/exec-f992fc83-6db5-4380-9abb-6fbf7aacf5ff.png",
+      "prompt": "Create a production-ready square transparent game inventory icon atlas for the KUNLUN mountain martial sect. EXACTLY sixteen separate icons in an invisible, mathematically equal 4 by 4 grid, strict row-major order. Each cell contains one self-contained object or the explicitly described inseparable object set. Keep every object entirely within its cell with at least 15 percent empty margin on all four sides. Nothing crosses a cell boundary. No scene, no decorative backing, no borders, no frames, no grid lines, no lettering, no words, no numbers, no labels, no logos, no glowing aura. Book covers have ONLY abstract pictorial non-letter motifs. Hand-painted polished chibi wuxia prop art: watercolor and gouache texture, fine warm-brown outlines, readable rounded silhouettes, gentle upper-left lighting, modest soft highlights, muted ice blue and ochre with ivory paper and worn wood. Consistent 3/4 top-down object view and consistent visual scale. Each silhouette must be distinct, especially the ten manuscripts: use the specified varied bindings, folds, paper shapes, clips and wraps. Do not turn all books into identical rectangles. Transparent alpha background all around objects and between cells. Deliver the single square atlas, not a mockup.\nItems in strict left-to-right top-to-bottom order (indices for placement only, NEVER write index on image):\n1. Slim ice-blue clothbound sword manual, ochre stitching, embossed twin ridgelines and one small sword motif.\n2. Ochre accordion-fold diagram with ice-blue edging, three ink mountains linked by angular sword-path marks.\n3. Narrow ice-blue silk scroll on two ochre wooden rollers, unfolding cloud turns and a silver sword silhouette.\n4. Half-curled pale stone rubbing, ochre wooden clamp, sharp sword grooves and sparse ice-blue annotations.\n5. Small ochre soft-leather breathing book, ice-blue ribbon, single winding mountain path embossed on cover.\n6. Thick ivory stitched book with ice-blue spine and three ochre leaf-shaped bookmarks fanning outward.\n7. Rigid ice-blue book case with ochre-gold peak-shaped clasp and visible ivory page edges.\n8. Narrow ochre folded route chart with ice-blue footprints along a ridge and a short hemp corner tie.\n9. Fan-open ice-blue pivot-bound booklet, ochre rivet at one corner, curved footprint diagrams on pages.\n10. Weathered ochre leather notebook with ice-blue patch, short charcoal pencil and folded slips tucked inside.\n11. Slender silver-gray straight sword, ice-blue wrapped grip, ochre wooden scabbard with twin-peak bronze fitting.\n12. Broad two-handed straight sword with long ochre grip, ice-blue guard cord and scuffed iron scabbard.\n13. Ice-blue short mountain cape, ochre trim, layered standing collar and crossed fastening straps.\n14. Ochre wooden twin-peak token with an ice-blue cord knot and a shallow record groove on the back.\n15. Small stacked ochre travel cakes in waxed paper, ice-blue cloth wrap tied with thin hemp string.\n16. Narrow ochre wooden map case with ice-blue cloud inlays, twin-peak sliding clasp and worn metal corners.",
+      "item_ids": [
+        "KL001",
+        "KL002",
+        "KL003",
+        "KL004",
+        "KL005",
+        "KL006",
+        "KL007",
+        "KL008",
+        "KL009",
+        "KL010",
+        "KL011",
+        "KL012",
+        "KL013",
+        "KL014",
+        "KL015",
+        "KL016"
+      ],
+      "visual_review": "已逐格目視確認十種書冊／圖紙、兩種劍器、披衣、雙峰牌、乾糧與圖匣，共16件按序排列。初稿有格界擁擠與札記似字筆畫；本圖為 image_gen 留白修正版，書頁改為非文字點紋。完整剪影分離且外緣未裁切，名義等格線仍須依透明區測量，不宣稱每格均達20%留白。",
+      "read_only_alpha_checks": {
+        "width": 1254,
+        "height": 1254,
+        "sha256": "1e1242d6a8ca2be8f06868c6362616800e137a81498b4ccf2ac6035d52215270",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "nonempty_cells": 16,
+        "nominal_vertical_divider_max_alpha": [
+          1,
+          1,
+          1
+        ],
+        "nominal_horizontal_divider_max_alpha": [
+          1,
+          0,
+          1
+        ],
+        "outer_edge_max_alpha": [
+          0,
+          1,
+          1,
+          0
+        ],
+        "cells": [
+          {
+            "cell_index": 0,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              71,
+              72,
+              269,
+              290
+            ]
+          },
+          {
+            "cell_index": 1,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              52,
+              90,
+              276,
+              255
+            ]
+          },
+          {
+            "cell_index": 2,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              55,
+              63,
+              287,
+              298
+            ]
+          },
+          {
+            "cell_index": 3,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              31,
+              76,
+              257,
+              289
+            ]
+          },
+          {
+            "cell_index": 4,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              71,
+              59,
+              285,
+              275
+            ]
+          },
+          {
+            "cell_index": 5,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              43,
+              56,
+              285,
+              276
+            ]
+          },
+          {
+            "cell_index": 6,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              54,
+              57,
+              283,
+              280
+            ]
+          },
+          {
+            "cell_index": 7,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              41,
+              58,
+              269,
+              282
+            ]
+          },
+          {
+            "cell_index": 8,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              63,
+              45,
+              294,
+              267
+            ]
+          },
+          {
+            "cell_index": 9,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              54,
+              39,
+              270,
+              271
+            ]
+          },
+          {
+            "cell_index": 10,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              45,
+              29,
+              283,
+              275
+            ]
+          },
+          {
+            "cell_index": 11,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              53,
+              18,
+              266,
+              285
+            ]
+          },
+          {
+            "cell_index": 12,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              53,
+              21,
+              288,
+              250
+            ]
+          },
+          {
+            "cell_index": 13,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              65,
+              40,
+              286,
+              250
+            ]
+          },
+          {
+            "cell_index": 14,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              62,
+              43,
+              271,
+              241
+            ]
+          },
+          {
+            "cell_index": 15,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              42,
+              23,
+              249,
+              252
+            ]
+          }
+        ]
+      },
+      "edit_prompt": "Edit this existing sixteen-icon atlas. Preserve all sixteen KUNLUN objects, their exact row-major order, materials, colors and hand-painted style. CRITICAL: rebuild the layout as a perfectly equal invisible 4x4 grid on a square transparent canvas, with each object centered at the EXACT center of its own square cell. REDUCE every object/set to at most 60% of its cell width AND 60% of its cell height. Thus EVERY cell has at least 20% completely empty transparent space on all four edges. All three full-width horizontal grid-divider strips and all three full-height vertical divider strips must be fully transparent, with substantial empty space around each. No part of any icon may enter any other cell. In the third row second column remove the writing-like scribbles from the notebook paper; replace with entirely blank ivory paper and a tiny non-letter dot motif. NO text, lettering, writing, labels, borders or visible grid lines anywhere. Do not add, remove or duplicate objects. Transparent background; same original sixteen items from the reference.",
+      "initial_source_path": "/workspace/generated_images/exec-563e835b-2d2e-403d-803f-a913f0494e77.png"
+    },
+    {
+      "atlas_id": "S06",
+      "image_path": "assets/atlases/S06.png",
+      "columns": 4,
+      "rows": 4,
+      "width": 1254,
+      "height": 1254,
+      "sha256": "f570ef0f39f2c20b47389a912ee71e60d0cdfff6bab304c9555e76087cf4d2bf",
+      "source_path": "/workspace/generated_images/exec-71add9b2-9bd2-4e74-9651-f0ee06454b58.png",
+      "prompt": "Generate one square transparent production game inventory atlas for KONGTONG martial sect. Sixteen separate hand-painted inventory icons in a precise invisible 4x4 equal-cell layout. STRICT CENTERS: x=12.5%,37.5%,62.5%,87.5% and y=12.5%,37.5%,62.5%,87.5%. Each object or explicitly specified set is SMALL, occupying only 50–60% of its cell width and height, giving broad completely transparent margins. All sixteen icons must be isolated, separated by generous transparent horizontal and vertical strips. Nothing touches the canvas edges or crosses any cell boundary. NO text, NO letters, NO writing, NO labels, NO digits, NO visible grid, NO frame, NO background, NO glow. Manuscripts use only tiny pictorial geometric motifs, blank pages with diagrams, never script. Hand-painted chibi wuxia props, watercolor/gouache texture, fine warm brown outlines, soft upper-left lighting, 3/4 top-down view. Color identity: rust red, muted stone gray, warm ivory paper and aged bronze. Distinct binding and silhouette for each manuscript; do not make identical recolored books. Consistent visual weight. Output only the atlas on real transparent alpha.\nPlace the following in strict row-major order; numbers are instructions only, never draw them:\n1. Slim stone-gray rough-paper fist manual, rust-red stitching, square doorway and fist emblem.\n2. Rust-red accordion combat diagram with stone-gray cloth spine and circular black shoulder-elbow paths.\n3. Thick stone-gray hardbound manual, rust-red metal corners, inset diagonal cracked-stone motif.\n4. Paired stone-gray folded leaves tied with rust-red cord, crossed short-blade and hand silhouettes.\n5. Small booklet of stone-gray wooden slats threaded with rust-red cord, stable foot silhouettes on the end slat.\n6. Rust-red cloth book with wide stone-gray page margins and evenly spaced bronze rings along the spine.\n7. Double stone-gray book wrapper around a rust-red volume, central bronze clasp shaped like folded short blades.\n8. Stone-gray folded footwork chart on rust-red cloth backing, compact black footprints and a small pebble weight.\n9. Four overlapping stone-gray instruction slips, rust-red directional tabs and a bronze corner clip.\n10. Dusty stone-gray training journal bound with rust-red strap, a worn short bamboo gauge tucked across the cover.\n11. Short blunt square-ridged iron truncheon, stone-gray finish, rust-red leather grip and round bronze guard.\n12. Crossed compact stone-gray hook weapons, thick inner hand rings, short outer curves and rust-red wraps.\n13. Stone-gray short martial jacket, rust-red sleeve ties and belt, square leather elbow reinforcement.\n14. Square aged bronze token with a stone-gray doorway motif, rust-red cord and three shallow tally grooves.\n15. Flat stone-gray ceramic balm pot sealed with rust-red paper, folded coarse hand wraps beside it.\n16. Five fan-arranged stone-gray rubbings in a rust-red cloth roll, forming a circular stone-gate seal.",
+      "item_ids": [
+        "KT001",
+        "KT002",
+        "KT003",
+        "KT004",
+        "KT005",
+        "KT006",
+        "KT007",
+        "KT008",
+        "KT009",
+        "KT010",
+        "KT011",
+        "KT012",
+        "KT013",
+        "KT014",
+        "KT015",
+        "KT016"
+      ],
+      "visual_review": "已逐格目視確認16件，灰石／鏽紅配色、拳掌圖、木片冊、短鐧與雙鉤可辨。完整剪影分離且外緣未裁切；部分第一列物件跨越名義四等分橫界，應以透明間隙記錄實際取樣區域，勿盲用等格裁切。頁面只見圖示與幾何符號，無可讀標籤。",
+      "read_only_alpha_checks": {
+        "width": 1254,
+        "height": 1254,
+        "sha256": "f570ef0f39f2c20b47389a912ee71e60d0cdfff6bab304c9555e76087cf4d2bf",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "nonempty_cells": 16,
+        "nominal_vertical_divider_max_alpha": [
+          253,
+          1,
+          235
+        ],
+        "nominal_horizontal_divider_max_alpha": [
+          255,
+          1,
+          254
+        ],
+        "outer_edge_max_alpha": [
+          0,
+          1,
+          1,
+          0
+        ],
+        "cells": [
+          {
+            "cell_index": 0,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              62,
+              82,
+              291,
+              314
+            ]
+          },
+          {
+            "cell_index": 1,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              34,
+              104,
+              296,
+              287
+            ]
+          },
+          {
+            "cell_index": 2,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              22,
+              81,
+              270,
+              314
+            ]
+          },
+          {
+            "cell_index": 3,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              19,
+              80,
+              262,
+              314
+            ]
+          },
+          {
+            "cell_index": 4,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              49,
+              0,
+              307,
+              292
+            ]
+          },
+          {
+            "cell_index": 5,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              39,
+              48,
+              280,
+              306
+            ]
+          },
+          {
+            "cell_index": 6,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              6,
+              0,
+              275,
+              305
+            ]
+          },
+          {
+            "cell_index": 7,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              5,
+              0,
+              268,
+              283
+            ]
+          },
+          {
+            "cell_index": 8,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              50,
+              30,
+              297,
+              313
+            ]
+          },
+          {
+            "cell_index": 9,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              36,
+              24,
+              276,
+              281
+            ]
+          },
+          {
+            "cell_index": 10,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              18,
+              44,
+              286,
+              273
+            ]
+          },
+          {
+            "cell_index": 11,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              31,
+              37,
+              275,
+              262
+            ]
+          },
+          {
+            "cell_index": 12,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              42,
+              0,
+              314,
+              246
+            ]
+          },
+          {
+            "cell_index": 13,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              0,
+              12,
+              287,
+              240
+            ]
+          },
+          {
+            "cell_index": 14,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              23,
+              35,
+              313,
+              240
+            ]
+          },
+          {
+            "cell_index": 15,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              0,
+              11,
+              289,
+              244
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "atlas_id": "S07",
+      "image_path": "assets/atlases/S07.png",
+      "columns": 4,
+      "rows": 4,
+      "width": 1254,
+      "height": 1254,
+      "sha256": "18855e9f08db174193237853b8db393904a472e3376c7306a470ae5058a38479",
+      "source_path": "/workspace/generated_images/exec-5911c9e1-783b-4167-8df6-a435c24a1709.png",
+      "prompt": "Generate one square transparent game inventory atlas for GAIBANG wandering martial guild. Exactly 16 separate icons in an invisible 4x4 equal square grid, strict row-major order. Cell center coordinates x=12.5%,37.5%,62.5%,87.5% and y=12.5%,37.5%,62.5%,87.5%. Make icons deliberately SMALL, at most 55% of the cell width and height. For long staves use diagonal placement entirely inside the single cell with empty margins. Every item is centered and self-contained, with ample transparent gaps. Nothing overlaps another item or reaches the outer canvas edge. NO writing, lettering, numbers, labels, symbols that resemble text, visible grid, framing, scene background or glow. Paper surfaces may show only plain geometric diagrams, dotted routes or tiny abstract emblems; NO script. Hand-painted chibi wuxia object art, gouache and watercolor, fine warm brown contours, gentle upper-left lighting, 3/4 top view. Palette olive green and patchwork brown, ivory rough paper, aged bamboo and worn bronze. Respect all varied bindings and folded shapes, preserving readable physical differences between manuals. Make the clothing a complete unoccupied jacket, not worn by a character. Transparent alpha background.\nPlace this exact ordered list from left to right, top to bottom. Item numbers are NOT visible:\n1. Thin patchwork-brown manual with olive cloth repairs, bamboo staff and roadside sign motifs.\n2. Narrow olive cloth diagram with brown patched borders, white arcing paths and small staff silhouettes.\n3. Thick stitched folio of brown and olive cloth-edged notes, exposed hemp thread and varied palm emblems.\n4. Narrow brown-paper hand-copied book, olive cloth spine, intersecting alley lines and an open palm motif.\n5. Small coarse brown-paper breathing booklet, olive repair stitching and two wooden page clasps.\n6. Olive-covered book with patchwork-brown corners and mismatched travel bookmarks protruding from the pages.\n7. Brown hardbound volume with long olive tie and a small bronze clasp shaped like steady hearth stones.\n8. Half-open olive cloth scroll, brown alley lines and ivory footprints weaving around small blocks.\n9. Brown oiled-paper folded leaves tied to a short bamboo strip, olive knot and inward-curving footprints.\n10. Patchwork brown-and-olive notebook with colorful scrap-paper tabs, charcoal stub and visible coarse repairs.\n11. Olive bamboo-jointed wooden staff, brown gripping wraps and dark bronze protective end bands.\n12. Heavy dark-brown wooden staff with olive repair bindings, broad knots and a worn iron butt ring.\n13. Olive and brown patchwork travel jacket, bold stitched patches and cord-fastened inner pouches.\n14. Thick olive rope woven into a loop knot, brown wooden bead and short patched cloth tag hanging below.\n15. Open brown coarse-cloth bundle holding several grain cakes, olive tying cord coiled beside it.\n16. Folded old brown cloth map with multiple olive rope knots attached, one corner secured by a bamboo clip.",
+      "item_ids": [
+        "GB001",
+        "GB002",
+        "GB003",
+        "GB004",
+        "GB005",
+        "GB006",
+        "GB007",
+        "GB008",
+        "GB009",
+        "GB010",
+        "GB011",
+        "GB012",
+        "GB013",
+        "GB014",
+        "GB015",
+        "GB016"
+      ],
+      "visual_review": "已逐格目視確認16件，橄欖與褐色拼布統一，兩種棍、青繩信物與食物包可辨。完整剪影分離且外緣未裁切；左下衣服較寬，可能超出名義第一欄，應以透明間隙測量實際取樣區域。書頁採掌印、路線與足印，未見可讀文字。",
+      "read_only_alpha_checks": {
+        "width": 1254,
+        "height": 1254,
+        "sha256": "18855e9f08db174193237853b8db393904a472e3376c7306a470ae5058a38479",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "nonempty_cells": 16,
+        "nominal_vertical_divider_max_alpha": [
+          253,
+          1,
+          1
+        ],
+        "nominal_horizontal_divider_max_alpha": [
+          6,
+          1,
+          1
+        ],
+        "outer_edge_max_alpha": [
+          0,
+          1,
+          0,
+          0
+        ],
+        "cells": [
+          {
+            "cell_index": 0,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              53,
+              63,
+              296,
+              312
+            ]
+          },
+          {
+            "cell_index": 1,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              35,
+              56,
+              280,
+              311
+            ]
+          },
+          {
+            "cell_index": 2,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              30,
+              58,
+              298,
+              313
+            ]
+          },
+          {
+            "cell_index": 3,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              43,
+              58,
+              278,
+              313
+            ]
+          },
+          {
+            "cell_index": 4,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              65,
+              56,
+              296,
+              297
+            ]
+          },
+          {
+            "cell_index": 5,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              43,
+              45,
+              289,
+              302
+            ]
+          },
+          {
+            "cell_index": 6,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              43,
+              50,
+              306,
+              296
+            ]
+          },
+          {
+            "cell_index": 7,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              25,
+              56,
+              286,
+              295
+            ]
+          },
+          {
+            "cell_index": 8,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              52,
+              56,
+              313,
+              269
+            ]
+          },
+          {
+            "cell_index": 9,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              52,
+              29,
+              287,
+              277
+            ]
+          },
+          {
+            "cell_index": 10,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              32,
+              17,
+              287,
+              291
+            ]
+          },
+          {
+            "cell_index": 11,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              33,
+              13,
+              285,
+              290
+            ]
+          },
+          {
+            "cell_index": 12,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              25,
+              6,
+              314,
+              259
+            ]
+          },
+          {
+            "cell_index": 13,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              0,
+              6,
+              283,
+              266
+            ]
+          },
+          {
+            "cell_index": 14,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              20,
+              22,
+              300,
+              264
+            ]
+          },
+          {
+            "cell_index": 15,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              23,
+              14,
+              289,
+              246
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "atlas_id": "S08",
+      "image_path": "assets/atlases/S08.png",
+      "columns": 4,
+      "rows": 4,
+      "width": 1254,
+      "height": 1254,
+      "sha256": "c5dab715e04cd0e227908138d0e48b71aa940dc7f34a4a374104f37f64d8c28a",
+      "source_path": "/workspace/generated_images/exec-932aae10-41f3-49c1-9885-d082f2e62c03.png",
+      "prompt": "Produce a square transparent 4x4 inventory atlas for the TANGMEN martial craft sect. EXACTLY sixteen distinct isolated objects in row-major order. Invisible equal cells with centers at 12.5%,37.5%,62.5%,87.5% of both axes. Icons small with at least20% blank transparent margin INSIDE each cell, each silhouette no more than60% cell width or height. Leave broad transparent gutters; no object overlaps another or touches the outside canvas. Transparent alpha. Hand-painted chibi wuxia props, muted indigo and antique copper, ivory paper, subtle teal accent, gouache/watercolor surfaces, fine warm-brown outlines, upper-left lighting, slightly top-down 3/4 view. Ten manuscript icons must use distinctly different bindings, covers, clips, outlines, folded paper/scroll shapes. Any paper showing must be blank or show simple NON-TEXT diagrams only. Strictly NO words, NO writing, NO letters, NO numbers, NO labels, NO grid, NO borders, NO frame, NO glow. Mechanics are stylized fantasy inventory items, not realistic construction diagrams. Exactly preserve the following item silhouettes and order. Do not substitute modern objects. The jacket must be empty, no character.\nRow-major content; numbers are ordering instructions, never appear in image:\n1. Compact indigo manual with antique-copper corners and three offset throwing-dart silhouettes embossed on the cover.\n2. Indigo folded diagram with antique-copper timing ticks, slender dart symbols arranged along separated arcs.\n3. Indigo hard book case with antique-copper four-petal clasp and layered mechanism diagrams peeking from the edge.\n4. Indigo loose-leaf sheets with antique-copper border and tiny clip, showing glove and narrow needle-case motifs.\n5. Palm-sized indigo breathing book with a fine antique-copper clasp, central dot inside a simple circular ring.\n6. Indigo ring-bound folio with antique-copper rings and three distinct geometric page tabs.\n7. Deep-indigo hardbound book with an antique-copper string-shaped inlay and a narrow leather fastening strap.\n8. Narrow indigo folded footwork chart, staggered antique-copper footprints on diagonals and a small four-petal corner mark.\n9. Several long indigo slips held by an antique-copper clamp, corridor pillars and curved stepping paths drawn on them.\n10. Thick indigo notebook with antique-copper spiral spine, a broken wooden test piece and inspection tabs tucked inside.\n11. Half-open rectangular indigo leather case, antique-copper dividers and neatly arranged short leaf-shaped throwing darts.\n12. Indigo forearm bracer enclosing folded antique-copper wing-like supports, closed configuration with a prominent circular safety clasp.\n13. Indigo short martial jacket with antique-copper fasteners and flat organized tool pouches along the waist.\n14. Antique-copper four-petal workshop token, indigo hanging cord and a small square registration notch.\n15. Small indigo cloth pouch with antique-copper ring, mist-teal wax seal and a pale powder-cloud emblem.\n16. Flat deep-indigo wooden blueprint case partly open, antique-copper four-petal lock and layered ivory diagrams protruding.",
+      "item_ids": [
+        "TM001",
+        "TM002",
+        "TM003",
+        "TM004",
+        "TM005",
+        "TM006",
+        "TM007",
+        "TM008",
+        "TM009",
+        "TM010",
+        "TM011",
+        "TM012",
+        "TM013",
+        "TM014",
+        "TM015",
+        "TM016"
+      ],
+      "visual_review": "已逐格目視確認16件，靛青／古銅配色，書冊輪廓、飛鏢匣、護臂、分袋短衣、信物、補給袋與母圖匣可辨。完整剪影分離且外緣未裁切，書頁採幾何示意，無可讀標籤。取樣仍應以透明間隙測量，不能假設固定留白百分比。",
+      "read_only_alpha_checks": {
+        "width": 1254,
+        "height": 1254,
+        "sha256": "c5dab715e04cd0e227908138d0e48b71aa940dc7f34a4a374104f37f64d8c28a",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "nonempty_cells": 16,
+        "nominal_vertical_divider_max_alpha": [
+          1,
+          0,
+          1
+        ],
+        "nominal_horizontal_divider_max_alpha": [
+          1,
+          0,
+          1
+        ],
+        "outer_edge_max_alpha": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "cells": [
+          {
+            "cell_index": 0,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              34,
+              51,
+              289,
+              293
+            ]
+          },
+          {
+            "cell_index": 1,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              30,
+              56,
+              293,
+              274
+            ]
+          },
+          {
+            "cell_index": 2,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              20,
+              40,
+              294,
+              296
+            ]
+          },
+          {
+            "cell_index": 3,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              22,
+              33,
+              291,
+              296
+            ]
+          },
+          {
+            "cell_index": 4,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              35,
+              45,
+              290,
+              264
+            ]
+          },
+          {
+            "cell_index": 5,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              34,
+              24,
+              298,
+              291
+            ]
+          },
+          {
+            "cell_index": 6,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              32,
+              24,
+              276,
+              294
+            ]
+          },
+          {
+            "cell_index": 7,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              22,
+              39,
+              297,
+              269
+            ]
+          },
+          {
+            "cell_index": 8,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              27,
+              18,
+              288,
+              280
+            ]
+          },
+          {
+            "cell_index": 9,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              17,
+              26,
+              296,
+              285
+            ]
+          },
+          {
+            "cell_index": 10,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              21,
+              18,
+              296,
+              288
+            ]
+          },
+          {
+            "cell_index": 11,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              33,
+              20,
+              284,
+              284
+            ]
+          },
+          {
+            "cell_index": 12,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              26,
+              13,
+              296,
+              279
+            ]
+          },
+          {
+            "cell_index": 13,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              76,
+              5,
+              259,
+              282
+            ]
+          },
+          {
+            "cell_index": 14,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              38,
+              23,
+              274,
+              282
+            ]
+          },
+          {
+            "cell_index": 15,
+            "nonempty": true,
+            "alpha32_bbox_in_nominal_cell": [
+              14,
+              10,
+              300,
+              278
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

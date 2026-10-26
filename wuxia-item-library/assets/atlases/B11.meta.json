@@ -1,0 +1,133 @@
+{
+  "atlas_id": "B11",
+  "image_path": "assets/atlases/B11.png",
+  "columns": 4,
+  "rows": 4,
+  "width": 1254,
+  "height": 1254,
+  "sha256": "a94aee4b6653115f2f3d47c77df5f4f2a0eddac2edab95e786cb2f87194303d4",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "cell_bboxes_alpha128": [
+    [
+      60,
+      82,
+      276,
+      273
+    ],
+    [
+      50,
+      88,
+      265,
+      274
+    ],
+    [
+      46,
+      97,
+      258,
+      265
+    ],
+    [
+      44,
+      89,
+      261,
+      272
+    ],
+    [
+      54,
+      52,
+      275,
+      273
+    ],
+    [
+      55,
+      70,
+      277,
+      273
+    ],
+    [
+      66,
+      70,
+      250,
+      282
+    ],
+    [
+      48,
+      66,
+      269,
+      271
+    ],
+    [
+      58,
+      62,
+      270,
+      262
+    ],
+    [
+      47,
+      62,
+      274,
+      264
+    ],
+    [
+      32,
+      65,
+      269,
+      265
+    ],
+    [
+      43,
+      78,
+      265,
+      261
+    ],
+    [
+      62,
+      37,
+      277,
+      246
+    ],
+    [
+      63,
+      44,
+      263,
+      242
+    ],
+    [
+      42,
+      41,
+      278,
+      248
+    ],
+    [
+      49,
+      43,
+      252,
+      243
+    ]
+  ],
+  "source_path": "/workspace/generated_images/exec-3f5b6308-9a9e-4331-ab12-ad8ef59d07bc.png",
+  "prompt": "Create a production-ready game inventory icon atlas. Square canvas with an exact invisible 4 by 4 grid of 16 equal cells. Exactly 16 distinct isolated object icons in the row-major order below; no additional objects beyond each specified item. Every icon centered inside its own cell, with at least 15 percent EMPTY transparent margin on all four sides of every cell. Full silhouettes never cross a cell boundary. Fully transparent background, including gaps. No labels, writing, letters, text, numbers, grid lines, borders, frames, watermarks or glowing effects. Cohesive charming Ming-inspired wuxia hand painted watercolor and gouache illustration. Warm brown fine outlines, softly rounded shapes, warm ivory, jade, coral and natural material colors. Gentle top-left lighting. Same object visual scale and slight three quarter overhead view. Show the 16 following material objects, row-major left to right, top to bottom:\n1. Thick beige hemp cloth roll, frayed coarse fibers, tied with straw rope.\n2. Folded ivory cotton fabric, soft diagonal folds, fine woven texture.\n3. Low indigo cotton fabric roll with undyed white selvage and subtle dye variations.\n4. Bamboo green twill silk folded into a fan, fine diagonal weave, narrow gray selvage.\n5. Overlapping pale apricot translucent silk squares held by a tiny wooden clip.\n6. Vermilion satin roll with broad smooth folds and a dark red reverse side.\n7. Small wooden spool of ochre gold woven trim, exposed repeating branch motif.\n8. Stack of brown blue and gray cloth patches with visible old stitches.\n9. Irregular dark chestnut leather hide with a curled corner exposing lighter fibers.\n10. Soft camel tan deerskin folded loosely, fine velvety grain.\n11. Folded dark brown waxed cloth, mottled muted sheen, simple hemp strap.\n12. Rounded rectangular gray white felt pad, dense edge and fuzzy surface.\n13. Pale yellow silk skein in an elongated loop, plain paper band around center.\n14. Round light brown hemp thread ball with curling tail and coarse fibers.\n15. Fluffy white cotton batting spilling from a half open cream cloth bundle.\n16. Coiled blue gray textured fish leather strip with tiny natural speckles.",
+  "revision_prompt": "Re-layout this exact sixteen-object inventory atlas with generous spacing for reliable mechanical equal-cell cropping. Preserve every existing object's identity, order, colors, paint style and transparency. Canvas square. EXACT invisible 4x4 uniform grid. Every icon must fit within the CENTRAL 60 PERCENT of its cell. Therefore leave EMPTY 20 PERCENT margins on all four sides of EVERY individual cell. Shrink all objects substantially; more empty space is necessary. Object centers must be at x=12.5%,37.5%,62.5%,87.5% and y=12.5%,37.5%,62.5%,87.5% of full canvas. All sixteen entire silhouettes must be safely inside their equal cells, including trailing threads, cloth corners and paper bands. No grid drawn, no labels, text or border. Fully transparent empty areas. This is a layout correction; do not change any object or combine objects.",
+  "item_ids": [
+    "BASE161",
+    "BASE162",
+    "BASE163",
+    "BASE164",
+    "BASE165",
+    "BASE166",
+    "BASE167",
+    "BASE168",
+    "BASE169",
+    "BASE170",
+    "BASE171",
+    "BASE172",
+    "BASE173",
+    "BASE174",
+    "BASE175",
+    "BASE176"
+  ],
+  "visual_review": "All 16 textile/material identities visible in correct row-major order. Initial output was revised through image generation for extra spacing. Revised silhouettes appear complete and separated, with no visible labels. RGBA transparency verified. Prompts request 20% margin but generated spacing varies; preserve measured alpha128 cell bounding boxes for crop inspection. Low-alpha watercolor specks may extend beyond the opaque silhouettes."
+}

@@ -1,0 +1,39 @@
+{
+  "atlas_id": "B10",
+  "image_path": "assets/atlases/B10.png",
+  "columns": 4,
+  "rows": 4,
+  "width": 1254,
+  "height": 1254,
+  "sha256": "22fc3059bee29473b4948ec1e8a26f575708c2b415a24e9a0a5c056a732bf3c7",
+  "source_path": "/workspace/generated_images/exec-5355468b-26d0-4f1f-8741-2e4986d35136.png",
+  "prompt": "Create ONE square transparent PNG inventory icon atlas for a Ming-inspired wuxia game. EXACT invisible 4 by 4 layout, sixteen equally sized square cells. Exactly SIXTEEN distinct mineral and metal material icons, row-major order below. Place every icon at its own cell center: canvas x=12.5%,37.5%,62.5%,87.5%; y=12.5%,37.5%,62.5%,87.5%. Each complete object or compact group fits INSIDE CENTRAL 50 percent of its cell's WIDTH and HEIGHT, leaving very generous transparent empty padding on all sides. Draw small isolated inventory thumbnails. Refined warm hand-painted gouache, fine warm brown outlines, quiet natural metal/stone colors with muted jade and ivory accents, consistent top-left light. Differentiate iron, bronze, steel, brass, silver, copper, mica, jade, clay, obsidian, inkstone, whetstone, turquoise, quartz, patterned stone and meteorite using shape and texture. NO text, NO letters, NO labels, NO numbers, NO gridlines, NO frames, NO borders, NO background, NO magical glow, NO colored halos, NO dust outside the object. No icon crosses its own cell. Exact row-major sequence:\n1. short dark gray wrought iron ingot with rounded corners and hammer marks, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n2. flat square bronze stock with beveled edges and muted green patina, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n3. long cool gray refined steel billet with one polished face, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n4. three overlapping warm brass sheets with slightly curled edges, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n5. irregular matte silver offcuts spilling from a gray cloth pouch, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n6. coiled reddish copper wire tied with a short hemp thread, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n7. layered silvery gray mica flakes with translucent broken edges, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n8. rough gray brown jade stone with a pale green exposed face, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n9. chalk white porcelain clay lumps in a shallow bamboo tray, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n10. irregular black obsidian flake with curved fracture ridges, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n11. flat rounded gray violet inkstone blank with a pale diagonal vein, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n12. rectangular ochre red whetstone with a smooth top and rough sides, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n13. small turquoise stone chips with brown veining on a paper tray, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n14. cluster of milky quartz points on a rough gray matrix, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n15. pale gray decorative stone slab with black branching natural patterns, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n16. small dark meteoritic iron fragment with pitted surface and a silver gray cut, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text",
+  "item_ids": [
+    "BASE145",
+    "BASE146",
+    "BASE147",
+    "BASE148",
+    "BASE149",
+    "BASE150",
+    "BASE151",
+    "BASE152",
+    "BASE153",
+    "BASE154",
+    "BASE155",
+    "BASE156",
+    "BASE157",
+    "BASE158",
+    "BASE159",
+    "BASE160"
+  ],
+  "visual_review": {
+    "status": "reviewed",
+    "notes": "Sixteen metal/mineral material compositions in correct row-major order. Iron and steel are distinguished by hammered versus bright refined finish; bronze, brass, copper and silver are distinct. No apparent silhouette clipping or overlap; transparent gaps present. Some colored edge fringe speckles remain in source pixels.",
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "nonempty_cells": 16,
+    "edge_touch_cells": []
+  }
+}

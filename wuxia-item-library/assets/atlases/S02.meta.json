@@ -1,0 +1,44 @@
+{
+  "atlas_id": "S02",
+  "image_path": "assets/atlases/S02.png",
+  "columns": 4,
+  "rows": 4,
+  "width": 1254,
+  "height": 1254,
+  "sha256": "80f04c86bc8125c345c03f81cf00c828fcb953b70c20f20fb108c4e68c0a58e9",
+  "source_path": "/workspace/generated_images/exec-d1153ed5-dc63-4e92-bcdf-73e674a292a6.png",
+  "prompt": "Production game inventory icon atlas on a perfectly SQUARE fully transparent canvas. Invisible exact 4 by 4 grid of equal square cells, exactly sixteen separate Chinese wuxia inventory icons. Important: SMALL ICONS, each entire object must fit within central 55 percent of its cell width and height. At least 22 percent transparent margin on all four sides of every cell. Icon centers exactly at 12.5,37.5,62.5,87.5 percent canvas coordinates. Wide completely EMPTY transparent gutters on all three horizontal and three vertical dividing lines. No touching or overlap between objects. Preserve full silhouette including cords and long handles. Hand-painted gouache/watercolor, fine warm-brown outlines, muted slate blue, cream and mist grey Wudang palette, soft top-left lighting. No people, no text or pseudo-writing, no letters, no numerals, no labels, no visible grid, no frames, no background scenery, no glow. Book cover marks are only simple abstract geometric motifs. Exact row-major left-to-right top-to-bottom contents:\n1. Slate-blue stitched sword primer, cream pine sprig emblem, narrow silver-grey cloth bookmark.\n2. Fan-open pale grey folding diagram with slate-blue arcs and fine sword-tip marks, small jade-toned clasp.\n3. Long blue-grey silk-backed scroll, round stone and split-wave emblem, ivory-jade roller ends.\n4. Narrow cream booklet sleeve with slate-blue spine and a small tied tassel of soft white fibers.\n5. Cream rounded softcover breathing booklet, pale blue dotted rings, slender blue-grey wrap band.\n6. Celadon hard-cover manual with slender wooden channel motif, staggered cream page tabs.\n7. Deep slate-blue cloth case holding two slim cream volumes, open silver-grey ring emblems.\n8. Long folded cream route diagram, pale blue stair marks, one flat round wooden bead tied at the end.\n9. Small six-fold blue-grey fan booklet, pine-branch silhouettes linked by footprints, white cord at base.\n10. Two-column loose study sheets in a pale stone-textured folder, slate-blue short cord and pierced bamboo disc.\n11. Slim silver-grey straight sword, open-ring guard, slate-blue wrapped grip, short cream tassel.\n12. Pale wooden-handled horsetail whisk, naturally falling cream fibers, slate-blue cord knot at handle end.\n13. Folded blue-grey short cloak, cream cloud-pattern edging, visible sleeve ties, plain wooden toggle.\n14. Two semicircular bamboo tokens forming an open ring, slate-blue thread through holes, empty center.\n15. Three short grey-blue incense sticks in a cream paper tube, pine-leaf seal, blue cord with a small tag.\n16. Aged cream promise scroll with blue-grey silk tie, tiny old pinewood fragment and two faded seal marks.\nUse equal visual weight, NO oversized objects. Paired pieces stay inside their one cell. Exactly sixteen items, no additions, no duplicates, no omissions.",
+  "item_ids": [
+    "WD001",
+    "WD002",
+    "WD003",
+    "WD004",
+    "WD005",
+    "WD006",
+    "WD007",
+    "WD008",
+    "WD009",
+    "WD010",
+    "WD011",
+    "WD012",
+    "WD013",
+    "WD014",
+    "WD015",
+    "WD016"
+  ],
+  "visual_review": "Sixteen Wudang icons in expected row-major order, all main silhouettes intact and distinct. Zero alpha>32 pixels on six exact grid boundaries and outer edges. Generated appearance uses painterly material detail, with some isolated semitransparent flecks around icons. Fan-shaped item is a foldout teaching diagram, not an additional weapon.",
+  "measurements": {
+    "transparent_ratio": 0.6312857865993097,
+    "v_boundary_pixels": [
+      0,
+      0,
+      0
+    ],
+    "h_boundary_pixels": [
+      0,
+      0,
+      0
+    ],
+    "outer_edge_pixels": 0
+  }
+}

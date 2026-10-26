@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "items": 368,
+  "decoded_atlases": 1,
+  "image_scope": "Tangmen S08 only: all 16 measured sprite regions. Other images suppressed in memory for this bounded smoke.",
+  "tested": [
+    "368 item rows",
+    "8 sect filters",
+    "inner manual filter",
+    "detail modal and Escape",
+    "ID search",
+    "empty state",
+    "reset",
+    "S08 PNG decoded",
+    "16 measured sprite region aspect ratios and CSS image sources",
+    "mobile overflow",
+    "JavaScript errors"
+  ],
+  "loading": "In-memory HTML with one local PNG supplied as a blob URL; no outbound traffic. Delivered HTML is unchanged and uses relative image paths.",
+  "last_step": "passed",
+  "atlas_decode": {
+    "ok": true,
+    "width": 1254,
+    "height": 1254
+  },
+  "preview": "catalog-preview.png"
+}

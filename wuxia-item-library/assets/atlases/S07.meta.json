@@ -1,0 +1,218 @@
+{
+  "atlas_id": "S07",
+  "image_path": "assets/atlases/S07.png",
+  "columns": 4,
+  "rows": 4,
+  "width": 1254,
+  "height": 1254,
+  "sha256": "18855e9f08db174193237853b8db393904a472e3376c7306a470ae5058a38479",
+  "source_path": "/workspace/generated_images/exec-5911c9e1-783b-4167-8df6-a435c24a1709.png",
+  "prompt": "Generate one square transparent game inventory atlas for GAIBANG wandering martial guild. Exactly 16 separate icons in an invisible 4x4 equal square grid, strict row-major order. Cell center coordinates x=12.5%,37.5%,62.5%,87.5% and y=12.5%,37.5%,62.5%,87.5%. Make icons deliberately SMALL, at most 55% of the cell width and height. For long staves use diagonal placement entirely inside the single cell with empty margins. Every item is centered and self-contained, with ample transparent gaps. Nothing overlaps another item or reaches the outer canvas edge. NO writing, lettering, numbers, labels, symbols that resemble text, visible grid, framing, scene background or glow. Paper surfaces may show only plain geometric diagrams, dotted routes or tiny abstract emblems; NO script. Hand-painted chibi wuxia object art, gouache and watercolor, fine warm brown contours, gentle upper-left lighting, 3/4 top view. Palette olive green and patchwork brown, ivory rough paper, aged bamboo and worn bronze. Respect all varied bindings and folded shapes, preserving readable physical differences between manuals. Make the clothing a complete unoccupied jacket, not worn by a character. Transparent alpha background.\nPlace this exact ordered list from left to right, top to bottom. Item numbers are NOT visible:\n1. Thin patchwork-brown manual with olive cloth repairs, bamboo staff and roadside sign motifs.\n2. Narrow olive cloth diagram with brown patched borders, white arcing paths and small staff silhouettes.\n3. Thick stitched folio of brown and olive cloth-edged notes, exposed hemp thread and varied palm emblems.\n4. Narrow brown-paper hand-copied book, olive cloth spine, intersecting alley lines and an open palm motif.\n5. Small coarse brown-paper breathing booklet, olive repair stitching and two wooden page clasps.\n6. Olive-covered book with patchwork-brown corners and mismatched travel bookmarks protruding from the pages.\n7. Brown hardbound volume with long olive tie and a small bronze clasp shaped like steady hearth stones.\n8. Half-open olive cloth scroll, brown alley lines and ivory footprints weaving around small blocks.\n9. Brown oiled-paper folded leaves tied to a short bamboo strip, olive knot and inward-curving footprints.\n10. Patchwork brown-and-olive notebook with colorful scrap-paper tabs, charcoal stub and visible coarse repairs.\n11. Olive bamboo-jointed wooden staff, brown gripping wraps and dark bronze protective end bands.\n12. Heavy dark-brown wooden staff with olive repair bindings, broad knots and a worn iron butt ring.\n13. Olive and brown patchwork travel jacket, bold stitched patches and cord-fastened inner pouches.\n14. Thick olive rope woven into a loop knot, brown wooden bead and short patched cloth tag hanging below.\n15. Open brown coarse-cloth bundle holding several grain cakes, olive tying cord coiled beside it.\n16. Folded old brown cloth map with multiple olive rope knots attached, one corner secured by a bamboo clip.",
+  "item_ids": [
+    "GB001",
+    "GB002",
+    "GB003",
+    "GB004",
+    "GB005",
+    "GB006",
+    "GB007",
+    "GB008",
+    "GB009",
+    "GB010",
+    "GB011",
+    "GB012",
+    "GB013",
+    "GB014",
+    "GB015",
+    "GB016"
+  ],
+  "visual_review": "已逐格目視確認16件，橄欖與褐色拼布統一，兩種棍、青繩信物與食物包可辨。完整剪影分離且外緣未裁切；左下衣服較寬，可能超出名義第一欄，應以透明間隙測量實際取樣區域。書頁採掌印、路線與足印，未見可讀文字。",
+  "read_only_alpha_checks": {
+    "width": 1254,
+    "height": 1254,
+    "sha256": "18855e9f08db174193237853b8db393904a472e3376c7306a470ae5058a38479",
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "nonempty_cells": 16,
+    "nominal_vertical_divider_max_alpha": [
+      253,
+      1,
+      1
+    ],
+    "nominal_horizontal_divider_max_alpha": [
+      6,
+      1,
+      1
+    ],
+    "outer_edge_max_alpha": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "cells": [
+      {
+        "cell_index": 0,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          53,
+          63,
+          296,
+          312
+        ]
+      },
+      {
+        "cell_index": 1,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          35,
+          56,
+          280,
+          311
+        ]
+      },
+      {
+        "cell_index": 2,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          30,
+          58,
+          298,
+          313
+        ]
+      },
+      {
+        "cell_index": 3,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          43,
+          58,
+          278,
+          313
+        ]
+      },
+      {
+        "cell_index": 4,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          65,
+          56,
+          296,
+          297
+        ]
+      },
+      {
+        "cell_index": 5,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          43,
+          45,
+          289,
+          302
+        ]
+      },
+      {
+        "cell_index": 6,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          43,
+          50,
+          306,
+          296
+        ]
+      },
+      {
+        "cell_index": 7,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          25,
+          56,
+          286,
+          295
+        ]
+      },
+      {
+        "cell_index": 8,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          52,
+          56,
+          313,
+          269
+        ]
+      },
+      {
+        "cell_index": 9,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          52,
+          29,
+          287,
+          277
+        ]
+      },
+      {
+        "cell_index": 10,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          32,
+          17,
+          287,
+          291
+        ]
+      },
+      {
+        "cell_index": 11,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          33,
+          13,
+          285,
+          290
+        ]
+      },
+      {
+        "cell_index": 12,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          25,
+          6,
+          314,
+          259
+        ]
+      },
+      {
+        "cell_index": 13,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          0,
+          6,
+          283,
+          266
+        ]
+      },
+      {
+        "cell_index": 14,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          20,
+          22,
+          300,
+          264
+        ]
+      },
+      {
+        "cell_index": 15,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          23,
+          14,
+          289,
+          246
+        ]
+      }
+    ]
+  }
+}

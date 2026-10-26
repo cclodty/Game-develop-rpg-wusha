@@ -1,0 +1,46 @@
+{
+  "atlas_id": "S01",
+  "image_path": "assets/atlases/S01.png",
+  "columns": 4,
+  "rows": 4,
+  "width": 1254,
+  "height": 1254,
+  "sha256": "9171f5659ec329f1d3893506749719aa2eab486cd9e1eecd9fb711404e8b0844",
+  "source_path": "/workspace/generated_images/exec-2d2a9349-bd9d-46e3-a536-b3fd2777499d.png",
+  "prompt": "Production game inventory icon atlas, perfectly SQUARE canvas, invisible exact 4 by 4 grid of equal square cells, exactly sixteen separate inventory items. Fully transparent background. Original hand-painted Chinese wuxia inventory art, miniature gouache and watercolor texture, delicate warm-brown outlines, soft top-left light. Shaolin monastery collection: ochre, dark brown, aged brass. No people or hands. No text, no letters, no numerals, no labels, no grids, no frames, no glow, no background scenery. Abstract cover motifs only. Every object centered inside its own cell with at least 15 percent fully transparent margin on all four sides. No object may cross a cell boundary. Match relative visual weight. Tall objects must fit within their cell, diagonal when appropriate. Sixteen items in exact row-major order, left to right then top to bottom:\n1. Thin ochre stitched boxing booklet, thick brown binding cord, square embossed fist symbol, dark cloth corner guards.\n2. Horizontal martial scroll on thick wooden rollers, yellow hemp backing, three parallel staff path marks.\n3. Brown accordion folio with circular bell rubbing, layered palm-shaped paper diagram, aged brass clasp.\n4. Long double-ended folding staff manual with wooden end covers and one ochre cloth band across its center.\n5. Palm-sized beige softcover breathing booklet, layered earth-ring seal on cover, thin dangling spine cord.\n6. Thick brown leather-clasp manual with ochre pages, a flat stone paperweight and a worn hemp loop.\n7. Dark ochre cloth book case holding a narrow sutra, tiny flat bronze bell clasp, restrained monastery craft.\n8. Three-panel grey-brown stair rubbing with ochre footprints and plain kraft paper corner sleeve.\n9. Slim cylindrical wooden scroll case, carved turning-arrow band, short yellow cord, narrow rolled paper visible.\n10. Loose annotated practice sheets between bamboo boards, ochre correction dots, flat wooden tag at edge.\n11. Dark hardwood staff diagonally placed, aged brass end caps, three pale grip-spacing rings at center.\n12. Pair of thick black iron wrist rings, brown cloth lining, fine brass bands set into their outer edges.\n13. Folded ochre short-hem monk robe, dark brown shoulder patches, broad cloth sash tied in a square knot.\n14. Square dark wooden duty token, shallow monastery-gate relief, three short notches, thick yellow hanging cord.\n15. Squat ochre ceramic salve jar, cream cloth seal, small wooden spatula resting beside it, brown tied string.\n16. Small flat dark wooden case slightly open, worn circular bell rubbing and a notched bronze fragment inside.\nDo not add, omit, merge or duplicate items. An item's paired pieces should remain grouped inside its single cell. High small-size silhouette readability.",
+  "revision_prompt": "Edit this inventory atlas, preserving ALL SIXTEEN existing object identities, designs and their row-major order. The only change is SPACING and SCALE. Output a square transparent 4 by 4 atlas with equal cells. Place each object's entire silhouette at the exact center of its cell and SHRINK it to fit strictly within the central 60 percent of both cell width and cell height. That means at least 20 percent fully transparent margin on all four sides of EVERY cell. This is crucial for game sprites: the three horizontal and three vertical cell boundaries must have wide EMPTY TRANSPARENT GUTTERS. Keep every cord, handle, sleeve and paper corner inside its object's central area. Objects may be different absolute sizes but no cell should contain any fragment from another cell. Do not add grid lines, text, borders, labels, background, glows, or scenery. Preserve gouache texture and warm brown Shaolin palette. Existing 16 objects remain intact; make no other changes.",
+  "prior_source_path": "/workspace/generated_images/exec-4157c2b5-c2a1-4ff6-80c6-6435bbf80527.png",
+  "item_ids": [
+    "SL001",
+    "SL002",
+    "SL003",
+    "SL004",
+    "SL005",
+    "SL006",
+    "SL007",
+    "SL008",
+    "SL009",
+    "SL010",
+    "SL011",
+    "SL012",
+    "SL013",
+    "SL014",
+    "SL015",
+    "SL016"
+  ],
+  "visual_review": "Sixteen distinct Shaolin items in correct row-major order; one spacing revision applied. Main silhouettes intact. Measured alpha>32 has zero pixels on all six exact equal-grid boundaries and all outer edges. Transparent canvas verified; minor scattered semi-transparent paint specks remain near some silhouettes.",
+  "measurements": {
+    "transparent_ratio": 0.637295264404305,
+    "v_boundary_pixels": [
+      0,
+      0,
+      0
+    ],
+    "h_boundary_pixels": [
+      0,
+      0,
+      0
+    ],
+    "outer_edge_pixels": 0
+  }
+}

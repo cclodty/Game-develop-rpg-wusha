@@ -1,0 +1,214 @@
+{
+  "atlas_id": "B03",
+  "image_path": "assets/atlases/B03.png",
+  "columns": 4,
+  "rows": 4,
+  "source_path": "/workspace/generated_images/exec-b135a7f4-aacc-45a4-b9c8-4748798558f7.png",
+  "prompt": "Create one square transparent PNG inventory icon atlas. EXACT invisible 4 columns x 4 rows =16 separate item groups. Centers are at x=12.5%,37.5%,62.5%,87.5% and y=12.5%,37.5%,62.5%,87.5%. Strict row-major order below. Very spacious layout: EACH entire object group occupies only 50–60 percent of its own cell width and height. All parts fully contained with large transparent margins. Long pole weapons DIAGONAL bottom-left to top-right, drawn small enough to show the ENTIRE shaft and both ends. Do not crop or omit shafts. Matched parts remain together within their single cell. No text, labels, numbers, grid lines, frames, panels, scenery, glow or drop shadow. Original Ming-inspired low-mid fantasy wuxia equipment. Hand-painted watercolor/gouache, fine warm brown contour, natural wood and steel, muted ivory/jade/coral accents, soft top-left light, clean slightly rounded silhouettes. Keep crisp legible differences. Transparent space separates every cell. Items:\n1. Pale ashwood staff, subtle natural curve, slightly thicker rounded ends\n2. Dark wooden staff with short black iron end caps and central cloth grip\n3. Long spear with narrow leaf steel head, white tassel, brown wooden shaft\n4. Broad leaf hunting spearhead, reddish wooden shaft, leather head socket wrap\n5. Winged spear with symmetrical short side lugs and thick black wooden shaft\n6. Two pronged curved iron hunting fork on a thick long wooden pole\n7. Wide three pronged guard fork, extended central point, dark red pole\n8. Double ended pole weapon with fan shovel blade and crescent head\n9. Long spear with inward side hook and dark iron socket\n10. Polearm with straight spear point and single horizontal side blade, brass bands\n11. Large crescent glaive blade, long thick shaft, simple tassel knot\n12. Long handled wedge axe, broad iron head, curved wooden shaft, two leather grips\n13. Long pole mace with faceted dark iron head and iron capped shaft end\n14. Rigid long iron rod with bamboo node ridges and octagonal grip\n15. Long hardwood staff with short rope and oval iron weight at one end\n16. Travel spear disassembled into three wooden sections with brass joints and leaf head",
+  "correction_prompt": "Layout correction of this exact 16-object polearm atlas. Retain all16 listed object groups and exact order, same hand-painted watercolor style and full transparency. Repaint each entire item group SMALLER at only65 percent of its current width and height, centered within its existing quarter-width quarter-height cell. Exact4 columns by4 rows. Very generous transparent gutters; no blade, shaft, decoration or rope crosses a cell. All object parts including axe blade at row3 column4 must be fully visible and clear of outer canvas edges. Do not crop or omit pole shafts. Keep the same canvas size. No text or grid. This is a size/layout correction, not a change of design.",
+  "previous_source_path": "/workspace/generated_images/exec-7921a238-4610-47a4-a082-812d19eec9bf.png",
+  "item_ids": [
+    "BASE033",
+    "BASE034",
+    "BASE035",
+    "BASE036",
+    "BASE037",
+    "BASE038",
+    "BASE039",
+    "BASE040",
+    "BASE041",
+    "BASE042",
+    "BASE043",
+    "BASE044",
+    "BASE045",
+    "BASE046",
+    "BASE047",
+    "BASE048"
+  ],
+  "visual_review": {
+    "reviewed": true,
+    "notes": "16 polearm groups in expected row-major order. One layout correction reduced oversize and cleared the axe from the outer edge. Entire shafts, weapon heads and dismantled travel spear visible; generous transparent separation. Fine watercolor transparency fringe is present."
+  },
+  "width": 1254,
+  "height": 1254,
+  "mode": "RGBA",
+  "sha256": "b401022c19ba591533ac37ffdc22a9bc0098da620b8c3b29fedc243800d38dd1",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "cells": [
+    {
+      "cell_index": 0,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        79,
+        91,
+        246,
+        270
+      ]
+    },
+    {
+      "cell_index": 1,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        68,
+        90,
+        241,
+        271
+      ]
+    },
+    {
+      "cell_index": 2,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        60,
+        84,
+        235,
+        269
+      ]
+    },
+    {
+      "cell_index": 3,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        70,
+        86,
+        238,
+        270
+      ]
+    },
+    {
+      "cell_index": 4,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        74,
+        69,
+        246,
+        262
+      ]
+    },
+    {
+      "cell_index": 5,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        72,
+        75,
+        248,
+        264
+      ]
+    },
+    {
+      "cell_index": 6,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        67,
+        72,
+        241,
+        264
+      ]
+    },
+    {
+      "cell_index": 7,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        57,
+        72,
+        247,
+        268
+      ]
+    },
+    {
+      "cell_index": 8,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        74,
+        69,
+        237,
+        254
+      ]
+    },
+    {
+      "cell_index": 9,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        72,
+        68,
+        245,
+        253
+      ]
+    },
+    {
+      "cell_index": 10,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        61,
+        58,
+        236,
+        260
+      ]
+    },
+    {
+      "cell_index": 11,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        67,
+        72,
+        247,
+        257
+      ]
+    },
+    {
+      "cell_index": 12,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        77,
+        49,
+        250,
+        232
+      ]
+    },
+    {
+      "cell_index": 13,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        66,
+        46,
+        245,
+        231
+      ]
+    },
+    {
+      "cell_index": 14,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        59,
+        47,
+        236,
+        232
+      ]
+    },
+    {
+      "cell_index": 15,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        66,
+        52,
+        231,
+        224
+      ]
+    }
+  ],
+  "boundary_pixels_alpha_gt32": {
+    "vertical": [
+      0,
+      0,
+      0
+    ],
+    "horizontal": [
+      0,
+      0,
+      0
+    ]
+  }
+}

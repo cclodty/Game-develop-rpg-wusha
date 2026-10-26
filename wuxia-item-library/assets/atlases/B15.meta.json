@@ -1,0 +1,31 @@
+{
+  "atlas_id": "B15",
+  "image_path": "assets/atlases/B15.png",
+  "columns": 4,
+  "rows": 4,
+  "source_path": "/workspace/generated_images/exec-1334b825-eed2-419a-8e93-6484f1c51633.png",
+  "prompt": "SQUARE transparent inventory atlas for hand-painted wuxia RPG. Exact invisible4x4 equal grid. Exactly16 separate miniature object groups. Place object centers at x=12.5%,37.5%,62.5%,87.5% and y=12.5%,37.5%,62.5%,87.5%. EVERY group fits comfortably in central50-60% width AND height of its cell, leaving wide CLEAR transparent gutters. Do not enlarge to fill canvas. Top-left soft light, watercolor/gouache textures, fine warm-brown contour lines, earthy cream/jade/coral accents, consistent stylized game-prop illustration. No text, letters, numbers, gridlines, borders, glow, symbols outside objects. Entire silhouettes visible. Items exact row-major order:\n1. Small round bronze mirror back with concentric rings, central knob and faint green patina.\n2. Small pale jade celadon cup with short foot and soft milky glaze highlights.\n3. Warm yellow bamboo brush pot with shallow leaf carvings and a natural uneven rim.\n4. Flat oval blue gray stone paperweight with a white vein across its polished top.\n5. Pale green jade disk pendant with a central hole and short gray green tassel.\n6. Palm sized chestnut wooden horse with one raised foreleg and simple carved mane grooves.\n7. Rounded brown wooden trinket box with milky shell inlays and a tiny brass clasp.\n8. Gray drawstring pouch spilling dark and pale round wooden game stones.\n9. Dark brown square lacquer box with ochre gold branch design and cream lining.\n10. Squat ochre gray ceramic tea jar with small round lid and an incised wave band.\n11. Half open ivory folding fan with fine bamboo ribs and a tiny brown knot.\n12. Slender silver hairpin with a three petal open wire flower and no gemstones.\n13. Apricot red cloth sachet with teal and yellow cord knot and short tassel.\n14. Loose ring of worn brown green square holed copper coins on thick red cord.\n15. Dark brown rectangular sliding box with two green cloth padded recesses.\n16. Pale compartment sample box holding blue cloth, red wood and celadon shards, tied with hemp.",
+  "item_ids": [
+    "BASE225",
+    "BASE226",
+    "BASE227",
+    "BASE228",
+    "BASE229",
+    "BASE230",
+    "BASE231",
+    "BASE232",
+    "BASE233",
+    "BASE234",
+    "BASE235",
+    "BASE236",
+    "BASE237",
+    "BASE238",
+    "BASE239",
+    "BASE240"
+  ],
+  "visual_review": "已檢視16件依序對應；銅鏡、杯、筆筒、鎮紙、玉佩、木馬、貝盒、棋袋、漆盒、茶罐、扇、髮簪、香袋、錢串、藏印匣及貨樣盒皆完整。部分造形裝飾較文字豐富，格間距依實測區域取圖。",
+  "width": 1254,
+  "height": 1254,
+  "mode": "RGBA",
+  "sha256": "ce325298ec7661891f1285476aebe3171b45d7971b79a9402045a04a5d27674f"
+}

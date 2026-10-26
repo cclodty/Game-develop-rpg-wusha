@@ -1,0 +1,5711 @@
+{
+  "schema_version": 1,
+  "method": "Read-only alpha projections; gap-centered row and per-row column cuts.",
+  "alpha_threshold": 32,
+  "search_window_fraction": 0.12,
+  "summary": {
+    "measured": 23,
+    "passed": 23,
+    "failed": 0
+  },
+  "atlases": {
+    "B01": {
+      "atlas_id": "B01",
+      "image_path": "assets/atlases/B01.png",
+      "status": "passed",
+      "regions": [
+        {
+          "cell_index": 0,
+          "x": 0,
+          "y": 0,
+          "width": 319,
+          "height": 315
+        },
+        {
+          "cell_index": 1,
+          "x": 319,
+          "y": 0,
+          "width": 308,
+          "height": 315
+        },
+        {
+          "cell_index": 2,
+          "x": 627,
+          "y": 0,
+          "width": 315,
+          "height": 315
+        },
+        {
+          "cell_index": 3,
+          "x": 942,
+          "y": 0,
+          "width": 312,
+          "height": 315
+        },
+        {
+          "cell_index": 4,
+          "x": 0,
+          "y": 315,
+          "width": 307,
+          "height": 311
+        },
+        {
+          "cell_index": 5,
+          "x": 307,
+          "y": 315,
+          "width": 320,
+          "height": 311
+        },
+        {
+          "cell_index": 6,
+          "x": 627,
+          "y": 315,
+          "width": 318,
+          "height": 311
+        },
+        {
+          "cell_index": 7,
+          "x": 945,
+          "y": 315,
+          "width": 309,
+          "height": 311
+        },
+        {
+          "cell_index": 8,
+          "x": 0,
+          "y": 626,
+          "width": 317,
+          "height": 310
+        },
+        {
+          "cell_index": 9,
+          "x": 317,
+          "y": 626,
+          "width": 310,
+          "height": 310
+        },
+        {
+          "cell_index": 10,
+          "x": 627,
+          "y": 626,
+          "width": 312,
+          "height": 310
+        },
+        {
+          "cell_index": 11,
+          "x": 939,
+          "y": 626,
+          "width": 315,
+          "height": 310
+        },
+        {
+          "cell_index": 12,
+          "x": 0,
+          "y": 936,
+          "width": 336,
+          "height": 318
+        },
+        {
+          "cell_index": 13,
+          "x": 336,
+          "y": 936,
+          "width": 290,
+          "height": 318
+        },
+        {
+          "cell_index": 14,
+          "x": 626,
+          "y": 936,
+          "width": 310,
+          "height": 318
+        },
+        {
+          "cell_index": 15,
+          "x": 936,
+          "y": 936,
+          "width": 318,
+          "height": 318
+        }
+      ],
+      "sha256": "7ba75b180748688139d422a5fc2074aefa8183347bba57a2f8281c4cf22bb6c5",
+      "width": 1254,
+      "height": 1254,
+      "gaps": [
+        {
+          "axis": "rows",
+          "boundary": 1,
+          "cut": 315,
+          "gap_start": 303,
+          "gap_end": 327,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "rows",
+          "boundary": 2,
+          "cut": 626,
+          "gap_start": 615,
+          "gap_end": 638,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "rows",
+          "boundary": 3,
+          "cut": 936,
+          "gap_start": 929,
+          "gap_end": 944,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 1,
+          "cut": 319,
+          "gap_start": 295,
+          "gap_end": 344,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 3,
+          "cut": 942,
+          "gap_start": 942,
+          "gap_end": 943,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 1,
+          "cut": 307,
+          "gap_start": 307,
+          "gap_end": 308,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 614,
+          "gap_end": 640,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 3,
+          "cut": 945,
+          "gap_start": 930,
+          "gap_end": 960,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 1,
+          "cut": 317,
+          "gap_start": 297,
+          "gap_end": 337,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 3,
+          "cut": 939,
+          "gap_start": 938,
+          "gap_end": 941,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 1,
+          "cut": 336,
+          "gap_start": 336,
+          "gap_end": 337,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 2,
+          "cut": 626,
+          "gap_start": 624,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 3,
+          "cut": 936,
+          "gap_start": 935,
+          "gap_end": 937,
+          "method": "alpha_zero"
+        }
+      ],
+      "warnings": [
+        "Some boundaries contain faint alpha at most 32; no stronger foreground is cut."
+      ],
+      "foreground_outer_edge_pixels": 0
+    },
+    "B02": {
+      "atlas_id": "B02",
+      "image_path": "assets/atlases/B02.png",
+      "status": "passed",
+      "regions": [
+        {
+          "cell_index": 0,
+          "x": 0,
+          "y": 0,
+          "width": 309,
+          "height": 317
+        },
+        {
+          "cell_index": 1,
+          "x": 309,
+          "y": 0,
+          "width": 318,
+          "height": 317
+        },
+        {
+          "cell_index": 2,
+          "x": 627,
+          "y": 0,
+          "width": 311,
+          "height": 317
+        },
+        {
+          "cell_index": 3,
+          "x": 938,
+          "y": 0,
+          "width": 316,
+          "height": 317
+        },
+        {
+          "cell_index": 4,
+          "x": 0,
+          "y": 317,
+          "width": 303,
+          "height": 296
+        },
+        {
+          "cell_index": 5,
+          "x": 303,
+          "y": 317,
+          "width": 324,
+          "height": 296
+        },
+        {
+          "cell_index": 6,
+          "x": 627,
+          "y": 317,
+          "width": 311,
+          "height": 296
+        },
+        {
+          "cell_index": 7,
+          "x": 938,
+          "y": 317,
+          "width": 316,
+          "height": 296
+        },
+        {
+          "cell_index": 8,
+          "x": 0,
+          "y": 613,
+          "width": 293,
+          "height": 322
+        },
+        {
+          "cell_index": 9,
+          "x": 293,
+          "y": 613,
+          "width": 342,
+          "height": 322
+        },
+        {
+          "cell_index": 10,
+          "x": 635,
+          "y": 613,
+          "width": 293,
+          "height": 322
+        },
+        {
+          "cell_index": 11,
+          "x": 928,
+          "y": 613,
+          "width": 326,
+          "height": 322
+        },
+        {
+          "cell_index": 12,
+          "x": 0,
+          "y": 935,
+          "width": 323,
+          "height": 319
+        },
+        {
+          "cell_index": 13,
+          "x": 323,
+          "y": 935,
+          "width": 307,
+          "height": 319
+        },
+        {
+          "cell_index": 14,
+          "x": 630,
+          "y": 935,
+          "width": 292,
+          "height": 319
+        },
+        {
+          "cell_index": 15,
+          "x": 922,
+          "y": 935,
+          "width": 332,
+          "height": 319
+        }
+      ],
+      "sha256": "7eb27b3e7cfd8b1a05b19886a2204e1ad070ca05996c6aa8dae08fed4350788a",
+      "width": 1254,
+      "height": 1254,
+      "gaps": [
+        {
+          "axis": "rows",
+          "boundary": 1,
+          "cut": 317,
+          "gap_start": 316,
+          "gap_end": 318,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "rows",
+          "boundary": 2,
+          "cut": 613,
+          "gap_start": 611,
+          "gap_end": 615,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "rows",
+          "boundary": 3,
+          "cut": 935,
+          "gap_start": 933,
+          "gap_end": 937,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 1,
+          "cut": 309,
+          "gap_start": 308,
+          "gap_end": 310,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 3,
+          "cut": 938,
+          "gap_start": 929,
+          "gap_end": 947,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 1,
+          "cut": 303,
+          "gap_start": 303,
+          "gap_end": 304,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 3,
+          "cut": 938,
+          "gap_start": 938,
+          "gap_end": 939,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 1,
+          "cut": 293,
+          "gap_start": 293,
+          "gap_end": 294,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 2,
+          "cut": 635,
+          "gap_start": 635,
+          "gap_end": 636,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 3,
+          "cut": 928,
+          "gap_start": 928,
+          "gap_end": 929,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 1,
+          "cut": 323,
+          "gap_start": 308,
+          "gap_end": 339,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 2,
+          "cut": 630,
+          "gap_start": 625,
+          "gap_end": 636,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 3,
+          "cut": 922,
+          "gap_start": 922,
+          "gap_end": 923,
+          "method": "alpha_zero"
+        }
+      ],
+      "warnings": [],
+      "foreground_outer_edge_pixels": 0
+    },
+    "B03": {
+      "atlas_id": "B03",
+      "image_path": "assets/atlases/B03.png",
+      "status": "passed",
+      "regions": [
+        {
+          "cell_index": 0,
+          "x": 0,
+          "y": 0,
+          "width": 331,
+          "height": 289
+        },
+        {
+          "cell_index": 1,
+          "x": 331,
+          "y": 0,
+          "width": 293,
+          "height": 289
+        },
+        {
+          "cell_index": 2,
+          "x": 624,
+          "y": 0,
+          "width": 312,
+          "height": 289
+        },
+        {
+          "cell_index": 3,
+          "x": 936,
+          "y": 0,
+          "width": 318,
+          "height": 289
+        },
+        {
+          "cell_index": 4,
+          "x": 0,
+          "y": 289,
+          "width": 332,
+          "height": 344
+        },
+        {
+          "cell_index": 5,
+          "x": 332,
+          "y": 289,
+          "width": 295,
+          "height": 344
+        },
+        {
+          "cell_index": 6,
+          "x": 627,
+          "y": 289,
+          "width": 316,
+          "height": 344
+        },
+        {
+          "cell_index": 7,
+          "x": 943,
+          "y": 289,
+          "width": 311,
+          "height": 344
+        },
+        {
+          "cell_index": 8,
+          "x": 0,
+          "y": 633,
+          "width": 316,
+          "height": 277
+        },
+        {
+          "cell_index": 9,
+          "x": 316,
+          "y": 633,
+          "width": 311,
+          "height": 277
+        },
+        {
+          "cell_index": 10,
+          "x": 627,
+          "y": 633,
+          "width": 311,
+          "height": 277
+        },
+        {
+          "cell_index": 11,
+          "x": 938,
+          "y": 633,
+          "width": 316,
+          "height": 277
+        },
+        {
+          "cell_index": 12,
+          "x": 0,
+          "y": 910,
+          "width": 314,
+          "height": 344
+        },
+        {
+          "cell_index": 13,
+          "x": 314,
+          "y": 910,
+          "width": 313,
+          "height": 344
+        },
+        {
+          "cell_index": 14,
+          "x": 627,
+          "y": 910,
+          "width": 319,
+          "height": 344
+        },
+        {
+          "cell_index": 15,
+          "x": 946,
+          "y": 910,
+          "width": 308,
+          "height": 344
+        }
+      ],
+      "sha256": "b401022c19ba591533ac37ffdc22a9bc0098da620b8c3b29fedc243800d38dd1",
+      "width": 1254,
+      "height": 1254,
+      "gaps": [
+        {
+          "axis": "rows",
+          "boundary": 1,
+          "cut": 289,
+          "gap_start": 289,
+          "gap_end": 290,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "rows",
+          "boundary": 2,
+          "cut": 633,
+          "gap_start": 582,
+          "gap_end": 685,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "rows",
+          "boundary": 3,
+          "cut": 910,
+          "gap_start": 910,
+          "gap_end": 911,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 1,
+          "cut": 331,
+          "gap_start": 330,
+          "gap_end": 332,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 2,
+          "cut": 624,
+          "gap_start": 623,
+          "gap_end": 626,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 3,
+          "cut": 936,
+          "gap_start": 933,
+          "gap_end": 939,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 1,
+          "cut": 332,
+          "gap_start": 326,
+          "gap_end": 339,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 3,
+          "cut": 943,
+          "gap_start": 943,
+          "gap_end": 944,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 1,
+          "cut": 316,
+          "gap_start": 312,
+          "gap_end": 320,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 3,
+          "cut": 938,
+          "gap_start": 935,
+          "gap_end": 941,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 1,
+          "cut": 314,
+          "gap_start": 308,
+          "gap_end": 320,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 3,
+          "cut": 946,
+          "gap_start": 945,
+          "gap_end": 947,
+          "method": "alpha_zero"
+        }
+      ],
+      "warnings": [
+        "Some boundaries contain faint alpha at most 32; no stronger foreground is cut."
+      ],
+      "foreground_outer_edge_pixels": 0
+    },
+    "B04": {
+      "atlas_id": "B04",
+      "image_path": "assets/atlases/B04.png",
+      "status": "passed",
+      "regions": [
+        {
+          "cell_index": 0,
+          "x": 0,
+          "y": 0,
+          "width": 297,
+          "height": 327
+        },
+        {
+          "cell_index": 1,
+          "x": 297,
+          "y": 0,
+          "width": 328,
+          "height": 327
+        },
+        {
+          "cell_index": 2,
+          "x": 625,
+          "y": 0,
+          "width": 310,
+          "height": 327
+        },
+        {
+          "cell_index": 3,
+          "x": 935,
+          "y": 0,
+          "width": 319,
+          "height": 327
+        },
+        {
+          "cell_index": 4,
+          "x": 0,
+          "y": 327,
+          "width": 319,
+          "height": 305
+        },
+        {
+          "cell_index": 5,
+          "x": 319,
+          "y": 327,
+          "width": 329,
+          "height": 305
+        },
+        {
+          "cell_index": 6,
+          "x": 648,
+          "y": 327,
+          "width": 290,
+          "height": 305
+        },
+        {
+          "cell_index": 7,
+          "x": 938,
+          "y": 327,
+          "width": 316,
+          "height": 305
+        },
+        {
+          "cell_index": 8,
+          "x": 0,
+          "y": 632,
+          "width": 321,
+          "height": 282
+        },
+        {
+          "cell_index": 9,
+          "x": 321,
+          "y": 632,
+          "width": 307,
+          "height": 282
+        },
+        {
+          "cell_index": 10,
+          "x": 628,
+          "y": 632,
+          "width": 304,
+          "height": 282
+        },
+        {
+          "cell_index": 11,
+          "x": 932,
+          "y": 632,
+          "width": 322,
+          "height": 282
+        },
+        {
+          "cell_index": 12,
+          "x": 0,
+          "y": 914,
+          "width": 318,
+          "height": 340
+        },
+        {
+          "cell_index": 13,
+          "x": 318,
+          "y": 914,
+          "width": 309,
+          "height": 340
+        },
+        {
+          "cell_index": 14,
+          "x": 627,
+          "y": 914,
+          "width": 320,
+          "height": 340
+        },
+        {
+          "cell_index": 15,
+          "x": 947,
+          "y": 914,
+          "width": 307,
+          "height": 340
+        }
+      ],
+      "sha256": "d8757c746016c0ea892aac23a6cfe75a628b55f0849a1885a5bc68e657f179c7",
+      "width": 1254,
+      "height": 1254,
+      "gaps": [
+        {
+          "axis": "rows",
+          "boundary": 1,
+          "cut": 327,
+          "gap_start": 305,
+          "gap_end": 349,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "rows",
+          "boundary": 2,
+          "cut": 632,
+          "gap_start": 608,
+          "gap_end": 656,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "rows",
+          "boundary": 3,
+          "cut": 914,
+          "gap_start": 895,
+          "gap_end": 934,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 1,
+          "cut": 297,
+          "gap_start": 297,
+          "gap_end": 298,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 2,
+          "cut": 625,
+          "gap_start": 623,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 3,
+          "cut": 935,
+          "gap_start": 933,
+          "gap_end": 937,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 1,
+          "cut": 319,
+          "gap_start": 287,
+          "gap_end": 352,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 2,
+          "cut": 648,
+          "gap_start": 613,
+          "gap_end": 684,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 3,
+          "cut": 938,
+          "gap_start": 927,
+          "gap_end": 949,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 1,
+          "cut": 321,
+          "gap_start": 320,
+          "gap_end": 322,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 2,
+          "cut": 628,
+          "gap_start": 619,
+          "gap_end": 638,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 3,
+          "cut": 932,
+          "gap_start": 927,
+          "gap_end": 937,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 1,
+          "cut": 318,
+          "gap_start": 318,
+          "gap_end": 319,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 3,
+          "cut": 947,
+          "gap_start": 946,
+          "gap_end": 949,
+          "method": "alpha_zero"
+        }
+      ],
+      "warnings": [
+        "Some boundaries contain faint alpha at most 32; no stronger foreground is cut."
+      ],
+      "foreground_outer_edge_pixels": 0
+    },
+    "B05": {
+      "atlas_id": "B05",
+      "image_path": "assets/atlases/B05.png",
+      "status": "passed",
+      "regions": [
+        {
+          "cell_index": 0,
+          "x": 0,
+          "y": 0,
+          "width": 322,
+          "height": 325
+        },
+        {
+          "cell_index": 1,
+          "x": 322,
+          "y": 0,
+          "width": 305,
+          "height": 325
+        },
+        {
+          "cell_index": 2,
+          "x": 627,
+          "y": 0,
+          "width": 309,
+          "height": 325
+        },
+        {
+          "cell_index": 3,
+          "x": 936,
+          "y": 0,
+          "width": 318,
+          "height": 325
+        },
+        {
+          "cell_index": 4,
+          "x": 0,
+          "y": 325,
+          "width": 317,
+          "height": 302
+        },
+        {
+          "cell_index": 5,
+          "x": 317,
+          "y": 325,
+          "width": 313,
+          "height": 302
+        },
+        {
+          "cell_index": 6,
+          "x": 630,
+          "y": 325,
+          "width": 311,
+          "height": 302
+        },
+        {
+          "cell_index": 7,
+          "x": 941,
+          "y": 325,
+          "width": 313,
+          "height": 302
+        },
+        {
+          "cell_index": 8,
+          "x": 0,
+          "y": 627,
+          "width": 315,
+          "height": 289
+        },
+        {
+          "cell_index": 9,
+          "x": 315,
+          "y": 627,
+          "width": 318,
+          "height": 289
+        },
+        {
+          "cell_index": 10,
+          "x": 633,
+          "y": 627,
+          "width": 309,
+          "height": 289
+        },
+        {
+          "cell_index": 11,
+          "x": 942,
+          "y": 627,
+          "width": 312,
+          "height": 289
+        },
+        {
+          "cell_index": 12,
+          "x": 0,
+          "y": 916,
+          "width": 309,
+          "height": 338
+        },
+        {
+          "cell_index": 13,
+          "x": 309,
+          "y": 916,
+          "width": 301,
+          "height": 338
+        },
+        {
+          "cell_index": 14,
+          "x": 610,
+          "y": 916,
+          "width": 330,
+          "height": 338
+        },
+        {
+          "cell_index": 15,
+          "x": 940,
+          "y": 916,
+          "width": 314,
+          "height": 338
+        }
+      ],
+      "sha256": "27b1841378c6403c1c321139bd01aff9ed466370e1f2c484c03eabe86a6f0e98",
+      "width": 1254,
+      "height": 1254,
+      "gaps": [
+        {
+          "axis": "rows",
+          "boundary": 1,
+          "cut": 325,
+          "gap_start": 318,
+          "gap_end": 333,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "rows",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "rows",
+          "boundary": 3,
+          "cut": 916,
+          "gap_start": 916,
+          "gap_end": 917,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 1,
+          "cut": 322,
+          "gap_start": 300,
+          "gap_end": 344,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 3,
+          "cut": 936,
+          "gap_start": 935,
+          "gap_end": 937,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 1,
+          "cut": 317,
+          "gap_start": 316,
+          "gap_end": 318,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 2,
+          "cut": 630,
+          "gap_start": 625,
+          "gap_end": 636,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 3,
+          "cut": 941,
+          "gap_start": 941,
+          "gap_end": 942,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 1,
+          "cut": 315,
+          "gap_start": 314,
+          "gap_end": 316,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 2,
+          "cut": 633,
+          "gap_start": 633,
+          "gap_end": 634,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 3,
+          "cut": 942,
+          "gap_start": 939,
+          "gap_end": 945,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 1,
+          "cut": 309,
+          "gap_start": 309,
+          "gap_end": 310,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 2,
+          "cut": 610,
+          "gap_start": 601,
+          "gap_end": 620,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 3,
+          "cut": 940,
+          "gap_start": 939,
+          "gap_end": 941,
+          "method": "alpha_zero"
+        }
+      ],
+      "warnings": [
+        "Some boundaries contain faint alpha at most 32; no stronger foreground is cut."
+      ],
+      "foreground_outer_edge_pixels": 0
+    },
+    "B06": {
+      "atlas_id": "B06",
+      "image_path": "assets/atlases/B06.png",
+      "status": "passed",
+      "regions": [
+        {
+          "cell_index": 0,
+          "x": 0,
+          "y": 0,
+          "width": 334,
+          "height": 332
+        },
+        {
+          "cell_index": 1,
+          "x": 334,
+          "y": 0,
+          "width": 293,
+          "height": 332
+        },
+        {
+          "cell_index": 2,
+          "x": 627,
+          "y": 0,
+          "width": 293,
+          "height": 332
+        },
+        {
+          "cell_index": 3,
+          "x": 920,
+          "y": 0,
+          "width": 334,
+          "height": 332
+        },
+        {
+          "cell_index": 4,
+          "x": 0,
+          "y": 332,
+          "width": 293,
+          "height": 311
+        },
+        {
+          "cell_index": 5,
+          "x": 293,
+          "y": 332,
+          "width": 332,
+          "height": 311
+        },
+        {
+          "cell_index": 6,
+          "x": 625,
+          "y": 332,
+          "width": 380,
+          "height": 311
+        },
+        {
+          "cell_index": 7,
+          "x": 1005,
+          "y": 332,
+          "width": 249,
+          "height": 311
+        },
+        {
+          "cell_index": 8,
+          "x": 0,
+          "y": 643,
+          "width": 354,
+          "height": 268
+        },
+        {
+          "cell_index": 9,
+          "x": 354,
+          "y": 643,
+          "width": 267,
+          "height": 268
+        },
+        {
+          "cell_index": 10,
+          "x": 621,
+          "y": 643,
+          "width": 312,
+          "height": 268
+        },
+        {
+          "cell_index": 11,
+          "x": 933,
+          "y": 643,
+          "width": 321,
+          "height": 268
+        },
+        {
+          "cell_index": 12,
+          "x": 0,
+          "y": 911,
+          "width": 342,
+          "height": 343
+        },
+        {
+          "cell_index": 13,
+          "x": 342,
+          "y": 911,
+          "width": 285,
+          "height": 343
+        },
+        {
+          "cell_index": 14,
+          "x": 627,
+          "y": 911,
+          "width": 310,
+          "height": 343
+        },
+        {
+          "cell_index": 15,
+          "x": 937,
+          "y": 911,
+          "width": 317,
+          "height": 343
+        }
+      ],
+      "sha256": "2a1aff65b243941bb4cdcf4018621834c9997919cb8b66fed10f8860051c4bcc",
+      "width": 1254,
+      "height": 1254,
+      "gaps": [
+        {
+          "axis": "rows",
+          "boundary": 1,
+          "cut": 332,
+          "gap_start": 332,
+          "gap_end": 333,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "rows",
+          "boundary": 2,
+          "cut": 643,
+          "gap_start": 588,
+          "gap_end": 699,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "rows",
+          "boundary": 3,
+          "cut": 911,
+          "gap_start": 856,
+          "gap_end": 967,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 1,
+          "cut": 334,
+          "gap_start": 334,
+          "gap_end": 335,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 3,
+          "cut": 920,
+          "gap_start": 918,
+          "gap_end": 923,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 1,
+          "cut": 293,
+          "gap_start": 293,
+          "gap_end": 294,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 2,
+          "cut": 625,
+          "gap_start": 625,
+          "gap_end": 626,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 3,
+          "cut": 1005,
+          "gap_start": 1005,
+          "gap_end": 1006,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 1,
+          "cut": 354,
+          "gap_start": 354,
+          "gap_end": 355,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 2,
+          "cut": 621,
+          "gap_start": 621,
+          "gap_end": 622,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 3,
+          "cut": 933,
+          "gap_start": 863,
+          "gap_end": 1004,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 1,
+          "cut": 342,
+          "gap_start": 342,
+          "gap_end": 343,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 3,
+          "cut": 937,
+          "gap_start": 937,
+          "gap_end": 938,
+          "method": "alpha_zero"
+        }
+      ],
+      "warnings": [
+        "Some boundaries contain faint alpha at most 32; no stronger foreground is cut."
+      ],
+      "foreground_outer_edge_pixels": 0
+    },
+    "B07": {
+      "atlas_id": "B07",
+      "image_path": "assets/atlases/B07.png",
+      "status": "passed",
+      "regions": [
+        {
+          "cell_index": 0,
+          "x": 0,
+          "y": 0,
+          "width": 295,
+          "height": 301
+        },
+        {
+          "cell_index": 1,
+          "x": 295,
+          "y": 0,
+          "width": 318,
+          "height": 301
+        },
+        {
+          "cell_index": 2,
+          "x": 613,
+          "y": 0,
+          "width": 350,
+          "height": 301
+        },
+        {
+          "cell_index": 3,
+          "x": 963,
+          "y": 0,
+          "width": 291,
+          "height": 301
+        },
+        {
+          "cell_index": 4,
+          "x": 0,
+          "y": 301,
+          "width": 310,
+          "height": 317
+        },
+        {
+          "cell_index": 5,
+          "x": 310,
+          "y": 301,
+          "width": 317,
+          "height": 317
+        },
+        {
+          "cell_index": 6,
+          "x": 627,
+          "y": 301,
+          "width": 311,
+          "height": 317
+        },
+        {
+          "cell_index": 7,
+          "x": 938,
+          "y": 301,
+          "width": 316,
+          "height": 317
+        },
+        {
+          "cell_index": 8,
+          "x": 0,
+          "y": 618,
+          "width": 328,
+          "height": 300
+        },
+        {
+          "cell_index": 9,
+          "x": 328,
+          "y": 618,
+          "width": 299,
+          "height": 300
+        },
+        {
+          "cell_index": 10,
+          "x": 627,
+          "y": 618,
+          "width": 314,
+          "height": 300
+        },
+        {
+          "cell_index": 11,
+          "x": 941,
+          "y": 618,
+          "width": 313,
+          "height": 300
+        },
+        {
+          "cell_index": 12,
+          "x": 0,
+          "y": 918,
+          "width": 295,
+          "height": 336
+        },
+        {
+          "cell_index": 13,
+          "x": 295,
+          "y": 918,
+          "width": 318,
+          "height": 336
+        },
+        {
+          "cell_index": 14,
+          "x": 613,
+          "y": 918,
+          "width": 317,
+          "height": 336
+        },
+        {
+          "cell_index": 15,
+          "x": 930,
+          "y": 918,
+          "width": 324,
+          "height": 336
+        }
+      ],
+      "sha256": "379398a2195f54bd51a5afa8d4797740a5ad466f5a9e7325da346022cf2e10a3",
+      "width": 1254,
+      "height": 1254,
+      "gaps": [
+        {
+          "axis": "rows",
+          "boundary": 1,
+          "cut": 301,
+          "gap_start": 268,
+          "gap_end": 335,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "rows",
+          "boundary": 2,
+          "cut": 618,
+          "gap_start": 591,
+          "gap_end": 646,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "rows",
+          "boundary": 3,
+          "cut": 918,
+          "gap_start": 889,
+          "gap_end": 947,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 1,
+          "cut": 295,
+          "gap_start": 295,
+          "gap_end": 296,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 2,
+          "cut": 613,
+          "gap_start": 613,
+          "gap_end": 614,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 3,
+          "cut": 963,
+          "gap_start": 963,
+          "gap_end": 964,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 1,
+          "cut": 310,
+          "gap_start": 308,
+          "gap_end": 312,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 3,
+          "cut": 938,
+          "gap_start": 935,
+          "gap_end": 941,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 1,
+          "cut": 328,
+          "gap_start": 326,
+          "gap_end": 330,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 3,
+          "cut": 941,
+          "gap_start": 929,
+          "gap_end": 953,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 1,
+          "cut": 295,
+          "gap_start": 295,
+          "gap_end": 296,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 2,
+          "cut": 613,
+          "gap_start": 613,
+          "gap_end": 614,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 3,
+          "cut": 930,
+          "gap_start": 930,
+          "gap_end": 931,
+          "method": "alpha_zero"
+        }
+      ],
+      "warnings": [
+        "Some boundaries contain faint alpha at most 32; no stronger foreground is cut."
+      ],
+      "foreground_outer_edge_pixels": 0
+    },
+    "B08": {
+      "atlas_id": "B08",
+      "image_path": "assets/atlases/B08.png",
+      "status": "passed",
+      "regions": [
+        {
+          "cell_index": 0,
+          "x": 0,
+          "y": 0,
+          "width": 317,
+          "height": 320
+        },
+        {
+          "cell_index": 1,
+          "x": 317,
+          "y": 0,
+          "width": 323,
+          "height": 320
+        },
+        {
+          "cell_index": 2,
+          "x": 640,
+          "y": 0,
+          "width": 300,
+          "height": 320
+        },
+        {
+          "cell_index": 3,
+          "x": 940,
+          "y": 0,
+          "width": 314,
+          "height": 320
+        },
+        {
+          "cell_index": 4,
+          "x": 0,
+          "y": 320,
+          "width": 310,
+          "height": 302
+        },
+        {
+          "cell_index": 5,
+          "x": 310,
+          "y": 320,
+          "width": 317,
+          "height": 302
+        },
+        {
+          "cell_index": 6,
+          "x": 627,
+          "y": 320,
+          "width": 310,
+          "height": 302
+        },
+        {
+          "cell_index": 7,
+          "x": 937,
+          "y": 320,
+          "width": 317,
+          "height": 302
+        },
+        {
+          "cell_index": 8,
+          "x": 0,
+          "y": 622,
+          "width": 312,
+          "height": 304
+        },
+        {
+          "cell_index": 9,
+          "x": 312,
+          "y": 622,
+          "width": 320,
+          "height": 304
+        },
+        {
+          "cell_index": 10,
+          "x": 632,
+          "y": 622,
+          "width": 309,
+          "height": 304
+        },
+        {
+          "cell_index": 11,
+          "x": 941,
+          "y": 622,
+          "width": 313,
+          "height": 304
+        },
+        {
+          "cell_index": 12,
+          "x": 0,
+          "y": 926,
+          "width": 310,
+          "height": 328
+        },
+        {
+          "cell_index": 13,
+          "x": 310,
+          "y": 926,
+          "width": 315,
+          "height": 328
+        },
+        {
+          "cell_index": 14,
+          "x": 625,
+          "y": 926,
+          "width": 312,
+          "height": 328
+        },
+        {
+          "cell_index": 15,
+          "x": 937,
+          "y": 926,
+          "width": 317,
+          "height": 328
+        }
+      ],
+      "sha256": "6c53fd99fbdb3f95e11d2994b2d25b807b87a34975f8087e0cd4d5669e83229a",
+      "width": 1254,
+      "height": 1254,
+      "gaps": [
+        {
+          "axis": "rows",
+          "boundary": 1,
+          "cut": 320,
+          "gap_start": 306,
+          "gap_end": 335,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "rows",
+          "boundary": 2,
+          "cut": 622,
+          "gap_start": 609,
+          "gap_end": 636,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "rows",
+          "boundary": 3,
+          "cut": 926,
+          "gap_start": 922,
+          "gap_end": 931,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 1,
+          "cut": 317,
+          "gap_start": 314,
+          "gap_end": 320,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 2,
+          "cut": 640,
+          "gap_start": 613,
+          "gap_end": 668,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 3,
+          "cut": 940,
+          "gap_start": 940,
+          "gap_end": 941,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 1,
+          "cut": 310,
+          "gap_start": 308,
+          "gap_end": 312,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 3,
+          "cut": 937,
+          "gap_start": 933,
+          "gap_end": 941,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 1,
+          "cut": 312,
+          "gap_start": 310,
+          "gap_end": 314,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 2,
+          "cut": 632,
+          "gap_start": 625,
+          "gap_end": 640,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 3,
+          "cut": 941,
+          "gap_start": 941,
+          "gap_end": 942,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 1,
+          "cut": 310,
+          "gap_start": 307,
+          "gap_end": 314,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 2,
+          "cut": 625,
+          "gap_start": 625,
+          "gap_end": 626,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 3,
+          "cut": 937,
+          "gap_start": 936,
+          "gap_end": 938,
+          "method": "alpha_zero"
+        }
+      ],
+      "warnings": [
+        "Some boundaries contain faint alpha at most 32; no stronger foreground is cut."
+      ],
+      "foreground_outer_edge_pixels": 0
+    },
+    "B09": {
+      "atlas_id": "B09",
+      "image_path": "assets/atlases/B09.png",
+      "status": "passed",
+      "regions": [
+        {
+          "cell_index": 0,
+          "x": 0,
+          "y": 0,
+          "width": 380,
+          "height": 333
+        },
+        {
+          "cell_index": 1,
+          "x": 380,
+          "y": 0,
+          "width": 261,
+          "height": 333
+        },
+        {
+          "cell_index": 2,
+          "x": 641,
+          "y": 0,
+          "width": 318,
+          "height": 333
+        },
+        {
+          "cell_index": 3,
+          "x": 959,
+          "y": 0,
+          "width": 295,
+          "height": 333
+        },
+        {
+          "cell_index": 4,
+          "x": 0,
+          "y": 333,
+          "width": 298,
+          "height": 302
+        },
+        {
+          "cell_index": 5,
+          "x": 298,
+          "y": 333,
+          "width": 329,
+          "height": 302
+        },
+        {
+          "cell_index": 6,
+          "x": 627,
+          "y": 333,
+          "width": 296,
+          "height": 302
+        },
+        {
+          "cell_index": 7,
+          "x": 923,
+          "y": 333,
+          "width": 331,
+          "height": 302
+        },
+        {
+          "cell_index": 8,
+          "x": 0,
+          "y": 635,
+          "width": 368,
+          "height": 294
+        },
+        {
+          "cell_index": 9,
+          "x": 368,
+          "y": 635,
+          "width": 278,
+          "height": 294
+        },
+        {
+          "cell_index": 10,
+          "x": 646,
+          "y": 635,
+          "width": 291,
+          "height": 294
+        },
+        {
+          "cell_index": 11,
+          "x": 937,
+          "y": 635,
+          "width": 317,
+          "height": 294
+        },
+        {
+          "cell_index": 12,
+          "x": 0,
+          "y": 929,
+          "width": 352,
+          "height": 325
+        },
+        {
+          "cell_index": 13,
+          "x": 352,
+          "y": 929,
+          "width": 287,
+          "height": 325
+        },
+        {
+          "cell_index": 14,
+          "x": 639,
+          "y": 929,
+          "width": 295,
+          "height": 325
+        },
+        {
+          "cell_index": 15,
+          "x": 934,
+          "y": 929,
+          "width": 320,
+          "height": 325
+        }
+      ],
+      "sha256": "77cd48aeb8e15ded7b6078b8ea964dfd27a6d87379f5011155d2b4fffab27ad9",
+      "width": 1254,
+      "height": 1254,
+      "gaps": [
+        {
+          "axis": "rows",
+          "boundary": 1,
+          "cut": 333,
+          "gap_start": 309,
+          "gap_end": 358,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "rows",
+          "boundary": 2,
+          "cut": 635,
+          "gap_start": 599,
+          "gap_end": 672,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "rows",
+          "boundary": 3,
+          "cut": 929,
+          "gap_start": 902,
+          "gap_end": 956,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 1,
+          "cut": 380,
+          "gap_start": 380,
+          "gap_end": 381,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 2,
+          "cut": 641,
+          "gap_start": 641,
+          "gap_end": 642,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 3,
+          "cut": 959,
+          "gap_start": 959,
+          "gap_end": 960,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 1,
+          "cut": 298,
+          "gap_start": 294,
+          "gap_end": 302,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 3,
+          "cut": 923,
+          "gap_start": 889,
+          "gap_end": 958,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 1,
+          "cut": 368,
+          "gap_start": 368,
+          "gap_end": 369,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 2,
+          "cut": 646,
+          "gap_start": 645,
+          "gap_end": 648,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 3,
+          "cut": 937,
+          "gap_start": 933,
+          "gap_end": 941,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 1,
+          "cut": 352,
+          "gap_start": 352,
+          "gap_end": 353,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 2,
+          "cut": 639,
+          "gap_start": 601,
+          "gap_end": 677,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 3,
+          "cut": 934,
+          "gap_start": 893,
+          "gap_end": 976,
+          "method": "alpha_at_most_32"
+        }
+      ],
+      "warnings": [
+        "Some boundaries contain faint alpha at most 32; no stronger foreground is cut."
+      ],
+      "foreground_outer_edge_pixels": 0
+    },
+    "B10": {
+      "atlas_id": "B10",
+      "image_path": "assets/atlases/B10.png",
+      "status": "passed",
+      "regions": [
+        {
+          "cell_index": 0,
+          "x": 0,
+          "y": 0,
+          "width": 303,
+          "height": 309
+        },
+        {
+          "cell_index": 1,
+          "x": 303,
+          "y": 0,
+          "width": 324,
+          "height": 309
+        },
+        {
+          "cell_index": 2,
+          "x": 627,
+          "y": 0,
+          "width": 317,
+          "height": 309
+        },
+        {
+          "cell_index": 3,
+          "x": 944,
+          "y": 0,
+          "width": 310,
+          "height": 309
+        },
+        {
+          "cell_index": 4,
+          "x": 0,
+          "y": 309,
+          "width": 307,
+          "height": 320
+        },
+        {
+          "cell_index": 5,
+          "x": 307,
+          "y": 309,
+          "width": 320,
+          "height": 320
+        },
+        {
+          "cell_index": 6,
+          "x": 627,
+          "y": 309,
+          "width": 336,
+          "height": 320
+        },
+        {
+          "cell_index": 7,
+          "x": 963,
+          "y": 309,
+          "width": 291,
+          "height": 320
+        },
+        {
+          "cell_index": 8,
+          "x": 0,
+          "y": 629,
+          "width": 344,
+          "height": 296
+        },
+        {
+          "cell_index": 9,
+          "x": 344,
+          "y": 629,
+          "width": 283,
+          "height": 296
+        },
+        {
+          "cell_index": 10,
+          "x": 627,
+          "y": 629,
+          "width": 314,
+          "height": 296
+        },
+        {
+          "cell_index": 11,
+          "x": 941,
+          "y": 629,
+          "width": 313,
+          "height": 296
+        },
+        {
+          "cell_index": 12,
+          "x": 0,
+          "y": 925,
+          "width": 318,
+          "height": 329
+        },
+        {
+          "cell_index": 13,
+          "x": 318,
+          "y": 925,
+          "width": 307,
+          "height": 329
+        },
+        {
+          "cell_index": 14,
+          "x": 625,
+          "y": 925,
+          "width": 312,
+          "height": 329
+        },
+        {
+          "cell_index": 15,
+          "x": 937,
+          "y": 925,
+          "width": 317,
+          "height": 329
+        }
+      ],
+      "sha256": "22fc3059bee29473b4948ec1e8a26f575708c2b415a24e9a0a5c056a732bf3c7",
+      "width": 1254,
+      "height": 1254,
+      "gaps": [
+        {
+          "axis": "rows",
+          "boundary": 1,
+          "cut": 309,
+          "gap_start": 269,
+          "gap_end": 349,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "rows",
+          "boundary": 2,
+          "cut": 629,
+          "gap_start": 629,
+          "gap_end": 630,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "rows",
+          "boundary": 3,
+          "cut": 925,
+          "gap_start": 898,
+          "gap_end": 952,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 1,
+          "cut": 303,
+          "gap_start": 303,
+          "gap_end": 304,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 3,
+          "cut": 944,
+          "gap_start": 941,
+          "gap_end": 947,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 1,
+          "cut": 307,
+          "gap_start": 306,
+          "gap_end": 308,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 3,
+          "cut": 963,
+          "gap_start": 963,
+          "gap_end": 964,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 1,
+          "cut": 344,
+          "gap_start": 344,
+          "gap_end": 345,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 3,
+          "cut": 941,
+          "gap_start": 925,
+          "gap_end": 957,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 1,
+          "cut": 318,
+          "gap_start": 318,
+          "gap_end": 319,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 2,
+          "cut": 625,
+          "gap_start": 625,
+          "gap_end": 626,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 3,
+          "cut": 937,
+          "gap_start": 933,
+          "gap_end": 941,
+          "method": "alpha_zero"
+        }
+      ],
+      "warnings": [
+        "Some boundaries contain faint alpha at most 32; no stronger foreground is cut."
+      ],
+      "foreground_outer_edge_pixels": 0
+    },
+    "B11": {
+      "atlas_id": "B11",
+      "image_path": "assets/atlases/B11.png",
+      "status": "passed",
+      "regions": [
+        {
+          "cell_index": 0,
+          "x": 0,
+          "y": 0,
+          "width": 311,
+          "height": 320
+        },
+        {
+          "cell_index": 1,
+          "x": 311,
+          "y": 0,
+          "width": 316,
+          "height": 320
+        },
+        {
+          "cell_index": 2,
+          "x": 627,
+          "y": 0,
+          "width": 311,
+          "height": 320
+        },
+        {
+          "cell_index": 3,
+          "x": 938,
+          "y": 0,
+          "width": 316,
+          "height": 320
+        },
+        {
+          "cell_index": 4,
+          "x": 0,
+          "y": 320,
+          "width": 295,
+          "height": 322
+        },
+        {
+          "cell_index": 5,
+          "x": 295,
+          "y": 320,
+          "width": 332,
+          "height": 322
+        },
+        {
+          "cell_index": 6,
+          "x": 627,
+          "y": 320,
+          "width": 313,
+          "height": 322
+        },
+        {
+          "cell_index": 7,
+          "x": 940,
+          "y": 320,
+          "width": 314,
+          "height": 322
+        },
+        {
+          "cell_index": 8,
+          "x": 0,
+          "y": 642,
+          "width": 311,
+          "height": 260
+        },
+        {
+          "cell_index": 9,
+          "x": 311,
+          "y": 642,
+          "width": 314,
+          "height": 260
+        },
+        {
+          "cell_index": 10,
+          "x": 625,
+          "y": 642,
+          "width": 297,
+          "height": 260
+        },
+        {
+          "cell_index": 11,
+          "x": 922,
+          "y": 642,
+          "width": 332,
+          "height": 260
+        },
+        {
+          "cell_index": 12,
+          "x": 0,
+          "y": 902,
+          "width": 328,
+          "height": 352
+        },
+        {
+          "cell_index": 13,
+          "x": 328,
+          "y": 902,
+          "width": 289,
+          "height": 352
+        },
+        {
+          "cell_index": 14,
+          "x": 617,
+          "y": 902,
+          "width": 297,
+          "height": 352
+        },
+        {
+          "cell_index": 15,
+          "x": 914,
+          "y": 902,
+          "width": 340,
+          "height": 352
+        }
+      ],
+      "sha256": "a94aee4b6653115f2f3d47c77df5f4f2a0eddac2edab95e786cb2f87194303d4",
+      "width": 1254,
+      "height": 1254,
+      "gaps": [
+        {
+          "axis": "rows",
+          "boundary": 1,
+          "cut": 320,
+          "gap_start": 275,
+          "gap_end": 366,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "rows",
+          "boundary": 2,
+          "cut": 642,
+          "gap_start": 597,
+          "gap_end": 688,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "rows",
+          "boundary": 3,
+          "cut": 902,
+          "gap_start": 902,
+          "gap_end": 903,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 1,
+          "cut": 311,
+          "gap_start": 311,
+          "gap_end": 312,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 3,
+          "cut": 938,
+          "gap_start": 938,
+          "gap_end": 939,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 1,
+          "cut": 295,
+          "gap_start": 295,
+          "gap_end": 296,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 3,
+          "cut": 940,
+          "gap_start": 939,
+          "gap_end": 941,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 1,
+          "cut": 311,
+          "gap_start": 311,
+          "gap_end": 312,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 2,
+          "cut": 625,
+          "gap_start": 625,
+          "gap_end": 626,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 3,
+          "cut": 922,
+          "gap_start": 922,
+          "gap_end": 923,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 1,
+          "cut": 328,
+          "gap_start": 328,
+          "gap_end": 329,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 2,
+          "cut": 617,
+          "gap_start": 617,
+          "gap_end": 618,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 3,
+          "cut": 914,
+          "gap_start": 914,
+          "gap_end": 915,
+          "method": "alpha_zero"
+        }
+      ],
+      "warnings": [
+        "Some boundaries contain faint alpha at most 32; no stronger foreground is cut."
+      ],
+      "foreground_outer_edge_pixels": 0
+    },
+    "B12": {
+      "atlas_id": "B12",
+      "image_path": "assets/atlases/B12.png",
+      "status": "passed",
+      "regions": [
+        {
+          "cell_index": 0,
+          "x": 0,
+          "y": 0,
+          "width": 316,
+          "height": 319
+        },
+        {
+          "cell_index": 1,
+          "x": 316,
+          "y": 0,
+          "width": 311,
+          "height": 319
+        },
+        {
+          "cell_index": 2,
+          "x": 627,
+          "y": 0,
+          "width": 318,
+          "height": 319
+        },
+        {
+          "cell_index": 3,
+          "x": 945,
+          "y": 0,
+          "width": 309,
+          "height": 319
+        },
+        {
+          "cell_index": 4,
+          "x": 0,
+          "y": 319,
+          "width": 336,
+          "height": 304
+        },
+        {
+          "cell_index": 5,
+          "x": 336,
+          "y": 319,
+          "width": 291,
+          "height": 304
+        },
+        {
+          "cell_index": 6,
+          "x": 627,
+          "y": 319,
+          "width": 316,
+          "height": 304
+        },
+        {
+          "cell_index": 7,
+          "x": 943,
+          "y": 319,
+          "width": 311,
+          "height": 304
+        },
+        {
+          "cell_index": 8,
+          "x": 0,
+          "y": 623,
+          "width": 335,
+          "height": 298
+        },
+        {
+          "cell_index": 9,
+          "x": 335,
+          "y": 623,
+          "width": 287,
+          "height": 298
+        },
+        {
+          "cell_index": 10,
+          "x": 622,
+          "y": 623,
+          "width": 316,
+          "height": 298
+        },
+        {
+          "cell_index": 11,
+          "x": 938,
+          "y": 623,
+          "width": 316,
+          "height": 298
+        },
+        {
+          "cell_index": 12,
+          "x": 0,
+          "y": 921,
+          "width": 336,
+          "height": 333
+        },
+        {
+          "cell_index": 13,
+          "x": 336,
+          "y": 921,
+          "width": 290,
+          "height": 333
+        },
+        {
+          "cell_index": 14,
+          "x": 626,
+          "y": 921,
+          "width": 288,
+          "height": 333
+        },
+        {
+          "cell_index": 15,
+          "x": 914,
+          "y": 921,
+          "width": 340,
+          "height": 333
+        }
+      ],
+      "sha256": "17e23688f79d49775d343563393aa424b64a8339b17ded3b20ebda35f1c2c6d3",
+      "width": 1254,
+      "height": 1254,
+      "gaps": [
+        {
+          "axis": "rows",
+          "boundary": 1,
+          "cut": 319,
+          "gap_start": 286,
+          "gap_end": 353,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "rows",
+          "boundary": 2,
+          "cut": 623,
+          "gap_start": 588,
+          "gap_end": 658,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "rows",
+          "boundary": 3,
+          "cut": 921,
+          "gap_start": 896,
+          "gap_end": 946,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 1,
+          "cut": 316,
+          "gap_start": 316,
+          "gap_end": 317,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 3,
+          "cut": 945,
+          "gap_start": 933,
+          "gap_end": 957,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 1,
+          "cut": 336,
+          "gap_start": 302,
+          "gap_end": 370,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 3,
+          "cut": 943,
+          "gap_start": 943,
+          "gap_end": 944,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 1,
+          "cut": 335,
+          "gap_start": 310,
+          "gap_end": 361,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 2,
+          "cut": 622,
+          "gap_start": 621,
+          "gap_end": 624,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 3,
+          "cut": 938,
+          "gap_start": 915,
+          "gap_end": 961,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 1,
+          "cut": 336,
+          "gap_start": 336,
+          "gap_end": 337,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 2,
+          "cut": 626,
+          "gap_start": 625,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 3,
+          "cut": 914,
+          "gap_start": 914,
+          "gap_end": 915,
+          "method": "alpha_zero"
+        }
+      ],
+      "warnings": [
+        "Some boundaries contain faint alpha at most 32; no stronger foreground is cut."
+      ],
+      "foreground_outer_edge_pixels": 0
+    },
+    "B13": {
+      "atlas_id": "B13",
+      "image_path": "assets/atlases/B13.png",
+      "status": "passed",
+      "regions": [
+        {
+          "cell_index": 0,
+          "x": 0,
+          "y": 0,
+          "width": 334,
+          "height": 337
+        },
+        {
+          "cell_index": 1,
+          "x": 334,
+          "y": 0,
+          "width": 291,
+          "height": 337
+        },
+        {
+          "cell_index": 2,
+          "x": 625,
+          "y": 0,
+          "width": 320,
+          "height": 337
+        },
+        {
+          "cell_index": 3,
+          "x": 945,
+          "y": 0,
+          "width": 309,
+          "height": 337
+        },
+        {
+          "cell_index": 4,
+          "x": 0,
+          "y": 337,
+          "width": 313,
+          "height": 286
+        },
+        {
+          "cell_index": 5,
+          "x": 313,
+          "y": 337,
+          "width": 313,
+          "height": 286
+        },
+        {
+          "cell_index": 6,
+          "x": 626,
+          "y": 337,
+          "width": 308,
+          "height": 286
+        },
+        {
+          "cell_index": 7,
+          "x": 934,
+          "y": 337,
+          "width": 320,
+          "height": 286
+        },
+        {
+          "cell_index": 8,
+          "x": 0,
+          "y": 623,
+          "width": 321,
+          "height": 293
+        },
+        {
+          "cell_index": 9,
+          "x": 321,
+          "y": 623,
+          "width": 306,
+          "height": 293
+        },
+        {
+          "cell_index": 10,
+          "x": 627,
+          "y": 623,
+          "width": 332,
+          "height": 293
+        },
+        {
+          "cell_index": 11,
+          "x": 959,
+          "y": 623,
+          "width": 295,
+          "height": 293
+        },
+        {
+          "cell_index": 12,
+          "x": 0,
+          "y": 916,
+          "width": 310,
+          "height": 338
+        },
+        {
+          "cell_index": 13,
+          "x": 310,
+          "y": 916,
+          "width": 331,
+          "height": 338
+        },
+        {
+          "cell_index": 14,
+          "x": 641,
+          "y": 916,
+          "width": 297,
+          "height": 338
+        },
+        {
+          "cell_index": 15,
+          "x": 938,
+          "y": 916,
+          "width": 316,
+          "height": 338
+        }
+      ],
+      "sha256": "095228dffb6026b5e070f7a978b1bc146e475f544b566396c9d91cdcd44517c4",
+      "width": 1254,
+      "height": 1254,
+      "gaps": [
+        {
+          "axis": "rows",
+          "boundary": 1,
+          "cut": 337,
+          "gap_start": 308,
+          "gap_end": 366,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "rows",
+          "boundary": 2,
+          "cut": 623,
+          "gap_start": 602,
+          "gap_end": 644,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "rows",
+          "boundary": 3,
+          "cut": 916,
+          "gap_start": 916,
+          "gap_end": 917,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 1,
+          "cut": 334,
+          "gap_start": 334,
+          "gap_end": 335,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 2,
+          "cut": 625,
+          "gap_start": 625,
+          "gap_end": 626,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 3,
+          "cut": 945,
+          "gap_start": 945,
+          "gap_end": 946,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 1,
+          "cut": 313,
+          "gap_start": 312,
+          "gap_end": 314,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 2,
+          "cut": 626,
+          "gap_start": 625,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 3,
+          "cut": 934,
+          "gap_start": 934,
+          "gap_end": 935,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 1,
+          "cut": 321,
+          "gap_start": 320,
+          "gap_end": 322,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 3,
+          "cut": 959,
+          "gap_start": 959,
+          "gap_end": 960,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 1,
+          "cut": 310,
+          "gap_start": 308,
+          "gap_end": 312,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 2,
+          "cut": 641,
+          "gap_start": 641,
+          "gap_end": 642,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 3,
+          "cut": 938,
+          "gap_start": 935,
+          "gap_end": 941,
+          "method": "alpha_zero"
+        }
+      ],
+      "warnings": [
+        "Some boundaries contain faint alpha at most 32; no stronger foreground is cut."
+      ],
+      "foreground_outer_edge_pixels": 0
+    },
+    "B14": {
+      "atlas_id": "B14",
+      "image_path": "assets/atlases/B14.png",
+      "status": "passed",
+      "regions": [
+        {
+          "cell_index": 0,
+          "x": 0,
+          "y": 0,
+          "width": 342,
+          "height": 343
+        },
+        {
+          "cell_index": 1,
+          "x": 342,
+          "y": 0,
+          "width": 272,
+          "height": 343
+        },
+        {
+          "cell_index": 2,
+          "x": 614,
+          "y": 0,
+          "width": 320,
+          "height": 343
+        },
+        {
+          "cell_index": 3,
+          "x": 934,
+          "y": 0,
+          "width": 320,
+          "height": 343
+        },
+        {
+          "cell_index": 4,
+          "x": 0,
+          "y": 343,
+          "width": 315,
+          "height": 297
+        },
+        {
+          "cell_index": 5,
+          "x": 315,
+          "y": 343,
+          "width": 317,
+          "height": 297
+        },
+        {
+          "cell_index": 6,
+          "x": 632,
+          "y": 343,
+          "width": 315,
+          "height": 297
+        },
+        {
+          "cell_index": 7,
+          "x": 947,
+          "y": 343,
+          "width": 307,
+          "height": 297
+        },
+        {
+          "cell_index": 8,
+          "x": 0,
+          "y": 640,
+          "width": 333,
+          "height": 289
+        },
+        {
+          "cell_index": 9,
+          "x": 333,
+          "y": 640,
+          "width": 282,
+          "height": 289
+        },
+        {
+          "cell_index": 10,
+          "x": 615,
+          "y": 640,
+          "width": 305,
+          "height": 289
+        },
+        {
+          "cell_index": 11,
+          "x": 920,
+          "y": 640,
+          "width": 334,
+          "height": 289
+        },
+        {
+          "cell_index": 12,
+          "x": 0,
+          "y": 929,
+          "width": 323,
+          "height": 325
+        },
+        {
+          "cell_index": 13,
+          "x": 323,
+          "y": 929,
+          "width": 302,
+          "height": 325
+        },
+        {
+          "cell_index": 14,
+          "x": 625,
+          "y": 929,
+          "width": 295,
+          "height": 325
+        },
+        {
+          "cell_index": 15,
+          "x": 920,
+          "y": 929,
+          "width": 334,
+          "height": 325
+        }
+      ],
+      "sha256": "92249ab6c0c71df5a07852086fe49147a7368c980800571545035200c75c8036",
+      "width": 1254,
+      "height": 1254,
+      "gaps": [
+        {
+          "axis": "rows",
+          "boundary": 1,
+          "cut": 343,
+          "gap_start": 328,
+          "gap_end": 359,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "rows",
+          "boundary": 2,
+          "cut": 640,
+          "gap_start": 625,
+          "gap_end": 656,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "rows",
+          "boundary": 3,
+          "cut": 929,
+          "gap_start": 918,
+          "gap_end": 941,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 1,
+          "cut": 342,
+          "gap_start": 339,
+          "gap_end": 345,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 2,
+          "cut": 614,
+          "gap_start": 586,
+          "gap_end": 642,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 3,
+          "cut": 934,
+          "gap_start": 925,
+          "gap_end": 944,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 1,
+          "cut": 315,
+          "gap_start": 315,
+          "gap_end": 316,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 2,
+          "cut": 632,
+          "gap_start": 618,
+          "gap_end": 647,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 3,
+          "cut": 947,
+          "gap_start": 947,
+          "gap_end": 948,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 1,
+          "cut": 333,
+          "gap_start": 332,
+          "gap_end": 335,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 2,
+          "cut": 615,
+          "gap_start": 615,
+          "gap_end": 616,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 3,
+          "cut": 920,
+          "gap_start": 920,
+          "gap_end": 921,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 1,
+          "cut": 323,
+          "gap_start": 316,
+          "gap_end": 330,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 2,
+          "cut": 625,
+          "gap_start": 623,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 3,
+          "cut": 920,
+          "gap_start": 908,
+          "gap_end": 933,
+          "method": "alpha_zero"
+        }
+      ],
+      "warnings": [
+        "Some boundaries contain faint alpha at most 32; no stronger foreground is cut."
+      ],
+      "foreground_outer_edge_pixels": 0
+    },
+    "B15": {
+      "atlas_id": "B15",
+      "image_path": "assets/atlases/B15.png",
+      "status": "passed",
+      "regions": [
+        {
+          "cell_index": 0,
+          "x": 0,
+          "y": 0,
+          "width": 311,
+          "height": 324
+        },
+        {
+          "cell_index": 1,
+          "x": 311,
+          "y": 0,
+          "width": 314,
+          "height": 324
+        },
+        {
+          "cell_index": 2,
+          "x": 625,
+          "y": 0,
+          "width": 295,
+          "height": 324
+        },
+        {
+          "cell_index": 3,
+          "x": 920,
+          "y": 0,
+          "width": 334,
+          "height": 324
+        },
+        {
+          "cell_index": 4,
+          "x": 0,
+          "y": 324,
+          "width": 312,
+          "height": 312
+        },
+        {
+          "cell_index": 5,
+          "x": 312,
+          "y": 324,
+          "width": 315,
+          "height": 312
+        },
+        {
+          "cell_index": 6,
+          "x": 627,
+          "y": 324,
+          "width": 287,
+          "height": 312
+        },
+        {
+          "cell_index": 7,
+          "x": 914,
+          "y": 324,
+          "width": 340,
+          "height": 312
+        },
+        {
+          "cell_index": 8,
+          "x": 0,
+          "y": 636,
+          "width": 332,
+          "height": 299
+        },
+        {
+          "cell_index": 9,
+          "x": 332,
+          "y": 636,
+          "width": 297,
+          "height": 299
+        },
+        {
+          "cell_index": 10,
+          "x": 629,
+          "y": 636,
+          "width": 334,
+          "height": 299
+        },
+        {
+          "cell_index": 11,
+          "x": 963,
+          "y": 636,
+          "width": 291,
+          "height": 299
+        },
+        {
+          "cell_index": 12,
+          "x": 0,
+          "y": 935,
+          "width": 305,
+          "height": 319
+        },
+        {
+          "cell_index": 13,
+          "x": 305,
+          "y": 935,
+          "width": 322,
+          "height": 319
+        },
+        {
+          "cell_index": 14,
+          "x": 627,
+          "y": 935,
+          "width": 317,
+          "height": 319
+        },
+        {
+          "cell_index": 15,
+          "x": 944,
+          "y": 935,
+          "width": 310,
+          "height": 319
+        }
+      ],
+      "sha256": "ce325298ec7661891f1285476aebe3171b45d7971b79a9402045a04a5d27674f",
+      "width": 1254,
+      "height": 1254,
+      "gaps": [
+        {
+          "axis": "rows",
+          "boundary": 1,
+          "cut": 324,
+          "gap_start": 324,
+          "gap_end": 325,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "rows",
+          "boundary": 2,
+          "cut": 636,
+          "gap_start": 630,
+          "gap_end": 643,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "rows",
+          "boundary": 3,
+          "cut": 935,
+          "gap_start": 933,
+          "gap_end": 938,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 1,
+          "cut": 311,
+          "gap_start": 308,
+          "gap_end": 314,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 2,
+          "cut": 625,
+          "gap_start": 625,
+          "gap_end": 626,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 3,
+          "cut": 920,
+          "gap_start": 920,
+          "gap_end": 921,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 1,
+          "cut": 312,
+          "gap_start": 312,
+          "gap_end": 313,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 3,
+          "cut": 914,
+          "gap_start": 914,
+          "gap_end": 915,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 1,
+          "cut": 332,
+          "gap_start": 322,
+          "gap_end": 343,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 2,
+          "cut": 629,
+          "gap_start": 627,
+          "gap_end": 632,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 3,
+          "cut": 963,
+          "gap_start": 959,
+          "gap_end": 968,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 1,
+          "cut": 305,
+          "gap_start": 291,
+          "gap_end": 320,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 3,
+          "cut": 944,
+          "gap_start": 939,
+          "gap_end": 949,
+          "method": "alpha_zero"
+        }
+      ],
+      "warnings": [
+        "Some boundaries contain faint alpha at most 32; no stronger foreground is cut."
+      ],
+      "foreground_outer_edge_pixels": 0
+    },
+    "S01": {
+      "atlas_id": "S01",
+      "image_path": "assets/atlases/S01.png",
+      "status": "passed",
+      "regions": [
+        {
+          "cell_index": 0,
+          "x": 0,
+          "y": 0,
+          "width": 314,
+          "height": 345
+        },
+        {
+          "cell_index": 1,
+          "x": 314,
+          "y": 0,
+          "width": 313,
+          "height": 345
+        },
+        {
+          "cell_index": 2,
+          "x": 627,
+          "y": 0,
+          "width": 316,
+          "height": 345
+        },
+        {
+          "cell_index": 3,
+          "x": 943,
+          "y": 0,
+          "width": 311,
+          "height": 345
+        },
+        {
+          "cell_index": 4,
+          "x": 0,
+          "y": 345,
+          "width": 336,
+          "height": 294
+        },
+        {
+          "cell_index": 5,
+          "x": 336,
+          "y": 345,
+          "width": 294,
+          "height": 294
+        },
+        {
+          "cell_index": 6,
+          "x": 630,
+          "y": 345,
+          "width": 321,
+          "height": 294
+        },
+        {
+          "cell_index": 7,
+          "x": 951,
+          "y": 345,
+          "width": 303,
+          "height": 294
+        },
+        {
+          "cell_index": 8,
+          "x": 0,
+          "y": 639,
+          "width": 313,
+          "height": 288
+        },
+        {
+          "cell_index": 9,
+          "x": 313,
+          "y": 639,
+          "width": 314,
+          "height": 288
+        },
+        {
+          "cell_index": 10,
+          "x": 627,
+          "y": 639,
+          "width": 312,
+          "height": 288
+        },
+        {
+          "cell_index": 11,
+          "x": 939,
+          "y": 639,
+          "width": 315,
+          "height": 288
+        },
+        {
+          "cell_index": 12,
+          "x": 0,
+          "y": 927,
+          "width": 312,
+          "height": 327
+        },
+        {
+          "cell_index": 13,
+          "x": 312,
+          "y": 927,
+          "width": 313,
+          "height": 327
+        },
+        {
+          "cell_index": 14,
+          "x": 625,
+          "y": 927,
+          "width": 326,
+          "height": 327
+        },
+        {
+          "cell_index": 15,
+          "x": 951,
+          "y": 927,
+          "width": 303,
+          "height": 327
+        }
+      ],
+      "sha256": "9171f5659ec329f1d3893506749719aa2eab486cd9e1eecd9fb711404e8b0844",
+      "width": 1254,
+      "height": 1254,
+      "gaps": [
+        {
+          "axis": "rows",
+          "boundary": 1,
+          "cut": 345,
+          "gap_start": 310,
+          "gap_end": 380,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "rows",
+          "boundary": 2,
+          "cut": 639,
+          "gap_start": 611,
+          "gap_end": 667,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "rows",
+          "boundary": 3,
+          "cut": 927,
+          "gap_start": 900,
+          "gap_end": 955,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 1,
+          "cut": 314,
+          "gap_start": 314,
+          "gap_end": 315,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 623,
+          "gap_end": 632,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 3,
+          "cut": 943,
+          "gap_start": 943,
+          "gap_end": 944,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 1,
+          "cut": 336,
+          "gap_start": 336,
+          "gap_end": 337,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 2,
+          "cut": 630,
+          "gap_start": 625,
+          "gap_end": 636,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 3,
+          "cut": 951,
+          "gap_start": 951,
+          "gap_end": 952,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 1,
+          "cut": 313,
+          "gap_start": 313,
+          "gap_end": 314,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 3,
+          "cut": 939,
+          "gap_start": 939,
+          "gap_end": 940,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 1,
+          "cut": 312,
+          "gap_start": 312,
+          "gap_end": 313,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 2,
+          "cut": 625,
+          "gap_start": 625,
+          "gap_end": 626,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 3,
+          "cut": 951,
+          "gap_start": 935,
+          "gap_end": 968,
+          "method": "alpha_zero"
+        }
+      ],
+      "warnings": [
+        "Some boundaries contain faint alpha at most 32; no stronger foreground is cut."
+      ],
+      "foreground_outer_edge_pixels": 0
+    },
+    "S02": {
+      "atlas_id": "S02",
+      "image_path": "assets/atlases/S02.png",
+      "status": "passed",
+      "regions": [
+        {
+          "cell_index": 0,
+          "x": 0,
+          "y": 0,
+          "width": 338,
+          "height": 321
+        },
+        {
+          "cell_index": 1,
+          "x": 338,
+          "y": 0,
+          "width": 295,
+          "height": 321
+        },
+        {
+          "cell_index": 2,
+          "x": 633,
+          "y": 0,
+          "width": 304,
+          "height": 321
+        },
+        {
+          "cell_index": 3,
+          "x": 937,
+          "y": 0,
+          "width": 317,
+          "height": 321
+        },
+        {
+          "cell_index": 4,
+          "x": 0,
+          "y": 321,
+          "width": 287,
+          "height": 302
+        },
+        {
+          "cell_index": 5,
+          "x": 287,
+          "y": 321,
+          "width": 322,
+          "height": 302
+        },
+        {
+          "cell_index": 6,
+          "x": 609,
+          "y": 321,
+          "width": 333,
+          "height": 302
+        },
+        {
+          "cell_index": 7,
+          "x": 942,
+          "y": 321,
+          "width": 312,
+          "height": 302
+        },
+        {
+          "cell_index": 8,
+          "x": 0,
+          "y": 623,
+          "width": 287,
+          "height": 300
+        },
+        {
+          "cell_index": 9,
+          "x": 287,
+          "y": 623,
+          "width": 338,
+          "height": 300
+        },
+        {
+          "cell_index": 10,
+          "x": 625,
+          "y": 623,
+          "width": 314,
+          "height": 300
+        },
+        {
+          "cell_index": 11,
+          "x": 939,
+          "y": 623,
+          "width": 315,
+          "height": 300
+        },
+        {
+          "cell_index": 12,
+          "x": 0,
+          "y": 923,
+          "width": 317,
+          "height": 331
+        },
+        {
+          "cell_index": 13,
+          "x": 317,
+          "y": 923,
+          "width": 310,
+          "height": 331
+        },
+        {
+          "cell_index": 14,
+          "x": 627,
+          "y": 923,
+          "width": 313,
+          "height": 331
+        },
+        {
+          "cell_index": 15,
+          "x": 940,
+          "y": 923,
+          "width": 314,
+          "height": 331
+        }
+      ],
+      "sha256": "80f04c86bc8125c345c03f81cf00c828fcb953b70c20f20fb108c4e68c0a58e9",
+      "width": 1254,
+      "height": 1254,
+      "gaps": [
+        {
+          "axis": "rows",
+          "boundary": 1,
+          "cut": 321,
+          "gap_start": 294,
+          "gap_end": 348,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "rows",
+          "boundary": 2,
+          "cut": 623,
+          "gap_start": 595,
+          "gap_end": 652,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "rows",
+          "boundary": 3,
+          "cut": 923,
+          "gap_start": 899,
+          "gap_end": 948,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 1,
+          "cut": 338,
+          "gap_start": 338,
+          "gap_end": 339,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 2,
+          "cut": 633,
+          "gap_start": 633,
+          "gap_end": 634,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 3,
+          "cut": 937,
+          "gap_start": 931,
+          "gap_end": 943,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 1,
+          "cut": 287,
+          "gap_start": 287,
+          "gap_end": 288,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 2,
+          "cut": 609,
+          "gap_start": 609,
+          "gap_end": 610,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 3,
+          "cut": 942,
+          "gap_start": 941,
+          "gap_end": 943,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 1,
+          "cut": 287,
+          "gap_start": 287,
+          "gap_end": 288,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 2,
+          "cut": 625,
+          "gap_start": 625,
+          "gap_end": 626,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 3,
+          "cut": 939,
+          "gap_start": 937,
+          "gap_end": 941,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 1,
+          "cut": 317,
+          "gap_start": 316,
+          "gap_end": 318,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 3,
+          "cut": 940,
+          "gap_start": 940,
+          "gap_end": 941,
+          "method": "alpha_zero"
+        }
+      ],
+      "warnings": [
+        "Some boundaries contain faint alpha at most 32; no stronger foreground is cut."
+      ],
+      "foreground_outer_edge_pixels": 0
+    },
+    "S03": {
+      "atlas_id": "S03",
+      "image_path": "assets/atlases/S03.png",
+      "status": "passed",
+      "regions": [
+        {
+          "cell_index": 0,
+          "x": 0,
+          "y": 0,
+          "width": 334,
+          "height": 347
+        },
+        {
+          "cell_index": 1,
+          "x": 334,
+          "y": 0,
+          "width": 309,
+          "height": 347
+        },
+        {
+          "cell_index": 2,
+          "x": 643,
+          "y": 0,
+          "width": 275,
+          "height": 347
+        },
+        {
+          "cell_index": 3,
+          "x": 918,
+          "y": 0,
+          "width": 336,
+          "height": 347
+        },
+        {
+          "cell_index": 4,
+          "x": 0,
+          "y": 347,
+          "width": 333,
+          "height": 301
+        },
+        {
+          "cell_index": 5,
+          "x": 333,
+          "y": 347,
+          "width": 302,
+          "height": 301
+        },
+        {
+          "cell_index": 6,
+          "x": 635,
+          "y": 347,
+          "width": 289,
+          "height": 301
+        },
+        {
+          "cell_index": 7,
+          "x": 924,
+          "y": 347,
+          "width": 330,
+          "height": 301
+        },
+        {
+          "cell_index": 8,
+          "x": 0,
+          "y": 648,
+          "width": 329,
+          "height": 279
+        },
+        {
+          "cell_index": 9,
+          "x": 329,
+          "y": 648,
+          "width": 308,
+          "height": 279
+        },
+        {
+          "cell_index": 10,
+          "x": 637,
+          "y": 648,
+          "width": 282,
+          "height": 279
+        },
+        {
+          "cell_index": 11,
+          "x": 919,
+          "y": 648,
+          "width": 335,
+          "height": 279
+        },
+        {
+          "cell_index": 12,
+          "x": 0,
+          "y": 927,
+          "width": 368,
+          "height": 327
+        },
+        {
+          "cell_index": 13,
+          "x": 368,
+          "y": 927,
+          "width": 265,
+          "height": 327
+        },
+        {
+          "cell_index": 14,
+          "x": 633,
+          "y": 927,
+          "width": 289,
+          "height": 327
+        },
+        {
+          "cell_index": 15,
+          "x": 922,
+          "y": 927,
+          "width": 332,
+          "height": 327
+        }
+      ],
+      "sha256": "47e6f74714235887cdc3f1b2634915dbb4b731e7a79a5ae56331d1e885c5f4a0",
+      "width": 1254,
+      "height": 1254,
+      "gaps": [
+        {
+          "axis": "rows",
+          "boundary": 1,
+          "cut": 347,
+          "gap_start": 302,
+          "gap_end": 392,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "rows",
+          "boundary": 2,
+          "cut": 648,
+          "gap_start": 606,
+          "gap_end": 691,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "rows",
+          "boundary": 3,
+          "cut": 927,
+          "gap_start": 899,
+          "gap_end": 956,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 1,
+          "cut": 334,
+          "gap_start": 334,
+          "gap_end": 335,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 2,
+          "cut": 643,
+          "gap_start": 643,
+          "gap_end": 644,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 3,
+          "cut": 918,
+          "gap_start": 918,
+          "gap_end": 919,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 1,
+          "cut": 333,
+          "gap_start": 270,
+          "gap_end": 397,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 2,
+          "cut": 635,
+          "gap_start": 588,
+          "gap_end": 682,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 3,
+          "cut": 924,
+          "gap_start": 871,
+          "gap_end": 978,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 1,
+          "cut": 329,
+          "gap_start": 328,
+          "gap_end": 330,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 2,
+          "cut": 637,
+          "gap_start": 637,
+          "gap_end": 638,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 3,
+          "cut": 919,
+          "gap_start": 859,
+          "gap_end": 979,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 1,
+          "cut": 368,
+          "gap_start": 368,
+          "gap_end": 369,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 2,
+          "cut": 633,
+          "gap_start": 633,
+          "gap_end": 634,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 3,
+          "cut": 922,
+          "gap_start": 922,
+          "gap_end": 923,
+          "method": "alpha_zero"
+        }
+      ],
+      "warnings": [
+        "Some boundaries contain faint alpha at most 32; no stronger foreground is cut."
+      ],
+      "foreground_outer_edge_pixels": 0
+    },
+    "S04": {
+      "atlas_id": "S04",
+      "image_path": "assets/atlases/S04.png",
+      "status": "passed",
+      "regions": [
+        {
+          "cell_index": 0,
+          "x": 0,
+          "y": 0,
+          "width": 313,
+          "height": 312
+        },
+        {
+          "cell_index": 1,
+          "x": 313,
+          "y": 0,
+          "width": 314,
+          "height": 312
+        },
+        {
+          "cell_index": 2,
+          "x": 627,
+          "y": 0,
+          "width": 333,
+          "height": 312
+        },
+        {
+          "cell_index": 3,
+          "x": 960,
+          "y": 0,
+          "width": 294,
+          "height": 312
+        },
+        {
+          "cell_index": 4,
+          "x": 0,
+          "y": 312,
+          "width": 313,
+          "height": 315
+        },
+        {
+          "cell_index": 5,
+          "x": 313,
+          "y": 312,
+          "width": 313,
+          "height": 315
+        },
+        {
+          "cell_index": 6,
+          "x": 626,
+          "y": 312,
+          "width": 318,
+          "height": 315
+        },
+        {
+          "cell_index": 7,
+          "x": 944,
+          "y": 312,
+          "width": 310,
+          "height": 315
+        },
+        {
+          "cell_index": 8,
+          "x": 0,
+          "y": 627,
+          "width": 314,
+          "height": 287
+        },
+        {
+          "cell_index": 9,
+          "x": 314,
+          "y": 627,
+          "width": 319,
+          "height": 287
+        },
+        {
+          "cell_index": 10,
+          "x": 633,
+          "y": 627,
+          "width": 305,
+          "height": 287
+        },
+        {
+          "cell_index": 11,
+          "x": 938,
+          "y": 627,
+          "width": 316,
+          "height": 287
+        },
+        {
+          "cell_index": 12,
+          "x": 0,
+          "y": 914,
+          "width": 312,
+          "height": 340
+        },
+        {
+          "cell_index": 13,
+          "x": 312,
+          "y": 914,
+          "width": 313,
+          "height": 340
+        },
+        {
+          "cell_index": 14,
+          "x": 625,
+          "y": 914,
+          "width": 314,
+          "height": 340
+        },
+        {
+          "cell_index": 15,
+          "x": 939,
+          "y": 914,
+          "width": 315,
+          "height": 340
+        }
+      ],
+      "sha256": "12ac54729cccfc865b7d66991329bb1ad9ac6e094caeb81a3c793d6507846b37",
+      "width": 1254,
+      "height": 1254,
+      "gaps": [
+        {
+          "axis": "rows",
+          "boundary": 1,
+          "cut": 312,
+          "gap_start": 310,
+          "gap_end": 314,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "rows",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "rows",
+          "boundary": 3,
+          "cut": 914,
+          "gap_start": 914,
+          "gap_end": 915,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 1,
+          "cut": 313,
+          "gap_start": 313,
+          "gap_end": 314,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 3,
+          "cut": 960,
+          "gap_start": 957,
+          "gap_end": 964,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 1,
+          "cut": 313,
+          "gap_start": 312,
+          "gap_end": 314,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 2,
+          "cut": 626,
+          "gap_start": 623,
+          "gap_end": 630,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 3,
+          "cut": 944,
+          "gap_start": 943,
+          "gap_end": 945,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 1,
+          "cut": 314,
+          "gap_start": 289,
+          "gap_end": 340,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 2,
+          "cut": 633,
+          "gap_start": 633,
+          "gap_end": 634,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 3,
+          "cut": 938,
+          "gap_start": 937,
+          "gap_end": 939,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 1,
+          "cut": 312,
+          "gap_start": 310,
+          "gap_end": 314,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 2,
+          "cut": 625,
+          "gap_start": 625,
+          "gap_end": 626,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 3,
+          "cut": 939,
+          "gap_start": 939,
+          "gap_end": 940,
+          "method": "alpha_zero"
+        }
+      ],
+      "warnings": [],
+      "foreground_outer_edge_pixels": 0
+    },
+    "S05": {
+      "atlas_id": "S05",
+      "image_path": "assets/atlases/S05.png",
+      "status": "passed",
+      "regions": [
+        {
+          "cell_index": 0,
+          "x": 0,
+          "y": 0,
+          "width": 295,
+          "height": 334
+        },
+        {
+          "cell_index": 1,
+          "x": 295,
+          "y": 0,
+          "width": 338,
+          "height": 334
+        },
+        {
+          "cell_index": 2,
+          "x": 633,
+          "y": 0,
+          "width": 307,
+          "height": 334
+        },
+        {
+          "cell_index": 3,
+          "x": 940,
+          "y": 0,
+          "width": 314,
+          "height": 334
+        },
+        {
+          "cell_index": 4,
+          "x": 0,
+          "y": 334,
+          "width": 317,
+          "height": 293
+        },
+        {
+          "cell_index": 5,
+          "x": 317,
+          "y": 334,
+          "width": 308,
+          "height": 293
+        },
+        {
+          "cell_index": 6,
+          "x": 625,
+          "y": 334,
+          "width": 309,
+          "height": 293
+        },
+        {
+          "cell_index": 7,
+          "x": 934,
+          "y": 334,
+          "width": 320,
+          "height": 293
+        },
+        {
+          "cell_index": 8,
+          "x": 0,
+          "y": 627,
+          "width": 331,
+          "height": 309
+        },
+        {
+          "cell_index": 9,
+          "x": 331,
+          "y": 627,
+          "width": 296,
+          "height": 309
+        },
+        {
+          "cell_index": 10,
+          "x": 627,
+          "y": 627,
+          "width": 311,
+          "height": 309
+        },
+        {
+          "cell_index": 11,
+          "x": 938,
+          "y": 627,
+          "width": 316,
+          "height": 309
+        },
+        {
+          "cell_index": 12,
+          "x": 0,
+          "y": 936,
+          "width": 305,
+          "height": 318
+        },
+        {
+          "cell_index": 13,
+          "x": 305,
+          "y": 936,
+          "width": 322,
+          "height": 318
+        },
+        {
+          "cell_index": 14,
+          "x": 627,
+          "y": 936,
+          "width": 338,
+          "height": 318
+        },
+        {
+          "cell_index": 15,
+          "x": 965,
+          "y": 936,
+          "width": 289,
+          "height": 318
+        }
+      ],
+      "sha256": "1e1242d6a8ca2be8f06868c6362616800e137a81498b4ccf2ac6035d52215270",
+      "width": 1254,
+      "height": 1254,
+      "gaps": [
+        {
+          "axis": "rows",
+          "boundary": 1,
+          "cut": 334,
+          "gap_start": 298,
+          "gap_end": 370,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "rows",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "rows",
+          "boundary": 3,
+          "cut": 936,
+          "gap_start": 912,
+          "gap_end": 961,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 1,
+          "cut": 295,
+          "gap_start": 295,
+          "gap_end": 296,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 2,
+          "cut": 633,
+          "gap_start": 633,
+          "gap_end": 634,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 3,
+          "cut": 940,
+          "gap_start": 939,
+          "gap_end": 941,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 1,
+          "cut": 317,
+          "gap_start": 312,
+          "gap_end": 322,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 2,
+          "cut": 625,
+          "gap_start": 625,
+          "gap_end": 626,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 3,
+          "cut": 934,
+          "gap_start": 920,
+          "gap_end": 949,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 1,
+          "cut": 331,
+          "gap_start": 294,
+          "gap_end": 368,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 3,
+          "cut": 938,
+          "gap_start": 938,
+          "gap_end": 939,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 1,
+          "cut": 305,
+          "gap_start": 305,
+          "gap_end": 306,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 3,
+          "cut": 965,
+          "gap_start": 965,
+          "gap_end": 966,
+          "method": "alpha_zero"
+        }
+      ],
+      "warnings": [
+        "Some boundaries contain faint alpha at most 32; no stronger foreground is cut."
+      ],
+      "foreground_outer_edge_pixels": 0
+    },
+    "S06": {
+      "atlas_id": "S06",
+      "image_path": "assets/atlases/S06.png",
+      "status": "passed",
+      "regions": [
+        {
+          "cell_index": 0,
+          "x": 0,
+          "y": 0,
+          "width": 299,
+          "height": 343
+        },
+        {
+          "cell_index": 1,
+          "x": 299,
+          "y": 0,
+          "width": 334,
+          "height": 343
+        },
+        {
+          "cell_index": 2,
+          "x": 633,
+          "y": 0,
+          "width": 312,
+          "height": 343
+        },
+        {
+          "cell_index": 3,
+          "x": 945,
+          "y": 0,
+          "width": 309,
+          "height": 343
+        },
+        {
+          "cell_index": 4,
+          "x": 0,
+          "y": 343,
+          "width": 334,
+          "height": 292
+        },
+        {
+          "cell_index": 5,
+          "x": 334,
+          "y": 343,
+          "width": 283,
+          "height": 292
+        },
+        {
+          "cell_index": 6,
+          "x": 617,
+          "y": 343,
+          "width": 321,
+          "height": 292
+        },
+        {
+          "cell_index": 7,
+          "x": 938,
+          "y": 343,
+          "width": 316,
+          "height": 292
+        },
+        {
+          "cell_index": 8,
+          "x": 0,
+          "y": 635,
+          "width": 312,
+          "height": 293
+        },
+        {
+          "cell_index": 9,
+          "x": 312,
+          "y": 635,
+          "width": 315,
+          "height": 293
+        },
+        {
+          "cell_index": 10,
+          "x": 627,
+          "y": 635,
+          "width": 312,
+          "height": 293
+        },
+        {
+          "cell_index": 11,
+          "x": 939,
+          "y": 635,
+          "width": 315,
+          "height": 293
+        },
+        {
+          "cell_index": 12,
+          "x": 0,
+          "y": 928,
+          "width": 334,
+          "height": 326
+        },
+        {
+          "cell_index": 13,
+          "x": 334,
+          "y": 928,
+          "width": 293,
+          "height": 326
+        },
+        {
+          "cell_index": 14,
+          "x": 627,
+          "y": 928,
+          "width": 297,
+          "height": 326
+        },
+        {
+          "cell_index": 15,
+          "x": 924,
+          "y": 928,
+          "width": 330,
+          "height": 326
+        }
+      ],
+      "sha256": "f570ef0f39f2c20b47389a912ee71e60d0cdfff6bab304c9555e76087cf4d2bf",
+      "width": 1254,
+      "height": 1254,
+      "gaps": [
+        {
+          "axis": "rows",
+          "boundary": 1,
+          "cut": 343,
+          "gap_start": 325,
+          "gap_end": 362,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "rows",
+          "boundary": 2,
+          "cut": 635,
+          "gap_start": 620,
+          "gap_end": 651,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "rows",
+          "boundary": 3,
+          "cut": 928,
+          "gap_start": 927,
+          "gap_end": 929,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 1,
+          "cut": 299,
+          "gap_start": 295,
+          "gap_end": 304,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 2,
+          "cut": 633,
+          "gap_start": 633,
+          "gap_end": 634,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 3,
+          "cut": 945,
+          "gap_start": 941,
+          "gap_end": 949,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 1,
+          "cut": 334,
+          "gap_start": 334,
+          "gap_end": 335,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 2,
+          "cut": 617,
+          "gap_start": 617,
+          "gap_end": 618,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 3,
+          "cut": 938,
+          "gap_start": 938,
+          "gap_end": 939,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 1,
+          "cut": 312,
+          "gap_start": 312,
+          "gap_end": 313,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 3,
+          "cut": 939,
+          "gap_start": 929,
+          "gap_end": 949,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 1,
+          "cut": 334,
+          "gap_start": 334,
+          "gap_end": 335,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 615,
+          "gap_end": 640,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 3,
+          "cut": 924,
+          "gap_start": 918,
+          "gap_end": 931,
+          "method": "alpha_zero"
+        }
+      ],
+      "warnings": [
+        "Some boundaries contain faint alpha at most 32; no stronger foreground is cut."
+      ],
+      "foreground_outer_edge_pixels": 0
+    },
+    "S07": {
+      "atlas_id": "S07",
+      "image_path": "assets/atlases/S07.png",
+      "status": "passed",
+      "regions": [
+        {
+          "cell_index": 0,
+          "x": 0,
+          "y": 0,
+          "width": 316,
+          "height": 336
+        },
+        {
+          "cell_index": 1,
+          "x": 316,
+          "y": 0,
+          "width": 309,
+          "height": 336
+        },
+        {
+          "cell_index": 2,
+          "x": 625,
+          "y": 0,
+          "width": 338,
+          "height": 336
+        },
+        {
+          "cell_index": 3,
+          "x": 963,
+          "y": 0,
+          "width": 291,
+          "height": 336
+        },
+        {
+          "cell_index": 4,
+          "x": 0,
+          "y": 336,
+          "width": 317,
+          "height": 292
+        },
+        {
+          "cell_index": 5,
+          "x": 317,
+          "y": 336,
+          "width": 316,
+          "height": 292
+        },
+        {
+          "cell_index": 6,
+          "x": 633,
+          "y": 336,
+          "width": 304,
+          "height": 292
+        },
+        {
+          "cell_index": 7,
+          "x": 937,
+          "y": 336,
+          "width": 317,
+          "height": 292
+        },
+        {
+          "cell_index": 8,
+          "x": 0,
+          "y": 628,
+          "width": 338,
+          "height": 306
+        },
+        {
+          "cell_index": 9,
+          "x": 338,
+          "y": 628,
+          "width": 292,
+          "height": 306
+        },
+        {
+          "cell_index": 10,
+          "x": 630,
+          "y": 628,
+          "width": 310,
+          "height": 306
+        },
+        {
+          "cell_index": 11,
+          "x": 940,
+          "y": 628,
+          "width": 314,
+          "height": 306
+        },
+        {
+          "cell_index": 12,
+          "x": 0,
+          "y": 934,
+          "width": 344,
+          "height": 320
+        },
+        {
+          "cell_index": 13,
+          "x": 344,
+          "y": 934,
+          "width": 283,
+          "height": 320
+        },
+        {
+          "cell_index": 14,
+          "x": 627,
+          "y": 934,
+          "width": 307,
+          "height": 320
+        },
+        {
+          "cell_index": 15,
+          "x": 934,
+          "y": 934,
+          "width": 320,
+          "height": 320
+        }
+      ],
+      "sha256": "18855e9f08db174193237853b8db393904a472e3376c7306a470ae5058a38479",
+      "width": 1254,
+      "height": 1254,
+      "gaps": [
+        {
+          "axis": "rows",
+          "boundary": 1,
+          "cut": 336,
+          "gap_start": 313,
+          "gap_end": 359,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "rows",
+          "boundary": 2,
+          "cut": 628,
+          "gap_start": 616,
+          "gap_end": 640,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "rows",
+          "boundary": 3,
+          "cut": 934,
+          "gap_start": 933,
+          "gap_end": 935,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 1,
+          "cut": 316,
+          "gap_start": 315,
+          "gap_end": 317,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 2,
+          "cut": 625,
+          "gap_start": 625,
+          "gap_end": 626,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 3,
+          "cut": 963,
+          "gap_start": 963,
+          "gap_end": 964,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 1,
+          "cut": 317,
+          "gap_start": 305,
+          "gap_end": 330,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 2,
+          "cut": 633,
+          "gap_start": 633,
+          "gap_end": 634,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 3,
+          "cut": 937,
+          "gap_start": 936,
+          "gap_end": 939,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 1,
+          "cut": 338,
+          "gap_start": 338,
+          "gap_end": 339,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 2,
+          "cut": 630,
+          "gap_start": 601,
+          "gap_end": 659,
+          "method": "alpha_at_most_32"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 3,
+          "cut": 940,
+          "gap_start": 937,
+          "gap_end": 943,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 1,
+          "cut": 344,
+          "gap_start": 344,
+          "gap_end": 345,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 3,
+          "cut": 934,
+          "gap_start": 934,
+          "gap_end": 935,
+          "method": "alpha_zero"
+        }
+      ],
+      "warnings": [
+        "Some boundaries contain faint alpha at most 32; no stronger foreground is cut."
+      ],
+      "foreground_outer_edge_pixels": 0
+    },
+    "S08": {
+      "atlas_id": "S08",
+      "image_path": "assets/atlases/S08.png",
+      "status": "passed",
+      "regions": [
+        {
+          "cell_index": 0,
+          "x": 0,
+          "y": 0,
+          "width": 310,
+          "height": 307
+        },
+        {
+          "cell_index": 1,
+          "x": 310,
+          "y": 0,
+          "width": 315,
+          "height": 307
+        },
+        {
+          "cell_index": 2,
+          "x": 625,
+          "y": 0,
+          "width": 311,
+          "height": 307
+        },
+        {
+          "cell_index": 3,
+          "x": 936,
+          "y": 0,
+          "width": 318,
+          "height": 307
+        },
+        {
+          "cell_index": 4,
+          "x": 0,
+          "y": 307,
+          "width": 312,
+          "height": 320
+        },
+        {
+          "cell_index": 5,
+          "x": 312,
+          "y": 307,
+          "width": 315,
+          "height": 320
+        },
+        {
+          "cell_index": 6,
+          "x": 627,
+          "y": 307,
+          "width": 309,
+          "height": 320
+        },
+        {
+          "cell_index": 7,
+          "x": 936,
+          "y": 307,
+          "width": 318,
+          "height": 320
+        },
+        {
+          "cell_index": 8,
+          "x": 0,
+          "y": 627,
+          "width": 313,
+          "height": 301
+        },
+        {
+          "cell_index": 9,
+          "x": 313,
+          "y": 627,
+          "width": 315,
+          "height": 301
+        },
+        {
+          "cell_index": 10,
+          "x": 628,
+          "y": 627,
+          "width": 319,
+          "height": 301
+        },
+        {
+          "cell_index": 11,
+          "x": 947,
+          "y": 627,
+          "width": 307,
+          "height": 301
+        },
+        {
+          "cell_index": 12,
+          "x": 0,
+          "y": 928,
+          "width": 310,
+          "height": 326
+        },
+        {
+          "cell_index": 13,
+          "x": 310,
+          "y": 928,
+          "width": 309,
+          "height": 326
+        },
+        {
+          "cell_index": 14,
+          "x": 619,
+          "y": 928,
+          "width": 322,
+          "height": 326
+        },
+        {
+          "cell_index": 15,
+          "x": 941,
+          "y": 928,
+          "width": 313,
+          "height": 326
+        }
+      ],
+      "sha256": "c5dab715e04cd0e227908138d0e48b71aa940dc7f34a4a374104f37f64d8c28a",
+      "width": 1254,
+      "height": 1254,
+      "gaps": [
+        {
+          "axis": "rows",
+          "boundary": 1,
+          "cut": 307,
+          "gap_start": 306,
+          "gap_end": 308,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "rows",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "rows",
+          "boundary": 3,
+          "cut": 928,
+          "gap_start": 925,
+          "gap_end": 931,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 1,
+          "cut": 310,
+          "gap_start": 306,
+          "gap_end": 314,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 2,
+          "cut": 625,
+          "gap_start": 617,
+          "gap_end": 634,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_0_columns",
+          "boundary": 3,
+          "cut": 936,
+          "gap_start": 933,
+          "gap_end": 940,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 1,
+          "cut": 312,
+          "gap_start": 312,
+          "gap_end": 313,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 2,
+          "cut": 627,
+          "gap_start": 627,
+          "gap_end": 628,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_1_columns",
+          "boundary": 3,
+          "cut": 936,
+          "gap_start": 935,
+          "gap_end": 937,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 1,
+          "cut": 313,
+          "gap_start": 304,
+          "gap_end": 322,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 2,
+          "cut": 628,
+          "gap_start": 627,
+          "gap_end": 630,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_2_columns",
+          "boundary": 3,
+          "cut": 947,
+          "gap_start": 937,
+          "gap_end": 957,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 1,
+          "cut": 310,
+          "gap_start": 306,
+          "gap_end": 314,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 2,
+          "cut": 619,
+          "gap_start": 619,
+          "gap_end": 620,
+          "method": "alpha_zero"
+        },
+        {
+          "axis": "row_3_columns",
+          "boundary": 3,
+          "cut": 941,
+          "gap_start": 933,
+          "gap_end": 949,
+          "method": "alpha_zero"
+        }
+      ],
+      "warnings": [],
+      "foreground_outer_edge_pixels": 0
+    }
+  }
+}

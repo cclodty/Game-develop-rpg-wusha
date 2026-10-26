@@ -1,0 +1,218 @@
+{
+  "atlas_id": "S06",
+  "image_path": "assets/atlases/S06.png",
+  "columns": 4,
+  "rows": 4,
+  "width": 1254,
+  "height": 1254,
+  "sha256": "f570ef0f39f2c20b47389a912ee71e60d0cdfff6bab304c9555e76087cf4d2bf",
+  "source_path": "/workspace/generated_images/exec-71add9b2-9bd2-4e74-9651-f0ee06454b58.png",
+  "prompt": "Generate one square transparent production game inventory atlas for KONGTONG martial sect. Sixteen separate hand-painted inventory icons in a precise invisible 4x4 equal-cell layout. STRICT CENTERS: x=12.5%,37.5%,62.5%,87.5% and y=12.5%,37.5%,62.5%,87.5%. Each object or explicitly specified set is SMALL, occupying only 50–60% of its cell width and height, giving broad completely transparent margins. All sixteen icons must be isolated, separated by generous transparent horizontal and vertical strips. Nothing touches the canvas edges or crosses any cell boundary. NO text, NO letters, NO writing, NO labels, NO digits, NO visible grid, NO frame, NO background, NO glow. Manuscripts use only tiny pictorial geometric motifs, blank pages with diagrams, never script. Hand-painted chibi wuxia props, watercolor/gouache texture, fine warm brown outlines, soft upper-left lighting, 3/4 top-down view. Color identity: rust red, muted stone gray, warm ivory paper and aged bronze. Distinct binding and silhouette for each manuscript; do not make identical recolored books. Consistent visual weight. Output only the atlas on real transparent alpha.\nPlace the following in strict row-major order; numbers are instructions only, never draw them:\n1. Slim stone-gray rough-paper fist manual, rust-red stitching, square doorway and fist emblem.\n2. Rust-red accordion combat diagram with stone-gray cloth spine and circular black shoulder-elbow paths.\n3. Thick stone-gray hardbound manual, rust-red metal corners, inset diagonal cracked-stone motif.\n4. Paired stone-gray folded leaves tied with rust-red cord, crossed short-blade and hand silhouettes.\n5. Small booklet of stone-gray wooden slats threaded with rust-red cord, stable foot silhouettes on the end slat.\n6. Rust-red cloth book with wide stone-gray page margins and evenly spaced bronze rings along the spine.\n7. Double stone-gray book wrapper around a rust-red volume, central bronze clasp shaped like folded short blades.\n8. Stone-gray folded footwork chart on rust-red cloth backing, compact black footprints and a small pebble weight.\n9. Four overlapping stone-gray instruction slips, rust-red directional tabs and a bronze corner clip.\n10. Dusty stone-gray training journal bound with rust-red strap, a worn short bamboo gauge tucked across the cover.\n11. Short blunt square-ridged iron truncheon, stone-gray finish, rust-red leather grip and round bronze guard.\n12. Crossed compact stone-gray hook weapons, thick inner hand rings, short outer curves and rust-red wraps.\n13. Stone-gray short martial jacket, rust-red sleeve ties and belt, square leather elbow reinforcement.\n14. Square aged bronze token with a stone-gray doorway motif, rust-red cord and three shallow tally grooves.\n15. Flat stone-gray ceramic balm pot sealed with rust-red paper, folded coarse hand wraps beside it.\n16. Five fan-arranged stone-gray rubbings in a rust-red cloth roll, forming a circular stone-gate seal.",
+  "item_ids": [
+    "KT001",
+    "KT002",
+    "KT003",
+    "KT004",
+    "KT005",
+    "KT006",
+    "KT007",
+    "KT008",
+    "KT009",
+    "KT010",
+    "KT011",
+    "KT012",
+    "KT013",
+    "KT014",
+    "KT015",
+    "KT016"
+  ],
+  "visual_review": "已逐格目視確認16件，灰石／鏽紅配色、拳掌圖、木片冊、短鐧與雙鉤可辨。完整剪影分離且外緣未裁切；部分第一列物件跨越名義四等分橫界，應以透明間隙記錄實際取樣區域，勿盲用等格裁切。頁面只見圖示與幾何符號，無可讀標籤。",
+  "read_only_alpha_checks": {
+    "width": 1254,
+    "height": 1254,
+    "sha256": "f570ef0f39f2c20b47389a912ee71e60d0cdfff6bab304c9555e76087cf4d2bf",
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "nonempty_cells": 16,
+    "nominal_vertical_divider_max_alpha": [
+      253,
+      1,
+      235
+    ],
+    "nominal_horizontal_divider_max_alpha": [
+      255,
+      1,
+      254
+    ],
+    "outer_edge_max_alpha": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "cells": [
+      {
+        "cell_index": 0,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          62,
+          82,
+          291,
+          314
+        ]
+      },
+      {
+        "cell_index": 1,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          34,
+          104,
+          296,
+          287
+        ]
+      },
+      {
+        "cell_index": 2,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          22,
+          81,
+          270,
+          314
+        ]
+      },
+      {
+        "cell_index": 3,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          19,
+          80,
+          262,
+          314
+        ]
+      },
+      {
+        "cell_index": 4,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          49,
+          0,
+          307,
+          292
+        ]
+      },
+      {
+        "cell_index": 5,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          39,
+          48,
+          280,
+          306
+        ]
+      },
+      {
+        "cell_index": 6,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          6,
+          0,
+          275,
+          305
+        ]
+      },
+      {
+        "cell_index": 7,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          5,
+          0,
+          268,
+          283
+        ]
+      },
+      {
+        "cell_index": 8,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          50,
+          30,
+          297,
+          313
+        ]
+      },
+      {
+        "cell_index": 9,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          36,
+          24,
+          276,
+          281
+        ]
+      },
+      {
+        "cell_index": 10,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          18,
+          44,
+          286,
+          273
+        ]
+      },
+      {
+        "cell_index": 11,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          31,
+          37,
+          275,
+          262
+        ]
+      },
+      {
+        "cell_index": 12,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          42,
+          0,
+          314,
+          246
+        ]
+      },
+      {
+        "cell_index": 13,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          0,
+          12,
+          287,
+          240
+        ]
+      },
+      {
+        "cell_index": 14,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          23,
+          35,
+          313,
+          240
+        ]
+      },
+      {
+        "cell_index": 15,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          0,
+          11,
+          289,
+          244
+        ]
+      }
+    ]
+  }
+}

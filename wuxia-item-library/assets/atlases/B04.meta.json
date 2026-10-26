@@ -1,0 +1,212 @@
+{
+  "atlas_id": "B04",
+  "image_path": "assets/atlases/B04.png",
+  "columns": 4,
+  "rows": 4,
+  "source_path": "/workspace/generated_images/exec-32fd8491-fa0c-4521-89b4-07d2e98f1162.png",
+  "prompt": "A square transparent game inventory atlas of sixteen unusual wuxia weapons. STRICT4 columns by4 rows invisible equal cells. Row-major16 groups specified below. Draw SMALL ICONS with VERY LARGE EMPTY TRANSPARENT GAPS: total group width and height must never exceed60% of one cell. Exact center coordinates x12.5%,37.5%,62.5%,87.5% and same y. Every chain, rope, matched pair and net is neatly coiled or arranged INSIDE its own small group; groups never touch. Long items diagonal. Hand-painted watercolor and gouache with fine warm brown outlines, ivory/jade/coral restrained accents, naturally colored wood/leather/steel, soft top-left light; original Ming-inspired low-mid fantasy, crisp recognizable rounded forms. No labels, writing, numbers, borders, frames, grids, panels, background, glow or shadows. Full transparent background. Order left to right then top to bottom:\n1. Two dark wooden short sticks linked by thick pale rope\n2. Three section hardwood staff linked by black iron rings, red grip wraps\n3. Coiled segmented black iron chain whip, conical tip, short wood handle\n4. Long rope with heavy spherical iron weights at both ends, leather center wrap\n5. Oval cork training weight attached to long hemp rope and cloth knot\n6. Slender silver rope dart, red cloth streamer, coiled hemp rope\n7. Short inward curved sickle connected to dark chain and flat round weight\n8. Pair of long hook swords with crescent guards and pointed pommels\n9. Pair of intersecting crescent deer horn blades with central leather grips\n10. Dark blue folding fan with exposed silver steel ribs and black lacquer grip\n11. Pair of thick steel rings with pale bamboo wrapped grip segments\n12. Dark grey stylus shaped iron short weapon, blunt point, ridged grip\n13. Coiled reddish brown braided leather whip, thick handle, thin black tip\n14. Pair of hardwood side handle batons with iron capped front ends\n15. Two square iron short bars linked by heavy short chain, leather end grips\n16. Bundled rope casting net with small edge weights and a single tether",
+  "item_ids": [
+    "BASE049",
+    "BASE050",
+    "BASE051",
+    "BASE052",
+    "BASE053",
+    "BASE054",
+    "BASE055",
+    "BASE056",
+    "BASE057",
+    "BASE058",
+    "BASE059",
+    "BASE060",
+    "BASE061",
+    "BASE062",
+    "BASE063",
+    "BASE064"
+  ],
+  "visual_review": {
+    "reviewed": true,
+    "notes": "16 distinct unusual weapon groups in expected row-major order. Coils, matched pairs and net remain grouped. No obvious cropped outer silhouette or overlapping item groups. Some items are larger than the requested60-percent occupancy; alpha boundary metrics identify any grid drift. Decorative marks on fan are motifs, not intended readable text."
+  },
+  "width": 1254,
+  "height": 1254,
+  "mode": "RGBA",
+  "sha256": "d8757c746016c0ea892aac23a6cfe75a628b55f0849a1885a5bc68e657f179c7",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "cells": [
+    {
+      "cell_index": 0,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        64,
+        75,
+        289,
+        301
+      ]
+    },
+    {
+      "cell_index": 1,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        42,
+        49,
+        295,
+        305
+      ]
+    },
+    {
+      "cell_index": 2,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        49,
+        81,
+        287,
+        301
+      ]
+    },
+    {
+      "cell_index": 3,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        24,
+        80,
+        263,
+        294
+      ]
+    },
+    {
+      "cell_index": 4,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        50,
+        62,
+        287,
+        292
+      ]
+    },
+    {
+      "cell_index": 5,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        38,
+        41,
+        299,
+        275
+      ]
+    },
+    {
+      "cell_index": 6,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        57,
+        55,
+        282,
+        290
+      ]
+    },
+    {
+      "cell_index": 7,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        55,
+        35,
+        268,
+        294
+      ]
+    },
+    {
+      "cell_index": 8,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        64,
+        33,
+        290,
+        313
+      ]
+    },
+    {
+      "cell_index": 9,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        33,
+        36,
+        295,
+        313
+      ]
+    },
+    {
+      "cell_index": 10,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        53,
+        59,
+        290,
+        313
+      ]
+    },
+    {
+      "cell_index": 11,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        58,
+        29,
+        248,
+        268
+      ]
+    },
+    {
+      "cell_index": 12,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        66,
+        0,
+        294,
+        254
+      ]
+    },
+    {
+      "cell_index": 13,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        41,
+        0,
+        304,
+        235
+      ]
+    },
+    {
+      "cell_index": 14,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        43,
+        0,
+        292,
+        252
+      ]
+    },
+    {
+      "cell_index": 15,
+      "nonempty": true,
+      "local_alpha_bbox": [
+        17,
+        11,
+        277,
+        252
+      ]
+    }
+  ],
+  "boundary_pixels_alpha_gt32": {
+    "vertical": [
+      0,
+      0,
+      0
+    ],
+    "horizontal": [
+      0,
+      0,
+      572
+    ]
+  }
+}

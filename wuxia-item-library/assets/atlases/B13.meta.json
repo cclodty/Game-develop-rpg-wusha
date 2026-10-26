@@ -1,0 +1,132 @@
+{
+  "atlas_id": "B13",
+  "image_path": "assets/atlases/B13.png",
+  "columns": 4,
+  "rows": 4,
+  "width": 1254,
+  "height": 1254,
+  "sha256": "095228dffb6026b5e070f7a978b1bc146e475f544b566396c9d91cdcd44517c4",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "cell_bboxes_alpha128": [
+    [
+      89,
+      93,
+      314,
+      298
+    ],
+    [
+      0,
+      75,
+      272,
+      307
+    ],
+    [
+      75,
+      90,
+      225,
+      298
+    ],
+    [
+      21,
+      87,
+      256,
+      297
+    ],
+    [
+      59,
+      63,
+      307,
+      287
+    ],
+    [
+      41,
+      81,
+      303,
+      279
+    ],
+    [
+      46,
+      52,
+      292,
+      278
+    ],
+    [
+      40,
+      73,
+      241,
+      269
+    ],
+    [
+      58,
+      68,
+      311,
+      313
+    ],
+    [
+      54,
+      43,
+      291,
+      247
+    ],
+    [
+      70,
+      18,
+      243,
+      249
+    ],
+    [
+      39,
+      49,
+      260,
+      252
+    ],
+    [
+      95,
+      0,
+      268,
+      211
+    ],
+    [
+      62,
+      27,
+      312,
+      211
+    ],
+    [
+      61,
+      17,
+      274,
+      214
+    ],
+    [
+      19,
+      29,
+      274,
+      219
+    ]
+  ],
+  "source_path": "/workspace/generated_images/exec-67beb659-0f24-46e5-b999-0da45c1406eb.png",
+  "prompt": "A game inventory icon sheet with SIXTEEN SMALL travel props. Square transparent canvas and EXACT uniform 4x4 arrangement. Important: reserve broad invisible gutters; all objects must be SMALL enough to fit inside the central 50% width and 50% height of their own cell. Leave lots of EMPTY SPACE. Object centers exactly x=12.5%,37.5%,62.5%,87.5%, and y=12.5%,37.5%,62.5%,87.5% of canvas. Silhouettes complete, never touch cell boundaries. Fully transparent background, no shadows beyond each object. No text, labels, writing, numbers, grid, frames, border, watermark, glow. Charming traditional Ming-inspired wuxia inventory art, hand painted watercolor and gouache, warm brown thin outlines, ivory/jade/coral and natural materials, soft top-left light, three-quarter overhead. Draw exactly one specified object or its small companion set at each center, in row-major left-to-right top-to-bottom order:\n1. Indigo gray square bottom travel sack, broad hemp strap, brown reinforced base.\n2. Tall yellow green bamboo basket backpack with cloth straps and cream lining flap.\n3. Pale paulownia upright book box with brown leather corners and simple brass latch.\n4. Half open warm cream oil paper umbrella, visible bamboo ribs and curved wooden handle.\n5. Short straw rain cape with layered coarse golden brown fibers.\n6. Broad conical light brown woven bamboo hat with thin black chin cord.\n7. Flat round dark brown leather waterskin with pale wooden stopper and long strap.\n8. Single green bamboo cylinder with round wooden plug and cream cord loop.\n9. Three fold gray brown felt sleeping pad with cloth hinges and tied cord.\n10. Broad coil of thick brown hemp rope with light wrapped ends.\n11. Small round ivory paper lantern with bamboo ribs, carry handle and dark red base.\n12. Open small brown leather pouch with gray flint and curved dark fire steel.\n13. Two tier warm brown wooden lunch carrier with arched handle and square lacquer latch.\n14. Three section folding wooden ruler beside a thin knotted measuring cord.\n15. Small brass travel bell with slit openings and indigo fabric strap.\n16. Flat dark brown waist pouch with open flap, three cloth pockets and thin ties.",
+  "item_ids": [
+    "BASE193",
+    "BASE194",
+    "BASE195",
+    "BASE196",
+    "BASE197",
+    "BASE198",
+    "BASE199",
+    "BASE200",
+    "BASE201",
+    "BASE202",
+    "BASE203",
+    "BASE204",
+    "BASE205",
+    "BASE206",
+    "BASE207",
+    "BASE208"
+  ],
+  "visual_review": "All 16 travel supplies identifiable and in correct row-major order, with complete visible silhouettes and transparent gaps. Lantern includes a warm cream paper surface, not a detached glow. Images are larger than requested 50% occupancy; center spacing has small deviations. Some equal-cell bboxes touch boundaries due to neighboring silhouettes or faint paint fringes; use measured per-item regions rather than assuming exact cell-edge clearance. No object visibly clipped at canvas perimeter."
+}

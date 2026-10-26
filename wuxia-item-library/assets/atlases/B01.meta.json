@@ -1,0 +1,31 @@
+{
+  "atlas_id": "B01",
+  "image_path": "assets/atlases/B01.png",
+  "columns": 4,
+  "rows": 4,
+  "source_path": "/workspace/generated_images/exec-4da87fcd-d7d7-4a2f-92a3-f4e17523e384.png",
+  "prompt": "Create a production-ready inventory sprite atlas for a warm hand-painted chibi wuxia RPG. SQUARE canvas, exact 4 columns by 4 rows of equally sized invisible square cells, 16 icons in row-major order. TRUE TRANSPARENT BACKGROUND. NO text, numbers, labels, grid lines, frames, logos or watermark. Watercolor/gouache texture, warm brown fine outlines, restrained jade/cream/coral accents, coherent scale and top-left soft lighting. Each item centered wholly inside its own cell with generous at least 15% empty space on ALL sides, no overlapping cells. Long swords diagonally oriented bottom-left to top-right to fit entire blade and hilt. Each cell exactly one item or explicitly paired set. Visually distinguish every silhouette, no generic repeats. Ming-inspired fantasy props, no neon or magic effects. These 16 cell descriptions in exact order:\n1. Honey brown wooden practice sword, blunt rounded tip, rope grip\n2. Plain dark iron straight sword, small oval guard, leather grip\n3. Very narrow silver thrusting sword, tapered needle point, black wood grip\n4. Short leaf shaped double edged sword, bronze guard, blue cloth sheath\n5. Broad straight sword with thick central ridge and trapezoid iron guard\n6. Heavy thick straight sword, ring pommel, long dark brown grip\n7. Matched long and short straight swords with a divided wooden scabbard\n8. Thin flexible gently curving silver sword, tiny brass guard, soft leather sheath\n9. Straight sword with open cage iron handguard and russet leather grip\n10. Straight laminated steel sword, subtle wavy forging lines, flat round guard\n11. Long slender straight sword, iron capped scabbard, brown tassel\n12. Long straight two handed sword, extended black cord grip, straight crossguard\n13. Straight sword ending in a short forked swallowtail tip, round brass guard\n14. Palm length narrow dagger sword beside a sliding lid wooden case\n15. Blunt steel training sword, flat squared tip, broad guard, white grip wrap\n16. Ceremonial straight sword, dark red lacquer scabbard, brass cloud inlays",
+  "item_ids": [
+    "BASE001",
+    "BASE002",
+    "BASE003",
+    "BASE004",
+    "BASE005",
+    "BASE006",
+    "BASE007",
+    "BASE008",
+    "BASE009",
+    "BASE010",
+    "BASE011",
+    "BASE012",
+    "BASE013",
+    "BASE014",
+    "BASE015",
+    "BASE016"
+  ],
+  "visual_review": "已檢視16格，劍形、護手及劍鞘可辨，未見缺格或相鄰物品混入。美術為生成版本，細部材質可能與文字描述略有差異。",
+  "width": 1254,
+  "height": 1254,
+  "mode": "RGBA",
+  "sha256": "7ba75b180748688139d422a5fc2074aefa8183347bba57a2f8281c4cf22bb6c5"
+}

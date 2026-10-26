@@ -1,0 +1,220 @@
+{
+  "atlas_id": "S05",
+  "image_path": "assets/atlases/S05.png",
+  "columns": 4,
+  "rows": 4,
+  "width": 1254,
+  "height": 1254,
+  "sha256": "1e1242d6a8ca2be8f06868c6362616800e137a81498b4ccf2ac6035d52215270",
+  "source_path": "/workspace/generated_images/exec-f992fc83-6db5-4380-9abb-6fbf7aacf5ff.png",
+  "prompt": "Create a production-ready square transparent game inventory icon atlas for the KUNLUN mountain martial sect. EXACTLY sixteen separate icons in an invisible, mathematically equal 4 by 4 grid, strict row-major order. Each cell contains one self-contained object or the explicitly described inseparable object set. Keep every object entirely within its cell with at least 15 percent empty margin on all four sides. Nothing crosses a cell boundary. No scene, no decorative backing, no borders, no frames, no grid lines, no lettering, no words, no numbers, no labels, no logos, no glowing aura. Book covers have ONLY abstract pictorial non-letter motifs. Hand-painted polished chibi wuxia prop art: watercolor and gouache texture, fine warm-brown outlines, readable rounded silhouettes, gentle upper-left lighting, modest soft highlights, muted ice blue and ochre with ivory paper and worn wood. Consistent 3/4 top-down object view and consistent visual scale. Each silhouette must be distinct, especially the ten manuscripts: use the specified varied bindings, folds, paper shapes, clips and wraps. Do not turn all books into identical rectangles. Transparent alpha background all around objects and between cells. Deliver the single square atlas, not a mockup.\nItems in strict left-to-right top-to-bottom order (indices for placement only, NEVER write index on image):\n1. Slim ice-blue clothbound sword manual, ochre stitching, embossed twin ridgelines and one small sword motif.\n2. Ochre accordion-fold diagram with ice-blue edging, three ink mountains linked by angular sword-path marks.\n3. Narrow ice-blue silk scroll on two ochre wooden rollers, unfolding cloud turns and a silver sword silhouette.\n4. Half-curled pale stone rubbing, ochre wooden clamp, sharp sword grooves and sparse ice-blue annotations.\n5. Small ochre soft-leather breathing book, ice-blue ribbon, single winding mountain path embossed on cover.\n6. Thick ivory stitched book with ice-blue spine and three ochre leaf-shaped bookmarks fanning outward.\n7. Rigid ice-blue book case with ochre-gold peak-shaped clasp and visible ivory page edges.\n8. Narrow ochre folded route chart with ice-blue footprints along a ridge and a short hemp corner tie.\n9. Fan-open ice-blue pivot-bound booklet, ochre rivet at one corner, curved footprint diagrams on pages.\n10. Weathered ochre leather notebook with ice-blue patch, short charcoal pencil and folded slips tucked inside.\n11. Slender silver-gray straight sword, ice-blue wrapped grip, ochre wooden scabbard with twin-peak bronze fitting.\n12. Broad two-handed straight sword with long ochre grip, ice-blue guard cord and scuffed iron scabbard.\n13. Ice-blue short mountain cape, ochre trim, layered standing collar and crossed fastening straps.\n14. Ochre wooden twin-peak token with an ice-blue cord knot and a shallow record groove on the back.\n15. Small stacked ochre travel cakes in waxed paper, ice-blue cloth wrap tied with thin hemp string.\n16. Narrow ochre wooden map case with ice-blue cloud inlays, twin-peak sliding clasp and worn metal corners.",
+  "item_ids": [
+    "KL001",
+    "KL002",
+    "KL003",
+    "KL004",
+    "KL005",
+    "KL006",
+    "KL007",
+    "KL008",
+    "KL009",
+    "KL010",
+    "KL011",
+    "KL012",
+    "KL013",
+    "KL014",
+    "KL015",
+    "KL016"
+  ],
+  "visual_review": "已逐格目視確認十種書冊／圖紙、兩種劍器、披衣、雙峰牌、乾糧與圖匣，共16件按序排列。初稿有格界擁擠與札記似字筆畫；本圖為 image_gen 留白修正版，書頁改為非文字點紋。完整剪影分離且外緣未裁切，名義等格線仍須依透明區測量，不宣稱每格均達20%留白。",
+  "read_only_alpha_checks": {
+    "width": 1254,
+    "height": 1254,
+    "sha256": "1e1242d6a8ca2be8f06868c6362616800e137a81498b4ccf2ac6035d52215270",
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "nonempty_cells": 16,
+    "nominal_vertical_divider_max_alpha": [
+      1,
+      1,
+      1
+    ],
+    "nominal_horizontal_divider_max_alpha": [
+      1,
+      0,
+      1
+    ],
+    "outer_edge_max_alpha": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "cells": [
+      {
+        "cell_index": 0,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          71,
+          72,
+          269,
+          290
+        ]
+      },
+      {
+        "cell_index": 1,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          52,
+          90,
+          276,
+          255
+        ]
+      },
+      {
+        "cell_index": 2,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          55,
+          63,
+          287,
+          298
+        ]
+      },
+      {
+        "cell_index": 3,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          31,
+          76,
+          257,
+          289
+        ]
+      },
+      {
+        "cell_index": 4,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          71,
+          59,
+          285,
+          275
+        ]
+      },
+      {
+        "cell_index": 5,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          43,
+          56,
+          285,
+          276
+        ]
+      },
+      {
+        "cell_index": 6,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          54,
+          57,
+          283,
+          280
+        ]
+      },
+      {
+        "cell_index": 7,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          41,
+          58,
+          269,
+          282
+        ]
+      },
+      {
+        "cell_index": 8,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          63,
+          45,
+          294,
+          267
+        ]
+      },
+      {
+        "cell_index": 9,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          54,
+          39,
+          270,
+          271
+        ]
+      },
+      {
+        "cell_index": 10,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          45,
+          29,
+          283,
+          275
+        ]
+      },
+      {
+        "cell_index": 11,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          53,
+          18,
+          266,
+          285
+        ]
+      },
+      {
+        "cell_index": 12,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          53,
+          21,
+          288,
+          250
+        ]
+      },
+      {
+        "cell_index": 13,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          65,
+          40,
+          286,
+          250
+        ]
+      },
+      {
+        "cell_index": 14,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          62,
+          43,
+          271,
+          241
+        ]
+      },
+      {
+        "cell_index": 15,
+        "nonempty": true,
+        "alpha32_bbox_in_nominal_cell": [
+          42,
+          23,
+          249,
+          252
+        ]
+      }
+    ]
+  },
+  "edit_prompt": "Edit this existing sixteen-icon atlas. Preserve all sixteen KUNLUN objects, their exact row-major order, materials, colors and hand-painted style. CRITICAL: rebuild the layout as a perfectly equal invisible 4x4 grid on a square transparent canvas, with each object centered at the EXACT center of its own square cell. REDUCE every object/set to at most 60% of its cell width AND 60% of its cell height. Thus EVERY cell has at least 20% completely empty transparent space on all four edges. All three full-width horizontal grid-divider strips and all three full-height vertical divider strips must be fully transparent, with substantial empty space around each. No part of any icon may enter any other cell. In the third row second column remove the writing-like scribbles from the notebook paper; replace with entirely blank ivory paper and a tiny non-letter dot motif. NO text, lettering, writing, labels, borders or visible grid lines anywhere. Do not add, remove or duplicate objects. Transparent background; same original sixteen items from the reference.",
+  "initial_source_path": "/workspace/generated_images/exec-563e835b-2d2e-403d-803f-a913f0494e77.png"
+}

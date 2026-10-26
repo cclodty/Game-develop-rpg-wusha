@@ -1,0 +1,46 @@
+{
+  "atlas_id": "S03",
+  "image_path": "assets/atlases/S03.png",
+  "columns": 4,
+  "rows": 4,
+  "width": 1254,
+  "height": 1254,
+  "sha256": "47e6f74714235887cdc3f1b2634915dbb4b731e7a79a5ae56331d1e885c5f4a0",
+  "source_path": "/workspace/generated_images/exec-fa9011fc-05e9-46c7-8910-15e7d1f80791.png",
+  "prompt": "Production game inventory icon atlas on perfectly SQUARE fully transparent canvas. Invisible precise 4 by 4 equal square cells, exactly sixteen separate Chinese wuxia inventory icons. SMALL ICONS: every entire silhouette must fit within central 55 percent of both its cell's width and height, leaving at least22 percent fully transparent margin on all four sides. Icon centers exactly at12.5,37.5,62.5,87.5 percent of canvas coordinates. Wide empty transparent gutters at all cell boundaries; no fragments crossing. Original miniature gouache and watercolor, warm-brown delicate outlines, soft top-left light. Emei sect palette: muted jade green, ivory and pale copper, natural aged paper and cloth. No people, no hands, no scenery, no glows, no words, no letters, no pseudo-text, no numerals, no labels, no borders, no visible grid. Book covers only simple geometric leaves, water and mountain motifs. Put exactly these items in this exact row-major sequence, left to right then top to bottom:\n1. Ivory two-leaf sword primer, jade-green twin-leaf seal, pale copper corner protectors.\n2. Thin jade-green folding folio, round water-mirror window exposing wrist-motion lines, white silk band.\n3. Narrow ivory scroll with folded jade-green leaf illustration, flat pale-copper rollers, fine gauze wrap.\n4. Jade cloth-covered horizontal booklet with empty needle sleeve attached, one tiny silver dot emblem.\n5. Cream softcover breathing booklet, jade-green water-drop motif, thin bamboo bookmark at top edge.\n6. Three slim white booklets linked by jade-green ties, small teardrop-shaped jade clasp.\n7. Ivory hard case holding a narrow jade-green volume, frosted round mirror inset with leaf edging.\n8. Rounded white folding map with jade-green spring stones and tiny footprints, pale copper paper clip.\n9. Leaf-shaped cloth sleeve around a slender movement scroll, white-green ties, folded paper corner showing.\n10. Ivory loose-page bundles in a jade lattice-textured folder, tiny leaf seals along page edges.\n11. Crossed silver-white short swords of unequal length, jade-green grips, leaf-shaped pale copper guards.\n12. Slim ivory needle case half open, jade-green lining, neatly separated silver needles, leaf-shaped clasp.\n13. Folded ivory fitted short robe, jade-green forearm guards and lapels, slender leaf-pattern sash.\n14. Jade-green leaf-shaped wooden token, ivory twin-peak inlay, fine white cord through the stem.\n15. White four-corner cloth supply pouch, jade-green tie, pale copper leaf clasp, tiny rest tag beside it.\n16. Small ivory embroidered silk scroll, jade twin peaks and narrow stream, pale copper rollers, unfinished stitches.\nAll paired objects stay together inside their one cell. Keep swords and needle case small enough that tips and handles remain far from boundaries. Full silhouettes, no omissions or added objects, consistent visual weight.",
+  "revision_prompt": "Edit this exact sixteen-item Emei inventory atlas. Preserve all sixteen designs and exact row-major ordering. Fix spacing only: shrink each complete object to 75 percent of its current scale, including every attached cord, handle and scroll corner. Then recenter every object at the exact centers of an invisible4 by4 grid: horizontal and vertical centers12.5%,37.5%,62.5%,87.5%. Fully transparent SQUARE canvas. There must be large continuous TRANSPARENT empty gutters on all six internal dividing lines. Every icon fits inside the central55 percent of its cell. Do not crop or truncate any piece. Do not add text, writing, grids, borders, labels, scenery or glows. Retain original ivory and jade palette, warm fine outlines and gouache texture.",
+  "prior_source_path": "/workspace/generated_images/exec-d32a7e0f-cad8-4e4c-9a2e-a1578c00aaaa.png",
+  "item_ids": [
+    "EM001",
+    "EM002",
+    "EM003",
+    "EM004",
+    "EM005",
+    "EM006",
+    "EM007",
+    "EM008",
+    "EM009",
+    "EM010",
+    "EM011",
+    "EM012",
+    "EM013",
+    "EM014",
+    "EM015",
+    "EM016"
+  ],
+  "visual_review": "Sixteen Emei items match expected row-major order, with distinct ivory/jade book formats, paired short swords, needle case and sect token. One spacing correction preserved all main silhouettes. All six equal-grid boundaries and outer edges have zero alpha>32 pixels; low-alpha painterly residue remains around some icons.",
+  "measurements": {
+    "transparent_ratio": 0.6915891475826001,
+    "v_boundary_pixels": [
+      0,
+      0,
+      0
+    ],
+    "h_boundary_pixels": [
+      0,
+      0,
+      0
+    ],
+    "outer_edge_pixels": 0
+  }
+}

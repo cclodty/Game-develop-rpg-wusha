@@ -1,0 +1,39 @@
+{
+  "atlas_id": "B09",
+  "image_path": "assets/atlases/B09.png",
+  "columns": 4,
+  "rows": 4,
+  "width": 1254,
+  "height": 1254,
+  "sha256": "77cd48aeb8e15ded7b6078b8ea964dfd27a6d87379f5011155d2b4fffab27ad9",
+  "source_path": "/workspace/generated_images/exec-ffd4522c-93f8-43b3-828e-190836e834dd.png",
+  "prompt": "Create ONE square transparent PNG inventory icon atlas for a Ming-inspired wuxia game. EXACT invisible 4 by 4 equal-cell layout with sixteen separate botanical ingredient thumbnail icons. Exactly SIXTEEN distinct fictional herb specimens, each inside a compact silhouette, in the row-major order below. Icon centers at canvas percentages x=12.5,37.5,62.5,87.5 and y=12.5,37.5,62.5,87.5. Each ENTIRE plant bundle including stalks, leaves, containers and roots must fit within the central 50 percent of its own cell width AND height. Very generous fully transparent margins, especially near the outer canvas and every row boundary. Draw small inventory thumbnails, not large page-filling objects. Fine warm brown linework, warm gouache and watercolor texture, muted jade, ivory, coral, ochre and earthy natural colors, top-left lighting. Clearly distinguish leaf shapes, roots, stems, flowers, resin and seeds. NO text, NO labels, NO numbers, NO visible grid, NO frame, NO border, NO background, NO glow, NO halo, NO loose drifting particles. Keep each complete object wholly within its own cell. Exact row-major sequence:\n1. bundle of narrow blue green veined fictional herb leaves with fine roots, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n2. slender stems of tiny golden fictional medicinal flower spikes, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n3. small violet gray fictional moss fragments in a shallow paper tray, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n4. short ivory fictional roots with fuzzy fibers and tan tips, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n5. coiled brown fictional vine with dark red joints and a few green leaves, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n6. paired broad fictional herb leaves showing dark green tops and silver gray backs, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n7. delicate ivory bell shaped fictional dried flowers in a bamboo lattice case, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n8. small pile of matte black fictional medicinal seeds on folded brown paper, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n9. layered fan shaped fictional medicinal fungi with pale cream edges, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n10. thin pale yellow fictional wood slices with narrow dark red cores, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n11. several dark teal fictional dried medicinal berries with pale speckles, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n12. irregular pale blue green fictional resin shards on a dried leaf, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n13. bundle of short tan fictional herb stalks with paired dark rings, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n14. split brown fictional seed pod with pale gray medicinal floss, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n15. curved gray brown fictional medicinal root with tiny golden brown spots, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n16. tiny pale green fictional medicinal orchid in a breathable bamboo basket, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text",
+  "item_ids": [
+    "BASE129",
+    "BASE130",
+    "BASE131",
+    "BASE132",
+    "BASE133",
+    "BASE134",
+    "BASE135",
+    "BASE136",
+    "BASE137",
+    "BASE138",
+    "BASE139",
+    "BASE140",
+    "BASE141",
+    "BASE142",
+    "BASE143",
+    "BASE144"
+  ],
+  "visual_review": {
+    "status": "reviewed",
+    "notes": "Sixteen distinct fictional herb/material compositions in correct order, all visibly separated; no apparent outer silhouette clipping. Resin is stylized with angular crystalline shapes; bundled stems read as bamboo-like. Loose saturated edge speckles and narrower-than-requested margins remain; preserve generated original and use measured runtime regions where needed.",
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "nonempty_cells": 16,
+    "edge_touch_cells": []
+  }
+}

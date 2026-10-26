@@ -1,0 +1,44 @@
+{
+  "atlas_id": "S04",
+  "image_path": "assets/atlases/S04.png",
+  "columns": 4,
+  "rows": 4,
+  "width": 1254,
+  "height": 1254,
+  "sha256": "12ac54729cccfc865b7d66991329bb1ad9ac6e094caeb81a3c793d6507846b37",
+  "source_path": "/workspace/generated_images/exec-56a241f1-2bff-40bd-b2c1-9a566b6d9c3e.png",
+  "prompt": "Create a production Chinese wuxia game inventory atlas: perfectly SQUARE fully TRANSPARENT background. Exactly sixteen separated SMALL inventory icons in an invisible4 by4 grid of equal square cells. Center each at12.5%,37.5%,62.5%,87.5% canvas x/y. Each complete object must fit within CENTRAL50 percent of both cell width and height. This means wide empty transparent gutters and25% margin on every side within each cell. Tall swords are diagonal and shrunk to fit wholly inside cell; cords, tags and scroll ends must not enter neighboring cells. Original gouache watercolor miniature art, fine warm-brown outlines, soft upper-left light. Huashan sect muted palette: dark crimson, slate grey, dull silver. No people, no hands, no scenery, no glow, no text or pseudo-writing, no letters, no numbers, no labels, no frames, no visible grid. Covers have only geometric peaks or sword-line symbols. Exact row-major order, left to right then next row:\n1. Slate-grey stitched sword primer, one dark-crimson ridge and straight sword line, dull silver corners.\n2. Narrow crimson folding diagram in slate hard covers, cloud-gap cutout revealing thin silver sword paths.\n3. Slender dark-grey scroll tied with crimson cord, dull silver sword slash through a solitary peak motif.\n4. Reversible slate folding booklet, red arrow-tail bookmarks at both ends, fine silver central clasp.\n5. Thin slate-grey breathing booklet, dark-crimson sword-tassel bookmark, single dull-silver pointed-leaf seal.\n6. Three-layer slate board folio, rising dark-red mountain lines, flat silver paperweight on cover.\n7. Crimson cloth case holding a slate volume, three dull-silver peak marks, clasp shaped like a tucked sword tassel.\n8. Long grey-paper ridge map, crimson footprints along a narrow crest, slim bamboo strips at both ends.\n9. Three narrow grey bamboo tablets joined by dark-crimson thread, clear silver angular movement paths.\n10. Dark-grey folder with uneven-edged practice notes, crimson correction marks, broken-sword-tip wooden tag.\n11. Dull silver straight sword with a long fine tip, crimson wrapped grip, flat slate guard and short red tassel.\n12. Slate blunt training sword, worn wooden grip, dark-crimson hand cord, small controlled dents on the blade.\n13. Folded slate short robe, dark-crimson sleeve ties and inner lapel, slim silver-grey sash, reinforced shoulders.\n14. Narrow slate wooden token shaped like a blunt sword tip, crimson triple-peak seal, dull silver hanging ring.\n15. Grey-white folded tea packet, dark-crimson ribbon, small three-peak stamp, shallow wooden tea scoop beside it.\n16. Faded crimson sword tassel, cracked dull-silver ring, a tiny slate-grey roster fragment peeking from the knot.\nConsistent visual weight. Exactly these sixteen items. No extra props beyond specified paired pieces. Each paired piece remains inside same cell. Preserve very clear small-size silhouettes.",
+  "item_ids": [
+    "HS001",
+    "HS002",
+    "HS003",
+    "HS004",
+    "HS005",
+    "HS006",
+    "HS007",
+    "HS008",
+    "HS009",
+    "HS010",
+    "HS011",
+    "HS012",
+    "HS013",
+    "HS014",
+    "HS015",
+    "HS016"
+  ],
+  "visual_review": "Sixteen Huashan items in correct row-major order; crimson/slate/silver collection is visually coherent. Sword tips, book corners, tassels and robe silhouette fully preserved. Zero alpha>32 pixels on all six equal-grid boundaries and outer edges. Some tiny low-alpha paint residue around edges; no readable text. The practice-note icon includes schematic sparring figures as part of the illustration.",
+  "measurements": {
+    "transparent_ratio": 0.6501816197736621,
+    "v_boundary_pixels": [
+      0,
+      0,
+      0
+    ],
+    "h_boundary_pixels": [
+      0,
+      0,
+      0
+    ],
+    "outer_edge_pixels": 0
+  }
+}

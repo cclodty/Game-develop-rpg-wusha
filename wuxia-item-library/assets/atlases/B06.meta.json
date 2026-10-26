@@ -1,0 +1,40 @@
+{
+  "atlas_id": "B06",
+  "image_path": "assets/atlases/B06.png",
+  "columns": 4,
+  "rows": 4,
+  "width": 1254,
+  "height": 1254,
+  "sha256": "2a1aff65b243941bb4cdcf4018621834c9997919cb8b66fed10f8860051c4bcc",
+  "source_path": "/workspace/generated_images/exec-31dd319c-d012-42ba-a6f6-7817d6a9e16e.png",
+  "prompt": "Create ONE square transparent PNG inventory icon atlas for a Ming-inspired wuxia game. EXACT invisible 4 by 4 grid with 16 equally sized square cells. Exactly sixteen distinct accessory icons, one named object composition per cell, in the row-major order below (left to right, top to bottom). Every entire object, string, chain and tassel must remain centered completely inside its own cell, with at least 15 percent of each cell width empty transparent margin on ALL four sides. Make icons equally legible, fine warm brown outlines, soft watercolor and gouache texture, muted warm ivory, jade, coral, gold and natural materials, top-left illumination, charming refined hand-painted game UI style. NO visible grid, NO frame, NO border, NO text or letters, NO labels, NO numbers, NO background scene, NO glow. Render all sixteen individually recognizable without overlapping any neighboring cell. Keep silhouettes compact even for elongated objects. Each description follows in exact row-major sequence:\n1. flat teal cord knot, plain wooden bead, short tassel, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n2. small aged brass bell on a dark red ankle cord, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n3. slender matte silver hairpin with one willow leaf finial, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n4. thick pale antler hair ring with a small gap and natural grain, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n5. plump paired fish sachet in ivory and muted teal fabric, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n6. wide dark ebony finger ring with rounded edges and subtle grain, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n7. arched bronze belt hook with a single curled cloud head, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n8. short pale jade bamboo pendant with cloudy inclusions and brown cord, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n9. dark bronze plum twig brooch with three ivory shell blossoms, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n10. rust red braided wrist cord with a flat knot and no metal, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n11. pair of pale crescent shell earrings with fine brown cords, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n12. smoky blue glass bead bracelet with dark wooden spacer beads, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n13. short matte silver cloak chain with two round knot clasps, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n14. warm brown carved swallow pendant with forked tail and blue cord, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n15. paired round wooden clasps with blue gray embroidered mountain panels, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text\n16. honey amber teardrop pendant with a tiny leaf inclusion and plain bronze rim, single reusable Ming-inspired wuxia item icon, warm gouache texture, warm brown outlines, isolated transparent background, no text",
+  "repair_prompt": "Repair this exact sixteen-icon accessory atlas. Keep all SAME sixteen objects in the SAME row-major order and same warm hand-painted gouache style. Produce a square transparent PNG with EXACT 4 columns and 4 rows of equal invisible cells, all icons centered at cell centers: x=12.5%,37.5%,62.5%,87.5% and y=12.5%,37.5%,62.5%,87.5%. Crucial correction: substantially SHRINK EVERY complete icon including strings, loops, chains and tassels to fit within the CENTRAL 60% WIDTH and CENTRAL 60% HEIGHT of its own cell. That means each full icon fits a box of 15% of the full canvas width and height, leaving at least 20% empty cell margin on all sides. Every one of the three vertical and horizontal boundaries must be a wide fully transparent gap. Remove all stray colored pixels, speckles and halos. No accessory may cross any cell boundary. Thin wide objects like the hairpin, necklace, bird and paired mountain clasps should be compact and smaller. Keep each composition intact and individually recognizable. NO text, NO numbers, NO labels, NO visible grid, NO frame, NO border, NO background, NO glow. Do not add or delete any icon. True transparent empty background.",
+  "item_ids": [
+    "BASE081",
+    "BASE082",
+    "BASE083",
+    "BASE084",
+    "BASE085",
+    "BASE086",
+    "BASE087",
+    "BASE088",
+    "BASE089",
+    "BASE090",
+    "BASE091",
+    "BASE092",
+    "BASE093",
+    "BASE094",
+    "BASE095",
+    "BASE096"
+  ],
+  "visual_review": {
+    "status": "reviewed",
+    "notes": "16 accessory compositions match row-major identities. Original overcrowded version was regenerated with smaller icons; final atlas has broad empty gaps and no apparent cut silhouettes. Some fine colored edge speckles remain around several icons; original generated pixels preserved.",
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "nonempty_cells": 16,
+    "edge_touch_cells": []
+  }
+}

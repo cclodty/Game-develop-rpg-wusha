@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "item_count": 368,
+  "base_count": 240,
+  "sect_items": 128,
+  "sect_count": 8,
+  "generated_atlases": 23,
+  "generated_icons": 368,
+  "measured_regions": 368,
+  "unique_ids_and_names": true,
+  "item_order_matches_metadata": true,
+  "sha256_matches": true,
+  "transparent_pngs": true,
+  "no_opaque_outer_edge_pixels": true,
+  "source_pixels_preserved": true,
+  "implementation_status": "design_only",
+  "note": "Some transparent gutter edges retain alpha<=32 artifacts; measured regions avoid foreground above that threshold. All source PNG bytes remain unedited."
+}
