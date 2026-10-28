@@ -1,0 +1,18 @@
+{
+  "checks": [
+    "Packaged test_ferry.cjs",
+    "Packaged test_card_art.cjs",
+    "Root redirect and cache bypass",
+    "HTML development client injected",
+    "Only game directories are served",
+    "CSS hot update preserves open inventory and save",
+    "Code update waits for user reload",
+    "Update notice clears inventory frame at 1440",
+    "No page overflow at 1440",
+    "Update notice clears inventory frame at 960",
+    "No page overflow at 960",
+    "Reload and continue preserve model and reading position",
+    "No browser script errors"
+  ],
+  "actual_windows_batch_tested": false
+}
