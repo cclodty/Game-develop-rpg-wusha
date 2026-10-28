@@ -1,4 +1,20 @@
+# 江湖未遠：渡口餘波試玩
+
+**[下載〈渡口餘波〉試玩 ZIP（約 12 MB）](https://github.com/cclodty/Game-develop-rpg-wusha/raw/refs/heads/weiyuan-ferry-trial/downloads/ferry-trial/jianghu-ferry-trial.zip)**
+
+下載後先全部解壓縮，再用 Chrome 或 Edge 開啟 `jianghu-ferry/index.html`。Windows 也可雙擊 `Play-Windows.cmd`。不要直接開啟 ZIP 裡的 HTML。存檔保存在瀏覽器本機，可從遊戲內匯出備份。
+
+這次試玩包含四處點選探索場景、三人卡牌戰鬥、分層研習、十四事件與三種章末結果。快速試戰鬥：借一處屋簷 → 同行有約 → 院中試招。
+
+二十組模型測試、三種結局的 Chromium 操作流程，以及解壓下載包的資產與存讀檔檢查均通過。瀏覽器測試使用本機伺服器；測試環境禁止 `file://`，直接開檔仍待玩家電腦確認。詳見 [遊玩說明](chapter/README.md)。
+
+---
+
 # 江湖未遠：內功與蓄勢
+
+新增小說改編獨立試玩：**〈渡口餘波〉**。直接用瀏覽器開啟 [`chapter/index.html`](chapter/index.html)，操作與版本範圍見 [章節說明](chapter/README.md)。包含四處點選場景、十四事件、三人速度卡戰、分層研習、期限後果與三種收束。這是可離線開啟的網頁原型，尚未整合進下方的 Godot 七日旅程。
+
+驗證：`node tests/test_ferry.cjs`；以本機8073埠提供 `chapter/` 後執行 `python tools/test_ferry_web.py`。`python tools/package_ferry.py` 產生可解壓直接開玩的 ZIP。武學資料由 `tools/export_chapter_catalog.gd` 匯出，事件設計見 [第一區域事件表](docs/NOVEL_FIRST_REGION_EVENTS.md)。
 
 **從江湖經歷學武，以自己的配招決定怎樣交手。**
 

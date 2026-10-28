@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "source": "extracted ZIP served locally",
+  "checks": [
+    "all scripts, fonts and images load",
+    "no external network requests",
+    "390px date and deadlines remain visible",
+    "no horizontal overflow",
+    "mobile study save/load and submit",
+    "desktop exploration"
+  ],
+  "browser_errors": [],
+  "failed_requests": []
+}
