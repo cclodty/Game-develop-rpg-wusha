@@ -1,0 +1,275 @@
+{
+  "version": 1,
+  "images": [
+    {
+      "actor": "hero",
+      "card": "strike",
+      "generator_file": "exec-0c99c5d5-c886-487b-abd7-45278edd6434.png",
+      "reference": "assets/generated/gal/hero-player.png",
+      "reviewed": true,
+      "review": {
+        "anatomy": "Two connected arms; visible hands plausible, no extra limbs",
+        "identity": "Reference face, hair, clothing and actor-specific technique retained",
+        "composition": "Single 3:2 illustration; no generated card text or frame; no atlas",
+        "reviewed_on": "2026-10-29"
+      },
+      "reference_sha256": "05c548f941b8d3686f1e191e9692b568103fb3bd91bf70b786489d8b456b6429",
+      "style_reference": null
+    },
+    {
+      "actor": "hero",
+      "card": "guard",
+      "generator_file": "exec-e833cb42-b6cc-4612-9b2f-300b163c9f74.png",
+      "reference": "assets/generated/gal/hero-player.png",
+      "reviewed": true,
+      "review": {
+        "anatomy": "Two connected arms; visible hands plausible, no extra limbs",
+        "identity": "Reference face, hair, clothing and actor-specific technique retained",
+        "composition": "Single 3:2 illustration; no generated card text or frame; no atlas",
+        "reviewed_on": "2026-10-29"
+      },
+      "reference_sha256": "05c548f941b8d3686f1e191e9692b568103fb3bd91bf70b786489d8b456b6429",
+      "style_reference": "art-source/basic-v1/hero/strike.png"
+    },
+    {
+      "actor": "hero",
+      "card": "break",
+      "generator_file": "exec-d8eb2b75-4ce3-486f-a1b1-cfe4ffa60e4d.png",
+      "reference": "assets/generated/gal/hero-player.png",
+      "reviewed": true,
+      "review": {
+        "anatomy": "Two connected arms; visible hands plausible, no extra limbs",
+        "identity": "Reference face, hair, clothing and actor-specific technique retained",
+        "composition": "Single 3:2 illustration; no generated card text or frame; no atlas",
+        "reviewed_on": "2026-10-29"
+      },
+      "reference_sha256": "05c548f941b8d3686f1e191e9692b568103fb3bd91bf70b786489d8b456b6429",
+      "style_reference": "art-source/basic-v1/hero/strike.png"
+    },
+    {
+      "actor": "hero",
+      "card": "observe",
+      "generator_file": "exec-0fa56f31-cff1-4588-acc5-76c9a912d700.png",
+      "reference": "assets/generated/gal/hero-player.png",
+      "reviewed": true,
+      "review": {
+        "anatomy": "Two connected arms; visible hands plausible, no extra limbs",
+        "identity": "Reference face, hair, clothing and actor-specific technique retained",
+        "composition": "Single 3:2 illustration; no generated card text or frame; no atlas",
+        "reviewed_on": "2026-10-29"
+      },
+      "reference_sha256": "05c548f941b8d3686f1e191e9692b568103fb3bd91bf70b786489d8b456b6429",
+      "style_reference": "art-source/basic-v1/hero/strike.png"
+    },
+    {
+      "actor": "hero",
+      "card": "step",
+      "generator_file": "exec-9e19b99b-99ba-4375-8fa7-a92a53540a4c.png",
+      "reference": "assets/generated/gal/hero-player.png",
+      "reviewed": true,
+      "review": {
+        "anatomy": "Two connected arms; visible hands plausible, no extra limbs",
+        "identity": "Reference face, hair, clothing and actor-specific technique retained",
+        "composition": "Single 3:2 illustration; no generated card text or frame; no atlas",
+        "reviewed_on": "2026-10-29"
+      },
+      "reference_sha256": "05c548f941b8d3686f1e191e9692b568103fb3bd91bf70b786489d8b456b6429",
+      "style_reference": "art-source/basic-v1/hero/strike.png"
+    },
+    {
+      "actor": "hero",
+      "card": "breath",
+      "generator_file": "exec-e02dcaf5-a850-4732-bedd-2939d2674957.png",
+      "reference": "assets/generated/gal/hero-player.png",
+      "reviewed": true,
+      "review": {
+        "anatomy": "Two connected arms; visible hands plausible, no extra limbs",
+        "identity": "Reference face, hair, clothing and actor-specific technique retained",
+        "composition": "Single 3:2 illustration; no generated card text or frame; no atlas",
+        "reviewed_on": "2026-10-29"
+      },
+      "reference_sha256": "05c548f941b8d3686f1e191e9692b568103fb3bd91bf70b786489d8b456b6429",
+      "style_reference": "art-source/basic-v1/hero/strike.png"
+    },
+    {
+      "actor": "huai",
+      "card": "strike",
+      "generator_file": "exec-edaced01-a2b0-40f1-98de-3361ec4eea8b.png",
+      "reference": "assets/generated/gal/huai.png",
+      "reviewed": true,
+      "review": {
+        "anatomy": "Two connected arms; visible hands plausible, no extra limbs",
+        "identity": "Reference face, hair, clothing and actor-specific technique retained",
+        "composition": "Single 3:2 illustration; no generated card text or frame; no atlas",
+        "reviewed_on": "2026-10-29"
+      },
+      "reference_sha256": "1c5f81eb1a1c8a88c49a6249e66158ca701f1c708aed0b4ac70e29a96dd5f7b2",
+      "style_reference": "art-source/basic-v1/hero/strike.png"
+    },
+    {
+      "actor": "huai",
+      "card": "guard",
+      "generator_file": "exec-36601d7c-78f8-4587-a61b-103f68b7f263.png",
+      "reference": "assets/generated/gal/huai.png",
+      "reviewed": true,
+      "review": {
+        "anatomy": "Two connected arms; visible hands plausible, no extra limbs",
+        "identity": "Reference face, hair, clothing and actor-specific technique retained",
+        "composition": "Single 3:2 illustration; no generated card text or frame; no atlas",
+        "reviewed_on": "2026-10-29"
+      },
+      "reference_sha256": "1c5f81eb1a1c8a88c49a6249e66158ca701f1c708aed0b4ac70e29a96dd5f7b2",
+      "style_reference": "art-source/basic-v1/hero/strike.png"
+    },
+    {
+      "actor": "huai",
+      "card": "break",
+      "generator_file": "exec-54b46180-8d74-4dd7-be50-d961c2634371.png",
+      "reference": "assets/generated/gal/huai.png",
+      "reviewed": true,
+      "review": {
+        "anatomy": "Two connected arms; visible hands plausible, no extra limbs",
+        "identity": "Reference face, hair, clothing and actor-specific technique retained",
+        "composition": "Single 3:2 illustration; no generated card text or frame; no atlas",
+        "reviewed_on": "2026-10-29"
+      },
+      "reference_sha256": "1c5f81eb1a1c8a88c49a6249e66158ca701f1c708aed0b4ac70e29a96dd5f7b2",
+      "style_reference": "art-source/basic-v1/hero/strike.png"
+    },
+    {
+      "actor": "huai",
+      "card": "observe",
+      "generator_file": "exec-226ca8ac-d9f4-452b-bc82-7b9b9da44445.png",
+      "reference": "assets/generated/gal/huai.png",
+      "reviewed": true,
+      "review": {
+        "anatomy": "Two connected arms; visible hands plausible, no extra limbs",
+        "identity": "Reference face, hair, clothing and actor-specific technique retained",
+        "composition": "Single 3:2 illustration; no generated card text or frame; no atlas",
+        "reviewed_on": "2026-10-29"
+      },
+      "reference_sha256": "1c5f81eb1a1c8a88c49a6249e66158ca701f1c708aed0b4ac70e29a96dd5f7b2",
+      "style_reference": "art-source/basic-v1/hero/strike.png"
+    },
+    {
+      "actor": "huai",
+      "card": "step",
+      "generator_file": "exec-9f820b1d-143b-4594-9463-e4e0623bd3dd.png",
+      "reference": "assets/generated/gal/huai.png",
+      "reviewed": true,
+      "review": {
+        "anatomy": "Two connected arms; visible hands plausible, no extra limbs",
+        "identity": "Reference face, hair, clothing and actor-specific technique retained",
+        "composition": "Single 3:2 illustration; no generated card text or frame; no atlas",
+        "reviewed_on": "2026-10-29"
+      },
+      "reference_sha256": "1c5f81eb1a1c8a88c49a6249e66158ca701f1c708aed0b4ac70e29a96dd5f7b2",
+      "style_reference": "art-source/basic-v1/hero/strike.png"
+    },
+    {
+      "actor": "huai",
+      "card": "breath",
+      "generator_file": "exec-5a2787d8-b96c-47f0-bf7b-8e9cc3f8838a.png",
+      "reference": "assets/generated/gal/huai.png",
+      "reviewed": true,
+      "review": {
+        "anatomy": "Two connected arms; visible hands plausible, no extra limbs",
+        "identity": "Reference face, hair, clothing and actor-specific technique retained",
+        "composition": "Single 3:2 illustration; no generated card text or frame; no atlas",
+        "reviewed_on": "2026-10-29"
+      },
+      "reference_sha256": "1c5f81eb1a1c8a88c49a6249e66158ca701f1c708aed0b4ac70e29a96dd5f7b2",
+      "style_reference": "art-source/basic-v1/hero/strike.png"
+    },
+    {
+      "actor": "du",
+      "card": "strike",
+      "generator_file": "exec-4d3a1431-066e-478a-a12a-77b6aed4f687.png",
+      "reference": "assets/generated/gal/du.png",
+      "reviewed": true,
+      "review": {
+        "anatomy": "Two connected arms; visible hands plausible, no extra limbs",
+        "identity": "Reference face, hair, clothing and actor-specific technique retained",
+        "composition": "Single 3:2 illustration; no generated card text or frame; no atlas",
+        "reviewed_on": "2026-10-29"
+      },
+      "reference_sha256": "f7fab408bf5043314f87dc7988cc6903047e14e0a1dc7bbeceaa82249a98bf69",
+      "style_reference": "art-source/basic-v1/hero/strike.png"
+    },
+    {
+      "actor": "du",
+      "card": "guard",
+      "generator_file": "exec-eb748a1c-bdb0-4349-9725-13d27a97a2a1.png",
+      "reference": "assets/generated/gal/du.png",
+      "reviewed": true,
+      "review": {
+        "anatomy": "Two connected arms; visible hands plausible, no extra limbs",
+        "identity": "Reference face, hair, clothing and actor-specific technique retained",
+        "composition": "Single 3:2 illustration; no generated card text or frame; no atlas",
+        "reviewed_on": "2026-10-29"
+      },
+      "reference_sha256": "f7fab408bf5043314f87dc7988cc6903047e14e0a1dc7bbeceaa82249a98bf69",
+      "style_reference": "art-source/basic-v1/hero/strike.png"
+    },
+    {
+      "actor": "du",
+      "card": "break",
+      "generator_file": "exec-2e19846b-5ea5-43db-8252-855b836189d9.png",
+      "reference": "assets/generated/gal/du.png",
+      "reviewed": true,
+      "review": {
+        "anatomy": "Two connected arms; visible hands plausible, no extra limbs",
+        "identity": "Reference face, hair, clothing and actor-specific technique retained",
+        "composition": "Single 3:2 illustration; no generated card text or frame; no atlas",
+        "reviewed_on": "2026-10-29"
+      },
+      "reference_sha256": "f7fab408bf5043314f87dc7988cc6903047e14e0a1dc7bbeceaa82249a98bf69",
+      "style_reference": "art-source/basic-v1/hero/strike.png"
+    },
+    {
+      "actor": "du",
+      "card": "observe",
+      "generator_file": "exec-ec61996d-698c-4762-bbb9-b39737debbfa.png",
+      "reference": "assets/generated/gal/du.png",
+      "reviewed": true,
+      "review": {
+        "anatomy": "Two connected arms; visible hands plausible, no extra limbs",
+        "identity": "Reference face, hair, clothing and actor-specific technique retained",
+        "composition": "Single 3:2 illustration; no generated card text or frame; no atlas",
+        "reviewed_on": "2026-10-29"
+      },
+      "reference_sha256": "f7fab408bf5043314f87dc7988cc6903047e14e0a1dc7bbeceaa82249a98bf69",
+      "style_reference": "art-source/basic-v1/hero/strike.png"
+    },
+    {
+      "actor": "du",
+      "card": "step",
+      "generator_file": "exec-7bdb1165-0c69-49d8-9693-d04ff97e25c8.png",
+      "reference": "assets/generated/gal/du.png",
+      "reviewed": true,
+      "review": {
+        "anatomy": "Two connected arms; visible hands plausible, no extra limbs",
+        "identity": "Reference face, hair, clothing and actor-specific technique retained",
+        "composition": "Single 3:2 illustration; no generated card text or frame; no atlas",
+        "reviewed_on": "2026-10-29"
+      },
+      "reference_sha256": "f7fab408bf5043314f87dc7988cc6903047e14e0a1dc7bbeceaa82249a98bf69",
+      "style_reference": "art-source/basic-v1/hero/strike.png"
+    },
+    {
+      "actor": "du",
+      "card": "breath",
+      "generator_file": "exec-0d7f1d66-93a5-4bc2-90ef-706918774944.png",
+      "reference": "assets/generated/gal/du.png",
+      "reviewed": true,
+      "review": {
+        "anatomy": "Two connected arms; visible hands plausible, no extra limbs",
+        "identity": "Reference face, hair, clothing and actor-specific technique retained",
+        "composition": "Single 3:2 illustration; no generated card text or frame; no atlas",
+        "reviewed_on": "2026-10-29"
+      },
+      "reference_sha256": "f7fab408bf5043314f87dc7988cc6903047e14e0a1dc7bbeceaa82249a98bf69",
+      "style_reference": "art-source/basic-v1/hero/strike.png"
+    }
+  ]
+}

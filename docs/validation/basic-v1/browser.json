@@ -1,0 +1,22 @@
+{
+  "checks": [
+    "1440: 18 distinct assets, loadout bonuses, family cap and 14-card rejection via actual controls",
+    "Invalid JSON upload preserves the previous lab save",
+    "Cycle selection survives reload and exported/imported real backup; identical single resolution",
+    "Legal mouse-input victory against flurry",
+    "Legal mouse-input victory against armored",
+    "Legal mouse-input victory against charging",
+    "Legal mouse-input victory against counter",
+    "Automatic companion performs a legal scheduled action before pause and manual takeover",
+    "Four intents, rules, takeover, pause, retreat and deterministic retry pass",
+    "1440: formal chapter save remains byte-for-byte unchanged",
+    "960: 18 distinct assets, loadout bonuses, family cap and 14-card rejection via actual controls",
+    "960: selected card, snapshot, retreat and result layout pass",
+    "960: formal chapter save remains byte-for-byte unchanged"
+  ],
+  "errors": [],
+  "failed_resources": [],
+  "state_injection": false,
+  "runtime_card_images": 18,
+  "raw_card_sources_requested": false
+}

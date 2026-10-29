@@ -28,3 +28,6 @@
 .hand .card{height:190px}.hand .card .card-art{height:65px}.card .desc{font-size:17px;line-height:22px;max-height:44px}.party-fighters{top:190px}.battle .turn-heading{top:474px}.battle>.outcome{top:490px}
 .inventory-grid .item-art{height:100px}.inventory-grid button>span{white-space:normal;font-size:20px;line-height:1.1;min-height:36px;align-items:flex-end;width:100%;padding-bottom:6px}.inventory-grid .item-name{min-width:0;overflow-wrap:anywhere;text-align:left}.inventory-grid em{flex-shrink:0;font-size:20px}
 .dialog.outcome{background:none;border:22px solid transparent;border-image:url('../assets/generated/gal/paper.png') 116 fill stretch}.evidence-row .tag{font-size:18px;letter-spacing:0;padding:3px 8px}
+
+/* Dedicated basic-card lab entry; the chapter keeps its original rules. */
+.battle-entry{display:block;text-align:center;padding:10px 6px;font:23px/1.3 WenKai;color:#315e4d;text-decoration:none;border-bottom:1px solid #b49b63;margin:4px 0}.title-content .meta{font-size:17px;line-height:1.4}

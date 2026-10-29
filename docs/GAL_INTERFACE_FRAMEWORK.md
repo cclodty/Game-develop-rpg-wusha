@@ -162,3 +162,10 @@ Godot 原卷首新增「視覺小說 · 介面試玩」，亦可直接開啟 `re
 | 對話 | [查看](images/native-web-dialogue.png) | [查看](images/native-web-dialogue-small.png) |
 | 行囊與真實證物 | [查看](images/native-web-inventory.png) | [查看](images/native-web-inventory-small.png) |
 | 三人交手 | [查看](images/native-web-battle.png) | [查看](images/native-web-battle-small.png) |
+
+
+## 基本牌試牌場（2026-10-29）
+
+主選單加入獨立 `battle/` 入口。沿用淡彩人物、紙色框與文楷；新卡圖是三人各六張單張插畫，卡框文字仍由網頁繪製。戰前可配招／內功／裝備，戰中動態顯示加成、公開意圖與行動次序；換牌中的狀態可保存。
+
+這一版使用15–25張、抽五全棄，與章節目前十張／留牌的引擎及存檔分開；不能混用兩版規則或直接覆蓋章節進度。詳見 [基本牌v1](BASIC_BATTLE_V1.md)。

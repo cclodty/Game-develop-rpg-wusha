@@ -1,0 +1,28 @@
+✔ three possible departures preserve actual evidence and exposure (3.133452ms)
+✔ deadline is evaluated on completion; exact boundary succeeds (3.842762ms)
+✔ calendar expires optional opportunities without awarding their evidence (0.784352ms)
+✔ zero funds, no footwork and no companions still have a social path (0.414304ms)
+✔ cost and reward settle once, including a round trip during search (0.458792ms)
+✔ ledger fee cannot be charged twice after successful completion (1.078074ms)
+✔ failure carries costs and a real loss of evidence, with free recovery (0.355626ms)
+✔ Huai can leave, returns by calendar and never manufactures a main clue (0.295655ms)
+✔ meeting Huai spends one slot, and chapter closure waits for her (0.299311ms)
+✔ research guarantees progress and caches best per martial art and layer (0.748208ms)
+✔ automatic study reuses record, spends time and does not open a puzzle (0.343878ms)
+✔ all martial layers have a finite route to their unlock and do not change the deck (0.487034ms)
+✔ party core and copy limits apply to every deck editor mutation (0.385231ms)
+✔ every encounter terminates with three actors using legal current hand actions (7.658322ms)
+✔ all actor hands preserve card counts across turns, cycles, reshuffles and save restoration (12.327181ms)
+✔ a single card cannot pay for itself using effects that resolve later (0.584281ms)
+✔ healing spends actor qi and the one shared battle medicine allowance (0.387674ms)
+✔ delayed damage belongs to its actor and targets a stable enemy identity (0.45157ms)
+✔ mismatched pending battle and corrupt save cannot replace a healthy state (0.493684ms)
+✔ independent state snapshots remain deterministic through automated action (1.619281ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 43.551418

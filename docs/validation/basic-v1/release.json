@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-29",
+  "rules": "basic-v1",
+  "new_model_art_tests": 17,
+  "legacy_model_art_tests": 24,
+  "legal_fights": 72,
+  "browser_flow_groups": 13,
+  "legacy_browser_flow_groups": 4,
+  "state_injection": false,
+  "source_png_count": 18,
+  "runtime_webp_count": 18,
+  "runtime_webp_bytes": 2168202,
+  "source_sizes": [
+    1536,
+    1024
+  ],
+  "web_sizes": [
+    768,
+    512
+  ],
+  "images_reviewed_individually": true,
+  "source_commit_before_work": "4973bc08a4b36cdf8d5c0f5f82b33a6ffe158ee3",
+  "public_deployment": "Pending push and GitHub Pages status check",
+  "public_browser_tested": false,
+  "runtime_sha256": {
+    "battle/app.mjs": "7d86f35e29227805606ead52397b23596b1baededa5fa1df38b89e317789cd37",
+    "battle/catalog.mjs": "8804ad2a9e665723d96f4cb2fbc5732f354551046d07cba7d9eb8a8a534a45ca",
+    "battle/index.html": "73d7708ba79b2c1276b3e07c2354e5078033e58babfed7552d2e8e0f9b57edf1",
+    "battle/model.mjs": "442e386cd8a9e5e2f17d1e59ed969dd428e48170d521af5a0b154eb127c13abc",
+    "battle/style.css": "b016fd6c41764cad7ea3c65bfb8863474ae1bec0a885604f1a2d8c899b381724"
+  }
+}

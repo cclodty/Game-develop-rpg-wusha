@@ -8,6 +8,14 @@
 
 部署分支為 **`gh-pages`**。入口、素材、字型、劇情與遊戲規則均隨分支提供，玩家使用桌面 Chrome 或 Edge 開啟網址即可。首次啟用及當輪部署核對見 [WEB_PREVIEW.md](docs/WEB_PREVIEW.md)。
 
+## 基本牌戰鬥試牌場
+
+**[直接試牌](https://cclodty.github.io/Game-develop-rpg-wusha/battle/)**：三人各15–25張、三真氣、抽五張、結束全棄。可換六種基本牌、三門內功、護腕／護衣及四類對手，暫停接管並保存交手。
+
+十八張人物招式圖各自生成，壓縮WebP共約2.17MB；完整原圖及校驗清單隨專案保留。試牌場的進度與劇情分開，研習變招與章節接入下一輪處理。數值與驗證見 [BASIC_BATTLE_V1.md](docs/BASIC_BATTLE_V1.md)。
+
+![基本牌試牌場的實際畫面](docs/images/basic-combat.png)
+
 ## 邊玩邊修改
 
 1. 在 Codex 或 GitHub 選 `gh-pages` 分支。

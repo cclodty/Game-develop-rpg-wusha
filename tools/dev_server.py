@@ -9,7 +9,7 @@ from urllib.parse import urlsplit, unquote
 import webbrowser
 
 ROOT = Path(__file__).resolve().parents[1]
-WATCH = ('web', 'chapter', 'assets')
+WATCH = ('web', 'battle', 'chapter', 'assets')
 CLIENT = r"""
 (() => {
   let previous = null;
@@ -47,7 +47,7 @@ def versions(root):
     css, code = {}, []
     for folder in WATCH:
         for file in sorted((root/folder).rglob('*')):
-            if not file.is_file() or file.suffix not in {'.css','.js','.html','.png','.ttf','.otf'}:
+            if not file.is_file() or file.suffix not in {'.css','.js','.mjs','.html','.png','.webp','.ttf','.otf'}:
                 continue
             stat = file.stat()
             key = file.relative_to(root).as_posix()

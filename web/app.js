@@ -172,7 +172,7 @@
   function showTitle(){
     clearTimeout(aiTimer);clearTimeout(readTimer);game=null;modal=null;reader=null;automatic=false;
     const saved=readSave();
-    app.innerHTML=`<main class="title-page"><div class="title-landscape"></div><section class="title-content paper"><div class="eyebrow">第一章 · 雨歇之後</div><h1>江湖未遠<small>渡口餘波</small></h1><p class="synopsis">一枚銀匙，一段未明的往事。<br>雨後的渡口，仍有一條路可以走。</p><label for="hero-name">這一程，如何稱呼你？</label><input id="hero-name" maxlength="16" value="${h(titleDraft)}" autocomplete="off">${btn('初到渡口　◇','new','primary')}${saved?btn(`續寫此程　·　${h(F.date(saved.state.spent))}`,'continue'):''}${btn('讀取手札','title-saves')}${btn('閱讀設定','settings','quiet')}<p class="meta">手繪視覺小說 · 區域探索 · 三人卡牌交手<br>試玩從逃亡後開始，正式創角問答另行製作。</p></section><p class="title-verse">雨過山色新<br>江湖未遠人未歸</p><div class="edition">渡口餘波　／　網頁試玩</div></main>`;
+    app.innerHTML=`<main class="title-page"><div class="title-landscape"></div><section class="title-content paper"><div class="eyebrow">第一章 · 雨歇之後</div><h1>江湖未遠<small>渡口餘波</small></h1><p class="synopsis">一枚銀匙，一段未明的往事。<br>雨後的渡口，仍有一條路可以走。</p><label for="hero-name">這一程，如何稱呼你？</label><input id="hero-name" maxlength="16" value="${h(titleDraft)}" autocomplete="off">${btn('初到渡口　◇','new','primary')}${saved?btn(`續寫此程　·　${h(F.date(saved.state.spent))}`,'continue'):''}${btn('讀取手札','title-saves')}<a class="battle-entry" href="../battle/">基本牌 · 戰鬥試牌場 →</a>${btn('閱讀設定','settings','quiet')}<p class="meta">手繪視覺小說 · 區域探索 · 三人卡牌交手<br>試玩從逃亡後開始，正式創角問答另行製作。</p></section><p class="title-verse">雨過山色新<br>江湖未遠人未歸</p><div class="edition">渡口餘波　／　網頁試玩</div></main>`;
     applyUX();
   }
 

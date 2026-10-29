@@ -1,0 +1,650 @@
+[
+  {
+    "enemy": "flurry",
+    "seed": 7,
+    "inner": "shouzhong",
+    "enemyCount": 1,
+    "rounds": 3,
+    "cards": 22,
+    "damage": 2
+  },
+  {
+    "enemy": "flurry",
+    "seed": 7,
+    "inner": "shouzhong",
+    "enemyCount": 2,
+    "rounds": 6,
+    "cards": 48,
+    "damage": 21
+  },
+  {
+    "enemy": "flurry",
+    "seed": 7,
+    "inner": "xingyun",
+    "enemyCount": 1,
+    "rounds": 3,
+    "cards": 22,
+    "damage": 2
+  },
+  {
+    "enemy": "flurry",
+    "seed": 7,
+    "inner": "xingyun",
+    "enemyCount": 2,
+    "rounds": 6,
+    "cards": 50,
+    "damage": 24
+  },
+  {
+    "enemy": "flurry",
+    "seed": 7,
+    "inner": "guiyuan",
+    "enemyCount": 1,
+    "rounds": 3,
+    "cards": 22,
+    "damage": 2
+  },
+  {
+    "enemy": "flurry",
+    "seed": 7,
+    "inner": "guiyuan",
+    "enemyCount": 2,
+    "rounds": 5,
+    "cards": 46,
+    "damage": 26
+  },
+  {
+    "enemy": "flurry",
+    "seed": 42,
+    "inner": "shouzhong",
+    "enemyCount": 1,
+    "rounds": 3,
+    "cards": 24,
+    "damage": 4
+  },
+  {
+    "enemy": "flurry",
+    "seed": 42,
+    "inner": "shouzhong",
+    "enemyCount": 2,
+    "rounds": 6,
+    "cards": 45,
+    "damage": 34
+  },
+  {
+    "enemy": "flurry",
+    "seed": 42,
+    "inner": "xingyun",
+    "enemyCount": 1,
+    "rounds": 3,
+    "cards": 24,
+    "damage": 4
+  },
+  {
+    "enemy": "flurry",
+    "seed": 42,
+    "inner": "xingyun",
+    "enemyCount": 2,
+    "rounds": 6,
+    "cards": 51,
+    "damage": 33
+  },
+  {
+    "enemy": "flurry",
+    "seed": 42,
+    "inner": "guiyuan",
+    "enemyCount": 1,
+    "rounds": 3,
+    "cards": 22,
+    "damage": 4
+  },
+  {
+    "enemy": "flurry",
+    "seed": 42,
+    "inner": "guiyuan",
+    "enemyCount": 2,
+    "rounds": 5,
+    "cards": 40,
+    "damage": 41
+  },
+  {
+    "enemy": "flurry",
+    "seed": 2026,
+    "inner": "shouzhong",
+    "enemyCount": 1,
+    "rounds": 3,
+    "cards": 19,
+    "damage": 12
+  },
+  {
+    "enemy": "flurry",
+    "seed": 2026,
+    "inner": "shouzhong",
+    "enemyCount": 2,
+    "rounds": 5,
+    "cards": 42,
+    "damage": 34
+  },
+  {
+    "enemy": "flurry",
+    "seed": 2026,
+    "inner": "xingyun",
+    "enemyCount": 1,
+    "rounds": 2,
+    "cards": 18,
+    "damage": 12
+  },
+  {
+    "enemy": "flurry",
+    "seed": 2026,
+    "inner": "xingyun",
+    "enemyCount": 2,
+    "rounds": 5,
+    "cards": 43,
+    "damage": 29
+  },
+  {
+    "enemy": "flurry",
+    "seed": 2026,
+    "inner": "guiyuan",
+    "enemyCount": 1,
+    "rounds": 2,
+    "cards": 17,
+    "damage": 12
+  },
+  {
+    "enemy": "flurry",
+    "seed": 2026,
+    "inner": "guiyuan",
+    "enemyCount": 2,
+    "rounds": 5,
+    "cards": 40,
+    "damage": 29
+  },
+  {
+    "enemy": "armored",
+    "seed": 7,
+    "inner": "shouzhong",
+    "enemyCount": 1,
+    "rounds": 3,
+    "cards": 31,
+    "damage": 5
+  },
+  {
+    "enemy": "armored",
+    "seed": 7,
+    "inner": "shouzhong",
+    "enemyCount": 2,
+    "rounds": 7,
+    "cards": 56,
+    "damage": 42
+  },
+  {
+    "enemy": "armored",
+    "seed": 7,
+    "inner": "xingyun",
+    "enemyCount": 1,
+    "rounds": 4,
+    "cards": 32,
+    "damage": 5
+  },
+  {
+    "enemy": "armored",
+    "seed": 7,
+    "inner": "xingyun",
+    "enemyCount": 2,
+    "rounds": 7,
+    "cards": 56,
+    "damage": 39
+  },
+  {
+    "enemy": "armored",
+    "seed": 7,
+    "inner": "guiyuan",
+    "enemyCount": 1,
+    "rounds": 3,
+    "cards": 30,
+    "damage": 5
+  },
+  {
+    "enemy": "armored",
+    "seed": 7,
+    "inner": "guiyuan",
+    "enemyCount": 2,
+    "rounds": 7,
+    "cards": 52,
+    "damage": 39
+  },
+  {
+    "enemy": "armored",
+    "seed": 42,
+    "inner": "shouzhong",
+    "enemyCount": 1,
+    "rounds": 4,
+    "cards": 29,
+    "damage": 8
+  },
+  {
+    "enemy": "armored",
+    "seed": 42,
+    "inner": "shouzhong",
+    "enemyCount": 2,
+    "rounds": 7,
+    "cards": 54,
+    "damage": 29
+  },
+  {
+    "enemy": "armored",
+    "seed": 42,
+    "inner": "xingyun",
+    "enemyCount": 1,
+    "rounds": 4,
+    "cards": 29,
+    "damage": 10
+  },
+  {
+    "enemy": "armored",
+    "seed": 42,
+    "inner": "xingyun",
+    "enemyCount": 2,
+    "rounds": 8,
+    "cards": 64,
+    "damage": 37
+  },
+  {
+    "enemy": "armored",
+    "seed": 42,
+    "inner": "guiyuan",
+    "enemyCount": 1,
+    "rounds": 3,
+    "cards": 27,
+    "damage": 15
+  },
+  {
+    "enemy": "armored",
+    "seed": 42,
+    "inner": "guiyuan",
+    "enemyCount": 2,
+    "rounds": 6,
+    "cards": 53,
+    "damage": 47
+  },
+  {
+    "enemy": "armored",
+    "seed": 2026,
+    "inner": "shouzhong",
+    "enemyCount": 1,
+    "rounds": 3,
+    "cards": 29,
+    "damage": 3
+  },
+  {
+    "enemy": "armored",
+    "seed": 2026,
+    "inner": "shouzhong",
+    "enemyCount": 2,
+    "rounds": 7,
+    "cards": 60,
+    "damage": 24
+  },
+  {
+    "enemy": "armored",
+    "seed": 2026,
+    "inner": "xingyun",
+    "enemyCount": 1,
+    "rounds": 3,
+    "cards": 29,
+    "damage": 5
+  },
+  {
+    "enemy": "armored",
+    "seed": 2026,
+    "inner": "xingyun",
+    "enemyCount": 2,
+    "rounds": 6,
+    "cards": 55,
+    "damage": 32
+  },
+  {
+    "enemy": "armored",
+    "seed": 2026,
+    "inner": "guiyuan",
+    "enemyCount": 1,
+    "rounds": 3,
+    "cards": 28,
+    "damage": 10
+  },
+  {
+    "enemy": "armored",
+    "seed": 2026,
+    "inner": "guiyuan",
+    "enemyCount": 2,
+    "rounds": 6,
+    "cards": 54,
+    "damage": 35
+  },
+  {
+    "enemy": "charging",
+    "seed": 7,
+    "inner": "shouzhong",
+    "enemyCount": 1,
+    "rounds": 3,
+    "cards": 27,
+    "damage": 11
+  },
+  {
+    "enemy": "charging",
+    "seed": 7,
+    "inner": "shouzhong",
+    "enemyCount": 2,
+    "rounds": 6,
+    "cards": 52,
+    "damage": 49
+  },
+  {
+    "enemy": "charging",
+    "seed": 7,
+    "inner": "xingyun",
+    "enemyCount": 1,
+    "rounds": 3,
+    "cards": 27,
+    "damage": 11
+  },
+  {
+    "enemy": "charging",
+    "seed": 7,
+    "inner": "xingyun",
+    "enemyCount": 2,
+    "rounds": 6,
+    "cards": 51,
+    "damage": 56
+  },
+  {
+    "enemy": "charging",
+    "seed": 7,
+    "inner": "guiyuan",
+    "enemyCount": 1,
+    "rounds": 3,
+    "cards": 25,
+    "damage": 11
+  },
+  {
+    "enemy": "charging",
+    "seed": 7,
+    "inner": "guiyuan",
+    "enemyCount": 2,
+    "rounds": 5,
+    "cards": 48,
+    "damage": 35
+  },
+  {
+    "enemy": "charging",
+    "seed": 42,
+    "inner": "shouzhong",
+    "enemyCount": 1,
+    "rounds": 3,
+    "cards": 24,
+    "damage": 16
+  },
+  {
+    "enemy": "charging",
+    "seed": 42,
+    "inner": "shouzhong",
+    "enemyCount": 2,
+    "rounds": 6,
+    "cards": 47,
+    "damage": 58
+  },
+  {
+    "enemy": "charging",
+    "seed": 42,
+    "inner": "xingyun",
+    "enemyCount": 1,
+    "rounds": 3,
+    "cards": 25,
+    "damage": 16
+  },
+  {
+    "enemy": "charging",
+    "seed": 42,
+    "inner": "xingyun",
+    "enemyCount": 2,
+    "rounds": 6,
+    "cards": 47,
+    "damage": 62
+  },
+  {
+    "enemy": "charging",
+    "seed": 42,
+    "inner": "guiyuan",
+    "enemyCount": 1,
+    "rounds": 3,
+    "cards": 21,
+    "damage": 16
+  },
+  {
+    "enemy": "charging",
+    "seed": 42,
+    "inner": "guiyuan",
+    "enemyCount": 2,
+    "rounds": 5,
+    "cards": 40,
+    "damage": 53
+  },
+  {
+    "enemy": "charging",
+    "seed": 2026,
+    "inner": "shouzhong",
+    "enemyCount": 1,
+    "rounds": 3,
+    "cards": 27,
+    "damage": 12
+  },
+  {
+    "enemy": "charging",
+    "seed": 2026,
+    "inner": "shouzhong",
+    "enemyCount": 2,
+    "rounds": 6,
+    "cards": 49,
+    "damage": 50
+  },
+  {
+    "enemy": "charging",
+    "seed": 2026,
+    "inner": "xingyun",
+    "enemyCount": 1,
+    "rounds": 3,
+    "cards": 27,
+    "damage": 14
+  },
+  {
+    "enemy": "charging",
+    "seed": 2026,
+    "inner": "xingyun",
+    "enemyCount": 2,
+    "rounds": 6,
+    "cards": 48,
+    "damage": 50
+  },
+  {
+    "enemy": "charging",
+    "seed": 2026,
+    "inner": "guiyuan",
+    "enemyCount": 1,
+    "rounds": 3,
+    "cards": 26,
+    "damage": 14
+  },
+  {
+    "enemy": "charging",
+    "seed": 2026,
+    "inner": "guiyuan",
+    "enemyCount": 2,
+    "rounds": 6,
+    "cards": 46,
+    "damage": 55
+  },
+  {
+    "enemy": "counter",
+    "seed": 7,
+    "inner": "shouzhong",
+    "enemyCount": 1,
+    "rounds": 3,
+    "cards": 24,
+    "damage": 7
+  },
+  {
+    "enemy": "counter",
+    "seed": 7,
+    "inner": "shouzhong",
+    "enemyCount": 2,
+    "rounds": 6,
+    "cards": 50,
+    "damage": 28
+  },
+  {
+    "enemy": "counter",
+    "seed": 7,
+    "inner": "xingyun",
+    "enemyCount": 1,
+    "rounds": 3,
+    "cards": 24,
+    "damage": 7
+  },
+  {
+    "enemy": "counter",
+    "seed": 7,
+    "inner": "xingyun",
+    "enemyCount": 2,
+    "rounds": 6,
+    "cards": 54,
+    "damage": 33
+  },
+  {
+    "enemy": "counter",
+    "seed": 7,
+    "inner": "guiyuan",
+    "enemyCount": 1,
+    "rounds": 3,
+    "cards": 22,
+    "damage": 7
+  },
+  {
+    "enemy": "counter",
+    "seed": 7,
+    "inner": "guiyuan",
+    "enemyCount": 2,
+    "rounds": 5,
+    "cards": 48,
+    "damage": 33
+  },
+  {
+    "enemy": "counter",
+    "seed": 42,
+    "inner": "shouzhong",
+    "enemyCount": 1,
+    "rounds": 3,
+    "cards": 25,
+    "damage": 14
+  },
+  {
+    "enemy": "counter",
+    "seed": 42,
+    "inner": "shouzhong",
+    "enemyCount": 2,
+    "rounds": 6,
+    "cards": 52,
+    "damage": 34
+  },
+  {
+    "enemy": "counter",
+    "seed": 42,
+    "inner": "xingyun",
+    "enemyCount": 1,
+    "rounds": 3,
+    "cards": 25,
+    "damage": 14
+  },
+  {
+    "enemy": "counter",
+    "seed": 42,
+    "inner": "xingyun",
+    "enemyCount": 2,
+    "rounds": 6,
+    "cards": 52,
+    "damage": 38
+  },
+  {
+    "enemy": "counter",
+    "seed": 42,
+    "inner": "guiyuan",
+    "enemyCount": 1,
+    "rounds": 3,
+    "cards": 24,
+    "damage": 14
+  },
+  {
+    "enemy": "counter",
+    "seed": 42,
+    "inner": "guiyuan",
+    "enemyCount": 2,
+    "rounds": 6,
+    "cards": 45,
+    "damage": 41
+  },
+  {
+    "enemy": "counter",
+    "seed": 2026,
+    "inner": "shouzhong",
+    "enemyCount": 1,
+    "rounds": 3,
+    "cards": 25,
+    "damage": 10
+  },
+  {
+    "enemy": "counter",
+    "seed": 2026,
+    "inner": "shouzhong",
+    "enemyCount": 2,
+    "rounds": 7,
+    "cards": 61,
+    "damage": 32
+  },
+  {
+    "enemy": "counter",
+    "seed": 2026,
+    "inner": "xingyun",
+    "enemyCount": 1,
+    "rounds": 3,
+    "cards": 25,
+    "damage": 12
+  },
+  {
+    "enemy": "counter",
+    "seed": 2026,
+    "inner": "xingyun",
+    "enemyCount": 2,
+    "rounds": 6,
+    "cards": 52,
+    "damage": 34
+  },
+  {
+    "enemy": "counter",
+    "seed": 2026,
+    "inner": "guiyuan",
+    "enemyCount": 1,
+    "rounds": 3,
+    "cards": 19,
+    "damage": 12
+  },
+  {
+    "enemy": "counter",
+    "seed": 2026,
+    "inner": "guiyuan",
+    "enemyCount": 2,
+    "rounds": 6,
+    "cards": 48,
+    "damage": 34
+  }
+]

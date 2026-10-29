@@ -1,0 +1,12 @@
+✔ chapter and Godot share the declared owner/move manifest and identical source art (20.266192ms)
+✔ all currently learned hero and first-companion moves have their own artwork (0.765924ms)
+✔ same technique selects different people without changing rules or saves (0.346342ms)
+✔ unpainted characters and unknown techniques remain neutral, never borrowing the hero (1.533461ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 27.668388
