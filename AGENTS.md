@@ -28,6 +28,9 @@ in the design documents describe other builds, absent from this package.
   are separate from the chapter's current combat. Do not mix their save formats.
   Read docs/BASIC_BATTLE_V1.md; run node --test tests/test_basic_battle.mjs
   tests/test_basic_card_art.mjs and python tools/test_basic_battle_web.py.
+- spire/ is a Slay-the-Spire-style presentation of the same basic-v1 rules. It imports
+  battle/catalog.mjs and battle/model.mjs unchanged and saves under jianghu-combat-spire-v1.
+  Read docs/SPIRE_BATTLE.md; run node tools/test_spire_web.mjs (Playwright).
 - New basic cards use individual actor/technique WebP files under assets/cards/.
   Accepted full-size PNGs and QA records are under art-source/basic-v1/.
   Do not regenerate atlases or borrow one actor's face for another actor.

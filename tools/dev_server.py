@@ -9,7 +9,7 @@ from urllib.parse import urlsplit, unquote
 import webbrowser
 
 ROOT = Path(__file__).resolve().parents[1]
-WATCH = ('web', 'battle', 'chapter', 'assets')
+WATCH = ('web', 'battle', 'spire', 'chapter', 'assets')
 CLIENT = r"""
 (() => {
   let previous = null;
