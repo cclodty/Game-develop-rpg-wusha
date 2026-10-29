@@ -71,3 +71,10 @@ Chromium使用真實控制項完成13組流程，涵蓋四類敵人的合法勝�
 實機圖：[配招](images/basic-preparation.png)、[交手](images/basic-combat.png)、[換牌中讀檔](images/basic-cycle.png)、[小視窗](images/basic-combat-small.png)。機讀記錄與72場矩陣在 [validation/basic-v1](validation/basic-v1/release.json)。
 
 自動測試證明規則及這些操作可行；首次玩家理解、長期重玩性與最終平衡仍待實測。公開部署結果由GitHub Pages執行記錄核對；雲端未開放github.io出站時，不把本機同路徑測試說成公開站端到端測試。
+
+
+## 公開部署核對
+
+程式提交 `850d02eac80e36b654397604c2571d4db100bc4c` 已推送至 `gh-pages`。[Pages 第3次部署](https://github.com/cclodty/Game-develop-rpg-wusha/actions/runs/40818774150) 已完成，結論 SUCCESS。十八張WebP與五個試牌場程式／入口檔亦已從公開Git來源重新下載，23檔SHA-256均與本機一致。
+
+直接試玩：https://cclodty.github.io/Game-develop-rpg-wusha/battle/ 。之後同分支推送會更新網站。雲端瀏覽器驗證使用相同專案路徑的本機伺服器；公開站部署狀態與Git來源檔案核對不冒充公開站端到端操作。

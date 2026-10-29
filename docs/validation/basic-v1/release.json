@@ -20,7 +20,13 @@
   ],
   "images_reviewed_individually": true,
   "source_commit_before_work": "4973bc08a4b36cdf8d5c0f5f82b33a6ffe158ee3",
-  "public_deployment": "Pending push and GitHub Pages status check",
+  "public_deployment": {
+    "status": "SUCCESS",
+    "url": "https://cclodty.github.io/Game-develop-rpg-wusha/battle/",
+    "run_url": "https://github.com/cclodty/Game-develop-rpg-wusha/actions/runs/40818774150",
+    "run_number": 3,
+    "observed_via": "GitHub public Actions page"
+  },
   "public_browser_tested": false,
   "runtime_sha256": {
     "battle/app.mjs": "7d86f35e29227805606ead52397b23596b1baededa5fa1df38b89e317789cd37",
@@ -28,5 +34,11 @@
     "battle/index.html": "73d7708ba79b2c1276b3e07c2354e5078033e58babfed7552d2e8e0f9b57edf1",
     "battle/model.mjs": "442e386cd8a9e5e2f17d1e59ed969dd428e48170d521af5a0b154eb127c13abc",
     "battle/style.css": "b016fd6c41764cad7ea3c65bfb8863474ae1bec0a885604f1a2d8c899b381724"
+  },
+  "source_commit": "850d02eac80e36b654397604c2571d4db100bc4c",
+  "public_git_source": {
+    "files_verified": 23,
+    "all_sha256_match": true,
+    "report": "public-source-check.json"
   }
 }
