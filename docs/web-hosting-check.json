@@ -17,5 +17,15 @@
   "card_art_tests": {
     "passed": 4,
     "failed": 0
+  },
+  "github_pages": {
+    "publishing_branch": "gh-pages",
+    "first_source_commit": "7ed0671a94c02238d538f3f1c5fae1ebf26b3e37",
+    "run_url": "https://github.com/cclodty/Game-develop-rpg-wusha/actions/runs/40811410978",
+    "conclusion": "SUCCESS",
+    "status_observed_via": "GitHub public Actions page",
+    "url": "https://cclodty.github.io/Game-develop-rpg-wusha/",
+    "public_http_tested": false,
+    "note": "Cloud egress does not include api.github.com or cclodty.github.io; local Chromium tests use the identical project subpath."
   }
 }

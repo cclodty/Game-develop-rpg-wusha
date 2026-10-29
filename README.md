@@ -4,7 +4,7 @@
 
 **試玩網址：[cclodty.github.io/Game-develop-rpg-wusha](https://cclodty.github.io/Game-develop-rpg-wusha/)**
 
-部署狀態：網頁原始碼與本機驗證已完成；公開站待 GitHub Pages 啟用及部署核對。
+部署狀態：GitHub 已自動啟用 Pages，首次 [pages build and deployment](https://github.com/cclodty/Game-develop-rpg-wusha/actions/runs/40811410978) 成功。之後推送到 `gh-pages` 會更新同一網址。
 
 部署分支為 **`gh-pages`**。入口、素材、字型、劇情與遊戲規則均隨分支提供，玩家使用桌面 Chrome 或 Edge 開啟網址即可。首次啟用及當輪部署核對見 [WEB_PREVIEW.md](docs/WEB_PREVIEW.md)。
 

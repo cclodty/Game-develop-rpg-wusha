@@ -50,4 +50,6 @@ python tools/test_web_hosting.py
 - 1440×900 與 960×600 均操作改名、對話、行囊分類、閱讀設定及重新載入續玩；唯讀核對故事與閱讀位置，沒有注入遊戲狀態。
 - 已目視檢查實際畫面：[卷首](images/web-preview-title.png)、[小視窗行囊](images/web-preview-inventory.png)、[對話](images/web-preview-dialogue.png)。
 
-以上是本機模擬正式站路徑的驗證，公開部署尚需獨立核對。雲端目前的網路允許清單沒有 `api.github.com` 與 `cclodty.github.io`；GitHub API 回應 Forbidden，不能據此宣稱 Pages 已啟用。
+GitHub 偵測到本輪新建的 `gh-pages` 後，已自動啟用分支部署。首次 [pages build and deployment #1](https://github.com/cclodty/Game-develop-rpg-wusha/actions/runs/40811410978) 已完成，結論為 SUCCESS；對應程式提交為 `7ed0671a94c02238d538f3f1c5fae1ebf26b3e37`。使用者不需要再次進設定頁啟用。
+
+雲端目前的網路允許清單沒有 `api.github.com` 與 `cclodty.github.io`；GitHub API 回應 Forbidden。因此發布狀態由 GitHub 公開 Actions 頁核對，遊戲操作在本機相同路徑驗證，未把它宣稱為公開站的 HTTP／瀏覽器端到端測試。檢查摘要見 [web-hosting-check.json](web-hosting-check.json)。
