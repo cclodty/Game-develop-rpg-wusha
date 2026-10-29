@@ -16,6 +16,12 @@
 
 ![基本牌試牌場的實際畫面](docs/images/basic-combat.png)
 
+## 尖塔式交手（試作）
+
+**[直接試玩](https://cclodty.github.io/Game-develop-rpg-wusha/spire/)**：同一套基本牌規則，改成《殺戮尖塔》式畫面與出牌——手牌扇形排開、拖上戰場出招、攻擊牌拉箭頭指向對手、真氣珠、抽／棄牌堆、對手頭上公開意圖。規則模型直接沿用 `battle/`，存檔分開。說明見 [SPIRE_BATTLE.md](docs/SPIRE_BATTLE.md)。
+
+![尖塔式交手：攻擊牌拉出箭頭指向對手](docs/images/spire-aim.webp)
+
 ## 邊玩邊修改
 
 1. 在 Codex 或 GitHub 選 `gh-pages` 分支。
