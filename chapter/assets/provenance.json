@@ -1,0 +1,34 @@
+{
+  "created": "2026-10-28",
+  "atlas.png": {
+    "source": "image_gen",
+    "original_workspace_file": "/workspace/generated_images/exec-c68134b2-19bb-446c-8d32-80c29042725f.png",
+    "purpose": "Ming wuxia ferry and warehouse environment, Song Huaiqing and Du Heng prototype character illustrations",
+    "method": "New generated atlas; original preserved; runtime CSS framing only"
+  },
+  "village.png": {
+    "source": "../../assets/generated/wangxi.png",
+    "method": "Unmodified copy from existing project"
+  },
+  "grove.png": {
+    "source": "../../assets/generated/grove.png",
+    "method": "Unmodified copy from existing project"
+  },
+  "fonts": {
+    "source": "../../assets/fonts/JianghuSans.otf and JianghuSerif.otf",
+    "method": "FontTools glyph subset for chapter text",
+    "license": "LICENSE-NOTO.txt"
+  },
+  "card-art-hero.png": {
+    "source": "res://assets/generated/card-art-hero.png",
+    "actor": "hero",
+    "method": "Unmodified source copy; runtime SVG atlas framing",
+    "sha256": "ccbf10bc7c0ebea1aa058e285d4decf00a7c1fe9dcb12c86903795e6f6c9a58a"
+  },
+  "card-art-huai.png": {
+    "source": "res://assets/generated/card-art-huai.png",
+    "actor": "huai",
+    "method": "Unmodified source copy; runtime SVG atlas framing",
+    "sha256": "385957c4fa86d31a832cf9181eef27df48b75e9570091ec9b97b61e6da8643b8"
+  }
+}

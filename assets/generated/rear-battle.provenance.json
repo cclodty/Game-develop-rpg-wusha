@@ -1,0 +1,25 @@
+{
+  "generator": "OpenAI image generation",
+  "created": "2026-10-28",
+  "style": "Delicate manga linework and muted watercolor; indigo Tianyou rear pose. Composition inspired by user-provided 活俠傳 screenshot; all integrated artwork newly generated.",
+  "scope": "Godot battle only; world map geometry and scale unchanged; chapter browser battle not migrated in this iteration.",
+  "animation": "One rear pose, procedural lunge, slash line and existing card flight; no skeletal or frame-by-frame attack animation.",
+  "assets": [
+    {
+      "file": "battle-back-hero.png",
+      "source": "exec-78f80cb9-6582-43c6-8e8e-763e3710af49.png",
+      "references": [
+        "card-art-hero.png"
+      ],
+      "sha256": "24373f572a59873dc216c3ada6af86ac48a6af40bb4c3f5bea7eaee059f917ba"
+    },
+    {
+      "file": "battle-riverside.png",
+      "source": "exec-c7106621-7fc3-4e62-b015-cf5271f0d0cc.png",
+      "references": [
+        "chapter/assets/atlas.png"
+      ],
+      "sha256": "7e5d282271a2743fa04393b7b5896b92675d1c575b8d5cba25cb0388d978b28d"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "generator": "OpenAI image generation",
+  "created": "2026-10-28",
+  "source": "exec-a133746b-ddfb-4a30-9593-6fdaf6e43e70.png",
+  "sha256": "460bfd12c9784f08d26b00e23d8cc5ebbaae98844136f930bed8f9477c118720",
+  "size": [
+    1024,
+    1536
+  ],
+  "grid": [
+    4,
+    3
+  ],
+  "transparent": true,
+  "reference": "User-provided full-body green swordsman / blue herbalist illustration",
+  "style": "Slender six-to-seven-head manga proportions, fine ink, muted watercolor; replaces chibi presentation in the active game",
+  "actors": [
+    "hero",
+    "herbalist",
+    "performer",
+    "shen",
+    "lu",
+    "tao",
+    "zhou",
+    "xiao",
+    "lin",
+    "bandit",
+    "lancer",
+    "examiner"
+  ],
+  "animation": "Single full-body cutout per character, procedural movement/breathing; no new frame-by-frame walk cycle. Original PNG unchanged.",
+  "row_edges": [
+    0,
+    528,
+    1010,
+    1536
+  ],
+  "column_edges": [
+    0,
+    256,
+    512,
+    768,
+    1024
+  ],
+  "sampling": "Measured clear transparent row gutters; runtime UV cropping preserves every boot and avoids adjacent-row fragments. Original PNG unmodified."
+}

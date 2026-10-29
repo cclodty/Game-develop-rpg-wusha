@@ -1,0 +1,12 @@
+{
+  "family": "LXGW WenKai TC",
+  "style": "Medium",
+  "upstream": "https://github.com/lxgw/LxgwWenkaiTC",
+  "commit": "a5dbb1029bd311bc6ebd26df53326998e37c76c8",
+  "source_path": "fonts/TTF/LXGWWenKaiTC-Medium.ttf",
+  "file": "LXGWWenKaiTC-Medium.ttf",
+  "sha256": "649efd8516f42d36eacc05480d5dbd2713fb28fbd2bbee8ea76fc40875045c49",
+  "modified": false,
+  "license": "SIL Open Font License 1.1",
+  "license_file": "LICENSE-WENKAI.txt"
+}

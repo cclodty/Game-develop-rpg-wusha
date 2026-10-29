@@ -1,0 +1,21 @@
+{
+  "url": "http://127.0.0.1:46177/Game-develop-rpg-wusha/",
+  "checks": [
+    "1440x900: root redirects to the project web path; bundled font renders",
+    "1440x900: naming, dialogue, inventory/filter, preferences and exact model reload pass",
+    "960x600: root redirects to the project web path; bundled font renders",
+    "960x600: naming, dialogue, inventory/filter, preferences and exact model reload pass"
+  ],
+  "page_or_console_errors": [],
+  "failed_http_resources": [],
+  "state_injection": false,
+  "validation_scope": "Local GitHub Pages project-path simulation; not evidence of public deployment",
+  "model_tests": {
+    "passed": 20,
+    "failed": 0
+  },
+  "card_art_tests": {
+    "passed": 4,
+    "failed": 0
+  }
+}

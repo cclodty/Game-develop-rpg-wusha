@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+artifacts/
+build/
+node_modules/
+
+.godot/

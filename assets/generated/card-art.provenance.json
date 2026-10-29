@@ -1,0 +1,61 @@
+{
+  "created": "2026-10-28",
+  "scope": "Character-specific presentation; combat rules unchanged",
+  "actors": {
+    "hero": {
+      "source": "exec-46d5b4b1-07dc-4b5d-b1c5-0d57125b41f9.png",
+      "generator": "OpenAI image generation",
+      "sha256": "ccbf10bc7c0ebea1aa058e285d4decf00a7c1fe9dcb12c86903795e6f6c9a58a",
+      "size": [
+        1536,
+        1024
+      ],
+      "layout": [
+        3,
+        4
+      ],
+      "reference": "Approved manga watercolor technique art and Song Huaiqing portrait from chapter/assets/atlas.png",
+      "method": "Source PNG copied unchanged; runtime atlas framing only",
+      "costume": "Indigo short travel jacket, compact tied hair, brown messenger satchel",
+      "cards": [
+        "strike",
+        "guard",
+        "breath",
+        "observe",
+        "cloud_step",
+        "opening_thrust",
+        "sword_qi",
+        "pushing_palm",
+        "yielding_palm",
+        "probing_stone",
+        "hidden_needle",
+        "gather_momentum"
+      ]
+    },
+    "huai": {
+      "source": "exec-7fb1fe0a-6c0e-4567-9493-283310579556.png",
+      "generator": "OpenAI image generation",
+      "sha256": "385957c4fa86d31a832cf9181eef27df48b75e9570091ec9b97b61e6da8643b8",
+      "size": [
+        1536,
+        1024
+      ],
+      "layout": [
+        2,
+        4
+      ],
+      "reference": "Approved manga watercolor technique art and Song Huaiqing portrait from chapter/assets/atlas.png",
+      "method": "Source PNG copied unchanged; runtime atlas framing only",
+      "costume": "Sage green long robes, long dark hair and green ribbons",
+      "cards": [
+        "strike",
+        "guard",
+        "breath",
+        "observe",
+        "cloud_step",
+        "opening_thrust",
+        "sword_qi"
+      ]
+    }
+  }
+}

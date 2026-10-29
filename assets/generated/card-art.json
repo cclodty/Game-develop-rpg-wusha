@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "actors": {
+    "hero": {
+      "name": "陳天佑",
+      "path": "res://assets/generated/card-art-hero.png",
+      "columns": 3,
+      "rows": 4,
+      "cards": [
+        "strike",
+        "guard",
+        "breath",
+        "observe",
+        "cloud_step",
+        "opening_thrust",
+        "sword_qi",
+        "pushing_palm",
+        "yielding_palm",
+        "probing_stone",
+        "hidden_needle",
+        "gather_momentum"
+      ],
+      "width": 1536,
+      "height": 1024
+    },
+    "huai": {
+      "name": "宋懷晴",
+      "path": "res://assets/generated/card-art-huai.png",
+      "columns": 2,
+      "rows": 4,
+      "cards": [
+        "strike",
+        "guard",
+        "breath",
+        "observe",
+        "cloud_step",
+        "opening_thrust",
+        "sword_qi"
+      ],
+      "width": 1536,
+      "height": 1024
+    }
+  }
+}

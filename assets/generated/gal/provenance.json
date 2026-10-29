@@ -1,0 +1,206 @@
+{
+  "generator": "OpenAI image generation",
+  "date": "2026-10-28",
+  "assets": [
+    {
+      "id": "huai",
+      "file": "huai.png",
+      "source": "/workspace/generated_images/exec-ae505dab-ba62-40dd-9f44-462623d49e87.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "sha256": "1c5f81eb1a1c8a88c49a6249e66158ca701f1c708aed0b4ac70e29a96dd5f7b2",
+      "grid": [
+        2,
+        2
+      ],
+      "expressions": [
+        "neutral",
+        "smile",
+        "concern",
+        "resolve"
+      ],
+      "alpha_extrema": [
+        0,
+        254
+      ]
+    },
+    {
+      "id": "hero",
+      "file": "hero.png",
+      "source": "/workspace/generated_images/exec-fc2007f3-c403-4365-88e6-bfae175ab23a.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "sha256": "9b0c2b903a7d312402ea654c7e6d2b5da026d087ac215cd6787f3616decf47e7",
+      "grid": [
+        2,
+        2
+      ],
+      "expressions": [
+        "neutral",
+        "smile",
+        "concern",
+        "resolve"
+      ],
+      "alpha_extrema": [
+        0,
+        254
+      ]
+    },
+    {
+      "id": "du",
+      "file": "du.png",
+      "source": "/workspace/generated_images/exec-45297d6a-3d55-45ea-b177-bef019549763.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "sha256": "f7fab408bf5043314f87dc7988cc6903047e14e0a1dc7bbeceaa82249a98bf69",
+      "grid": [
+        2,
+        2
+      ],
+      "expressions": [
+        "neutral",
+        "smile",
+        "concern",
+        "resolve"
+      ],
+      "alpha_extrema": [
+        0,
+        254
+      ]
+    },
+    {
+      "id": "inn",
+      "file": "inn.png",
+      "source": "/workspace/generated_images/exec-07c57b54-cd09-481a-931d-d86bc56d8132.png",
+      "size": [
+        1672,
+        940
+      ],
+      "mode": "RGB",
+      "sha256": "f907f440593365ca2fe4a8c6476ef0bee4fba514646d065d264c91aa9438eba1"
+    },
+    {
+      "id": "paper",
+      "file": "paper.png",
+      "source": "/workspace/generated_images/exec-825eab66-9eaa-4ca4-9c5f-228e9a99ca06.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "43889020841f37eb075f75a1801ee451e6b3b38843ffaef169261427f29e2b7d"
+    },
+    {
+      "id": "hero-player",
+      "file": "hero-player.png",
+      "source": "/workspace/generated_images/exec-7e0228ec-4839-4342-8faa-45404f9050ff.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "sha256": "05c548f941b8d3686f1e191e9692b568103fb3bd91bf70b786489d8b456b6429",
+      "grid": [
+        2,
+        2
+      ],
+      "expressions": [
+        "neutral",
+        "smile",
+        "concern",
+        "resolve"
+      ],
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "reference": "assets/generated/gal/hero.png",
+      "purpose": "Viewer-directed gaze for dialogue and character menus; original side-looking atlas retained."
+    },
+    {
+      "id": "inventory-bag",
+      "file": "inventory-bag.png",
+      "source": "/workspace/generated_images/exec-a237c17d-6caa-4868-8488-01e52e450334.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "sha256": "a9f31047add39af040fde89fbe8ed606b8757908a06941a16a146c49e36536d2",
+      "reference": "docs/ui-concepts/images/journey.png",
+      "alpha_extrema": [
+        0,
+        254
+      ]
+    },
+    {
+      "id": "inventory-items",
+      "file": "inventory-items.png",
+      "source": "/workspace/generated_images/exec-d0351b68-822e-4bc7-86ec-a4b12d7c7217.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "sha256": "33cb1b6aef0a253242bdd031734ac150d7578a1992f11f981996f026e08a8aa2",
+      "reference": "docs/ui-concepts/images/journey.png",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "columns": 4,
+      "row_cuts": [
+        0,
+        354,
+        694,
+        1024
+      ]
+    },
+    {
+      "id": "investigation-clues",
+      "file": "investigation-clues.png",
+      "source": "/workspace/generated_images/exec-f33f257a-ab83-4085-8ba5-6443280a4285.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "sha256": "cee81b2c2ce507601ae551cd756df837941d228f737b96d6261339914a2c8324",
+      "column_edges": [
+        0,
+        560,
+        985,
+        1536
+      ],
+      "region_y": [
+        200,
+        850
+      ],
+      "contents": [
+        "拖痕與橋柱",
+        "麻繩與封籤",
+        "油紙與步法筆記示意"
+      ],
+      "reference": "docs/ui-concepts/images/activity.png",
+      "alpha_extrema": [
+        0,
+        254
+      ]
+    }
+  ],
+  "sampling": "Original PNGs unchanged. Fixed-cell AtlasTexture sampling; frames align without per-frame trimming.",
+  "references": [
+    "docs/ui-concepts/images/dialogue.png",
+    "assets/generated/card-art-hero.png",
+    "chapter/assets/atlas.png"
+  ]
+}
