@@ -1,10 +1,22 @@
-# 江湖未遠：內功與蓄勢
+# 江湖未遠｜小說與遊戲原型
+
+本分支 `weiyuan-novel` 收錄六卷六十章的小說完整初稿（約21萬字，含標點）。
+
+- **[小說入口與下載](novel/jianghu-weiyuan/README.md)**
+- [直接閱讀完整正文](novel/jianghu-weiyuan/reading/jianghu-weiyuan.md)
+- [Word可編修稿](novel/jianghu-weiyuan/reading/jianghu-weiyuan.docx)
+
+本次新增僅為小說文字、設定與閱讀稿；未上傳本輪不採用的CG，未整合小說進遊戲。下方保留原武學原型的說明與既有資源。
+
+---
+
+## 原遊戲原型：內功與蓄勢
 
 **從江湖經歷學武，以自己的配招決定怎樣交手。**
 
 這個分支提供武學核心 v3：一種主兵器、一門常駐內功、十張招式牌，以真氣出招、以勢強化。新增三門內功、十二張驗證牌、留牌、普通／運勁選擇、三招的二選一精修與四類試戰對手。
 
-目前為 `weiyuan-martial-core`；5,859項原生檢查及九組Chromium流程通過，最後兩行教學文字另經原生與瀏覽器補驗；完整範圍見 [VALIDATION.md](docs/VALIDATION.md)。[下載與開啟說明](https://github.com/cclodty/Game-develop-rpg-wusha/tree/weiyuan-martial-download)位於獨立 `weiyuan-martial-download`；既有[十八牌版](https://github.com/cclodty/Game-develop-rpg-wusha/tree/weiyuan-cards-download)及[即時動作版](https://github.com/cclodty/Game-develop-rpg-wusha/tree/weiyuan-download)保留。
+以下為繼承自 `weiyuan-martial-core` 的原型說明及當時驗證紀錄：5,859項原生檢查及九組Chromium流程通過，最後兩行教學文字另經原生與瀏覽器補驗；完整範圍見 [VALIDATION.md](docs/VALIDATION.md)。[下載與開啟說明](https://github.com/cclodty/Game-develop-rpg-wusha/tree/weiyuan-martial-download)位於獨立 `weiyuan-martial-download`；既有[十八牌版](https://github.com/cclodty/Game-develop-rpg-wusha/tree/weiyuan-cards-download)及[即時動作版](https://github.com/cclodty/Game-develop-rpg-wusha/tree/weiyuan-download)保留。
 
 ## 兩個入口
 

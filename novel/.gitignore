@@ -1,0 +1,15 @@
+# Do not publish rejected visual-novel assets or local authoring history.
+# The game ignores artifacts/ build folders; novel artifacts are text canon.
+!jianghu-weiyuan/worldbuilding/artifacts/
+!jianghu-weiyuan/worldbuilding/artifacts/**
+**/adaptations/
+**/.snapshots/
+**/.story.lock
+**/archives/
+**/generated_images/
+**/*.png
+**/*.jpg
+**/*.jpeg
+**/*.webp
+**/*.gif
+**/*.zip
